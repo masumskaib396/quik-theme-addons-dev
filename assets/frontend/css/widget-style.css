@@ -1,0 +1,113 @@
+/*--------------------------------------------------------------============================================================
+/*==============================
+[Table of contents]
+
+WIDGET STYLESHEET
+
+1.HEADDING
+2.DUAL HEADDING
+3.ANIMATED TEXT
+
+
+
+
+---------------------------------- */
+
+
+/*---------------------------------------------------
+HEADDING
+----------------------------------------------------*/
+
+.finest-addons-title.show-line-yes:after {
+    content: "";
+    width: 100%;
+    background-color: #fee444;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    z-index: -1;
+}
+
+.finest-addons-title.show-line-yes {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+
+/*---------------------------------------------------
+DUAL HEADDING
+----------------------------------------------------*/
+
+.finest-addons-dual-heading .finest-addons-dual-heading-wrapper {
+    padding: 5px;
+}
+
+.finest-addons-dual-heading .finest-addons-dual-heading-wrapper .finest-addons-dual-heading-description {
+    line-height: 26px;
+    margin: 30px 0 0 0;
+    padding: 10px;
+    font-weight: 400;
+}
+
+.finest-addons-dual-heading .finest-addons-dual-heading-wrapper .finest-addons-dual-heading-icon {
+    display: inline-block;
+}
+
+.finest-addons-dual-heading .finest-addons-dual-heading-wrapper .finest-addons-dual-heading-icon i {
+    font-size: 36px;
+}
+
+.finest-addons-dual-heading .finest-addons-dual-heading-wrapper .finest-addons-dual-heading-title {
+    font-size: 36px;
+    margin-top: 10px;
+}
+
+.finest-addons-dual-heading .finest-addons-dual-heading-wrapper .finest-addons-dual-heading-title {
+    font-size: 30px;
+    color: #132c47;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.finest-addons-dual-heading .finest-addons-dual-heading-wrapper .finest-addons-dual-heading-title .first-heading,
+.finest-addons-dual-heading .finest-addons-dual-heading-wrapper .finest-addons-dual-heading-title .second-heading {
+    padding: 15px 10px;
+}
+
+.finest-addons-dual-heading .finest-addons-dual-heading-wrapper .finest-addons-dual-heading-title span {
+    color: #132c47;
+}
+
+/*---------------------------------------------------
+ANIMATED TEXT
+----------------------------------------------------*/
+.morphext > .animated {
+    display: inline-block;
+  }
+  /* morphext style end*/
+
+  .finest-animated-text-align-left{
+    text-align: left;
+  }
+
+  .finest-animated-text-align-center{
+    text-align: center;
+  }
+
+  .finest-animated-text-align-right{
+    text-align: right;
+  }
+
+  .finest-typed-strings{
+    margin: 0;
+  }
+
+  .finest-animated-text-pre-heading,
+  .finest-animated-text-animated-heading,
+  .finest-animated-text-post-heading {
+      font-size: 30px;
+      font-weight: 600;
+  }
