@@ -204,12 +204,8 @@ final class Finest_Extension {
 		require_once( FINEST_WIDGET_DIR . 'AniamteText/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Excerpt/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'DualButton/widget.php' );
-		require_once( FINEST_WIDGET_DIR . 'CreativeButton/widget.php' );
+		//  require_once( FINEST_WIDGET_DIR . 'CreativeButton/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'ModalPopup/widget.php' );
-
-
-
-
 
 
 	}
