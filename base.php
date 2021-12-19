@@ -86,6 +86,13 @@ final class Finest_Extension {
 			FINEST_ASSETS_PUBLIC .'/css/widget-style.css',
 			null,FINEST_VERSION,
 		);
+
+		wp_enqueue_style(
+			'finest-creative-button-style',
+			FINEST_ASSETS_PUBLIC .'/css/creative-button.css',
+			null,FINEST_VERSION,
+		);
+
 		wp_enqueue_style(
 			'animate',
 			FINEST_ASSETS_PUBLIC .'/css/animate.css',
@@ -126,7 +133,7 @@ final class Finest_Extension {
 	 *
 	*/
 	public function register_new_category($manager){
-	   $manager->add_category('finest',
+	   $manager->add_category('finest-addons',
 			[
 				'title' => __( 'Finest Elementor Helper  Addons', 'finest' ),
 			]);
@@ -196,6 +203,9 @@ final class Finest_Extension {
 		require_once( FINEST_WIDGET_DIR . 'DualHeading/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'AniamteText/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Excerpt/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'DualButton/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'CreativeButton/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'ModalPopup/widget.php' );
 
 
 

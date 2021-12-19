@@ -7,6 +7,8 @@ WIDGET STYLESHEET
 1.HEADDING
 2.DUAL HEADDING
 3.ANIMATED TEXT
+4.DUAL BUTTON
+5.MODAL POPUP
 
 
 
@@ -80,6 +82,9 @@ DUAL HEADDING
 .finest-addons-dual-heading .finest-addons-dual-heading-wrapper .finest-addons-dual-heading-title span {
     color: #132c47;
 }
+.finest-dual-button-primary, .finest-dual-button-secondary {
+  font-weight: 700;
+}
 
 /*---------------------------------------------------
 ANIMATED TEXT
@@ -111,3 +116,446 @@ ANIMATED TEXT
       font-size: 30px;
       font-weight: 600;
   }
+
+/*---------------------------------------------------
+DUAL BUTTON
+----------------------------------------------------*/
+.finest-dual-button{
+    display: table;
+}
+.finest-dual-button.finest-dual-button-align-left{
+    margin-right: auto;
+}
+.finest-dual-button.finest-dual-button-align-center{
+    margin-left: auto;
+    margin-right: auto;
+}
+.finest-dual-button.finest-dual-button-align-right{
+    margin-left: auto;
+}
+.finest-dual-button-action{
+    display: inline-block;
+    text-decoration: none;
+}
+.finest-dual-button-primary {
+    position: relative;
+}
+.finest-dual-button-connector{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    -ms-transform: translate(50%, -50%);
+    -webkit-transform: translate(50%, -50%);
+    z-index: 10;
+}
+.finest-dual-button-connector span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+/* effect 1 style */
+.finest-dual-button-primary.effect-1, .finest-dual-button-secondary.effect-1,
+.finest-dual-button-primary.effect-2, .finest-dual-button-secondary.effect-2,
+.finest-dual-button-primary.effect-3, .finest-dual-button-secondary.effect-3,
+.finest-dual-button-primary.effect-4, .finest-dual-button-secondary.effect-4,
+.finest-dual-button-primary.effect-6, .finest-dual-button-secondary.effect-6 {
+    position: relative;
+    transition: all .3s ease;
+}
+
+.finest-dual-button-primary.effect-1::before, .finest-dual-button-secondary.effect-1::before {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 0;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.finest-dual-button-primary.effect-1:hover, .finest-dual-button-secondary.effect-1:hover {
+    z-index: 1;
+}
+
+.finest-dual-button-primary.effect-1:hover::before, .finest-dual-button-secondary.effect-1:hover::before {
+    width: 100%;
+    z-index: -1;
+}
+
+/* effect 2 style */
+.finest-dual-button-primary.effect-2::before, .finest-dual-button-secondary.effect-2::before {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+}
+
+.finest-dual-button-primary.effect-2:hover, .finest-dual-button-secondary.effect-2:hover {
+    z-index: 1;
+}
+
+.finest-dual-button-primary.effect-2:hover::before, .finest-dual-button-secondary.effect-2:hover::before {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+    z-index: -1;
+}
+
+/* effect 3 style */
+
+.finest-dual-button-primary.effect-3::before, .finest-dual-button-secondary.effect-3::before {
+    position: absolute;
+    content: '';
+    height: 0;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.finest-dual-button-primary.effect-3:hover, .finest-dual-button-secondary.effect-3:hover {
+    z-index: 1;
+}
+
+.finest-dual-button-primary.effect-3:hover::before, .finest-dual-button-secondary.effect-3:hover::before {
+    height: 100%;
+    z-index: -1;
+}
+
+/* effect 4 style */
+.finest-dual-button-primary.effect-4::before, .finest-dual-button-secondary.effect-4::before{
+    position: absolute;
+    content: '';
+    top: 50%;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.finest-dual-button-primary.effect-4:hover, .finest-dual-button-secondary.effect-4:hover {
+    z-index: 1;
+}
+
+.finest-dual-button-primary.effect-4:hover::before, .finest-dual-button-secondary.effect-4:hover::before {
+    top: 0;
+    bottom: 0;
+    opacity: 1;
+    z-index: -1;
+}
+
+/* effect 5 style */
+.finest-dual-button-primary.effect-5, .finest-dual-button-secondary.effect-5{
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+/* effect 6 style */
+
+.finest-dual-button-primary.effect-6::before, .finest-dual-button-secondary.effect-6::before {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 0;
+    top: 0;
+    right: 0;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.finest-dual-button-primary.effect-6:hover, .finest-dual-button-secondary.effect-6:hover {
+    z-index: 1;
+}
+
+.finest-dual-button-primary.effect-6:hover::before, .finest-dual-button-secondary.effect-6:hover::before {
+    width: 100%;
+    z-index: -1;
+}
+
+
+/*---------------------------------------------------
+MODAL POPUP
+----------------------------------------------------*/
+.finest-modal-button .finest-modal-image-action {
+    display: inline-block;
+    text-decoration: none;
+    transition: all .3s ease;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    overflow: hidden;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+}
+
+
+  .top-to-middle {
+	-webkit-transform: translate(-50%, -60%);
+			transform: translate(-50%, -60%);
+	-webkit-transition: all .3s ease;
+	transition: all .3s ease;
+  }
+
+  .finest-modal-item.modal-vimeo.bottom-to-middle {
+	-webkit-transform: translate(-50%, -30%);
+			transform: translate(-50%, -30%);
+	-webkit-transition: all .3s ease;
+	transition: all .3s ease;
+  }
+
+  .finest-modal-item.active.modal-vimeo.bottom-to-middle {
+	z-index: 9999;
+	-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+  }
+
+  .finest-modal-item.modal-vimeo.right-to-middle {
+	-webkit-transition: all .3s ease;
+	transition: all .3s ease;
+	-webkit-transform: translate(-30%, -50%);
+			transform: translate(-30%, -50%);
+  }
+
+  .finest-modal-item.active.modal-vimeo.right-to-middle {
+	-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+	z-index: 9999;
+  }
+
+  .finest-modal-item.modal-vimeo.left-to-middle {
+	-webkit-transform: translate(-70%, -50%);
+			transform: translate(-70%, -50%);
+	-webkit-transition: all .3s ease;
+	transition: all .3s ease;
+  }
+
+  .finest-modal-item.active.modal-vimeo.left-to-middle {
+	z-index: 9999;
+	-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+  }
+
+  .finest-modal-item.modal-vimeo.zoom-in {
+	-webkit-transform: translate(-50%, -50%) scale(0.5);
+			transform: translate(-50%, -50%) scale(0.5);
+	-webkit-transform-origin: center center;
+			transform-origin: center center;
+	-webkit-transition: all .3s ease;
+	transition: all .3s ease;
+  }
+
+  .finest-modal-item.active.modal-vimeo.zoom-in {
+	z-index: 9999;
+	-webkit-transform: translate(-50%, -50%) scale(1);
+			transform: translate(-50%, -50%) scale(1);
+  }
+
+  .finest-modal-item.modal-vimeo.zoom-out {
+	-webkit-transform: translate(-50%, -50%) scale(1.5);
+			transform: translate(-50%, -50%) scale(1.5);
+	-webkit-transform-origin: center center;
+			transform-origin: center center;
+	-webkit-transition: all .3s ease;
+	transition: all .3s ease;
+  }
+
+  .finest-modal-item.active.modal-vimeo.zoom-out {
+	z-index: 9999;
+	display: block;
+	-webkit-transform: translate(-50%, -50%) scale(1);
+			transform: translate(-50%, -50%) scale(1);
+  }
+
+  .finest-modal-item.modal-vimeo.left-rotate {
+	opacity: 0;
+	-webkit-transition: all .8s ease;
+	transition: all .8s ease;
+	-webkit-perspective: 1000;
+			perspective: 1000;
+	-webkit-transform: translate(-50%, -50%) rotateX(90deg);
+			transform: translate(-50%, -50%) rotateX(90deg);
+	-webkit-transform-origin: center center;
+			transform-origin: center center;
+  }
+
+  .finest-modal-item.active.modal-vimeo.left-rotate {
+	opacity: 1;
+	z-index: 9999;
+	-webkit-transform: translate(-50%, -50%) rotateX(0);
+			transform: translate(-50%, -50%) rotateX(0);
+  }
+
+  .finest-modal-item.modal-vimeo .finest-modal-content .finest-close-btn {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+  }
+
+  .finest-modal-item.modal-vimeo .finest-modal-content .finest-close-btn span {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+  .finest-modal-item.modal-vimeo .finest-modal-content .finest-close-btn span::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background: #fff;
+    transform: translate(-50%,-50%) rotate(45deg);
+    top: 50%;
+    left: 50%;
+  }
+  .finest-modal-item.modal-vimeo .finest-modal-content .finest-close-btn span::after {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 2px;
+    background: #fff;
+    transform: translate(-50%,-50%) rotate(45deg);
+    top: 50%;
+    left: 50%;
+  }
+
+  .finest-modal-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    display: none;
+}
+
+.finest-modal-overlay.active {
+	opacity: 1;
+    z-index: 1000;
+    display: block;
+	transition: all 0.3s ease;
+  }
+
+  .finest-modal-item.image-gallery .finest-modal-element {
+  display: flex;
+  flex-wrap: wrap;
+  }
+  .finest-modal-item.image-gallery .finest-modal-element.column-one .finest-modal-element-card {
+    width: 100%;
+  }
+  .finest-modal-item.image-gallery .finest-modal-element.column-two .finest-modal-element-card {
+    width: 50%;
+  }
+  .finest-modal-item.image-gallery .finest-modal-element.column-three .finest-modal-element-card {
+    width: 33.33%;
+  }
+  .finest-modal-item.image-gallery .finest-modal-element.column-four .finest-modal-element-card {
+    width: 25%;
+  }
+  .finest-modal-item.image-gallery .finest-modal-element.column-five .finest-modal-element-card {
+    width: 20%;
+  }
+  .finest-modal-item.image-gallery .finest-modal-element.column-six .finest-modal-element-card {
+    width: 16.66%;
+  }
+
+  .finest-modal-item {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+			transform: translateX(-50%) translateY(-50%);
+  }
+
+  .finest-modal-item.modal-vimeo {
+	opacity: 0;
+	-webkit-transform: translate(-50%, -60%);
+			transform: translate(-50%, -60%);
+	height: auto;
+	-webkit-transition: all .3s ease;
+	transition: all .3s ease;
+	visibility: hidden;
+  }
+
+  @media (max-width: 991px){
+    .finest-modal-item.modal-vimeo {
+      height: 100%;
+    }
+    .finest-modal-item.modal-vimeo::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .finest-modal-item.modal-vimeo .finest-modal-content .finest-modal-element img{
+    display: block;
+    width: 100%;
+  }
+
+  .finest-modal-item.modal-vimeo .finest-modal-content .finest-modal-element .finest-modal-element-card .finest-modal-element-card-body p{
+    margin: 0;
+  }
+
+  .finest-modal-item.modal-vimeo .finest-modal-content .finest-modal-element .finest-modal-element-card img{
+    display: block;
+    width: 100%;
+  }
+
+  .finest-modal-item.modal-vimeo .finest-modal-content {
+	position: relative;
+  }
+
+  .finest-modal-item .finest-modal-content .finest-modal-element iframe{
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+  .finest-modal-item.active.modal-vimeo {
+	opacity: 1;
+	z-index: 2000;
+	-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+	visibility: visible;
+  }
+
+  .finest-modal-button.finest-modal-btn-fixed-width-yes .finest-modal-image-action{
+    position: relative;
+  }
+  .finest-modal-button.finest-modal-btn-fixed-width-yes .finest-modal-image-action span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  .finest-modal-wrapper .finest-modal-item.finest-content-overflow-x- {
+    overflow-x: hidden;
+
+  }
+ .finest-modal-wrapper .finest-modal-item.finest-content-overflow-y-  {
+    overflow-y: scroll;
+
+ }

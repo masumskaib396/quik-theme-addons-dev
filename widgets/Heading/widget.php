@@ -1,9 +1,7 @@
 <?php
 namespace Finest_Addons\Widgets;
 
-if ( !defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly.
-}
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 use Elementor\Controls_Manager;
 use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
