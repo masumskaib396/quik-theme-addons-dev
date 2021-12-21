@@ -84,19 +84,19 @@ final class Finest_Extension {
 		wp_enqueue_style(
 			'finest-addons-style',
 			FINEST_ASSETS_PUBLIC .'/css/widget-style.css',
-			null,FINEST_VERSION,
+			null,FINEST_VERSION
 		);
 
 		wp_enqueue_style(
 			'finest-creative-button-style',
 			FINEST_ASSETS_PUBLIC .'/css/creative-button.css',
-			null,FINEST_VERSION,
+			null,FINEST_VERSION
 		);
 
 		wp_enqueue_style(
 			'animate',
 			FINEST_ASSETS_PUBLIC .'/css/animate.css',
-			null,FINEST_VERSION,
+			null,FINEST_VERSION
 		);
 
 		// Js enqueue
@@ -207,6 +207,7 @@ final class Finest_Extension {
 		//  require_once( FINEST_WIDGET_DIR . 'CreativeButton/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'ModalPopup/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Card/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'Promo-Box/widget.php' );
 
 	}
 }

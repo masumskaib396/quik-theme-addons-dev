@@ -10,6 +10,7 @@ WIDGET STYLESHEET
 4.DUAL BUTTON
 5.MODAL POPUP
 6.Card
+7. Promo-Box
 
 
 
@@ -692,3 +693,67 @@ MODAL POPUP
     overflow-y: scroll;
 
  }
+
+ /********************************************
+                      Promo-Box
+ ********************************************/
+
+ 
+.finest-promo-box {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.finest-promo-box .finest-promo-box-icon {
+  display: inline-block;
+  line-height: 1;
+  text-align: center;
+  transition: all 0.25s linear 0s;
+}
+
+.finest-promo-box .finest-promo-box-icon .finest-promo-box-icon-inner {
+  height: 1em;
+  width: 1em;
+}
+
+.finest-promo-box .finest-promo-box-overlay,
+.finest-promo-box .finest-promo-box-bg {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  transition: transform 0.25s linear 0s;
+}
+
+.finest-promo-box .finest-promo-box-bg {
+  padding: 40px;
+}
+
+.finest-promo-box .finest-promo-box-wrap {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.finest-promo-box .finest-promo-box-inner {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.finest-promo-box .finest-promo-box-inner-content {
+  display: table-cell;
+  vertical-align: middle;
+}
+.finest-promo-box-heading-divider-wrap, .finest-promo-box-subheading-divider-wrap {
+  font-size: 0;
+  line-height: 1;
+}
+.finest-promo-box-heading-divider-wrap, .finest-promo-box-subheading-divider-wrap {
+  font-size: 0;
+  line-height: 1;
+}
+
+.finest-promo-box-heading-divider, .finest-promo-box-subheading-divider {
+  display: inline-block;
+}
