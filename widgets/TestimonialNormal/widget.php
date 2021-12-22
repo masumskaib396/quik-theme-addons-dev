@@ -24,7 +24,7 @@ class Finest_Normal_Testimonial extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'exad finest-logo finest-testimonial';
+		return 'finest-icon eicon-testimonial';
 	}
 
 	public function get_categories() {
