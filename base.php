@@ -216,6 +216,10 @@ final class Finest_Extension {
 		require_once( FINEST_WIDGET_DIR . 'PricingBox/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'CallToAction/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'TestimonialNormal/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'Card/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'Promo-Box/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'Icon-Box/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'Flipbox/widget.php' );
 
 
 	}

@@ -60,7 +60,7 @@ class Finest_Inline_Button extends Widget_Base {
 			[
 				'label' => __( 'Button Content', 'finest-addons' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
-            ],
+            ]
 		);
 
 		$this->add_control(
@@ -86,7 +86,7 @@ class Finest_Inline_Button extends Widget_Base {
 					'mneme'   => __( 'Mneme', 'finest-addons' ),
 					'thebe'   => __( 'Thebe', 'finest-addons' ),
                 ],
-            ],
+            ]
 		);
 
 		$this->add_control(
