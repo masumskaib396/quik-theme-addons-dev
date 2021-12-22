@@ -220,6 +220,7 @@ final class Finest_Extension {
 		require_once( FINEST_WIDGET_DIR . 'Promo-Box/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Icon-Box/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Flipbox/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'TeamMember/widget.php' );
 
 
 	}

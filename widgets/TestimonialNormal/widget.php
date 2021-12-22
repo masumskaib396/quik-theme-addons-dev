@@ -1,217 +1,83 @@
 <?php
-
 namespace Finest_Addons\Widgets;
 
-use Elementor\Core\Schemes\Typography;
-use Elementor\Utils;
-use Elementor\Controls_Manager;
-use Elementor\Group_Control_Border;
-use Elementor\Group_Control_Box_Shadow;
-use Elementor\Group_Control_Image_Size;
-use Elementor\Group_Control_Typography;
+use \Elementor\Controls_Manager;
+use \Elementor\Group_Control_Border;
+use \Elementor\Group_Control_Box_Shadow;
+use \Elementor\Group_Control_Image_Size;
+use \Elementor\Group_Control_Background;
+use \Elementor\Control_Media;
+use \Elementor\Group_Control_Typography;
+use \Elementor\Group_Control_Css_Filter;
+use \Elementor\Icons_Manager;
+use \Elementor\Utils;
 use \Elementor\Widget_Base;
 
-defined( 'ABSPATH' ) || die();
+class Finest_Normal_Testimonial extends Widget_Base {
 
-class Finest_Testimonial_Normal extends Widget_Base {
-
-	/**
-     * Get widget name.
-     */
     public function get_name() {
-		return 'finest-creative-button';
+		return 'finest-normal-testimonial';
 	}
 
-	/**
-	 * Get widget title.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 * @return string Widget title.
-	 */
 	public function get_title() {
-		return __( 'Testimonial', 'finest-addons' );
+		return esc_html__( 'Testimonial', 'finest-addons' );
 	}
 
-	/**
-	 * Get widget icon.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 * @return string Widget icon.
-	 */
 	public function get_icon() {
-		return 'eicon-t-letter';
+		return 'exad finest-logo finest-testimonial';
 	}
 
-	/**
-     * Get widget category.
-     */
-    public function get_categories() {
+	public function get_categories() {
 		return [ 'finest-addons' ];
 	}
 
 	public function get_keywords() {
-		return [ 'review', 'comment', 'feedback', 'testimonial', 'finest' ];
-	}
-
-	public function get_style_depends() {
-		return [
-			'elementor-icons-fa-solid',
-			'elementor-icons-fa-regular',
-		];
-	}
-
-
+        return [ 'finest', 'review', 'feedback', 'testimonial' ];
+    }
 
 	protected function register_controls() {
 
-		$this->start_controls_section(
-			'_section_review',
-			[
-				'label' => __( 'Testimonial', 'finest-addons' ),
-				'tab' => Controls_Manager::TAB_CONTENT,
-			]
-		);
-
-		$this->add_control(
-			'ratting',
-			[
-				'label' => __( 'Rating', 'finest-addons' ),
-				'type' => Controls_Manager::SLIDER,
-				'default' => [
-					'unit' => 'px',
-					'size' => 4.2,
-				],
-				'size_units' => [ 'px' ],
-				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 5,
-						'step' => .5,
-					],
-				],
-				'dynamic' => [
-					'active' => true,
-				]
-			]
-		);
-
-		$this->add_control(
-			'ratting_style',
-			[
-				'label' => __( 'Rating Style', 'finest-addons' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'star' => __( 'Star', 'finest-addons' ),
-					'num' => __( 'Number', 'finest-addons' ),
-				],
-				'default' => 'star',
-				'style_transfer' => true,
-			]
-		);
-
-		$this->add_control(
-			'review',
-			[
-				'label' => __( 'Review', 'finest-addons' ),
-				'description' => finest_get_allowed_html_desc( 'intermediate' ),
-				'type' => Controls_Manager::TEXTAREA,
-				'default' => __( '“We had tried all of the popular project management apps, but none was a perfect fit for our company. Were', 'finest-addons' ),
-				'separator' => 'before',
-				'dynamic' => [
-					'active' => true,
-				]
-			]
-		);
-
-		$this->add_control(
-			'review_position',
-			[
-				'label' => __( 'Review Position', 'finest-addons' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'before' => __( 'Before Rating', 'finest-addons' ),
-					'after' => __( 'After Rating', 'finest-addons' ),
-				],
-				'default' => 'before',
-				'style_transfer' => true,
-			]
-		);
-
-		$this->end_controls_section();
-
-
+		/**
+		 * Testimonial Content Section
+		 */
 
 		$this->start_controls_section(
-			'_section_reviewer',
+			'finest-addonstestimonial_section',
 			[
-				'label' => __( 'Reviewer', 'finest-addons' ),
-				'tab' => Controls_Manager::TAB_CONTENT,
+				'label' => esc_html__( 'Contents', 'finest-addons' )
 			]
 		);
 
 		$this->add_control(
-			'image',
+			'finest_testimonial_image',
 			[
-				'label' => __( 'Photo', 'finest-addons' ),
-				'type' => Controls_Manager::MEDIA,
+				'label'   => __( 'Image', 'finest-addons' ),
+				'type'    => Controls_Manager::MEDIA,
 				'default' => [
-					'url' => Utils::get_placeholder_image_src(),
+					'url' => Utils::get_placeholder_image_src()
 				],
 				'dynamic' => [
 					'active' => true,
 				]
 			]
 		);
-
 		$this->add_group_control(
 			Group_Control_Image_Size::get_type(),
 			[
-				'name' => 'thumbnail',
-				'default' => 'large',
-				'separator' => 'none',
-			]
-		);
-
-		$this->add_control(
-			'image_position',
-			[
-				'label' => __( 'Image Position', 'finest-addons' ),
-				'type' => Controls_Manager::CHOOSE,
-				'label_block' => false,
-				'options' => [
-					'left' => [
-						'title' => __( 'Left', 'finest-addons' ),
-						'icon' => 'eicon-h-align-left',
-					],
-					'top' => [
-						'title' => __( 'Top', 'finest-addons' ),
-						'icon' => 'eicon-v-align-top',
-					],
-					'right' => [
-						'title' => __( 'Right', 'finest-addons' ),
-						'icon' => 'eicon-h-align-right',
-					],
+				'name'      => 'testimonial_thumbnail',
+				'default'   => 'medium_large',
+				'condition' => [
+					'finest_testimonial_image[url]!' => ''
 				],
-				'default' => 'top',
-				'toggle' => false,
-				'prefix_class' => 'finest-review--',
-				'style_transfer' => true,
 			]
 		);
 
 		$this->add_control(
-			'title',
+			'finest_testimonial_description',
 			[
-				'label' => __( 'Name', 'finest-addons' ),
-				'label_block' => true,
-				'type' => Controls_Manager::TEXT,
-				'default' => 'Robert Martine',
-				'placeholder' => __( 'Type Reviewer Name', 'finest-addons' ),
-				'separator' => 'before',
+				'label'   => esc_html__( 'Testimonial', 'finest-addons' ),
+				'type'    => Controls_Manager::TEXTAREA,
+				'default' => esc_html__( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen.', 'finest-addons' ),
 				'dynamic' => [
 					'active' => true,
 				]
@@ -219,552 +85,1036 @@ class Finest_Testimonial_Normal extends Widget_Base {
 		);
 
 		$this->add_control(
-			'job_title',
+			'finest_testimonial_name',
 			[
-				'label' => __( 'Job Title', 'finest-addons' ),
-				'label_block' => true,
-				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Businessman', 'finest-addons' ),
-				'placeholder' => __( 'Type Reviewer Job Title', 'finest-addons' ),
+				'label'   => esc_html__( 'Name', 'finest-addons' ),
+				'type'    => Controls_Manager::TEXT,
+				'default' => esc_html__( 'John Doe', 'finest-addons' ),
 				'dynamic' => [
 					'active' => true,
+				]
+			]
+		);
+
+		$this->add_control(
+			'finest_testimonial_url',
+			[
+				'label' => __( 'URL', 'finest-addons' ),
+				'type' => Controls_Manager::URL,
+				'placeholder' => __( 'https://your-link.com', 'finest-addons' ),
+				'show_external' => true,
+				'default' => [
+					'url' => '',
+					'is_external' => true,
+					'nofollow' => true,
+				],
+			]
+		);
+
+		$this->add_control(
+			'finest_testimonial_designation',
+			[
+				'label'   => esc_html__( 'Designation', 'finest-addons' ),
+				'type'    => Controls_Manager::TEXT,
+				'default' => esc_html__( 'Co-Founder', 'finest-addons' ),
+				'dynamic' => [
+					'active' => true,
+				]
+			]
+		);
+
+		$this->add_control(
+			'finest_testimonial_enable_rating',
+			[
+				'label'   => esc_html__( 'Display Rating?', 'finest-addons' ),
+				'type'    => Controls_Manager::SWITCHER,
+				'default' => 'no'
+			]
+		);
+
+		$this->add_control(
+			'finest_testimonial_rating_icon',
+			[
+				'label' => __( 'Rating Icon', 'finest-addons' ),
+				'type' => Controls_Manager::ICONS,
+				'label_block' => false,
+				'default' => [
+					'value' => 'fas fa-star',
+					'library' => 'solid',
+				],
+				'skin' => 'inline',
+				'exclude_inline_options' => ['svg'],
+				'condition' => [
+					'finest_testimonial_enable_rating' => 'yes'
+				]
+			]
+		);
+
+		$rating_number = range( 1, 5 );
+        $rating_number = array_combine( $rating_number, $rating_number );
+
+		$this->add_control(
+		  	'finest_testimonial_rating_number',
+		  	[
+				'label'   => __( 'Rating Number', 'finest-addons' ),
+				'type'    => Controls_Manager::SELECT,
+				'default' => 5,
+				'options' => $rating_number,
+				'condition' => [
+					'finest_testimonial_enable_rating' => 'yes'
+				]
+		  	]
+		);
+
+		$this-> end_controls_section();
+
+		/**
+		 * Testimonial Container Style Section
+		 */
+
+		$this->start_controls_section(
+			'finest_testimonial_container_section_style',
+			[
+				'label' => esc_html__( 'Container', 'finest-addons' ),
+				'tab'   => Controls_Manager::TAB_STYLE
+			]
+		);
+
+		$this->add_control(
+			'finest_testimonial_layout',
+			[
+				'label' => __( 'Layout', 'finest-addons' ),
+				'type' => Controls_Manager::SELECT,
+				'default' => 'layout-1',
+				'options' => [
+					'layout-1'  => __( 'Layout 1', 'finest-addons' ),
+					'layout-2' => __( 'Layout 2', 'finest-addons' ),
+				],
+			]
+		);
+
+		$this->add_control(
+			'finest_testimonial_container_alignment',
+			[
+				'label'   => __( 'Alignment', 'finest-addons' ),
+				'type'    => Controls_Manager::CHOOSE,
+				'toggle'  => false,
+				'default' => 'finest-testimonial-align-left',
+				'options' => [
+					'finest-testimonial-align-left'   => [
+						'title' => __( 'Left', 'finest-addons' ),
+						'icon'  => 'eicon-arrow-left'
+					],
+					'finest-testimonial-align-center' => [
+						'title' => __( 'Center', 'finest-addons' ),
+						'icon'  => 'eicon-arrow-up'
+					],
+					'finest-testimonial-align-right'  => [
+						'title' => __( 'Right', 'finest-addons' ),
+						'icon'  => 'eicon-arrow-right'
+					],
+					'finest-testimonial-align-bottom' => [
+						'title' => __( 'Bottom', 'finest-addons' ),
+						'icon'  => 'eicon-arrow-down'
+					]
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'align',
+			'finest_testimonial_container_padding',
 			[
-				'label' => __( 'Alignment', 'finest-addons' ),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'left' => [
-						'title' => __( 'Left', 'finest-addons' ),
-						'icon' => 'eicon-text-align-left',
-					],
-					'center' => [
-						'title' => __( 'Center', 'finest-addons' ),
-						'icon' => 'eicon-text-align-center',
-					],
-					'right' => [
-						'title' => __( 'Right', 'finest-addons' ),
-						'icon' => 'eicon-text-align-right',
-					],
-					'justify' => [
-						'title' => __( 'Justify', 'finest-addons' ),
-						'icon' => 'eicon-text-align-justify',
-					],
+				'label'      => __( 'Padding', 'finest-addons' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'separator'  => 'before',
+				'default'    => [
+					'top'    => '20',
+					'right'  => '20',
+					'bottom' => '20',
+					'left'   => '20'
 				],
-				'toggle' => true,
-				'separator' => 'before',
-				'selectors' => [
-					'{{WRAPPER}} .elementor-widget-container' => 'text-align: {{VALUE}};'
+				'selectors'  => [
+					'{{WRAPPER}} .finest-testimonial-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
-		$this->add_control(
-			'title_tag',
+		$this->add_responsive_control(
+			'finest_testimonial_container_radius',
 			[
-				'label' => __( 'Name HTML Tag', 'finest-addons' ),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'h1'  => [
-						'title' => __( 'H1', 'finest-addons' ),
-						'icon' => 'eicon-editor-h1'
-					],
-					'h2'  => [
-						'title' => __( 'H2', 'finest-addons' ),
-						'icon' => 'eicon-editor-h2'
-					],
-					'h3'  => [
-						'title' => __( 'H3', 'finest-addons' ),
-						'icon' => 'eicon-editor-h3'
-					],
-					'h4'  => [
-						'title' => __( 'H4', 'finest-addons' ),
-						'icon' => 'eicon-editor-h4'
-					],
-					'h5'  => [
-						'title' => __( 'H5', 'finest-addons' ),
-						'icon' => 'eicon-editor-h5'
-					],
-					'h6'  => [
-						'title' => __( 'H6', 'finest-addons' ),
-						'icon' => 'eicon-editor-h6'
+				'label'      => __( 'Border radius', 'finest-addons' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'default'    => [
+					'top'    => '10',
+					'right'  => '10',
+					'bottom' => '10',
+					'left'   => '10'
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .finest-testimonial-wrapper' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+				]
+			]
+		);
+
+		$this->start_controls_tabs( 'finest_testimonial_container_tabs' );
+
+			$this->start_controls_tab( 'finest_testimonial_container_normal', [ 'label' => esc_html__( 'Normal', 'finest-addons' ) ] );
+
+				$this->add_group_control(
+					Group_Control_Background::get_type(),
+					[
+						'name'      => 'finest_testimonial_container_background',
+						'types'     => [ 'classic', 'gradient' ],
+						'selector'  => '{{WRAPPER}} .finest-testimonial-wrapper'
+					]
+				);
+
+				$this->add_group_control(
+					Group_Control_Border::get_type(),
+					[
+						'name'            => 'finest_testimonial_container_border',
+						'fields_options'  => [
+							'border'      => [
+								'default' => 'solid'
+							],
+							'width'          => [
+								'default'    => [
+									'top'    => '1',
+									'right'  => '1',
+									'bottom' => '1',
+									'left'   => '1'
+								]
+							],
+							'color'       => [
+								'default' => '#e3e3e3'
+							]
+						],
+						'selector'        => '{{WRAPPER}} .finest-testimonial-wrapper'
+					]
+				);
+
+				$this->add_group_control(
+					Group_Control_Box_Shadow::get_type(),
+					[
+						'name'     => 'finest_testimonial_container_box_shadow',
+						'selector' => '{{WRAPPER}} .finest-testimonial-wrapper'
+					]
+				);
+
+			$this->end_controls_tab();
+
+			$this->start_controls_tab( 'finest_testimonial_container_hover', [ 'label' => esc_html__( 'Hover', 'finest-addons' ) ] );
+
+				$this->add_group_control(
+					Group_Control_Background::get_type(),
+					[
+						'name'      => 'finest_testimonial_container_background_hover',
+						'types'     => [ 'classic' ],
+						'selector'  => '{{WRAPPER}} .finest-testimonial-wrapper:hover'
+					]
+				);
+
+				$this->add_group_control(
+					Group_Control_Border::get_type(),
+					[
+						'name'            => 'finest_testimonial_container_border_hover',
+						'fields_options'  => [
+							'border'      => [
+								'default' => 'solid'
+							],
+							'width'          => [
+								'default'    => [
+									'top'    => '1',
+									'right'  => '1',
+									'bottom' => '1',
+									'left'   => '1'
+								]
+							],
+							'color'       => [
+								'default' => '#e3e3e3'
+							]
+						],
+						'selector'        => '{{WRAPPER}} .finest-testimonial-wrapper:hover'
+					]
+				);
+
+				$this->add_group_control(
+					Group_Control_Box_Shadow::get_type(),
+					[
+						'name'     => 'finest_testimonial_container_box_shadow_hover',
+						'selector' => '{{WRAPPER}} .finest-testimonial-wrapper:hover'
+					]
+				);
+
+			$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
+		$this->add_control(
+			'finest_testimonial_container_transition_top',
+            [
+				'label'        => __( 'Transition Top', 'finest-addons' ),
+				'type'         =>  Controls_Manager::SWITCHER,
+				'label_on'     => __( 'Show', 'finest-addons' ),
+				'label_off'    => __( 'Hide', 'finest-addons' ),
+				'separator'   => 'before',
+				'return_value' => 'yes',
+				'default'      => 'yes'
+			]
+        );
+
+		$this-> end_controls_section();
+
+		/**
+		 * testimonial Review Image style
+		 */
+		$this->start_controls_section(
+			'finest_testimonial_image_style',
+			[
+				'label' => esc_html__( 'Reviewer Image', 'finest-addons' ),
+				'tab'   => Controls_Manager::TAB_STYLE
+			]
+		);
+
+		$this->add_control(
+			'finest_testimonial_image_box',
+			[
+				'label'        => __( 'Image Box', 'finest-addons' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => __( 'ON', 'finest-addons' ),
+				'label_off'    => __( 'OFF', 'finest-addons' ),
+				'return_value' => 'yes',
+				'default'      => 'yes'
+			]
+		);
+
+		$this->add_responsive_control(
+			'finest_testimonial_image_box_height',
+			[
+				'label'       => __( 'Height', 'finest-addons' ),
+				'type'        => Controls_Manager::SLIDER,
+				'size_units'  => [ 'px' ],
+				'range'       => [
+					'px'      => [
+						'min' => 0,
+						'max' => 500
 					]
 				],
-				'default' => 'h2',
-				'toggle' => false,
-			]
-		);
-
-		$this->end_controls_section();
-
-
-
-
-
-		$this->start_controls_section(
-			'_section_ratting_style',
-			[
-				'label' => __( 'Rating', 'finest-addons' ),
-				'tab'   => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_responsive_control(
-			'ratting_size',
-			[
-				'label' => __( 'Size', 'finest-addons' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px'],
-				'selectors' => [
-					'{{WRAPPER}} .finest-review-ratting' => 'font-size: {{SIZE}}{{UNIT}};',
+				'default'     => [
+					'unit'    => 'px',
+					'size'    => 80
 				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'ratting_spacing',
-			[
-				'label' => __( 'Bottom Spacing', 'finest-addons' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px'],
-				'selectors' => [
-					'{{WRAPPER}} .finest-review-ratting' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+				'selectors'   => [
+					'{{WRAPPER}} .finest-testimonial-thumb'=> 'height: {{SIZE}}{{UNIT}};'
 				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'ratting_padding',
-			[
-				'label' => __( 'Padding', 'finest-addons' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'selectors' => [
-					'{{WRAPPER}} .finest-review-ratting' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'ratting_color',
-			[
-				'label' => __( 'Text Color', 'finest-addons' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .finest-review-ratting' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'ratting_bg_color',
-			[
-				'label' => __( 'Background Color', 'finest-addons' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .finest-review-ratting' => 'background-color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'ratting_border',
-				'selector' => '{{WRAPPER}} .finest-review-ratting',
-			]
-		);
-
-		$this->add_control(
-			'ratting_border_radius',
-			[
-				'label' => __( 'Border Radius', 'finest-addons' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%' ],
-				'selectors' => [
-					'{{WRAPPER}} .finest-review-ratting' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->end_controls_section();
-
-
-
-		$this->start_controls_section(
-			'_section_review_style',
-			[
-				'label' => __( 'Review & Reviewer', 'finest-addons' ),
-				'tab'   => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_responsive_control(
-			'body_padding',
-			[
-				'label' => __( 'Text Box Padding', 'finest-addons' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'selectors' => [
-					'{{WRAPPER}} .finest-review-body' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'_heading_name',
-			[
-				'type' => Controls_Manager::HEADING,
-				'label' => __( 'Name', 'finest-addons' ),
-				'separator' => 'before'
-			]
-		);
-
-		$this->add_responsive_control(
-			'title_spacing',
-			[
-				'label' => __( 'Bottom Spacing', 'finest-addons' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px'],
-				'selectors' => [
-					'{{WRAPPER}} .finest-review-reviewer' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'name_color',
-			[
-				'label' => __( 'Text Color', 'finest-addons' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .finest-review-reviewer' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'name_typography',
-				'selector' => '{{WRAPPER}} .finest-review-reviewer',
-				'scheme' => Typography::TYPOGRAPHY_2,
-			]
-		);
-
-		$this->add_control(
-			'_heading_job_title',
-			[
-				'type' => Controls_Manager::HEADING,
-				'label' => __( 'Job Title', 'finest-addons' ),
-				'separator' => 'before'
-			]
-		);
-
-		$this->add_responsive_control(
-			'job_title_spacing',
-			[
-				'label' => __( 'Bottom Spacing', 'finest-addons' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px'],
-				'selectors' => [
-					'{{WRAPPER}} .finest-review-position' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'job_title_color',
-			[
-				'label' => __( 'Text Color', 'finest-addons' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .finest-review-position' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'job_title_typography',
-				'selector' => '{{WRAPPER}} .finest-review-position',
-				'scheme' => Typography::TYPOGRAPHY_3,
-			]
-		);
-
-		$this->add_control(
-			'_heading_review',
-			[
-				'type' => Controls_Manager::HEADING,
-				'label' => __( 'Review', 'finest-addons' ),
-				'separator' => 'before'
-			]
-		);
-
-		$this->add_responsive_control(
-			'review_spacing',
-			[
-				'label' => __( 'Bottom Spacing', 'finest-addons' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px'],
-				'selectors' => [
-					'{{WRAPPER}} .finest-review-desc' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'review_color',
-			[
-				'label' => __( 'Text Color', 'finest-addons' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .finest-review-desc' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'review_typography',
-				'selector' => '{{WRAPPER}} .finest-review-desc',
-				'scheme' => Typography::TYPOGRAPHY_3,
-			]
-		);
-
-		$this->end_controls_section();
-
-
-
-		$this->start_controls_section(
-			'_section_photo_style',
-			[
-				'label' => __( 'Photo', 'finest-addons' ),
-				'tab'   => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_responsive_control(
-			'image_width',
-			[
-				'label' => __( 'Width', 'finest-addons' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', '%' ],
-				'range' => [
-					'px' => [
-						'min' => 70,
-						'max' => 500,
-					],
-					'%' => [
-						'min' => 10,
-						'max' => 100,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}}' => '--finest-review-media-width: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'image_height',
-			[
-				'label' => __( 'Height', 'finest-addons' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px' ],
-				'range' => [
-					'px' => [
-						'min' => 70,
-						'max' => 500,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .finest-review-figure' => 'height: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'offset_toggle',
-			[
-				'label' => __( 'Offset', 'finest-addons' ),
-				'type' => Controls_Manager::POPOVER_TOGGLE,
-				'label_off' => __( 'None', 'finest-addons' ),
-				'label_on' => __( 'Custom', 'finest-addons' ),
-				'return_value' => 'yes',
-			]
-		);
-
-		$this->start_popover();
-
-		$this->add_responsive_control(
-			'image_offset_x',
-			[
-				'label' => __( 'Offset X', 'finest-addons' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px'],
-				'condition' => [
-					'offset_toggle' => 'yes'
-				],
-				'range' => [
-					'px' => [
-						'min' => -1000,
-						'max' => 1000,
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}}' => '--finest-review-media-offset-x: {{SIZE}}{{UNIT}};'
+				'condition'   => [
+					'finest_testimonial_image_box' => 'yes'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'image_offset_y',
+			'finest_testimonial_image_box_width',
 			[
-				'label' => __( 'Offset Y', 'finest-addons' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => ['px'],
-				'condition' => [
-					'offset_toggle' => 'yes'
+				'label'       => __( 'Width', 'finest-addons' ),
+				'type'        => Controls_Manager::SLIDER,
+				'separator'   => 'after',
+				'range'       => [
+					'px'      => [
+						'min' => 0,
+						'max' => 500
+					]
 				],
-				'range' => [
-					'px' => [
-						'min' => -1000,
-						'max' => 1000,
-					],
+				'default'     => [
+					'unit'    => 'px',
+					'size'    => 80
 				],
-				'selectors' => [
-					'{{WRAPPER}}' => '--finest-review-media-offset-y: {{SIZE}}{{UNIT}};'
+				'selectors'   => [
+					'{{WRAPPER}} .finest-testimonial-thumb'=> 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .finest-testimonial-image-align-left .finest-testimonial-thumb, {{WRAPPER}} .finest-testimonial-image-align-right .finest-testimonial-thumb'=> 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .finest-testimonial-image-align-left .finest-testimonial-reviewer, {{WRAPPER}} .finest-testimonial-image-align-right .finest-testimonial-reviewer'=> 'width: calc( 100% - {{SIZE}}{{UNIT}} );',
+					'{{WRAPPER}} .finest-testimonial-wrapper.finest-testimonial-align-left .finest-testimonial-content-wrapper-arrow::before'=> 'left: calc( {{SIZE}}{{UNIT}} / 2 );',
+					'{{WRAPPER}} .finest-testimonial-wrapper.finest-testimonial-align-right .finest-testimonial-content-wrapper-arrow::before'=> 'right: calc(( {{SIZE}}{{UNIT}} / 2) - 10px);'
 				],
-			]
-		);
-		$this->end_popover();
-
-		$this->add_responsive_control(
-			'image_padding',
-			[
-				'label' => __( 'Padding', 'finest-addons' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'selectors' => [
-					'{{WRAPPER}} .finest-review-figure img' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
+				'condition'   => [
+					'finest_testimonial_image_box' => 'yes'
+				]
 			]
 		);
 
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
-				'name' => 'image_border',
-				'selector' => '{{WRAPPER}} .finest-review-figure img',
+				'name'      => 'finest_testimonial_image_box_border',
+				'selector'  => '{{WRAPPER}} .finest-testimonial-thumb',
+				'condition' => [
+					'finest_testimonial_image_box' => 'yes'
+				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'image_border_radius',
+			'finest_testimonial_image_box_radius',
 			[
-				'label' => __( 'Border Radius', 'finest-addons' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%' ],
-				'selectors' => [
-					'{{WRAPPER}} .finest-review-figure img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				'label'      => __( 'Border radius', 'finest-addons' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'default'    => [
+					'top'    => '50',
+					'right'  => '50',
+					'bottom' => '50',
+					'left'   => '50',
+					'unit'   => '%'
 				],
+				'selectors'  => [
+					'{{WRAPPER}} .finest-testimonial-thumb'     => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .finest-testimonial-thumb img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+				]
 			]
 		);
 
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
-				'name' => 'image_box_shadow',
-				'exclude' => [
-					'box_shadow_position',
-				],
-				'selector' => '{{WRAPPER}} .finest-review-figure img',
+				'name'     => 'finest_testimonial_image_box_shadow',
+				'selector' => '{{WRAPPER}} .finest-testimonial-thumb'
 			]
 		);
 
-		$this->end_controls_section();
+		$this->add_responsive_control(
+			'finest_testimonial_image_box_margin_bottom',
+			[
+				'label'       => __( 'Bottom Spacing', 'finest-addons' ),
+				'type'        => Controls_Manager::SLIDER,
+				'size_units'  => [ 'px' ],
+				'range'       => [
+					'px'      => [
+						'min' => -500,
+						'max' => 500
+					]
+				],
+				'default'     => [
+					'unit'    => 'px',
+					'size'    => 0
+				],
+				'selectors'   => [
+					'{{WRAPPER}} .finest-testimonial-thumb'=> 'margin-bottom: {{SIZE}}{{UNIT}};'
+				],
+				'condition'   => [
+					'finest_testimonial_container_alignment' => 'finest-testimonial-align-bottom'
+				]
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Css_Filter::get_type(),
+			[
+				'name' => 'finest_testimonial_image_box_css_filter',
+				'selector' => '{{WRAPPER}} .finest-testimonial-thumb img',
+			]
+		);
+
+		$this-> end_controls_section();
+
+		/**
+		 * Testimonial Testimonial Style Section
+		 */
+		$this->start_controls_section(
+			'finest_testimonial_description_style',
+			[
+				'label' => esc_html__( 'Testimonial', 'finest-addons' ),
+				'tab'   => Controls_Manager::TAB_STYLE
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name'     => 'finest_testimonial_description_typography',
+				'selector' => '{{WRAPPER}} .finest-testimonial-description'
+			]
+		);
+
+		$this->add_control(
+			'finest_testimonial_description_color',
+			[
+				'label'     => __( 'Text Color', 'finest-addons' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '#222222',
+				'selectors' => [
+					'{{WRAPPER}} .finest-testimonial-description' => 'color: {{VALUE}};'
+				]
+			]
+		);
+
+		$this->add_control(
+			'finest_testimonial_description_bg_color',
+			[
+				'label'     => __( 'Background Color', 'finest-addons' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .finest-testimonial-content-wrapper'               => 'background: {{VALUE}};',
+					'{{WRAPPER}} .finest-testimonial-content-wrapper-arrow::before' => 'color: {{VALUE}};'
+				]
+			]
+		);
+
+		$this->add_responsive_control(
+			'finest_testimonial_description_radius',
+			[
+				'label'      => __( 'Border Radius', 'finest-addons' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'default'    => [
+					'top'    => '0',
+					'right'  => '0',
+					'bottom' => '0',
+					'left'   => '0'
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .finest-testimonial-content-wrapper' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+				]
+			]
+		);
+
+		$this->add_responsive_control(
+			'finest_testimonial_description_spacing_bottom',
+			[
+				'label'       => __( 'Bottom Spacing', 'finest-addons' ),
+				'type'        => Controls_Manager::SLIDER,
+				'size_units'  => [ 'px' ],
+				'range'       => [
+					'px'      => [
+						'min' => 0,
+						'max' => 100
+					]
+				],
+				'default'     => [
+					'unit'    => 'px',
+					'size'    => 20
+				],
+				'selectors'   => [
+					'{{WRAPPER}} .finest-testimonial-content-wrapper' => 'margin-bottom: {{SIZE}}{{UNIT}};'
+				],
+				'condition' => [
+					'finest_testimonial_layout' => 'layout-1'
+				]
+			]
+		);
+
+		$this->add_responsive_control(
+			'finest_testimonial_description_spacing_top',
+			[
+				'label'       => __( 'Top Spacing', 'finest-addons' ),
+				'type'        => Controls_Manager::SLIDER,
+				'size_units'  => [ 'px' ],
+				'range'       => [
+					'px'      => [
+						'min' => 0,
+						'max' => 100
+					]
+				],
+				'default'     => [
+					'unit'    => 'px',
+					'size'    => 20
+				],
+				'selectors'   => [
+					'{{WRAPPER}} .finest-testimonial-content-wrapper' => 'margin-top: {{SIZE}}{{UNIT}};'
+				],
+				'condition' => [
+					'finest_testimonial_layout' => 'layout-2'
+				]
+			]
+		);
+
+		$this->add_responsive_control(
+			'finest_testimonial_description_padding',
+			[
+				'label'      => __( 'Padding', 'finest-addons' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'default'    => [
+					'top'    => '0',
+					'right'  => '0',
+					'bottom' => '0',
+					'left'   => '0'
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .finest-testimonial-content-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+				]
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			[
+				'name'     => 'finest_testimonial_description_box_shadow',
+				'selector' => '{{WRAPPER}} .finest-testimonial-content-wrapper'
+			]
+		);
+
+		$this->add_control(
+			'finest_testimonial_description_arrow_enable',
+			[
+				'label'        => __( 'Show Arrow', 'finest-addons' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => __( 'ON', 'finest-addons' ),
+				'label_off'    => __( 'OFF', 'finest-addons' ),
+				'return_value' => 'yes',
+				'default'      => 'no',
+				'separator'    => 'before'
+			]
+		);
+
+		$this-> end_controls_section();
+
+		/**
+		 * Testimonial Rating Style Section
+		 */
+		$this->start_controls_section(
+			'finest_testimonial_rating_style',
+			[
+				'label'     => esc_html__( 'Rating', 'finest-addons' ),
+				'tab'       => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'finest_testimonial_enable_rating' => 'yes'
+				]
+			]
+		);
+
+		$this->add_responsive_control(
+			'finest_testimonial_rating_size',
+			[
+				'label'       => __( 'Icon Size', 'finest-addons' ),
+				'type'        => Controls_Manager::SLIDER,
+				'size_units'  => [ 'px', '%' ],
+				'range'       => [
+					'px'      => [
+						'min' => 0,
+						'max' => 50
+					]
+				],
+				'default'     => [
+					'unit'    => 'px',
+					'size'    => 20
+				],
+				'selectors'   => [
+					'{{WRAPPER}} .finest-testimonial-ratings li i' => 'font-size: {{SIZE}}{{UNIT}};'
+				]
+			]
+		);
+
+		$this->add_responsive_control(
+			'finest_testimonial_rating_icon_margin',
+			[
+				'label'       => __( 'Icon Margin', 'finest-addons' ),
+				'type'        => Controls_Manager::SLIDER,
+				'size_units'  => [ 'px', '%' ],
+				'range'       => [
+					'px'      => [
+						'min' => 0,
+						'max' => 30
+					]
+				],
+				'default'     => [
+					'unit'    => 'px',
+					'size'    => 5
+				],
+				'selectors'   => [
+					'{{WRAPPER}} .finest-testimonial-ratings li:not(:last-child) i' => 'margin-right: {{SIZE}}{{UNIT}};'
+				]
+			]
+		);
+
+		$this->add_responsive_control(
+			'finest_testimonial_rating_margin',
+			[
+				'label'        => __( 'Margin', 'finest-addons' ),
+				'type'         => Controls_Manager::DIMENSIONS,
+				'size_units'   => [ 'px', '%', 'em' ],
+				'default'      => [
+					'top'      => '20',
+					'right'    => '0',
+					'bottom'   => '0',
+					'left'     => '0',
+					'isLinked' => false
+				],
+				'selectors'    => [
+					'{{WRAPPER}} .finest-testimonial-ratings' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+				]
+			]
+		);
+
+
+		$this->start_controls_tabs( 'finest_testimonial_rating_tabs' );
+
+			// normal state rating
+			$this->start_controls_tab( 'finest_testimonial_rating_normal', [ 'label' => esc_html__( 'Normal', 'finest-addons' ) ] );
+
+				$this->add_control(
+					'finest_testimonial_rating_normal_color',
+					[
+						'label'     => __( 'Color', 'finest-addons' ),
+						'type'      => Controls_Manager::COLOR,
+						'default'   => '#222222',
+						'selectors' => [
+							'{{WRAPPER}} .finest-testimonial-ratings li i' => 'color: {{VALUE}};'
+						]
+					]
+				);
+
+			$this->end_controls_tab();
+
+			// hover state rating
+			$this->start_controls_tab( 'finest_testimonial_rating_active', [ 'label' => esc_html__( 'Active', 'finest-addons' ) ] );
+
+				$this->add_control(
+					'finest_testimonial_rating_active_color',
+					[
+						'label'     => __( 'Color', 'finest-addons' ),
+						'type'      => Controls_Manager::COLOR,
+						'default'   => '#ff5b84',
+						'selectors' => [
+							'{{WRAPPER}} .finest-testimonial-ratings li.finest-testimonial-ratings-active i' => 'color: {{VALUE}};'
+						]
+					]
+				);
+
+			$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
+		$this-> end_controls_section();
+
+		/**
+		 * Testimonial Riviewer Style Section
+		 */
+		$this->start_controls_section(
+			'finest_testimonial_reviewer_style',
+			[
+				'label' => esc_html__( 'Reviewer', 'finest-addons' ),
+				'tab'   => Controls_Manager::TAB_STYLE
+			]
+		);
+
+		$this->add_responsive_control(
+			'finest_testimonial_reviewer_padding',
+			[
+				'label'      => __( 'Padding', 'finest-addons' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'default'    => [
+					'top'    => '0',
+					'right'  => '0',
+					'bottom' => '0',
+					'left'   => '0'
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .finest-testimonial-reviewer-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+				]
+			]
+		);
+
+		$this->add_responsive_control(
+			'finest_testimonial_reviewer_spacing',
+			[
+				'label'       => __( 'Spacing', 'finest-addons' ),
+				'type'        => Controls_Manager::SLIDER,
+				'size_units'  => [ 'px' ],
+				'range'       => [
+					'px'      => [
+						'min' => 0,
+						'max' => 100
+					]
+				],
+				'default'     => [
+					'unit'    => 'px',
+					'size'    => 20
+				],
+				'selectors'   => [
+					'{{WRAPPER}} .finest-testimonial-wrapper.finest-testimonial-align-left .finest-testimonial-reviewer-wrapper .finest-testimonial-reviewer' => 'padding-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .finest-testimonial-wrapper.finest-testimonial-align-right .finest-testimonial-reviewer-wrapper .finest-testimonial-reviewer' => 'padding-right: {{SIZE}}{{UNIT}};'
+				],
+				'condition'   => [
+					'finest_testimonial_container_alignment' => ['finest-testimonial-align-left', 'finest-testimonial-align-right']
+				]
+			]
+		);
+
+		/**
+		 * Testimonial Title Style Section
+		 */
+		$this->add_control(
+			'finest_testimonial_title_style',
+			[
+				'label'     => __( 'Reviewer Title', 'finest-addons' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name'             => 'finest_testimonial_title_typography',
+				'selector'         => '{{WRAPPER}} .finest-testimonial-name',
+				'fields_options'   => [
+					'font_size'    => [
+		                'default'  => [
+		                    'unit' => 'px',
+		                    'size' => 22
+		                ]
+		            ],
+		            'font_weight'  => [
+		                'default'  => '600'
+		            ]
+	            ]
+			]
+		);
+
+		$this->start_controls_tabs( 'finest_testimonial_title_tabs' );
+
+			// normal state rating
+			$this->start_controls_tab( 'finest_testimonial_title_normal', [ 'label' => esc_html__( 'Normal', 'finest-addons' ) ] );
+
+				$this->add_control(
+					'finest_testimonial_title_color',
+					[
+						'label'     => __( 'Color', 'finest-addons' ),
+						'type'      => Controls_Manager::COLOR,
+						'default'   => '#000000',
+						'selectors' => [
+							'{{WRAPPER}} .finest-testimonial-name' => 'color: {{VALUE}};'
+						]
+					]
+				);
+
+			$this->end_controls_tab();
+
+			// hover state rating
+			$this->start_controls_tab( 'finest_testimonial_title_hover', [ 'label' => esc_html__( 'Hover', 'finest-addons' ) ] );
+
+				$this->add_control(
+					'finest_testimonial_title_color_hover',
+					[
+						'label'     => __( 'Color', 'finest-addons' ),
+						'type'      => Controls_Manager::COLOR,
+						'selectors' => [
+							'{{WRAPPER}} .finest-testimonial-name:hover' => 'color: {{VALUE}};'
+						]
+					]
+				);
+
+			$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
+		$this->add_responsive_control(
+			'finest_testimonial_title_margin',
+			[
+				'label'      => __( 'Margin', 'finest-addons' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'default'    => [
+					'top'    => '0',
+					'right'  => '0',
+					'bottom' => '0',
+					'left'   => '0'
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .finest-testimonial-name' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+				]
+			]
+		);
+
+		// Testimonial Designation Style Section
+		$this->add_control(
+			'finest_testimonial_designation_style',
+			[
+				'label'     => __( 'Reviewer Designation', 'finest-addons' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name'             => 'finest_testimonial_designation_typography',
+				'selector'         => '{{WRAPPER}} .finest-testimonial-designation',
+				'fields_options'   => [
+					'font_size'    => [
+		                'default'  => [
+		                    'unit' => 'px',
+		                    'size' => 14
+		                ]
+		            ],
+		            'font_weight'  => [
+		                'default'  => '600'
+		            ]
+	            ]
+			]
+		);
+
+		$this->add_control(
+			'finest_testimonial_designation_color',
+			[
+				'label'     => __( 'Color', 'finest-addons' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '#333333',
+				'selectors' => [
+					'{{WRAPPER}} .finest-testimonial-designation' => 'color: {{VALUE}};'
+				]
+			]
+		);
+
+		$this->add_responsive_control(
+			'finest_testimonial_designation_margin',
+			[
+				'label'      => __( 'Margin', 'finest-addons' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'default'    => [
+					'top'    => '0',
+					'right'  => '0',
+					'bottom' => '0',
+					'left'   => '0'
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .finest-testimonial-designation' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+				]
+			]
+		);
+
+		$this-> end_controls_section();
+	}
+
+	private function render_testimonial_rating( $ratings ) {
+		$settings = $this->get_settings_for_display();
+
+		for( $i = 1; $i <= 5; $i++ ) {
+			if( $ratings >= $i ) {
+				$rating_active_class = '<li class="finest-testimonial-ratings-active"><i class="'.$settings['finest_testimonial_rating_icon']['value'].'"></i></li>';
+			} else {
+				$rating_active_class = '<li><i class="'.$settings['finest_testimonial_rating_icon']['value'].'"></i></li>';
+			}
+			echo $rating_active_class;
+		}
+	}
+
+	private function render_testimonial_image( $image_url ) {
+		$output = '';
+		if ( !empty( $image_url ) ) :
+			$output .= '<div class="finest-testimonial-thumb">';
+				$output .= $image_url;
+			$output .= '</div>';
+		endif;
+		return $output;
 	}
 
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 
-		$this->add_inline_editing_attributes( 'title', 'basic' );
-		$this->add_render_attribute( 'title', 'class', 'finest-review-reviewer' );
+		$testimonial_image_url_html = Group_Control_Image_Size::get_attachment_image_html( $settings, 'testimonial_thumbnail', 'finest_testimonial_image' );
+		$transition_top = '';
 
-		$this->add_inline_editing_attributes( 'job_title', 'basic' );
-		$this->add_render_attribute( 'job_title', 'class', 'finest-review-position' );
+		$target = $settings['finest_testimonial_url']['is_external'] ? ' target="_blank"' : '';
+		$nofollow = $settings['finest_testimonial_url']['nofollow'] ? ' rel="nofollow"' : '';
 
-		$this->add_inline_editing_attributes( 'review', 'intermediate' );
-		$this->add_render_attribute( 'review', 'class', 'finest-review-desc' );
+		$this->add_inline_editing_attributes( 'finest_testimonial_name', 'basic' );
+		$this->add_render_attribute( 'finest_testimonial_name', 'class', 'finest-testimonial-name' );
 
-		$this->add_render_attribute( 'ratting', 'class', [
-			'finest-review-ratting',
-			'finest-review-ratting--' . $settings['ratting_style']
-		] );
+		$this->add_inline_editing_attributes( 'finest_testimonial_designation', 'basic' );
+		$this->add_render_attribute( 'finest_testimonial_designation', 'class', 'finest-testimonial-designation' );
 
-		$ratting = max( 0, $settings['ratting']['size'] );
+		$this->add_inline_editing_attributes( 'finest_testimonial_description', 'basic' );
+		$this->add_render_attribute( 'finest_testimonial_description', 'class', 'finest-testimonial-description' );
 
+		$this->add_render_attribute( 'finest_testimonial_content_wrapper', 'class', 'finest-testimonial-content-wrapper' );
+
+		if ( 'yes' === $settings['finest_testimonial_description_arrow_enable'] ){
+			$this->add_render_attribute( 'finest_testimonial_content_wrapper', 'class', 'finest-testimonial-content-wrapper-arrow' );
+		}
+		if ( 'yes' === $settings['finest_testimonial_container_transition_top'] ){
+			$transition_top = 'finest-testimonial-transition-top-'.$settings['finest_testimonial_container_transition_top'];
+		}
 		?>
-		<div>
 
-		</div>
-		<?php if ( $settings['image']['url'] || $settings['image']['id'] ) :
-			$settings['hover_animation'] = 'disable-animation'; // hack to prevent image hover animation
-			?>
-			<figure class="finest-review-figure">
-				<?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'thumbnail', 'image' ); ?>
-			</figure>
-		<?php endif; ?>
+		<div class="finest-testimonial-wrapper <?php echo esc_attr( $settings['finest_testimonial_container_alignment'] ).' '.$transition_top; ?>">
+			<div class="finest-testimonial-wrapper-inner <?php echo $settings['finest_testimonial_layout']; ?>">
+			<?php
+				if( 'layout-1' === $settings['finest_testimonial_layout'] ) { ?>
 
-		<div class="finest-review-body">
-			<?php if ( $settings['review_position'] === 'before' && $settings['review'] ) : ?>
-				<div <?php $this->print_render_attribute_string( 'review' ); ?>>
-					<p><?php echo finest_kses_intermediate( $settings['review'] ); ?></p>
+					<div <?php echo $this->get_render_attribute_string( 'finest_testimonial_content_wrapper' ); ?>>
+					<?php
+						if ( !empty( $settings['finest_testimonial_description'] ) ) : ?>
+							<p <?php echo $this->get_render_attribute_string( 'finest_testimonial_description' ); ?>><?php echo wp_kses_post( $settings['finest_testimonial_description'] ); ?></p>
+							<?php
+							if ( 'yes' === $settings['finest_testimonial_enable_rating'] ) : ?>
+								<ul class="finest-testimonial-ratings">
+									<?php echo $this->render_testimonial_rating( $settings['finest_testimonial_rating_number'] ); ?>
+								</ul>
+							<?php
+							endif;
+						endif;
+						?>
+					</div>
+					<?php
+				}
+				?>
+				<div class="finest-testimonial-reviewer-wrapper">
+				<?php
+					if( 'finest-testimonial-align-bottom' !== $settings['finest_testimonial_container_alignment'] ) :
+						echo $this->render_testimonial_image( $testimonial_image_url_html );
+					endif;
+					?>
+					<div class="finest-testimonial-reviewer">
+					<?php
+						if ( !empty( $settings['finest_testimonial_name'] ) ) : ?>
+							<a href="<?php echo $settings['finest_testimonial_url']['url']; ?>" <?php echo $target; ?> <?php echo $nofollow; ?>>
+								<h4 <?php echo $this->get_render_attribute_string( 'finest_testimonial_name' ); ?>><?php echo finest_wp_kses( $settings['finest_testimonial_name'] ); ?></h4>
+							</a>
+						<?php
+						endif;
+						if ( !empty( $settings['finest_testimonial_designation'] ) ) : ?>
+							<span <?php echo $this->get_render_attribute_string( 'finest_testimonial_designation' ); ?>><?php echo finest_wp_kses( $settings['finest_testimonial_designation'] ); ?></span>
+						<?php
+						endif;
+						?>
+					</div>
+
+					<?php
+					if( 'finest-testimonial-align-bottom' === $settings['finest_testimonial_container_alignment'] ) :
+						echo $this->render_testimonial_image( $testimonial_image_url_html );
+					endif;
+					?>
 				</div>
-			<?php endif; ?>
+				<?php
+				if( 'layout-2' === $settings['finest_testimonial_layout'] ) { ?>
 
-			<div class="finest-review-header">
-				<?php if ( $settings['title' ] ) :
-					printf( '<%1$s %2$s>%3$s</%1$s>',
-						finest_escape_tags( $settings['title_tag'], 'h2' ),
-						$this->get_render_attribute_string( 'title' ),
-						finest_kses_basic( $settings['title' ] )
-						);
-				endif; ?>
-
-				<?php if ( $settings['job_title' ] ) : ?>
-					<div <?php $this->print_render_attribute_string( 'job_title' ); ?>><?php echo finest_kses_basic( $settings['job_title' ] ); ?></div>
-				<?php endif; ?>
-
-				<div <?php $this->print_render_attribute_string( 'ratting' ); ?>>
-					<?php if ( $settings['ratting_style'] === 'num' ) : ?>
-						<?php echo esc_html( $ratting ); ?> <i class="fas fa-star" aria-hidden="true"></i>
-					<?php else :
-						for ( $i = 1; $i <= 5; ++$i ) :
-							if ( $i <= $ratting ) {
-								echo '<i class="fas fa-star" aria-hidden="true"></i>';
-							} else {
-								echo '<i class="far fa-star" aria-hidden="true"></i>';
-							}
-						endfor;
-					endif; ?>
-				 </div>
+					<div <?php echo $this->get_render_attribute_string( 'finest_testimonial_content_wrapper' ); ?>>
+					<?php
+						if ( !empty( $settings['finest_testimonial_description'] ) ) : ?>
+							<p <?php echo $this->get_render_attribute_string( 'finest_testimonial_description' ); ?>><?php echo wp_kses_post( $settings['finest_testimonial_description'] ); ?></p>
+							<?php
+							if ( 'yes' === $settings['finest_testimonial_enable_rating'] ) : ?>
+								<ul class="finest-testimonial-ratings">
+								<?php
+									$this->render_testimonial_rating( $settings['finest_testimonial_rating_number'] ); ?>
+								</ul>
+							<?php
+							endif;
+						endif;
+						?>
+					</div>
+				<?php
+				}
+				?>
 			</div>
-
-			<?php if ( $settings['review_position'] === 'after' && $settings['review'] ) : ?>
-				<div <?php $this->print_render_attribute_string( 'review' ); ?>>
-					<p><?php echo finest_kses_intermediate( $settings['review'] ); ?></p>
-				</div>
-			<?php endif; ?>
 		</div>
-		<?php
+	<?php
 	}
 }
-$widgets_manager->register_widget_type( new \Finest_Addons\Widgets\Finest_Testimonial_Normal() );
+$widgets_manager->register_widget_type( new \Finest_Addons\Widgets\Finest_Normal_Testimonial() );
