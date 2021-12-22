@@ -84,25 +84,25 @@ final class Finest_Extension {
 		wp_enqueue_style(
 			'finest-addons-style',
 			FINEST_ASSETS_PUBLIC .'/css/widget-style.css',
-			null,FINEST_VERSION,
+			null,FINEST_VERSION
 		);
 
 		wp_enqueue_style(
 			'finest-creative-button-style',
 			FINEST_ASSETS_PUBLIC .'/css/creative-button.css',
-			null,FINEST_VERSION,
+			null,FINEST_VERSION
 		);
 
 		wp_enqueue_style(
 			'finest-inline-button-style',
 			FINEST_ASSETS_PUBLIC .'/css/inline-button.css',
-			null, FINEST_VERSION,
+			null, FINEST_VERSION
 		);
 
 		wp_enqueue_style(
 			'animate',
 			FINEST_ASSETS_PUBLIC .'/css/animate.css',
-			null,FINEST_VERSION,
+			null,FINEST_VERSION
 		);
 
 		// Js enqueue
