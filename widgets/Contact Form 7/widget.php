@@ -39,7 +39,9 @@ class Finest_Contact_Form extends Widget_Base {
 
 	protected function register_controls() {
 	}
-	protected function render() { } 
+	protected function render() { 
+		echo "Jasim";
+	} 
 
 }
 $widgets_manager->register_widget_type( new \Finest_Addons\Widgets\Finest_Contact_Form() );
