@@ -208,6 +208,7 @@ final class Finest_Extension {
 		require_once( FINEST_WIDGET_DIR . 'ModalPopup/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Card/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Promo-Box/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'Icon-Box/widget.php' );
 
 	}
 }

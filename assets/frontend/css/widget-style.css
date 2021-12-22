@@ -11,6 +11,7 @@ WIDGET STYLESHEET
 5.MODAL POPUP
 6.Card
 7. Promo-Box
+8. Icon Box
 
 
 
@@ -756,4 +757,109 @@ MODAL POPUP
 
 .finest-promo-box-heading-divider, .finest-promo-box-subheading-divider {
   display: inline-block;
+}
+
+/*---------------------------------------------------
+                    Icon Box
+----------------------------------------------------*/
+
+.fd-addons-feature-box-item {
+  transition: .4s;
+}
+
+.fd-addons-feature-box-item .icon-background-yes .fd-addons-feature-icon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  text-align: center;
+  line-height: 70px;
+  font-size: 30px;
+  background-color: var(--accent-color);
+  border-radius: 0px;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+}
+
+.fd-addons-feature-box-item .icon-background-yes .fd-addons-feature-icon svg {
+  width: 35px;
+}
+
+span.fd-addons-feature-icon.icon-type-image img {
+  object-fit: cover;
+}
+
+.fd-addons-feature-icon-wrap {
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fd-addons-feature-title {
+  margin-bottom: 18px;
+  font-size: 20px;
+}
+
+.fd-addons-feature-content p {
+  margin-bottom: 0;
+}
+
+.fd-addons-feature-box-item.fd-addons-icon-position-left {
+  display: inline-flex;
+  text-align: left;
+}
+
+.fd-addons-feature-box-item.fd-addons-icon-position-right {
+  display: flex;
+  text-align: right;
+  flex-direction: row-reverse;
+}
+
+.fd-addons-feature-box-item.fd-addons-feature-icon-center {
+  text-align: center;
+}
+
+.fd-addons-feature-box-item.fd-addons-feature-icon-left {
+  text-align: left;
+}
+
+.fd-addons-feature-box-item.fd-addons-feature-icon-left .fd-addons-feature-icon-wrap {
+  justify-content: flex-start;
+}
+
+.fd-addons-feature-box-item.fd-addons-feature-icon-right .fd-addons-feature-icon-wrap {
+  justify-content: flex-end;
+}
+
+.fd-addons-feature-box-item.fd-addons-feature-icon-right {
+  text-align: right;
+}
+
+.fd-addons-feature-icon-wrap i, .fd-addons-feature-icon-wrap svg, .fd-addons-feature-icon {
+  transition: .3s ease-in-out;
+  ;
+}
+
+.fd-addons-feature-box-item .icon-background-no .fd-addons-feature-icon svg {
+  MAX-HEIGHT: 118PX;
+}
+
+.fd-addons-feature-box-item .fd-addons-feature-icon i {
+  font-size: 25px;
+}
+
+.fd-addons-feature-box-number {
+  font-size: 22px;
+  letter-spacing: -0.73px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.fd-addons-feature-box-number span {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .16);
 }
