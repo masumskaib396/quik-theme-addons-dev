@@ -34,7 +34,7 @@ class Finest_Creative_Button extends Widget_Base {
      * Get widget icon.
      */
     public function get_icon() {
-        return 'hm hm-motion-button';
+        return 'eicon-animated-headline';
     }
 
     /**
@@ -45,7 +45,7 @@ class Finest_Creative_Button extends Widget_Base {
 	}
 
     public function get_keywords() {
-        return [ 'button', 'btn', 'advance', 'link', 'creative', 'creative-utton', 'finest' ];
+        return [ 'button', 'btn', 'advance', 'link', 'creative', 'creative-button', 'finest' ];
     }
 
 	/**
@@ -583,11 +583,7 @@ class Finest_Creative_Button extends Widget_Base {
 				]
 			]
 		];
-
-
 		$this->start_controls_tabs( '_tabs_button' );
-
-
 
         $this->start_controls_tab(
             '_tab_button_normal',

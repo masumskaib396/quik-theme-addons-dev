@@ -4,7 +4,7 @@ Plugin Name: Finest Addons For Elementor
 Plugin URI: https://github.com/masumskaib396/finest-for-elementor
 Description: The Finest is an Elementor helping plugin that will make your designing work easier.
 Our specialities are custom CSS, Nested section, Creative Buttons.
-Version: 1.0.1
+Version: 1.0.2
 Author: finestWP
 Author URI: https://finestdevs.com
 License: GPLv2 or later
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 //Set plugin version constant.
-define( 'FINEST_VERSION', '1.0.1');
+define( 'FINEST_VERSION', '1.0.2');
 
 /* Set constant path to the plugin directory. */
 define( 'FINEST_WIDGET', trailingslashit( plugin_dir_path( __FILE__ ) ) );
@@ -37,8 +37,10 @@ define( 'FINEST_ASSETS_ADMIN', plugins_url( 'assets/admin/', __FILE__ ) );
 define( 'FINEST_ASSETS_VERDOR', plugins_url( 'assets/vendor', __FILE__ ) );
 
 
-require_once( FINEST_WIDGET . 'traits/finest-button-murkup.php');
+
 require_once( FINEST_WIDGET_INC . 'helper-function.php');
 require_once( FINEST_WIDGET . 'base.php' );
+require_once( FINEST_WIDGET . 'traits/finest-button-murkup.php');
+require_once( FINEST_WIDGET . 'traits/finest-inline-button-murkup.php');
 
 ?>
