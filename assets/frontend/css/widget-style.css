@@ -1375,11 +1375,11 @@ TESTIMONIAL
                       Icon Box
   ----------------------------------------------------*/
 
-  .fd-addons-feature-box-item {
+  .finest-addons-feature-box-item {
     transition: .4s;
   }
 
-  .fd-addons-feature-box-item .icon-background-yes .fd-addons-feature-icon {
+  .finest-addons-feature-box-item .icon-background-yes .finest-addons-feature-icon {
     width: 70px;
     height: 70px;
     display: flex;
@@ -1393,82 +1393,82 @@ TESTIMONIAL
     justify-content: center;
   }
 
-  .fd-addons-feature-box-item .icon-background-yes .fd-addons-feature-icon svg {
+  .finest-addons-feature-box-item .icon-background-yes .finest-addons-feature-icon svg {
     width: 35px;
   }
 
-  span.fd-addons-feature-icon.icon-type-image img {
+  span.finest-addons-feature-icon.icon-type-image img {
     object-fit: cover;
   }
 
-  .fd-addons-feature-icon-wrap {
+  .finest-addons-feature-icon-wrap {
     margin-bottom: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .fd-addons-feature-title {
+  .finest-addons-feature-title {
     margin-bottom: 18px;
     font-size: 20px;
   }
 
-  .fd-addons-feature-content p {
+  .finest-addons-feature-content p {
     margin-bottom: 0;
   }
 
-  .fd-addons-feature-box-item.fd-addons-icon-position-left {
+  .finest-addons-feature-box-item.finest-addons-icon-position-left {
     display: inline-flex;
     text-align: left;
   }
 
-  .fd-addons-feature-box-item.fd-addons-icon-position-right {
+  .finest-addons-feature-box-item.finest-addons-icon-position-right {
     display: flex;
     text-align: right;
     flex-direction: row-reverse;
   }
 
-  .fd-addons-feature-box-item.fd-addons-feature-icon-center {
+  .finest-addons-feature-box-item.finest-addons-feature-icon-center {
     text-align: center;
   }
 
-  .fd-addons-feature-box-item.fd-addons-feature-icon-left {
+  .finest-addons-feature-box-item.finest-addons-feature-icon-left {
     text-align: left;
   }
 
-  .fd-addons-feature-box-item.fd-addons-feature-icon-left .fd-addons-feature-icon-wrap {
+  .finest-addons-feature-box-item.finest-addons-feature-icon-left .finest-addons-feature-icon-wrap {
     justify-content: flex-start;
   }
 
-  .fd-addons-feature-box-item.fd-addons-feature-icon-right .fd-addons-feature-icon-wrap {
+  .finest-addons-feature-box-item.finest-addons-feature-icon-right .finest-addons-feature-icon-wrap {
     justify-content: flex-end;
   }
 
-  .fd-addons-feature-box-item.fd-addons-feature-icon-right {
+  .finest-addons-feature-box-item.finest-addons-feature-icon-right {
     text-align: right;
   }
 
-  .fd-addons-feature-icon-wrap i, .fd-addons-feature-icon-wrap svg, .fd-addons-feature-icon {
+  .finest-addons-feature-icon-wrap i, .finest-addons-feature-icon-wrap svg, .finest-addons-feature-icon {
     transition: .3s ease-in-out;
     ;
   }
 
-  .fd-addons-feature-box-item .icon-background-no .fd-addons-feature-icon svg {
+  .finest-addons-feature-box-item .icon-background-no .finest-addons-feature-icon svg {
     MAX-HEIGHT: 118PX;
   }
 
-  .fd-addons-feature-box-item .fd-addons-feature-icon i {
+  .finest-addons-feature-box-item .finest-addons-feature-icon i {
     font-size: 25px;
   }
 
-  .fd-addons-feature-box-number {
+  .finest-addons-feature-box-number {
     font-size: 22px;
     letter-spacing: -0.73px;
     font-weight: 700;
     color: #ffffff;
   }
 
-  .fd-addons-feature-box-number span {
+  .finest-addons-feature-box-number span {
     width: 40px;
     height: 40px;
     line-height: 40px;

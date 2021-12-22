@@ -39,6 +39,7 @@ define( 'FINEST_ASSETS_VERDOR', plugins_url( 'assets/vendor', __FILE__ ) );
 
 
 require_once( FINEST_WIDGET_INC . 'helper-function.php');
+require_once( FINEST_WIDGET_INC . 'jasim-function.php');
 require_once( FINEST_WIDGET . 'base.php' );
 require_once( FINEST_WIDGET . 'traits/finest-button-murkup.php');
 require_once( FINEST_WIDGET . 'traits/finest-inline-button-murkup.php');

@@ -41,7 +41,7 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->start_controls_section(
 			'content_section',
 			[
-				'label' => __('Content', 'fd-addons'),
+				'label' => __('Content', 'finest-addons'),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -49,13 +49,13 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_control(
 			'icon_type',
 			[
-				'label' => __('Icon type', 'fd-addons'),
+				'label' => __('Icon type', 'finest-addons'),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'icon',
 				'options' => [
-					'text'  => __('Text', 'fd-addons'),
-					'icon' => __('Icon', 'fd-addons'),
-					'image' => __('Image', 'fd-addons'),
+					'text'  => __('Text', 'finest-addons'),
+					'icon' => __('Icon', 'finest-addons'),
+					'image' => __('Image', 'finest-addons'),
 				],
 			]
 		);
@@ -63,7 +63,7 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_control(
 			'icon',
 			[
-				'label' => __('Icon', 'fd-addons'),
+				'label' => __('Icon', 'finest-addons'),
 				'type' => Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fas fa-star',
@@ -76,7 +76,7 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_control(
 			'box_number',
 			[
-				'label' => __('Box Number', 'fd-addons'),
+				'label' => __('Box Number', 'finest-addons'),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
 				'condition' => ['icon_type' => 'text']
@@ -86,7 +86,7 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_control(
 			'image',
 			[
-				'label' => __('Choose Image', 'fd-addons'),
+				'label' => __('Choose Image', 'finest-addons'),
 				'type' => Controls_Manager::MEDIA,
 
 				'condition' => ['icon_type' => 'image']
@@ -140,28 +140,28 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label' => __('Title', 'fd-addons'),
+				'label' => __('Title', 'finest-addons'),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => __('Easy Intragition', 'fd-addons')
+				'default' => __('Easy Intragition', 'finest-addons')
 			]
 		);
 
 		$this->add_control(
 			'description',
 			[
-				'label' => __('Description', 'fd-addons'),
+				'label' => __('Description', 'finest-addons'),
 				'type' => Controls_Manager::TEXTAREA,
-				'default' => __('Lorem ipsum dolor sit amet, consetetur sadipscing elitr love it', 'fd-addons')
+				'default' => __('Lorem ipsum dolor sit amet, consetetur sadipscing elitr love it', 'finest-addons')
 			]
 		);
 		$this->add_control(
 			'enable_bottom_title',
 			[
-				'label' => __('Show Bottom Title', 'fd-addons'),
+				'label' => __('Show Bottom Title', 'finest-addons'),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __('Show', 'fd-addons'),
-				'label_off' => __('Hide', 'fd-addons'),
+				'label_on' => __('Show', 'finest-addons'),
+				'label_off' => __('Hide', 'finest-addons'),
 				'return_value' => 'yes',
 				'default' => 'no',
 			]
@@ -169,10 +169,10 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_control(
 			'bottom_title',
 			[
-				'label' => __('Title Bottom', 'fd-addons'),
+				'label' => __('Title Bottom', 'finest-addons'),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => __('Jonathan Taylor', 'fd-addons'),
+				'default' => __('Jonathan Taylor', 'finest-addons'),
 				'condition' => ['enable_bottom_title' => 'yes']
 			]
 
@@ -180,10 +180,10 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_control(
 			'enable_button',
 			[
-				'label' => __('Show Button', 'fd-addons'),
+				'label' => __('Show Button', 'finest-addons'),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __('Show', 'fd-addons'),
-				'label_off' => __('Hide', 'fd-addons'),
+				'label_on' => __('Show', 'finest-addons'),
+				'label_off' => __('Hide', 'finest-addons'),
 				'return_value' => 'yes',
 				'default' => 'no',
 			]
@@ -192,7 +192,7 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_control(
 			'btn_icon',
 			[
-				'label' => __('Button Icon', 'fd-addons'),
+				'label' => __('Button Icon', 'finest-addons'),
 				'type' => Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fas fa-arrow-right',
@@ -205,10 +205,10 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_control(
 			'button_text',
 			[
-				'label' => __('Button Text', 'fd-addons'),
+				'label' => __('Button Text', 'finest-addons'),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => __('Learn more', 'fd-addons'),
+				'default' => __('Learn more', 'finest-addons'),
 				'condition' => ['enable_button' => 'yes']
 			]
 		);
@@ -216,7 +216,7 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_control(
 			'button_url',
 			[
-				'label' => __('URL', 'fd-addons'),
+				'label' => __('URL', 'finest-addons'),
 				'type' =>  Controls_Manager::URL,
 				// 'condition' => ['enable_button' => 'yes']
 			]
@@ -226,19 +226,19 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_control(
 			'content_align',
 			[
-				'label' => __('Align', 'fd-addons'),
+				'label' => __('Align', 'finest-addons'),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __('Left', 'fd-addons'),
+						'title' => __('Left', 'finest-addons'),
 						'icon' => 'fa fa-align-left',
 					],
 					'center' => [
-						'title' => __('top', 'fd-addons'),
+						'title' => __('top', 'finest-addons'),
 						'icon' => 'fa fa-align-center',
 					],
 					'right' => [
-						'title' => __('Right', 'fd-addons'),
+						'title' => __('Right', 'finest-addons'),
 						'icon' => 'fa fa-align-right',
 					],
 				],
@@ -256,7 +256,7 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->start_controls_section(
 			'icon_style',
 			[
-				'label' => __('Icon', 'fd-addons'),
+				'label' => __('Icon', 'finest-addons'),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'conditions' => [
 					'relation' => 'or',
@@ -284,10 +284,10 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_control(
 			'enable_icon_box',
 			[
-				'label' => __('Enable Icon Box', 'fd-addons'),
+				'label' => __('Enable Icon Box', 'finest-addons'),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __('Show', 'fd-addons'),
-				'label_off' => __('Hide', 'fd-addons'),
+				'label_on' => __('Show', 'finest-addons'),
+				'label_off' => __('Hide', 'finest-addons'),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -300,20 +300,20 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->start_controls_tab(
 			'icon_normal_tab',
 			[
-				'label' => __('Normal', 'fd-addons'),
+				'label' => __('Normal', 'finest-addons'),
 			]
 		);
 
 		$this->add_control(
 			'icon_color',
 			[
-				'label' => __('Icon Color', 'fd-addons'),
+				'label' => __('Icon Color', 'finest-addons'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .fd-addons-feature-icon i' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .fd-addons-feature-icon svg' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .fd-addons-feature-icon svg path' => 'fill: {{VALUE}}',
-					'{{WRAPPER}} .fd-addons-feature-icon.icon-type-text' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .finest-addons-feature-icon i' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .finest-addons-feature-icon svg' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .finest-addons-feature-icon svg path' => 'fill: {{VALUE}}',
+					'{{WRAPPER}} .finest-addons-feature-icon.icon-type-text' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -321,11 +321,11 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_control(
 			'icon_background',
 			[
-				'label' => __('Icon Background', 'fd-addons'),
+				'label' => __('Icon Background', 'finest-addons'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#416ff4',
 				'selectors' => [
-					'{{WRAPPER}} .icon-background-yes .fd-addons-feature-icon' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .icon-background-yes .finest-addons-feature-icon' => 'background-color: {{VALUE}}',
 				],
 				'condition' => [
 					'enable_icon_box' => 'yes',
@@ -337,10 +337,10 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_control(
             'enable_gradient',
             [
-                'label' => __('Enable Gradient', 'fd-addons'),
+                'label' => __('Enable Gradient', 'finest-addons'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'fd-addons'),
-                'label_off' => __('No', 'fd-addons'),
+                'label_on' => __('Yes', 'finest-addons'),
+                'label_off' => __('No', 'finest-addons'),
                 'return_value' => 'yes',
                 'default' => 'no',
 				'condition' => ['enable_icon_box' => 'yes']
@@ -360,7 +360,7 @@ class Finest_Icon_Box extends Widget_Base {
 					]
 				],
 				'condition' => ['enable_gradient' => 'yes'],
-				'selector'  => '{{WRAPPER}} .icon-background-yes .fd-addons-feature-icon',
+				'selector'  => '{{WRAPPER}} .icon-background-yes .finest-addons-feature-icon',
 			]
 		);
 
@@ -368,8 +368,8 @@ class Finest_Icon_Box extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'icon_shadow',
-				'label' => __('Icon Shadow', 'fd-addons'),
-				'selector' => '{{WRAPPER}} .fd-addons-feature-icon',
+				'label' => __('Icon Shadow', 'finest-addons'),
+				'selector' => '{{WRAPPER}} .finest-addons-feature-icon',
 			]
 		);
 
@@ -378,19 +378,19 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->start_controls_tab(
 			'style_hover_tab',
 			[
-				'label' => __('Hover', 'fd-addons'),
+				'label' => __('Hover', 'finest-addons'),
 			]
 		);
 		$this->add_control(
 			'icon_hover_color',
 			[
-				'label' => __('Icon Color', 'fd-addons'),
+				'label' => __('Icon Color', 'finest-addons'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}:hover .fd-addons-feature-icon i' => 'color: {{VALUE}}',
-					'{{WRAPPER}}:hover .fd-addons-feature-icon svg' => 'color: {{VALUE}}',
-					'{{WRAPPER}}:hover .fd-addons-feature-icon svg path' => 'fill: {{VALUE}}',
-					'{{WRAPPER}}:hover .fd-addons-feature-icon.icon-type-text' => 'color: {{VALUE}}',
+					'{{WRAPPER}}:hover .finest-addons-feature-icon i' => 'color: {{VALUE}}',
+					'{{WRAPPER}}:hover .finest-addons-feature-icon svg' => 'color: {{VALUE}}',
+					'{{WRAPPER}}:hover .finest-addons-feature-icon svg path' => 'fill: {{VALUE}}',
+					'{{WRAPPER}}:hover .finest-addons-feature-icon.icon-type-text' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -398,10 +398,10 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_control(
 			'icon_hover_background',
 			[
-				'label' => __('Icon Background', 'fd-addons'),
+				'label' => __('Icon Background', 'finest-addons'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}:hover .icon-background-yes .fd-addons-feature-icon' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}}:hover .icon-background-yes .finest-addons-feature-icon' => 'background-color: {{VALUE}}',
 				],
 				'condition' => ['enable_icon_box' => 'yes']
 			]
@@ -410,8 +410,8 @@ class Finest_Icon_Box extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'icon_shadow_hover',
-				'label' => __('Icon Shadow', 'fd-addons'),
-				'selector' => '{{WRAPPER}}:hover .fd-addons-feature-icon',
+				'label' => __('Icon Shadow', 'finest-addons'),
+				'selector' => '{{WRAPPER}}:hover .finest-addons-feature-icon',
 			]
 		);
 		$this->end_controls_tab();
@@ -428,8 +428,8 @@ class Finest_Icon_Box extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'icon_text_typo',
-				'label' => __('Icon Text Typography', 'fd-addons'),
-				'selector' => '{{WRAPPER}} .fd-addons-feature-box-item .fd-addons-feature-icon',
+				'label' => __('Icon Text Typography', 'finest-addons'),
+				'selector' => '{{WRAPPER}} .finest-addons-feature-box-item .finest-addons-feature-icon',
 				'condition' => ['icon_type' => 'text']
 			]
 		);
@@ -437,7 +437,7 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_size',
 			[
-				'label' => __('Icon Size', 'fd-addons'),
+				'label' => __('Icon Size', 'finest-addons'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px', '%'],
 				'range' => [
@@ -456,9 +456,9 @@ class Finest_Icon_Box extends Widget_Base {
 					'unit' => 'px',
 				],
 				'selectors' => [
-					'{{WRAPPER}}  .fd-addons-feature-box-item .fd-addons-feature-icon.icon-type-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}}  .fd-addons-feature-box-item .fd-addons-feature-icon.icon-type-icon svg' => 'width: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}}  .fd-addons-feature-box-item .fd-addons-feature-icon.icon-type-image img' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}}  .finest-addons-feature-box-item .finest-addons-feature-icon.icon-type-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}}  .finest-addons-feature-box-item .finest-addons-feature-icon.icon-type-icon svg' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}}  .finest-addons-feature-box-item .finest-addons-feature-icon.icon-type-image img' => 'width: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => [
 					'icon_type' => 'icon',
@@ -470,7 +470,7 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'image_width',
 			[
-				'label' => __('Image Width', 'fd-addons'),
+				'label' => __('Image Width', 'finest-addons'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px', '%'],
 				'range' => [
@@ -485,8 +485,8 @@ class Finest_Icon_Box extends Widget_Base {
 				],
 				'devices' => ['desktop', 'tablet', 'mobile'],
 				'selectors' => [
-					'{{WRAPPER}}  .fd-addons-feature-box-item .fd-addons-feature-icon.icon-type-image img' => 'width: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}}  .fd-addons-feature-box-item .fd-addons-feature-icon.icon-type-image' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}}  .finest-addons-feature-box-item .finest-addons-feature-icon.icon-type-image img' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}}  .finest-addons-feature-box-item .finest-addons-feature-icon.icon-type-image' => 'width: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => [
 					'icon_type' => 'image'
@@ -496,7 +496,7 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'image_height',
 			[
-				'label' => __('Image Height', 'fd-addons'),
+				'label' => __('Image Height', 'finest-addons'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px', '%'],
 				'range' => [
@@ -511,8 +511,8 @@ class Finest_Icon_Box extends Widget_Base {
 				],
 				'devices' => ['desktop', 'tablet', 'mobile'],
 				'selectors' => [
-					'{{WRAPPER}}  .fd-addons-feature-box-item .fd-addons-feature-icon.icon-type-image img' => 'height: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}}  .fd-addons-feature-box-item .fd-addons-feature-icon.icon-type-image' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}}  .finest-addons-feature-box-item .finest-addons-feature-icon.icon-type-image img' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}}  .finest-addons-feature-box-item .finest-addons-feature-icon.icon-type-image' => 'height: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => [
 					'icon_type' => 'image'
@@ -524,7 +524,7 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_box_size',
 			[
-				'label' => __('Icon Box Size', 'fd-addons'),
+				'label' => __('Icon Box Size', 'finest-addons'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px', '%'],
 				'range' => [
@@ -543,7 +543,7 @@ class Finest_Icon_Box extends Widget_Base {
 					'unit' => 'px',
 				],
 				'selectors' => [
-					'{{WRAPPER}}  .fd-addons-feature-box-item .icon-background-yes .fd-addons-feature-icon' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}}  .finest-addons-feature-box-item .icon-background-yes .finest-addons-feature-icon' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => ['enable_icon_box' => 'yes']
 			]
@@ -551,7 +551,7 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_border_radius',
 			[
-				'label' => __('Icon Border Radius', 'fd-addons'),
+				'label' => __('Icon Border Radius', 'finest-addons'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'default'	=>	[
@@ -561,8 +561,8 @@ class Finest_Icon_Box extends Widget_Base {
 					'left' => '10'
 				],
 				'selectors' => [
-					'{{WRAPPER}} .fd-addons-feature-box-item .icon-background-yes .fd-addons-feature-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'body.rtl {{WRAPPER}} .fd-addons-feature-box-item .icon-background-yes .fd-addons-feature-icon' => 'border-radius: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
+					'{{WRAPPER}} .finest-addons-feature-box-item .icon-background-yes .finest-addons-feature-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'body.rtl {{WRAPPER}} .finest-addons-feature-box-item .icon-background-yes .finest-addons-feature-icon' => 'border-radius: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
 				],
 				'condition' => ['enable_icon_box' => 'yes']
 			]
@@ -571,7 +571,7 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'space_between_icon',
 			[
-				'label' => __('Gap', 'fd-addons'),
+				'label' => __('Gap', 'finest-addons'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'default'	=>	[
@@ -581,20 +581,20 @@ class Finest_Icon_Box extends Widget_Base {
 					'left' => '10'
 				],
 				'selectors' => [
-					'{{WRAPPER}} .fd-addons-feature-icon-wrap' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'body.rtl {{WRAPPER}} .fd-addons-feature-icon-wrap' => 'margin: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
+					'{{WRAPPER}} .finest-addons-feature-icon-wrap' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'body.rtl {{WRAPPER}} .finest-addons-feature-icon-wrap' => 'margin: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
 				],
 			]
 		);
 		$this->add_responsive_control(
 			'space_between_title_border',
 			[
-				'label' => __('Icon Gap', 'fd-addons'),
+				'label' => __('Icon Gap', 'finest-addons'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .fd-addons-feature-box-item .fd-addons-feature-icon.icon-type-icon svg' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'body.rtl {{WRAPPER}} .fd-addons-feature-box-item .fd-addons-feature-icon.icon-type-icon svg' => 'margin: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
+					'{{WRAPPER}} .finest-addons-feature-box-item .finest-addons-feature-icon.icon-type-icon svg' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'body.rtl {{WRAPPER}} .finest-addons-feature-box-item .finest-addons-feature-icon.icon-type-icon svg' => 'margin: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
 				],
 				'condition' => ['position' => 'left']
 			]
@@ -650,8 +650,8 @@ class Finest_Icon_Box extends Widget_Base {
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name' => 'icon_border',
-                'label' => __('Icon Border', 'fd-addons'),
-                'selector' => '{{WRAPPER}}  .fd-addons-feature-icon',
+                'label' => __('Icon Border', 'finest-addons'),
+                'selector' => '{{WRAPPER}}  .finest-addons-feature-icon',
             ]
 		);
 
@@ -659,7 +659,7 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->start_controls_section(
 			'content_style',
 			[
-				'label' => __('Content', 'fd-addons'),
+				'label' => __('Content', 'finest-addons'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -671,7 +671,7 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->start_controls_tab(
 			'content_normal_tab',
 			[
-				'label' => __('Normal', 'fd-addons'),
+				'label' => __('Normal', 'finest-addons'),
 			]
 		);
 
@@ -685,7 +685,7 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'title_gap',
 			[
-				'label' => __('Title Gap', 'fd-addons'),
+				'label' => __('Title Gap', 'finest-addons'),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -707,7 +707,7 @@ class Finest_Icon_Box extends Widget_Base {
 					'unit' => 'px',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .fd-addons-feature-title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .finest-addons-feature-title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -715,20 +715,20 @@ class Finest_Icon_Box extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __('Title Color', 'fd-addons'),
+				'label' => __('Title Color', 'finest-addons'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .fd-addons-feature-title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .finest-addons-feature-title' => 'color: {{VALUE}}',
 				],
 			]
 		);
 		$this->add_control(
 			'bottom_title_color',
 			[
-				'label' => __('Bottom Title Color', 'fd-addons'),
+				'label' => __('Bottom Title Color', 'finest-addons'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .fd-addons-feature-bottom-title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .finest-addons-feature-bottom-title' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -736,26 +736,26 @@ class Finest_Icon_Box extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'bottom_heading_typography',
-				'label' => __('Bottom Title Typography', 'fd-addons'),
-				'selector' => '{{WRAPPER}} .fd-addons-feature-bottom-title',
+				'label' => __('Bottom Title Typography', 'finest-addons'),
+				'selector' => '{{WRAPPER}} .finest-addons-feature-bottom-title',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'heading_typography',
-				'label' => __('Title Typography', 'fd-addons'),
-				'selector' => '{{WRAPPER}} .fd-addons-feature-title',
+				'label' => __('Title Typography', 'finest-addons'),
+				'selector' => '{{WRAPPER}} .finest-addons-feature-title',
 			]
 		);
 
 		$this->add_control(
             'heading_bg',
             [
-                'label' => __('Heading Background Color', 'fd-addons'),
+                'label' => __('Heading Background Color', 'finest-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .fd-addons-feature-title' => 'background: {{VALUE}}',
+                    '{{WRAPPER}} .finest-addons-feature-title' => 'background: {{VALUE}}',
                 ],
             ]
         );
@@ -765,8 +765,8 @@ class Finest_Icon_Box extends Widget_Base {
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name'     => 'title_border',
-                'label'    => __( 'Title Border', 'fd-addons' ),
-                'selector' => '{{WRAPPER}} .fd-addons-feature-title',
+                'label'    => __( 'Title Border', 'finest-addons' ),
+                'selector' => '{{WRAPPER}} .finest-addons-feature-title',
             ]
         );
 
@@ -775,7 +775,7 @@ class Finest_Icon_Box extends Widget_Base {
             [
                 'name' => 'title_box_shadow',
                 'label' => __( 'Title Box Shadow', 'massmix-ts' ),
-                'selector' => '{{WRAPPER}} .fd-addons-feature-title',
+                'selector' => '{{WRAPPER}} .finest-addons-feature-title',
             ]
         );
 
@@ -784,7 +784,7 @@ class Finest_Icon_Box extends Widget_Base {
 $this->add_responsive_control(
             'title_border_radius',
             [
-                'label'      => __( 'Title Border Radius', 'fd-addons' ),
+                'label'      => __( 'Title Border Radius', 'finest-addons' ),
                 'type'       => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'default'    => [
@@ -795,7 +795,7 @@ $this->add_responsive_control(
                     'isLinked' => false
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .fd-addons-feature-title' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                    '{{WRAPPER}} .finest-addons-feature-title' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
                 ]
             ]
         );
@@ -807,7 +807,7 @@ $this->add_responsive_control(
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .fd-addons-feature-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .finest-addons-feature-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -818,7 +818,7 @@ $this->add_responsive_control(
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .fd-addons-feature-bottom-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .finest-addons-feature-bottom-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -835,7 +835,7 @@ $this->add_responsive_control(
 		$this->add_responsive_control(
 			'desc_gap',
 			[
-				'label' => __('Description Gap', 'fd-addons'),
+				'label' => __('Description Gap', 'finest-addons'),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -857,7 +857,7 @@ $this->add_responsive_control(
 					'unit' => 'px',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .fd-addons-feature-content' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .finest-addons-feature-content' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => ['enable_button' => 'yes']
 
@@ -867,11 +867,11 @@ $this->add_responsive_control(
 		$this->add_control(
 			'desscription_color',
 			[
-				'label' => __('Description Color', 'fd-addons'),
+				'label' => __('Description Color', 'finest-addons'),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#7A7A7A',
 				'selectors' => [
-					'{{WRAPPER}} .fd-addons-feature-content' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .finest-addons-feature-content' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -880,20 +880,20 @@ $this->add_responsive_control(
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'description_typography',
-				'label' => __('Description Typography', 'fd-addons'),
-				'selector' => '{{WRAPPER}} .fd-addons-feature-content',
+				'label' => __('Description Typography', 'finest-addons'),
+				'selector' => '{{WRAPPER}} .finest-addons-feature-content',
 			]
 		);
 
 		$this->add_responsive_control(
 			'content_padding',
 			[
-				'label' => __('Content Padding', 'fd-addons'),
+				'label' => __('Content Padding', 'finest-addons'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .fd-addons-feature-content p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'body.rtl {{WRAPPER}} .fd-addons-feature-content p' => 'padding: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
+					'{{WRAPPER}} .finest-addons-feature-content p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'body.rtl {{WRAPPER}} .finest-addons-feature-content p' => 'padding: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
 				],
 			]
 		);
@@ -901,29 +901,29 @@ $this->add_responsive_control(
 		$this->add_responsive_control(
             'main_content_align',
             [
-                'label'     => __( 'Content Alignment', 'fd-addons' ),
+                'label'     => __( 'Content Alignment', 'finest-addons' ),
                 'type'      => \Elementor\Controls_Manager::CHOOSE,
                 'options'   => [
                     'flex-start'    => [
-                        'title' => __( 'Start', 'fd-addons' ),
+                        'title' => __( 'Start', 'finest-addons' ),
                         'icon'  => 'eicon-text-align-left',
                     ],
                     'center'  => [
-                        'title' => __( 'Center', 'fd-addons' ),
+                        'title' => __( 'Center', 'finest-addons' ),
                         'icon'  => 'eicon-text-align-center',
                     ],
                     'flex-end'   => [
-                        'title' => __( 'Right', 'fd-addons' ),
+                        'title' => __( 'Right', 'finest-addons' ),
                         'icon'  => 'eicon-text-align-right',
                     ],
                     'baseline' => [
-                        'title' => __( 'Baseline', 'fd-addons' ),
+                        'title' => __( 'Baseline', 'finest-addons' ),
                         'icon'  => 'eicon-text-align-justify',
                     ],
                 ],
                 'default'   => '',
                 'selectors' => [
-                    '{{WRAPPER}} .fd-addons-feature-box-item'  => 'align-items: {{VALUE}};',
+                    '{{WRAPPER}} .finest-addons-feature-box-item'  => 'align-items: {{VALUE}};',
                 ],
             ]
         );
@@ -935,17 +935,17 @@ $this->add_responsive_control(
 		$this->start_controls_tab(
 			'content_hover_tab',
 			[
-				'label' => __('Hover', 'fd-addons'),
+				'label' => __('Hover', 'finest-addons'),
 			]
 		);
 
 		$this->add_control(
 			'title_color_hover',
 			[
-				'label' => __('Title Color', 'fd-addons'),
+				'label' => __('Title Color', 'finest-addons'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}:hover .fd-addons-feature-title' => 'color: {{VALUE}}',
+					'{{WRAPPER}}:hover .finest-addons-feature-title' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -953,10 +953,10 @@ $this->add_responsive_control(
 		$this->add_control(
 			'desscription_color_hover',
 			[
-				'label' => __('Description Color', 'fd-addons'),
+				'label' => __('Description Color', 'finest-addons'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}:hover .fd-addons-feature-content' => 'color: {{VALUE}}',
+					'{{WRAPPER}}:hover .finest-addons-feature-content' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -969,7 +969,7 @@ $this->add_responsive_control(
 		$this->start_controls_section(
 			'button_style',
 			[
-				'label' => __('Button', 'fd-addons'),
+				'label' => __('Button', 'finest-addons'),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => ['enable_button' => 'yes']
 			]
@@ -982,23 +982,23 @@ $this->add_responsive_control(
         $this->start_controls_tab(
             'btn_style_normal_tab',
             [
-                'label' => __('Normal', 'fd-addons'),
+                'label' => __('Normal', 'finest-addons'),
             ]
 		);
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'btn_border',
-				'label' => __( 'Border', 'fd-addons' ),
-				'selector' => '{{WRAPPER}} .fd-addons-feature-box-item .fd-addons-feature-btn',
+				'label' => __( 'Border', 'finest-addons' ),
+				'selector' => '{{WRAPPER}} .finest-addons-feature-box-item .finest-addons-feature-btn',
 			]
 		);
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'button_typography',
-				'label' => __('Button Typography', 'fd-addons'),
-				'selector' => '{{WRAPPER}} .fd-addons-feature-box-item .fd-addons-feature-btn',
+				'label' => __('Button Typography', 'finest-addons'),
+				'selector' => '{{WRAPPER}} .finest-addons-feature-box-item .finest-addons-feature-btn',
 				'condition' => ['enable_button' => 'yes']
 			]
 		);
@@ -1006,10 +1006,10 @@ $this->add_responsive_control(
 		$this->add_control(
 			'button_color',
 			[
-				'label' => __('Button Color', 'fd-addons'),
+				'label' => __('Button Color', 'finest-addons'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .fd-addons-feature-box-item .fd-addons-feature-btn' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .finest-addons-feature-box-item .finest-addons-feature-btn' => 'color: {{VALUE}}',
 				],
 				'condition' => ['enable_button' => 'yes']
 			]
@@ -1018,10 +1018,10 @@ $this->add_responsive_control(
 		$this->add_control(
 			'button_background',
 			[
-				'label' => __('Button Background Color', 'fd-addons'),
+				'label' => __('Button Background Color', 'finest-addons'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .fd-addons-feature-box-item .fd-addons-feature-btn' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .finest-addons-feature-box-item .finest-addons-feature-btn' => 'background-color: {{VALUE}}',
 				],
 				'condition' => ['enable_button' => 'yes']
 			]
@@ -1030,11 +1030,11 @@ $this->add_responsive_control(
         $this->add_control(
             'btn_icon_color',
             [
-                'label' => __('Icon Color', 'fd-addons'),
+                'label' => __('Icon Color', 'finest-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .fd-addons-feature-btn .btn-icon' => 'color: {{VALUE}}',
-                    '{{WRAPPER}} .fd-addons-feature-btn .btn-icon path' => 'stroke: {{VALUE}}',
+                    '{{WRAPPER}} .finest-addons-feature-btn .btn-icon' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .finest-addons-feature-btn .btn-icon path' => 'stroke: {{VALUE}}',
                 ],
             ]
         );
@@ -1042,10 +1042,10 @@ $this->add_responsive_control(
         $this->add_control(
             'btn_icon_fill_color',
             [
-                'label' => __('SVG Fill Color', 'fd-addons'),
+                'label' => __('SVG Fill Color', 'finest-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .fd-addons-feature-btn .btn-icon path' => 'fill: {{VALUE}}',
+                    '{{WRAPPER}} .finest-addons-feature-btn .btn-icon path' => 'fill: {{VALUE}}',
                 ],
             ]
         );
@@ -1055,7 +1055,7 @@ $this->add_responsive_control(
 		$this->add_responsive_control(
 			'btn_width',
 			[
-				'label' => __('Button width', 'fd-addons'),
+				'label' => __('Button width', 'finest-addons'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px', '%'],
 				'range' => [
@@ -1066,7 +1066,7 @@ $this->add_responsive_control(
 				],
 				'devices' => ['desktop', 'tablet', 'mobile'],
 				'selectors' => [
-					'{{WRAPPER}}  .fd-addons-feature-btn' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}}  .finest-addons-feature-btn' => 'width: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => ['enable_button' => 'yes']
 			]
@@ -1075,7 +1075,7 @@ $this->add_responsive_control(
 		$this->add_responsive_control(
 			'btn_icon_size',
 			[
-				'label' => __('Button Icon Size', 'fd-addons'),
+				'label' => __('Button Icon Size', 'finest-addons'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px', '%'],
 				'range' => [
@@ -1086,8 +1086,8 @@ $this->add_responsive_control(
 				],
 				'devices' => ['desktop', 'tablet', 'mobile'],
 				'selectors' => [
-					'{{WRAPPER}}  .fd-addons-feature-btn i' => 'font-size: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}}  .fd-addons-feature-btn svg' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}}  .finest-addons-feature-btn i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}}  .finest-addons-feature-btn svg' => 'width: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => ['enable_button' => 'yes']
 			]
@@ -1096,7 +1096,7 @@ $this->add_responsive_control(
 		$this->add_responsive_control(
 			'space_between_btn',
 			[
-				'label' => __('Button Icon Gap', 'fd-addons'),
+				'label' => __('Button Icon Gap', 'finest-addons'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px', '%'],
 				'range' => [
@@ -1107,8 +1107,8 @@ $this->add_responsive_control(
 				],
 				'devices' => ['desktop', 'tablet', 'mobile'],
 				'selectors' => [
-					'{{WRAPPER}}  .fd-addons-feature-btn .btn-icon' => 'margin-left: {{SIZE}}{{UNIT}};',
-					'body.rtl {{WRAPPER}}  .fd-addons-feature-btn .btn-icon' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}}  .finest-addons-feature-btn .btn-icon' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'body.rtl {{WRAPPER}}  .finest-addons-feature-btn .btn-icon' => 'margin-right: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => ['enable_button' => 'yes']
 			]
@@ -1119,7 +1119,7 @@ $this->add_responsive_control(
         $this->start_controls_tab(
             'btn_style_hover_tab',
             [
-                'label' => __('Hover', 'fd-addons'),
+                'label' => __('Hover', 'finest-addons'),
             ]
 		);
 
@@ -1127,18 +1127,18 @@ $this->add_responsive_control(
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'btn_border_hover',
-				'label' => __( 'Border', 'fd-addons' ),
-				'selector' => '{{WRAPPER}} .fd-addons-feature-box-item .fd-addons-feature-btn:hover',
+				'label' => __( 'Border', 'finest-addons' ),
+				'selector' => '{{WRAPPER}} .finest-addons-feature-box-item .finest-addons-feature-btn:hover',
 			]
 		);
 
 		$this->add_control(
 			'button_hover_color',
 			[
-				'label' => __('Button Color', 'fd-addons'),
+				'label' => __('Button Color', 'finest-addons'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .fd-addons-feature-box-item .fd-addons-feature-btn:hover' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .finest-addons-feature-box-item .finest-addons-feature-btn:hover' => 'color: {{VALUE}}',
 				],
 				'condition' => ['enable_button' => 'yes']
 			]
@@ -1147,10 +1147,10 @@ $this->add_responsive_control(
 		$this->add_control(
 			'button_hover_background',
 			[
-				'label' => __('Button Background Color', 'fd-addons'),
+				'label' => __('Button Background Color', 'finest-addons'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .fd-addons-feature-box-item .fd-addons-feature-btn:hover' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .finest-addons-feature-box-item .finest-addons-feature-btn:hover' => 'background-color: {{VALUE}}',
 				],
 				'condition' => ['enable_button' => 'yes']
 			]
@@ -1160,11 +1160,11 @@ $this->add_responsive_control(
         $this->add_control(
             'btn_icon_color_hover',
             [
-                'label' => __('Icon Color', 'fd-addons'),
+                'label' => __('Icon Color', 'finest-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .fd-addons-feature-btn:hover .btn-icon' => 'color: {{VALUE}}',
-                    '{{WRAPPER}} .fd-addons-feature-btn:hover .btn-icon path' => 'stroke: {{VALUE}}',
+                    '{{WRAPPER}} .finest-addons-feature-btn:hover .btn-icon' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .finest-addons-feature-btn:hover .btn-icon path' => 'stroke: {{VALUE}}',
                 ],
             ]
         );
@@ -1172,10 +1172,10 @@ $this->add_responsive_control(
         $this->add_control(
             'btn_icon_fill_color_hover',
             [
-                'label' => __('SVG Fill Color', 'fd-addons'),
+                'label' => __('SVG Fill Color', 'finest-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .fd-addons-feature-btn:hover .btn-icon path' => 'fill: {{VALUE}}',
+                    '{{WRAPPER}} .finest-addons-feature-btn:hover .btn-icon path' => 'fill: {{VALUE}}',
                 ],
             ]
 		);
@@ -1183,10 +1183,10 @@ $this->add_responsive_control(
 		$this->add_control(
             'disable_hover_effect',
             [
-                'label' => __('Disable Deafault Hover Effect', 'fd-addons'),
+                'label' => __('Disable Deafault Hover Effect', 'finest-addons'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'fd-addons'),
-                'label_off' => __('No', 'fd-addons'),
+                'label_on' => __('Yes', 'finest-addons'),
+                'label_off' => __('No', 'finest-addons'),
                 'return_value' => 'yes',
                 'default' => 'no',
             ]
@@ -1195,7 +1195,7 @@ $this->add_responsive_control(
 		$this->add_responsive_control(
 			'space_between_btn_hover',
 			[
-				'label' => __('Button Icon Gap', 'fd-addons'),
+				'label' => __('Button Icon Gap', 'finest-addons'),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px', '%'],
 				'range' => [
@@ -1206,8 +1206,8 @@ $this->add_responsive_control(
 				],
 				'devices' => ['desktop', 'tablet', 'mobile'],
 				'selectors' => [
-					'{{WRAPPER}}  .fd-addons-feature-btn:hover .btn-icon' => 'transform: translatex( {{SIZE}}{{UNIT}} );',
-					'body.rtl {{WRAPPER}}  .fd-addons-feature-btn:hover .btn-icon' => 'transform: translatex( -{{SIZE}}{{UNIT}} );',
+					'{{WRAPPER}}  .finest-addons-feature-btn:hover .btn-icon' => 'transform: translatex( {{SIZE}}{{UNIT}} );',
+					'body.rtl {{WRAPPER}}  .finest-addons-feature-btn:hover .btn-icon' => 'transform: translatex( -{{SIZE}}{{UNIT}} );',
 				],
 				'condition' => ['enable_button' => 'yes']
 			]
@@ -1227,7 +1227,7 @@ $this->add_responsive_control(
 		$this->add_responsive_control(
 			'button_padding',
 			[
-				'label' => __('Button Padding', 'fd-addons'),
+				'label' => __('Button Padding', 'finest-addons'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'default'	=>	[
@@ -1237,8 +1237,8 @@ $this->add_responsive_control(
 					'left' => '45'
 				],
 				'selectors' => [
-					'{{WRAPPER}} .fd-addons-feature-box-item .fd-addons-feature-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'body.rtl {{WRAPPER}} .fd-addons-feature-box-item .fd-addons-feature-btn' => 'padding: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
+					'{{WRAPPER}} .finest-addons-feature-box-item .finest-addons-feature-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'body.rtl {{WRAPPER}} .finest-addons-feature-box-item .finest-addons-feature-btn' => 'padding: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
 				],
 				'condition' => ['enable_button' => 'yes']
 			]
@@ -1247,12 +1247,12 @@ $this->add_responsive_control(
 		$this->add_responsive_control(
 			'button_border_radius',
 			[
-				'label' => __('Button Border Radius', 'fd-addons'),
+				'label' => __('Button Border Radius', 'finest-addons'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .fd-addons-feature-box-item .fd-addons-feature-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'body.rtl {{WRAPPER}} .fd-addons-feature-box-item .fd-addons-feature-btn' => 'border-radius: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
+					'{{WRAPPER}} .finest-addons-feature-box-item .finest-addons-feature-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'body.rtl {{WRAPPER}} .finest-addons-feature-box-item .finest-addons-feature-btn' => 'border-radius: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
 				],
 				'condition' => ['enable_button' => 'yes']
 			]
@@ -1285,7 +1285,7 @@ $this->add_responsive_control(
                 'label'     => __( 'Box Backgroound Color', 'fastland-hp' ),
                 'type'      => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .fd-addons-feature-box-item' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .finest-addons-feature-box-item' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -1295,7 +1295,7 @@ $this->add_responsive_control(
             [
                 'name'     => 'box_shadow',
                 'label'    => __( 'Box Hover Shadow', 'fastland-hp' ),
-                'selector' => '{{WRAPPER}} .fd-addons-feature-box-item',
+                'selector' => '{{WRAPPER}} .finest-addons-feature-box-item',
             ]
         );
 
@@ -1304,13 +1304,13 @@ $this->add_responsive_control(
             [
                 'name'     => 'box_border',
                 'label'    => __( 'Box Border', '' ),
-                'selector' => '{{WRAPPER}} .fd-addons-feature-box-item',
+                'selector' => '{{WRAPPER}} .finest-addons-feature-box-item',
             ]
         );
 		$this->add_responsive_control(
 			'box-width',
 			[
-				'label' => __( 'Width', 'fd-addons' ),
+				'label' => __( 'Width', 'finest-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range' => [
@@ -1326,14 +1326,14 @@ $this->add_responsive_control(
 				],
 
 				'selectors' => [
-					'{{WRAPPER}} .fd-addons-feature-box-item' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .finest-addons-feature-box-item' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
 		$this->add_responsive_control(
 			'box-height',
 			[
-				'label' => __( 'Height', 'fd-addons' ),
+				'label' => __( 'Height', 'finest-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range' => [
@@ -1349,7 +1349,7 @@ $this->add_responsive_control(
 				],
 
 				'selectors' => [
-					'{{WRAPPER}} .fd-addons-feature-box-item' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .finest-addons-feature-box-item' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1360,7 +1360,7 @@ $this->add_responsive_control(
                 'type'       => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .fd-addons-feature-box-item'          => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .finest-addons-feature-box-item'          => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -1372,7 +1372,7 @@ $this->add_responsive_control(
                 'type'       => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .fd-addons-feature-box-item ' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .finest-addons-feature-box-item ' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -1393,7 +1393,7 @@ $this->add_responsive_control(
                 'type'      => \Elementor\Controls_Manager::COLOR,
                 'defautl'   => '#233aff',
                 'selectors' => [
-                    '{{WRAPPER}} .fd-addons-feature-box-item:hover' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .finest-addons-feature-box-item:hover' => 'background-color: {{VALUE}}',
                 ],
             ]
         );
@@ -1405,7 +1405,7 @@ $this->add_responsive_control(
                 'type'       => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .fd-addons-feature-box-item:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .finest-addons-feature-box-item:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -1415,7 +1415,7 @@ $this->add_responsive_control(
             [
                 'name'     => 'box_hover_shadow',
                 'label'    => __( 'Box Hover Shadow', 'fastland-hp' ),
-                'selector' => '{{WRAPPER}} .fd-addons-feature-box-item:hover',
+                'selector' => '{{WRAPPER}} .finest-addons-feature-box-item:hover',
             ]
         );
 
@@ -1424,7 +1424,7 @@ $this->add_responsive_control(
             [
                 'name'     => 'box_hover_border',
                 'label'    => __( 'Box Border', '' ),
-                'selector' => '{{WRAPPER}} .fd-addons-feature-box-item:hover ',
+                'selector' => '{{WRAPPER}} .finest-addons-feature-box-item:hover ',
             ]
         );
 
@@ -1449,11 +1449,11 @@ $this->add_responsive_control(
 				echo '<a class="d-block" href="'.$settings['button_url']['url'].'" '.$nofollow, $target.'>';
 			} ?>
 			<!-- box link  -->
-		<div class="fd-addons-feature-box-item <?php printf("fd-addons-feature-icon-%s fd-addons-icon-position-%s",  esc_attr( $settings['content_align'] ), esc_attr( $settings['position'] ) ) ?>">
+		<div class="finest-addons-feature-box-item <?php printf("finest-addons-feature-icon-%s finest-addons-icon-position-%s",  esc_attr( $settings['content_align'] ), esc_attr( $settings['position'] ) ) ?>">
 
 			<?php if ( ! empty( $settings["icon"]['value'] ) || !empty($settings['image']) || !empty($settings['box_number']) ): ?>
-			<div class="fd-addons-feature-icon-wrap <?php printf("icon-background-%s align-items-%s", esc_attr( $enable_iconb_box ) , esc_attr( $settings['icon_align'] ) ) ?>">
-				<span class="fd-addons-feature-icon icon-type-<?php echo $settings['icon_type'] ?>">
+			<div class="finest-addons-feature-icon-wrap <?php printf("icon-background-%s align-items-%s", esc_attr( $enable_iconb_box ) , esc_attr( $settings['icon_align'] ) ) ?>">
+				<span class="finest-addons-feature-icon icon-type-<?php echo $settings['icon_type'] ?>">
 					<?php
 					if ('text' == $settings['icon_type']) {
 						echo esc_html($settings['box_number']);
@@ -1468,10 +1468,10 @@ $this->add_responsive_control(
 			</div>
 			<?php endif; ?>
 
-			<div class="fd-addons-feature-content-wrap">
-				<div class="fd-addons-feature-content">
+			<div class="finest-addons-feature-content-wrap">
+				<div class="finest-addons-feature-content">
 					<?php if(!empty(  $settings['title'] )): ?>
-					<h4 class="fd-addons-feature-title"><?php echo $settings['title'] ?></h4>
+					<h4 class="finest-addons-feature-title"><?php echo $settings['title'] ?></h4>
 					<?php endif; ?>
 
 					<?php if(!empty(  $settings['description'] )): ?>
@@ -1479,12 +1479,12 @@ $this->add_responsive_control(
 					<?php endif; ?>
 
 					<?php if(!empty(  $settings['bottom_title'] )): ?>
-					 <h4 class="fd-addons-feature-bottom-title"><?php echo $settings['bottom_title'] ?></h4>
+					 <h4 class="finest-addons-feature-bottom-title"><?php echo $settings['bottom_title'] ?></h4>
 					<?php endif; ?>
 
 				</div>
 				<?php if ('yes' == $settings['enable_button']) { ?>
-					<a <?php printf('href="%s" %s %s', $settings['button_url']['url'], $nofollow, $target) ?> class="fd-addons-feature-btn fd-addons-btn btn-type-boxed d-inline-block <?php printf('disable-default-hover-%s', $settings['disable_hover_effect']); ?>">
+					<a <?php printf('href="%s" %s %s', $settings['button_url']['url'], $nofollow, $target) ?> class="finest-addons-feature-btn finest-addons-btn btn-type-boxed d-inline-block <?php printf('disable-default-hover-%s', $settings['disable_hover_effect']); ?>">
 						<?php echo $settings['button_text'];?>
 						<span class="btn-icon">
 							<?php \Elementor\Icons_Manager::render_icon($settings["btn_icon"], ['aria-hidden' => 'true']); ?>
