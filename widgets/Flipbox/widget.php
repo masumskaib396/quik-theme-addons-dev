@@ -38,17 +38,17 @@ class Finest_Flip_Box extends Widget_Base {
 	protected function _register_controls() {
 
 		/* Content Tab */
-		$this->register_content_front_controls();
-		$this->register_content_back_controls();
-		$this->register_content_settings_controls();
+		$this->finest_register_content_front_controls();
+		$this->finest_register_content_back_controls();
+		$this->finest_register_content_settings_controls();
 		/* Style Tab */
-		$this->register_style_front_controls();
-		$this->register_style_back_controls();
-		$this->register_style_button_controls();
+		$this->finest_register_style_front_controls();
+		$this->finest_register_style_back_controls();
+		$this->finest_register_style_button_controls();
 
 		
 	}
-	protected function register_content_front_controls() {
+	protected function finest_register_content_front_controls() {
 		/**
 		 * Content Tab: Front
 		 */
@@ -186,7 +186,7 @@ class Finest_Flip_Box extends Widget_Base {
 
 		$this->end_controls_section();
 	}
-	protected function register_content_back_controls() {
+	protected function finest_register_content_back_controls() {
 		/**
 		 * Content Tab: Back
 		 */
@@ -402,7 +402,7 @@ class Finest_Flip_Box extends Widget_Base {
 
 		$this->end_controls_section();
 	}
-	protected function register_content_settings_controls() {
+	protected function finest_register_content_settings_controls() {
 		/**
 		 * Content Tab: Settings
 		 */
@@ -497,7 +497,7 @@ class Finest_Flip_Box extends Widget_Base {
 
 		$this->end_controls_section();
 	}
-	protected function register_style_front_controls() {
+	protected function finest_register_style_front_controls() {
 		/**
 		 * Style Tab: Front
 		 */
@@ -838,7 +838,7 @@ class Finest_Flip_Box extends Widget_Base {
 
 		$this->end_controls_section();
 	}
-	protected function register_style_back_controls() {
+	protected function finest_register_style_back_controls() {
 		/**
 		 * Style Tab: Back
 		 */
@@ -1178,7 +1178,7 @@ class Finest_Flip_Box extends Widget_Base {
 
 		$this->end_controls_section();
 	}
-	protected function register_style_button_controls() {
+	protected function finest_register_style_button_controls() {
 		/**
 		 * Style Tab: Button
 		 * ------------------

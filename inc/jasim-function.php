@@ -30,4 +30,41 @@
             return call_user_func( $shortcode_tags[$tag], $atts, $content, $tag );
         }
     }
+
+    // wp-forms
+    function get_contact_wp_forms( $plugin = '' ) {
+		$options       = array();
+		$contact_forms = array();
+
+
+		// WPforms
+		if ( 'WP_Forms' == $plugin && function_exists( 'wpforms' ) ) {
+			$args = array(
+				'post_type'      => 'wpforms',
+				'posts_per_page' => -1,
+			);
+
+			$wpf_forms = get_posts( $args );
+
+			if ( ! empty( $wpf_forms ) && ! is_wp_error( $wpf_forms ) ) {
+				foreach ( $wpf_forms as $form ) {
+					$contact_forms[ $form->ID ] = $form->post_title;
+				}
+			}
+		}
+
+		// Contact Forms List
+		if ( ! empty( $contact_forms ) ) {
+			$options[0] = esc_html__( 'Select a Contact Form', 'powerpack' );
+			foreach ( $contact_forms as $form_id => $form_title ) {
+				$options[ $form_id ] = $form_title;
+			}
+		}
+
+		if ( empty( $options ) ) {
+			$options[0] = esc_html__( 'No contact forms found!', 'powerpack' );
+		}
+
+		return $options;
+	}
 ?>
