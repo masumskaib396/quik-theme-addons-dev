@@ -104,6 +104,11 @@ final class Finest_Extension {
 			FINEST_ASSETS_PUBLIC .'/css/animate.css',
 			null,FINEST_VERSION
 		);
+		wp_enqueue_style(
+			'prism',
+			FINEST_ASSETS_PUBLIC .'/css/prism.css',
+			null,FINEST_VERSION
+		);
 
 		// Js enqueue
 		wp_enqueue_script(
@@ -115,6 +120,12 @@ final class Finest_Extension {
 		wp_enqueue_script(
 			'typed',
 			FINEST_ASSETS_PUBLIC .'/js/typed.min.js',
+			['jquery'], FINEST_VERSION, true
+		);
+
+		wp_enqueue_script(
+			'prism',
+			FINEST_ASSETS_PUBLIC .'/js/prism.js',
 			['jquery'], FINEST_VERSION, true
 		);
 
@@ -221,6 +232,9 @@ final class Finest_Extension {
 		require_once( FINEST_WIDGET_DIR . 'Icon-Box/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Flipbox/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'TeamMember/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'ListGroup/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'Tooltip/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'SourceCode/widget.php' );
 
 
 	}

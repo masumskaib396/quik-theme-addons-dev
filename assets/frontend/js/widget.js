@@ -162,12 +162,37 @@
 		};
 
 
+        // Source Code
+		var finestSourceCode = function ($scope) {
+			var $item = $scope.find('.finest-source-code');
+			var $lng_type = $item.data('lng-type');
+			var $after_copy_text = $item.data('after-copy');
+			var $code = $item.find('code.language-' + $lng_type);
+			var $copy_btn = $scope.find('.finest-copy-code-button');
+
+			$copy_btn.on('click', function () {
+				var $temp = $("<textarea>");
+				$(this).append($temp);
+				$temp.val($code.text()).select();
+				document.execCommand("copy");
+				$temp.remove();
+				if ($after_copy_text.length) {
+					$(this).text($after_copy_text);
+				}
+			});
+
+			if ($lng_type !== undefined && $code !== undefined) {
+				Prism.highlightElement($code.get(0));
+			}
+		};
+
 
      // Make sure you run this code under Elementor..
         $(window).on('elementor/frontend/init', function () {
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-animated.default', finestAnimatedText);
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-modal-popup.default', finestModalPopup);
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-creative-button.default', Finest_Creative_Button);
+            elementorFrontend.hooks.addAction('frontend/element_ready/finest-source-code.default', finestSourceCode);
 
         });
 

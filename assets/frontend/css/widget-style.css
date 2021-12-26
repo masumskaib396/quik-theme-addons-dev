@@ -12,18 +12,19 @@ WIDGET STYLESHEET
 6.PRICING BOX
 7.CALL TO ACTION
 8.TESTIMONIAL
-7.Card
-8.Promo-Box
-9.Icon Box
+7.CARD
+8.PROMO BOX
+9.ICON BOX
 10.Flip Box
 11. Team Member
+12. Group List
+13. TOOLTIP
+14. SORCE CODE
 
 
 
 
 ---------------------------------- */
-
-
 /*---------------------------------------------------
 HEADDING
 ----------------------------------------------------*/
@@ -1086,7 +1087,7 @@ TESTIMONIAL
 }
 
 /*---------------------------------------------------
-                      Card
+  CARD
 ----------------------------------------------------*/
 .finest-card-thumb {
     position: relative;
@@ -1304,7 +1305,7 @@ TESTIMONIAL
   }
 
   /********************************************
-                        Promo-Box
+    PROMO BOX
    ********************************************/
 
 
@@ -1372,7 +1373,7 @@ TESTIMONIAL
   }
 
   /*---------------------------------------------------
-                      Icon Box
+    ICON BOX
   ----------------------------------------------------*/
 
   .fd-addons-feature-box-item {
@@ -1992,3 +1993,288 @@ TEAM MEMBER
 }
 
 /* Testimonial style end */
+
+
+/*---------------------------------------------------
+Group List
+----------------------------------------------------*/
+.finest-list-group-wrapper{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.finest-list-group .finest-list-group-wrapper.layout_1{
+  display: flex;
+  flex-direction: column;
+}
+.finest-list-group .finest-list-group-wrapper.layout_2{
+  display: flex;
+  flex-direction: row;
+}
+.finest-list-group .finest-list-group-wrapper .finest-list-group-item, .finest-list-group .finest-list-group-wrapper .finest-list-group-item a{
+  position: relative;
+  line-height: 1;
+  display: flex;
+}
+.finest-list-group .finest-list-group-wrapper .finest-list-group-item.finest-icon-center, .finest-list-group .finest-list-group-wrapper .finest-list-group-item.finest-icon-center a{
+  flex-direction: column;
+}
+
+.finest-list-group .finest-list-group-wrapper .finest-list-group-item.finest-icon-right .finest-list-group-icon{
+  order: 2;
+}
+.finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon .finest-list-group-icon-image img{
+  width: 100%;
+  height:100%;
+  object-fit: cover;
+}
+.finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon .finest-list-group-icon-image{
+  display: flex;
+}
+.finest-list-group .finest-list-group-wrapper.layout_1 .finest-list-group-item:after{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  content: '';
+  left: 0;
+}
+.finest-list-group .finest-list-group-wrapper.layout_2 .finest-list-group-item:after{
+  position: absolute;
+  right: 0;
+  height: 100%;
+  content: '';
+  top: 0;
+}
+
+.finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon.yes{
+  position: relative;
+}
+.finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon.yes i,
+.finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon.yes .finest-list-group-icon-image,
+.finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon.yes .finest-list-group-icon-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon.yes .finest-list-group-icon-number{
+  line-height: 0;
+}
+/* List Group CSS End */
+
+/*---------------------------------------------------
+TOOLTIP
+----------------------------------------------------*/
+.finest-tooltip {
+  transition: all .3s ease;
+}
+
+.finest-tooltip .finest-tooltip-item {
+  position: relative;
+}
+
+.finest-tooltip .finest-tooltip-content-text {
+  line-height: 0.5;
+}
+
+.finest-tooltip-align-left {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+}
+.finest-tooltip-align-center {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.finest-tooltip-align-right {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.finest-tooltip .finest-tooltip-item .finest-tooltip-content {
+  cursor: pointer;
+  line-height: 0.6;
+  font-size: 16px;
+  text-align: center;
+  transition: all .3s ease;
+}
+
+.finest-tooltip .finest-tooltip-item .finest-tooltip-content a img {
+  margin: 0 auto;
+}
+
+.finest-tooltip .finest-tooltip-item .finest-tooltip-text {
+  position: absolute;
+  min-width: 150px;
+  padding: 10px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.25s cubic-bezier(0, 0, 0.2, 1);
+  border-radius: 3px;
+  font-weight: 300;
+  font-size: 16px;
+  box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.2);
+  z-index: 4;
+  -webkit-transition: all 0.25s cubic-bezier(0, 0, 0.2, 1);
+  -moz-transition: all 0.25s cubic-bezier(0, 0, 0.2, 1);
+  -ms-transition: all 0.25s cubic-bezier(0, 0, 0.2, 1);
+  -o-transition: all 0.25s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.finest-tooltip .finest-tooltip-item .finest-tooltip-text:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.finest-tooltip .finest-tooltip-item .finest-tooltip-content:hover {
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.13);
+}
+
+.finest-tooltip .finest-tooltip-item.tooltip-left .finest-tooltip-content:hover ~ .finest-tooltip-text {
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+  visibility: visible;
+  opacity: 1;
+}
+
+.finest-tooltip .finest-tooltip-item.tooltip-left .finest-tooltip-text {
+  top: 50%;
+  right: calc(100% + 1em);
+  -webkit-transform: translate3d(-15px, -50%, 0);
+          transform: translate3d(-15px, -50%, 0);
+}
+
+.finest-tooltip .finest-tooltip-item.tooltip-left .finest-tooltip-text:after {
+  top: 50%;
+  right: -0.5em;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+  border-width: 0.5em 0 0.5em 0.5em;
+  border-color: transparent transparent transparent #f9f9f9;
+}
+
+
+.finest-tooltip .finest-tooltip-item.tooltip-bottom .finest-tooltip-content:hover ~ .finest-tooltip-text {
+  -webkit-transform: translate3d(-50%, 0, 0);
+          transform: translate3d(-50%, 0, 0);
+  visibility: visible;
+  opacity: 1;
+}
+
+.finest-tooltip .finest-tooltip-item.tooltip-bottom .finest-tooltip-text {
+  top: calc(100% + 1em);
+  left: 50%;
+  -webkit-transform: translate3d(-50%, 15px, 0);
+          transform: translate3d(-50%, 15px, 0);
+  text-align: center;
+}
+
+.finest-tooltip .finest-tooltip-item.tooltip-bottom .finest-tooltip-text:after {
+  top: -0.5em;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, 0, 0);
+          transform: translate3d(-50%, 0, 0);
+  border-width: 0 0.5em 0.5em 0.5em;
+  border-color: transparent transparent #f9f9f9 transparent;
+}
+
+
+.finest-tooltip .finest-tooltip-item.tooltip-top .finest-tooltip-content:hover ~ .finest-tooltip-text {
+  -webkit-transform: translate3d(-50%, 0, 0);
+          transform: translate3d(-50%, 0, 0);
+  visibility: visible;
+  opacity: 1;
+}
+
+.finest-tooltip .finest-tooltip-item.tooltip-top .finest-tooltip-text {
+  bottom: calc(100% + 1em);
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -15px, 0);
+          transform: translate3d(-50%, -15px, 0);
+  text-align: center;
+}
+
+.finest-tooltip .finest-tooltip-item.tooltip-top .finest-tooltip-text:after {
+  bottom: -0.5em;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, 0, 0);
+          transform: translate3d(-50%, 0, 0);
+  border-width: 0.5em 0.5em 0 0.5em;
+}
+
+
+.finest-tooltip .finest-tooltip-item.tooltip-right .finest-tooltip-content:hover ~ .finest-tooltip-text {
+  -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+  visibility: visible;
+  opacity: 1;
+}
+
+.finest-tooltip .finest-tooltip-item.tooltip-right .finest-tooltip-text {
+  top: 50%;
+  left: calc(100% + 1em);
+  -webkit-transform: translate3d(15px, -50%, 0);
+          transform: translate3d(15px, -50%, 0);
+  text-align: center;
+}
+
+.finest-tooltip .finest-tooltip-item.tooltip-right .finest-tooltip-text:after {
+  top: 50%;
+  left: -0.5em;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+  border-width: 0.5em 0.5em 0.5em 0;
+  border-color: transparent #fff transparent transparent;
+}
+@media ( max-width: 767px ){
+  .finest-tooltip .finest-tooltip-item.tooltip-right .finest-tooltip-content:hover ~ .finest-tooltip-text {
+    -webkit-transform: translate3d(-405%, -50%, 0);
+      transform: translate3d(-45%, -50%, 0);
+  }
+  .finest-tooltip .finest-tooltip-item.tooltip-left .finest-tooltip-content:hover ~ .finest-tooltip-text {
+    -webkit-transform: translate3d(50%, -50%, 0);
+            transform: translate3d(50%, -50%, 0);
+    visibility: visible;
+    opacity: 1;
+  }
+}
+/* Tooltip End */
+
+/*---------------------------------------------------
+SORCE CODE
+----------------------------------------------------*/
+.finest-source-code pre {
+  position: relative;
+  max-height: 480px;
+}
+.finest-copy-code-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  overflow: visible;
+  padding: 0.65em 0.8em;
+  outline: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: #185ADB;
+  color: #fff;
+  font-size: 1em;
+  opacity: 0;
+}
+.finest-source-code > pre:hover .finest-copy-code-button {
+  opacity: 1;
+}
+.finest-source-code,
+.finest-source-code code,
+.finest-source-code pre,
+.finest-source-code span {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
