@@ -6,11 +6,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Border;
 use \Elementor\Group_Control_Image_Size;
-use Elementor\Core\Schemes\Typography;
 use Elementor\Group_Control_Typography;
 use \Elementor\Group_Control_Background;
 use Elementor\Group_Control_Box_Shadow;
-use Elementor\Group_Control_Css_Filter;
 use \Elementor\Icons_Manager;
 use \Elementor\Utils;
 use \Elementor\Widget_Base;
@@ -49,10 +47,11 @@ class Finest_Promo_Box extends Widget_Base {
 			array(
 				'label'   => __( 'Heading', 'finest-addons' ),
 				'type'    => Controls_Manager::TEXT,
+				'label_block' => true,
 				'dynamic' => array(
 					'active' => true,
 				),
-				'default' => __( 'Heading', 'finest-addons' ),
+				'default' => __( '90% OFF', 'finest-addons' ),
 			)
 		);
 
@@ -61,6 +60,7 @@ class Finest_Promo_Box extends Widget_Base {
 			array(
 				'label'   => __( 'Heading HTML Tag', 'finest-addons' ),
 				'type'    => Controls_Manager::SELECT,
+				'label_block' => true,
 				'default' => 'h4',
 				'options' => array(
 					'h1'   => __( 'H1', 'finest-addons' ),
@@ -96,10 +96,11 @@ class Finest_Promo_Box extends Widget_Base {
 			array(
 				'label'   => __( 'Sub Heading', 'finest-addons' ),
 				'type'    => Controls_Manager::TEXT,
+				'label_block' => true,
 				'dynamic' => array(
 					'active' => true,
 				),
-				'default' => __( 'Sub heading', 'finest-addons' ),
+				'default' => __( 'Buy 1 Get 1 Free Offer', 'finest-addons' ),
 			)
 		);
 
@@ -108,6 +109,7 @@ class Finest_Promo_Box extends Widget_Base {
 			array(
 				'label'   => __( 'Sub Heading HTML Tag', 'finest-addons' ),
 				'type'    => Controls_Manager::SELECT,
+				'label_block' => true,
 				'default' => 'h5',
 				'options' => array(
 					'h1'   => __( 'H1', 'finest-addons' ),
@@ -143,6 +145,7 @@ class Finest_Promo_Box extends Widget_Base {
 			array(
 				'label'   => __( 'Description', 'finest-addons' ),
 				'type'    => Controls_Manager::TEXTAREA,
+				'label_block' => true,
 				'dynamic' => array(
 					'active' => true,
 				),
@@ -280,6 +283,7 @@ class Finest_Promo_Box extends Widget_Base {
 			array(
 				'label'     => __( 'Button Text', 'finest-addons' ),
 				'type'      => Controls_Manager::TEXT,
+				'label_block' => true,
 				'dynamic'   => array(
 					'active' => true,
 				),

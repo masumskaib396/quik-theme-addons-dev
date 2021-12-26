@@ -231,10 +231,15 @@ final class Finest_Extension {
 		require_once( FINEST_WIDGET_DIR . 'Promo-Box/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Icon-Box/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Flipbox/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'Contact Form 7/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'TeamMember/widget.php' );
+<<<<<<< HEAD
 		require_once( FINEST_WIDGET_DIR . 'ListGroup/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Tooltip/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'SourceCode/widget.php' );
+=======
+		require_once( FINEST_WIDGET_DIR . 'WPForms/widget.php' );
+>>>>>>> 9c465d19a27a61a6e8f25135dab3871649264229
 
 
 	}
