@@ -129,9 +129,6 @@ final class Finest_Extension {
 			['jquery'], FINEST_VERSION, true
 		);
 
-
-
-
 	}
 
 	public function finest_editor_scripts_js(){
@@ -233,13 +230,14 @@ final class Finest_Extension {
 		require_once( FINEST_WIDGET_DIR . 'Flipbox/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Contact Form 7/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'TeamMember/widget.php' );
-<<<<<<< HEAD
 		require_once( FINEST_WIDGET_DIR . 'ListGroup/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Tooltip/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'SourceCode/widget.php' );
-=======
 		require_once( FINEST_WIDGET_DIR . 'WPForms/widget.php' );
->>>>>>> 9c465d19a27a61a6e8f25135dab3871649264229
+		require_once( FINEST_WIDGET_DIR . 'BusinessHour/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'Breadcrumb/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'FeatureImage/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'PostNavigation/widget.php' );
 
 
 	}
