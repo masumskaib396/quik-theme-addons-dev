@@ -38,6 +38,7 @@ define( 'FINEST_ASSETS_VERDOR', plugins_url( 'assets/vendor', __FILE__ ) );
 
 
 
+require_once( FINEST_WIDGET_INC . 'Classes/breadcrumb-class.php');
 require_once( FINEST_WIDGET_INC . 'helper-function.php');
 require_once( FINEST_WIDGET_INC . 'jasim-function.php');
 require_once( FINEST_WIDGET . 'base.php' );

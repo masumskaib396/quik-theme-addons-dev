@@ -109,6 +109,11 @@ final class Finest_Extension {
 			FINEST_ASSETS_PUBLIC .'/css/animate.css',
 			null,FINEST_VERSION
 		);
+		wp_enqueue_style(
+			'prism',
+			FINEST_ASSETS_PUBLIC .'/css/prism.css',
+			null,FINEST_VERSION
+		);
 
 		// Js enqueue
 		wp_enqueue_script(
@@ -123,8 +128,11 @@ final class Finest_Extension {
 			['jquery'], FINEST_VERSION, true
 		);
 
-
-
+		wp_enqueue_script(
+			'prism',
+			FINEST_ASSETS_PUBLIC .'/js/prism.js',
+			['jquery'], FINEST_VERSION, true
+		);
 
 	}
 
@@ -227,12 +235,22 @@ final class Finest_Extension {
 		require_once( FINEST_WIDGET_DIR . 'Flipbox/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Contact Form 7/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'TeamMember/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'ListGroup/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'Tooltip/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'SourceCode/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'WPForms/widget.php' );
+<<<<<<< HEAD
 		require_once( FINEST_WIDGET_DIR . 'Fluent-Form/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Category/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Blog Post/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Back-To-Top/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Count-Down/widget.php' );
+=======
+		require_once( FINEST_WIDGET_DIR . 'BusinessHour/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'Breadcrumb/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'FeatureImage/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'PostNavigation/widget.php' );
+>>>>>>> 584fdabd12e322fa0e3da98dad3b4d3cd9e0fa7f
 
 
 	}
