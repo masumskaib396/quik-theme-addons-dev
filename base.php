@@ -86,6 +86,11 @@ final class Finest_Extension {
 			FINEST_ASSETS_PUBLIC .'/css/widget-style.css',
 			null,FINEST_VERSION
 		);
+		wp_enqueue_style(
+			'finest-jasim-style',
+			FINEST_ASSETS_PUBLIC .'/css/jasim.css',
+			null,FINEST_VERSION
+		);
 
 		wp_enqueue_style(
 			'finest-creative-button-style',
@@ -223,6 +228,11 @@ final class Finest_Extension {
 		require_once( FINEST_WIDGET_DIR . 'Contact Form 7/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'TeamMember/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'WPForms/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'Fluent-Form/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'Category/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'Blog Post/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'Back-To-Top/widget.php' );
+		require_once( FINEST_WIDGET_DIR . 'Count-Down/widget.php' );
 
 
 	}

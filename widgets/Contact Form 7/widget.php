@@ -41,11 +41,11 @@ class Finest_Contact_Form extends Widget_Base {
         $this->start_controls_section(
             '_section_cf7',
             [
-                'label' => fd_addons_is_cf7_activated() ? __( 'Contact Form 7', 'finest-addons' ) : __( 'Notice', 'finest-addons' ),
+                'label' => finest_addons_is_cf7_activated() ? __( 'Contact Form 7', 'finest-addons' ) : __( 'Notice', 'finest-addons' ),
                 'tab'   => Controls_Manager::TAB_CONTENT,
             ]
         );
-        if ( !fd_addons_is_cf7_activated() ) {
+        if ( !finest_addons_is_cf7_activated() ) {
             $this->add_control(
                 'cf7_missing_notice',
                 [
@@ -61,7 +61,7 @@ class Finest_Contact_Form extends Widget_Base {
             return;
         }
         $this->add_control(
-            'fd_addons_form_ts',
+            'finest_addons_form_ts',
             [
                 'label'     => __( 'Form List Or ShortCode', 'finest-addons' ),
                 'type'      => Controls_Manager::SELECT,
@@ -79,9 +79,9 @@ class Finest_Contact_Form extends Widget_Base {
                 'label'       => __( 'Select Your Form', 'finest-addons' ),
                 'type'        => Controls_Manager::SELECT,
                 'label_block' => true,
-                'options'     => ['' => __( '', 'finest-addons' )]+\fd_addons_get_cf7_forms(),
+                'options'     => ['' => __( '', 'finest-addons' )]+\finest_addons_get_cf7_forms(),
                 'condition'   => [
-                    'fd_addons_form_ts' => 'formlist',
+                    'finest_addons_form_ts' => 'formlist',
                 ],
             ]
         );
@@ -92,7 +92,7 @@ class Finest_Contact_Form extends Widget_Base {
                 'type'      => Controls_Manager::TEXTAREA,
                 'separator' => 'after',
                 'condition' => [
-                    'fd_addons_form_ts' => 'shortcode',
+                    'finest_addons_form_ts' => 'shortcode',
                 ],
             ]
         );
@@ -630,7 +630,7 @@ class Finest_Contact_Form extends Widget_Base {
             ]
         );
         $this->add_responsive_control(
-            'fd_addons_offset_x_end',
+            'finest_addons_offset_x_end',
             [
                 'label'      => __( 'Offset X', 'finest-addons' ),
                 'type'       => Controls_Manager::SLIDER,
@@ -654,7 +654,7 @@ class Finest_Contact_Form extends Widget_Base {
             ]
         );
         $this->add_responsive_control(
-            'fd_addons_offset_y',
+            'finest_addons_offset_y',
             [
                 'label'      => __( 'Offset Y', 'finest-addons' ),
                 'type'       => Controls_Manager::SLIDER,
@@ -867,30 +867,30 @@ class Finest_Contact_Form extends Widget_Base {
     }
 	
 	protected function render() {
-        if ( !fd_addons_is_cf7_activated() ) {
+        if ( !finest_addons_is_cf7_activated() ) {
             return;
         }
         $settings = $this->get_settings();
-        $fd_addons_form_sl = $settings['fd_addons_form_ts'];
-        $fd_addons_form_id = $settings['form_id'];
-        $fd_addons_contactform_shortecode = $settings['contactform_shortecode'];
+        $finest_addons_form_sl = $settings['finest_addons_form_ts'];
+        $finest_addons_form_id = $settings['form_id'];
+        $finest_addons_contactform_shortecode = $settings['contactform_shortecode'];
 
         ?>
 
-        <?php if ( !empty( $fd_addons_form_id && $fd_addons_form_sl == 'formlist' ) ):
+        <?php if ( !empty( $finest_addons_form_id && $finest_addons_form_sl == 'formlist' ) ):
         ?>
         <div class="finest-addons--contactform-wraper  finest-addons-contact-from ">
             <?php
-echo fd_addons_do_shortcode( 'contact-form-7', [
+echo finest_addons_do_shortcode( 'contact-form-7', [
             'id' => $settings['form_id'],
         ] );
         ?>
         </div>
         <?php
-elseif ( $fd_addons_form_sl == 'shortcode' ):
+elseif ( $finest_addons_form_sl == 'shortcode' ):
         ?>
-            <div class="finest-addons--contactform-wraper <?php echo esc_attr( $fd_addons_form_bp ) ?> finest-addons-contact-from">
-                <?php echo fd_addons_get_meta( $fd_addons_contactform_shortecode ); ?>
+            <div class="finest-addons--contactform-wraper <?php echo esc_attr( $finest_addons_form_bp ) ?> finest-addons-contact-from">
+                <?php echo finest_addons_get_meta( $finest_addons_contactform_shortecode ); ?>
             </div>
             <?php
 endif;

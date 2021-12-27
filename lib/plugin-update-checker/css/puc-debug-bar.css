@@ -12,7 +12,7 @@ table.puc-debug-data {
     background-color: #f9f9f9;
 
     border-radius: 3px;
-    border: 1px solid #dfdfdf;
+    border: 1px solid #dfinestfinestf;
     border-collapse: separate;
 }
 
@@ -37,7 +37,7 @@ table.puc-debug-data td, table.puc-debug-data th {
     border-style: solid;
 
     border-top-color: #fff;
-    border-bottom-color: #dfdfdf;
+    border-bottom-color: #dfinestfinestf;
 
     text-transform: none;
 }
@@ -50,7 +50,7 @@ table.puc-debug-data td {
 }
 
 .puc-ajax-response {
-	border: 1px solid #dfdfdf;
+	border: 1px solid #dfinestfinestf;
 	border-radius: 3px;
 	padding: 0.5em;
 	margin: 5px 0;
