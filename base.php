@@ -239,19 +239,15 @@ final class Finest_Extension {
 		require_once( FINEST_WIDGET_DIR . 'Tooltip/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'SourceCode/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'WPForms/widget.php' );
-<<<<<<< HEAD
 		require_once( FINEST_WIDGET_DIR . 'Fluent-Form/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Category/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Blog Post/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Back-To-Top/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Count-Down/widget.php' );
-=======
 		require_once( FINEST_WIDGET_DIR . 'BusinessHour/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'Breadcrumb/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'FeatureImage/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'PostNavigation/widget.php' );
->>>>>>> 584fdabd12e322fa0e3da98dad3b4d3cd9e0fa7f
-
 
 	}
 }
