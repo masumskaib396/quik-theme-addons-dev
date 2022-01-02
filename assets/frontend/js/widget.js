@@ -162,6 +162,46 @@
 			}
 		};
 
+        // timer
+        function makeTimer() {
+
+            var finest_addonsDate = $(".finest-addons-countdown#date").data("date");
+            var endTime = new Date(finest_addonsDate);
+            endTime = (Date.parse(endTime) / 1000);
+    
+            var now = new Date();
+            now = (Date.parse(now) / 1000);
+    
+            var timeLeft = endTime - now;
+    
+            var days = Math.floor(timeLeft / 86400);
+            var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
+            var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600)) / 60);
+            var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
+    
+            if (hours < "10") {
+                hours = "0" + hours;
+            }
+            if (minutes < "10") {
+                minutes = "0" + minutes;
+            }
+            if (seconds < "10") {
+                seconds = "0" + seconds;
+            }
+    
+            $("#days").html(days);
+            $("#hours").html(hours);
+            $("#minutes").html(minutes);
+            $("#seconds").html(seconds);
+    
+        }
+    
+        var finest_Addons_CountDown = function() {
+            setInterval(function() {
+                makeTimer();
+            }, 1000);
+        }
+        
 
         // Source Code
 		var finestSourceCode = function ($scope) {
@@ -220,8 +260,16 @@
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-animated.default', finestAnimatedText);
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-modal-popup.default', finestModalPopup);
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-creative-button.default', Finest_Creative_Button);
+<<<<<<< HEAD
+            elementorFrontend.hooks.addAction('frontend/element_ready/finest-addons-countdown.default', finest_Addons_CountDown);
+           
+=======
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-source-code.default', finestSourceCode);
+<<<<<<< HEAD
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-content-switcher.default', finestContentSwitcher);
+=======
+>>>>>>> 584fdabd12e322fa0e3da98dad3b4d3cd9e0fa7f
+>>>>>>> 069695112a42c450ecfcc0a88ba743077e2e8f3c
 
         });
 
