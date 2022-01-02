@@ -121,6 +121,7 @@
 
     //Creative Button
 		var Finest_Creative_Button = function($scope) {
+
 			var btn_wrap = $scope.find('.finest-creative-btn-wrap');
 			var magnetic = btn_wrap.data('magnetic');
 			var btn = btn_wrap.find('a.finest-creative-btn');
@@ -224,6 +225,9 @@
 			if ($lng_type !== undefined && $code !== undefined) {
 				Prism.highlightElement($code.get(0));
 			}
+
+
+
 		};
 
         var FD_Addons_Back_To_Top = function($scope, $) {
@@ -246,6 +250,30 @@
     
 
 
+        // Content Switcher Handler
+        var finestContentSwitcher = function ( $scope, $ ) {
+
+            var main_switch = $scope.find( '.finest-content-switcher-toggle-switch' );
+            var main_switch_span = main_switch.find( '.finest-content-switcher-toggle-switch-slider' );
+
+            var content_1 = $scope.find('.finest-content-switcher-primary-wrap');
+            var content_2 = $scope.find('.finest-content-switcher-secondary-wrap');
+
+            if( main_switch_span.is( ':checked' ) ) {
+                content_1.hide();
+                content_2.show();
+            } else {
+                content_1.show();
+                content_2.hide();
+            }
+
+            main_switch_span.on('click', function(e){
+                content_1.toggle();
+                content_2.toggle();
+            });
+        };
+
+
      // Make sure you run this code under Elementor..
         $(window).on('elementor/frontend/init', function () {
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-animated.default', finestAnimatedText);
@@ -253,8 +281,16 @@
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-creative-button.default', Finest_Creative_Button);
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-addons-countdown.default', finest_Addons_CountDown);
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-source-code.default', finestSourceCode);
+<<<<<<< HEAD
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-source-code.default', finestSourceCode);
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-back-to-top.default', FD_Addons_Back_To_Top);
+=======
+<<<<<<< HEAD
+            elementorFrontend.hooks.addAction('frontend/element_ready/finest-content-switcher.default', finestContentSwitcher);
+=======
+>>>>>>> 584fdabd12e322fa0e3da98dad3b4d3cd9e0fa7f
+>>>>>>> 069695112a42c450ecfcc0a88ba743077e2e8f3c
+>>>>>>> 9bc205a9f02b409eaa155082f5732c6b7cd7e548
 
         });
 

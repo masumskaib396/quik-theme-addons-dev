@@ -127,6 +127,13 @@ final class Finest_Extension {
 			['jquery'], FINEST_VERSION, true
 		);
 
+		// Js enqueue
+		wp_enqueue_script(
+			'finest-unfold',
+			FINEST_ASSETS_PUBLIC .'/js/unfold.js',
+			['jquery'], FINEST_VERSION, true
+		);
+
 		wp_enqueue_script(
 			'typed',
 			FINEST_ASSETS_PUBLIC .'/js/typed.min.js',
@@ -218,6 +225,7 @@ final class Finest_Extension {
 		* Extensions Include
 		*/
 		require_once( FINEST_WIDGET_EXTENSIONS . 'custom-css.php' );
+		require_once( FINEST_WIDGET_EXTENSIONS . 'icons-manager.php' );
 
 
 		/*
@@ -253,7 +261,11 @@ final class Finest_Extension {
 		require_once( FINEST_WIDGET_DIR . 'Breadcrumb/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'FeatureImage/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'PostNavigation/widget.php' );
+<<<<<<< HEAD
+		require_once( FINEST_WIDGET_DIR . 'ContentSwitcher/widget.php' );
+=======
 
+>>>>>>> 069695112a42c450ecfcc0a88ba743077e2e8f3c
 	}
 }
 Finest_Extension::instance();
