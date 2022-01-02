@@ -281,16 +281,9 @@
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-creative-button.default', Finest_Creative_Button);
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-addons-countdown.default', finest_Addons_CountDown);
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-source-code.default', finestSourceCode);
-<<<<<<< HEAD
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-source-code.default', finestSourceCode);
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-back-to-top.default', FD_Addons_Back_To_Top);
-=======
-<<<<<<< HEAD
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-content-switcher.default', finestContentSwitcher);
-=======
->>>>>>> 584fdabd12e322fa0e3da98dad3b4d3cd9e0fa7f
->>>>>>> 069695112a42c450ecfcc0a88ba743077e2e8f3c
->>>>>>> 9bc205a9f02b409eaa155082f5732c6b7cd7e548
 
         });
 

@@ -261,11 +261,8 @@ final class Finest_Extension {
 		require_once( FINEST_WIDGET_DIR . 'Breadcrumb/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'FeatureImage/widget.php' );
 		require_once( FINEST_WIDGET_DIR . 'PostNavigation/widget.php' );
-<<<<<<< HEAD
-		require_once( FINEST_WIDGET_DIR . 'ContentSwitcher/widget.php' );
-=======
+		// require_once( FINEST_WIDGET_DIR . 'ContentSwitcher/widget.php' );
 
->>>>>>> 069695112a42c450ecfcc0a88ba743077e2e8f3c
 	}
 }
 Finest_Extension::instance();
