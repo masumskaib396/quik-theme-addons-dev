@@ -115,21 +115,6 @@ class Finest_Blog extends \Elementor\Widget_Base
             'frontend_available' => true,
         ]);
 
-
-        $this->add_control(
-            'first_post_grid',
-            [
-                'label' => __('First Post grid', 'finest-addons'),
-                'type' => \Elementor\Controls_Manager::SELECT,
-                'options' => array(
-                    '' => 'Default',
-                    '12' => '1 Column',
-                    '6' => '2 Column',
-                    '4' => '3 Column',
-                ),
-            ]
-        );
-
         $this->add_control(
             'source',
             [

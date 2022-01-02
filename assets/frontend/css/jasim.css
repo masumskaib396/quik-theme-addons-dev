@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------
-## Widgets
+## WP contact from 
 --------------------------------------------------------------*/
 .finest-contact-form input[type="text"],
 .finest-contact-form input[type="email"],
@@ -134,6 +134,8 @@
 }
 
 /* blog */
+
+
 .contetn-meta ul {
     margin: 0px;
     padding: 0px;
@@ -145,6 +147,10 @@
 .contetn-meta ul li a {
     display: inline-block;
     color: black;
+}
+.post-thumbnail>img {
+    width: 100%;
+    max-width: 100%;
 }
 
 
@@ -191,3 +197,26 @@ li.finest-addons-countdown-item.count-down-inline .text {
 .finest-addons-countdown-wrapper .divider {
     position: relative;
 }
+
+
+/*back to top*/
+.elementor-icon.finest-addons-icon {
+    position: fixed;
+    bottom: 60px;
+    right: 60px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+}
+.elementor-icon.finest-addons-icon.show {
+    opacity: 1;
+    visibility: visible;
+  }

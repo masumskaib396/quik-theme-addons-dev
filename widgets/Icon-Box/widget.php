@@ -457,7 +457,7 @@ class Finest_Icon_Box extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}}  .finest-addons-feature-box-item .finest-addons-feature-icon.icon-type-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}}  .finest-addons-feature-box-item .finest-addons-feature-icon.icon-type-icon svg' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}}  .finest-addons-feature-box-item .finest-addons-feature-icon.icon-type-icon svg' => 'height: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}}  .finest-addons-feature-box-item .finest-addons-feature-icon.icon-type-image img' => 'width: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => [

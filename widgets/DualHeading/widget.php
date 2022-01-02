@@ -599,12 +599,6 @@ class Finest_Dual_Heading extends Widget_Base {
         echo '<div class="finest-addons-dual-heading">';
             echo '<div class="finest-addons-dual-heading-wrapper">';
 
-                if ( 'yes' === $settings['finest_addons_dual_heading_icon_show'] && !empty( $settings['finest_addons_dual_heading_icon']['value'] ) ) :
-                    echo '<span class="finest-addons-dual-heading-icon">';
-                        Icons_Manager::render_icon( $settings['finest_addons_dual_heading_icon'] );
-                    echo '</span>';
-                endif;
-
                 echo '<h1 class="finest-addons-dual-heading-title">';
                     if( !empty( $settings['finest_addons_dual_heading_title_link']['url'] ) ) :
                         echo '<a '.$this->get_render_attribute_string( 'finest_addons_dual_heading_title_link' ).'>';

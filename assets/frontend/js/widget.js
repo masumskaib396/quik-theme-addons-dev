@@ -226,18 +226,35 @@
 			}
 		};
 
+        var FD_Addons_Back_To_Top = function($scope, $) {
+            var btn = $('.finest-addons-icon');
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 300) {
+                  btn.addClass('show');
+                } else {
+                  btn.removeClass('show');
+                }
+            });
+            btn.on('click', function(e) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop:0
+                }, '300');
+            });
+
+        }
+    
+
 
      // Make sure you run this code under Elementor..
         $(window).on('elementor/frontend/init', function () {
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-animated.default', finestAnimatedText);
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-modal-popup.default', finestModalPopup);
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-creative-button.default', Finest_Creative_Button);
-<<<<<<< HEAD
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-addons-countdown.default', finest_Addons_CountDown);
-           
-=======
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-source-code.default', finestSourceCode);
->>>>>>> 584fdabd12e322fa0e3da98dad3b4d3cd9e0fa7f
+            elementorFrontend.hooks.addAction('frontend/element_ready/finest-source-code.default', finestSourceCode);
+            elementorFrontend.hooks.addAction('frontend/element_ready/finest-back-to-top.default', FD_Addons_Back_To_Top);
 
         });
 

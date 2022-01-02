@@ -171,32 +171,20 @@ class Finest_Back_To_Top extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .elementor-icon svg path' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .elementor-icon i' => 'color: {{VALUE}};',
 				],
 			]
 		);
-        $this->add_control(
-			'icon_line_color',
-			[
-				'label' => __( 'SVG Line Color', 'finest-addons' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .elementor-icon svg path' => 'stroke: {{VALUE}};',
-				],
-			]
-		);
+       
 		$this->add_control(
 			'background_color',
 			[
 				'label' => __( 'Background Color', 'finest-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
-				'condition' => [
-					'view!' => 'default',
-				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-icon.finest-addons-icon' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -214,18 +202,7 @@ class Finest_Back_To_Top extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon:hover svg' => 'fill: {{VALUE}};',
-				],
-			]
-		);
-        $this->add_control(
-			'icon_line_color_hover',
-			[
-				'label' => __( 'SVG Line Color', 'finest-addons' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .elementor-icon:hover svg path' => 'stroke: {{VALUE}};',
+					'{{WRAPPER}} .elementor-icon:hover svg path' => 'fill: {{VALUE}};',
 				],
 			]
 		);

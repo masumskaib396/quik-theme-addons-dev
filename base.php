@@ -91,6 +91,11 @@ final class Finest_Extension {
 			FINEST_ASSETS_PUBLIC .'/css/jasim.css',
 			null,FINEST_VERSION
 		);
+		wp_enqueue_style(
+			'finest-blog-grid',
+			FINEST_ASSETS_PUBLIC .'/css/blog-grid.css',
+			null,FINEST_VERSION
+		);
 
 		wp_enqueue_style(
 			'finest-creative-button-style',

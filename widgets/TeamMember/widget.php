@@ -1275,7 +1275,8 @@ class Finest_Team_Member extends Widget_Base {
 					'size'     => 14
 				],
 				'selectors'    => [
-					'{{WRAPPER}} .finest-team-member-social li a i' => 'font-size: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .finest-team-member-social li a i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .finest-team-member-social li a svg' => 'height: {{SIZE}}{{UNIT}};'
 				]
 			]
 		);
@@ -1341,7 +1342,8 @@ class Finest_Team_Member extends Widget_Base {
 						'type'      => Controls_Manager::COLOR,
 						'default'   => '#a4a7aa',
 						'selectors' => [
-							'{{WRAPPER}} .finest-team-member-social li a i' => 'color: {{VALUE}};'
+							'{{WRAPPER}} .finest-team-member-social li a i' => 'color: {{VALUE}};',
+							'{{WRAPPER}} .finest-team-member-social li a svg path' => 'fill: {{VALUE}};'
 						]
 					]
 				);
@@ -1377,7 +1379,8 @@ class Finest_Team_Member extends Widget_Base {
 						'type'      => Controls_Manager::COLOR,
 						'default'   => '#8a8d91',
 						'selectors' => [
-							'{{WRAPPER}} .finest-team-member-social li a:hover i' => 'color: {{VALUE}};'
+							'{{WRAPPER}} .finest-team-member-social li a:hover i' => 'color: {{VALUE}};',
+							'{{WRAPPER}} .finest-team-member-social li a:hover svg path' => 'fill: {{VALUE}};'
 						]
 					]
 				);

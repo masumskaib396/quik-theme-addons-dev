@@ -270,7 +270,8 @@ class Finest_Tooltip extends Widget_Base {
                     'size'     => 18
                 ],
                 'selectors'    => [
-                    '{{WRAPPER}} .finest-tooltip .finest-tooltip-content i' => 'font-size: {{SIZE}}{{UNIT}};'
+                    '{{WRAPPER}} .finest-tooltip .finest-tooltip-content i' => 'font-size: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .finest-tooltip .finest-tooltip-content svg' => 'height: {{SIZE}}{{UNIT}};'
                 ],
                 'condition'    => [
                     'finest_tooltip_type' => [ 'icon' ]
@@ -365,7 +366,9 @@ class Finest_Tooltip extends Widget_Base {
                             'finest_tooltip_type!' => [ 'image' ]
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .finest-tooltip .finest-tooltip-content, {{WRAPPER}} .finest-tooltip .finest-tooltip-content a' => 'color: {{VALUE}};'
+                            '{{WRAPPER}} .finest-tooltip .finest-tooltip-content, 
+                            {{WRAPPER}} .finest-tooltip .finest-tooltip-content a' => 'color: {{VALUE}};',
+                            '{{WRAPPER}} .finest-tooltip .finest-tooltip-content svg path' => 'fill: {{VALUE}};'
 						]
 					]
                 );

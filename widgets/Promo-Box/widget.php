@@ -609,9 +609,10 @@ class Finest_Promo_Box extends Widget_Base {
 					),
 				),
 				'size_units' => array( 'px', 'em' ),
-				'selectors'  => array(
-					'{{WRAPPER}} .finest-promo-box-icon' => 'font-size: {{SIZE}}{{UNIT}}',
-				),
+				'selectors'  => [
+					'{{WRAPPER}} .finest-promo-box-icon .finest-promo-box-icon-inner i' => 'font-size: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .finest-promo-box-icon .finest-promo-box-icon-inner svg' => 'height: {{SIZE}}{{UNIT}}',
+				],
 				'condition'  => array(
 					'icon_switch' => 'yes',
 					'icon_type'   => 'icon',
@@ -663,8 +664,8 @@ class Finest_Promo_Box extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
-					'{{WRAPPER}} .finest-promo-box-icon'     => 'color: {{VALUE}}',
-					'{{WRAPPER}} .finest-promo-box-icon svg' => 'fill: {{VALUE}}',
+					'{{WRAPPER}} .finest-promo-box-icon .finest-promo-box-icon-inner i'   => 'color: {{VALUE}}',
+					'{{WRAPPER}} .finest-promo-box-icon .finest-promo-box-icon-inner svg path' => 'fill: {{VALUE}}',
 				),
 				'condition' => array(
 					'icon_switch' => 'yes',
@@ -754,8 +755,8 @@ class Finest_Promo_Box extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
-					'{{WRAPPER}} .finest-promo-box-icon:hover' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .finest-promo-box-icon:hover svg' => 'fill: {{VALUE}}',
+					'{{WRAPPER}} .finest-promo-box:hover .finest-promo-box-icon i' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .finest-promo-box:hover .finest-promo-box-icon svg path' => 'fill: {{VALUE}}',
 				),
 				'condition' => array(
 					'icon_switch' => 'yes',
@@ -771,7 +772,7 @@ class Finest_Promo_Box extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
-					'{{WRAPPER}} .finest-promo-box-icon:hover' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .finest-promo-box:hover .finest-promo-box-icon' => 'background-color: {{VALUE}}',
 				),
 			)
 		);

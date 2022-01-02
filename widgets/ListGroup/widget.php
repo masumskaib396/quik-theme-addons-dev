@@ -705,7 +705,7 @@ class Finest_List_group extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon svg' => 'height: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon .finest-list-group-icon-image' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
 				],
 			]
@@ -718,7 +718,7 @@ class Finest_List_group extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon i' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon svg path' => 'fill: {{VALUE}}',
 				],
 			]
 		);
