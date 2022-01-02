@@ -52,7 +52,7 @@ class Finest_CountDown extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-counter';
+		return 'feather icon-life-buoy';
 	}
 
 	/**

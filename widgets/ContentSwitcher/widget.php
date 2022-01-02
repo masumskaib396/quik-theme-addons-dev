@@ -43,7 +43,7 @@ class Finest_Content_Switcher extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-post-content';
+		return 'feather icon-toggle-right';
 	}
 
 	public function get_keywords() {

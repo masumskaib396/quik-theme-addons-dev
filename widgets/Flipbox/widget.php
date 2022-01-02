@@ -24,7 +24,7 @@ class Finest_Flip_Box extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-hotspot';
+		return 'feather icon-inbox';
 	}
 
 	public function get_categories() {

@@ -58,7 +58,7 @@ class Finest_Post_Navigation extends \Elementor\Widget_Base
      */
     public function get_icon()
     {
-        return 'eicon-post-navigation';
+        return 'feather icon-navigation';
     }
     /**
      * Get widget categories.

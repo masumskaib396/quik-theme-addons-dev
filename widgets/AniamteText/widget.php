@@ -18,7 +18,7 @@ class Finest_Animated_Text extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-animated-headline';
+		return 'feather icon-type';
 	}
 
    	public function get_categories() {

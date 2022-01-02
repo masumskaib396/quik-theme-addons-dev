@@ -56,7 +56,7 @@ class Finest_Excerpt extends Widget_Base
      */
     public function get_icon()
     {
-        return 'eicon-yoast';
+        return 'feather icon-activity';
     }
     /**
      * Get widget categories.

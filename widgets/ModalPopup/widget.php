@@ -24,7 +24,7 @@ class Finest_Modal_Popup extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-video-playlist';
+		return 'feather icon-maximize';
 	}
 
 	public function get_categories() {

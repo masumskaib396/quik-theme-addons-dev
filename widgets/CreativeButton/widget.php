@@ -34,7 +34,7 @@ class Finest_Creative_Button extends Widget_Base {
      * Get widget icon.
      */
     public function get_icon() {
-        return 'eicon-animated-headline';
+		return 'feather icon-log-in';
     }
 
     /**

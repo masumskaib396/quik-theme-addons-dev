@@ -26,7 +26,7 @@ class Finest_List_group extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-bullet-list';
+		return 'feather icon-list';
 	}
 
 	public function get_categories() {

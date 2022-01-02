@@ -24,7 +24,7 @@ class Finest_Tooltip extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-animated-headline';
+        return 'feather icon-git-commit';
     }
 
 

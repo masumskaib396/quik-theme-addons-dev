@@ -58,7 +58,7 @@ class Finest_Featured_Image extends Widget_Base {
      * @return string Widget icon.
      */
     public function get_icon() {
-        return 'eicon-image';
+        return 'feather icon-image';
     }
     /**
      * Get widget categories.

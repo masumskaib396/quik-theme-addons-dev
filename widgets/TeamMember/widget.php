@@ -27,7 +27,7 @@ class Finest_Team_Member extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-person';
+		return 'feather icon-user-plus';
 	}
 
 	public function get_categories() {

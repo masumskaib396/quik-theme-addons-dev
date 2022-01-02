@@ -21,7 +21,7 @@ class Finest_Icon_Box extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-icon-box';
+		return 'feather icon-list';
 	}
 
 	public function get_categories() {

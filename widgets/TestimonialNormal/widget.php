@@ -24,7 +24,7 @@ class Finest_Normal_Testimonial extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'finest-icon eicon-testimonial';
+		return 'feather icon-layers';
 	}
 
 	public function get_categories() {

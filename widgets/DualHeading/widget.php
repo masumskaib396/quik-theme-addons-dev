@@ -21,7 +21,7 @@ class Finest_Dual_Heading extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-t-letter';
+		return 'feather icon-type';
 	}
 
 	public function get_categories() {

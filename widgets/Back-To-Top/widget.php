@@ -51,7 +51,7 @@ class Finest_Back_To_Top extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-arrow-up';
+		return 'feather icon-arrow-up';
 	}
 	/**
 	 * Get widget categories.

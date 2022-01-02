@@ -52,7 +52,7 @@ class Finest_Blog extends \Elementor\Widget_Base
      */
     public function get_icon()
     {
-        return 'eicon-post-list';
+        return 'feather icon-grid';
     }
     /**
      * Retrieve the list of categories the widget belongs to.

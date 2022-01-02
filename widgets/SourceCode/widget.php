@@ -45,7 +45,7 @@ class Finest_Source_Code extends Widget_Base {
 	 *
 	 */
 	public function get_icon() {
-		return 'eicon-code-bold';
+		return 'feather icon-code';
 	}
 
     public function get_categories() {

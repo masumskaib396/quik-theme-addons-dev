@@ -41,7 +41,7 @@ class Finest_Business_Hour extends Widget_Base {
 	 *
 	 */
 	public function get_icon() {
-		return 'eicon-animated-headline';
+		return 'feather icon-clock';
 	}
 
     public function get_categories() {

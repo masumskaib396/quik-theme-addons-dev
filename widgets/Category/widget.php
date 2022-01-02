@@ -56,7 +56,7 @@ class Finest_Blog_Category extends Widget_Base {
      * @return string Widget icon.
      */
     public function get_icon() {
-        return 'eicon-t-letter';
+        return 'feather icon-settings';
     }
     /**
      * Get widget categories.

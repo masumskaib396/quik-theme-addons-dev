@@ -26,7 +26,7 @@ class Finest_Contact_Form extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-mail';
+		return 'feather icon-mail';
 	}
 
 	public function get_categories() {

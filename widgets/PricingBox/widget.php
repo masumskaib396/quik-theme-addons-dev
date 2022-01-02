@@ -24,7 +24,7 @@ class Finest_Pricing_Box extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-price-list';
+		return 'feather icon-bar-chart-2';
 	}
 
 	public function get_categories() {

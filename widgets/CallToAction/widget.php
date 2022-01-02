@@ -22,7 +22,7 @@ class Finest_Call_To_Action extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-t-letter';
+		return 'feather icon-archive';
 	}
 
    	public function get_categories() {

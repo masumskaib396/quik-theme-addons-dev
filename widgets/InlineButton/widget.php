@@ -36,7 +36,7 @@ class Finest_Inline_Button extends Widget_Base {
      * Get widget icon.
      */
     public function get_icon() {
-        return 'eicon-animated-headline';
+        return 'feather icon-paperclip';
     }
 
     /**

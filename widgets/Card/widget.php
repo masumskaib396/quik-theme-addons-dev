@@ -27,7 +27,7 @@ class Finest_Card extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-posts-group';
+		return 'feather icon-airplay';
 	}
 
 	public function get_categories() {

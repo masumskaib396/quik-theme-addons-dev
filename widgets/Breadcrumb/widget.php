@@ -67,7 +67,7 @@ class Finest_Addons_Breadcrumb extends Widget_Base
      */
     public function get_icon()
     {
-        return 'eicon-yoast';
+        return 'feather icon-server';
     }
     /**
      * Get widget categories.

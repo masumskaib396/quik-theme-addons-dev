@@ -50,7 +50,7 @@ class Finest_Unfold extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-click';
+        return 'feather icon-film';
     }
     public function get_categories() {
         return [ 'finest-addons' ];

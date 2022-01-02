@@ -24,7 +24,7 @@ class Finest_Promo_Box extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-image-hotspot';
+		return 'feather icon-box';
 	}
 
 	public function get_categories() {

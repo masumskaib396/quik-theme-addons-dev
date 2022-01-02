@@ -149,7 +149,11 @@ final class Finest_Extension {
 	}
 
 	public function finest_editor_scripts_js(){
-
+		wp_enqueue_style(
+			'feather-icon',
+			FINEST_ASSETS_PUBLIC .'/fonts/feather-icon/feather-icon-style.min.css',
+			null,FINEST_VERSION
+		);
 		wp_enqueue_script(
 			'finest-addons-editor',
 			FINEST_ASSETS_PUBLIC .'/js/editor.js',
