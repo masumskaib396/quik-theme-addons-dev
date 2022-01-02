@@ -121,6 +121,7 @@
 
     //Creative Button
 		var Finest_Creative_Button = function($scope) {
+
 			var btn_wrap = $scope.find('.finest-creative-btn-wrap');
 			var magnetic = btn_wrap.data('magnetic');
 			var btn = btn_wrap.find('a.finest-creative-btn');
@@ -184,7 +185,34 @@
 			if ($lng_type !== undefined && $code !== undefined) {
 				Prism.highlightElement($code.get(0));
 			}
+
+
+
 		};
+
+
+        // Content Switcher Handler
+        var finestContentSwitcher = function ( $scope, $ ) {
+
+            var main_switch = $scope.find( '.finest-content-switcher-toggle-switch' );
+            var main_switch_span = main_switch.find( '.finest-content-switcher-toggle-switch-slider' );
+
+            var content_1 = $scope.find('.finest-content-switcher-primary-wrap');
+            var content_2 = $scope.find('.finest-content-switcher-secondary-wrap');
+
+            if( main_switch_span.is( ':checked' ) ) {
+                content_1.hide();
+                content_2.show();
+            } else {
+                content_1.show();
+                content_2.hide();
+            }
+
+            main_switch_span.on('click', function(e){
+                content_1.toggle();
+                content_2.toggle();
+            });
+        };
 
 
      // Make sure you run this code under Elementor..
@@ -193,6 +221,7 @@
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-modal-popup.default', finestModalPopup);
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-creative-button.default', Finest_Creative_Button);
             elementorFrontend.hooks.addAction('frontend/element_ready/finest-source-code.default', finestSourceCode);
+            elementorFrontend.hooks.addAction('frontend/element_ready/finest-content-switcher.default', finestContentSwitcher);
 
         });
 

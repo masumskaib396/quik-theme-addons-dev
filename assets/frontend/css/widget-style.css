@@ -15,12 +15,14 @@ WIDGET STYLESHEET
 7.CARD
 8.PROMO BOX
 9.ICON BOX
-10.Flip Box
-11. Team Member
-12. Group List
-13. TOOLTIP
-14. SORCE CODE
-15. BUSINESS HOUR
+10.FLIP BOX
+11.TEAM MEMBER
+12.TEAM MEMBAR
+13.TOOLTIP
+14.SORCE CODE
+15.BUSINESS HOUR
+16.BREADCRUMB
+17.CONTENT TOGGLE
 
 
 
@@ -1582,8 +1584,8 @@ span.finest-addons-feature-icon.icon-type-image img {
 }
 
 /***********************************************
-                      Flip Box
-  ***********************************************/
+FLIP BOX
+***********************************************/
 .finest-flipbox-container {
     position: relative;
     height: 300px;
@@ -2151,7 +2153,7 @@ TEAM MEMBER
 /* Testimonial style end */
 
 /*---------------------------------------------------
-Group List
+GROUP LIST
 ----------------------------------------------------*/
 .finest-list-group-wrapper {
     margin: 0;
@@ -2578,4 +2580,99 @@ ul.finest-addons-breadcrumbs li span.finest-addons-breadcrumbs-text {
 
 span.finest-addons-breadcrumbs-home-icon {
     margin-right: 10px;
+}
+
+
+/*---------------------------------------------------
+CONTENT TOGGLE
+----------------------------------------------------*/
+
+.finest-content-switcher-toggle-switch-label {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.finest-content-switcher-toggle-switch-label input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.finest-content-switcher-toggle-switch-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    display: block;
+    border-style: solid;
+}
+
+.finest-content-switcher-toggle-switch-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 0;
+    top: 50%;
+    /* bottom: 4px; */
+    transform: translateY(-50%);
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .finest-content-switcher-toggle-switch-slider {
+    background-color: #2196F3;
+}
+
+input:focus + .finest-content-switcher-toggle-switch-slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .finest-content-switcher-toggle-switch-slider:before {
+    -webkit-transform: translate(34px, -50%);
+    -ms-transform: translate(34px, -50%);
+    transform: translate(34px, -50%);
+}
+
+.finest-content-switcher-toggle-inner{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 30px 0;
+}
+
+.finest-content-switcher-toggle.finest_switecher_left{
+    justify-content: flex-start;
+    display: flex;
+}
+.finest-content-switcher-toggle.finest_switecher_center{
+    justify-content: center;
+    display: flex;
+}
+.finest-content-switcher-toggle.finest_switecher_right{
+    justify-content: flex-end;
+    display: flex;
+}
+.finest-content-switcher-toggle.finest_switecher_justify{
+    display: block;
+}
+
+.finest-content-switcher-toggle.finest_switecher_justify .finest-content-switcher-toggle-inner{
+    justify-content: center;
+}
+
+.finest-content-switcher-toggle-label-1{
+    cursor: pointer;
+}
+
+.finest-content-switcher-toggle-label-2{
+    cursor: pointer;
 }

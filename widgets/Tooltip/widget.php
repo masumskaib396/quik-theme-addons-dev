@@ -27,6 +27,7 @@ class Finest_Tooltip extends Widget_Base {
         return 'eicon-animated-headline';
     }
 
+
     public function get_keywords() {
         return [ 'finest', 'hover', 'title', 'tooltip', 'ticker' ];
     }
