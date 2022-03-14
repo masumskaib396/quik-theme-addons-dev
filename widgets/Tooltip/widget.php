@@ -1,5 +1,5 @@
 <?php
-namespace Finest_Addons\Widgets;
+namespace Quik_Theme_Addons\Widgets;
 
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Border;
@@ -13,14 +13,14 @@ use \Elementor\Group_Control_Typography;
 use \Elementor\Utils;
 use \Elementor\Widget_Base;
 
-class Finest_Tooltip extends Widget_Base {
+class Quik_Theme_Tooltip extends Widget_Base {
 
     public function get_name() {
-        return 'finest-tooltip';
+        return 'quiktheme-tooltip';
     }
 
     public function get_title() {
-        return __( 'Tooltip', 'finest-addons' );
+        return __( 'Tooltip', 'quiktheme-addons' );
     }
 
     public function get_icon() {
@@ -29,41 +29,41 @@ class Finest_Tooltip extends Widget_Base {
 
 
     public function get_keywords() {
-        return [ 'finest', 'hover', 'title', 'tooltip', 'ticker' ];
+        return [ 'quik-theme-addons', 'hover', 'title', 'tooltip', 'ticker' ];
     }
 
     public function get_categories() {
-        return [ 'finest-addons' ];
+        return [ 'quiktheme-addons' ];
     }
 
     protected function register_controls() {
-        $finest_primary_color = get_option( 'finest_primary_color_option', '#7a56ff' );
+        $quik_theme_primary_color = get_option( 'quik_theme_primary_color_option', '#7a56ff' );
 
         $this->start_controls_section(
             'tooltip_button_content',
             [
-                'label' => __( 'Content Settings', 'finest-addons' )
+                'label' => __( 'Content Settings', 'quiktheme-addons' )
             ]
         );
 
         $this->add_control(
-			'finest_tooltip_type',
+			'quik_theme_tooltip_type',
 			[
-                'label'       => esc_html__( 'Content Type', 'finest-addons' ),
+                'label'       => esc_html__( 'Content Type', 'quiktheme-addons' ),
                 'type'        => Controls_Manager::CHOOSE,
                 'toggle'      => false,
                 'label_block' => true,
                 'options'     => [
 					'icon'      => [
-						'title' => esc_html__( 'Icon', 'finest-addons' ),
+						'title' => esc_html__( 'Icon', 'quiktheme-addons' ),
 						'icon'  => 'eicon-info-circle'
 					],
 					'text'      => [
-						'title' => esc_html__( 'Text', 'finest-addons' ),
+						'title' => esc_html__( 'Text', 'quiktheme-addons' ),
 						'icon'  => 'eicon-text-area'
 					],
 					'image'     => [
-						'title' => esc_html__( 'Image', 'finest-addons' ),
+						'title' => esc_html__( 'Image', 'quiktheme-addons' ),
 						'icon'  => 'eicon-image-bold'
 					]
 				],
@@ -72,37 +72,37 @@ class Finest_Tooltip extends Widget_Base {
 		);
 
   		$this->add_control(
-			'finest_tooltip_content',
+			'quik_theme_tooltip_content',
 			[
-                'label'       => esc_html__( 'Content', 'finest-addons' ),
+                'label'       => esc_html__( 'Content', 'quiktheme-addons' ),
                 'type'        => Controls_Manager::TEXTAREA,
                 'label_block' => true,
-                'default'     => esc_html__( 'Hover Me!', 'finest-addons' ),
+                'default'     => esc_html__( 'Hover Me!', 'quiktheme-addons' ),
                 'condition'   => [
-					'finest_tooltip_type' => [ 'text' ]
+					'quik_theme_tooltip_type' => [ 'text' ]
 				]
 			]
         );
 
 		$this->add_control(
-			'finest_tooltip_icon_content',
+			'quik_theme_tooltip_icon_content',
 			[
-                'label'       => esc_html__( 'Icon', 'finest-addons' ),
+                'label'       => esc_html__( 'Icon', 'quiktheme-addons' ),
                 'type'        => Controls_Manager::ICONS,
                 'default'     => [
                     'value'   => 'fab fa-linux',
                     'library' => 'fa-brands'
                 ],
                 'condition'   => [
-					'finest_tooltip_type' => [ 'icon' ]
+					'quik_theme_tooltip_type' => [ 'icon' ]
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_tooltip_img_content',
+			'quik_theme_tooltip_img_content',
 			[
-                'label'     => esc_html__( 'Image', 'finest-addons' ),
+                'label'     => esc_html__( 'Image', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::MEDIA,
                 'default'   => [
 					'url'   => Utils::get_placeholder_image_src()
@@ -111,7 +111,7 @@ class Finest_Tooltip extends Widget_Base {
 					'active' => true,
 				],
 				'condition' => [
-					'finest_tooltip_type' => [ 'image' ]
+					'quik_theme_tooltip_type' => [ 'image' ]
 				]
 			]
 		);
@@ -119,11 +119,11 @@ class Finest_Tooltip extends Widget_Base {
         $this->add_group_control(
             Group_Control_Image_Size::get_type(),
             [
-                'name'      => 'finest_tooltip_image_size',
+                'name'      => 'quik_theme_tooltip_image_size',
                 'default'   => 'thumbnail',
                 'condition' => [
-                    'finest_tooltip_type'              => [ 'image' ],
-                    'finest_tooltip_img_content[url]!' => ''
+                    'quik_theme_tooltip_type'              => [ 'image' ],
+                    'quik_theme_tooltip_img_content[url]!' => ''
                 ]
             ]
         );
@@ -131,11 +131,11 @@ class Finest_Tooltip extends Widget_Base {
         $this->add_group_control(
 			Group_Control_Css_Filter::get_type(),
 			[
-				'name' => 'finest_tooltip_image_css_filter',
-                'selector' => '{{WRAPPER}} .finest-tooltip .finest-tooltip-content img',
+				'name' => 'quik_theme_tooltip_image_css_filter',
+                'selector' => '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-content img',
                 'condition' => [
-                    'finest_tooltip_type' => [ 'image' ],
-                    'finest_tooltip_img_content[url]!' => ''
+                    'quik_theme_tooltip_type' => [ 'image' ],
+                    'quik_theme_tooltip_img_content[url]!' => ''
 				]
 			]
 		);
@@ -143,53 +143,53 @@ class Finest_Tooltip extends Widget_Base {
         $this->add_control(
             'tooltip_style_section_align',
             [
-                'label'   => __( 'Alignment', 'finest-addons' ),
+                'label'   => __( 'Alignment', 'quiktheme-addons' ),
                 'type'    => Controls_Manager::CHOOSE,
                 'toggle'  => false,
                 'options' => [
                     'left'      => [
-                        'title' => __( 'Left', 'finest-addons' ),
+                        'title' => __( 'Left', 'quiktheme-addons' ),
                         'icon'  => 'eicon-text-align-left'
                     ],
                     'center'    => [
-                        'title' => __( 'Center', 'finest-addons' ),
+                        'title' => __( 'Center', 'quiktheme-addons' ),
                         'icon'  => 'eicon-text-align-center'
                     ],
                     'right'     => [
-                        'title' => __( 'Right', 'finest-addons' ),
+                        'title' => __( 'Right', 'quiktheme-addons' ),
                         'icon'  => 'eicon-text-align-right'
                     ]
                 ],
                 'default'       => 'center',
-                'prefix_class'  => 'finest-tooltip-align-'
+                'prefix_class'  => 'quiktheme-tooltip-align-'
             ]
         );
 
         $this->add_control(
-            'finest_tooltip_enable_link',
+            'quik_theme_tooltip_enable_link',
             [
-                'label'        => __( 'Show Link', 'finest-addons' ),
+                'label'        => __( 'Show Link', 'quiktheme-addons' ),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => __( 'Show', 'finest-addons' ),
-                'label_off'    => __( 'Hide', 'finest-addons' ),
+                'label_on'     => __( 'Show', 'quiktheme-addons' ),
+                'label_off'    => __( 'Hide', 'quiktheme-addons' ),
                 'return_value' => 'yes',
                 'default'      => 'no'
             ]
         );
 
         $this->add_control(
-            'finest_tooltip_link',
+            'quik_theme_tooltip_link',
             [
-                'label'           => __( 'Link', 'finest-addons' ),
+                'label'           => __( 'Link', 'quiktheme-addons' ),
                 'type'            => Controls_Manager::URL,
-                'placeholder'     => __( 'https://your-link.com', 'finest-addons' ),
+                'placeholder'     => __( 'https://your-link.com', 'quiktheme-addons' ),
                 'show_external'   => true,
                 'default'         => [
                     'url'         => '',
                     'is_external' => true
                 ],
                 'condition'       => [
-                    'finest_tooltip_enable_link'=>'yes'
+                    'quik_theme_tooltip_enable_link'=>'yes'
                 ]
             ]
         );
@@ -199,33 +199,33 @@ class Finest_Tooltip extends Widget_Base {
         $this->start_controls_section(
             'tooltip_options',
             [
-                'label' => __( 'Tooltip Options', 'finest-addons' )
+                'label' => __( 'Tooltip Options', 'quiktheme-addons' )
             ]
         );
 
         $this->add_control(
-            'finest_tooltip_text',
+            'quik_theme_tooltip_text',
             [
-                'label'       => esc_html__( 'Tooltip Text', 'finest-addons' ),
+                'label'       => esc_html__( 'Tooltip Text', 'quiktheme-addons' ),
                 'type'        => Controls_Manager::TEXTAREA,
                 'label_block' => true,
-                'default'     => esc_html__( 'These are some dummy tooltip contents.', 'finest-addons' ),
+                'default'     => esc_html__( 'These are some dummy tooltip contents.', 'quiktheme-addons' ),
                 'dynamic'     => [ 'active' => true ]
             ]
         );
 
         $this->add_control(
-          'finest_tooltip_direction',
+          'quik_theme_tooltip_direction',
             [
-                'label'         => esc_html__( 'Direction', 'finest-addons' ),
+                'label'         => esc_html__( 'Direction', 'quiktheme-addons' ),
                 'type'          => Controls_Manager::SELECT,
                 'default'       => 'tooltip-right',
                 'label_block'   => false,
                 'options'       => [
-                    'tooltip-left'   => esc_html__( 'Left', 'finest-addons' ),
-                    'tooltip-right'  => esc_html__( 'Right', 'finest-addons' ),
-                    'tooltip-top'    => esc_html__( 'Top', 'finest-addons' ),
-                    'tooltip-bottom' => esc_html__( 'Bottom', 'finest-addons' )
+                    'tooltip-left'   => esc_html__( 'Left', 'quiktheme-addons' ),
+                    'tooltip-right'  => esc_html__( 'Right', 'quiktheme-addons' ),
+                    'tooltip-top'    => esc_html__( 'Top', 'quiktheme-addons' ),
+                    'tooltip-bottom' => esc_html__( 'Bottom', 'quiktheme-addons' )
                 ]
             ]
         );
@@ -236,7 +236,7 @@ class Finest_Tooltip extends Widget_Base {
         $this->start_controls_section(
             'tooltip_style_section',
             [
-                'label' => __( 'General Styles', 'finest-addons' ),
+                'label' => __( 'General Styles', 'quiktheme-addons' ),
                 'tab'   => Controls_Manager::TAB_STYLE
             ]
         );
@@ -244,19 +244,19 @@ class Finest_Tooltip extends Widget_Base {
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'label'     => __( 'Text Typography', 'finest-addons' ),
-                'name'      => 'finest_tooltip_button_text_typography',
-                'selector'  => '{{WRAPPER}} .finest-tooltip .finest-tooltip-content',
+                'label'     => __( 'Text Typography', 'quiktheme-addons' ),
+                'name'      => 'quik_theme_tooltip_button_text_typography',
+                'selector'  => '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-content',
                 'condition' => [
-                    'finest_tooltip_type' => [ 'text' ]
+                    'quik_theme_tooltip_type' => [ 'text' ]
                 ]
             ]
         );
 
         $this->add_responsive_control(
-            'finest_tooltip_button_icon_size',
+            'quik_theme_tooltip_button_icon_size',
             [
-                'label'        => __( 'Icon Size', 'finest-addons' ),
+                'label'        => __( 'Icon Size', 'quiktheme-addons' ),
                 'type'         => Controls_Manager::SLIDER,
                 'size_units'   => [ 'px' ],
                 'range'        => [
@@ -271,19 +271,19 @@ class Finest_Tooltip extends Widget_Base {
                     'size'     => 18
                 ],
                 'selectors'    => [
-                    '{{WRAPPER}} .finest-tooltip .finest-tooltip-content i' => 'font-size: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .finest-tooltip .finest-tooltip-content svg' => 'height: {{SIZE}}{{UNIT}};'
+                    '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-content i' => 'font-size: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-content svg' => 'height: {{SIZE}}{{UNIT}};'
                 ],
                 'condition'    => [
-                    'finest_tooltip_type' => [ 'icon' ]
+                    'quik_theme_tooltip_type' => [ 'icon' ]
                 ]
             ]
         );
 
 		$this->add_responsive_control(
-			'finest_tooltip_content_width',
+			'quik_theme_tooltip_content_width',
 		    [
-                'label' => __( 'Content Width', 'finest-addons' ),
+                'label' => __( 'Content Width', 'quiktheme-addons' ),
                 'type'  => Controls_Manager::SLIDER,
                 'range' => [
 		            'px'       => [
@@ -303,15 +303,15 @@ class Finest_Tooltip extends Widget_Base {
                     'size'   => 150
                 ],
 		        'selectors'  => [
-		            '{{WRAPPER}} .finest-tooltip .finest-tooltip-content' => 'width: {{SIZE}}{{UNIT}};'
+		            '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-content' => 'width: {{SIZE}}{{UNIT}};'
 		        ]
 		    ]
 		);
 
 		$this->add_responsive_control(
-			'finest_tooltip_content_padding',
+			'quik_theme_tooltip_content_padding',
 			[
-                'label'      => esc_html__( 'Padding', 'finest-addons' ),
+                'label'      => esc_html__( 'Padding', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'default'    => [
@@ -321,7 +321,7 @@ class Finest_Tooltip extends Widget_Base {
                     'left'   => 20
                 ],
 				'selectors'  => [
-	 				'{{WRAPPER}} .finest-tooltip .finest-tooltip-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+	 				'{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 	 			]
 			]
 		);
@@ -329,16 +329,16 @@ class Finest_Tooltip extends Widget_Base {
         $this->add_group_control(
             Group_Control_Border::get_type(),
             [
-                'name'     => 'finest_tooltip_hover_border',
-                'selector' => '{{WRAPPER}} .finest-tooltip .finest-tooltip-content'
+                'name'     => 'quik_theme_tooltip_hover_border',
+                'selector' => '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-content'
             ]
         );
 
 
         $this->add_responsive_control(
-            'finest_tooltip_content_radius',
+            'quik_theme_tooltip_content_radius',
             [
-                'label'      => esc_html__( 'Border Radius', 'finest-addons' ),
+                'label'      => esc_html__( 'Border Radius', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'default'    => [
@@ -348,40 +348,40 @@ class Finest_Tooltip extends Widget_Base {
                     'left'   => 4
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-tooltip .finest-tooltip-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                    '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
                 ]
             ]
         );
 
-		$this->start_controls_tabs( 'finest_tooltip_content_style_tabs' );
+		$this->start_controls_tabs( 'quik_theme_tooltip_content_style_tabs' );
 			// Normal State Tab
-			$this->start_controls_tab( 'finest_tooltip_content_normal', [ 'label' => esc_html__( 'Normal', 'finest-addons' ) ] );
+			$this->start_controls_tab( 'quik_theme_tooltip_content_normal', [ 'label' => esc_html__( 'Normal', 'quiktheme-addons' ) ] );
 
 				$this->add_control(
-					'finest_tooltip_content_color',
+					'quik_theme_tooltip_content_color',
 					[
-                        'label'     => esc_html__( 'Color', 'finest-addons' ),
+                        'label'     => esc_html__( 'Color', 'quiktheme-addons' ),
                         'type'      => Controls_Manager::COLOR,
-                        'default'   => $finest_primary_color,
+                        'default'   => $quik_theme_primary_color,
                         'condition' => [
-                            'finest_tooltip_type!' => [ 'image' ]
+                            'quik_theme_tooltip_type!' => [ 'image' ]
                         ],
                         'selectors' => [
-                            '{{WRAPPER}} .finest-tooltip .finest-tooltip-content, 
-                            {{WRAPPER}} .finest-tooltip .finest-tooltip-content a' => 'color: {{VALUE}};',
-                            '{{WRAPPER}} .finest-tooltip .finest-tooltip-content svg path' => 'fill: {{VALUE}};'
+                            '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-content, 
+                            {{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-content a' => 'color: {{VALUE}};',
+                            '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-content svg path' => 'fill: {{VALUE}};'
 						]
 					]
                 );
 
 				$this->add_control(
-					'finest_tooltip_content_bg_color',
+					'quik_theme_tooltip_content_bg_color',
 					[
-                        'label'     => esc_html__( 'Background Color', 'finest-addons' ),
+                        'label'     => esc_html__( 'Background Color', 'quiktheme-addons' ),
                         'type'      => Controls_Manager::COLOR,
                         'default'   => '#f9f9f9',
                         'selectors' => [
-							'{{WRAPPER}} .finest-tooltip .finest-tooltip-content' => 'background-color: {{VALUE}};'
+							'{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-content' => 'background-color: {{VALUE}};'
 						]
 					]
 				);
@@ -389,40 +389,40 @@ class Finest_Tooltip extends Widget_Base {
                 $this->add_group_control(
                     Group_Control_Box_Shadow::get_type(),
                     [
-                        'name'     => 'finest_tooltip_content_shadow',
-                        'selector' => '{{WRAPPER}} .finest-tooltip .finest-tooltip-content'
+                        'name'     => 'quik_theme_tooltip_content_shadow',
+                        'selector' => '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-content'
                     ]
                 );
 
 			$this->end_controls_tab();
 
 			// Hover State Tab
-			$this->start_controls_tab( 'finest_tooltip_content_hover', [ 'label' => esc_html__( 'Hover', 'finest-addons' ) ] );
+			$this->start_controls_tab( 'quik_theme_tooltip_content_hover', [ 'label' => esc_html__( 'Hover', 'quiktheme-addons' ) ] );
 
 				$this->add_control(
-					'finest_tooltip_content_hover_color',
+					'quik_theme_tooltip_content_hover_color',
 					[
-                        'label'     => esc_html__( 'Color', 'finest-addons' ),
+                        'label'     => esc_html__( 'Color', 'quiktheme-addons' ),
                         'type'      => Controls_Manager::COLOR,
                         'condition' => [
-                            'finest_tooltip_type!' => [ 'image' ]
+                            'quik_theme_tooltip_type!' => [ 'image' ]
                         ],
                         'default'   => '#212121',
                         'selectors' => [
-                            '{{WRAPPER}} .finest-tooltip .finest-tooltip-content:hover'   => 'color: {{VALUE}};',
-                            '{{WRAPPER}} .finest-tooltip .finest-tooltip-content a:hover' => 'color: {{VALUE}};'
+                            '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-content:hover'   => 'color: {{VALUE}};',
+                            '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-content a:hover' => 'color: {{VALUE}};'
 						]
 					]
                 );
 
 				$this->add_control(
-					'finest_tooltip_content_hover_bg_color',
+					'quik_theme_tooltip_content_hover_bg_color',
 					[
-                        'label'     => esc_html__( 'Background Color', 'finest-addons' ),
+                        'label'     => esc_html__( 'Background Color', 'quiktheme-addons' ),
                         'type'      => Controls_Manager::COLOR,
                         'default'   => '#f9f9f9',
                         'selectors' => [
-							'{{WRAPPER}} .finest-tooltip .finest-tooltip-content:hover' => 'background-color: {{VALUE}};'
+							'{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-content:hover' => 'background-color: {{VALUE}};'
 						]
 					]
 				);
@@ -430,8 +430,8 @@ class Finest_Tooltip extends Widget_Base {
                 $this->add_group_control(
                     Group_Control_Box_Shadow::get_type(),
                     [
-                        'name'     => 'finest_tooltip_hover_shadow',
-                        'selector' => '{{WRAPPER}} .finest-tooltip .finest-tooltip-content:hover'
+                        'name'     => 'quik_theme_tooltip_hover_shadow',
+                        'selector' => '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-content:hover'
                     ]
                 );
 
@@ -443,9 +443,9 @@ class Finest_Tooltip extends Widget_Base {
 
         // Tooltip Style tab section
         $this->start_controls_section(
-            'finest_tooltip_style_section',
+            'quik_theme_tooltip_style_section',
             [
-                'label' => __( 'Tooltip Styles', 'finest-addons' ),
+                'label' => __( 'Tooltip Styles', 'quiktheme-addons' ),
                 'tab'   => Controls_Manager::TAB_STYLE
             ]
         );
@@ -454,18 +454,18 @@ class Finest_Tooltip extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'hover_tooltip_content_typography',
-                'selector' => '{{WRAPPER}} .finest-tooltip .finest-tooltip-text'
+                'selector' => '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-text'
             ]
         );
 
         $this->add_control(
-            'finest_tooltip_style_color',
+            'quik_theme_tooltip_style_color',
             [
-                'label'     => __( 'Text Color', 'finest-addons' ),
+                'label'     => __( 'Text Color', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-tooltip .finest-tooltip-item .finest-tooltip-text' => 'color: {{VALUE}};'
+                    '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-item .quiktheme-tooltip-text' => 'color: {{VALUE}};'
                 ]
             ]
         );
@@ -480,17 +480,17 @@ class Finest_Tooltip extends Widget_Base {
                         'default' => 'classic'
                     ],
                     'color'       => [
-                        'default' => $finest_primary_color
+                        'default' => $quik_theme_primary_color
                     ]
                 ],
-                'selector' => '{{WRAPPER}} .finest-tooltip .finest-tooltip-text'
+                'selector' => '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-text'
             ]
         );
 
         $this->add_responsive_control(
-			'finest_tooltip_text_width',
+			'quik_theme_tooltip_text_width',
 		    [
-                'label' => __( 'Tooltip Width', 'finest-addons' ),
+                'label' => __( 'Tooltip Width', 'quiktheme-addons' ),
                 'type'  => Controls_Manager::SLIDER,
                 'range' => [
 		            'px'       => [
@@ -509,15 +509,15 @@ class Finest_Tooltip extends Widget_Base {
                     'size'     => 200
                 ],
 		        'selectors'    => [
-		            '{{WRAPPER}} .finest-tooltip .finest-tooltip-text' => 'width: {{SIZE}}{{UNIT}};'
+		            '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-text' => 'width: {{SIZE}}{{UNIT}};'
 		        ]
 		    ]
 		);
 
         $this->add_responsive_control(
-            'finest_tooltip_text_padding',
+            'quik_theme_tooltip_text_padding',
             [
-                'label'      => __( 'Padding', 'finest-addons' ),
+                'label'      => __( 'Padding', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'default'    => [
@@ -527,16 +527,16 @@ class Finest_Tooltip extends Widget_Base {
                     'left'   => 10
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-tooltip .finest-tooltip-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                    '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
                 ],
                 'separator'  =>'before'
             ]
         );
 
         $this->add_responsive_control(
-            'finest_tooltip_content_border_radius',
+            'quik_theme_tooltip_content_border_radius',
             [
-                'label'      => esc_html__( 'Border Radius', 'finest-addons' ),
+                'label'      => esc_html__( 'Border Radius', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'default'    => [
                     'top'    => 4,
@@ -545,22 +545,22 @@ class Finest_Tooltip extends Widget_Base {
                     'left'   => 4
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-tooltip .finest-tooltip-text' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px !important;'
+                    '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-text' => 'border-radius: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px !important;'
                 ]
             ]
         );
 
         $this->add_control(
-            'finest_tooltip_arrow_color',
+            'quik_theme_tooltip_arrow_color',
             [
-                'label'     => __( 'Arrow Color', 'finest-addons' ),
+                'label'     => __( 'Arrow Color', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::COLOR,
-                'default'   => $finest_primary_color,
+                'default'   => $quik_theme_primary_color,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-tooltip .finest-tooltip-item.tooltip-top .finest-tooltip-text:after' => 'border-color: {{VALUE}} transparent transparent transparent;',
-                    '{{WRAPPER}} .finest-tooltip .finest-tooltip-item.tooltip-left .finest-tooltip-text:after' => 'border-color: transparent transparent transparent {{VALUE}};',
-                    '{{WRAPPER}} .finest-tooltip .finest-tooltip-item.tooltip-bottom .finest-tooltip-text:after' => 'border-color: transparent transparent {{VALUE}} transparent;',
-                    '{{WRAPPER}} .finest-tooltip .finest-tooltip-item.tooltip-right .finest-tooltip-text:after' => 'border-color: transparent {{VALUE}} transparent transparent;'
+                    '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-item.tooltip-top .quiktheme-tooltip-text:after' => 'border-color: {{VALUE}} transparent transparent transparent;',
+                    '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-item.tooltip-left .quiktheme-tooltip-text:after' => 'border-color: transparent transparent transparent {{VALUE}};',
+                    '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-item.tooltip-bottom .quiktheme-tooltip-text:after' => 'border-color: transparent transparent {{VALUE}} transparent;',
+                    '{{WRAPPER}} .quiktheme-tooltip .quiktheme-tooltip-item.tooltip-right .quiktheme-tooltip-text:after' => 'border-color: transparent {{VALUE}} transparent transparent;'
                 ]
             ]
         );
@@ -573,52 +573,52 @@ class Finest_Tooltip extends Widget_Base {
 
         $settings        = $this->get_settings_for_display();
 
-        $this->add_render_attribute( 'finest_tooltip_wrapper', 'class', 'finest-tooltip' );
+        $this->add_render_attribute( 'quik_theme_tooltip_wrapper', 'class', 'quiktheme-tooltip' );
 
-        if( isset( $settings['finest_tooltip_link']['url'] ) ) {
-            $this->add_render_attribute( 'finest_tooltip_link', 'href', esc_url( $settings['finest_tooltip_link']['url'] ) );
-            if( $settings['finest_tooltip_link']['is_external'] ) {
-                $this->add_render_attribute( 'finest_tooltip_link', 'target', '_blank' );
+        if( isset( $settings['quik_theme_tooltip_link']['url'] ) ) {
+            $this->add_render_attribute( 'quik_theme_tooltip_link', 'href', esc_url( $settings['quik_theme_tooltip_link']['url'] ) );
+            if( $settings['quik_theme_tooltip_link']['is_external'] ) {
+                $this->add_render_attribute( 'quik_theme_tooltip_link', 'target', '_blank' );
             }
-            if( $settings['finest_tooltip_link']['nofollow'] ) {
-                $this->add_render_attribute( 'finest_tooltip_link', 'rel', 'nofollow' );
+            if( $settings['quik_theme_tooltip_link']['nofollow'] ) {
+                $this->add_render_attribute( 'quik_theme_tooltip_link', 'rel', 'nofollow' );
             }
         }
 
-        $this->add_inline_editing_attributes( 'finest_tooltip_content', 'basic' );
+        $this->add_inline_editing_attributes( 'quik_theme_tooltip_content', 'basic' );
 
         ?>
 
-        <div <?php echo $this->get_render_attribute_string( 'finest_tooltip_wrapper' ); ?>>
-            <div class="finest-tooltip-item <?php echo esc_attr( $settings['finest_tooltip_direction'] ); ?>">
-                <div class="finest-tooltip-content">
+        <div <?php echo $this->get_render_attribute_string( 'quik_theme_tooltip_wrapper' ); ?>>
+            <div class="quiktheme-tooltip-item <?php echo esc_attr( $settings['quik_theme_tooltip_direction'] ); ?>">
+                <div class="quiktheme-tooltip-content">
 
-                    <?php if( 'yes' === $settings['finest_tooltip_enable_link'] && !empty( $settings['finest_tooltip_link']['url'] ) ) : ?>
-                        <a <?php echo $this->get_render_attribute_string( 'finest_tooltip_link' ); ?>>
+                    <?php if( 'yes' === $settings['quik_theme_tooltip_enable_link'] && !empty( $settings['quik_theme_tooltip_link']['url'] ) ) : ?>
+                        <a <?php echo $this->get_render_attribute_string( 'quik_theme_tooltip_link' ); ?>>
                     <?php endif; ?>
 
-                    <?php if( 'text' === $settings['finest_tooltip_type'] && !empty( $settings['finest_tooltip_content'] ) ) : ?>
-                        <span <?php echo $this->get_render_attribute_string( 'finest_tooltip_content' ); ?>><?php echo wp_kses_post( $settings['finest_tooltip_content'] ); ?></span>';
+                    <?php if( 'text' === $settings['quik_theme_tooltip_type'] && !empty( $settings['quik_theme_tooltip_content'] ) ) : ?>
+                        <span <?php echo $this->get_render_attribute_string( 'quik_theme_tooltip_content' ); ?>><?php echo wp_kses_post( $settings['quik_theme_tooltip_content'] ); ?></span>';
 
-                    <?php elseif( 'icon' === $settings['finest_tooltip_type'] && !empty( $settings['finest_tooltip_icon_content']['value'] ) ) : ?>
-                        <?php Icons_Manager::render_icon( $settings['finest_tooltip_icon_content'] ); ?>
+                    <?php elseif( 'icon' === $settings['quik_theme_tooltip_type'] && !empty( $settings['quik_theme_tooltip_icon_content']['value'] ) ) : ?>
+                        <?php Icons_Manager::render_icon( $settings['quik_theme_tooltip_icon_content'] ); ?>
 
-                    <?php elseif( 'image' === $settings['finest_tooltip_type'] && !empty( $settings['finest_tooltip_img_content']['url'] ) ) : ?>
-                        <?php if ( $settings['finest_tooltip_img_content']['url'] || $settings['finest_tooltip_img_content']['id'] ) { ?>
-                            <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'finest_tooltip_image_size', 'finest_tooltip_img_content' ); ?>
+                    <?php elseif( 'image' === $settings['quik_theme_tooltip_type'] && !empty( $settings['quik_theme_tooltip_img_content']['url'] ) ) : ?>
+                        <?php if ( $settings['quik_theme_tooltip_img_content']['url'] || $settings['quik_theme_tooltip_img_content']['id'] ) { ?>
+                            <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'quik_theme_tooltip_image_size', 'quik_theme_tooltip_img_content' ); ?>
                         <?php } ?>
                     <?php endif; ?>
 
-                    <?php if( 'yes' === $settings['finest_tooltip_enable_link'] && !empty( $settings['finest_tooltip_link']['url'] ) ) : ?>
+                    <?php if( 'yes' === $settings['quik_theme_tooltip_enable_link'] && !empty( $settings['quik_theme_tooltip_link']['url'] ) ) : ?>
                         </a>
                     <?php endif; ?>
 
                 </div>
 
-                <?php $settings['finest_tooltip_text'] ? printf( '<div class="finest-tooltip-text">%s</div>', wp_kses_post( $settings['finest_tooltip_text'] ) ) : ''; ?>
+                <?php $settings['quik_theme_tooltip_text'] ? printf( '<div class="quiktheme-tooltip-text">%s</div>', wp_kses_post( $settings['quik_theme_tooltip_text'] ) ) : ''; ?>
             </div>
         </div>
         <?php
     }
 }
-$widgets_manager->register_widget_type( new \Finest_Addons\Widgets\Finest_Tooltip() );
+$widgets_manager->register_widget_type( new \Quik_Theme_Addons\Widgets\Quik_Theme_Tooltip() );

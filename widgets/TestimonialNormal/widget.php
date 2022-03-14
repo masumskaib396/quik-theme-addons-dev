@@ -1,5 +1,5 @@
 <?php
-namespace Finest_Addons\Widgets;
+namespace Quik_Theme_Addons\Widgets;
 
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Border;
@@ -13,14 +13,14 @@ use \Elementor\Icons_Manager;
 use \Elementor\Utils;
 use \Elementor\Widget_Base;
 
-class Finest_Normal_Testimonial extends Widget_Base {
+class Quik_Theme_Normal_Testimonial extends Widget_Base {
 
     public function get_name() {
-		return 'finest-normal-testimonial';
+		return 'quiktheme-normal-testimonial';
 	}
 
 	public function get_title() {
-		return esc_html__( 'Testimonial', 'finest-addons' );
+		return esc_html__( 'Testimonial', 'quiktheme-addons' );
 	}
 
 	public function get_icon() {
@@ -28,11 +28,11 @@ class Finest_Normal_Testimonial extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'finest-addons' ];
+		return [ 'quiktheme-addons' ];
 	}
 
 	public function get_keywords() {
-        return [ 'finest', 'review', 'feedback', 'testimonial' ];
+        return [ 'quik-theme-addons', 'review', 'feedback', 'testimonial' ];
     }
 
 	protected function register_controls() {
@@ -42,16 +42,16 @@ class Finest_Normal_Testimonial extends Widget_Base {
 		 */
 
 		$this->start_controls_section(
-			'finest-addonstestimonial_section',
+			'quiktheme-addonstestimonial_section',
 			[
-				'label' => esc_html__( 'Contents', 'finest-addons' )
+				'label' => esc_html__( 'Contents', 'quiktheme-addons' )
 			]
 		);
 
 		$this->add_control(
-			'finest_testimonial_image',
+			'quik_theme_testimonial_image',
 			[
-				'label'   => __( 'Image', 'finest-addons' ),
+				'label'   => __( 'Image', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => Utils::get_placeholder_image_src()
@@ -67,17 +67,17 @@ class Finest_Normal_Testimonial extends Widget_Base {
 				'name'      => 'testimonial_thumbnail',
 				'default'   => 'medium_large',
 				'condition' => [
-					'finest_testimonial_image[url]!' => ''
+					'quik_theme_testimonial_image[url]!' => ''
 				],
 			]
 		);
 
 		$this->add_control(
-			'finest_testimonial_description',
+			'quik_theme_testimonial_description',
 			[
-				'label'   => esc_html__( 'Testimonial', 'finest-addons' ),
+				'label'   => esc_html__( 'Testimonial', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::TEXTAREA,
-				'default' => esc_html__( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen.', 'finest-addons' ),
+				'default' => esc_html__( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen.', 'quiktheme-addons' ),
 				'dynamic' => [
 					'active' => true,
 				]
@@ -85,11 +85,11 @@ class Finest_Normal_Testimonial extends Widget_Base {
 		);
 
 		$this->add_control(
-			'finest_testimonial_name',
+			'quik_theme_testimonial_name',
 			[
-				'label'   => esc_html__( 'Name', 'finest-addons' ),
+				'label'   => esc_html__( 'Name', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'John Doe', 'finest-addons' ),
+				'default' => esc_html__( 'John Doe', 'quiktheme-addons' ),
 				'dynamic' => [
 					'active' => true,
 				]
@@ -97,11 +97,11 @@ class Finest_Normal_Testimonial extends Widget_Base {
 		);
 
 		$this->add_control(
-			'finest_testimonial_url',
+			'quik_theme_testimonial_url',
 			[
-				'label' => __( 'URL', 'finest-addons' ),
+				'label' => __( 'URL', 'quiktheme-addons' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'finest-addons' ),
+				'placeholder' => __( 'https://your-link.com', 'quiktheme-addons' ),
 				'show_external' => true,
 				'default' => [
 					'url' => '',
@@ -112,11 +112,11 @@ class Finest_Normal_Testimonial extends Widget_Base {
 		);
 
 		$this->add_control(
-			'finest_testimonial_designation',
+			'quik_theme_testimonial_designation',
 			[
-				'label'   => esc_html__( 'Designation', 'finest-addons' ),
+				'label'   => esc_html__( 'Designation', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Co-Founder', 'finest-addons' ),
+				'default' => esc_html__( 'Co-Founder', 'quiktheme-addons' ),
 				'dynamic' => [
 					'active' => true,
 				]
@@ -124,18 +124,18 @@ class Finest_Normal_Testimonial extends Widget_Base {
 		);
 
 		$this->add_control(
-			'finest_testimonial_enable_rating',
+			'quik_theme_testimonial_enable_rating',
 			[
-				'label'   => esc_html__( 'Display Rating?', 'finest-addons' ),
+				'label'   => esc_html__( 'Display Rating?', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::SWITCHER,
 				'default' => 'no'
 			]
 		);
 
 		$this->add_control(
-			'finest_testimonial_rating_icon',
+			'quik_theme_testimonial_rating_icon',
 			[
-				'label' => __( 'Rating Icon', 'finest-addons' ),
+				'label' => __( 'Rating Icon', 'quiktheme-addons' ),
 				'type' => Controls_Manager::ICONS,
 				'label_block' => false,
 				'default' => [
@@ -145,7 +145,7 @@ class Finest_Normal_Testimonial extends Widget_Base {
 				'skin' => 'inline',
 				'exclude_inline_options' => ['svg'],
 				'condition' => [
-					'finest_testimonial_enable_rating' => 'yes'
+					'quik_theme_testimonial_enable_rating' => 'yes'
 				]
 			]
 		);
@@ -154,14 +154,14 @@ class Finest_Normal_Testimonial extends Widget_Base {
         $rating_number = array_combine( $rating_number, $rating_number );
 
 		$this->add_control(
-		  	'finest_testimonial_rating_number',
+		  	'quik_theme_testimonial_rating_number',
 		  	[
-				'label'   => __( 'Rating Number', 'finest-addons' ),
+				'label'   => __( 'Rating Number', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 5,
 				'options' => $rating_number,
 				'condition' => [
-					'finest_testimonial_enable_rating' => 'yes'
+					'quik_theme_testimonial_enable_rating' => 'yes'
 				]
 		  	]
 		);
@@ -173,48 +173,48 @@ class Finest_Normal_Testimonial extends Widget_Base {
 		 */
 
 		$this->start_controls_section(
-			'finest_testimonial_container_section_style',
+			'quik_theme_testimonial_container_section_style',
 			[
-				'label' => esc_html__( 'Container', 'finest-addons' ),
+				'label' => esc_html__( 'Container', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE
 			]
 		);
 
 		$this->add_control(
-			'finest_testimonial_layout',
+			'quik_theme_testimonial_layout',
 			[
-				'label' => __( 'Layout', 'finest-addons' ),
+				'label' => __( 'Layout', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'layout-1',
 				'options' => [
-					'layout-1'  => __( 'Layout 1', 'finest-addons' ),
-					'layout-2' => __( 'Layout 2', 'finest-addons' ),
+					'layout-1'  => __( 'Layout 1', 'quiktheme-addons' ),
+					'layout-2' => __( 'Layout 2', 'quiktheme-addons' ),
 				],
 			]
 		);
 
 		$this->add_control(
-			'finest_testimonial_container_alignment',
+			'quik_theme_testimonial_container_alignment',
 			[
-				'label'   => __( 'Alignment', 'finest-addons' ),
+				'label'   => __( 'Alignment', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::CHOOSE,
 				'toggle'  => false,
-				'default' => 'finest-testimonial-align-left',
+				'default' => 'quiktheme-testimonial-align-left',
 				'options' => [
-					'finest-testimonial-align-left'   => [
-						'title' => __( 'Left', 'finest-addons' ),
+					'quiktheme-testimonial-align-left'   => [
+						'title' => __( 'Left', 'quiktheme-addons' ),
 						'icon'  => 'eicon-arrow-left'
 					],
-					'finest-testimonial-align-center' => [
-						'title' => __( 'Center', 'finest-addons' ),
+					'quiktheme-testimonial-align-center' => [
+						'title' => __( 'Center', 'quiktheme-addons' ),
 						'icon'  => 'eicon-arrow-up'
 					],
-					'finest-testimonial-align-right'  => [
-						'title' => __( 'Right', 'finest-addons' ),
+					'quiktheme-testimonial-align-right'  => [
+						'title' => __( 'Right', 'quiktheme-addons' ),
 						'icon'  => 'eicon-arrow-right'
 					],
-					'finest-testimonial-align-bottom' => [
-						'title' => __( 'Bottom', 'finest-addons' ),
+					'quiktheme-testimonial-align-bottom' => [
+						'title' => __( 'Bottom', 'quiktheme-addons' ),
 						'icon'  => 'eicon-arrow-down'
 					]
 				]
@@ -222,9 +222,9 @@ class Finest_Normal_Testimonial extends Widget_Base {
 		);
 
 		$this->add_responsive_control(
-			'finest_testimonial_container_padding',
+			'quik_theme_testimonial_container_padding',
 			[
-				'label'      => __( 'Padding', 'finest-addons' ),
+				'label'      => __( 'Padding', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'separator'  => 'before',
@@ -235,15 +235,15 @@ class Finest_Normal_Testimonial extends Widget_Base {
 					'left'   => '20'
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-testimonial-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-testimonial-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_testimonial_container_radius',
+			'quik_theme_testimonial_container_radius',
 			[
-				'label'      => __( 'Border radius', 'finest-addons' ),
+				'label'      => __( 'Border radius', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -253,28 +253,28 @@ class Finest_Normal_Testimonial extends Widget_Base {
 					'left'   => '10'
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-testimonial-wrapper' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-testimonial-wrapper' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
-		$this->start_controls_tabs( 'finest_testimonial_container_tabs' );
+		$this->start_controls_tabs( 'quik_theme_testimonial_container_tabs' );
 
-			$this->start_controls_tab( 'finest_testimonial_container_normal', [ 'label' => esc_html__( 'Normal', 'finest-addons' ) ] );
+			$this->start_controls_tab( 'quik_theme_testimonial_container_normal', [ 'label' => esc_html__( 'Normal', 'quiktheme-addons' ) ] );
 
 				$this->add_group_control(
 					Group_Control_Background::get_type(),
 					[
-						'name'      => 'finest_testimonial_container_background',
+						'name'      => 'quik_theme_testimonial_container_background',
 						'types'     => [ 'classic', 'gradient' ],
-						'selector'  => '{{WRAPPER}} .finest-testimonial-wrapper'
+						'selector'  => '{{WRAPPER}} .quiktheme-testimonial-wrapper'
 					]
 				);
 
 				$this->add_group_control(
 					Group_Control_Border::get_type(),
 					[
-						'name'            => 'finest_testimonial_container_border',
+						'name'            => 'quik_theme_testimonial_container_border',
 						'fields_options'  => [
 							'border'      => [
 								'default' => 'solid'
@@ -291,35 +291,35 @@ class Finest_Normal_Testimonial extends Widget_Base {
 								'default' => '#e3e3e3'
 							]
 						],
-						'selector'        => '{{WRAPPER}} .finest-testimonial-wrapper'
+						'selector'        => '{{WRAPPER}} .quiktheme-testimonial-wrapper'
 					]
 				);
 
 				$this->add_group_control(
 					Group_Control_Box_Shadow::get_type(),
 					[
-						'name'     => 'finest_testimonial_container_box_shadow',
-						'selector' => '{{WRAPPER}} .finest-testimonial-wrapper'
+						'name'     => 'quik_theme_testimonial_container_box_shadow',
+						'selector' => '{{WRAPPER}} .quiktheme-testimonial-wrapper'
 					]
 				);
 
 			$this->end_controls_tab();
 
-			$this->start_controls_tab( 'finest_testimonial_container_hover', [ 'label' => esc_html__( 'Hover', 'finest-addons' ) ] );
+			$this->start_controls_tab( 'quik_theme_testimonial_container_hover', [ 'label' => esc_html__( 'Hover', 'quiktheme-addons' ) ] );
 
 				$this->add_group_control(
 					Group_Control_Background::get_type(),
 					[
-						'name'      => 'finest_testimonial_container_background_hover',
+						'name'      => 'quik_theme_testimonial_container_background_hover',
 						'types'     => [ 'classic' ],
-						'selector'  => '{{WRAPPER}} .finest-testimonial-wrapper:hover'
+						'selector'  => '{{WRAPPER}} .quiktheme-testimonial-wrapper:hover'
 					]
 				);
 
 				$this->add_group_control(
 					Group_Control_Border::get_type(),
 					[
-						'name'            => 'finest_testimonial_container_border_hover',
+						'name'            => 'quik_theme_testimonial_container_border_hover',
 						'fields_options'  => [
 							'border'      => [
 								'default' => 'solid'
@@ -336,15 +336,15 @@ class Finest_Normal_Testimonial extends Widget_Base {
 								'default' => '#e3e3e3'
 							]
 						],
-						'selector'        => '{{WRAPPER}} .finest-testimonial-wrapper:hover'
+						'selector'        => '{{WRAPPER}} .quiktheme-testimonial-wrapper:hover'
 					]
 				);
 
 				$this->add_group_control(
 					Group_Control_Box_Shadow::get_type(),
 					[
-						'name'     => 'finest_testimonial_container_box_shadow_hover',
-						'selector' => '{{WRAPPER}} .finest-testimonial-wrapper:hover'
+						'name'     => 'quik_theme_testimonial_container_box_shadow_hover',
+						'selector' => '{{WRAPPER}} .quiktheme-testimonial-wrapper:hover'
 					]
 				);
 
@@ -353,12 +353,12 @@ class Finest_Normal_Testimonial extends Widget_Base {
 		$this->end_controls_tabs();
 
 		$this->add_control(
-			'finest_testimonial_container_transition_top',
+			'quik_theme_testimonial_container_transition_top',
             [
-				'label'        => __( 'Transition Top', 'finest-addons' ),
+				'label'        => __( 'Transition Top', 'quiktheme-addons' ),
 				'type'         =>  Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'finest-addons' ),
-				'label_off'    => __( 'Hide', 'finest-addons' ),
+				'label_on'     => __( 'Show', 'quiktheme-addons' ),
+				'label_off'    => __( 'Hide', 'quiktheme-addons' ),
 				'separator'   => 'before',
 				'return_value' => 'yes',
 				'default'      => 'yes'
@@ -371,29 +371,29 @@ class Finest_Normal_Testimonial extends Widget_Base {
 		 * testimonial Review Image style
 		 */
 		$this->start_controls_section(
-			'finest_testimonial_image_style',
+			'quik_theme_testimonial_image_style',
 			[
-				'label' => esc_html__( 'Reviewer Image', 'finest-addons' ),
+				'label' => esc_html__( 'Reviewer Image', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE
 			]
 		);
 
 		$this->add_control(
-			'finest_testimonial_image_box',
+			'quik_theme_testimonial_image_box',
 			[
-				'label'        => __( 'Image Box', 'finest-addons' ),
+				'label'        => __( 'Image Box', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'ON', 'finest-addons' ),
-				'label_off'    => __( 'OFF', 'finest-addons' ),
+				'label_on'     => __( 'ON', 'quiktheme-addons' ),
+				'label_off'    => __( 'OFF', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 				'default'      => 'yes'
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_testimonial_image_box_height',
+			'quik_theme_testimonial_image_box_height',
 			[
-				'label'       => __( 'Height', 'finest-addons' ),
+				'label'       => __( 'Height', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::SLIDER,
 				'size_units'  => [ 'px' ],
 				'range'       => [
@@ -407,18 +407,18 @@ class Finest_Normal_Testimonial extends Widget_Base {
 					'size'    => 80
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .finest-testimonial-thumb'=> 'height: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-testimonial-thumb'=> 'height: {{SIZE}}{{UNIT}};'
 				],
 				'condition'   => [
-					'finest_testimonial_image_box' => 'yes'
+					'quik_theme_testimonial_image_box' => 'yes'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_testimonial_image_box_width',
+			'quik_theme_testimonial_image_box_width',
 			[
-				'label'       => __( 'Width', 'finest-addons' ),
+				'label'       => __( 'Width', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::SLIDER,
 				'separator'   => 'after',
 				'range'       => [
@@ -432,14 +432,14 @@ class Finest_Normal_Testimonial extends Widget_Base {
 					'size'    => 80
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .finest-testimonial-thumb'=> 'width: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .finest-testimonial-image-align-left .finest-testimonial-thumb, {{WRAPPER}} .finest-testimonial-image-align-right .finest-testimonial-thumb'=> 'width: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .finest-testimonial-image-align-left .finest-testimonial-reviewer, {{WRAPPER}} .finest-testimonial-image-align-right .finest-testimonial-reviewer'=> 'width: calc( 100% - {{SIZE}}{{UNIT}} );',
-					'{{WRAPPER}} .finest-testimonial-wrapper.finest-testimonial-align-left .finest-testimonial-content-wrapper-arrow::before'=> 'left: calc( {{SIZE}}{{UNIT}} / 2 );',
-					'{{WRAPPER}} .finest-testimonial-wrapper.finest-testimonial-align-right .finest-testimonial-content-wrapper-arrow::before'=> 'right: calc(( {{SIZE}}{{UNIT}} / 2) - 10px);'
+					'{{WRAPPER}} .quiktheme-testimonial-thumb'=> 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-testimonial-image-align-left .quiktheme-testimonial-thumb, {{WRAPPER}} .quiktheme-testimonial-image-align-right .quiktheme-testimonial-thumb'=> 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-testimonial-image-align-left .quiktheme-testimonial-reviewer, {{WRAPPER}} .quiktheme-testimonial-image-align-right .quiktheme-testimonial-reviewer'=> 'width: calc( 100% - {{SIZE}}{{UNIT}} );',
+					'{{WRAPPER}} .quiktheme-testimonial-wrapper.quiktheme-testimonial-align-left .quiktheme-testimonial-content-wrapper-arrow::before'=> 'left: calc( {{SIZE}}{{UNIT}} / 2 );',
+					'{{WRAPPER}} .quiktheme-testimonial-wrapper.quiktheme-testimonial-align-right .quiktheme-testimonial-content-wrapper-arrow::before'=> 'right: calc(( {{SIZE}}{{UNIT}} / 2) - 10px);'
 				],
 				'condition'   => [
-					'finest_testimonial_image_box' => 'yes'
+					'quik_theme_testimonial_image_box' => 'yes'
 				]
 			]
 		);
@@ -447,18 +447,18 @@ class Finest_Normal_Testimonial extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
-				'name'      => 'finest_testimonial_image_box_border',
-				'selector'  => '{{WRAPPER}} .finest-testimonial-thumb',
+				'name'      => 'quik_theme_testimonial_image_box_border',
+				'selector'  => '{{WRAPPER}} .quiktheme-testimonial-thumb',
 				'condition' => [
-					'finest_testimonial_image_box' => 'yes'
+					'quik_theme_testimonial_image_box' => 'yes'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_testimonial_image_box_radius',
+			'quik_theme_testimonial_image_box_radius',
 			[
-				'label'      => __( 'Border radius', 'finest-addons' ),
+				'label'      => __( 'Border radius', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -469,8 +469,8 @@ class Finest_Normal_Testimonial extends Widget_Base {
 					'unit'   => '%'
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-testimonial-thumb'     => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .finest-testimonial-thumb img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-testimonial-thumb'     => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-testimonial-thumb img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -478,15 +478,15 @@ class Finest_Normal_Testimonial extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
-				'name'     => 'finest_testimonial_image_box_shadow',
-				'selector' => '{{WRAPPER}} .finest-testimonial-thumb'
+				'name'     => 'quik_theme_testimonial_image_box_shadow',
+				'selector' => '{{WRAPPER}} .quiktheme-testimonial-thumb'
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_testimonial_image_box_margin_bottom',
+			'quik_theme_testimonial_image_box_margin_bottom',
 			[
-				'label'       => __( 'Bottom Spacing', 'finest-addons' ),
+				'label'       => __( 'Bottom Spacing', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::SLIDER,
 				'size_units'  => [ 'px' ],
 				'range'       => [
@@ -500,10 +500,10 @@ class Finest_Normal_Testimonial extends Widget_Base {
 					'size'    => 0
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .finest-testimonial-thumb'=> 'margin-bottom: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-testimonial-thumb'=> 'margin-bottom: {{SIZE}}{{UNIT}};'
 				],
 				'condition'   => [
-					'finest_testimonial_container_alignment' => 'finest-testimonial-align-bottom'
+					'quik_theme_testimonial_container_alignment' => 'quiktheme-testimonial-align-bottom'
 				]
 			]
 		);
@@ -511,8 +511,8 @@ class Finest_Normal_Testimonial extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Css_Filter::get_type(),
 			[
-				'name' => 'finest_testimonial_image_box_css_filter',
-				'selector' => '{{WRAPPER}} .finest-testimonial-thumb img',
+				'name' => 'quik_theme_testimonial_image_box_css_filter',
+				'selector' => '{{WRAPPER}} .quiktheme-testimonial-thumb img',
 			]
 		);
 
@@ -522,9 +522,9 @@ class Finest_Normal_Testimonial extends Widget_Base {
 		 * Testimonial Testimonial Style Section
 		 */
 		$this->start_controls_section(
-			'finest_testimonial_description_style',
+			'quik_theme_testimonial_description_style',
 			[
-				'label' => esc_html__( 'Testimonial', 'finest-addons' ),
+				'label' => esc_html__( 'Testimonial', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE
 			]
 		);
@@ -532,39 +532,39 @@ class Finest_Normal_Testimonial extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'     => 'finest_testimonial_description_typography',
-				'selector' => '{{WRAPPER}} .finest-testimonial-description'
+				'name'     => 'quik_theme_testimonial_description_typography',
+				'selector' => '{{WRAPPER}} .quiktheme-testimonial-description'
 			]
 		);
 
 		$this->add_control(
-			'finest_testimonial_description_color',
+			'quik_theme_testimonial_description_color',
 			[
-				'label'     => __( 'Text Color', 'finest-addons' ),
+				'label'     => __( 'Text Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#222222',
 				'selectors' => [
-					'{{WRAPPER}} .finest-testimonial-description' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-testimonial-description' => 'color: {{VALUE}};'
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_testimonial_description_bg_color',
+			'quik_theme_testimonial_description_bg_color',
 			[
-				'label'     => __( 'Background Color', 'finest-addons' ),
+				'label'     => __( 'Background Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-testimonial-content-wrapper'               => 'background: {{VALUE}};',
-					'{{WRAPPER}} .finest-testimonial-content-wrapper-arrow::before' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-testimonial-content-wrapper'               => 'background: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-testimonial-content-wrapper-arrow::before' => 'color: {{VALUE}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_testimonial_description_radius',
+			'quik_theme_testimonial_description_radius',
 			[
-				'label'      => __( 'Border Radius', 'finest-addons' ),
+				'label'      => __( 'Border Radius', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -574,15 +574,15 @@ class Finest_Normal_Testimonial extends Widget_Base {
 					'left'   => '0'
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-testimonial-content-wrapper' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-testimonial-content-wrapper' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_testimonial_description_spacing_bottom',
+			'quik_theme_testimonial_description_spacing_bottom',
 			[
-				'label'       => __( 'Bottom Spacing', 'finest-addons' ),
+				'label'       => __( 'Bottom Spacing', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::SLIDER,
 				'size_units'  => [ 'px' ],
 				'range'       => [
@@ -596,18 +596,18 @@ class Finest_Normal_Testimonial extends Widget_Base {
 					'size'    => 20
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .finest-testimonial-content-wrapper' => 'margin-bottom: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-testimonial-content-wrapper' => 'margin-bottom: {{SIZE}}{{UNIT}};'
 				],
 				'condition' => [
-					'finest_testimonial_layout' => 'layout-1'
+					'quik_theme_testimonial_layout' => 'layout-1'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_testimonial_description_spacing_top',
+			'quik_theme_testimonial_description_spacing_top',
 			[
-				'label'       => __( 'Top Spacing', 'finest-addons' ),
+				'label'       => __( 'Top Spacing', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::SLIDER,
 				'size_units'  => [ 'px' ],
 				'range'       => [
@@ -621,18 +621,18 @@ class Finest_Normal_Testimonial extends Widget_Base {
 					'size'    => 20
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .finest-testimonial-content-wrapper' => 'margin-top: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-testimonial-content-wrapper' => 'margin-top: {{SIZE}}{{UNIT}};'
 				],
 				'condition' => [
-					'finest_testimonial_layout' => 'layout-2'
+					'quik_theme_testimonial_layout' => 'layout-2'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_testimonial_description_padding',
+			'quik_theme_testimonial_description_padding',
 			[
-				'label'      => __( 'Padding', 'finest-addons' ),
+				'label'      => __( 'Padding', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -642,7 +642,7 @@ class Finest_Normal_Testimonial extends Widget_Base {
 					'left'   => '0'
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-testimonial-content-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-testimonial-content-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -650,18 +650,18 @@ class Finest_Normal_Testimonial extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
-				'name'     => 'finest_testimonial_description_box_shadow',
-				'selector' => '{{WRAPPER}} .finest-testimonial-content-wrapper'
+				'name'     => 'quik_theme_testimonial_description_box_shadow',
+				'selector' => '{{WRAPPER}} .quiktheme-testimonial-content-wrapper'
 			]
 		);
 
 		$this->add_control(
-			'finest_testimonial_description_arrow_enable',
+			'quik_theme_testimonial_description_arrow_enable',
 			[
-				'label'        => __( 'Show Arrow', 'finest-addons' ),
+				'label'        => __( 'Show Arrow', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'ON', 'finest-addons' ),
-				'label_off'    => __( 'OFF', 'finest-addons' ),
+				'label_on'     => __( 'ON', 'quiktheme-addons' ),
+				'label_off'    => __( 'OFF', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 				'default'      => 'no',
 				'separator'    => 'before'
@@ -674,20 +674,20 @@ class Finest_Normal_Testimonial extends Widget_Base {
 		 * Testimonial Rating Style Section
 		 */
 		$this->start_controls_section(
-			'finest_testimonial_rating_style',
+			'quik_theme_testimonial_rating_style',
 			[
-				'label'     => esc_html__( 'Rating', 'finest-addons' ),
+				'label'     => esc_html__( 'Rating', 'quiktheme-addons' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'finest_testimonial_enable_rating' => 'yes'
+					'quik_theme_testimonial_enable_rating' => 'yes'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_testimonial_rating_size',
+			'quik_theme_testimonial_rating_size',
 			[
-				'label'       => __( 'Icon Size', 'finest-addons' ),
+				'label'       => __( 'Icon Size', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::SLIDER,
 				'size_units'  => [ 'px', '%' ],
 				'range'       => [
@@ -701,15 +701,15 @@ class Finest_Normal_Testimonial extends Widget_Base {
 					'size'    => 20
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .finest-testimonial-ratings li i' => 'font-size: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-testimonial-ratings li i' => 'font-size: {{SIZE}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_testimonial_rating_icon_margin',
+			'quik_theme_testimonial_rating_icon_margin',
 			[
-				'label'       => __( 'Icon Margin', 'finest-addons' ),
+				'label'       => __( 'Icon Margin', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::SLIDER,
 				'size_units'  => [ 'px', '%' ],
 				'range'       => [
@@ -723,15 +723,15 @@ class Finest_Normal_Testimonial extends Widget_Base {
 					'size'    => 5
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .finest-testimonial-ratings li:not(:last-child) i' => 'margin-right: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-testimonial-ratings li:not(:last-child) i' => 'margin-right: {{SIZE}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_testimonial_rating_margin',
+			'quik_theme_testimonial_rating_margin',
 			[
-				'label'        => __( 'Margin', 'finest-addons' ),
+				'label'        => __( 'Margin', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::DIMENSIONS,
 				'size_units'   => [ 'px', '%', 'em' ],
 				'default'      => [
@@ -742,25 +742,25 @@ class Finest_Normal_Testimonial extends Widget_Base {
 					'isLinked' => false
 				],
 				'selectors'    => [
-					'{{WRAPPER}} .finest-testimonial-ratings' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-testimonial-ratings' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
 
-		$this->start_controls_tabs( 'finest_testimonial_rating_tabs' );
+		$this->start_controls_tabs( 'quik_theme_testimonial_rating_tabs' );
 
 			// normal state rating
-			$this->start_controls_tab( 'finest_testimonial_rating_normal', [ 'label' => esc_html__( 'Normal', 'finest-addons' ) ] );
+			$this->start_controls_tab( 'quik_theme_testimonial_rating_normal', [ 'label' => esc_html__( 'Normal', 'quiktheme-addons' ) ] );
 
 				$this->add_control(
-					'finest_testimonial_rating_normal_color',
+					'quik_theme_testimonial_rating_normal_color',
 					[
-						'label'     => __( 'Color', 'finest-addons' ),
+						'label'     => __( 'Color', 'quiktheme-addons' ),
 						'type'      => Controls_Manager::COLOR,
 						'default'   => '#222222',
 						'selectors' => [
-							'{{WRAPPER}} .finest-testimonial-ratings li i' => 'color: {{VALUE}};'
+							'{{WRAPPER}} .quiktheme-testimonial-ratings li i' => 'color: {{VALUE}};'
 						]
 					]
 				);
@@ -768,16 +768,16 @@ class Finest_Normal_Testimonial extends Widget_Base {
 			$this->end_controls_tab();
 
 			// hover state rating
-			$this->start_controls_tab( 'finest_testimonial_rating_active', [ 'label' => esc_html__( 'Active', 'finest-addons' ) ] );
+			$this->start_controls_tab( 'quik_theme_testimonial_rating_active', [ 'label' => esc_html__( 'Active', 'quiktheme-addons' ) ] );
 
 				$this->add_control(
-					'finest_testimonial_rating_active_color',
+					'quik_theme_testimonial_rating_active_color',
 					[
-						'label'     => __( 'Color', 'finest-addons' ),
+						'label'     => __( 'Color', 'quiktheme-addons' ),
 						'type'      => Controls_Manager::COLOR,
 						'default'   => '#ff5b84',
 						'selectors' => [
-							'{{WRAPPER}} .finest-testimonial-ratings li.finest-testimonial-ratings-active i' => 'color: {{VALUE}};'
+							'{{WRAPPER}} .quiktheme-testimonial-ratings li.quiktheme-testimonial-ratings-active i' => 'color: {{VALUE}};'
 						]
 					]
 				);
@@ -792,17 +792,17 @@ class Finest_Normal_Testimonial extends Widget_Base {
 		 * Testimonial Riviewer Style Section
 		 */
 		$this->start_controls_section(
-			'finest_testimonial_reviewer_style',
+			'quik_theme_testimonial_reviewer_style',
 			[
-				'label' => esc_html__( 'Reviewer', 'finest-addons' ),
+				'label' => esc_html__( 'Reviewer', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_testimonial_reviewer_padding',
+			'quik_theme_testimonial_reviewer_padding',
 			[
-				'label'      => __( 'Padding', 'finest-addons' ),
+				'label'      => __( 'Padding', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -812,15 +812,15 @@ class Finest_Normal_Testimonial extends Widget_Base {
 					'left'   => '0'
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-testimonial-reviewer-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-testimonial-reviewer-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_testimonial_reviewer_spacing',
+			'quik_theme_testimonial_reviewer_spacing',
 			[
-				'label'       => __( 'Spacing', 'finest-addons' ),
+				'label'       => __( 'Spacing', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::SLIDER,
 				'size_units'  => [ 'px' ],
 				'range'       => [
@@ -834,11 +834,11 @@ class Finest_Normal_Testimonial extends Widget_Base {
 					'size'    => 20
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .finest-testimonial-wrapper.finest-testimonial-align-left .finest-testimonial-reviewer-wrapper .finest-testimonial-reviewer' => 'padding-left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .finest-testimonial-wrapper.finest-testimonial-align-right .finest-testimonial-reviewer-wrapper .finest-testimonial-reviewer' => 'padding-right: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-testimonial-wrapper.quiktheme-testimonial-align-left .quiktheme-testimonial-reviewer-wrapper .quiktheme-testimonial-reviewer' => 'padding-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-testimonial-wrapper.quiktheme-testimonial-align-right .quiktheme-testimonial-reviewer-wrapper .quiktheme-testimonial-reviewer' => 'padding-right: {{SIZE}}{{UNIT}};'
 				],
 				'condition'   => [
-					'finest_testimonial_container_alignment' => ['finest-testimonial-align-left', 'finest-testimonial-align-right']
+					'quik_theme_testimonial_container_alignment' => ['quiktheme-testimonial-align-left', 'quiktheme-testimonial-align-right']
 				]
 			]
 		);
@@ -847,9 +847,9 @@ class Finest_Normal_Testimonial extends Widget_Base {
 		 * Testimonial Title Style Section
 		 */
 		$this->add_control(
-			'finest_testimonial_title_style',
+			'quik_theme_testimonial_title_style',
 			[
-				'label'     => __( 'Reviewer Title', 'finest-addons' ),
+				'label'     => __( 'Reviewer Title', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -858,8 +858,8 @@ class Finest_Normal_Testimonial extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'             => 'finest_testimonial_title_typography',
-				'selector'         => '{{WRAPPER}} .finest-testimonial-name',
+				'name'             => 'quik_theme_testimonial_title_typography',
+				'selector'         => '{{WRAPPER}} .quiktheme-testimonial-name',
 				'fields_options'   => [
 					'font_size'    => [
 		                'default'  => [
@@ -874,19 +874,19 @@ class Finest_Normal_Testimonial extends Widget_Base {
 			]
 		);
 
-		$this->start_controls_tabs( 'finest_testimonial_title_tabs' );
+		$this->start_controls_tabs( 'quik_theme_testimonial_title_tabs' );
 
 			// normal state rating
-			$this->start_controls_tab( 'finest_testimonial_title_normal', [ 'label' => esc_html__( 'Normal', 'finest-addons' ) ] );
+			$this->start_controls_tab( 'quik_theme_testimonial_title_normal', [ 'label' => esc_html__( 'Normal', 'quiktheme-addons' ) ] );
 
 				$this->add_control(
-					'finest_testimonial_title_color',
+					'quik_theme_testimonial_title_color',
 					[
-						'label'     => __( 'Color', 'finest-addons' ),
+						'label'     => __( 'Color', 'quiktheme-addons' ),
 						'type'      => Controls_Manager::COLOR,
 						'default'   => '#000000',
 						'selectors' => [
-							'{{WRAPPER}} .finest-testimonial-name' => 'color: {{VALUE}};'
+							'{{WRAPPER}} .quiktheme-testimonial-name' => 'color: {{VALUE}};'
 						]
 					]
 				);
@@ -894,15 +894,15 @@ class Finest_Normal_Testimonial extends Widget_Base {
 			$this->end_controls_tab();
 
 			// hover state rating
-			$this->start_controls_tab( 'finest_testimonial_title_hover', [ 'label' => esc_html__( 'Hover', 'finest-addons' ) ] );
+			$this->start_controls_tab( 'quik_theme_testimonial_title_hover', [ 'label' => esc_html__( 'Hover', 'quiktheme-addons' ) ] );
 
 				$this->add_control(
-					'finest_testimonial_title_color_hover',
+					'quik_theme_testimonial_title_color_hover',
 					[
-						'label'     => __( 'Color', 'finest-addons' ),
+						'label'     => __( 'Color', 'quiktheme-addons' ),
 						'type'      => Controls_Manager::COLOR,
 						'selectors' => [
-							'{{WRAPPER}} .finest-testimonial-name:hover' => 'color: {{VALUE}};'
+							'{{WRAPPER}} .quiktheme-testimonial-name:hover' => 'color: {{VALUE}};'
 						]
 					]
 				);
@@ -912,9 +912,9 @@ class Finest_Normal_Testimonial extends Widget_Base {
 		$this->end_controls_tabs();
 
 		$this->add_responsive_control(
-			'finest_testimonial_title_margin',
+			'quik_theme_testimonial_title_margin',
 			[
-				'label'      => __( 'Margin', 'finest-addons' ),
+				'label'      => __( 'Margin', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -924,16 +924,16 @@ class Finest_Normal_Testimonial extends Widget_Base {
 					'left'   => '0'
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-testimonial-name' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-testimonial-name' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
 		// Testimonial Designation Style Section
 		$this->add_control(
-			'finest_testimonial_designation_style',
+			'quik_theme_testimonial_designation_style',
 			[
-				'label'     => __( 'Reviewer Designation', 'finest-addons' ),
+				'label'     => __( 'Reviewer Designation', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
@@ -942,8 +942,8 @@ class Finest_Normal_Testimonial extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'             => 'finest_testimonial_designation_typography',
-				'selector'         => '{{WRAPPER}} .finest-testimonial-designation',
+				'name'             => 'quik_theme_testimonial_designation_typography',
+				'selector'         => '{{WRAPPER}} .quiktheme-testimonial-designation',
 				'fields_options'   => [
 					'font_size'    => [
 		                'default'  => [
@@ -959,21 +959,21 @@ class Finest_Normal_Testimonial extends Widget_Base {
 		);
 
 		$this->add_control(
-			'finest_testimonial_designation_color',
+			'quik_theme_testimonial_designation_color',
 			[
-				'label'     => __( 'Color', 'finest-addons' ),
+				'label'     => __( 'Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#333333',
 				'selectors' => [
-					'{{WRAPPER}} .finest-testimonial-designation' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-testimonial-designation' => 'color: {{VALUE}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_testimonial_designation_margin',
+			'quik_theme_testimonial_designation_margin',
 			[
-				'label'      => __( 'Margin', 'finest-addons' ),
+				'label'      => __( 'Margin', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -983,7 +983,7 @@ class Finest_Normal_Testimonial extends Widget_Base {
 					'left'   => '0'
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-testimonial-designation' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-testimonial-designation' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -996,9 +996,9 @@ class Finest_Normal_Testimonial extends Widget_Base {
 
 		for( $i = 1; $i <= 5; $i++ ) {
 			if( $ratings >= $i ) {
-				$rating_active_class = '<li class="finest-testimonial-ratings-active"><i class="'.$settings['finest_testimonial_rating_icon']['value'].'"></i></li>';
+				$rating_active_class = '<li class="quiktheme-testimonial-ratings-active"><i class="'.$settings['quik_theme_testimonial_rating_icon']['value'].'"></i></li>';
 			} else {
-				$rating_active_class = '<li><i class="'.$settings['finest_testimonial_rating_icon']['value'].'"></i></li>';
+				$rating_active_class = '<li><i class="'.$settings['quik_theme_testimonial_rating_icon']['value'].'"></i></li>';
 			}
 			echo $rating_active_class;
 		}
@@ -1007,7 +1007,7 @@ class Finest_Normal_Testimonial extends Widget_Base {
 	private function render_testimonial_image( $image_url ) {
 		$output = '';
 		if ( !empty( $image_url ) ) :
-			$output .= '<div class="finest-testimonial-thumb">';
+			$output .= '<div class="quiktheme-testimonial-thumb">';
 				$output .= $image_url;
 			$output .= '</div>';
 		endif;
@@ -1017,44 +1017,44 @@ class Finest_Normal_Testimonial extends Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 
-		$testimonial_image_url_html = Group_Control_Image_Size::get_attachment_image_html( $settings, 'testimonial_thumbnail', 'finest_testimonial_image' );
+		$testimonial_image_url_html = Group_Control_Image_Size::get_attachment_image_html( $settings, 'testimonial_thumbnail', 'quik_theme_testimonial_image' );
 		$transition_top = '';
 
-		$target = $settings['finest_testimonial_url']['is_external'] ? ' target="_blank"' : '';
-		$nofollow = $settings['finest_testimonial_url']['nofollow'] ? ' rel="nofollow"' : '';
+		$target = $settings['quik_theme_testimonial_url']['is_external'] ? ' target="_blank"' : '';
+		$nofollow = $settings['quik_theme_testimonial_url']['nofollow'] ? ' rel="nofollow"' : '';
 
-		$this->add_inline_editing_attributes( 'finest_testimonial_name', 'basic' );
-		$this->add_render_attribute( 'finest_testimonial_name', 'class', 'finest-testimonial-name' );
+		$this->add_inline_editing_attributes( 'quik_theme_testimonial_name', 'basic' );
+		$this->add_render_attribute( 'quik_theme_testimonial_name', 'class', 'quiktheme-testimonial-name' );
 
-		$this->add_inline_editing_attributes( 'finest_testimonial_designation', 'basic' );
-		$this->add_render_attribute( 'finest_testimonial_designation', 'class', 'finest-testimonial-designation' );
+		$this->add_inline_editing_attributes( 'quik_theme_testimonial_designation', 'basic' );
+		$this->add_render_attribute( 'quik_theme_testimonial_designation', 'class', 'quiktheme-testimonial-designation' );
 
-		$this->add_inline_editing_attributes( 'finest_testimonial_description', 'basic' );
-		$this->add_render_attribute( 'finest_testimonial_description', 'class', 'finest-testimonial-description' );
+		$this->add_inline_editing_attributes( 'quik_theme_testimonial_description', 'basic' );
+		$this->add_render_attribute( 'quik_theme_testimonial_description', 'class', 'quiktheme-testimonial-description' );
 
-		$this->add_render_attribute( 'finest_testimonial_content_wrapper', 'class', 'finest-testimonial-content-wrapper' );
+		$this->add_render_attribute( 'quik_theme_testimonial_content_wrapper', 'class', 'quiktheme-testimonial-content-wrapper' );
 
-		if ( 'yes' === $settings['finest_testimonial_description_arrow_enable'] ){
-			$this->add_render_attribute( 'finest_testimonial_content_wrapper', 'class', 'finest-testimonial-content-wrapper-arrow' );
+		if ( 'yes' === $settings['quik_theme_testimonial_description_arrow_enable'] ){
+			$this->add_render_attribute( 'quik_theme_testimonial_content_wrapper', 'class', 'quiktheme-testimonial-content-wrapper-arrow' );
 		}
-		if ( 'yes' === $settings['finest_testimonial_container_transition_top'] ){
-			$transition_top = 'finest-testimonial-transition-top-'.$settings['finest_testimonial_container_transition_top'];
+		if ( 'yes' === $settings['quik_theme_testimonial_container_transition_top'] ){
+			$transition_top = 'quiktheme-testimonial-transition-top-'.$settings['quik_theme_testimonial_container_transition_top'];
 		}
 		?>
 
-		<div class="finest-testimonial-wrapper <?php echo esc_attr( $settings['finest_testimonial_container_alignment'] ).' '.$transition_top; ?>">
-			<div class="finest-testimonial-wrapper-inner <?php echo $settings['finest_testimonial_layout']; ?>">
+		<div class="quiktheme-testimonial-wrapper <?php echo esc_attr( $settings['quik_theme_testimonial_container_alignment'] ).' '.$transition_top; ?>">
+			<div class="quiktheme-testimonial-wrapper-inner <?php echo $settings['quik_theme_testimonial_layout']; ?>">
 			<?php
-				if( 'layout-1' === $settings['finest_testimonial_layout'] ) { ?>
+				if( 'layout-1' === $settings['quik_theme_testimonial_layout'] ) { ?>
 
-					<div <?php echo $this->get_render_attribute_string( 'finest_testimonial_content_wrapper' ); ?>>
+					<div <?php echo $this->get_render_attribute_string( 'quik_theme_testimonial_content_wrapper' ); ?>>
 					<?php
-						if ( !empty( $settings['finest_testimonial_description'] ) ) : ?>
-							<p <?php echo $this->get_render_attribute_string( 'finest_testimonial_description' ); ?>><?php echo wp_kses_post( $settings['finest_testimonial_description'] ); ?></p>
+						if ( !empty( $settings['quik_theme_testimonial_description'] ) ) : ?>
+							<p <?php echo $this->get_render_attribute_string( 'quik_theme_testimonial_description' ); ?>><?php echo wp_kses_post( $settings['quik_theme_testimonial_description'] ); ?></p>
 							<?php
-							if ( 'yes' === $settings['finest_testimonial_enable_rating'] ) : ?>
-								<ul class="finest-testimonial-ratings">
-									<?php echo $this->render_testimonial_rating( $settings['finest_testimonial_rating_number'] ); ?>
+							if ( 'yes' === $settings['quik_theme_testimonial_enable_rating'] ) : ?>
+								<ul class="quiktheme-testimonial-ratings">
+									<?php echo $this->render_testimonial_rating( $settings['quik_theme_testimonial_rating_number'] ); ?>
 								</ul>
 							<?php
 							endif;
@@ -1064,45 +1064,45 @@ class Finest_Normal_Testimonial extends Widget_Base {
 					<?php
 				}
 				?>
-				<div class="finest-testimonial-reviewer-wrapper">
+				<div class="quiktheme-testimonial-reviewer-wrapper">
 				<?php
-					if( 'finest-testimonial-align-bottom' !== $settings['finest_testimonial_container_alignment'] ) :
+					if( 'quiktheme-testimonial-align-bottom' !== $settings['quik_theme_testimonial_container_alignment'] ) :
 						echo $this->render_testimonial_image( $testimonial_image_url_html );
 					endif;
 					?>
-					<div class="finest-testimonial-reviewer">
+					<div class="quiktheme-testimonial-reviewer">
 					<?php
-						if ( !empty( $settings['finest_testimonial_name'] ) ) : ?>
-							<a href="<?php echo $settings['finest_testimonial_url']['url']; ?>" <?php echo $target; ?> <?php echo $nofollow; ?>>
-								<h4 <?php echo $this->get_render_attribute_string( 'finest_testimonial_name' ); ?>><?php echo finest_wp_kses( $settings['finest_testimonial_name'] ); ?></h4>
+						if ( !empty( $settings['quik_theme_testimonial_name'] ) ) : ?>
+							<a href="<?php echo $settings['quik_theme_testimonial_url']['url']; ?>" <?php echo $target; ?> <?php echo $nofollow; ?>>
+								<h4 <?php echo $this->get_render_attribute_string( 'quik_theme_testimonial_name' ); ?>><?php echo quik_theme_wp_kses( $settings['quik_theme_testimonial_name'] ); ?></h4>
 							</a>
 						<?php
 						endif;
-						if ( !empty( $settings['finest_testimonial_designation'] ) ) : ?>
-							<span <?php echo $this->get_render_attribute_string( 'finest_testimonial_designation' ); ?>><?php echo finest_wp_kses( $settings['finest_testimonial_designation'] ); ?></span>
+						if ( !empty( $settings['quik_theme_testimonial_designation'] ) ) : ?>
+							<span <?php echo $this->get_render_attribute_string( 'quik_theme_testimonial_designation' ); ?>><?php echo quik_theme_wp_kses( $settings['quik_theme_testimonial_designation'] ); ?></span>
 						<?php
 						endif;
 						?>
 					</div>
 
 					<?php
-					if( 'finest-testimonial-align-bottom' === $settings['finest_testimonial_container_alignment'] ) :
+					if( 'quiktheme-testimonial-align-bottom' === $settings['quik_theme_testimonial_container_alignment'] ) :
 						echo $this->render_testimonial_image( $testimonial_image_url_html );
 					endif;
 					?>
 				</div>
 				<?php
-				if( 'layout-2' === $settings['finest_testimonial_layout'] ) { ?>
+				if( 'layout-2' === $settings['quik_theme_testimonial_layout'] ) { ?>
 
-					<div <?php echo $this->get_render_attribute_string( 'finest_testimonial_content_wrapper' ); ?>>
+					<div <?php echo $this->get_render_attribute_string( 'quik_theme_testimonial_content_wrapper' ); ?>>
 					<?php
-						if ( !empty( $settings['finest_testimonial_description'] ) ) : ?>
-							<p <?php echo $this->get_render_attribute_string( 'finest_testimonial_description' ); ?>><?php echo wp_kses_post( $settings['finest_testimonial_description'] ); ?></p>
+						if ( !empty( $settings['quik_theme_testimonial_description'] ) ) : ?>
+							<p <?php echo $this->get_render_attribute_string( 'quik_theme_testimonial_description' ); ?>><?php echo wp_kses_post( $settings['quik_theme_testimonial_description'] ); ?></p>
 							<?php
-							if ( 'yes' === $settings['finest_testimonial_enable_rating'] ) : ?>
-								<ul class="finest-testimonial-ratings">
+							if ( 'yes' === $settings['quik_theme_testimonial_enable_rating'] ) : ?>
+								<ul class="quiktheme-testimonial-ratings">
 								<?php
-									$this->render_testimonial_rating( $settings['finest_testimonial_rating_number'] ); ?>
+									$this->render_testimonial_rating( $settings['quik_theme_testimonial_rating_number'] ); ?>
 								</ul>
 							<?php
 							endif;
@@ -1117,4 +1117,4 @@ class Finest_Normal_Testimonial extends Widget_Base {
 	<?php
 	}
 }
-$widgets_manager->register_widget_type( new \Finest_Addons\Widgets\Finest_Normal_Testimonial() );
+$widgets_manager->register_widget_type( new \Quik_Theme_Addons\Widgets\Quik_Theme_Normal_Testimonial() );

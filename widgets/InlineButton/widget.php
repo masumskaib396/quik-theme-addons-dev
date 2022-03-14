@@ -1,5 +1,5 @@
 <?php
-namespace Finest\Widgets\Elementor;
+namespace Quiktheme\Widgets\Elementor;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -7,17 +7,17 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Typography;
 use Elementor\Core\Schemes\Typography;
 use Elementor\Widget_Base;
-use Finest\Elementor\Traits\Finest_Inline_Button_Markup;
+use Quiktheme\Elementor\Traits\Quik_Theme_Inline_Button_Markup;
 
-class Finest_Inline_Button extends Widget_Base {
+class Quik_Theme_Inline_Button extends Widget_Base {
 
-	use Finest_Inline_Button_Markup;
+	use Quik_Theme_Inline_Button_Markup;
 
     /**
      * Get widget name.
      */
     public function get_name() {
-		return 'finest-inline-button';
+		return 'quiktheme-inline-button';
 	}
 
 	/**
@@ -29,7 +29,7 @@ class Finest_Inline_Button extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Inline Button', 'finest-addons' );
+		return __( 'Inline Button', 'quiktheme-addons' );
 	}
 
 	/**
@@ -43,11 +43,11 @@ class Finest_Inline_Button extends Widget_Base {
      * Get widget category.
      */
     public function get_categories() {
-		return [ 'finest-addons' ];
+		return [ 'quiktheme-addons' ];
 	}
 
 	public function get_keywords() {
-		return ['link', 'hover', 'animation', 'finest', 'inline'];
+		return ['link', 'hover', 'animation', 'quik-theme-addons', 'inline'];
 	}
 
 	/**
@@ -58,7 +58,7 @@ class Finest_Inline_Button extends Widget_Base {
 		$this->start_controls_section(
 			'_section_title',
 			[
-				'label' => __( 'Button Content', 'finest-addons' ),
+				'label' => __( 'Button Content', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
             ]
 		);
@@ -66,25 +66,25 @@ class Finest_Inline_Button extends Widget_Base {
 		$this->add_control(
 			'animation_style',
 			[
-				'label'   => __( 'Animation Style', 'finest-addons' ),
+				'label'   => __( 'Animation Style', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'carpo',
 				'options' => [
-					'carpo'   => __( 'Carpo', 'finest-addons' ),
-					'carme'   => __( 'Carme', 'finest-addons' ),
-					'dia'     => __( 'Dia', 'finest-addons' ),
-					'eirene'  => __( 'Eirene', 'finest-addons' ),
-					'elara'   => __( 'Elara', 'finest-addons' ),
-					'ersa'    => __( 'Ersa', 'finest-addons' ),
-					'helike'  => __( 'Helike', 'finest-addons' ),
-					'herse'   => __( 'Herse', 'finest-addons' ),
-					'io'      => __( 'Io', 'finest-addons' ),
-					'iocaste' => __( 'Iocaste', 'finest-addons' ),
-					'kale'    => __( 'Kale', 'finest-addons' ),
-					'leda'    => __( 'Leda', 'finest-addons' ),
-					'metis'   => __( 'Metis', 'finest-addons' ),
-					'mneme'   => __( 'Mneme', 'finest-addons' ),
-					'thebe'   => __( 'Thebe', 'finest-addons' ),
+					'carpo'   => __( 'Carpo', 'quiktheme-addons' ),
+					'carme'   => __( 'Carme', 'quiktheme-addons' ),
+					'dia'     => __( 'Dia', 'quiktheme-addons' ),
+					'eirene'  => __( 'Eirene', 'quiktheme-addons' ),
+					'elara'   => __( 'Elara', 'quiktheme-addons' ),
+					'ersa'    => __( 'Ersa', 'quiktheme-addons' ),
+					'helike'  => __( 'Helike', 'quiktheme-addons' ),
+					'herse'   => __( 'Herse', 'quiktheme-addons' ),
+					'io'      => __( 'Io', 'quiktheme-addons' ),
+					'iocaste' => __( 'Iocaste', 'quiktheme-addons' ),
+					'kale'    => __( 'Kale', 'quiktheme-addons' ),
+					'leda'    => __( 'Leda', 'quiktheme-addons' ),
+					'metis'   => __( 'Metis', 'quiktheme-addons' ),
+					'mneme'   => __( 'Mneme', 'quiktheme-addons' ),
+					'thebe'   => __( 'Thebe', 'quiktheme-addons' ),
                 ],
             ]
 		);
@@ -92,11 +92,11 @@ class Finest_Inline_Button extends Widget_Base {
 		$this->add_control(
 			'link_text',
 			[
-				'label'       => __( 'Title', 'finest-addons' ),
+				'label'       => __( 'Title', 'quiktheme-addons' ),
 				'label_block' => true,
 				'type'        => Controls_Manager::TEXT,
-				'default'     => __( 'Inline Button', 'finest-addons' ),
-				'placeholder' => __( 'Type Link Title', 'finest-addons' ),
+				'default'     => __( 'Inline Button', 'quiktheme-addons' ),
+				'placeholder' => __( 'Type Link Title', 'quiktheme-addons' ),
 				'dynamic'     => [
 					'active' => true,
                 ],
@@ -106,19 +106,19 @@ class Finest_Inline_Button extends Widget_Base {
 		$this->add_responsive_control(
             'link_align',
             [
-                'label' => __( 'Alignment', 'finest-addons' ),
+                'label' => __( 'Alignment', 'quiktheme-addons' ),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __( 'Left', 'finest-addons' ),
+                        'title' => __( 'Left', 'quiktheme-addons' ),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __( 'Center', 'finest-addons' ),
+                        'title' => __( 'Center', 'quiktheme-addons' ),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __( 'Right', 'finest-addons' ),
+                        'title' => __( 'Right', 'quiktheme-addons' ),
                         'icon' => 'eicon-text-align-right',
                     ]
                 ],
@@ -130,7 +130,7 @@ class Finest_Inline_Button extends Widget_Base {
                     'right' => 'justify-content: flex-end',
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .finest_content__item' => '{{VALUE}}'
+                    '{{WRAPPER}} .quik_theme_content__item' => '{{VALUE}}'
                 ]
             ]
         );
@@ -138,9 +138,9 @@ class Finest_Inline_Button extends Widget_Base {
 		$this->add_control(
 			'link_url',
 			[
-				'label'         => __( 'Link', 'finest-addons' ),
+				'label'         => __( 'Link', 'quiktheme-addons' ),
 				'type'          => Controls_Manager::URL,
-				'placeholder'   => __( 'https://your-link.com', 'finest-addons' ),
+				'placeholder'   => __( 'https://your-link.com', 'quiktheme-addons' ),
 				'show_external' => true,
 				'default'       => [
 					'url'         => '',
@@ -156,7 +156,7 @@ class Finest_Inline_Button extends Widget_Base {
 		$this->start_controls_section(
 			'_section_media_style',
 			[
-				'label' => __( 'Button Content', 'finest-addons' ),
+				'label' => __( 'Button Content', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
             ]
 		);
@@ -164,11 +164,11 @@ class Finest_Inline_Button extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			[
-				'label'      => __( 'Content Box Padding', 'finest-addons' ),
+				'label'      => __( 'Content Box Padding', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'selectors'  => [
-					'{{WRAPPER}} .finest_content__item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quik_theme_content__item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
 		);
@@ -176,10 +176,10 @@ class Finest_Inline_Button extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => __( 'Link Color', 'finest-addons' ),
+				'label'     => __( 'Link Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-link' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-link' => 'color: {{VALUE}};',
                 ],
             ]
 		);
@@ -187,10 +187,10 @@ class Finest_Inline_Button extends Widget_Base {
         $this->add_control(
 			'title_hover_color',
 			[
-				'label'     => __( 'Link Hover Color', 'finest-addons' ),
+				'label'     => __( 'Link Hover Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-link:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-link:hover' => 'color: {{VALUE}};',
                 ],
             ]
 		);
@@ -199,8 +199,8 @@ class Finest_Inline_Button extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'title_typography',
-				'label'    => __( 'Typography', 'finest-addons' ),
-				'selector' => '{{WRAPPER}} .finest-link',
+				'label'    => __( 'Typography', 'quiktheme-addons' ),
+				'selector' => '{{WRAPPER}} .quiktheme-link',
 				'scheme'   => Typography::TYPOGRAPHY_2,
             ]
 		);
@@ -214,4 +214,4 @@ class Finest_Inline_Button extends Widget_Base {
 	}
 
 }
-$widgets_manager->register_widget_type(new \Finest\Widgets\Elementor\Finest_Inline_Button());
+$widgets_manager->register_widget_type(new \Quiktheme\Widgets\Elementor\Quik_Theme_Inline_Button());

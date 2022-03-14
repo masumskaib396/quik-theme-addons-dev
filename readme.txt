@@ -1,7 +1,7 @@
-=== Finest ===
-Contributors: finest
-Donate link: https://profiles.wordpress.org/finest/
-Tags: Elementor, Elementor Addons, Elementor Free Custom Css, finest
+=== Quiktheme ===
+Contributors: quiktheme-
+Donate link: https://profiles.wordpress.org/quiktheme-addons-dev/
+Tags: Elementor, Elementor Addons, Elementor Free Custom Css, quiktheme-
 Requires at least: 5.0
 Tested up to: 5.8.1
 Requires PHP: 5.6
@@ -14,7 +14,7 @@ Stable tag: 1.0.0
 
 <p>
 
-Finest Addons For Elementor Helper Plugin
+Quiktheme Addons For Elementor Helper Plugin
 
 == Feature ==
 * Custom CSS

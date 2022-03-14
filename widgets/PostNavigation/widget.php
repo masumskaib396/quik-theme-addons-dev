@@ -1,5 +1,5 @@
 <?php
-namespace Finest_Addons\Widgets;
+namespace Quik_Theme_Addons\Widgets;
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
@@ -16,7 +16,7 @@ if ( !defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Finest_Post_Navigation extends \Elementor\Widget_Base
+class Quik_Theme_Post_Navigation extends \Elementor\Widget_Base
 {
     /**
      * Get widget name.
@@ -30,7 +30,7 @@ class Finest_Post_Navigation extends \Elementor\Widget_Base
      */
     public function get_name()
     {
-        return 'finest-addons-post-navigation';
+        return 'quiktheme-addons-post-navigation';
     }
     /**
      * Get widget title.
@@ -44,7 +44,7 @@ class Finest_Post_Navigation extends \Elementor\Widget_Base
      */
     public function get_title()
     {
-        return __('Post Navigation', 'finest-addons');
+        return __('Post Navigation', 'quiktheme-addons');
     }
     /**
      * Get widget icon.
@@ -72,11 +72,11 @@ class Finest_Post_Navigation extends \Elementor\Widget_Base
      */
     public function get_categories()
     {
-        return ['finest-addons'];
+        return ['quiktheme-addons'];
     }
 
     public function get_keywords() {
-		return [ 'finest', 'post', 'navigation', 'nav', 'page' ];
+		return [ 'quik-theme-addons', 'post', 'navigation', 'nav', 'page' ];
 	}
     /**
      * Register oEmbed widget controls.
@@ -94,7 +94,7 @@ class Finest_Post_Navigation extends \Elementor\Widget_Base
         $this->start_controls_section(
             'post_navigation',
             [
-                'label' => __('Post Navigation', 'finest-addons'),
+                'label' => __('Post Navigation', 'quiktheme-addons'),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -102,23 +102,23 @@ class Finest_Post_Navigation extends \Elementor\Widget_Base
         $this->add_control(
             'prev_text',
             [
-                'label' => __('Prev Text', 'finest-addons'),
+                'label' => __('Prev Text', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __('Previous Project', 'finest-addons'),
+                'default' => __('Previous Project', 'quiktheme-addons'),
             ]
         );
         $this->add_control(
             'next_text',
             [
-                'label' => __('Next Text', 'finest-addons'),
+                'label' => __('Next Text', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __('Next Project', 'finest-addons'),
+                'default' => __('Next Project', 'quiktheme-addons'),
             ]
         );
         $this->add_control(
 			'prev_icon',
 			[
-				'label' => __( 'Prev Icon', 'finest-addons' ),
+				'label' => __( 'Prev Icon', 'quiktheme-addons' ),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fas fa-arrow-left',
@@ -129,7 +129,7 @@ class Finest_Post_Navigation extends \Elementor\Widget_Base
         $this->add_control(
 			'next_icon',
 			[
-				'label' => __( 'Next Icon', 'finest-addons' ),
+				'label' => __( 'Next Icon', 'quiktheme-addons' ),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fas fa-arrow-right',
@@ -144,7 +144,7 @@ class Finest_Post_Navigation extends \Elementor\Widget_Base
         $this->start_controls_section(
             'general',
             [
-                'label' => __('Style', 'finest-addons'),
+                'label' => __('Style', 'quiktheme-addons'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -153,8 +153,8 @@ class Finest_Post_Navigation extends \Elementor\Widget_Base
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'label_typo',
-                'label' => __('Prev Next Text Typography', 'finest-addons'),
-                'selector' => '{{WRAPPER}} .finest-addons-addon-post-navigation .nav-label',
+                'label' => __('Prev Next Text Typography', 'quiktheme-addons'),
+                'selector' => '{{WRAPPER}} .quiktheme-addons-addon-post-navigation .nav-label',
             ]
         );
         $this->start_controls_tabs(
@@ -163,47 +163,47 @@ class Finest_Post_Navigation extends \Elementor\Widget_Base
         $this->start_controls_tab(
             'nav_style_normal_tab',
             [
-                'label' => __('Normal', 'finest-addons'),
+                'label' => __('Normal', 'quiktheme-addons'),
             ]
         );
         $this->add_control(
             'label_color',
             [
-                'label' => __('label Color', 'finest-addons'),
+                'label' => __('label Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-addon-post-navigation .nav-label' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-addon-post-navigation .nav-label' => 'color: {{VALUE}}',
                 ],
             ]
         );
         $this->add_control(
             'icon_color',
             [
-                'label' => __('Icon', 'finest-addons'),
+                'label' => __('Icon', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-addon-post-navigation .nav-links a svg path' => 'stroke: {{VALUE}}',
-                    '{{WRAPPER}} .finest-addons-addon-post-navigation .nav-links a i' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-addon-post-navigation .nav-links a svg path' => 'stroke: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-addon-post-navigation .nav-links a i' => 'color: {{VALUE}}',
                 ],
             ]
         );
         $this->add_control(
             'svg_fill_color',
             [
-                'label' => __('Icon Fill Color', 'finest-addons'),
+                'label' => __('Icon Fill Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-addon-post-navigation .nav-links a svg path' => 'fill: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-addon-post-navigation .nav-links a svg path' => 'fill: {{VALUE}}',
                 ],
             ]
         );
         $this->add_control(
             'nav_background',
             [
-                'label' => __('Background Color', 'finest-addons'),
+                'label' => __('Background Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-addon-post-navigation .nav-links a' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-addon-post-navigation .nav-links a' => 'background-color: {{VALUE}}',
                 ],
             ]
         );
@@ -211,7 +211,7 @@ class Finest_Post_Navigation extends \Elementor\Widget_Base
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name' => 'nav_border',
-                'label' => __('Border', 'finest-addons'),
+                'label' => __('Border', 'quiktheme-addons'),
                 'selector' => '{{WRAPPER}} .nav-links a',
             ]
         );
@@ -219,14 +219,14 @@ class Finest_Post_Navigation extends \Elementor\Widget_Base
             \Elementor\Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'nav_shadow',
-                'label' => __('Button Shadow', 'finest-addons'),
+                'label' => __('Button Shadow', 'quiktheme-addons'),
                 'selector' => '{{WRAPPER}} .nav-links a',
             ]
         );
         $this->add_responsive_control(
             'nav_radius',
             [
-                'label' => __('Border Radius', 'finest-addons'),
+                'label' => __('Border Radius', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -238,7 +238,7 @@ class Finest_Post_Navigation extends \Elementor\Widget_Base
         $this->add_responsive_control(
 			'icon_gap',
 			[
-				'label' => __( 'Icon gap', 'finest-addons' ),
+				'label' => __( 'Icon gap', 'quiktheme-addons' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -252,10 +252,10 @@ class Finest_Post_Navigation extends \Elementor\Widget_Base
 					],
 				],
 				'selectors' => [
-					'body:not(.rtl) {{WRAPPER}} .finest-addons-addon-post-navigation .nav-previous i, body:not(.rtl) {{WRAPPER}} .finest-addons-addon-post-navigation .nav-previous svg ' => 'margin-right: {{SIZE}}{{UNIT}};',
-					'body:not(.rtl) {{WRAPPER}} .finest-addons-addon-post-navigation .nav-next i,body:not(.rtl) {{WRAPPER}} .finest-addons-addon-post-navigation .nav-next svg ' => 'margin-left: {{SIZE}}{{UNIT}};',
-                    'body.rtl {{WRAPPER}} .finest-addons-addon-post-navigation .nav-previous i, body.rtl{{WRAPPER}} .finest-addons-addon-post-navigation .nav-previous svg ' => 'margin-left: {{SIZE}}{{UNIT}};',
-					'body.rtl {{WRAPPER}} .finest-addons-addon-post-navigation .nav-next i, body.rtl{{WRAPPER}} .finest-addons-addon-post-navigation .nav-next svg ' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'body:not(.rtl) {{WRAPPER}} .quiktheme-addons-addon-post-navigation .nav-previous i, body:not(.rtl) {{WRAPPER}} .quiktheme-addons-addon-post-navigation .nav-previous svg ' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'body:not(.rtl) {{WRAPPER}} .quiktheme-addons-addon-post-navigation .nav-next i,body:not(.rtl) {{WRAPPER}} .quiktheme-addons-addon-post-navigation .nav-next svg ' => 'margin-left: {{SIZE}}{{UNIT}};',
+                    'body.rtl {{WRAPPER}} .quiktheme-addons-addon-post-navigation .nav-previous i, body.rtl{{WRAPPER}} .quiktheme-addons-addon-post-navigation .nav-previous svg ' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'body.rtl {{WRAPPER}} .quiktheme-addons-addon-post-navigation .nav-next i, body.rtl{{WRAPPER}} .quiktheme-addons-addon-post-navigation .nav-next svg ' => 'margin-left: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -263,47 +263,47 @@ class Finest_Post_Navigation extends \Elementor\Widget_Base
         $this->start_controls_tab(
             'nav_style_hover_tab',
             [
-                'label' => __('Hover', 'finest-addons'),
+                'label' => __('Hover', 'quiktheme-addons'),
             ]
         );
         $this->add_control(
             'label_color_hover',
             [
-                'label' => __('label Color', 'finest-addons'),
+                'label' => __('label Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-addon-post-navigation a:hover .nav-label' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-addon-post-navigation a:hover .nav-label' => 'color: {{VALUE}}',
                 ],
             ]
         );
         $this->add_control(
             'icon_color_hover',
             [
-                'label' => __('Icon', 'finest-addons'),
+                'label' => __('Icon', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-addon-post-navigation .nav-links a:hover svg path' => 'stroke: {{VALUE}}',
-                    '{{WRAPPER}} .finest-addons-addon-post-navigation .nav-links a:hover i' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-addon-post-navigation .nav-links a:hover svg path' => 'stroke: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-addon-post-navigation .nav-links a:hover i' => 'color: {{VALUE}}',
                 ],
             ]
         );
         $this->add_control(
             'svg_fill_color_hover',
             [
-                'label' => __('Icon Fill Color', 'finest-addons'),
+                'label' => __('Icon Fill Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-addon-post-navigation .nav-links a:hover svg path' => 'fill: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-addon-post-navigation .nav-links a:hover svg path' => 'fill: {{VALUE}}',
                 ],
             ]
         );
         $this->add_control(
             'nav_background_hover',
             [
-                'label' => __('Background Color', 'finest-addons'),
+                'label' => __('Background Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-addon-post-navigation .nav-links a:hover' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-addon-post-navigation .nav-links a:hover' => 'background-color: {{VALUE}}',
                 ],
             ]
         );
@@ -311,7 +311,7 @@ class Finest_Post_Navigation extends \Elementor\Widget_Base
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name' => 'nav_hover_border',
-                'label' => __('Border', 'finest-addons'),
+                'label' => __('Border', 'quiktheme-addons'),
                 'selector' => '{{WRAPPER}} .nav-links a:hover',
             ]
         );
@@ -319,14 +319,14 @@ class Finest_Post_Navigation extends \Elementor\Widget_Base
             \Elementor\Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'nav_hover_shadow',
-                'label' => __('Button Shadow', 'finest-addons'),
+                'label' => __('Button Shadow', 'quiktheme-addons'),
                 'selector' => '{{WRAPPER}} .nav-links a:hover',
             ]
         );
         $this->add_responsive_control(
             'nav_hover_radius',
             [
-                'label' => __('Border Radius', 'finest-addons'),
+                'label' => __('Border Radius', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -338,7 +338,7 @@ class Finest_Post_Navigation extends \Elementor\Widget_Base
         $this->add_control(
             'icon_hover_gap',
             [
-                'label' => __('Icon gap', 'finest-addons'),
+                'label' => __('Icon gap', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', '%'],
                 'range' => [
@@ -368,7 +368,7 @@ class Finest_Post_Navigation extends \Elementor\Widget_Base
         $this->add_control(
 			'icon_size',
 			[
-				'label' => __( 'Icon Size', 'finest-addons' ),
+				'label' => __( 'Icon Size', 'quiktheme-addons' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'range' => [
@@ -383,15 +383,15 @@ class Finest_Post_Navigation extends \Elementor\Widget_Base
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-addon-post-navigation svg' => 'width: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .finest-addons-addon-post-navigation i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-addon-post-navigation svg' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-addon-post-navigation i' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
         );
         $this->add_responsive_control(
             'nav_padding',
             [
-                'label' => __('Nav Padding', 'finest-addons'),
+                'label' => __('Nav Padding', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -426,7 +426,7 @@ class Finest_Post_Navigation extends \Elementor\Widget_Base
         ?>
 
 
-        <div class="finest-addons-addon-post-navigation">
+        <div class="quiktheme-addons-addon-post-navigation">
             <?php
                 the_post_navigation(
                     array(
@@ -439,4 +439,4 @@ class Finest_Post_Navigation extends \Elementor\Widget_Base
     <?php
     }
 }
-$widgets_manager->register_widget_type( new \Finest_Addons\Widgets\Finest_Post_Navigation() );
+$widgets_manager->register_widget_type( new \Quik_Theme_Addons\Widgets\Quik_Theme_Post_Navigation() );

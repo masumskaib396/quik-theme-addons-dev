@@ -2,8 +2,8 @@
 use \Elementor\Controls_Manager;
 
 /**
- * Author Name: Finest
- * Author URL: https://finest.com
+ * Author Name: Quiktheme
+ * Author URL: https://quiktheme-.com
  * Date: 3/6/2021
  */
 
@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 	exit;
 } // Exit if accessed directly.
 
-class Finest_Custom_CSS
+class Quik_Theme_Custom_CSS
 {
 
 	/*
@@ -23,16 +23,16 @@ class Finest_Custom_CSS
 	{
 
 		// Add new controls to advanced tab globally
-		add_action("elementor/element/after_section_end", array($this, 'finest_add_section_custom_css_controls'), 25, 3);
+		add_action("elementor/element/after_section_end", array($this, 'quik_theme_add_section_custom_css_controls'), 25, 3);
 
 		// Render the custom CSS
 		if (!defined('ELEMENTOR_PRO_VERSION')) {
-			add_action('elementor/element/parse_css', array($this, 'finest_add_post_css'), 10, 2);
+			add_action('elementor/element/parse_css', array($this, 'quik_theme_add_post_css'), 10, 2);
 		}
 	}
 
 
-	public function finest_add_section_custom_css_controls($widget, $section_id, $args)
+	public function quik_theme_add_section_custom_css_controls($widget, $section_id, $args)
 	{
 
 		if ('section_custom_css_pro' !== $section_id ) {
@@ -41,18 +41,18 @@ class Finest_Custom_CSS
 		if (!defined('ELEMENTOR_PRO_VERSION')) {
 
 			$widget->start_controls_section(
-				'finest_custom_css_section',
+				'quik_theme_custom_css_section',
 				array(
-					'label'     => __('Custom CSS by Finest', 'finest-addons'),
+					'label'     => __('Custom CSS by Quiktheme', 'quiktheme-addons'),
 					'tab'       => Controls_Manager::TAB_ADVANCED
 				)
 			);
 
 			$widget->add_control(
-				'finest_custom_css',
+				'quik_theme_custom_css',
 				array(
 					'type'        => Controls_Manager::CODE,
-					'label'       => __('Custom CSS', 'finest-addons'),
+					'label'       => __('Custom CSS', 'quiktheme-addons'),
 					'label_block' => true,
 					'language'    => 'css'
 				)
@@ -68,9 +68,9 @@ selector .child-element{ margin: 10px; }
 			$output = ob_get_clean();
 
 			$widget->add_control(
-				'finest_custom_css_description',
+				'quik_theme_custom_css_description',
 				array(
-					'raw'             => __('Use "selector" keyword to target wrapper element.', 'finest-addons') . $output,
+					'raw'             => __('Use "selector" keyword to target wrapper element.', 'quiktheme-addons') . $output,
 					'type'            => Controls_Manager::RAW_HTML,
 					'content_classes' => 'elementor-descriptor',
 					'separator'       => 'none'
@@ -83,15 +83,15 @@ selector .child-element{ margin: 10px; }
 
 
 
-	public function finest_add_post_css($post_css, $element)
+	public function quik_theme_add_post_css($post_css, $element)
 	{
 		$element_settings = $element->get_settings();
 
-		if (empty($element_settings['finest_custom_css'])) {
+		if (empty($element_settings['quik_theme_custom_css'])) {
 			return;
 		}
 
-		$css = trim($element_settings['finest_custom_css']);
+		$css = trim($element_settings['quik_theme_custom_css']);
 
 		if (empty($css)) {
 			return;
@@ -115,5 +115,5 @@ selector .child-element{ margin: 10px; }
 	}
 }
 
-Finest_Custom_CSS::get_instance();
+Quik_Theme_Custom_CSS::get_instance();
 

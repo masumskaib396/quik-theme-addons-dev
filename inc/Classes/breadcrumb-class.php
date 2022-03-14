@@ -1,12 +1,12 @@
 <?php
 
-namespace Finest_Addons;
+namespace Quik_Theme_Addons;
 
 /**
  * Class Breadcrumb_Trail
  * @package Happy_Addons_Pro
  */
-class Finest_Addons_Breadcrumb_Trail {
+class Quik_Theme_Addons_Breadcrumb_Trail {
 
 	/**
 	 * Array of items belonging to the current breadcrumb trail.
@@ -72,13 +72,13 @@ class Finest_Addons_Breadcrumb_Trail {
 
 		$defaults = array(
 			'list_tag' => 'ul',
-			'list_class' => 'finest-addons-breadcrumbs-items',
+			'list_class' => 'quiktheme-addons-breadcrumbs-items',
 			'item_tag' => 'li',
-			'item_class' => 'finest-addons-breadcrumbs-item',
+			'item_class' => 'quiktheme-addons-breadcrumbs-item',
 			'separator' => ' / ',
-			'separator_class' => 'finest-addons-breadcrumbs-separator',
+			'separator_class' => 'quiktheme-addons-breadcrumbs-separator',
 			'home_icon' => '',
-			'home_icon_class' => 'finest-addons-breadcrumbs-home-icon',
+			'home_icon_class' => 'quiktheme-addons-breadcrumbs-home-icon',
 			'show_on_front' => true,
 			'network' => false,
 			'show_title' => true,
@@ -132,16 +132,16 @@ class Finest_Addons_Breadcrumb_Trail {
 				preg_match( '/(<a.*?>)(.*?)(<\/a>)/i', $item, $matches );
 
 				// Wrap the item text with appropriate itemprop.
-				$item = ! empty( $matches ) ? sprintf( '%s<span class="finest-addons-breadcrumbs-text">%s</span>%s', $matches[1], $matches[2], $matches[3] ) : sprintf( '<span class="finest-addons-breadcrumbs-text">%s</span>', $item );
+				$item = ! empty( $matches ) ? sprintf( '%s<span class="quiktheme-addons-breadcrumbs-text">%s</span>%s', $matches[1], $matches[2], $matches[3] ) : sprintf( '<span class="quiktheme-addons-breadcrumbs-text">%s</span>', $item );
 
 				// Add list item classes.
 				$item_class = ! empty( $this->args['item_class'] ) ? $this->args['item_class'] : '';
 
 				if ( 1 === $item_position  )
-					$item_class .= ' finest-addons-breadcrumbs-start';
+					$item_class .= ' quiktheme-addons-breadcrumbs-start';
 
 				elseif ( $item_count === $item_position )
-					$item_class .= ' finest-addons-breadcrumbs-end';
+					$item_class .= ' quiktheme-addons-breadcrumbs-end';
 
 				// Create list item attributes.
 				$attributes = 'class="' . $item_class . '"';
@@ -204,20 +204,20 @@ class Finest_Addons_Breadcrumb_Trail {
 	protected function set_labels () {
 
 		$defaults = array(
-			'home' => esc_html__( 'Home', 'finest-addons' ),
-			'page_title' => esc_html__( 'Pages', 'finest-addons' ),
-			'error_404' => esc_html__( '404 Not Found', 'finest-addons' ),
-			'archives' => esc_html__( 'Archives', 'finest-addons' ),
+			'home' => esc_html__( 'Home', 'quiktheme-addons' ),
+			'page_title' => esc_html__( 'Pages', 'quiktheme-addons' ),
+			'error_404' => esc_html__( '404 Not Found', 'quiktheme-addons' ),
+			'archives' => esc_html__( 'Archives', 'quiktheme-addons' ),
 			// Translators: %s is the search query.
-			'search' => esc_html__( 'Search results for: %s', 'finest-addons' ),
+			'search' => esc_html__( 'Search results for: %s', 'quiktheme-addons' ),
 			// Translators: %s is the page number.
-			'paged' => esc_html__( 'Page %s', 'finest-addons' ),
+			'paged' => esc_html__( 'Page %s', 'quiktheme-addons' ),
 			// Translators: %s is the page number.
-			'paged_comments' => esc_html__( 'Comment Page %s', 'finest-addons' ),
+			'paged_comments' => esc_html__( 'Comment Page %s', 'quiktheme-addons' ),
 			// Translators: Minute archive title. %s is the minute time format.
-			'archive_minute' => esc_html__( 'Minute %s', 'finest-addons' ),
+			'archive_minute' => esc_html__( 'Minute %s', 'quiktheme-addons' ),
 			// Translators: Weekly archive title. %s is the week date format.
-			'archive_week' => esc_html__( 'Week %s', 'finest-addons' ),
+			'archive_week' => esc_html__( 'Week %s', 'quiktheme-addons' ),
 			// "%s" is replaced with the translated date/time format.
 			'archive_minute_hour' => '%s',
 			'archive_hour' => '%s',
@@ -673,7 +673,7 @@ class Finest_Addons_Breadcrumb_Trail {
 
 		// Add the minute + hour item.
 		if ( true === $this->args['show_title'] )
-			$this->items[] = sprintf( $this->labels['archive_minute_hour'], get_the_time( esc_html_x( 'g:i a', 'minute and hour archives time format', 'finest-addons' ) ) );
+			$this->items[] = sprintf( $this->labels['archive_minute_hour'], get_the_time( esc_html_x( 'g:i a', 'minute and hour archives time format', 'quiktheme-addons' ) ) );
 	}
 
 	/**
@@ -689,7 +689,7 @@ class Finest_Addons_Breadcrumb_Trail {
 
 		// Add the minute item.
 		if ( true === $this->args['show_title'] )
-			$this->items[] = sprintf( $this->labels['archive_minute'], get_the_time( esc_html_x( 'i', 'minute archives time format', 'finest-addons' ) ) );
+			$this->items[] = sprintf( $this->labels['archive_minute'], get_the_time( esc_html_x( 'i', 'minute archives time format', 'quiktheme-addons' ) ) );
 	}
 
 	/**
@@ -705,7 +705,7 @@ class Finest_Addons_Breadcrumb_Trail {
 
 		// Add the hour item.
 		if ( true === $this->args['show_title'] )
-			$this->items[] = sprintf( $this->labels['archive_hour'], get_the_time( esc_html_x( 'g a', 'hour archives time format', 'finest-addons' ) ) );
+			$this->items[] = sprintf( $this->labels['archive_hour'], get_the_time( esc_html_x( 'g a', 'hour archives time format', 'quiktheme-addons' ) ) );
 	}
 
 	/**
@@ -720,9 +720,9 @@ class Finest_Addons_Breadcrumb_Trail {
 		$this->add_rewrite_front_items();
 
 		// Get year, month, and day.
-		$year = sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'finest-addons' ) ) );
-		$month = sprintf( $this->labels['archive_month'], get_the_time( esc_html_x( 'F', 'monthly archives date format', 'finest-addons' ) ) );
-		$day = sprintf( $this->labels['archive_day'], get_the_time( esc_html_x( 'j', 'daily archives date format', 'finest-addons' ) ) );
+		$year = sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'quiktheme-addons' ) ) );
+		$month = sprintf( $this->labels['archive_month'], get_the_time( esc_html_x( 'F', 'monthly archives date format', 'quiktheme-addons' ) ) );
+		$day = sprintf( $this->labels['archive_day'], get_the_time( esc_html_x( 'j', 'daily archives date format', 'quiktheme-addons' ) ) );
 
 		// Add the year and month items.
 		$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
@@ -748,8 +748,8 @@ class Finest_Addons_Breadcrumb_Trail {
 		$this->add_rewrite_front_items();
 
 		// Get the year and week.
-		$year = sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'finest-addons' ) ) );
-		$week = sprintf( $this->labels['archive_week'], get_the_time( esc_html_x( 'W', 'weekly archives date format', 'finest-addons' ) ) );
+		$year = sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'quiktheme-addons' ) ) );
+		$week = sprintf( $this->labels['archive_week'], get_the_time( esc_html_x( 'W', 'weekly archives date format', 'quiktheme-addons' ) ) );
 
 		// Add the year item.
 		$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
@@ -774,8 +774,8 @@ class Finest_Addons_Breadcrumb_Trail {
 		$this->add_rewrite_front_items();
 
 		// Get the year and month.
-		$year = sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'finest-addons' ) ) );
-		$month = sprintf( $this->labels['archive_month'], get_the_time( esc_html_x( 'F', 'monthly archives date format', 'finest-addons' ) ) );
+		$year = sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'quiktheme-addons' ) ) );
+		$month = sprintf( $this->labels['archive_month'], get_the_time( esc_html_x( 'F', 'monthly archives date format', 'quiktheme-addons' ) ) );
 
 		// Add the year item.
 		$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
@@ -800,7 +800,7 @@ class Finest_Addons_Breadcrumb_Trail {
 		$this->add_rewrite_front_items();
 
 		// Get the year.
-		$year = sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'finest-addons' ) ) );
+		$year = sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'quiktheme-addons' ) ) );
 
 		// Add the year item.
 		if ( is_paged() )
@@ -1122,15 +1122,15 @@ class Finest_Addons_Breadcrumb_Trail {
 
 				// If using the %year% tag, add a link to the yearly archive.
 				if ( '%year%' == $tag )
-					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y', $post_id ) ) ), sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'finest-addons' ) ) ) );
+					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y', $post_id ) ) ), sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'quiktheme-addons' ) ) ) );
 
 				// If using the %monthnum% tag, add a link to the monthly archive.
 				elseif ( '%monthnum%' == $tag )
-					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_month_link( get_the_time( 'Y', $post_id ), get_the_time( 'm', $post_id ) ) ), sprintf( $this->labels['archive_month'], get_the_time( esc_html_x( 'F', 'monthly archives date format', 'finest-addons' ) ) ) );
+					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_month_link( get_the_time( 'Y', $post_id ), get_the_time( 'm', $post_id ) ) ), sprintf( $this->labels['archive_month'], get_the_time( esc_html_x( 'F', 'monthly archives date format', 'quiktheme-addons' ) ) ) );
 
 				// If using the %day% tag, add a link to the daily archive.
 				elseif ( '%day%' == $tag )
-					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_day_link( get_the_time( 'Y', $post_id ), get_the_time( 'm', $post_id ), get_the_time( 'd', $post_id ) ) ), sprintf( $this->labels['archive_day'], get_the_time( esc_html_x( 'j', 'daily archives date format', 'finest-addons' ) ) ) );
+					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_day_link( get_the_time( 'Y', $post_id ), get_the_time( 'm', $post_id ), get_the_time( 'd', $post_id ) ) ), sprintf( $this->labels['archive_day'], get_the_time( esc_html_x( 'j', 'daily archives date format', 'quiktheme-addons' ) ) ) );
 
 				// If using the %author% tag, add a link to the post author archive.
 				elseif ( '%author%' == $tag )

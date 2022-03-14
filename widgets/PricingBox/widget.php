@@ -1,5 +1,5 @@
 <?php
-namespace Finest_Addons\Widgets;
+namespace Quik_Theme_Addons\Widgets;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // If this file is called directly, abort.
 
@@ -12,15 +12,15 @@ use \Elementor\Group_Control_Background;
 use \Elementor\Widget_Base;
 use \Elementor\Repeater;
 
-class Finest_Pricing_Box extends Widget_Base {
+class Quik_Theme_Pricing_Box extends Widget_Base {
 
 	//use ElementsCommonFunctions;
 	public function get_name() {
-		return 'finest-addons-pricing-box';
+		return 'quiktheme-addons-pricing-box';
 	}
 
 	public function get_title() {
-		return esc_html__( 'Pricing Table Box', 'finest-addons' );
+		return esc_html__( 'Pricing Table Box', 'quiktheme-addons' );
 	}
 
 	public function get_icon() {
@@ -28,11 +28,11 @@ class Finest_Pricing_Box extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'finest-addons' ];
+		return [ 'quiktheme-addons' ];
 	}
 
 	public function get_keywords() {
-        return ['price', 'package', 'product', 'plan', 'finest' ];
+        return ['price', 'package', 'product', 'plan', 'quik-theme-addons' ];
     }
 
 	protected function _register_controls() {
@@ -41,30 +41,30 @@ class Finest_Pricing_Box extends Widget_Base {
   		 * Pricing Table Feature
   		 */
   		$this->start_controls_section(
-  			'finest_addons_section_pricing_table_feature',
+  			'quik_theme_addons_section_pricing_table_feature',
   			[
-  				'label' => esc_html__( 'Features', 'finest-addons' )
+  				'label' => esc_html__( 'Features', 'quiktheme-addons' )
   			]
 		);
 
 		$pricing_repeater = new Repeater();
 
 		$pricing_repeater->add_control(
-			'finest_addons_pricing_table_item',
+			'quik_theme_addons_pricing_table_item',
 			[
-				'name'        => 'finest_addons_pricing_table_item',
-				'label'       => esc_html__( 'List Item', 'finest-addons' ),
+				'name'        => 'quik_theme_addons_pricing_table_item',
+				'label'       => esc_html__( 'List Item', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default'     => esc_html__( 'Pricing table list item', 'finest-addons' )
+				'default'     => esc_html__( 'Pricing table list item', 'quiktheme-addons' )
 			]
 		);
 
 		$pricing_repeater->add_control(
-			'finest_addons_pricing_table_list_icon',
+			'quik_theme_addons_pricing_table_list_icon',
 			[
-				'name'        => 'finest_addons_pricing_table_list_icon',
-				'label'       => esc_html__( 'List Icon', 'finest-addons' ),
+				'name'        => 'quik_theme_addons_pricing_table_list_icon',
+				'label'       => esc_html__( 'List Icon', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::ICONS,
 				'default'     => [
 					'value'   => 'fas fa-check',
@@ -74,10 +74,10 @@ class Finest_Pricing_Box extends Widget_Base {
 		);
 
 		$pricing_repeater->add_control(
-			'finest_addons_pricing_table_icon_mood',
+			'quik_theme_addons_pricing_table_icon_mood',
 			[
-				'name'         => 'finest_addons_pricing_table_icon_mood',
-				'label'        => esc_html__( 'Item Active?', 'finest-addons' ),
+				'name'         => 'quik_theme_addons_pricing_table_icon_mood',
+				'label'        => esc_html__( 'Item Active?', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 				'default'      => 'yes'
@@ -85,25 +85,25 @@ class Finest_Pricing_Box extends Widget_Base {
         );
 
   		$this->add_control(
-			'finest_addons_pricing_table_items',
+			'quik_theme_addons_pricing_table_items',
 			[
 				'type'        => Controls_Manager::REPEATER,
 				'fields'  => $pricing_repeater->get_controls(),
 				'seperator'   => 'before',
 				'default'     => [
-					[ 'finest_addons_pricing_table_item' => esc_html__( 'Responsive Live', 'finest-addons' ) ],
-					[ 'finest_addons_pricing_table_item' => esc_html__( 'Adaptive Bitrate', 'finest-addons' ) ],
-					[ 'finest_addons_pricing_table_item' => esc_html__( 'Analytics', 'finest-addons' ) ],
+					[ 'quik_theme_addons_pricing_table_item' => esc_html__( 'Responsive Live', 'quiktheme-addons' ) ],
+					[ 'quik_theme_addons_pricing_table_item' => esc_html__( 'Adaptive Bitrate', 'quiktheme-addons' ) ],
+					[ 'quik_theme_addons_pricing_table_item' => esc_html__( 'Analytics', 'quiktheme-addons' ) ],
 					[
-						'finest_addons_pricing_table_item'      => esc_html__( 'Creative Layouts', 'finest-addons' ),
-						'finest_addons_pricing_table_icon_mood' => 'no'
+						'quik_theme_addons_pricing_table_item'      => esc_html__( 'Creative Layouts', 'quiktheme-addons' ),
+						'quik_theme_addons_pricing_table_icon_mood' => 'no'
 					],
 					[
-						'finest_addons_pricing_table_item'      => esc_html__( 'Free Support', 'finest-addons' ),
-						'finest_addons_pricing_table_icon_mood' => 'no'
+						'quik_theme_addons_pricing_table_item'      => esc_html__( 'Free Support', 'quiktheme-addons' ),
+						'quik_theme_addons_pricing_table_icon_mood' => 'no'
 					]
 				],
-				'title_field' => '{{finest_addons_pricing_table_item}}'
+				'title_field' => '{{quik_theme_addons_pricing_table_item}}'
 			]
 		);
 
@@ -113,16 +113,16 @@ class Finest_Pricing_Box extends Widget_Base {
   		 * Pricing Table Promo label
   		 */
   		$this->start_controls_section(
-			'finest_addons_section_pricing_table_promo_section',
+			'quik_theme_addons_section_pricing_table_promo_section',
 			[
-				'label' => esc_html__( 'Promo Label', 'finest-addons' )
+				'label' => esc_html__( 'Promo Label', 'quiktheme-addons' )
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_promo_enable',
+			'quik_theme_addons_pricing_table_promo_enable',
 			[
-				'label'        => esc_html__( 'Promo Label?', 'finest-addons' ),
+				'label'        => esc_html__( 'Promo Label?', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 				'default'      => 'no'
@@ -130,30 +130,30 @@ class Finest_Pricing_Box extends Widget_Base {
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_promo_title',
+			'quik_theme_addons_pricing_table_promo_title',
 			[
-				'label'       => esc_html__( 'Title', 'finest-addons' ),
+				'label'       => esc_html__( 'Title', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => false,
-				'default'     => esc_html__( 'Recommended', 'finest-addons' ),
+				'default'     => esc_html__( 'Recommended', 'quiktheme-addons' ),
 				'condition'   => [
-					'finest_addons_pricing_table_promo_enable' => 'yes'
+					'quik_theme_addons_pricing_table_promo_enable' => 'yes'
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_promo_position',
+			'quik_theme_addons_pricing_table_promo_position',
 			[
-				'label'        => __( 'Position', 'finest-addons' ),
+				'label'        => __( 'Position', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::SELECT,
 				'default'      => 'promo_top',
 				'options'      => [
-					'promo_top'    => __( 'Top', 'finest-addons' ),
-					'promo_bottom' => __( 'Bottom', 'finest-addons' ),
+					'promo_top'    => __( 'Top', 'quiktheme-addons' ),
+					'promo_bottom' => __( 'Bottom', 'quiktheme-addons' ),
 				],
 				'condition'    => [
-					'finest_addons_pricing_table_promo_enable' => 'yes'
+					'quik_theme_addons_pricing_table_promo_enable' => 'yes'
 				]
 			]
 		);
@@ -164,16 +164,16 @@ class Finest_Pricing_Box extends Widget_Base {
   		 * Pricing Table Settings
   		 */
   		$this->start_controls_section(
-  			'finest_addons_section_pricing_table_settings',
+  			'quik_theme_addons_section_pricing_table_settings',
   			[
-  				'label' => esc_html__( 'Header', 'finest-addons' )
+  				'label' => esc_html__( 'Header', 'quiktheme-addons' )
   			]
   		);
 
 		  $this->add_control(
-			'finest_addons_header_image_show',
+			'quik_theme_addons_header_image_show',
 			[
-				'label'        => esc_html__( 'Show Image', 'finest-addons' ),
+				'label'        => esc_html__( 'Show Image', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 				'default'      => 'no'
@@ -182,40 +182,40 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->add_control(
             'image',
             [
-                'label'   => __( 'Choose Image', 'finest-addons' ),
+                'label'   => __( 'Choose Image', 'quiktheme-addons' ),
                 'type'    => \Elementor\Controls_Manager::MEDIA,
                 'default' => [
                     'url' => \Elementor\Utils::get_placeholder_image_src(),
                 ],
 				'condition' => [
-					'finest_addons_header_image_show' => 'yes'
+					'quik_theme_addons_header_image_show' => 'yes'
 				]
             ]
         );
 
   		$this->add_control(
-			'finest_addons_pricing_table_title',
+			'quik_theme_addons_pricing_table_title',
 			[
-				'label'       => esc_html__( 'Title', 'finest-addons' ),
+				'label'       => esc_html__( 'Title', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => false,
-				'default'     => esc_html__( 'STANDARD', 'finest-addons' )
+				'default'     => esc_html__( 'STANDARD', 'quiktheme-addons' )
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_subtitle',
+			'quik_theme_addons_pricing_table_subtitle',
 			[
-				'label'       => esc_html__( 'Subtitle', 'finest-addons' ),
+				'label'       => esc_html__( 'Subtitle', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::TEXTAREA,
 				'label_block' => true
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_featured',
+			'quik_theme_addons_pricing_table_featured',
 			[
-				'label'        => esc_html__( 'Featured?', 'finest-addons' ),
+				'label'        => esc_html__( 'Featured?', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 				'default'      => 'no'
@@ -223,31 +223,31 @@ class Finest_Pricing_Box extends Widget_Base {
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_featured_type',
+			'quik_theme_addons_pricing_table_featured_type',
 			[
-				'label'     => esc_html__( 'Badge Type', 'finest-addons' ),
+				'label'     => esc_html__( 'Badge Type', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'text-badge',
 				'options'   => [
-					'text-badge' => __( 'Text Badge', 'finest-addons' ),
-					'icon-badge' => __( 'Icon Badge', 'finest-addons' )
+					'text-badge' => __( 'Text Badge', 'quiktheme-addons' ),
+					'icon-badge' => __( 'Icon Badge', 'quiktheme-addons' )
 				],
 				'condition' => [
-					'finest_addons_pricing_table_featured' => 'yes'
+					'quik_theme_addons_pricing_table_featured' => 'yes'
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_featured_tag_text',
+			'quik_theme_addons_pricing_table_featured_tag_text',
 			[
-				'label'       => esc_html__( 'Featured Text', 'finest-addons' ),
+				'label'       => esc_html__( 'Featured Text', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => false,
-				'default'     => esc_html__( 'FEATURED', 'finest-addons' ),
+				'default'     => esc_html__( 'FEATURED', 'quiktheme-addons' ),
 				'condition'   => [
-					'finest_addons_pricing_table_featured'      => 'yes',
-					'finest_addons_pricing_table_featured_type' => 'text-badge'
+					'quik_theme_addons_pricing_table_featured'      => 'yes',
+					'quik_theme_addons_pricing_table_featured_type' => 'text-badge'
 				]
 			]
 		);
@@ -255,47 +255,47 @@ class Finest_Pricing_Box extends Widget_Base {
   		$this->end_controls_section();
 
   		$this->start_controls_section(
-  			'finest_addons_section_pricing_table_price',
+  			'quik_theme_addons_section_pricing_table_price',
   			[
-  				'label' => esc_html__( 'Price', 'finest-addons' )
+  				'label' => esc_html__( 'Price', 'quiktheme-addons' )
   			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_price',
+			'quik_theme_addons_pricing_table_price',
 			[
-				'label'       => esc_html__( 'Price', 'finest-addons' ),
+				'label'       => esc_html__( 'Price', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => false,
-				'default'     => esc_html__( '50', 'finest-addons' )
+				'default'     => esc_html__( '50', 'quiktheme-addons' )
 			]
 		);
 
   		$this->add_control(
-			'finest_addons_pricing_table_price_cur',
+			'quik_theme_addons_pricing_table_price_cur',
 			[
-				'label'       => esc_html__( 'Price Currency', 'finest-addons' ),
+				'label'       => esc_html__( 'Price Currency', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => false,
-				'default'     => esc_html__( '$', 'finest-addons' )
+				'default'     => esc_html__( '$', 'quiktheme-addons' )
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_price_cur_position',
+			'quik_theme_addons_pricing_table_price_cur_position',
 			[
-				'label'       => esc_html__( 'Currency Position', 'finest-addons' ),
+				'label'       => esc_html__( 'Currency Position', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'toggle'	  => false,
 				'label_block' => false,
-				'default'     => 'finest-addons-pricing-cur-left',
+				'default'     => 'quiktheme-addons-pricing-cur-left',
 				'options'     => [
-					'finest-addons-pricing-cur-left' => [
-						'title' => __( 'Left', 'finest-addons' ),
+					'quiktheme-addons-pricing-cur-left' => [
+						'title' => __( 'Left', 'quiktheme-addons' ),
 						'icon'  => 'eicon-angle-left'
 					],
-					'finest-addons-pricing-cur-right' => [
-						'title' => __( 'Right', 'finest-addons' ),
+					'quiktheme-addons-pricing-cur-right' => [
+						'title' => __( 'Right', 'quiktheme-addons' ),
 						'icon'  => 'eicon-angle-right'
 					]
 				]
@@ -303,67 +303,67 @@ class Finest_Pricing_Box extends Widget_Base {
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_price_by',
+			'quik_theme_addons_pricing_table_price_by',
 			[
-				'label'       => esc_html__( 'Price By', 'finest-addons' ),
+				'label'       => esc_html__( 'Price By', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => false,
-				'default'     => esc_html__( 'mo', 'finest-addons' )
+				'default'     => esc_html__( 'mo', 'quiktheme-addons' )
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_period_separator',
+			'quik_theme_addons_pricing_table_period_separator',
 			[
-				'label'       => esc_html__( 'Separated By', 'finest-addons' ),
+				'label'       => esc_html__( 'Separated By', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => false,
-				'default'     => esc_html__( '/', 'finest-addons' )
+				'default'     => esc_html__( '/', 'quiktheme-addons' )
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_discount_price',
+			'quik_theme_addons_pricing_table_discount_price',
 			[
-				'label' => __( 'Show Discount Price', 'finest-addons' ),
+				'label' => __( 'Show Discount Price', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'finest-addons' ),
-				'label_off' => __( 'Hide', 'finest-addons' ),
+				'label_on' => __( 'Show', 'quiktheme-addons' ),
+				'label_off' => __( 'Hide', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 				'default' => 'no',
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_regular_price',
+			'quik_theme_addons_pricing_table_regular_price',
 			[
-				'label'       => esc_html__( 'Ragular Price', 'finest-addons' ),
+				'label'       => esc_html__( 'Ragular Price', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => false,
-				'default'     => esc_html__( '50', 'finest-addons' ),
+				'default'     => esc_html__( '50', 'quiktheme-addons' ),
 				'condition'   => [
-					'finest_addons_pricing_table_discount_price' => 'yes'
+					'quik_theme_addons_pricing_table_discount_price' => 'yes'
 				]
 			]
 		);
 
   		$this->add_control(
-			'finest_addons_pricing_table_regular_price_cur',
+			'quik_theme_addons_pricing_table_regular_price_cur',
 			[
-				'label'       => esc_html__( 'Regular Price Currency', 'finest-addons' ),
+				'label'       => esc_html__( 'Regular Price Currency', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => false,
-				'default'     => esc_html__( '$', 'finest-addons' ),
+				'default'     => esc_html__( '$', 'quiktheme-addons' ),
 				'condition'   => [
-					'finest_addons_pricing_table_discount_price' => 'yes'
+					'quik_theme_addons_pricing_table_discount_price' => 'yes'
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_price_subtitle',
+			'quik_theme_addons_pricing_table_price_subtitle',
 			[
-				'label'       => esc_html__( 'Price Subtitle', 'finest-addons' ),
+				'label'       => esc_html__( 'Price Subtitle', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::TEXTAREA,
 				'label_block' => true,
 			]
@@ -377,40 +377,40 @@ class Finest_Pricing_Box extends Widget_Base {
   		 * Pricing Table Footer
   		 */
   		$this->start_controls_section(
-  			'finest_addons_section_pricing_table_button',
+  			'quik_theme_addons_section_pricing_table_button',
   			[
-  				'label' => esc_html__( 'Button', 'finest-addons' )
+  				'label' => esc_html__( 'Button', 'quiktheme-addons' )
   			]
 		);
 
 
 		$this->add_control(
-			'finest_addons_pricing_table_btn_position',
+			'quik_theme_addons_pricing_table_btn_position',
 			[
-				'label'   => esc_html__( 'Position', 'finest-addons' ),
+				'label'   => esc_html__( 'Position', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'bottom',
 				'options' => [
-					'middle' => __( 'Middle', 'finest-addons' ),
-					'bottom' => __( 'Bottom', 'finest-addons' )
+					'middle' => __( 'Middle', 'quiktheme-addons' ),
+					'bottom' => __( 'Bottom', 'quiktheme-addons' )
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_btn',
+			'quik_theme_addons_pricing_table_btn',
 			[
-				'label'       => esc_html__( 'Text', 'finest-addons' ),
+				'label'       => esc_html__( 'Text', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default'     => esc_html__( 'Choose Plan', 'finest-addons' )
+				'default'     => esc_html__( 'Choose Plan', 'quiktheme-addons' )
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_btn_link',
+			'quik_theme_addons_pricing_table_btn_link',
 			[
-				'label'       => esc_html__( 'Link', 'finest-addons' ),
+				'label'       => esc_html__( 'Link', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::URL,
 				'label_block' => true,
 				'default'     => [
@@ -427,16 +427,16 @@ class Finest_Pricing_Box extends Widget_Base {
   		 * Pricing Table Note
   		 */
   		$this->start_controls_section(
-			'finest_addons_section_pricing_table_note',
+			'quik_theme_addons_section_pricing_table_note',
 			[
-				'label' => esc_html__( 'Note', 'finest-addons' )
+				'label' => esc_html__( 'Note', 'quiktheme-addons' )
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_note_text',
+			'quik_theme_addons_pricing_table_note_text',
 			[
-				'label' => __( 'Text', 'finest-addons' ),
+				'label' => __( 'Text', 'quiktheme-addons' ),
 				'type' => Controls_Manager::TEXTAREA,
 				'rows' => 5,
 			]
@@ -452,39 +452,39 @@ class Finest_Pricing_Box extends Widget_Base {
 		 * -------------------------------------------
 		 */
 		$this->start_controls_section(
-			'finest_addons_section_pricing_table_promo_style',
+			'quik_theme_addons_section_pricing_table_promo_style',
 			[
-				'label'     => esc_html__( 'Promo Label', 'finest-addons' ),
+				'label'     => esc_html__( 'Promo Label', 'quiktheme-addons' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'finest_addons_pricing_table_promo_enable' => 'yes'
+					'quik_theme_addons_pricing_table_promo_enable' => 'yes'
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_promo_alignment',
+			'quik_theme_addons_pricing_table_promo_alignment',
 			[
-				'label'     => __( 'Alignment', 'finest-addons' ),
+				'label'     => __( 'Alignment', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'toggle'    => false,
 				'options'   => [
 					'left'      => [
-						'title' => __( 'Left', 'finest-addons' ),
+						'title' => __( 'Left', 'quiktheme-addons' ),
 						'icon'  => 'eicon-text-align-left'
 					],
 					'center'    => [
-						'title' => __( 'Center', 'finest-addons' ),
+						'title' => __( 'Center', 'quiktheme-addons' ),
 						'icon'  => 'eicon-text-align-center'
 					],
 					'right'     => [
-						'title' => __( 'Right', 'finest-addons' ),
+						'title' => __( 'Right', 'quiktheme-addons' ),
 						'icon'  => 'eicon-text-align-right'
 					]
 				],
 				'default'   => 'center',
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-pricing-table-promo-label' => 'text-align: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-promo-label' => 'text-align: {{VALUE}};'
 				]
 			]
 		);
@@ -492,7 +492,7 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
-				'name'      => 'finest_addons_pricing_table_promo_background',
+				'name'      => 'quik_theme_addons_pricing_table_promo_background',
 				'types'     => [ 'classic', 'gradient' ],
 				'fields_options'  => [
 					'background'  => [
@@ -502,35 +502,35 @@ class Finest_Pricing_Box extends Widget_Base {
 						'default' => '#ffffff'
 					]
 				],
-				'selector'  => '{{WRAPPER}} .finest-addons-pricing-table-promo-label',
+				'selector'  => '{{WRAPPER}} .quiktheme-addons-pricing-table-promo-label',
 			]
 		);
 
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'     => 'finest_addons_pricing_table_promo_typography',
-				'label'    => __( 'Typography', 'finest-addons' ),
-				'selector' => '{{WRAPPER}} .finest-addons-pricing-table-promo-label',
+				'name'     => 'quik_theme_addons_pricing_table_promo_typography',
+				'label'    => __( 'Typography', 'quiktheme-addons' ),
+				'selector' => '{{WRAPPER}} .quiktheme-addons-pricing-table-promo-label',
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_promo_text-color',
+			'quik_theme_addons_pricing_table_promo_text-color',
 			[
-				'label'     => esc_html__( 'Text Color', 'finest-addons' ),
+				'label'     => esc_html__( 'Text Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#000',
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-pricing-table-promo-label' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-promo-label' => 'color: {{VALUE}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_addons_pricing_table_promo_padding',
+			'quik_theme_addons_pricing_table_promo_padding',
 			[
-				'label'      => __( 'Padding', 'finest-addons' ),
+				'label'      => __( 'Padding', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -542,15 +542,15 @@ class Finest_Pricing_Box extends Widget_Base {
 					'isLinked' => false,
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-addons-pricing-table-promo-label' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-promo-label' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_addons_pricing_table_promo_radius',
+			'quik_theme_addons_pricing_table_promo_radius',
 			[
-				'label'      => __( 'Border radius', 'finest-addons' ),
+				'label'      => __( 'Border radius', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -561,7 +561,7 @@ class Finest_Pricing_Box extends Widget_Base {
 					'isLinked' => true
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-addons-pricing-table-promo-label' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-promo-label' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -574,22 +574,22 @@ class Finest_Pricing_Box extends Widget_Base {
 		 * -------------------------------------------
 		 */
 		$this->start_controls_section(
-			'finest_addons_section_pricing_table_title_header_settings',
+			'quik_theme_addons_section_pricing_table_title_header_settings',
 			[
-				'label' => esc_html__( 'Header', 'finest-addons' ),
+				'label' => esc_html__( 'Header', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_header_type',
+			'quik_theme_addons_pricing_table_header_type',
 			[
-				'label'   => esc_html__( 'Header Type', 'finest-addons' ),
+				'label'   => esc_html__( 'Header Type', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'simple',
 				'options' => [
-					'simple'        => __( 'Simple', 'finest-addons' ),
-					'curved-header' => __( 'Curved Header', 'finest-addons' )
+					'simple'        => __( 'Simple', 'quiktheme-addons' ),
+					'curved-header' => __( 'Curved Header', 'quiktheme-addons' )
 				]
 			]
 		);
@@ -597,28 +597,28 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
-				'name'      => 'finest_addons_pricing_table_header_background',
+				'name'      => 'quik_theme_addons_pricing_table_header_background',
 				'types'     => [ 'classic', 'gradient' ],
-				'selector'  => '{{WRAPPER}} .finest-addons-pricing-table-header',
+				'selector'  => '{{WRAPPER}} .quiktheme-addons-pricing-table-header',
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_addons_pricing_table_header_padding',
+			'quik_theme_addons_pricing_table_header_padding',
 			[
-				'label'      => __( 'Padding', 'finest-addons' ),
+				'label'      => __( 'Padding', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-addons-pricing-table-header' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-header' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_addons_pricing_table_header_margin',
+			'quik_theme_addons_pricing_table_header_margin',
 			[
-				'label'      => __( 'Margin', 'finest-addons' ),
+				'label'      => __( 'Margin', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -629,7 +629,7 @@ class Finest_Pricing_Box extends Widget_Base {
 					'isLinked' => false
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-addons-pricing-table-header' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-header' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -791,30 +791,30 @@ class Finest_Pricing_Box extends Widget_Base {
 		 * -------------------------------------------
 		 */
 		$this->start_controls_section(
-			'finest_addons_section_pricing_table_title_style_settings',
+			'quik_theme_addons_section_pricing_table_title_style_settings',
 			[
-				'label' => esc_html__( 'Header Title', 'finest-addons' ),
+				'label' => esc_html__( 'Header Title', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_section_pricing_table_title_heading',
+			'quik_theme_addons_section_pricing_table_title_heading',
 			[
-				'label'     => esc_html__( 'Title', 'finest-addons' ),
+				'label'     => esc_html__( 'Title', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' =>  'before'
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_title_color',
+			'quik_theme_addons_pricing_table_title_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'finest-addons' ),
+				'label'     => esc_html__( 'Text Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#8a8d91',
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-pricing-table-title' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-title' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -823,8 +823,8 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'     => 'finest_addons_pricing_table_title_typography',
-				'selector' => '{{WRAPPER}} .finest-addons-pricing-table-title',
+				'name'     => 'quik_theme_addons_pricing_table_title_typography',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-pricing-table-title',
 				'fields_options'   => [
 					'font_size'    => [
 		                'default'  => [
@@ -840,9 +840,9 @@ class Finest_Pricing_Box extends Widget_Base {
 		);
 
 		$this->add_responsive_control(
-			'finest_addons_pricing_table_title_margin',
+			'quik_theme_addons_pricing_table_title_margin',
 			[
-				'label'      => esc_html__( 'Margin', 'finest-addons' ),
+				'label'      => esc_html__( 'Margin', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'default'    => [
 					'top'      => '0',
@@ -853,7 +853,7 @@ class Finest_Pricing_Box extends Widget_Base {
 				],
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-addons-pricing-table-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -865,22 +865,22 @@ class Finest_Pricing_Box extends Widget_Base {
 		 */
 
 		$this->add_control(
-			'finest_addons_section_pricing_table_subtitletitle_heading',
+			'quik_theme_addons_section_pricing_table_subtitletitle_heading',
 			[
-				'label'     => esc_html__( 'Sub Title', 'finest-addons' ),
+				'label'     => esc_html__( 'Sub Title', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' =>  'before'
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_subtitle_color',
+			'quik_theme_addons_pricing_table_subtitle_color',
 			[
-				'label'     => esc_html__( 'Color', 'finest-addons' ),
+				'label'     => esc_html__( 'Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#000000',
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-pricing-table-subtitle' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-subtitle' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -889,15 +889,15 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'     => 'finest_addons_pricing_table_subtitle_typography',
-				'selector' => '{{WRAPPER}} .finest-addons-pricing-table-subtitle'
+				'name'     => 'quik_theme_addons_pricing_table_subtitle_typography',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-pricing-table-subtitle'
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_addons_pricing_table_subtitle_margin',
+			'quik_theme_addons_pricing_table_subtitle_margin',
 			[
-				'label'   => esc_html__( 'Margin', 'finest-addons' ),
+				'label'   => esc_html__( 'Margin', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::DIMENSIONS,
 				'default' => [
 					'top'      => '0',
@@ -908,7 +908,7 @@ class Finest_Pricing_Box extends Widget_Base {
 				],
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-addons-pricing-table-subtitle' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-subtitle' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -921,60 +921,60 @@ class Finest_Pricing_Box extends Widget_Base {
 		 * -------------------------------------------
 		 */
 		$this->start_controls_section(
-			'finest_addons_section_pricing_table_price_style_settings',
+			'quik_theme_addons_section_pricing_table_price_style_settings',
 			[
-				'label' => esc_html__( 'Pricing', 'finest-addons' ),
+				'label' => esc_html__( 'Pricing', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_price_box_separator',
+			'quik_theme_addons_pricing_table_price_box_separator',
 			[
-				'label'        => esc_html__( 'Enable Separator', 'finest-addons' ),
+				'label'        => esc_html__( 'Enable Separator', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'ON', 'finest-addons' ),
-				'label_off'    => __( 'OFF', 'finest-addons' ),
+				'label_on'     => __( 'ON', 'quiktheme-addons' ),
+				'label_off'    => __( 'OFF', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 				'default'      => 'yes'
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_addons_pricing_table_price_box_separator_height',
+			'quik_theme_addons_pricing_table_price_box_separator_height',
 			[
-				'label'     => esc_html__( 'Separator Height', 'finest-addons' ),
+				'label'     => esc_html__( 'Separator Height', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::NUMBER,
 				'default'   => '1',
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-price-bottom-separator' => 'height: {{VALUE}}px;'
+					'{{WRAPPER}} .quiktheme-addons-price-bottom-separator' => 'height: {{VALUE}}px;'
 				],
 				'condition' => [
-					'finest_addons_pricing_table_price_box_separator' => 'yes'
+					'quik_theme_addons_pricing_table_price_box_separator' => 'yes'
 				]
 
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_price_box_separator_color',
+			'quik_theme_addons_pricing_table_price_box_separator_color',
 			[
-				'label'     => esc_html__( 'Separator Color', 'finest-addons' ),
+				'label'     => esc_html__( 'Separator Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#e5e5e5',
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-price-bottom-separator'  => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-addons-price-bottom-separator'  => 'background-color: {{VALUE}};'
 				],
 				'condition' => [
-					'finest_addons_pricing_table_price_box_separator' => 'yes'
+					'quik_theme_addons_pricing_table_price_box_separator' => 'yes'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_addons_pricing_table_price_box_separator_spacing',
+			'quik_theme_addons_pricing_table_price_box_separator_spacing',
 			[
-				'label'       => esc_html__( 'Separator Spacing', 'finest-addons' ),
+				'label'       => esc_html__( 'Separator Spacing', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::SLIDER,
 				'default'     => [
 					'size'    => 30
@@ -985,21 +985,21 @@ class Finest_Pricing_Box extends Widget_Base {
 					]
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .finest-addons-price-bottom-separator' => 'margin: {{SIZE}}px 0;'
+					'{{WRAPPER}} .quiktheme-addons-price-bottom-separator' => 'margin: {{SIZE}}px 0;'
 				],
 				'condition'   => [
-					'finest_addons_pricing_table_price_box_separator' => 'yes'
+					'quik_theme_addons_pricing_table_price_box_separator' => 'yes'
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_price_box',
+			'quik_theme_addons_pricing_table_price_box',
 			[
-				'label'        => esc_html__( 'Price Box', 'finest-addons' ),
+				'label'        => esc_html__( 'Price Box', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'ON', 'finest-addons' ),
-				'label_off'    => __( 'OFF', 'finest-addons' ),
+				'label_on'     => __( 'ON', 'quiktheme-addons' ),
+				'label_off'    => __( 'OFF', 'quiktheme-addons' ),
 				'separator'	   => 'before',
 				'return_value' => 'yes',
 				'default'      => 'no'
@@ -1007,31 +1007,31 @@ class Finest_Pricing_Box extends Widget_Base {
 		);
 
 		$this->add_responsive_control(
-			'finest_addons_pricing_table_price_box_height',
+			'quik_theme_addons_pricing_table_price_box_height',
 			[
-				'label'     => __( 'Box Height', 'finest-addons' ),
+				'label'     => __( 'Box Height', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::NUMBER,
 				'default'   => '100',
 				'selectors' => [
 					'{{WRAPPER}} .price-box' => 'height: {{VALUE}}px'
 				],
 				'condition' => [
-					'finest_addons_pricing_table_price_box' => 'yes'
+					'quik_theme_addons_pricing_table_price_box' => 'yes'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_addons_pricing_table_price_box_width',
+			'quik_theme_addons_pricing_table_price_box_width',
 			[
-				'label'     => __( 'Box Width', 'finest-addons' ),
+				'label'     => __( 'Box Width', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::NUMBER,
 				'default'   => '100',
 				'selectors' => [
 					'{{WRAPPER}} .price-box' => 'width: {{VALUE}}px'
 				],
 				'condition' => [
-					'finest_addons_pricing_table_price_box' => 'yes'
+					'quik_theme_addons_pricing_table_price_box' => 'yes'
 				]
 			]
 		);
@@ -1039,11 +1039,11 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
-				'name'      => 'finest_addons_pricing_table_price_box_background',
+				'name'      => 'quik_theme_addons_pricing_table_price_box_background',
 				'types'     => [ 'classic', 'gradient'],
 				'selector'  => '{{WRAPPER}} .price-box',
 				'condition' => [
-					'finest_addons_pricing_table_price_box' => 'yes'
+					'quik_theme_addons_pricing_table_price_box' => 'yes'
 				]
 			]
 		);
@@ -1051,18 +1051,18 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
-				'name'      => 'finest_addons_pricing_table_price_box_border',
+				'name'      => 'quik_theme_addons_pricing_table_price_box_border',
 				'selector'  => '{{WRAPPER}} .price-box',
 				'condition' => [
-					'finest_addons_pricing_table_price_box' => 'yes'
+					'quik_theme_addons_pricing_table_price_box' => 'yes'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_addons_pricing_table_price_box_radius',
+			'quik_theme_addons_pricing_table_price_box_radius',
 			[
-				'label'      => __( 'Box Radius', 'finest-addons' ),
+				'label'      => __( 'Box Radius', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -1076,28 +1076,28 @@ class Finest_Pricing_Box extends Widget_Base {
 					'{{WRAPPER}} .price-box' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				],
 				'condition'  => [
-					'finest_addons_pricing_table_price_box' => 'yes'
+					'quik_theme_addons_pricing_table_price_box' => 'yes'
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_price_tag_heading',
+			'quik_theme_addons_pricing_table_price_tag_heading',
 			[
-				'label'     => esc_html__( 'Original Price', 'finest-addons' ),
+				'label'     => esc_html__( 'Original Price', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' =>  'before'
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_pricing_color',
+			'quik_theme_addons_pricing_table_pricing_color',
 			[
-				'label'     => esc_html__( 'Color', 'finest-addons' ),
+				'label'     => esc_html__( 'Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#132c47',
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-price p.finest-addons-pricing-table-new-price'  => 'color: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-price p.quiktheme-addons-pricing-table-new-price'  => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -1105,8 +1105,8 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'     => 'finest_addons_pricing_table_price_tag_typography',
-				'selector' => '{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-price p.finest-addons-pricing-table-new-price',
+				'name'     => 'quik_theme_addons_pricing_table_price_tag_typography',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-price p.quiktheme-addons-pricing-table-new-price',
 				'fields_options'   => [
 					'font_size'    => [
 		                'default'  => [
@@ -1128,13 +1128,13 @@ class Finest_Pricing_Box extends Widget_Base {
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_regular_price_heading',
+			'quik_theme_addons_pricing_table_regular_price_heading',
 			[
-				'label'     => esc_html__( 'Regular Price', 'finest-addons' ),
+				'label'     => esc_html__( 'Regular Price', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' =>  'before',
 				'condition' => [
-					'finest_addons_pricing_table_discount_price' => 'yes'
+					'quik_theme_addons_pricing_table_discount_price' => 'yes'
 				]
 			]
 		);
@@ -1142,33 +1142,33 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'     => 'finest_addons_pricing_table_regular_price_typography',
-				'selector' => '{{WRAPPER}} .finest-addons-pricing-table-price.finest-addons-discount-price-yes p.finest-addons-pricing-table-regular-price',
+				'name'     => 'quik_theme_addons_pricing_table_regular_price_typography',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-pricing-table-price.quiktheme-addons-discount-price-yes p.quiktheme-addons-pricing-table-regular-price',
 				'condition' => [
-					'finest_addons_pricing_table_discount_price' => 'yes'
+					'quik_theme_addons_pricing_table_discount_price' => 'yes'
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_regular_price_color',
+			'quik_theme_addons_pricing_table_regular_price_color',
 			[
-				'label'     => esc_html__( 'Color', 'finest-addons' ),
+				'label'     => esc_html__( 'Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#132c47',
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-pricing-table-price.finest-addons-discount-price-yes p.finest-addons-pricing-table-regular-price' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-price.quiktheme-addons-discount-price-yes p.quiktheme-addons-pricing-table-regular-price' => 'color: {{VALUE}};'
 				],
 				'condition' => [
-					'finest_addons_pricing_table_discount_price' => 'yes'
+					'quik_theme_addons_pricing_table_discount_price' => 'yes'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_addons_pricing_table_regular_price_right_spacing',
+			'quik_theme_addons_pricing_table_regular_price_right_spacing',
 			[
-				'label'       => esc_html__( 'Regular Price Right Spacing', 'finest-addons' ),
+				'label'       => esc_html__( 'Regular Price Right Spacing', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::SLIDER,
 				'default'     => [
 					'size'    => 10
@@ -1179,30 +1179,30 @@ class Finest_Pricing_Box extends Widget_Base {
 					]
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .finest-addons-pricing-table-price.finest-addons-discount-price-yes p.finest-addons-pricing-table-regular-price' => 'margin-right: {{SIZE}}px;'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-price.quiktheme-addons-discount-price-yes p.quiktheme-addons-pricing-table-regular-price' => 'margin-right: {{SIZE}}px;'
 				],
 				'condition' => [
-					'finest_addons_pricing_table_discount_price' => 'yes'
+					'quik_theme_addons_pricing_table_discount_price' => 'yes'
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_pricing_curency_heading',
+			'quik_theme_addons_pricing_table_pricing_curency_heading',
 			[
-				'label'     => esc_html__( 'Pricing Curency', 'finest-addons' ),
+				'label'     => esc_html__( 'Pricing Curency', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_pricing_curency_spacing',
+			'quik_theme_addons_pricing_table_pricing_curency_spacing',
 			[
-				'label' => __( 'Spacing', 'finest-addons' ),
+				'label' => __( 'Spacing', 'quiktheme-addons' ),
 				'type' => Controls_Manager::POPOVER_TOGGLE,
-				'label_off' => __( 'Default', 'finest-addons' ),
-				'label_on' => __( 'Custom', 'finest-addons' ),
+				'label_off' => __( 'Default', 'quiktheme-addons' ),
+				'label_on' => __( 'Custom', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -1211,9 +1211,9 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->start_popover();
 
 			$this->add_responsive_control(
-				'finest_addons_pricing_table_pricing_curency_bottom_spacing',
+				'quik_theme_addons_pricing_table_pricing_curency_bottom_spacing',
 				[
-					'label'      => esc_html__( 'Bottom Spacing', 'finest-addons' ),
+					'label'      => esc_html__( 'Bottom Spacing', 'quiktheme-addons' ),
 					'type'       => Controls_Manager::SLIDER,
 					'size_units' => [ 'px' ],
 					'range'      => [
@@ -1224,15 +1224,15 @@ class Finest_Pricing_Box extends Widget_Base {
 						],
 					],
 					'selectors'  => [
-						'{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-price span.finest-addons-pricing-table-currency' => 'top: {{SIZE}}{{UNIT}};'
+						'{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-price span.quiktheme-addons-pricing-table-currency' => 'top: {{SIZE}}{{UNIT}};'
 					],
 				]
 			);
 
             $this->add_responsive_control(
-				'finest_addons_pricing_table_pricing_curency_right_spacing',
+				'quik_theme_addons_pricing_table_pricing_curency_right_spacing',
 				[
-					'label'      => esc_html__( 'Right Spacing', 'finest-addons' ),
+					'label'      => esc_html__( 'Right Spacing', 'quiktheme-addons' ),
 					'type'       => Controls_Manager::SLIDER,
 					'size_units' => [ 'px' ],
 					'range'      => [
@@ -1243,7 +1243,7 @@ class Finest_Pricing_Box extends Widget_Base {
 						],
 					],
 					'selectors'  => [
-						'{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-price span.finest-addons-pricing-table-currency' => 'margin-right: {{SIZE}}{{UNIT}};'
+						'{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-price span.quiktheme-addons-pricing-table-currency' => 'margin-right: {{SIZE}}{{UNIT}};'
 					],
 				]
 			);
@@ -1251,12 +1251,12 @@ class Finest_Pricing_Box extends Widget_Base {
         $this->end_popover();
 
 		$this->add_control(
-			'finest_addons_pricing_table_pricing_curency_color',
+			'quik_theme_addons_pricing_table_pricing_curency_color',
 			[
-				'label'     => esc_html__( 'Color', 'finest-addons' ),
+				'label'     => esc_html__( 'Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-price span.finest-addons-pricing-table-currency' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-price span.quiktheme-addons-pricing-table-currency' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -1264,28 +1264,28 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'     => 'finest_addons_pricing_table_price_curency_typography',
-				'selector' => '{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-price span.finest-addons-pricing-table-currency',
+				'name'     => 'quik_theme_addons_pricing_table_price_curency_typography',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-price span.quiktheme-addons-pricing-table-currency',
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_pricing_period_heading',
+			'quik_theme_addons_pricing_table_pricing_period_heading',
 			[
-				'label'     => esc_html__( 'Pricing By', 'finest-addons' ),
+				'label'     => esc_html__( 'Pricing By', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_pricing_period_color',
+			'quik_theme_addons_pricing_table_pricing_period_color',
 			[
-				'label'     => esc_html__( 'Color', 'finest-addons' ),
+				'label'     => esc_html__( 'Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#132c47',
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-price span.finest-addons-price-period' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-price span.quiktheme-addons-price-period' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -1293,8 +1293,8 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'     => 'finest_addons_pricing_table_price_preiod_typography',
-				'selector' => '{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-price-period',
+				'name'     => 'quik_theme_addons_pricing_table_price_preiod_typography',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-price-period',
 				'fields_options'   => [
 					'font_size'    => [
 		                'default'  => [
@@ -1316,21 +1316,21 @@ class Finest_Pricing_Box extends Widget_Base {
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_price_subtitle_heading',
+			'quik_theme_addons_pricing_table_price_subtitle_heading',
 			[
-				'label'     => esc_html__( 'Price Subtitle', 'finest-addons' ),
+				'label'     => esc_html__( 'Price Subtitle', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_price_subtitle_color',
+			'quik_theme_addons_pricing_table_price_subtitle_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'finest-addons' ),
+				'label'     => esc_html__( 'Text Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-price-subtitle' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-price-subtitle' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -1338,15 +1338,15 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'     => 'finest_addons_pricing_table_price_subtitle_typography',
-				'selector' => '{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-price-subtitle',
+				'name'     => 'quik_theme_addons_pricing_table_price_subtitle_typography',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-price-subtitle',
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_addons_pricing_table_price_subtitle_margin',
+			'quik_theme_addons_pricing_table_price_subtitle_margin',
 			[
-				'label'      => __( 'Margin', 'finest-addons' ),
+				'label'      => __( 'Margin', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -1358,7 +1358,7 @@ class Finest_Pricing_Box extends Widget_Base {
 					'islinked' => true
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-price-subtitle' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-price-subtitle' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				],
 			]
 		);
@@ -1372,9 +1372,9 @@ class Finest_Pricing_Box extends Widget_Base {
 		 * -------------------------------------------
 		 */
 		$this->start_controls_section(
-			'finest_addons_section_pricing_table_style_featured_list_settings',
+			'quik_theme_addons_section_pricing_table_style_featured_list_settings',
 			[
-				'label' => esc_html__( 'Feature List', 'finest-addons' ),
+				'label' => esc_html__( 'Feature List', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE
 			]
 		);
@@ -1382,31 +1382,31 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'     => 'finest_addons_pricing_table_list_item_typography',
-				'selector' => '{{WRAPPER}} .finest-addons-pricing-table-features li'
+				'name'     => 'quik_theme_addons_pricing_table_list_item_typography',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-pricing-table-features li'
 			]
 		);
 
 
 		$this->add_control(
-			'finest_addons_pricing_table_list_item_icon_color',
+			'quik_theme_addons_pricing_table_list_item_icon_color',
 			[
-				'label'     => esc_html__( 'Icon Color', 'finest-addons' ),
+				'label'     => esc_html__( 'Icon Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-pricing-table-features li span.finest-addons-pricing-li-icon' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-features li span.quiktheme-addons-pricing-li-icon' => 'color: {{VALUE}};'
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_list_item_color',
+			'quik_theme_addons_pricing_table_list_item_color',
 			[
-				'label'     => esc_html__( 'Item Color', 'finest-addons' ),
+				'label'     => esc_html__( 'Item Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#132c47',
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-pricing-table-features li' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-features li' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -1414,69 +1414,69 @@ class Finest_Pricing_Box extends Widget_Base {
 
 
 		$this->add_control(
-			'finest_addons_pricing_table_list_border_bottom',
+			'quik_theme_addons_pricing_table_list_border_bottom',
 			[
-				'label'        => __( 'List Border Bottom', 'finest-addons' ),
+				'label'        => __( 'List Border Bottom', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'finest-addons' ),
-				'label_off'    => __( 'Hide', 'finest-addons' ),
+				'label_on'     => __( 'Show', 'quiktheme-addons' ),
+				'label_off'    => __( 'Hide', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 				'default'      => 'no'
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_list_border_bottom_style',
+			'quik_theme_addons_pricing_table_list_border_bottom_style',
 			[
-				'label'     => __( 'List Border Bottom Color', 'finest-addons' ),
+				'label'     => __( 'List Border Bottom Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'defailt'   => '#e5e5e5',
 				'selectors' => [
 					'{{WRAPPER}} .list-border-bottom li:not(:last-child)' => 'border-bottom:1px solid {{VALUE}};'
 				],
 				'condition' => [
-					'finest_addons_pricing_table_list_border_bottom' => 'yes'
+					'quik_theme_addons_pricing_table_list_border_bottom' => 'yes'
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_list_disable_item_styling',
+			'quik_theme_addons_pricing_table_list_disable_item_styling',
 			[
-				'label'     => esc_html__( 'Disable Items', 'finest-addons' ),
+				'label'     => esc_html__( 'Disable Items', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_list_disable_item_icon_color',
+			'quik_theme_addons_pricing_table_list_disable_item_icon_color',
 			[
-				'label'     => esc_html__( 'Icon Color', 'finest-addons' ),
+				'label'     => esc_html__( 'Icon Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#a6a9ad',
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-pricing-table-features li.finest-addons-pricing-table-features-disable span.finest-addons-pricing-li-icon' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-features li.quiktheme-addons-pricing-table-features-disable span.quiktheme-addons-pricing-li-icon' => 'color: {{VALUE}};'
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_list_disable_item_color',
+			'quik_theme_addons_pricing_table_list_disable_item_color',
 			[
-				'label'     => esc_html__( 'Item color', 'finest-addons' ),
+				'label'     => esc_html__( 'Item color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#a6a9ad',
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-pricing-table-features li.finest-addons-pricing-table-features-disable' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-features li.quiktheme-addons-pricing-table-features-disable' => 'color: {{VALUE}};'
 				]
 			]
 		);
 
         $this->add_responsive_control(
-			'finest_addons_pricing_table_featured_list_icon_size',
+			'quik_theme_addons_pricing_table_featured_list_icon_size',
 			[
-				'label'       => esc_html__( 'Icon Size', 'finest-addons' ),
+				'label'       => esc_html__( 'Icon Size', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::SLIDER,
 				'default'     => [
 					'size'    => 12
@@ -1487,7 +1487,7 @@ class Finest_Pricing_Box extends Widget_Base {
 					]
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .finest-addons-pricing-li-icon' => 'font-size: {{SIZE}}px;'
+					'{{WRAPPER}} .quiktheme-addons-pricing-li-icon' => 'font-size: {{SIZE}}px;'
 				]
 			]
 		);
@@ -1495,9 +1495,9 @@ class Finest_Pricing_Box extends Widget_Base {
 		$icon_gap = is_rtl() ? 'left' : 'right';
 
 		$this->add_responsive_control(
-			'finest_addons_pricing_table_featured_list_icon_space',
+			'quik_theme_addons_pricing_table_featured_list_icon_space',
 			[
-				'label'       => esc_html__( 'Icon Space', 'finest-addons' ),
+				'label'       => esc_html__( 'Icon Space', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::SLIDER,
 				'default'     => [
 					'size'    => 7
@@ -1508,53 +1508,53 @@ class Finest_Pricing_Box extends Widget_Base {
 					]
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .finest-addons-pricing-table-features li .finest-addons-pricing-li-icon' => 'margin-'.$icon_gap.': {{SIZE}}px;'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-features li .quiktheme-addons-pricing-li-icon' => 'margin-'.$icon_gap.': {{SIZE}}px;'
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_list_alignment',
+			'quik_theme_addons_pricing_table_list_alignment',
 			[
-				'label'         => __( 'Alignment', 'finest-addons' ),
+				'label'         => __( 'Alignment', 'quiktheme-addons' ),
 				'type'          => Controls_Manager::CHOOSE,
 				'toggle'        => false,
 				'default'		=> 'center',
 				'options'       => [
 					'flex-start'      => [
-						'title' => __( 'Left', 'finest-addons' ),
+						'title' => __( 'Left', 'quiktheme-addons' ),
 						'icon'  => 'eicon-text-align-left'
 					],
 					'center'    => [
-						'title' => __( 'Center', 'finest-addons' ),
+						'title' => __( 'Center', 'quiktheme-addons' ),
 						'icon'  => 'eicon-text-align-center'
 					],
 					'flex-end'     => [
-						'title' => __( 'Right', 'finest-addons' ),
+						'title' => __( 'Right', 'quiktheme-addons' ),
 						'icon'  => 'eicon-text-align-right'
 					]
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-addons-pricing-table-features li' => 'justify-content: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-features li' => 'justify-content: {{VALUE}};'
 				]
 			]
 		);
 		$this->add_responsive_control(
-			'finest_addons_pricing_table_list_margin',
+			'quik_theme_addons_pricing_table_list_margin',
 			[
-				'label'      => __( 'Margin All List', 'finest-addons' ),
+				'label'      => __( 'Margin All List', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-addons-pricing-table-features' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-features' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_addons_pricing_table_list_padding',
+			'quik_theme_addons_pricing_table_list_padding',
 			[
-				'label'      => __( 'Padding', 'finest-addons' ),
+				'label'      => __( 'Padding', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -1565,7 +1565,7 @@ class Finest_Pricing_Box extends Widget_Base {
 					'isLinked' => false
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-addons-pricing-table-features li' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-features li' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1577,20 +1577,20 @@ class Finest_Pricing_Box extends Widget_Base {
 		 * -------------------------------------------
 		 */
 		$this->start_controls_section(
-			'finest_addons_section_pricing_table_featured_tag_settings',
+			'quik_theme_addons_section_pricing_table_featured_tag_settings',
 			[
-				'label'     => esc_html__( 'Featured Badge', 'finest-addons' ),
+				'label'     => esc_html__( 'Featured Badge', 'quiktheme-addons' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'finest_addons_pricing_table_featured' => 'yes'
+					'quik_theme_addons_pricing_table_featured' => 'yes'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_addons_pricing_table_featured_tag_font_size',
+			'quik_theme_addons_pricing_table_featured_tag_font_size',
 			[
-				'label'       => esc_html__( 'Font Size', 'finest-addons' ),
+				'label'       => esc_html__( 'Font Size', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::SLIDER,
 				'default'     => [
 					'size'    => 12
@@ -1608,9 +1608,9 @@ class Finest_Pricing_Box extends Widget_Base {
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_featured_tag_text_color',
+			'quik_theme_addons_pricing_table_featured_tag_text_color',
 			[
-				'label'     => esc_html__( 'Color', 'finest-addons' ),
+				'label'     => esc_html__( 'Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#ffffff',
 				'selectors' => [
@@ -1623,11 +1623,11 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
-				'name'      => 'finest_addons_pricing_table_featured_text_badge_background',
+				'name'      => 'quik_theme_addons_pricing_table_featured_text_badge_background',
 				'types'     => [ 'classic', 'gradient' ],
 				'selector'  => '{{WRAPPER}} .text-badge',
 				'condition' => [
-					'finest_addons_pricing_table_featured_type' => 'text-badge'
+					'quik_theme_addons_pricing_table_featured_type' => 'text-badge'
 				]
 			]
 		);
@@ -1635,11 +1635,11 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
-				'name'      => 'finest_addons_pricing_table_featured_icon_badge_background',
+				'name'      => 'quik_theme_addons_pricing_table_featured_icon_badge_background',
 				'types'     => [ 'classic', 'gradient' ],
 				'selector'  => '{{WRAPPER}} .icon-badge',
 				'condition' => [
-					'finest_addons_pricing_table_featured_type' => 'icon-badge'
+					'quik_theme_addons_pricing_table_featured_type' => 'icon-badge'
 				]
 			]
 		);
@@ -1652,9 +1652,9 @@ class Finest_Pricing_Box extends Widget_Base {
 		 * -------------------------------------------
 		 */
 		$this->start_controls_section(
-			'finest_addons_section_pricing_table_btn_style_settings',
+			'quik_theme_addons_section_pricing_table_btn_style_settings',
 			[
-				'label' => esc_html__( 'Button', 'finest-addons' ),
+				'label' => esc_html__( 'Button', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE
 			]
 		);
@@ -1662,36 +1662,36 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'     => 'finest_addons_pricing_table_btn_typography',
-				'selector' => '{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-action'
+				'name'     => 'quik_theme_addons_pricing_table_btn_typography',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-action'
 			]
 		);
 
-		$this->start_controls_tabs( 'finest_addons_pricing_table_button_tabs' );
+		$this->start_controls_tabs( 'quik_theme_addons_pricing_table_button_tabs' );
 
 			// Normal State Tab
-			$this->start_controls_tab( 'finest_addons_pricing_table_btn_normal', [ 'label' => esc_html__( 'Normal', 'finest-addons' ) ] );
+			$this->start_controls_tab( 'quik_theme_addons_pricing_table_btn_normal', [ 'label' => esc_html__( 'Normal', 'quiktheme-addons' ) ] );
 
 			$this->add_control(
-				'finest_addons_pricing_table_btn_normal_text_color',
+				'quik_theme_addons_pricing_table_btn_normal_text_color',
 				[
-					'label'     => esc_html__( 'Text Color', 'finest-addons' ),
+					'label'     => esc_html__( 'Text Color', 'quiktheme-addons' ),
 					'type'      => Controls_Manager::COLOR,
 					'default'   => '#ffffff',
 					'selectors' => [
-						'{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-action' => 'color: {{VALUE}};'
+						'{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-action' => 'color: {{VALUE}};'
 					]
 				]
 			);
 
 			$this->add_control(
-				'finest_addons_pricing_table_btn_normal_bg_color',
+				'quik_theme_addons_pricing_table_btn_normal_bg_color',
 				[
-					'label'     => esc_html__( 'Background Color', 'finest-addons' ),
+					'label'     => esc_html__( 'Background Color', 'quiktheme-addons' ),
 					'type'      => Controls_Manager::COLOR,
                     'default'   => '#F96331',
 					'selectors' => [
-						'{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-action' => 'background-color: {{VALUE}};'
+						'{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-action' => 'background-color: {{VALUE}};'
 					]
 				]
 			);
@@ -1699,16 +1699,16 @@ class Finest_Pricing_Box extends Widget_Base {
 			$this->add_group_control(
 				Group_Control_Border::get_type(),
 				[
-					'name'            => 'finest_addons_pricing_table_btn_normal_border',
-					'selector'        => '{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-action'
+					'name'            => 'quik_theme_addons_pricing_table_btn_normal_border',
+					'selector'        => '{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-action'
 				]
 			);
 
 			$this->add_group_control(
 				Group_Control_Box_Shadow::get_type(),
 				[
-					'name'     => 'finest_addons_pricing_table_btn_box_shadow',
-					'selector' => '{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-action'
+					'name'     => 'quik_theme_addons_pricing_table_btn_box_shadow',
+					'selector' => '{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-action'
 				]
 			);
 
@@ -1731,7 +1731,7 @@ class Finest_Pricing_Box extends Widget_Base {
 					],
 
 					'selectors' => [
-						'{{WRAPPER}} .finest-addons-pricing-table-action' => 'width: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .quiktheme-addons-pricing-table-action' => 'width: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
@@ -1755,7 +1755,7 @@ class Finest_Pricing_Box extends Widget_Base {
 					],
 
 					'selectors' => [
-						'{{WRAPPER}} .finest-addons-pricing-table-action' => 'height: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .quiktheme-addons-pricing-table-action' => 'height: {{SIZE}}{{UNIT}};',
 					],
 				]
 				);
@@ -1764,27 +1764,27 @@ class Finest_Pricing_Box extends Widget_Base {
 			$this->end_controls_tab();
 
 			// Hover State Tab
-			$this->start_controls_tab( 'finest_addons_pricing_table_btn_hover', [ 'label' => esc_html__( 'Hover', 'finest-addons' ) ] );
+			$this->start_controls_tab( 'quik_theme_addons_pricing_table_btn_hover', [ 'label' => esc_html__( 'Hover', 'quiktheme-addons' ) ] );
 
 			$this->add_control(
-				'finest_addons_pricing_table_btn_hover_text_color',
+				'quik_theme_addons_pricing_table_btn_hover_text_color',
 				[
-					'label'     => esc_html__( 'Text Color', 'finest-addons' ),
+					'label'     => esc_html__( 'Text Color', 'quiktheme-addons' ),
 					'type'      => Controls_Manager::COLOR,
 					'selectors' => [
-						'{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-action:hover' => 'color: {{VALUE}};'
+						'{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-action:hover' => 'color: {{VALUE}};'
 					]
 				]
 			);
 
 			$this->add_control(
-				'finest_addons_pricing_table_btn_hover_bg_color',
+				'quik_theme_addons_pricing_table_btn_hover_bg_color',
 				[
-					'label'     => esc_html__( 'Background Color', 'finest-addons' ),
+					'label'     => esc_html__( 'Background Color', 'quiktheme-addons' ),
 					'type'      => Controls_Manager::COLOR,
 					'default'   => '#F96331',
 					'selectors' => [
-						'{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-action:hover' => 'background-color: {{VALUE}};'
+						'{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-action:hover' => 'background-color: {{VALUE}};'
 					]
 				]
 			);
@@ -1792,16 +1792,16 @@ class Finest_Pricing_Box extends Widget_Base {
 			$this->add_group_control(
 				Group_Control_Border::get_type(),
 				[
-					'name'            => 'finest_addons_pricing_table_btn_hover_border',
-					'selector'        => '{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-action:hover'
+					'name'            => 'quik_theme_addons_pricing_table_btn_hover_border',
+					'selector'        => '{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-action:hover'
 				]
 			);
 
 			$this->add_group_control(
 				Group_Control_Box_Shadow::get_type(),
 				[
-					'name'     => 'finest_addons_pricing_table_btn_box_shadow_hover',
-					'selector' => '{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-action:hover'
+					'name'     => 'quik_theme_addons_pricing_table_btn_box_shadow_hover',
+					'selector' => '{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-action:hover'
 				]
 			);
 
@@ -1810,9 +1810,9 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->end_controls_tabs();
 
         $this->add_responsive_control(
-			'finest_addons_pricing_table_button_border_radius',
+			'quik_theme_addons_pricing_table_button_border_radius',
 			[
-				'label'      => __( 'Border Radius', 'finest-addons' ),
+				'label'      => __( 'Border Radius', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -1822,15 +1822,15 @@ class Finest_Pricing_Box extends Widget_Base {
 					'left'   => '4'
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-action' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-action' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_addons_pricing_table_button_padding',
+			'quik_theme_addons_pricing_table_button_padding',
 			[
-				'label'      => __( 'Padding', 'finest-addons' ),
+				'label'      => __( 'Padding', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -1841,15 +1841,15 @@ class Finest_Pricing_Box extends Widget_Base {
 					'isLinked' => false
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-action' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-action' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_addons_pricing_table_button_margin',
+			'quik_theme_addons_pricing_table_button_margin',
 			[
-				'label'      => __( 'Margin', 'finest-addons' ),
+				'label'      => __( 'Margin', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -1860,7 +1860,7 @@ class Finest_Pricing_Box extends Widget_Base {
 					'isLinked' => false
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-action' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-action' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1873,36 +1873,36 @@ class Finest_Pricing_Box extends Widget_Base {
 		 * -------------------------------------------
 		 */
 		$this->start_controls_section(
-			'finest_addons_section_pricing_table_note_style',
+			'quik_theme_addons_section_pricing_table_note_style',
 			[
-				'label' => esc_html__( 'Note', 'finest-addons' ),
+				'label' => esc_html__( 'Note', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_note_alignment',
+			'quik_theme_addons_pricing_table_note_alignment',
 			[
-				'label'         => __( 'Alignment', 'finest-addons' ),
+				'label'         => __( 'Alignment', 'quiktheme-addons' ),
 				'type'          => Controls_Manager::CHOOSE,
 				'toggle'        => false,
 				'default'		=> 'center',
 				'options'       => [
 					'left'      => [
-						'title' => __( 'Left', 'finest-addons' ),
+						'title' => __( 'Left', 'quiktheme-addons' ),
 						'icon'  => 'eicon-text-align-left'
 					],
 					'center'    => [
-						'title' => __( 'Center', 'finest-addons' ),
+						'title' => __( 'Center', 'quiktheme-addons' ),
 						'icon'  => 'eicon-text-align-center'
 					],
 					'right'     => [
-						'title' => __( 'Right', 'finest-addons' ),
+						'title' => __( 'Right', 'quiktheme-addons' ),
 						'icon'  => 'eicon-text-align-right'
 					]
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-note' => 'text-align: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-note' => 'text-align: {{VALUE}};'
 				]
 			]
 		);
@@ -1912,21 +1912,21 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
-				'name' => 'finest_addons_section_pricing_table_note_background',
-				'label' => __( 'Background', 'finest-addons' ),
+				'name' => 'quik_theme_addons_section_pricing_table_note_background',
+				'label' => __( 'Background', 'quiktheme-addons' ),
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-note',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-note',
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_section_pricing_table_note_text_color',
+			'quik_theme_addons_section_pricing_table_note_text_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'finest-addons' ),
+				'label'     => esc_html__( 'Text Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#000',
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-note' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-note' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -1934,23 +1934,23 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'     => 'finest_addons_section_pricing_table_note_text_typography',
-				'label'    => __( 'Typography', 'finest-addons' ),
-				'selector' => '{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-note',
+				'name'     => 'quik_theme_addons_section_pricing_table_note_text_typography',
+				'label'    => __( 'Typography', 'quiktheme-addons' ),
+				'selector' => '{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-note',
 			]
 		);
 
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
-				'name'     => 'finest_addons_section_pricing_table_note_border',
-				'selector' => '{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-note'
+				'name'     => 'quik_theme_addons_section_pricing_table_note_border',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-note'
 			]
 		);
 		$this->add_responsive_control(
-			'finest_addons_section_pricing_table_note_border_radius',
+			'quik_theme_addons_section_pricing_table_note_border_radius',
 			[
-				'label'      => __( 'Border Radius', 'finest-addons' ),
+				'label'      => __( 'Border Radius', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -1961,15 +1961,15 @@ class Finest_Pricing_Box extends Widget_Base {
 					'isLinked' => false
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-note' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-note' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
         $this->add_responsive_control(
-			'finest_addons_section_pricing_table_note_padding',
+			'quik_theme_addons_section_pricing_table_note_padding',
 			[
-				'label'      => __( 'Padding', 'finest-addons' ),
+				'label'      => __( 'Padding', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -1980,15 +1980,15 @@ class Finest_Pricing_Box extends Widget_Base {
 					'isLinked' => false
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-note' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-note' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_addons_section_pricing_table_note_margin',
+			'quik_theme_addons_section_pricing_table_note_margin',
 			[
-				'label'      => __( 'Margin', 'finest-addons' ),
+				'label'      => __( 'Margin', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -1999,7 +1999,7 @@ class Finest_Pricing_Box extends Widget_Base {
 					'isLinked' => false
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-addons-pricing-table-wrapper .finest-addons-pricing-table-note' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper .quiktheme-addons-pricing-table-note' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -2013,9 +2013,9 @@ class Finest_Pricing_Box extends Widget_Base {
 		 */
 
 		$this->start_controls_section(
-			'finest_addons_section_pricing_tables_styles_presets',
+			'quik_theme_addons_section_pricing_tables_styles_presets',
 			[
-				'label' => esc_html__( 'Box', 'finest-addons' ),
+				'label' => esc_html__( 'Box', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE
 			]
 		);
@@ -2023,8 +2023,8 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
-				'name' => 'finest_addons_pricing_table_bg_color_simple',
-				'label' => __( 'Background', 'finest-addons' ),
+				'name' => 'quik_theme_addons_pricing_table_bg_color_simple',
+				'label' => __( 'Background', 'quiktheme-addons' ),
 				'types' => [ 'classic', 'gradient' ],
 				'fields_options'  => [
 					'background'  => [
@@ -2034,26 +2034,26 @@ class Finest_Pricing_Box extends Widget_Base {
 						'default' => '#ffffff'
 					]
 				],
-				'selector' => '{{WRAPPER}} .finest-addons-pricing-table-badge-wrapper',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-pricing-table-badge-wrapper',
 				'condition' => [
-					'finest_addons_pricing_table_header_type' => 'simple'
+					'quik_theme_addons_pricing_table_header_type' => 'simple'
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_bg_color',
+			'quik_theme_addons_pricing_table_bg_color',
 			[
-				'label'     => esc_html__( 'Background Color', 'finest-addons' ),
+				'label'     => esc_html__( 'Background Color', 'quiktheme-addons' ),
 				'seperator' => 'before',
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#ffffff',
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-pricing-table-badge-wrapper' => 'background-color: {{VALUE}};',
-					'{{WRAPPER}} .finest-addons-pricing-table-header .finest-addons-pricing-table-header-curved svg path' => 'fill: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-badge-wrapper' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-header .quiktheme-addons-pricing-table-header-curved svg path' => 'fill: {{VALUE}};'
 				],
 				'condition' => [
-					'finest_addons_pricing_table_header_type' => 'curved-header'
+					'quik_theme_addons_pricing_table_header_type' => 'curved-header'
 				]
 			]
 		);
@@ -2062,8 +2062,8 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
-				'name'     => 'finest_addons_pricing_table_content_border',
-				'selector' => '{{WRAPPER}} .finest-addons-pricing-table-badge-wrapper'
+				'name'     => 'quik_theme_addons_pricing_table_content_border',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-pricing-table-badge-wrapper'
 			]
 		);
 
@@ -2071,8 +2071,8 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
-				'name'     => 'finest_addons_pricing_table_content_box_shadow',
-				'selector' => '{{WRAPPER}} .finest-addons-pricing-table-badge-wrapper',
+				'name'     => 'quik_theme_addons_pricing_table_content_box_shadow',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-pricing-table-badge-wrapper',
 				'fields_options'         => [
 		            'box_shadow_type'    => [
 		                'default'        =>'yes'
@@ -2093,24 +2093,24 @@ class Finest_Pricing_Box extends Widget_Base {
 		$content_align = is_rtl() ? 'right' : 'left';
 
 		$this->add_control(
-			'finest_addons_pricing_table_content_alignment',
+			'quik_theme_addons_pricing_table_content_alignment',
 			[
-				'label'         => __( 'Alignment', 'finest-addons' ),
+				'label'         => __( 'Alignment', 'quiktheme-addons' ),
 				'type'          => Controls_Manager::CHOOSE,
 				'toggle'        => false,
 				'separator'     => 'after',
 				'default'       => $content_align,
 				'options'       => [
 					'left'      => [
-						'title' => __( 'Left', 'finest-addons' ),
+						'title' => __( 'Left', 'quiktheme-addons' ),
 						'icon'  => 'eicon-text-align-left'
 					],
 					'center'    => [
-						'title' => __( 'Center', 'finest-addons' ),
+						'title' => __( 'Center', 'quiktheme-addons' ),
 						'icon'  => 'eicon-text-align-center'
 					],
 					'right'     => [
-						'title' => __( 'Right', 'finest-addons' ),
+						'title' => __( 'Right', 'quiktheme-addons' ),
 						'icon'  => 'eicon-text-align-right'
 					]
 				]
@@ -2120,9 +2120,9 @@ class Finest_Pricing_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
-				'name'     => 'finest_addons_pricing_table_transition_shadow',
-				'label'    => __( 'Hover Box Shadow', 'finest-addons' ),
-				'selector' => '{{WRAPPER}} .finest-addons-pricing-table-wrapper:hover .finest-addons-pricing-table-badge-wrapper',
+				'name'     => 'quik_theme_addons_pricing_table_transition_shadow',
+				'label'    => __( 'Hover Box Shadow', 'quiktheme-addons' ),
+				'selector' => '{{WRAPPER}} .quiktheme-addons-pricing-table-wrapper:hover .quiktheme-addons-pricing-table-badge-wrapper',
 				'fields_options'      => [
 		            'box_shadow_type' => [
 		                'default'     =>'yes'
@@ -2141,24 +2141,24 @@ class Finest_Pricing_Box extends Widget_Base {
 		);
 
 		$this->add_control(
-			'finest_addons_pricing_table_transition_type',
+			'quik_theme_addons_pricing_table_transition_type',
 			[
-				'label'   => __( 'Hover Style', 'finest-addons' ),
+				'label'   => __( 'Hover Style', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'none'              =>  __( 'None', 'finest-addons' ),
-					'transition_top'    =>  __( 'Transition Top', 'finest-addons' ),
-					'transition_bottom' => __( 'Transition Bottom', 'finest-addons' ),
-					'transition_zoom'   => __( 'Transition Zoom', 'finest-addons' )
+					'none'              =>  __( 'None', 'quiktheme-addons' ),
+					'transition_top'    =>  __( 'Transition Top', 'quiktheme-addons' ),
+					'transition_bottom' => __( 'Transition Bottom', 'quiktheme-addons' ),
+					'transition_zoom'   => __( 'Transition Zoom', 'quiktheme-addons' )
 				],
 				'default' => 'none'
 			]
 		);
 
         $this->add_responsive_control(
-			'finest_addons_pricing_table_content_padding',
+			'quik_theme_addons_pricing_table_content_padding',
 			[
-				'label'      => __( 'Padding', 'finest-addons' ),
+				'label'      => __( 'Padding', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -2169,15 +2169,15 @@ class Finest_Pricing_Box extends Widget_Base {
 					'isLinked' => false
 				],
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-pricing-table-badge-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-badge-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_addons_pricing_table_content_border_radius',
+			'quik_theme_addons_pricing_table_content_border_radius',
 			[
-				'label'      => __( 'Border Radius', 'finest-addons' ),
+				'label'      => __( 'Border Radius', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -2188,9 +2188,9 @@ class Finest_Pricing_Box extends Widget_Base {
                     'unit'     => 'px'
                 ],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-addons-pricing-table-badge-wrapper' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .finest-addons-pricing-table-header' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} 0 0;',
-					'{{WRAPPER}} .finest-addons-pricing-table-header .finest-addons-pricing-table-header-svg' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} 0 0;'
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-badge-wrapper' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-header' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} 0 0;',
+					'{{WRAPPER}} .quiktheme-addons-pricing-table-header .quiktheme-addons-pricing-table-header-svg' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} 0 0;'
 				]
 			]
 		);
@@ -2199,186 +2199,186 @@ class Finest_Pricing_Box extends Widget_Base {
 	}
 
 	private function pricing_table_currency( $currency ) {
-		return $currency ? '<span '.$this->get_render_attribute_string( 'finest_addons_pricing_table_price_cur' ).'>'.esc_html( $currency ).'</span>' : '';
+		return $currency ? '<span '.$this->get_render_attribute_string( 'quik_theme_addons_pricing_table_price_cur' ).'>'.esc_html( $currency ).'</span>' : '';
 	}
 
 	protected function render() {
 		$settings      = $this->get_settings_for_display();
-		$title         = $settings['finest_addons_pricing_table_title'];
-		$sub_title     = $settings['finest_addons_pricing_table_subtitle'];
-		$price         = $settings['finest_addons_pricing_table_price'];
-		$separator     = $settings['finest_addons_pricing_table_period_separator'];
-		$price_by      = $settings['finest_addons_pricing_table_price_by'];
-		$featured_text = $settings['finest_addons_pricing_table_featured_tag_text'];
+		$title         = $settings['quik_theme_addons_pricing_table_title'];
+		$sub_title     = $settings['quik_theme_addons_pricing_table_subtitle'];
+		$price         = $settings['quik_theme_addons_pricing_table_price'];
+		$separator     = $settings['quik_theme_addons_pricing_table_period_separator'];
+		$price_by      = $settings['quik_theme_addons_pricing_table_price_by'];
+		$featured_text = $settings['quik_theme_addons_pricing_table_featured_tag_text'];
 
 		$this->add_render_attribute(
-			'finest_addons_pricing_table_wrapper',
+			'quik_theme_addons_pricing_table_wrapper',
 			[
 				'class' => [
-					'finest-addons-pricing-table-wrapper',
-					'finest-addons-pricing-table',
-					esc_attr( $settings['finest_addons_pricing_table_content_alignment'] ),
-					esc_attr( $settings['finest_addons_pricing_table_transition_type'] )
+					'quiktheme-addons-pricing-table-wrapper',
+					'quiktheme-addons-pricing-table',
+					esc_attr( $settings['quik_theme_addons_pricing_table_content_alignment'] ),
+					esc_attr( $settings['quik_theme_addons_pricing_table_transition_type'] )
 				]
 			]
 		);
 
-		$this->add_render_attribute( 'finest_addons_pricing_table_featured_tag_text', 'class', 'finest-addons-pricing-featured-tag-text' );
-		$this->add_inline_editing_attributes( 'finest_addons_pricing_table_featured_tag_text', 'none' );
+		$this->add_render_attribute( 'quik_theme_addons_pricing_table_featured_tag_text', 'class', 'quiktheme-addons-pricing-featured-tag-text' );
+		$this->add_inline_editing_attributes( 'quik_theme_addons_pricing_table_featured_tag_text', 'none' );
 
-		$this->add_render_attribute( 'finest_addons_pricing_table_promo_title', 'class', 'finest-addons-pricing-table-promo-label' );
-		$this->add_inline_editing_attributes( 'finest_addons_pricing_table_promo_title', 'none' );
+		$this->add_render_attribute( 'quik_theme_addons_pricing_table_promo_title', 'class', 'quiktheme-addons-pricing-table-promo-label' );
+		$this->add_inline_editing_attributes( 'quik_theme_addons_pricing_table_promo_title', 'none' );
 
-		$this->add_render_attribute( 'finest_addons_pricing_table_title', 'class', 'finest-addons-pricing-table-title' );
-		$this->add_inline_editing_attributes( 'finest_addons_pricing_table_title', 'basic' );
+		$this->add_render_attribute( 'quik_theme_addons_pricing_table_title', 'class', 'quiktheme-addons-pricing-table-title' );
+		$this->add_inline_editing_attributes( 'quik_theme_addons_pricing_table_title', 'basic' );
 
-		$this->add_render_attribute( 'finest_addons_pricing_table_subtitle', 'class', 'finest-addons-pricing-table-subtitle' );
-		$this->add_inline_editing_attributes( 'finest_addons_pricing_table_subtitle', 'basic' );
+		$this->add_render_attribute( 'quik_theme_addons_pricing_table_subtitle', 'class', 'quiktheme-addons-pricing-table-subtitle' );
+		$this->add_inline_editing_attributes( 'quik_theme_addons_pricing_table_subtitle', 'basic' );
 
-		$this->add_render_attribute( 'finest_addons_pricing_table_box_value', 'class', [ 'finest-addons-pricing-table-price', 'finest-addons-discount-price-'.$settings['finest_addons_pricing_table_discount_price'] ] );
+		$this->add_render_attribute( 'quik_theme_addons_pricing_table_box_value', 'class', [ 'quiktheme-addons-pricing-table-price', 'quiktheme-addons-discount-price-'.$settings['quik_theme_addons_pricing_table_discount_price'] ] );
 
-		if( 'yes' === $settings['finest_addons_pricing_table_price_box'] ){
-			$this->add_render_attribute( 'finest_addons_pricing_table_box_value', 'class', 'price-box' );
+		if( 'yes' === $settings['quik_theme_addons_pricing_table_price_box'] ){
+			$this->add_render_attribute( 'quik_theme_addons_pricing_table_box_value', 'class', 'price-box' );
 		}
 
-		$this->add_render_attribute( 'finest_addons_pricing_table_price_cur', 'class', 'finest-addons-pricing-table-currency' );
-		$this->add_inline_editing_attributes( 'finest_addons_pricing_table_price_cur', 'none' );
+		$this->add_render_attribute( 'quik_theme_addons_pricing_table_price_cur', 'class', 'quiktheme-addons-pricing-table-currency' );
+		$this->add_inline_editing_attributes( 'quik_theme_addons_pricing_table_price_cur', 'none' );
 
-		$this->add_render_attribute( 'finest_addons_pricing_table_period_separator', 'class', 'finest-addons-pricing-table-currency-separator' );
-		$this->add_inline_editing_attributes( 'finest_addons_pricing_table_period_separator', 'none' );
+		$this->add_render_attribute( 'quik_theme_addons_pricing_table_period_separator', 'class', 'quiktheme-addons-pricing-table-currency-separator' );
+		$this->add_inline_editing_attributes( 'quik_theme_addons_pricing_table_period_separator', 'none' );
 
-		$this->add_render_attribute( 'finest_addons_pricing_table_price_by', 'class', 'finest-addons-pricing-table-price-by' );
-		$this->add_inline_editing_attributes( 'finest_addons_pricing_table_price_by', 'none' );
+		$this->add_render_attribute( 'quik_theme_addons_pricing_table_price_by', 'class', 'quiktheme-addons-pricing-table-price-by' );
+		$this->add_inline_editing_attributes( 'quik_theme_addons_pricing_table_price_by', 'none' );
 
-		$this->add_render_attribute( 'finest_addons_pricing_table_price', 'class', 'finest-addons-pricing-table-price' );
-		$this->add_inline_editing_attributes( 'finest_addons_pricing_table_price', 'none' );
+		$this->add_render_attribute( 'quik_theme_addons_pricing_table_price', 'class', 'quiktheme-addons-pricing-table-price' );
+		$this->add_inline_editing_attributes( 'quik_theme_addons_pricing_table_price', 'none' );
 
-		$this->add_render_attribute( 'finest_addons_pricing_table_features', 'class', 'finest-addons-pricing-table-features' );
-		if( 'yes' === $settings['finest_addons_pricing_table_list_border_bottom'] ){
-			$this->add_render_attribute( 'finest_addons_pricing_table_features', 'class', 'list-border-bottom' );
+		$this->add_render_attribute( 'quik_theme_addons_pricing_table_features', 'class', 'quiktheme-addons-pricing-table-features' );
+		if( 'yes' === $settings['quik_theme_addons_pricing_table_list_border_bottom'] ){
+			$this->add_render_attribute( 'quik_theme_addons_pricing_table_features', 'class', 'list-border-bottom' );
 		}
 
-        $this->add_render_attribute( 'finest_addons_pricing_table_btn_link', 'class', 'finest-addons-pricing-table-action' );
-		if( $settings['finest_addons_pricing_table_btn_link']['url'] ) {
-            $this->add_render_attribute( 'finest_addons_pricing_table_btn_link', 'href', esc_url( $settings['finest_addons_pricing_table_btn_link']['url'] ) );
-	        if( $settings['finest_addons_pricing_table_btn_link']['is_external'] ) {
-	            $this->add_render_attribute( 'finest_addons_pricing_table_btn_link', 'target', '_blank' );
+        $this->add_render_attribute( 'quik_theme_addons_pricing_table_btn_link', 'class', 'quiktheme-addons-pricing-table-action' );
+		if( $settings['quik_theme_addons_pricing_table_btn_link']['url'] ) {
+            $this->add_render_attribute( 'quik_theme_addons_pricing_table_btn_link', 'href', esc_url( $settings['quik_theme_addons_pricing_table_btn_link']['url'] ) );
+	        if( $settings['quik_theme_addons_pricing_table_btn_link']['is_external'] ) {
+	            $this->add_render_attribute( 'quik_theme_addons_pricing_table_btn_link', 'target', '_blank' );
 	        }
-	        if( $settings['finest_addons_pricing_table_btn_link']['nofollow'] ) {
-	            $this->add_render_attribute( 'finest_addons_pricing_table_btn_link', 'rel', 'nofollow' );
+	        if( $settings['quik_theme_addons_pricing_table_btn_link']['nofollow'] ) {
+	            $this->add_render_attribute( 'quik_theme_addons_pricing_table_btn_link', 'rel', 'nofollow' );
 	        }
         }
 
 
-        $this->add_inline_editing_attributes( 'finest_addons_pricing_table_btn', 'none' );
+        $this->add_inline_editing_attributes( 'quik_theme_addons_pricing_table_btn', 'none' );
 
-		echo '<div '.$this->get_render_attribute_string( 'finest_addons_pricing_table_wrapper' ).'>';
-			if( 'promo_top' === $settings['finest_addons_pricing_table_promo_position'] ) {
-				if( 'yes' === $settings['finest_addons_pricing_table_promo_enable'] ) {
-					echo '<span '.$this->get_render_attribute_string( 'finest_addons_pricing_table_promo_title' ).'>'.$settings['finest_addons_pricing_table_promo_title'].'</span>';
+		echo '<div '.$this->get_render_attribute_string( 'quik_theme_addons_pricing_table_wrapper' ).'>';
+			if( 'promo_top' === $settings['quik_theme_addons_pricing_table_promo_position'] ) {
+				if( 'yes' === $settings['quik_theme_addons_pricing_table_promo_enable'] ) {
+					echo '<span '.$this->get_render_attribute_string( 'quik_theme_addons_pricing_table_promo_title' ).'>'.$settings['quik_theme_addons_pricing_table_promo_title'].'</span>';
 				}
 			}
-			echo '<div class="finest-addons-pricing-table-badge-wrapper">';
+			echo '<div class="quiktheme-addons-pricing-table-badge-wrapper">';
 
-				if ( 'yes' === $settings['finest_addons_pricing_table_featured'] ) {
-					echo '<span class="finest-addons-pricing-table-badge '.esc_attr( $settings['finest_addons_pricing_table_featured_type'] ).'">';
-						if( 'text-badge' === $settings['finest_addons_pricing_table_featured_type'] && !empty( $featured_text ) ) {
-							echo '<span '.$this->get_render_attribute_string( 'finest_addons_pricing_table_featured_tag_text' ).'>';
+				if ( 'yes' === $settings['quik_theme_addons_pricing_table_featured'] ) {
+					echo '<span class="quiktheme-addons-pricing-table-badge '.esc_attr( $settings['quik_theme_addons_pricing_table_featured_type'] ).'">';
+						if( 'text-badge' === $settings['quik_theme_addons_pricing_table_featured_type'] && !empty( $featured_text ) ) {
+							echo '<span '.$this->get_render_attribute_string( 'quik_theme_addons_pricing_table_featured_tag_text' ).'>';
 								echo esc_html( $featured_text );
 							echo '</span>';
 						}
-						if( 'icon-badge' === $settings['finest_addons_pricing_table_featured_type'] ) {
+						if( 'icon-badge' === $settings['quik_theme_addons_pricing_table_featured_type'] ) {
 							echo '<i class="demo-icon eicon-star"></i>';
 						}
 					echo '</span>';
 				}
 
-				echo '<div class="finest-addons-pricing-table-header">';
-					do_action( 'finest_addons_pricing_table_header_wrapper_before' );
+				echo '<div class="quiktheme-addons-pricing-table-header">';
+					do_action( 'quik_theme_addons_pricing_table_header_wrapper_before' );
 
-					$title ? printf( '<h4 '.$this->get_render_attribute_string( 'finest_addons_pricing_table_title' ).'>%s</h4>', wp_kses_post( $title ) ) : '';
+					$title ? printf( '<h4 '.$this->get_render_attribute_string( 'quik_theme_addons_pricing_table_title' ).'>%s</h4>', wp_kses_post( $title ) ) : '';
 					/* image */
-					if($settings['finest_addons_header_image_show'] == 'yes'):
+					if($settings['quik_theme_addons_header_image_show'] == 'yes'):
 					echo '<div class="pricing-image">';
 						echo '<img src="' . $settings['image']['url'] . '">';
 					echo '</div>';
 					endif;
 
-					$sub_title ? printf( '<div '.$this->get_render_attribute_string( 'finest_addons_pricing_table_subtitle' ).'>%s</div>', wp_kses_post( $sub_title ) ) : '';
+					$sub_title ? printf( '<div '.$this->get_render_attribute_string( 'quik_theme_addons_pricing_table_subtitle' ).'>%s</div>', wp_kses_post( $sub_title ) ) : '';
 
-					echo '<div '.$this->get_render_attribute_string( 'finest_addons_pricing_table_box_value' ).'>';
-						if( 'yes' === $settings['finest_addons_pricing_table_discount_price'] ){
-							echo '<p class="finest-addons-pricing-table-regular-price">';
-								echo '<span class="finest-addons-pricing-table-regular-price-cur">'.$settings['finest_addons_pricing_table_regular_price_cur'].'</span>';
-								echo '<span class="finest-addons-pricing-table-regular-price-text">'.$settings['finest_addons_pricing_table_regular_price'].'</span>';
+					echo '<div '.$this->get_render_attribute_string( 'quik_theme_addons_pricing_table_box_value' ).'>';
+						if( 'yes' === $settings['quik_theme_addons_pricing_table_discount_price'] ){
+							echo '<p class="quiktheme-addons-pricing-table-regular-price">';
+								echo '<span class="quiktheme-addons-pricing-table-regular-price-cur">'.$settings['quik_theme_addons_pricing_table_regular_price_cur'].'</span>';
+								echo '<span class="quiktheme-addons-pricing-table-regular-price-text">'.$settings['quik_theme_addons_pricing_table_regular_price'].'</span>';
 							echo '</p>';
 						}
-						echo '<p class="finest-addons-pricing-table-new-price">';
-							if( 'finest-addons-pricing-cur-left' === $settings['finest_addons_pricing_table_price_cur_position'] ) :
-								echo $this->pricing_table_currency( $settings['finest_addons_pricing_table_price_cur'] );
+						echo '<p class="quiktheme-addons-pricing-table-new-price">';
+							if( 'quiktheme-addons-pricing-cur-left' === $settings['quik_theme_addons_pricing_table_price_cur_position'] ) :
+								echo $this->pricing_table_currency( $settings['quik_theme_addons_pricing_table_price_cur'] );
 							endif;
 
-							$price ? printf( '<span '.$this->get_render_attribute_string( 'finest_addons_pricing_table_price' ).'>%s</span>', esc_html( $price ) ) : '';
+							$price ? printf( '<span '.$this->get_render_attribute_string( 'quik_theme_addons_pricing_table_price' ).'>%s</span>', esc_html( $price ) ) : '';
 
-							if( 'finest-addons-pricing-cur-right' === $settings['finest_addons_pricing_table_price_cur_position'] ) :
-								echo $this->pricing_table_currency( $settings['finest_addons_pricing_table_price_cur'] );
+							if( 'quiktheme-addons-pricing-cur-right' === $settings['quik_theme_addons_pricing_table_price_cur_position'] ) :
+								echo $this->pricing_table_currency( $settings['quik_theme_addons_pricing_table_price_cur'] );
 							endif;
 
 							if( $separator || $price_by ) :
-								echo '<span class="finest-addons-price-period">';
-									$separator ? printf( '<span '.$this->get_render_attribute_string( 'finest_addons_pricing_table_period_separator' ).'>%s</span>', esc_html( $separator ) ) : '';
-									$price_by ? printf( '<span '.$this->get_render_attribute_string( 'finest_addons_pricing_table_price_by' ).'>%s</span>', esc_html( $price_by ) ) : '';
+								echo '<span class="quiktheme-addons-price-period">';
+									$separator ? printf( '<span '.$this->get_render_attribute_string( 'quik_theme_addons_pricing_table_period_separator' ).'>%s</span>', esc_html( $separator ) ) : '';
+									$price_by ? printf( '<span '.$this->get_render_attribute_string( 'quik_theme_addons_pricing_table_price_by' ).'>%s</span>', esc_html( $price_by ) ) : '';
 								echo '</span>';
 							endif;
 						echo '</p>';
 					echo '</div>';
 
-					if( !empty( $settings['finest_addons_pricing_table_price_subtitle'] ) ){
-						echo '<span class="finest-addons-pricing-table-price-subtitle">'. $settings['finest_addons_pricing_table_price_subtitle'] .'</span>';
+					if( !empty( $settings['quik_theme_addons_pricing_table_price_subtitle'] ) ){
+						echo '<span class="quiktheme-addons-pricing-table-price-subtitle">'. $settings['quik_theme_addons_pricing_table_price_subtitle'] .'</span>';
 					}
 
-					if ( 'yes' === $settings['finest_addons_pricing_table_price_box_separator'] ) :
-						echo '<div class="finest-addons-price-bottom-separator"></div>';
+					if ( 'yes' === $settings['quik_theme_addons_pricing_table_price_box_separator'] ) :
+						echo '<div class="quiktheme-addons-price-bottom-separator"></div>';
 					endif;
 
-					if( 'curved-header' === $settings['finest_addons_pricing_table_header_type'] ) {
-						echo '<div class="finest-addons-pricing-table-header-curved">';
+					if( 'curved-header' === $settings['quik_theme_addons_pricing_table_header_type'] ) {
+						echo '<div class="quiktheme-addons-pricing-table-header-curved">';
 							echo '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 20">';
 								echo '<path class="st0" d="M0 20h185C70 20 0 0 0 0v20zM185 20h185V0s-70 20-185 20z" />';
 							echo '</svg>';
 						echo '</div>';
 					}
 
-					do_action( 'finest_addons_pricing_table_header_wrapper_after' );
+					do_action( 'quik_theme_addons_pricing_table_header_wrapper_after' );
 				echo '</div>';
 
 
-				if( 'middle' === $settings['finest_addons_pricing_table_btn_position'] && !empty( $settings['finest_addons_pricing_table_btn'] ) ) {
+				if( 'middle' === $settings['quik_theme_addons_pricing_table_btn_position'] && !empty( $settings['quik_theme_addons_pricing_table_btn'] ) ) {
 					$this->pricing_table_btn();
 				}
 
-				do_action( 'finest_addons_pricing_table_content_wrapper_before' );
+				do_action( 'quik_theme_addons_pricing_table_content_wrapper_before' );
 
-				if ( is_array( $settings['finest_addons_pricing_table_items'] ) ) :
-					echo '<ul '.$this->get_render_attribute_string( 'finest_addons_pricing_table_features' ).'>';
-						foreach( $settings['finest_addons_pricing_table_items'] as $index => $item ) :
+				if ( is_array( $settings['quik_theme_addons_pricing_table_items'] ) ) :
+					echo '<ul '.$this->get_render_attribute_string( 'quik_theme_addons_pricing_table_features' ).'>';
+						foreach( $settings['quik_theme_addons_pricing_table_items'] as $index => $item ) :
 
 							$each_pricing_item = 'link_' . $index;
-							$icon_mod = 'yes' !== $item['finest_addons_pricing_table_icon_mood'] ? 'finest-addons-pricing-table-features-disable' : 'finest-addons-pricing-table-features-enable';
+							$icon_mod = 'yes' !== $item['quik_theme_addons_pricing_table_icon_mood'] ? 'quiktheme-addons-pricing-table-features-disable' : 'quiktheme-addons-pricing-table-features-enable';
 							$this->add_render_attribute( $each_pricing_item, 'class', [
 								esc_attr( $icon_mod ),
 								'elementor-repeater-item-'.esc_attr( $item['_id'] )
 							] );
 
-							$pricing_item = $this->get_repeater_setting_key( 'finest_addons_pricing_table_item', 'finest_addons_pricing_table_items', $index );
-							$this->add_render_attribute( $pricing_item, 'class', 'finest-addons-pricing-item' );
+							$pricing_item = $this->get_repeater_setting_key( 'quik_theme_addons_pricing_table_item', 'quik_theme_addons_pricing_table_items', $index );
+							$this->add_render_attribute( $pricing_item, 'class', 'quiktheme-addons-pricing-item' );
 							$this->add_inline_editing_attributes( $pricing_item, 'none' );
-							$price = $item['finest_addons_pricing_table_item'];
+							$price = $item['quik_theme_addons_pricing_table_item'];
 
 							echo '<li '.$this->get_render_attribute_string( $each_pricing_item ).'>';
-								if ( !empty( $item['finest_addons_pricing_table_list_icon']['value'] ) ) {
-									echo '<span class="finest-addons-pricing-li-icon">';
-										Icons_Manager::render_icon( $item['finest_addons_pricing_table_list_icon'] );
+								if ( !empty( $item['quik_theme_addons_pricing_table_list_icon']['value'] ) ) {
+									echo '<span class="quiktheme-addons-pricing-li-icon">';
+										Icons_Manager::render_icon( $item['quik_theme_addons_pricing_table_list_icon'] );
 									echo '</span>									';
 								}
 								$price ? printf( '<span '.$this->get_render_attribute_string( $pricing_item ).'>%s</span>', esc_html( $price ) ) : '';
@@ -2388,29 +2388,29 @@ class Finest_Pricing_Box extends Widget_Base {
 					echo '</ul>';
 				endif;
 
-				do_action( 'finest_addons_pricing_table_content_wrapper_after' );
+				do_action( 'quik_theme_addons_pricing_table_content_wrapper_after' );
 
-				if( 'bottom' === $settings['finest_addons_pricing_table_btn_position'] && !empty( $settings['finest_addons_pricing_table_btn'] ) ) {
+				if( 'bottom' === $settings['quik_theme_addons_pricing_table_btn_position'] && !empty( $settings['quik_theme_addons_pricing_table_btn'] ) ) {
 					$this->pricing_table_btn();
 				}
-				if( !empty( $settings['finest_addons_pricing_table_note_text'] ) ){
-					echo '<div class="finest-addons-pricing-table-note">'.$settings['finest_addons_pricing_table_note_text'].'</div>';
+				if( !empty( $settings['quik_theme_addons_pricing_table_note_text'] ) ){
+					echo '<div class="quiktheme-addons-pricing-table-note">'.$settings['quik_theme_addons_pricing_table_note_text'].'</div>';
 				}
 			echo '</div>';
-			if( 'promo_bottom' === $settings['finest_addons_pricing_table_promo_position'] ) {
-				if( 'yes' === $settings['finest_addons_pricing_table_promo_enable'] ) {
-					echo '<span '.$this->get_render_attribute_string( 'finest_addons_pricing_table_promo_title' ).'>'.$settings['finest_addons_pricing_table_promo_title'].'</span>';
+			if( 'promo_bottom' === $settings['quik_theme_addons_pricing_table_promo_position'] ) {
+				if( 'yes' === $settings['quik_theme_addons_pricing_table_promo_enable'] ) {
+					echo '<span '.$this->get_render_attribute_string( 'quik_theme_addons_pricing_table_promo_title' ).'>'.$settings['quik_theme_addons_pricing_table_promo_title'].'</span>';
 				}
 			}
 		echo '</div>';
 	}
 
     private function pricing_table_btn() {
-		echo '<a '.$this->get_render_attribute_string( 'finest_addons_pricing_table_btn_link' ).'>';
-			echo '<span '.$this->get_render_attribute_string( 'finest_addons_pricing_table_btn' ).'>';
-				echo esc_html( $this->get_settings_for_display( 'finest_addons_pricing_table_btn' ) );
+		echo '<a '.$this->get_render_attribute_string( 'quik_theme_addons_pricing_table_btn_link' ).'>';
+			echo '<span '.$this->get_render_attribute_string( 'quik_theme_addons_pricing_table_btn' ).'>';
+				echo esc_html( $this->get_settings_for_display( 'quik_theme_addons_pricing_table_btn' ) );
 			echo '</span>';
 		echo '</a>';
 	}
 }
-$widgets_manager->register_widget_type( new \Finest_Addons\Widgets\Finest_Pricing_Box() );
+$widgets_manager->register_widget_type( new \Quik_Theme_Addons\Widgets\Quik_Theme_Pricing_Box() );

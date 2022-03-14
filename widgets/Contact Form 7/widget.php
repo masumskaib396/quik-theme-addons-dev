@@ -1,5 +1,5 @@
 <?php
-namespace Finest_Addons\Widgets;
+namespace Quik_Theme_Addons\Widgets;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -15,14 +15,14 @@ use \Elementor\Icons_Manager;
 use \Elementor\Utils;
 use \Elementor\Widget_Base;
 
-class Finest_Contact_Form extends Widget_Base {
+class Quik_Theme_Contact_Form extends Widget_Base {
 
 	public function get_name() {
-		return 'finest-contact-form';
+		return 'quiktheme-contact-form';
 	}
 
 	public function get_title() {
-		return esc_html__( 'Contact Form 7', 'finest-addons' );
+		return esc_html__( 'Contact Form 7', 'quiktheme-addons' );
 	}
 
 	public function get_icon() {
@@ -30,7 +30,7 @@ class Finest_Contact_Form extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'finest-addons' ];
+		return [ 'quiktheme-addons' ];
 	}
 
 	public function get_keywords() {
@@ -41,11 +41,11 @@ class Finest_Contact_Form extends Widget_Base {
         $this->start_controls_section(
             '_section_cf7',
             [
-                'label' => finest_addons_is_cf7_activated() ? __( 'Contact Form 7', 'finest-addons' ) : __( 'Notice', 'finest-addons' ),
+                'label' => quik_theme_addons_is_cf7_activated() ? __( 'Contact Form 7', 'quiktheme-addons' ) : __( 'Notice', 'quiktheme-addons' ),
                 'tab'   => Controls_Manager::TAB_CONTENT,
             ]
         );
-        if ( !finest_addons_is_cf7_activated() ) {
+        if ( !quik_theme_addons_is_cf7_activated() ) {
             $this->add_control(
                 'cf7_missing_notice',
                 [
@@ -60,15 +60,16 @@ class Finest_Contact_Form extends Widget_Base {
             $this->end_controls_section();
             return;
         }
+
         $this->add_control(
-            'finest_addons_form_ts',
+            'quik_theme_addons_form_ts',
             [
-                'label'     => __( 'Form List Or ShortCode', 'finest-addons' ),
+                'label'     => __( 'Form List Or ShortCode', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'formlist',
                 'options'   => [
-                    'formlist'  => __( 'Form List', 'finest-addons' ),
-                    'shortcode' => __( 'Form ShortCode', 'finest-addons' ),
+                    'formlist'  => __( 'Form List', 'quiktheme-addons' ),
+                    'shortcode' => __( 'Form ShortCode', 'quiktheme-addons' ),
                 ],
                 'separator' => 'after',
             ]
@@ -76,23 +77,23 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_control(
             'form_id',
             [
-                'label'       => __( 'Select Your Form', 'finest-addons' ),
+                'label'       => __( 'Select Your Form', 'quiktheme-addons' ),
                 'type'        => Controls_Manager::SELECT,
                 'label_block' => true,
-                'options'     => ['' => __( '', 'finest-addons' )]+\finest_addons_get_cf7_forms(),
+                'options'     => ['' => __( '', 'quiktheme-addons' )]+\quik_theme_addons_get_cf7_forms(),
                 'condition'   => [
-                    'finest_addons_form_ts' => 'formlist',
+                    'quik_theme_addons_form_ts' => 'formlist',
                 ],
             ]
         );
         $this->add_control(
             'contactform_shortecode',
             [
-                'label'     => __( 'Enter your shortcode', 'finest-addons' ),
+                'label'     => __( 'Enter your shortcode', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::TEXTAREA,
                 'separator' => 'after',
                 'condition' => [
-                    'finest_addons_form_ts' => 'shortcode',
+                    'quik_theme_addons_form_ts' => 'shortcode',
                 ],
             ]
         );
@@ -102,7 +103,7 @@ class Finest_Contact_Form extends Widget_Base {
         $this->start_controls_section(
             '_section_fields_style',
             [
-                'label' => __( 'Fields', 'finest-addons' ),
+                'label' => __( 'Fields', 'quiktheme-addons' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -110,23 +111,23 @@ class Finest_Contact_Form extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'field_typography',
-                'label'    => __( 'Typography', 'finest-addons' ),
+                'label'    => __( 'Typography', 'quiktheme-addons' ),
                 'selector' => '{{WRAPPER}} .wpcf7-form-control:not(.wpcf7-submit)',
             ]
         );
-        
+
         //field focus
         $this->start_controls_tabs( 'tabs_field_state' );
         $this->start_controls_tab(
             'tab_field_normal',
             [
-                'label' => __( 'Normal', 'finest-addons' ),
+                'label' => __( 'Normal', 'quiktheme-addons' ),
             ]
         );
         $this->add_control(
             'field_color',
             [
-                'label'     => __( 'Text Color', 'finest-addons' ),
+                'label'     => __( 'Text Color', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .wpcf7-form-control:not(.wpcf7-submit)' => 'color: {{VALUE}}',
@@ -137,7 +138,7 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_control(
             'response_field_color',
             [
-                'label'     => __( 'Response Output Color', 'finest-addons' ),
+                'label'     => __( 'Response Output Color', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .wpcf7-response-output' => 'color: {{VALUE}}',
@@ -147,7 +148,7 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_control(
             'field_placeholder_color',
             [
-                'label'     => __( 'Placeholder Text Color', 'finest-addons' ),
+                'label'     => __( 'Placeholder Text Color', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} ::-webkit-input-placeholder' => 'color: {{VALUE}};',
@@ -159,7 +160,7 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_control(
             'field_bg_color',
             [
-                'label'     => __( 'Background Color', 'finest-addons' ),
+                'label'     => __( 'Background Color', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .wpcf7-form-control:not(.wpcf7-submit):not(.wpcf7-radio):not(.wpcf7-checkbox):not(.wpcf7-acceptance)' => 'background-color: {{VALUE}}',
@@ -185,7 +186,7 @@ class Finest_Contact_Form extends Widget_Base {
         $this->start_controls_tab(
             'tab_field_focus',
             [
-                'label' => __( 'Focus', 'finest-addons' ),
+                'label' => __( 'Focus', 'quiktheme-addons' ),
             ]
         );
         $this->add_group_control(
@@ -208,7 +209,7 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_control(
             'field_focus_bg_color',
             [
-                'label'     => __( 'Background Color', 'finest-addons' ),
+                'label'     => __( 'Background Color', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .wpcf7-form-control:not(.wpcf7-submit):not(.wpcf7-radio):not(.wpcf7-checkbox):not(.wpcf7-acceptance):focus' => 'background-color: {{VALUE}}',
@@ -228,10 +229,10 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_control(
             'popover-toggle',
             [
-                'label'        => __( 'Field advanced option', 'finest-addons' ),
+                'label'        => __( 'Field advanced option', 'quiktheme-addons' ),
                 'type'         => Controls_Manager::POPOVER_TOGGLE,
-                'label_off'    => __( 'Default', 'finest-addons' ),
-                'label_on'     => __( 'Custom', 'finest-addons' ),
+                'label_off'    => __( 'Default', 'quiktheme-addons' ),
+                'label_on'     => __( 'Custom', 'quiktheme-addons' ),
                 'return_value' => 'yes',
             ]
         );
@@ -240,7 +241,7 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_responsive_control(
             'wpcf7_field_height',
             [
-                'label'      => __( 'Fields Height', 'finest-addons' ),
+                'label'      => __( 'Fields Height', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range'      => [
@@ -259,7 +260,7 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_responsive_control(
             'wpcf7_textarea_field_height',
             [
-                'label'      => __( 'Textarea Height', 'finest-addons' ),
+                'label'      => __( 'Textarea Height', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range'      => [
@@ -276,7 +277,7 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_responsive_control(
             'field_width',
             [
-                'label'          => __( 'Width', 'finest-addons' ),
+                'label'          => __( 'Width', 'quiktheme-addons' ),
                 'type'           => Controls_Manager::SLIDER,
                 'default'        => [
                     'unit' => '%',
@@ -306,7 +307,7 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_responsive_control(
             'field_margin',
             [
-                'label'      => __( 'Spacing Between', 'finest-addons' ),
+                'label'      => __( 'Spacing Between', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range'      => [
@@ -323,7 +324,7 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_responsive_control(
             'field_padding',
             [
-                'label'      => __( 'Padding', 'finest-addons' ),
+                'label'      => __( 'Padding', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors'  => [
@@ -335,7 +336,7 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_responsive_control(
             'field_border_radius',
             [
-                'label'      => __( 'Border Radius', 'finest-addons' ),
+                'label'      => __( 'Border Radius', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -348,7 +349,7 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_responsive_control(
             'textarea_margin',
             [
-                'label'      => __( 'Textarea Margin', 'finest-addons' ),
+                'label'      => __( 'Textarea Margin', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -360,7 +361,7 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_responsive_control(
             'textarea_border_radius',
             [
-                'label'      => __( 'Textarea Border Radius', 'finest-addons' ),
+                'label'      => __( 'Textarea Border Radius', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -377,7 +378,7 @@ class Finest_Contact_Form extends Widget_Base {
         $this->start_controls_section(
             'cf7-form-label',
             [
-                'label' => __( 'Label', 'finest-addons' ),
+                'label' => __( 'Label', 'quiktheme-addons' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -385,7 +386,7 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_responsive_control(
             'label_margin',
             [
-                'label'      => __( 'Spacing Bottom', 'finest-addons' ),
+                'label'      => __( 'Spacing Bottom', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range'      => [
@@ -412,7 +413,7 @@ class Finest_Contact_Form extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'label_typography',
-                'label'    => __( 'Typography', 'finest-addons' ),
+                'label'    => __( 'Typography', 'quiktheme-addons' ),
                 'selector' => '{{WRAPPER}} label',
             ]
         );
@@ -421,16 +422,16 @@ class Finest_Contact_Form extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'        => 'list_item_label_typography',
-                'label'       => __( 'List Typography', 'finest-addons' ),
+                'label'       => __( 'List Typography', 'quiktheme-addons' ),
                 'selector'    => '{{WRAPPER}} .wpcf7-list-item-label',
-                'description' => __( 'Chackbox or radio label typography.', 'finest-addons' ),
+                'description' => __( 'Chackbox or radio label typography.', 'quiktheme-addons' ),
             ]
         );
 
         $this->add_control(
             'label_color',
             [
-                'label'     => __( 'Text Color', 'finest-addons' ),
+                'label'     => __( 'Text Color', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} label' => 'color: {{VALUE}}',
@@ -444,7 +445,7 @@ class Finest_Contact_Form extends Widget_Base {
         $this->start_controls_section(
             'section_layout_button',
             [
-                'label' => __( 'Button', 'finest-addons' ),
+                'label' => __( 'Button', 'quiktheme-addons' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -453,8 +454,8 @@ class Finest_Contact_Form extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'button_text',
-                'label'    => __( 'Typography', 'finest-addons' ),
-                'selector' => '{{WRAPPER}} .finest-addons-contact-from [type=submit]',
+                'label'    => __( 'Typography', 'quiktheme-addons' ),
+                'selector' => '{{WRAPPER}} .quiktheme-addons-contact-from [type=submit]',
             ]
         );
         // Button Position End
@@ -464,26 +465,26 @@ class Finest_Contact_Form extends Widget_Base {
         $this->start_controls_tab(
             'form_button_normal',
             [
-                'label' => __( 'Normal', 'finest-addons' ),
+                'label' => __( 'Normal', 'quiktheme-addons' ),
             ]
         );
         $this->add_control(
             'button_color',
             [
-                'label'     => __( 'Button Background Color', 'finest-addons' ),
+                'label'     => __( 'Button Background Color', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-contact-from [type=submit]' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-contact-from [type=submit]' => 'background-color: {{VALUE}}',
                 ],
             ]
         );
         $this->add_control(
             'button_bg_color',
             [
-                'label'     => __( 'Button Text Color', 'finest-addons' ),
+                'label'     => __( 'Button Text Color', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-contact-from [type=submit]' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-contact-from [type=submit]' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -502,8 +503,8 @@ class Finest_Contact_Form extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name'     => 'button_border',
-                'label'    => __( 'Border', 'finest-addons' ),
-                'selector' => '{{WRAPPER}} .finest-addons-contact-from [type=submit]',
+                'label'    => __( 'Border', 'quiktheme-addons' ),
+                'selector' => '{{WRAPPER}} .quiktheme-addons-contact-from [type=submit]',
             ]
         );
         $this->end_controls_tab();
@@ -512,26 +513,26 @@ class Finest_Contact_Form extends Widget_Base {
         $this->start_controls_tab(
             'form_button_hover',
             [
-                'label' => __( 'Hover', 'finest-addons' ),
+                'label' => __( 'Hover', 'quiktheme-addons' ),
             ]
         );
         $this->add_control(
             'button_hover',
             [
-                'label'     => __( 'Background Color Hover', 'finest-addons' ),
+                'label'     => __( 'Background Color Hover', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-contact-from [type=submit]:hover' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-contact-from [type=submit]:hover' => 'background-color: {{VALUE}}',
                 ],
             ]
         );
         $this->add_control(
             'button_bg_hover',
             [
-                'label'     => __( 'Text Color Hover', 'finest-addons' ),
+                'label'     => __( 'Text Color Hover', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-contact-from [type=submit]:hover' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-contact-from [type=submit]:hover' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -549,8 +550,8 @@ class Finest_Contact_Form extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name'     => 'button_border_hover',
-                'label'    => __( 'Border', 'finest-addons' ),
-                'selector' => '{{WRAPPER}} .finest-addons-contact-from [type=submit]:hover',
+                'label'    => __( 'Border', 'quiktheme-addons' ),
+                'selector' => '{{WRAPPER}} .quiktheme-addons-contact-from [type=submit]:hover',
             ]
         );
         $this->end_controls_tab();
@@ -561,10 +562,10 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_control(
             'popover-toggle-icon',
             [
-                'label'        => __( 'Icon Color', 'finest-addons' ),
+                'label'        => __( 'Icon Color', 'quiktheme-addons' ),
                 'type'         => Controls_Manager::POPOVER_TOGGLE,
-                'label_off'    => __( 'Default', 'finest-addons' ),
-                'label_on'     => __( 'Custom', 'finest-addons' ),
+                'label_off'    => __( 'Default', 'quiktheme-addons' ),
+                'label_on'     => __( 'Custom', 'quiktheme-addons' ),
                 'return_value' => 'yes',
             ]
         );
@@ -574,7 +575,7 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_control(
             'icon_color',
             [
-                'label'     => __( 'Icon Color', 'finest-addons' ),
+                'label'     => __( 'Icon Color', 'quiktheme-addons' ),
                 'type'      => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} button[type=submit] i, {{WRAPPER}} input[type=submit] i'      => 'color: {{VALUE}}',
@@ -586,7 +587,7 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_responsive_control(
             'icon_fill_color',
             [
-                'label'     => __( 'Icon Fill Color', 'finest-addons' ),
+                'label'     => __( 'Icon Fill Color', 'quiktheme-addons' ),
                 'type'      => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} button[type=submit] path, {{WRAPPER}} input[type=submit] path' => 'fill: {{VALUE}}',
@@ -601,10 +602,10 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_control(
             'popover-toggle-button',
             [
-                'label'        => __( 'Button advanced option', 'finest-addons' ),
+                'label'        => __( 'Button advanced option', 'quiktheme-addons' ),
                 'type'         => Controls_Manager::POPOVER_TOGGLE,
-                'label_off'    => __( 'Default', 'finest-addons' ),
-                'label_on'     => __( 'Custom', 'finest-addons' ),
+                'label_off'    => __( 'Default', 'quiktheme-addons' ),
+                'label_on'     => __( 'Custom', 'quiktheme-addons' ),
                 'return_value' => 'yes',
             ]
         );
@@ -613,26 +614,26 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_responsive_control(
             'form_button_position',
             [
-                'label'     => __( 'Position', 'finest-addons' ),
+                'label'     => __( 'Position', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'default',
                 'options'   => [
-                    ''         => __( 'Default', 'finest-addons' ),
-                    'absolute' => __( 'Absolute', 'finest-addons' ),
-                    'static'   => __( 'Static', 'finest-addons' ),
-                    'relative' => __( 'Relative', 'finest-addons' ),
+                    ''         => __( 'Default', 'quiktheme-addons' ),
+                    'absolute' => __( 'Absolute', 'quiktheme-addons' ),
+                    'static'   => __( 'Static', 'quiktheme-addons' ),
+                    'relative' => __( 'Relative', 'quiktheme-addons' ),
                 ],
                 'separator' => 'after',
 
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons--contactform-wraper [type=submit]' => 'position: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons--contactform-wraper [type=submit]' => 'position: {{VALUE}}',
                 ],
             ]
         );
         $this->add_responsive_control(
-            'finest_addons_offset_x_end',
+            'quik_theme_addons_offset_x_end',
             [
-                'label'      => __( 'Offset X', 'finest-addons' ),
+                'label'      => __( 'Offset X', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::SLIDER,
                 'range'      => [
                     'px' => [
@@ -649,14 +650,14 @@ class Finest_Contact_Form extends Widget_Base {
                 ],
                 'size_units' => ['px', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-addons--contactform-wraper [type=submit]' => 'right: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-addons--contactform-wraper [type=submit]' => 'right: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
         $this->add_responsive_control(
-            'finest_addons_offset_y',
+            'quik_theme_addons_offset_y',
             [
-                'label'      => __( 'Offset Y', 'finest-addons' ),
+                'label'      => __( 'Offset Y', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::SLIDER,
                 'range'      => [
                     'px' => [
@@ -674,7 +675,7 @@ class Finest_Contact_Form extends Widget_Base {
                     'size' => '0',
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-addons--contactform-wraper [type=submit]' => 'top: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-addons--contactform-wraper [type=submit]' => 'top: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -689,7 +690,7 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_responsive_control(
             'button_width',
             [
-                'label'      => __( 'Width', 'finest-addons' ),
+                'label'      => __( 'Width', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range'      => [
@@ -705,14 +706,14 @@ class Finest_Contact_Form extends Widget_Base {
                     ],
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-addons-contact-from [type=submit]' => 'width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-addons-contact-from [type=submit]' => 'width: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
         $this->add_responsive_control(
             'button_height',
             [
-                'label'      => __( 'Height', 'finest-addons' ),
+                'label'      => __( 'Height', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['%', 'px'],
                 'range'      => [
@@ -728,7 +729,7 @@ class Finest_Contact_Form extends Widget_Base {
                     ],
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-addons-contact-from [type=submit]' => 'height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-addons-contact-from [type=submit]' => 'height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -736,12 +737,12 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_responsive_control(
             'btn_margin',
             [
-                'label'      => __( 'Margin', 'finest-addons' ),
+                'label'      => __( 'Margin', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-addons-contact-from [type=submit]'          => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    'body.rtl {{WRAPPER}} .finest-addons-contact-from [type=submit]' => 'margin: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-addons-contact-from [type=submit]'          => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    'body.rtl {{WRAPPER}} .quiktheme-addons-contact-from [type=submit]' => 'margin: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
                 ],
             ]
         );
@@ -749,12 +750,12 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_responsive_control(
             'button_border_radius',
             [
-                'label'      => __( 'Border Radius', 'finest-addons' ),
+                'label'      => __( 'Border Radius', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-addons-contact-from [type=submit]'          => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    'body.rtl {{WRAPPER}} .finest-addons-contact-from [type=submit]' => 'border-radius: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-addons-contact-from [type=submit]'          => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    'body.rtl {{WRAPPER}} .quiktheme-addons-contact-from [type=submit]' => 'border-radius: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
                 ],
             ]
         );
@@ -768,33 +769,33 @@ class Finest_Contact_Form extends Widget_Base {
         $this->start_controls_section(
             '_form_box_style',
             [
-                'label' => __( 'Box', 'finest-addons' ),
+                'label' => __( 'Box', 'quiktheme-addons' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_responsive_control(
             'form_box_align',
             [
-                'label'     => __( 'Align', 'finest-addons' ),
+                'label'     => __( 'Align', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::CHOOSE,
                 'options'   => [
                     'left'   => [
-                        'title' => __( 'Left', 'finest-addons' ),
+                        'title' => __( 'Left', 'quiktheme-addons' ),
                         'icon'  => 'fa fa-align-left',
                     ],
                     'center' => [
-                        'title' => __( 'Center', 'finest-addons' ),
+                        'title' => __( 'Center', 'quiktheme-addons' ),
                         'icon'  => 'fa fa-align-center',
                     ],
                     'right'  => [
-                        'title' => __( 'Right', 'finest-addons' ),
+                        'title' => __( 'Right', 'quiktheme-addons' ),
                         'icon'  => 'fa fa-align-right',
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-contact-from' => 'text-align: {{VALUE}};',
-                    '{{WRAPPER}} .finest-addons--contactform-wraper input' => 'text-align: {{VALUE}};',
-                    '{{WRAPPER}} .finest-addons--contactform-wraper textarea' => 'text-align: {{VALUE}};',
+                    '{{WRAPPER}} .quiktheme-addons-contact-from' => 'text-align: {{VALUE}};',
+                    '{{WRAPPER}} .quiktheme-addons--contactform-wraper input' => 'text-align: {{VALUE}};',
+                    '{{WRAPPER}} .quiktheme-addons--contactform-wraper textarea' => 'text-align: {{VALUE}};',
                 ],
                 'toggle'    => true,
             ]
@@ -802,10 +803,10 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_control(
             'form_box_bg',
             [
-                'label'     => __( 'Background', 'finest-addons' ),
+                'label'     => __( 'Background', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-contact-from' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-contact-from' => 'background-color: {{VALUE}}',
                 ],
             ]
         );
@@ -814,14 +815,14 @@ class Finest_Contact_Form extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name'     => 'form_border',
-                'selector' => '{{WRAPPER}} .finest-addons-contact-from',
+                'selector' => '{{WRAPPER}} .quiktheme-addons-contact-from',
             ]
         );
 
         $this->add_responsive_control(
             'wpcf7_form_width',
             [
-                'label'      => __( 'Form Width', 'finest-addons' ),
+                'label'      => __( 'Form Width', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range'      => [
@@ -840,12 +841,12 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_responsive_control(
             'form_box_padding',
             [
-                'label'      => __( 'Padding', 'finest-addons' ),
+                'label'      => __( 'Padding', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-addons-contact-from'          => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    'body.rtl {{WRAPPER}} .finest-addons-contact-from' => 'padding: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-addons-contact-from'          => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    'body.rtl {{WRAPPER}} .quiktheme-addons-contact-from' => 'padding: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
                 ],
             ]
         );
@@ -853,48 +854,48 @@ class Finest_Contact_Form extends Widget_Base {
         $this->add_responsive_control(
             'form_box_border_redius',
             [
-                'label'      => __( 'Border Radius', 'finest-addons' ),
+                'label'      => __( 'Border Radius', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-addons-contact-from'          => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    'body.rtl {{WRAPPER}} .finest-addons-contact-from' => 'border-radius: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-addons-contact-from'          => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    'body.rtl {{WRAPPER}} .quiktheme-addons-contact-from' => 'border-radius: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
                 ],
             ]
         );
-      
+
         $this->end_controls_section();
     }
-	
+
 	protected function render() {
-        if ( !finest_addons_is_cf7_activated() ) {
+        if ( !quik_theme_addons_is_cf7_activated() ) {
             return;
         }
         $settings = $this->get_settings();
-        $finest_addons_form_sl = $settings['finest_addons_form_ts'];
-        $finest_addons_form_id = $settings['form_id'];
-        $finest_addons_contactform_shortecode = $settings['contactform_shortecode'];
+        $quik_theme_addons_form_sl = $settings['quik_theme_addons_form_ts'];
+        $quik_theme_addons_form_id = $settings['form_id'];
+        $quik_theme_addons_contactform_shortecode = $settings['contactform_shortecode'];
 
         ?>
 
-        <?php if ( !empty( $finest_addons_form_id && $finest_addons_form_sl == 'formlist' ) ):
+        <?php if ( !empty( $quik_theme_addons_form_id && $quik_theme_addons_form_sl == 'formlist' ) ):
         ?>
-        <div class="finest-addons--contactform-wraper  finest-addons-contact-from ">
+        <div class="quiktheme-addons--contactform-wraper  quiktheme-addons-contact-from ">
             <?php
-echo finest_addons_do_shortcode( 'contact-form-7', [
+            echo quik_theme_addons_do_shortcode( 'contact-form-7', [
             'id' => $settings['form_id'],
         ] );
         ?>
         </div>
         <?php
-elseif ( $finest_addons_form_sl == 'shortcode' ):
+        elseif ( $quik_theme_addons_form_sl == 'shortcode' ):
         ?>
-            <div class="finest-addons--contactform-wraper <?php echo esc_attr( $finest_addons_form_bp ) ?> finest-addons-contact-from">
-                <?php echo finest_addons_get_meta( $finest_addons_contactform_shortecode ); ?>
+            <div class="quiktheme-addons--contactform-wraper <?php echo esc_attr( $quik_theme_addons_form_bp ) ?> quiktheme-addons-contact-from">
+                <?php echo quik_theme_addons_get_meta( $quik_theme_addons_contactform_shortecode ); ?>
             </div>
             <?php
-endif;
-    } 
+        endif;
+    }
 
 }
-$widgets_manager->register_widget_type( new \Finest_Addons\Widgets\Finest_Contact_Form() );
+$widgets_manager->register_widget_type( new \Quik_Theme_Addons\Widgets\Quik_Theme_Contact_Form() );

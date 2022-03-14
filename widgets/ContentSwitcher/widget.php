@@ -1,5 +1,5 @@
 <?php
-namespace Finest_Addons\Widgets;
+namespace Quik_Theme_Addons\Widgets;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -12,10 +12,10 @@ use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Background;
 
-class Finest_Content_Switcher extends Widget_Base {
+class Quik_Theme_Content_Switcher extends Widget_Base {
 
     public function get_name() {
-		return 'finest-content-switcher';
+		return 'quiktheme-content-switcher';
 	}
 
 	/**
@@ -27,11 +27,11 @@ class Finest_Content_Switcher extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __('Content Switcher', 'finest-addons');
+		return __('Content Switcher', 'quiktheme-addons');
 	}
 
     public function get_categories() {
-		return [ 'finest-addons' ];
+		return [ 'quiktheme-addons' ];
 	}
 
 	/**
@@ -47,7 +47,7 @@ class Finest_Content_Switcher extends Widget_Base {
 	}
 
 	public function get_keywords() {
-		return ['content', 'switcher', 'toggle', 'finest'];
+		return ['content', 'switcher', 'toggle', 'quik-theme-addons'];
 	}
 
 	protected function register_controls() {
@@ -56,117 +56,117 @@ class Finest_Content_Switcher extends Widget_Base {
          * Content Switcher Content
          */
         $this->start_controls_section(
-            'finest_switcher_content_section',
+            'quik_theme_switcher_content_section',
             [
-                'label' => __( 'Content', 'finest-addons' )
+                'label' => __( 'Content', 'quiktheme-addons' )
             ]
         );
 
-        $this->start_controls_tabs( 'finest_switcher_content_tabs' );
+        $this->start_controls_tabs( 'quik_theme_switcher_content_tabs' );
 
-            $this->start_controls_tab( 'finest_switcher_content_primary', [ 'label' => __( 'Primary', 'finest-addons' ) ] );
+            $this->start_controls_tab( 'quik_theme_switcher_content_primary', [ 'label' => __( 'Primary', 'quiktheme-addons' ) ] );
 
                 $this->add_control(
-                    'finest_switcher_content_primary_heading',
+                    'quik_theme_switcher_content_primary_heading',
                     [
-                        'label'       => esc_html__( 'Heading', 'finest-addons' ),
+                        'label'       => esc_html__( 'Heading', 'quiktheme-addons' ),
                         'type'        => Controls_Manager::TEXT,
                         'label_block' => true,
-                        'default'     => esc_html__( 'Primary Heading', 'finest-addons' )
+                        'default'     => esc_html__( 'Primary Heading', 'quiktheme-addons' )
                     ]
                 );
 
                 $this->add_control(
-                    'finest_switcher_primary_content_type',
+                    'quik_theme_switcher_primary_content_type',
                     [
-                        'label'   => __( 'Content Type', 'finest-addons' ),
+                        'label'   => __( 'Content Type', 'quiktheme-addons' ),
                         'type'    => Controls_Manager::SELECT,
                         'default' => 'content',
                         'options' => [
-                            'content'       => __( 'Content', 'finest-addons' ),
-                            'save_template' => __( 'Save Template', 'finest-addons' )
+                            'content'       => __( 'Content', 'quiktheme-addons' ),
+                            'save_template' => __( 'Save Template', 'quiktheme-addons' )
                         ]
                     ]
                 );
 
                 $this->add_control(
-                    'finest_switcher_primary_content_save_template',
+                    'quik_theme_switcher_primary_content_save_template',
                     [
-                        'label'     => __( 'Select Section', 'finest-addons' ),
+                        'label'     => __( 'Select Section', 'quiktheme-addons' ),
                         'type'      => Controls_Manager::SELECT,
                         'options'   => $this->get_saved_template( 'section' ),
                         'default'   => '-1',
                         'condition' => [
-                            'finest_switcher_primary_content_type' => 'save_template'
+                            'quik_theme_switcher_primary_content_type' => 'save_template'
                         ]
                     ]
                 );
 
                 $this->add_control(
-                    'finest_switcher_content_primary_content',
+                    'quik_theme_switcher_content_primary_content',
                     [
-                        'label'       => __( 'Content', 'finest-addons' ),
+                        'label'       => __( 'Content', 'quiktheme-addons' ),
                         'type'        => Controls_Manager::WYSIWYG,
                         'default'     => __( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-						', 'finest-addons' ),
-                        'placeholder' => __( 'Type your description here', 'finest-addons' ),
+						', 'quiktheme-addons' ),
+                        'placeholder' => __( 'Type your description here', 'quiktheme-addons' ),
                         'condition'   => [
-                            'finest_switcher_primary_content_type' => 'content'
+                            'quik_theme_switcher_primary_content_type' => 'content'
                         ]
                     ]
                 );
 
             $this->end_controls_tab();
 
-            $this->start_controls_tab( 'finest_switcher_content_secondary', [ 'label' => __('Secondary', 'finest-addons') ] );
+            $this->start_controls_tab( 'quik_theme_switcher_content_secondary', [ 'label' => __('Secondary', 'quiktheme-addons') ] );
 
                 $this->add_control(
-                    'finest_switcher_content_secondary_heading',
+                    'quik_theme_switcher_content_secondary_heading',
                     [
-                        'label'       => esc_html__( 'Heading', 'finest-addons' ),
+                        'label'       => esc_html__( 'Heading', 'quiktheme-addons' ),
                         'type'        => Controls_Manager::TEXT,
                         'label_block' => true,
-                        'default'     => esc_html__( 'Secondary Heading', 'finest-addons' )
+                        'default'     => esc_html__( 'Secondary Heading', 'quiktheme-addons' )
                     ]
                 );
 
                 $this->add_control(
-                    'finest_switcher_secondary_content_type',
+                    'quik_theme_switcher_secondary_content_type',
                     [
-                        'label'   => __( 'Content Type', 'finest-addons' ),
+                        'label'   => __( 'Content Type', 'quiktheme-addons' ),
                         'type'    => Controls_Manager::SELECT,
                         'default' => 'content',
                         'options' => [
-                            'content'       => __( 'Content', 'finest-addons' ),
-                            'save_template' => __( 'Save Template', 'finest-addons' )
+                            'content'       => __( 'Content', 'quiktheme-addons' ),
+                            'save_template' => __( 'Save Template', 'quiktheme-addons' )
                         ]
                     ]
                 );
 
                 $this->add_control(
-                    'finest_switcher_secondary_content_save_template',
+                    'quik_theme_switcher_secondary_content_save_template',
                     [
-                        'label'     => __( 'Select Section', 'finest-addons' ),
+                        'label'     => __( 'Select Section', 'quiktheme-addons' ),
                         'type'      => Controls_Manager::SELECT,
                         'options'   => $this->get_saved_template( 'section' ),
                         'default'   => '-1',
                         'condition' => [
-                            'finest_switcher_secondary_content_type' => 'save_template'
+                            'quik_theme_switcher_secondary_content_type' => 'save_template'
                         ]
                     ]
                 );
 
                 $this->add_control(
-                    'finest_switcher_content_secondary_content',
+                    'quik_theme_switcher_content_secondary_content',
                     [
-                        'label'       => __( 'Content', 'finest-addons' ),
+                        'label'       => __( 'Content', 'quiktheme-addons' ),
                         'type'        => Controls_Manager::WYSIWYG,
                         'default'     => __( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
 
-						', 'finest-addons' ),
-                        'placeholder' => __( 'Type your description here', 'finest-addons' ),
+						', 'quiktheme-addons' ),
+                        'placeholder' => __( 'Type your description here', 'quiktheme-addons' ),
                         'condition'   => [
-                            'finest_switcher_secondary_content_type' => 'content'
+                            'quik_theme_switcher_secondary_content_type' => 'content'
                         ]
                     ]
                 );
@@ -181,35 +181,35 @@ class Finest_Content_Switcher extends Widget_Base {
          * Content Switcher Style
          */
         $this->start_controls_section(
-            'finest_switcher_content_heading_style',
+            'quik_theme_switcher_content_heading_style',
             [
-                'label' => __( 'Switcher Heading', 'finest-addons' ),
+                'label' => __( 'Switcher Heading', 'quiktheme-addons' ),
                 'tab'   => Controls_Manager::TAB_STYLE
             ]
         );
 
         $this->add_control(
-			'finest_switcher_content_heading_allignment',
+			'quik_theme_switcher_content_heading_allignment',
 			[
-                'label'   => __( 'Alignment', 'finest-addons' ),
+                'label'   => __( 'Alignment', 'quiktheme-addons' ),
                 'type'    => Controls_Manager::CHOOSE,
-                'default' => 'finest_switecher_center',
+                'default' => 'quik_theme_switecher_center',
                 'toggle'  => false,
                 'options' => [
-					'finest_switecher_left'   => [
-                        'title'        => __( 'Left', 'finest-addons' ),
+					'quik_theme_switecher_left'   => [
+                        'title'        => __( 'Left', 'quiktheme-addons' ),
                         'icon'         => 'eicon-text-align-left'
 					],
-					'finest_switecher_center' => [
-                        'title'        => __( 'Center', 'finest-addons' ),
+					'quik_theme_switecher_center' => [
+                        'title'        => __( 'Center', 'quiktheme-addons' ),
                         'icon'         => 'eicon-text-align-center'
 					],
-					'finest_switecher_right'  => [
-                        'title'        => __( 'Right', 'finest-addons' ),
+					'quik_theme_switecher_right'  => [
+                        'title'        => __( 'Right', 'quiktheme-addons' ),
                         'icon'         => 'eicon-text-align-right'
                     ],
-					'finest_switecher_justify'  => [
-                        'title'        => __( 'justify', 'finest-addons' ),
+					'quik_theme_switecher_justify'  => [
+                        'title'        => __( 'justify', 'quiktheme-addons' ),
                         'icon'         => 'eicon-text-align-right'
 					]
 				]
@@ -220,17 +220,17 @@ class Finest_Content_Switcher extends Widget_Base {
         $this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
-				'name' => 'finest_switcher_content_heading_background',
-				'label' => __( 'Background', 'finest-addons' ),
+				'name' => 'quik_theme_switcher_content_heading_background',
+				'label' => __( 'Background', 'quiktheme-addons' ),
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .finest-content-switcher-toggle-inner',
+				'selector' => '{{WRAPPER}} .quiktheme-content-switcher-toggle-inner',
 			]
 		);
 
         $this->add_control(
-			'finest_switcher_content_heading_padding',
+			'quik_theme_switcher_content_heading_padding',
 			[
-                'label'        => __( 'Padding', 'finest-addons' ),
+                'label'        => __( 'Padding', 'quiktheme-addons' ),
                 'type'         => Controls_Manager::DIMENSIONS,
                 'size_units'   => [ 'px', '%' ],
                 'default'      => [
@@ -242,7 +242,7 @@ class Finest_Content_Switcher extends Widget_Base {
                     'isLinked' => false
                 ],
 				'selectors'    => [
-					'{{WRAPPER}} .finest-content-switcher-toggle-inner' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-content-switcher-toggle-inner' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
         );
@@ -250,27 +250,27 @@ class Finest_Content_Switcher extends Widget_Base {
         $this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
-                'name'     => 'finest_switcher_content_heading_border',
-                'selector' => '{{WRAPPER}} .finest-content-switcher-toggle-inner'
+                'name'     => 'quik_theme_switcher_content_heading_border',
+                'selector' => '{{WRAPPER}} .quiktheme-content-switcher-toggle-inner'
 			]
 		);
 
         $this->add_control(
-			'finest_switcher_content_heading_radius',
+			'quik_theme_switcher_content_heading_radius',
 			[
-                'label'      => __( 'Border Radius', 'finest-addons' ),
+                'label'      => __( 'Border Radius', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors'  => [
-					'{{WRAPPER}} .finest-content-switcher-toggle-inner' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-content-switcher-toggle-inner' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
         );
 
         $this->add_control(
-			'finest_switcher_content_heading_spacing',
+			'quik_theme_switcher_content_heading_spacing',
 			[
-                'label'       => __( 'Heading Spacing', 'finest-addons' ),
+                'label'       => __( 'Heading Spacing', 'quiktheme-addons' ),
                 'type'        => Controls_Manager::SLIDER,
                 'size_units'  => [ 'px', '%' ],
                 'range'       => [
@@ -284,16 +284,16 @@ class Finest_Content_Switcher extends Widget_Base {
 					'size'    => 20
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .finest-content-switcher-toggle-label-1' => 'margin-right: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .finest-content-switcher-toggle-label-2' => 'margin-left: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-content-switcher-toggle-label-1' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-content-switcher-toggle-label-2' => 'margin-left: {{SIZE}}{{UNIT}};'
 				]
 			]
         );
 
         $this->add_control(
-			'finest_switcher_content_heading_bottom_spacing',
+			'quik_theme_switcher_content_heading_bottom_spacing',
 			[
-                'label'       => __( 'Bottom Spacing', 'finest-addons' ),
+                'label'       => __( 'Bottom Spacing', 'quiktheme-addons' ),
                 'type'        => Controls_Manager::SLIDER,
                 'size_units'  => [ 'px' ],
                 'range'       => [
@@ -307,7 +307,7 @@ class Finest_Content_Switcher extends Widget_Base {
 					'size'    => 0
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .finest-content-switcher-toggle-inner' => 'margin-bottom: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-content-switcher-toggle-inner' => 'margin-bottom: {{SIZE}}{{UNIT}};'
 				]
 			]
         );
@@ -315,45 +315,45 @@ class Finest_Content_Switcher extends Widget_Base {
         $this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-                'name'     => 'finest_switcher_content_heading_typography',
-                'selector' => '{{WRAPPER}} .finest-content-switcher-toggle-label-1, {{WRAPPER}} .finest-content-switcher-toggle-label-2'
+                'name'     => 'quik_theme_switcher_content_heading_typography',
+                'selector' => '{{WRAPPER}} .quiktheme-content-switcher-toggle-label-1, {{WRAPPER}} .quiktheme-content-switcher-toggle-label-2'
 			]
         );
 
         $this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
-                'name'     => 'finest_switcher_content_heading_shadow',
-                'selector' => '{{WRAPPER}} .finest-content-switcher-toggle-inner'
+                'name'     => 'quik_theme_switcher_content_heading_shadow',
+                'selector' => '{{WRAPPER}} .quiktheme-content-switcher-toggle-inner'
 			]
 		);
 
-        $this->start_controls_tabs('finest_switcher_content_heading_bottom_tabs');
+        $this->start_controls_tabs('quik_theme_switcher_content_heading_bottom_tabs');
 
-            $this->start_controls_tab('finest_switcher_content_heading_primary', [ 'label' => __( 'Primary Heading', 'finest-addons' ) ] );
+            $this->start_controls_tab('quik_theme_switcher_content_heading_primary', [ 'label' => __( 'Primary Heading', 'quiktheme-addons' ) ] );
 
                 $this->add_control(
-                    'finest_switcher_content_heading_primary_color',
+                    'quik_theme_switcher_content_heading_primary_color',
                     [
-                        'label'     => __( 'Text Color', 'finest-addons' ),
+                        'label'     => __( 'Text Color', 'quiktheme-addons' ),
                         'type'      => Controls_Manager::COLOR,
                         'selectors' => [
-                            '{{WRAPPER}} .finest-content-switcher-toggle-label-1' => 'color: {{VALUE}};'
+                            '{{WRAPPER}} .quiktheme-content-switcher-toggle-label-1' => 'color: {{VALUE}};'
                         ]
                     ]
                 );
 
             $this->end_controls_tab();
 
-            $this->start_controls_tab('finest_switcher_content_heading_secondary', [ 'label' => __('Secondary Heading', 'finest-addons') ] );
+            $this->start_controls_tab('quik_theme_switcher_content_heading_secondary', [ 'label' => __('Secondary Heading', 'quiktheme-addons') ] );
 
                 $this->add_control(
-                    'finest_switcher_content_heading_secondary_color',
+                    'quik_theme_switcher_content_heading_secondary_color',
                     [
-                        'label'     => __( 'Text Color', 'finest-addons' ),
+                        'label'     => __( 'Text Color', 'quiktheme-addons' ),
                         'type'      => Controls_Manager::COLOR,
                         'selectors' => [
-                            '{{WRAPPER}} .finest-content-switcher-toggle-label-2' => 'color: {{VALUE}};'
+                            '{{WRAPPER}} .quiktheme-content-switcher-toggle-label-2' => 'color: {{VALUE}};'
                         ]
                     ]
                 );
@@ -368,26 +368,26 @@ class Finest_Content_Switcher extends Widget_Base {
          * Content Switcher Style
          */
         $this->start_controls_section(
-            'finest_switcher_content_switch_style',
+            'quik_theme_switcher_content_switch_style',
             [
-                'label' => __( 'Switch Style', 'finest-addons' ),
+                'label' => __( 'Switch Style', 'quiktheme-addons' ),
                 'tab'   => Controls_Manager::TAB_STYLE
             ]
         );
 
         $this->add_control(
-			'finest_switcher_content_switch',
+			'quik_theme_switcher_content_switch',
 			[
-                'label'     => __( 'Switch Background', 'finest-addons' ),
+                'label'     => __( 'Switch Background', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'after'
 			]
         );
 
         $this->add_control(
-			'finest_switcher_content_switch_width',
+			'quik_theme_switcher_content_switch_width',
 			[
-                'label'       => __( 'Width', 'finest-addons' ),
+                'label'       => __( 'Width', 'quiktheme-addons' ),
                 'type'        => Controls_Manager::SLIDER,
                 'size_units'  => [ 'px' ],
                 'range'       => [
@@ -401,17 +401,17 @@ class Finest_Content_Switcher extends Widget_Base {
 					'size'    => 70
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .finest-content-switcher-toggle-switch-slider' => 'width: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .finest-content-switcher-toggle-switch-label' => 'width: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} input:checked + .finest-content-switcher-toggle-switch-slider:before' => '-webkit-transform: translate( calc( {{SIZE}}{{UNIT}} - {{finest_switcher_content_switch_control_width.size}}{{finest_switcher_content_switch_control_width.unit}} ) , -50%); -ms-transform: translate(calc( {{SIZE}}{{UNIT}} - {{finest_switcher_content_switch_control_width.size}}{{finest_switcher_content_switch_control_width.unit}} ), -50%);transform: translate(calc( {{SIZE}}{{UNIT}} - {{finest_switcher_content_switch_control_width.size}}{{finest_switcher_content_switch_control_width.unit}} ), -50%);'
+					'{{WRAPPER}} .quiktheme-content-switcher-toggle-switch-slider' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-content-switcher-toggle-switch-label' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} input:checked + .quiktheme-content-switcher-toggle-switch-slider:before' => '-webkit-transform: translate( calc( {{SIZE}}{{UNIT}} - {{quik_theme_switcher_content_switch_control_width.size}}{{quik_theme_switcher_content_switch_control_width.unit}} ) , -50%); -ms-transform: translate(calc( {{SIZE}}{{UNIT}} - {{quik_theme_switcher_content_switch_control_width.size}}{{quik_theme_switcher_content_switch_control_width.unit}} ), -50%);transform: translate(calc( {{SIZE}}{{UNIT}} - {{quik_theme_switcher_content_switch_control_width.size}}{{quik_theme_switcher_content_switch_control_width.unit}} ), -50%);'
 				]
 			]
         );
 
         $this->add_control(
-			'finest_switcher_content_switch_height',
+			'quik_theme_switcher_content_switch_height',
 			[
-                'label'       => __( 'Height', 'finest-addons' ),
+                'label'       => __( 'Height', 'quiktheme-addons' ),
                 'type'        => Controls_Manager::SLIDER,
                 'size_units'  => [ 'px' ],
                 'range'       => [
@@ -425,17 +425,17 @@ class Finest_Content_Switcher extends Widget_Base {
 					'size'    => 30
 				],
 				'selectors'   => [
-                    '{{WRAPPER}} .finest-content-switcher-toggle-switch-slider,
-                    {{WRAPPER}} .finest-content-switcher-toggle-switch,
-                    {{WRAPPER}} .finest-content-switcher-toggle-switch-label' => 'height: {{SIZE}}{{UNIT}};'
+                    '{{WRAPPER}} .quiktheme-content-switcher-toggle-switch-slider,
+                    {{WRAPPER}} .quiktheme-content-switcher-toggle-switch,
+                    {{WRAPPER}} .quiktheme-content-switcher-toggle-switch-label' => 'height: {{SIZE}}{{UNIT}};'
 				]
 			]
         );
 
         $this->add_control(
-			'finest_switcher_content_switch_radius',
+			'quik_theme_switcher_content_switch_radius',
 			[
-                'label'      => __( 'Switch Border Radius', 'finest-addons' ),
+                'label'      => __( 'Switch Border Radius', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'default'    => [
@@ -446,7 +446,7 @@ class Finest_Content_Switcher extends Widget_Base {
                     'unit'   => 'px'
                 ],
                 'selectors'  => [
-					'{{WRAPPER}} .finest-content-switcher-toggle-switch-slider' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-content-switcher-toggle-switch-slider' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
         );
@@ -454,20 +454,20 @@ class Finest_Content_Switcher extends Widget_Base {
         $this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
-                'name'     => 'finest_switcher_content_switch_shadow',
-                'selector' => '{{WRAPPER}} .finest-content-switcher-toggle-switch-slider'
+                'name'     => 'quik_theme_switcher_content_switch_shadow',
+                'selector' => '{{WRAPPER}} .quiktheme-content-switcher-toggle-switch-slider'
 			]
 		);
 
-        $this->start_controls_tabs('finest_switcher_content_switch_tabs');
+        $this->start_controls_tabs('quik_theme_switcher_content_switch_tabs');
 
-            $this->start_controls_tab('finest_switcher_content_switch_off', [ 'label' => __( 'Switch OFF', 'finest-addons') ] );
+            $this->start_controls_tab('quik_theme_switcher_content_switch_off', [ 'label' => __( 'Switch OFF', 'quiktheme-addons') ] );
 
                 $this->add_group_control(
                     Group_Control_Background::get_type(),
                     [
-                        'name' => 'finest_switcher_content_switch_off_bg_color',
-                        'label' => __( 'Background', 'finest-addons' ),
+                        'name' => 'quik_theme_switcher_content_switch_off_bg_color',
+                        'label' => __( 'Background', 'quiktheme-addons' ),
                         'types' => [ 'classic', 'gradient' ],
                         'fields_options'  => [
                             'background'  => [
@@ -477,33 +477,33 @@ class Finest_Content_Switcher extends Widget_Base {
                                 'default' => '#4243DC'
                             ]
                         ],
-                        'selector' => '{{WRAPPER}} .finest-content-switcher-toggle-switch-slider',
+                        'selector' => '{{WRAPPER}} .quiktheme-content-switcher-toggle-switch-slider',
                     ]
                 );
 
                 $this->add_control(
-                    'finest_switcher_content_switch_off_border_style',
+                    'quik_theme_switcher_content_switch_off_border_style',
                     [
-                        'label' => __( 'Switch Border Style', 'finest-addons' ),
+                        'label' => __( 'Switch Border Style', 'quiktheme-addons' ),
                         'type' => Controls_Manager::SELECT,
                         'default' => 'none',
                         'options' => [
-                            'none' => __( 'None', 'finest-addons' ),
-                            'solid'  => __( 'Solid', 'finest-addons' ),
-                            'dashed' => __( 'Dashed', 'finest-addons' ),
-                            'dotted' => __( 'Dotted', 'finest-addons' ),
-                            'double' => __( 'Double', 'finest-addons' ),
+                            'none' => __( 'None', 'quiktheme-addons' ),
+                            'solid'  => __( 'Solid', 'quiktheme-addons' ),
+                            'dashed' => __( 'Dashed', 'quiktheme-addons' ),
+                            'dotted' => __( 'Dotted', 'quiktheme-addons' ),
+                            'double' => __( 'Double', 'quiktheme-addons' ),
                         ],
                         'selectors'   => [
-                            '{{WRAPPER}} .finest-content-switcher-toggle-switch-slider' => 'border-style: {{VALUE}};'
+                            '{{WRAPPER}} .quiktheme-content-switcher-toggle-switch-slider' => 'border-style: {{VALUE}};'
                         ]
                     ]
                 );
 
                 $this->add_control(
-                    'finest_switcher_content_switch_off_border_width',
+                    'quik_theme_switcher_content_switch_off_border_width',
                     [
-                        'label'       => __( 'Switch Border Width', 'finest-addons' ),
+                        'label'       => __( 'Switch Border Width', 'quiktheme-addons' ),
                         'type'        => Controls_Manager::SLIDER,
                         'size_units'  => [ 'px' ],
                         'range'       => [
@@ -517,65 +517,65 @@ class Finest_Content_Switcher extends Widget_Base {
                             'size'    => 0
                         ],
                         'selectors'   => [
-                            '{{WRAPPER}} .finest-content-switcher-toggle-switch-slider' => 'border-width: {{SIZE}}{{UNIT}};'
+                            '{{WRAPPER}} .quiktheme-content-switcher-toggle-switch-slider' => 'border-width: {{SIZE}}{{UNIT}};'
                         ],
                         'condition' => [
-                            'finest_switcher_content_switch_off_border_style!' => 'none'
+                            'quik_theme_switcher_content_switch_off_border_style!' => 'none'
                         ]
                     ]
                 );
 
                 $this->add_control(
-                    'finest_switcher_content_switch_off_border_color',
+                    'quik_theme_switcher_content_switch_off_border_color',
                     [
-                        'label'     => __( 'Switch Border color', 'finest-addons' ),
+                        'label'     => __( 'Switch Border color', 'quiktheme-addons' ),
                         'type'      => Controls_Manager::COLOR,
                         'selectors' => [
-                            '{{WRAPPER}} .finest-content-switcher-toggle-switch-slider' => 'border-color: {{VALUE}};'
+                            '{{WRAPPER}} .quiktheme-content-switcher-toggle-switch-slider' => 'border-color: {{VALUE}};'
                         ],
                         'condition' => [
-                            'finest_switcher_content_switch_off_border_style!' => 'none'
+                            'quik_theme_switcher_content_switch_off_border_style!' => 'none'
                         ]
                     ]
                 );
 
             $this->end_controls_tab();
 
-            $this->start_controls_tab('finest_switcher_content_switch_on', [ 'label' => __( 'Switch ON', 'finest-addons') ] );
+            $this->start_controls_tab('quik_theme_switcher_content_switch_on', [ 'label' => __( 'Switch ON', 'quiktheme-addons') ] );
 
                 $this->add_group_control(
                     Group_Control_Background::get_type(),
                     [
-                        'name' => 'finest_switcher_content_switch_on_bg_color',
-                        'label' => __( 'Background', 'finest-addons' ),
+                        'name' => 'quik_theme_switcher_content_switch_on_bg_color',
+                        'label' => __( 'Background', 'quiktheme-addons' ),
                         'types' => [ 'classic', 'gradient' ],
-                        'selector' => '{{WRAPPER}} input:checked + .finest-content-switcher-toggle-switch-slider',
+                        'selector' => '{{WRAPPER}} input:checked + .quiktheme-content-switcher-toggle-switch-slider',
                     ]
                 );
 
                 $this->add_control(
-                    'finest_switcher_content_switch_on_border_style',
+                    'quik_theme_switcher_content_switch_on_border_style',
                     [
-                        'label' => __( 'Switch Border Style', 'finest-addons' ),
+                        'label' => __( 'Switch Border Style', 'quiktheme-addons' ),
                         'type' => Controls_Manager::SELECT,
                         'default' => 'none',
                         'options' => [
-                            'none' => __( 'None', 'finest-addons' ),
-                            'solid'  => __( 'Solid', 'finest-addons' ),
-                            'dashed' => __( 'Dashed', 'finest-addons' ),
-                            'dotted' => __( 'Dotted', 'finest-addons' ),
-                            'double' => __( 'Double', 'finest-addons' ),
+                            'none' => __( 'None', 'quiktheme-addons' ),
+                            'solid'  => __( 'Solid', 'quiktheme-addons' ),
+                            'dashed' => __( 'Dashed', 'quiktheme-addons' ),
+                            'dotted' => __( 'Dotted', 'quiktheme-addons' ),
+                            'double' => __( 'Double', 'quiktheme-addons' ),
                         ],
                         'selectors'   => [
-                            '{{WRAPPER}} input:checked + .finest-content-switcher-toggle-switch-slider' => 'border-style: {{VALUE}};'
+                            '{{WRAPPER}} input:checked + .quiktheme-content-switcher-toggle-switch-slider' => 'border-style: {{VALUE}};'
                         ]
                     ]
                 );
 
                 $this->add_control(
-                    'finest_switcher_content_switch_on_border_width',
+                    'quik_theme_switcher_content_switch_on_border_width',
                     [
-                        'label'       => __( 'Switch Border Width', 'finest-addons' ),
+                        'label'       => __( 'Switch Border Width', 'quiktheme-addons' ),
                         'type'        => Controls_Manager::SLIDER,
                         'size_units'  => [ 'px' ],
                         'range'       => [
@@ -589,24 +589,24 @@ class Finest_Content_Switcher extends Widget_Base {
                             'size'    => 0
                         ],
                         'selectors'   => [
-                            '{{WRAPPER}} input:checked + .finest-content-switcher-toggle-switch-slider' => 'border-width: {{SIZE}}{{UNIT}};'
+                            '{{WRAPPER}} input:checked + .quiktheme-content-switcher-toggle-switch-slider' => 'border-width: {{SIZE}}{{UNIT}};'
                         ],
                         'condition' => [
-                            'finest_switcher_content_switch_on_border_style!' => 'none'
+                            'quik_theme_switcher_content_switch_on_border_style!' => 'none'
                         ]
                     ]
                 );
 
                 $this->add_control(
-                    'finest_switcher_content_switch_on_border_color',
+                    'quik_theme_switcher_content_switch_on_border_color',
                     [
-                        'label'     => __( 'Switch Border color', 'finest-addons' ),
+                        'label'     => __( 'Switch Border color', 'quiktheme-addons' ),
                         'type'      => Controls_Manager::COLOR,
                         'selectors' => [
-                            '{{WRAPPER}} input:checked + .finest-content-switcher-toggle-switch-slider' => 'border-color: {{VALUE}};'
+                            '{{WRAPPER}} input:checked + .quiktheme-content-switcher-toggle-switch-slider' => 'border-color: {{VALUE}};'
                         ],
                         'condition' => [
-                            'finest_switcher_content_switch_on_border_style!' => 'none'
+                            'quik_theme_switcher_content_switch_on_border_style!' => 'none'
                         ]
                     ]
                 );
@@ -616,18 +616,18 @@ class Finest_Content_Switcher extends Widget_Base {
         $this->end_controls_tabs();
 
         $this->add_control(
-			'finest_switcher_content_switch_control',
+			'quik_theme_switcher_content_switch_control',
 			[
-                'label'     => __( 'Switch Control', 'finest-addons' ),
+                'label'     => __( 'Switch Control', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'before'
 			]
         );
 
         $this->add_control(
-			'finest_switcher_content_switch_control_spacing_with_border',
+			'quik_theme_switcher_content_switch_control_spacing_with_border',
 			[
-                'label'       => __( 'Left & Right Spacing', 'finest-addons' ),
+                'label'       => __( 'Left & Right Spacing', 'quiktheme-addons' ),
                 'type'        => Controls_Manager::SLIDER,
                 'size_units'  => [ 'px' ],
                 'range'       => [
@@ -641,21 +641,21 @@ class Finest_Content_Switcher extends Widget_Base {
 					'size'    => 5
 				],
 				'selectors'   => [
-                    '{{WRAPPER}} .finest-content-switcher-toggle-switch-slider:before'                 => 'margin-left: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} input:checked + .finest-content-switcher-toggle-switch-slider:before' => 'margin-left: calc( -{{SIZE}}{{UNIT}} - ( {{finest_switcher_content_switch_on_border_width.size}}{{finest_switcher_content_switch_on_border_width.unit}} * 2 ) ) ;',
-                    '{{WRAPPER}} input:checked + .finest-content-switcher-toggle-switch-slider:before' => 'margin-left: calc( -{{SIZE}}{{UNIT}} - ( {{finest_switcher_content_switch_off_border_width.size}}{{finest_switcher_content_switch_off_border_width.unit}} * 2 ) ) ;'
+                    '{{WRAPPER}} .quiktheme-content-switcher-toggle-switch-slider:before'                 => 'margin-left: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} input:checked + .quiktheme-content-switcher-toggle-switch-slider:before' => 'margin-left: calc( -{{SIZE}}{{UNIT}} - ( {{quik_theme_switcher_content_switch_on_border_width.size}}{{quik_theme_switcher_content_switch_on_border_width.unit}} * 2 ) ) ;',
+                    '{{WRAPPER}} input:checked + .quiktheme-content-switcher-toggle-switch-slider:before' => 'margin-left: calc( -{{SIZE}}{{UNIT}} - ( {{quik_theme_switcher_content_switch_off_border_width.size}}{{quik_theme_switcher_content_switch_off_border_width.unit}} * 2 ) ) ;'
                 ],
                 'condition' => [
-                    'finest_switcher_content_switch_off_border_style!' => 'none',
-                    'finest_switcher_content_switch_on_border_style!' => 'none',
+                    'quik_theme_switcher_content_switch_off_border_style!' => 'none',
+                    'quik_theme_switcher_content_switch_on_border_style!' => 'none',
                 ]
 			]
         );
 
         $this->add_control(
-			'finest_switcher_content_switch_control_spacing_without_border',
+			'quik_theme_switcher_content_switch_control_spacing_without_border',
 			[
-                'label'       => __( 'Left & Right Spacing', 'finest-addons' ),
+                'label'       => __( 'Left & Right Spacing', 'quiktheme-addons' ),
                 'type'        => Controls_Manager::SLIDER,
                 'size_units'  => [ 'px' ],
                 'range'       => [
@@ -669,20 +669,20 @@ class Finest_Content_Switcher extends Widget_Base {
 					'size'    => 5
 				],
 				'selectors'   => [
-                    '{{WRAPPER}} .finest-content-switcher-toggle-switch-slider:before'                 => 'margin-left: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} input:checked + .finest-content-switcher-toggle-switch-slider:before' => 'margin-left: -{{SIZE}}{{UNIT}} ;',
+                    '{{WRAPPER}} .quiktheme-content-switcher-toggle-switch-slider:before'                 => 'margin-left: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} input:checked + .quiktheme-content-switcher-toggle-switch-slider:before' => 'margin-left: -{{SIZE}}{{UNIT}} ;',
                 ],
                 'condition' => [
-                    'finest_switcher_content_switch_off_border_style' => 'none',
-                    'finest_switcher_content_switch_on_border_style' => 'none'
+                    'quik_theme_switcher_content_switch_off_border_style' => 'none',
+                    'quik_theme_switcher_content_switch_on_border_style' => 'none'
                 ]
 			]
         );
 
         $this->add_control(
-			'finest_switcher_content_switch_control_radius',
+			'quik_theme_switcher_content_switch_control_radius',
 			[
-                'label'      => __( 'Switch Control Border Radius', 'finest-addons' ),
+                'label'      => __( 'Switch Control Border Radius', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'default'    => [
@@ -693,19 +693,19 @@ class Finest_Content_Switcher extends Widget_Base {
                     'unit'   => 'px'
                 ],
                 'selectors'  => [
-					'{{WRAPPER}} .finest-content-switcher-toggle-switch-slider:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-content-switcher-toggle-switch-slider:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
         );
 
-        $this->start_controls_tabs( 'finest_switcher_content_switch_control_tabs' );
+        $this->start_controls_tabs( 'quik_theme_switcher_content_switch_control_tabs' );
 
-            $this->start_controls_tab( 'finest_switcher_content_switch_control_off', [ 'label' => __( 'Switch Control OFF', 'finest-addons' ) ] );
+            $this->start_controls_tab( 'quik_theme_switcher_content_switch_control_off', [ 'label' => __( 'Switch Control OFF', 'quiktheme-addons' ) ] );
 
                 $this->add_control(
-                    'finest_switcher_content_switch_control_width',
+                    'quik_theme_switcher_content_switch_control_width',
                     [
-                        'label'       => __( 'Width', 'finest-addons' ),
+                        'label'       => __( 'Width', 'quiktheme-addons' ),
                         'type'        => Controls_Manager::SLIDER,
                         'size_units'  => [ 'px' ],
                         'range'       => [
@@ -719,15 +719,15 @@ class Finest_Content_Switcher extends Widget_Base {
                             'size'    => 27
                         ],
                         'selectors'   => [
-                            '{{WRAPPER}} .finest-content-switcher-toggle-switch-slider:before' => 'width: {{SIZE}}{{UNIT}};'
+                            '{{WRAPPER}} .quiktheme-content-switcher-toggle-switch-slider:before' => 'width: {{SIZE}}{{UNIT}};'
                         ]
                     ]
                 );
 
                 $this->add_control(
-                    'finest_switcher_content_switch_control_height',
+                    'quik_theme_switcher_content_switch_control_height',
                     [
-                        'label'       => __( 'Height', 'finest-addons' ),
+                        'label'       => __( 'Height', 'quiktheme-addons' ),
                         'type'        => Controls_Manager::SLIDER,
                         'size_units'  => [ 'px' ],
                         'range'       => [
@@ -741,7 +741,7 @@ class Finest_Content_Switcher extends Widget_Base {
                             'size'    => 27
                         ],
                         'selectors'   => [
-                            '{{WRAPPER}} .finest-content-switcher-toggle-switch-slider:before' => 'height: {{SIZE}}{{UNIT}};'
+                            '{{WRAPPER}} .quiktheme-content-switcher-toggle-switch-slider:before' => 'height: {{SIZE}}{{UNIT}};'
                         ]
                     ]
                 );
@@ -749,8 +749,8 @@ class Finest_Content_Switcher extends Widget_Base {
                 $this->add_group_control(
                     Group_Control_Background::get_type(),
                     [
-                        'name' => 'finest_switcher_content_switch_off_switch_control_color',
-                        'label' => __( 'Background', 'finest-addons' ),
+                        'name' => 'quik_theme_switcher_content_switch_off_switch_control_color',
+                        'label' => __( 'Background', 'quiktheme-addons' ),
                         'types' => [ 'classic', 'gradient' ],
                         'fields_options'  => [
                             'background'  => [
@@ -760,34 +760,34 @@ class Finest_Content_Switcher extends Widget_Base {
                                 'default' => '#ffffff',
                             ]
                         ],
-                        'selector' => '{{WRAPPER}} .finest-content-switcher-toggle-switch-slider:before',
+                        'selector' => '{{WRAPPER}} .quiktheme-content-switcher-toggle-switch-slider:before',
                     ]
                 );
 
                 $this->add_group_control(
                     Group_Control_Border::get_type(),
                     [
-                        'name'     => 'finest_switcher_content_switch_off_control_border',
-                        'selector' => '{{WRAPPER}} .finest-content-switcher-toggle-switch-slider:before'
+                        'name'     => 'quik_theme_switcher_content_switch_off_control_border',
+                        'selector' => '{{WRAPPER}} .quiktheme-content-switcher-toggle-switch-slider:before'
                     ]
                 );
 
                 $this->add_group_control(
                     Group_Control_Box_Shadow::get_type(),
                     [
-                        'name'     => 'finest_switcher_content_switch_on_control_shadow',
-                        'selector' => '{{WRAPPER}} .finest-content-switcher-toggle-switch-slider:before'
+                        'name'     => 'quik_theme_switcher_content_switch_on_control_shadow',
+                        'selector' => '{{WRAPPER}} .quiktheme-content-switcher-toggle-switch-slider:before'
                     ]
                 );
 
             $this->end_controls_tab();
 
-            $this->start_controls_tab( 'finest_switcher_content_switch_control_on', [ 'label' => __( 'Switch Control ON', 'finest-addons' ) ] );
+            $this->start_controls_tab( 'quik_theme_switcher_content_switch_control_on', [ 'label' => __( 'Switch Control ON', 'quiktheme-addons' ) ] );
 
                 $this->add_control(
-                    'finest_switcher_content_switch_on_control_width',
+                    'quik_theme_switcher_content_switch_on_control_width',
                     [
-                        'label'       => __( 'Width', 'finest-addons' ),
+                        'label'       => __( 'Width', 'quiktheme-addons' ),
                         'type'        => Controls_Manager::SLIDER,
                         'size_units'  => [ 'px' ],
                         'range'       => [
@@ -801,15 +801,15 @@ class Finest_Content_Switcher extends Widget_Base {
                             'size'    => 27
                         ],
                         'selectors'   => [
-                            '{{WRAPPER}} input:checked + .finest-content-switcher-toggle-switch-slider:before' => 'width: {{SIZE}}{{UNIT}};'
+                            '{{WRAPPER}} input:checked + .quiktheme-content-switcher-toggle-switch-slider:before' => 'width: {{SIZE}}{{UNIT}};'
                         ]
                     ]
                 );
 
                 $this->add_control(
-                    'finest_switcher_content_switch_on_control_height',
+                    'quik_theme_switcher_content_switch_on_control_height',
                     [
-                        'label'       => __( 'Height', 'finest-addons' ),
+                        'label'       => __( 'Height', 'quiktheme-addons' ),
                         'type'        => Controls_Manager::SLIDER,
                         'size_units'  => [ 'px' ],
                         'range'       => [
@@ -823,7 +823,7 @@ class Finest_Content_Switcher extends Widget_Base {
                             'size'    => 27
                         ],
                         'selectors'   => [
-                            '{{WRAPPER}} input:checked + .finest-content-switcher-toggle-switch-slider:before' => 'height: {{SIZE}}{{UNIT}};'
+                            '{{WRAPPER}} input:checked + .quiktheme-content-switcher-toggle-switch-slider:before' => 'height: {{SIZE}}{{UNIT}};'
                         ]
                     ]
                 );
@@ -831,8 +831,8 @@ class Finest_Content_Switcher extends Widget_Base {
                 $this->add_group_control(
                     Group_Control_Background::get_type(),
                     [
-                        'name' => 'finest_switcher_content_switch_on_switch_control_color',
-                        'label' => __( 'Background', 'finest-addons' ),
+                        'name' => 'quik_theme_switcher_content_switch_on_switch_control_color',
+                        'label' => __( 'Background', 'quiktheme-addons' ),
                         'types' => [ 'classic', 'gradient' ],
                         'fields_options'  => [
                             'background'  => [
@@ -842,23 +842,23 @@ class Finest_Content_Switcher extends Widget_Base {
                                 'default' => '#ffffff',
                             ]
                         ],
-                        'selector' => '{{WRAPPER}} input:checked + .finest-content-switcher-toggle-switch-slider:before',
+                        'selector' => '{{WRAPPER}} input:checked + .quiktheme-content-switcher-toggle-switch-slider:before',
                     ]
                 );
 
                 $this->add_group_control(
                     Group_Control_Border::get_type(),
                     [
-                        'name'     => 'finest_switcher_content_switch_on_control_border',
-                        'selector' => '{{WRAPPER}} input:checked + .finest-content-switcher-toggle-switch-slider:before'
+                        'name'     => 'quik_theme_switcher_content_switch_on_control_border',
+                        'selector' => '{{WRAPPER}} input:checked + .quiktheme-content-switcher-toggle-switch-slider:before'
                     ]
                 );
 
                 $this->add_group_control(
                     Group_Control_Box_Shadow::get_type(),
                     [
-                        'name'     => 'finest_switcher_content_switch_off_control_shadow',
-                        'selector' => '{{WRAPPER}} input:checked + .finest-content-switcher-toggle-switch-slider:before'
+                        'name'     => 'quik_theme_switcher_content_switch_off_control_shadow',
+                        'selector' => '{{WRAPPER}} input:checked + .quiktheme-content-switcher-toggle-switch-slider:before'
                     ]
                 );
 
@@ -872,9 +872,9 @@ class Finest_Content_Switcher extends Widget_Base {
          * Content Switcher Content
          */
         $this->start_controls_section(
-            'finest_switcher_content_main_contant_style',
+            'quik_theme_switcher_content_main_contant_style',
             [
-                'label' => __( 'Switcher Content', 'finest-addons' ),
+                'label' => __( 'Switcher Content', 'quiktheme-addons' ),
                 'tab'   => Controls_Manager::TAB_STYLE
             ]
         );
@@ -882,36 +882,36 @@ class Finest_Content_Switcher extends Widget_Base {
         $this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
-                'name'     => 'finest_switcher_main_contant_background',
-                'label'    => __( 'Background', 'finest-addons' ),
+                'name'     => 'quik_theme_switcher_main_contant_background',
+                'label'    => __( 'Background', 'quiktheme-addons' ),
                 'types'    => [ 'classic', 'gradient' ],
-                'selector' => '{{WRAPPER}} .finest-content-switcher-content-wrap'
+                'selector' => '{{WRAPPER}} .quiktheme-content-switcher-content-wrap'
 			]
         );
 
         $this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-                'name'     => 'finest_switcher_main_contant_typography',
-                'selector' => '{{WRAPPER}} .finest-content-switcher-content-wrap'
+                'name'     => 'quik_theme_switcher_main_contant_typography',
+                'selector' => '{{WRAPPER}} .quiktheme-content-switcher-content-wrap'
 			]
 		);
 
         $this->add_control(
-            'finest_switcher_main_contant_text_color',
+            'quik_theme_switcher_main_contant_text_color',
             [
-                'label'     => __( 'Text Color', 'finest-addons' ),
+                'label'     => __( 'Text Color', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-content-switcher-content-wrap' => 'color: {{VALUE}};'
+                    '{{WRAPPER}} .quiktheme-content-switcher-content-wrap' => 'color: {{VALUE}};'
                 ]
             ]
         );
 
         $this->add_control(
-			'finest_switcher_main_contant_padding',
+			'quik_theme_switcher_main_contant_padding',
 			[
-                'label'        => __( 'Padding', 'finest-addons' ),
+                'label'        => __( 'Padding', 'quiktheme-addons' ),
                 'type'         => Controls_Manager::DIMENSIONS,
                 'size_units'   => [ 'px', '%' ],
                 'default'      => [
@@ -922,7 +922,7 @@ class Finest_Content_Switcher extends Widget_Base {
                     'unit'     => 'px'
                 ],
 				'selectors'    => [
-					'{{WRAPPER}} .finest-content-switcher-content-wrap' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-content-switcher-content-wrap' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
         );
@@ -930,19 +930,19 @@ class Finest_Content_Switcher extends Widget_Base {
         $this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
-                'name'     => 'finest_switcher_main_contant_border',
-                'selector' => '{{WRAPPER}} .finest-content-switcher-content-wrap'
+                'name'     => 'quik_theme_switcher_main_contant_border',
+                'selector' => '{{WRAPPER}} .quiktheme-content-switcher-content-wrap'
 			]
 		);
 
         $this->add_control(
-			'finest_switcher_main_contant_radius',
+			'quik_theme_switcher_main_contant_radius',
 			[
-                'label'      => __( 'Border Radius', 'finest-addons' ),
+                'label'      => __( 'Border Radius', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors'  => [
-					'{{WRAPPER}} .finest-content-switcher-content-wrap' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-content-switcher-content-wrap' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
         );
@@ -950,8 +950,8 @@ class Finest_Content_Switcher extends Widget_Base {
         $this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
-                'name'     => 'finest_switcher_main_contant_shadow',
-                'selector' => '{{WRAPPER}} .finest-content-switcher-content-wrap'
+                'name'     => 'quik_theme_switcher_main_contant_shadow',
+                'selector' => '{{WRAPPER}} .quiktheme-content-switcher-content-wrap'
 			]
 		);
 
@@ -968,13 +968,13 @@ class Finest_Content_Switcher extends Widget_Base {
 	public function get_saved_template( $type = 'page' ) {
 
 		$saved_widgets = $this->get_post_template( $type );
-		$options[-1]   = __( 'Select', 'finest-addons' );
+		$options[-1]   = __( 'Select', 'quiktheme-addons' );
 		if ( count( $saved_widgets ) ) :
 			foreach ( $saved_widgets as $saved_row ) :
 				$options[ $saved_row['id'] ] = $saved_row['name'];
 			endforeach;
 		else :
-			$options['no_template'] = __( 'No section template is added.', 'finest-addons' );
+			$options['no_template'] = __( 'No section template is added.', 'quiktheme-addons' );
 		endif;
 		return $options;
 	}
@@ -1018,38 +1018,38 @@ class Finest_Content_Switcher extends Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
         ?>
-        <div class="finest-content-switcher-wrapper">
-            <div class="finest-content-switcher-toggle <?php echo esc_attr( $settings['finest_switcher_content_heading_allignment'] ); ?>">
-                <div class="finest-content-switcher-toggle-inner">
-                    <div class="finest-content-switcher-toggle-label-1">
-                        <?php echo esc_html( $settings['finest_switcher_content_primary_heading'] ); ?>
+        <div class="quiktheme-content-switcher-wrapper">
+            <div class="quiktheme-content-switcher-toggle <?php echo esc_attr( $settings['quik_theme_switcher_content_heading_allignment'] ); ?>">
+                <div class="quiktheme-content-switcher-toggle-inner">
+                    <div class="quiktheme-content-switcher-toggle-label-1">
+                        <?php echo esc_html( $settings['quik_theme_switcher_content_primary_heading'] ); ?>
                     </div>
-                    <div class="finest-content-switcher-toggle-switch">
-                        <label class="finest-content-switcher-toggle-switch-label">
+                    <div class="quiktheme-content-switcher-toggle-switch">
+                        <label class="quiktheme-content-switcher-toggle-switch-label">
                             <input class="input" type="checkbox">
-                            <span class="finest-content-switcher-toggle-switch-slider"></span>
+                            <span class="quiktheme-content-switcher-toggle-switch-slider"></span>
                         </label>
                     </div>
-                    <div class="finest-content-switcher-toggle-label-2">
-                        <?php echo esc_html( $settings['finest_switcher_content_secondary_heading'] ); ?>
+                    <div class="quiktheme-content-switcher-toggle-label-2">
+                        <?php echo esc_html( $settings['quik_theme_switcher_content_secondary_heading'] ); ?>
                     </div>
                 </div>
             </div>
-            <div class="finest-content-switcher-content-wrap">
-                <div class="finest-content-switcher-primary-wrap">
-                    <?php if( 'content' === $settings['finest_switcher_primary_content_type'] ) : ?>
-                        <?php echo wp_kses_post( $settings['finest_switcher_content_primary_content'] ); ?>
+            <div class="quiktheme-content-switcher-content-wrap">
+                <div class="quiktheme-content-switcher-primary-wrap">
+                    <?php if( 'content' === $settings['quik_theme_switcher_primary_content_type'] ) : ?>
+                        <?php echo wp_kses_post( $settings['quik_theme_switcher_content_primary_content'] ); ?>
                     <?php endif; ?>
-                    <?php if( 'save_template' === $settings['finest_switcher_primary_content_type'] ) : ?>
-                        <?php echo Plugin::$instance->frontend->get_builder_content_for_display( wp_kses_post( $settings['finest_switcher_primary_content_save_template'] ) ); ?>
+                    <?php if( 'save_template' === $settings['quik_theme_switcher_primary_content_type'] ) : ?>
+                        <?php echo quik_theme_layout_content( wp_kses_post( $settings['quik_theme_switcher_primary_content_save_template'] ) ); ?>
                     <?php endif; ?>
                 </div>
-                <div class="finest-content-switcher-secondary-wrap">
-                    <?php if( 'content' === $settings['finest_switcher_secondary_content_type'] ) : ?>
-                        <?php echo wp_kses_post( $settings['finest_switcher_content_secondary_content'] ); ?>
+                <div class="quiktheme-content-switcher-secondary-wrap">
+                    <?php if( 'content' === $settings['quik_theme_switcher_secondary_content_type'] ) : ?>
+                        <?php echo wp_kses_post( $settings['quik_theme_switcher_content_secondary_content'] ); ?>
                     <?php endif; ?>
-                    <?php if( 'save_template' === $settings['finest_switcher_secondary_content_type'] ) : ?>
-                        <?php echo Plugin::$instance->frontend->get_builder_content_for_display( wp_kses_post( $settings['finest_switcher_secondary_content_save_template'] ) ); ?>
+                    <?php if( 'save_template' === $settings['quik_theme_switcher_secondary_content_type'] ) : ?>
+                        <?php echo quik_theme_layout_content( wp_kses_post( $settings['quik_theme_switcher_secondary_content_save_template'] ) ); ?>
                     <?php endif; ?>
                 </div>
             </div>
@@ -1058,4 +1058,4 @@ class Finest_Content_Switcher extends Widget_Base {
     }
 
 }
-$widgets_manager->register_widget_type( new \Finest_Addons\Widgets\Finest_Content_Switcher() );
+$widgets_manager->register_widget_type( new \Quik_Theme_Addons\Widgets\Quik_Theme_Content_Switcher() );

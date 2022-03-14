@@ -1,6 +1,6 @@
 <?php
 
-namespace Finest_Addons\Widgets;
+namespace Quik_Theme_Addons\Widgets;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
  *
  * @since 1.0.0
  */
-class Finest_Blog extends \Elementor\Widget_Base
+class Quik_Theme_Blog extends \Elementor\Widget_Base
 {
     /**
      * Retrieve the widget name.
@@ -26,7 +26,7 @@ class Finest_Blog extends \Elementor\Widget_Base
      */
     public function get_name()
     {
-        return 'finest-blog';
+        return 'quiktheme-blog';
     }
     /**
      * Retrieve the widget title.
@@ -39,7 +39,7 @@ class Finest_Blog extends \Elementor\Widget_Base
      */
     public function get_title()
     {
-        return __('Finest Blog', 'finest-addons');
+        return __('Quiktheme Blog', 'quiktheme-addons');
     }
     /**
      * Retrieve the widget icon.
@@ -70,7 +70,7 @@ class Finest_Blog extends \Elementor\Widget_Base
      */
     public function get_categories()
     {
-        return [ 'finest-addons' ];
+        return [ 'quiktheme-addons' ];
     }
     /**
      * Register the widget controls.
@@ -83,25 +83,25 @@ class Finest_Blog extends \Elementor\Widget_Base
      */
     protected function _register_controls()
     {
-        $post_categories =  finest_addons_cpt_taxonomy_slug_and_name('category');
+        $post_categories =  quik_theme_addons_cpt_taxonomy_slug_and_name('category');
         $this->start_controls_section(
             'section_general',
             [
-                'label' => __('General', 'finest-addons'),
+                'label' => __('General', 'quiktheme-addons'),
             ]
         );
      
         $this->add_control(
             'posts_per_page',
             [
-                'label' => __('Posts per page', 'finest-addons'),
+                'label' => __('Posts per page', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::NUMBER,
                 'default' => 5,
             ]
         );
 
         $this->add_responsive_control('per_line', [
-            'label'              => __('Columns per row', 'finest-addons'),
+            'label'              => __('Columns per row', 'quiktheme-addons'),
             'type'               => \Elementor\Controls_Manager::SELECT,
             'default'            => '4',
             'tablet_default'     => '6',
@@ -118,7 +118,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'source',
             [
-                'label'         => __('Source', 'finest-addons'),
+                'label'         => __('Source', 'quiktheme-addons'),
                 'type'          => \Elementor\Controls_Manager::SELECT,
                 'options'       => [
                     'archive' => 'Archive',
@@ -131,12 +131,12 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'manual_selection',
             [
-                'label'         => __('Manual Selection', 'finest-addons'),
+                'label'         => __('Manual Selection', 'quiktheme-addons'),
                 'type'          => \Elementor\Controls_Manager::SELECT2,
-                'description'   => __('Get specific template posts', 'finest-addons'),
+                'description'   => __('Get specific template posts', 'quiktheme-addons'),
                 'label_block'   => true,
                 'multiple'      => true,
-                'options'       => finest_addons_cpt_slug_and_id('post'),
+                'options'       => quik_theme_addons_cpt_slug_and_id('post'),
                 'default' =>    [],
                 'condition' => [
                     'source' => 'manual_selection'
@@ -149,7 +149,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_tab(
             'include_tabs',
             [
-                'label' => __('Include', 'finest-addons'),
+                'label' => __('Include', 'quiktheme-addons'),
                 'condition' => [
                     'source!' => 'manual_selection'
                 ],
@@ -158,7 +158,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'include_by',
             [
-                'label'         => __('Include by', 'finest-addons'),
+                'label'         => __('Include by', 'quiktheme-addons'),
                 'type'          => \Elementor\Controls_Manager::SELECT2,
                 'label_block'   => true,
                 'multiple'      => true,
@@ -176,12 +176,12 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'include_categories',
             [
-                'label'         => __('Include categories', 'finest-addons'),
+                'label'         => __('Include categories', 'quiktheme-addons'),
                 'type'          => \Elementor\Controls_Manager::SELECT2,
-                'description'   => __('Get templates for specific category(s)', 'finest-addons'),
+                'description'   => __('Get templates for specific category(s)', 'quiktheme-addons'),
                 'label_block'   => true,
                 'multiple'      => true,
-                'options'       => finest_addons_cpt_taxonomy_slug_and_name('category'),
+                'options'       => quik_theme_addons_cpt_taxonomy_slug_and_name('category'),
                 'default' =>    [],
                 'condition' => [
                     'include_by' => 'category',
@@ -193,12 +193,12 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'include_tags',
             [
-                'label'         => __('Include Tags', 'finest-addons'),
+                'label'         => __('Include Tags', 'quiktheme-addons'),
                 'type'          => \Elementor\Controls_Manager::SELECT2,
-                'description'   => __('Get templates for specific tag(s)', 'finest-addons'),
+                'description'   => __('Get templates for specific tag(s)', 'quiktheme-addons'),
                 'label_block'   => true,
                 'multiple'      => true,
-                'options'       => finest_addons_cpt_taxonomy_slug_and_name('post_tag'),
+                'options'       => quik_theme_addons_cpt_taxonomy_slug_and_name('post_tag'),
                 'default' =>    [],
                 'condition' => [
                     'include_by' => 'tags',
@@ -210,12 +210,12 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'include_authors',
             [
-                'label'         => __('Include authors', 'finest-addons'),
+                'label'         => __('Include authors', 'quiktheme-addons'),
                 'type'          => \Elementor\Controls_Manager::SELECT2,
-                'description'   => __('Get templates for specific tag(s)', 'finest-addons'),
+                'description'   => __('Get templates for specific tag(s)', 'quiktheme-addons'),
                 'label_block'   => true,
                 'multiple'      => true,
-                'options'       => finest_addons_cpt_author_slug_and_id('post'),
+                'options'       => quik_theme_addons_cpt_author_slug_and_id('post'),
                 'default' =>    [],
                 'condition' => [
                     'include_by' => 'author',
@@ -227,7 +227,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_tab(
             'exclude_tabs',
             [
-                'label' => __('Exclude', 'finest-addons'),
+                'label' => __('Exclude', 'quiktheme-addons'),
                 'condition' => [
                     'source!' => 'manual_selection'
                 ],
@@ -236,7 +236,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'exclude_by',
             [
-                'label'         => __('Exclude by', 'finest-addons'),
+                'label'         => __('Exclude by', 'quiktheme-addons'),
                 'type'          => \Elementor\Controls_Manager::SELECT2,
                 'label_block'   => true,
                 'multiple'      => true,
@@ -256,12 +256,12 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'exclude_categories',
             [
-                'label'         => __('Exclude categories', 'finest-addons'),
+                'label'         => __('Exclude categories', 'quiktheme-addons'),
                 'type'          => \Elementor\Controls_Manager::SELECT2,
-                'description'   => __('Get templates for specific category(s)', 'finest-addons'),
+                'description'   => __('Get templates for specific category(s)', 'quiktheme-addons'),
                 'label_block'   => true,
                 'multiple'      => true,
-                'options'       => finest_addons_cpt_taxonomy_slug_and_name('category'),
+                'options'       => quik_theme_addons_cpt_taxonomy_slug_and_name('category'),
                 'default' =>    [],
                 'condition' => [
                     'exclude_by' => 'category',
@@ -273,12 +273,12 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'exclude_tags',
             [
-                'label'         => __('Exclude Tags', 'finest-addons'),
+                'label'         => __('Exclude Tags', 'quiktheme-addons'),
                 'type'          => \Elementor\Controls_Manager::SELECT2,
-                'description'   => __('Get templates for specific tag(s)', 'finest-addons'),
+                'description'   => __('Get templates for specific tag(s)', 'quiktheme-addons'),
                 'label_block'   => true,
                 'multiple'      => true,
-                'options'       => finest_addons_cpt_taxonomy_slug_and_name('post_tag'),
+                'options'       => quik_theme_addons_cpt_taxonomy_slug_and_name('post_tag'),
                 'default' =>    [],
                 'condition' => [
                     'exclude_by' => 'tags',
@@ -290,12 +290,12 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'exclude_authors',
             [
-                'label'         => __('Exclude authors', 'finest-addons'),
+                'label'         => __('Exclude authors', 'quiktheme-addons'),
                 'type'          => \Elementor\Controls_Manager::SELECT2,
-                'description'   => __('Get templates for specific tag(s)', 'finest-addons'),
+                'description'   => __('Get templates for specific tag(s)', 'quiktheme-addons'),
                 'label_block'   => true,
                 'multiple'      => true,
-                'options'       => finest_addons_cpt_author_slug_and_id('post'),
+                'options'       => quik_theme_addons_cpt_author_slug_and_id('post'),
                 'default' =>    [],
                 'condition' => [
                     'exclude_by' => 'author',
@@ -308,7 +308,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'orderby',
             [
-                'label'         => __('Order By', 'finest-addons'),
+                'label'         => __('Order By', 'quiktheme-addons'),
                 'type'          => \Elementor\Controls_Manager::SELECT,
                 'options'       => [
                     'date'   => 'Date',
@@ -322,7 +322,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'order',
             [
-                'label'         => __('Order', 'finest-addons'),
+                'label'         => __('Order', 'quiktheme-addons'),
                 'type'          => \Elementor\Controls_Manager::SELECT,
                 'options'       => [
                     'ASC'   => 'ASC',
@@ -336,7 +336,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_section(
             'section_content',
             [
-                'label' => __('Content', 'finest-addons'),
+                'label' => __('Content', 'quiktheme-addons'),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -344,10 +344,10 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'show_excerpt',
             [
-                'label' => __('Show Content', 'finest-addons'),
+                'label' => __('Show Content', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Show', 'finest-addons'),
-                'label_off' => __('Hide', 'finest-addons'),
+                'label_on' => __('Show', 'quiktheme-addons'),
+                'label_off' => __('Hide', 'quiktheme-addons'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -356,7 +356,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'title_limit',
             [
-                'label' => __('Title Limit', 'finest-addons'),
+                'label' => __('Title Limit', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -373,7 +373,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'excerpt_limit',
             [
-                'label' => __('Excerpt Word Limit', 'finest-addons'),
+                'label' => __('Excerpt Word Limit', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -395,17 +395,17 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_section(
             'section_meta',
             [
-                'label' => __('Meta', 'finest-addons'),
+                'label' => __('Meta', 'quiktheme-addons'),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
         $this->add_control(
             'show_category',
             [
-                'label' => __('Show Category', 'finest-addons'),
+                'label' => __('Show Category', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Show', 'finest-addons'),
-                'label_off' => __('Hide', 'finest-addons'),
+                'label_on' => __('Show', 'quiktheme-addons'),
+                'label_off' => __('Hide', 'quiktheme-addons'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -413,10 +413,10 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'show_date',
             [
-                'label' => __('Show Date', 'finest-addons'),
+                'label' => __('Show Date', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Show', 'finest-addons'),
-                'label_off' => __('Hide', 'finest-addons'),
+                'label_on' => __('Show', 'quiktheme-addons'),
+                'label_off' => __('Hide', 'quiktheme-addons'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -425,10 +425,10 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'show_author',
             [
-                'label' => __('Show Author', 'finest-addons'),
+                'label' => __('Show Author', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Show', 'finest-addons'),
-                'label_off' => __('Hide', 'finest-addons'),
+                'label_on' => __('Show', 'quiktheme-addons'),
+                'label_off' => __('Hide', 'quiktheme-addons'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -439,10 +439,10 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'show_comment',
             [
-                'label' => __('Show Comment', 'finest-addons'),
+                'label' => __('Show Comment', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Show', 'finest-addons'),
-                'label_off' => __('Hide', 'finest-addons'),
+                'label_on' => __('Show', 'quiktheme-addons'),
+                'label_off' => __('Hide', 'quiktheme-addons'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -453,17 +453,17 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_section(
             'section_btn',
             [
-                'label' => __('Readmore', 'finest-addons'),
+                'label' => __('Readmore', 'quiktheme-addons'),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
         $this->add_control(
             'show_readmore',
             [
-                'label' => __('Readmore button', 'finest-addons'),
+                'label' => __('Readmore button', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Show', 'finest-addons'),
-                'label_off' => __('Hide', 'finest-addons'),
+                'label_on' => __('Show', 'quiktheme-addons'),
+                'label_off' => __('Hide', 'quiktheme-addons'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -471,9 +471,9 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'readmore_text',
             [
-                'label' => __('Readmore text', 'finest-addons'),
+                'label' => __('Readmore text', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __('READ MORE', 'finest-addons'),
+                'default' => __('READ MORE', 'quiktheme-addons'),
                 'conditon' => [
                     'show_readmore' => 'yes',
                 ]
@@ -482,7 +482,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'btn_icon',
             [
-                'label' => __('Icon', 'finest-addons'),
+                'label' => __('Icon', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::ICONS,
                 'conditon' => [
                     'show_readmore' => 'yes',
@@ -492,12 +492,12 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'icon_position',
             [
-                'label' => __('Icon Position', 'finest-addons'),
+                'label' => __('Icon Position', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'default' => 'after',
                 'options' => [
-                    'before' => __('Before', 'finest-addons'),
-                    'after' => __('After', 'finest-addons'),
+                    'before' => __('Before', 'quiktheme-addons'),
+                    'after' => __('After', 'quiktheme-addons'),
                 ],
                 'conditon' => [
                     'show_readmore' => 'yes',
@@ -513,7 +513,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_section(
             'slider_settings',
             [
-                'label' => __('Slider Settings', 'finest-addons'),
+                'label' => __('Slider Settings', 'quiktheme-addons'),
                 'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
                 'condition' => [
                     'show_slider_settings' => 'yes',
@@ -548,7 +548,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'per_coulmn',
             [
-                'label' => __('Slider Items', 'finest-addons'),
+                'label' => __('Slider Items', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'default'            => 4,
                 'tablet_default'     => 2,
@@ -567,10 +567,10 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'show_vertical',
             [
-                'label' => __('Vertical Mode?', 'finest-addons'),
+                'label' => __('Vertical Mode?', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Show', 'finest-addons'),
-                'label_off' => __('Hide', 'finest-addons'),
+                'label_on' => __('Show', 'quiktheme-addons'),
+                'label_off' => __('Hide', 'quiktheme-addons'),
                 'return_value' => 'yes',
                 'default' => 'no',
             ]
@@ -579,10 +579,10 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'show_center_mode',
             [
-                'label' => __('Center Mode?', 'finest-addons'),
+                'label' => __('Center Mode?', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Show', 'finest-addons'),
-                'label_off' => __('Hide', 'finest-addons'),
+                'label_on' => __('Show', 'quiktheme-addons'),
+                'label_off' => __('Hide', 'quiktheme-addons'),
                 'return_value' => 'yes',
                 'default' => 'no',
             ]
@@ -591,10 +591,10 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'arrows',
             [
-                'label' => __('Show arrows?', 'finest-addons'),
+                'label' => __('Show arrows?', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Show', 'finest-addons'),
-                'label_off' => __('Hide', 'finest-addons'),
+                'label_on' => __('Show', 'quiktheme-addons'),
+                'label_off' => __('Hide', 'quiktheme-addons'),
                 'return_value' => 'yes',
                 'default' => 'no',
             ]
@@ -603,10 +603,10 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'dots',
             [
-                'label' => __('Show Dots?', 'finest-addons'),
+                'label' => __('Show Dots?', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Show', 'finest-addons'),
-                'label_off' => __('Hide', 'finest-addons'),
+                'label_on' => __('Show', 'quiktheme-addons'),
+                'label_off' => __('Hide', 'quiktheme-addons'),
                 'return_value' => 'yes',
                 'default' => 'no',
             ]
@@ -615,10 +615,10 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'mousedrag',
             [
-                'label' => __('Show MouseDrag', 'finest-addons'),
+                'label' => __('Show MouseDrag', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Show', 'finest-addons'),
-                'label_off' => __('Hide', 'finest-addons'),
+                'label_on' => __('Show', 'quiktheme-addons'),
+                'label_off' => __('Hide', 'quiktheme-addons'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -627,10 +627,10 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'autoplay',
             [
-                'label' => __('Auto Play?', 'finest-addons'),
+                'label' => __('Auto Play?', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Show', 'finest-addons'),
-                'label_off' => __('Hide', 'finest-addons'),
+                'label_on' => __('Show', 'quiktheme-addons'),
+                'label_off' => __('Hide', 'quiktheme-addons'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -638,10 +638,10 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'loop',
             [
-                'label' => __('Infinite Loop', 'finest-addons'),
+                'label' => __('Infinite Loop', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => __('Show', 'finest-addons'),
-                'label_off' => __('Hide', 'finest-addons'),
+                'label_on' => __('Show', 'quiktheme-addons'),
+                'label_off' => __('Hide', 'quiktheme-addons'),
                 'return_value' => 'yes',
                 'default' => 'true',
             ]
@@ -649,26 +649,26 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'autoplaytimeout',
             [
-                'label' => __('Autoplay Timeout', 'finest-addons'),
+                'label' => __('Autoplay Timeout', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'label_block' => true,
                 'default' => '5000',
                 'options' => [
-                    '1000'  => __('1 Second', 'finest-addons'),
-                    '2000'  => __('2 Second', 'finest-addons'),
-                    '3000'  => __('3 Second', 'finest-addons'),
-                    '4000'  => __('4 Second', 'finest-addons'),
-                    '5000'  => __('5 Second', 'finest-addons'),
-                    '6000'  => __('6 Second', 'finest-addons'),
-                    '7000'  => __('7 Second', 'finest-addons'),
-                    '8000'  => __('8 Second', 'finest-addons'),
-                    '9000'  => __('9 Second', 'finest-addons'),
-                    '10000' => __('10 Second', 'finest-addons'),
-                    '11000' => __('11 Second', 'finest-addons'),
-                    '12000' => __('12 Second', 'finest-addons'),
-                    '13000' => __('13 Second', 'finest-addons'),
-                    '14000' => __('14 Second', 'finest-addons'),
-                    '15000' => __('15 Second', 'finest-addons'),
+                    '1000'  => __('1 Second', 'quiktheme-addons'),
+                    '2000'  => __('2 Second', 'quiktheme-addons'),
+                    '3000'  => __('3 Second', 'quiktheme-addons'),
+                    '4000'  => __('4 Second', 'quiktheme-addons'),
+                    '5000'  => __('5 Second', 'quiktheme-addons'),
+                    '6000'  => __('6 Second', 'quiktheme-addons'),
+                    '7000'  => __('7 Second', 'quiktheme-addons'),
+                    '8000'  => __('8 Second', 'quiktheme-addons'),
+                    '9000'  => __('9 Second', 'quiktheme-addons'),
+                    '10000' => __('10 Second', 'quiktheme-addons'),
+                    '11000' => __('11 Second', 'quiktheme-addons'),
+                    '12000' => __('12 Second', 'quiktheme-addons'),
+                    '13000' => __('13 Second', 'quiktheme-addons'),
+                    '14000' => __('14 Second', 'quiktheme-addons'),
+                    '15000' => __('15 Second', 'quiktheme-addons'),
                 ],
                 'condition' => [
                     'autoplay' => 'yes',
@@ -724,7 +724,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_section(
             'section_image_style',
             [
-                'label' => __('Image', 'finest-addons'),
+                'label' => __('Image', 'quiktheme-addons'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -741,7 +741,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'image_width',
             [
-                'label' => __('Image Width', 'finest-addons'),
+                'label' => __('Image Width', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -756,15 +756,15 @@ class Finest_Blog extends \Elementor\Widget_Base
                 ],
                 'devices' => ['desktop', 'tablet', 'mobile'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-post:not(-widget-item.post-style-list) .post-thumbnail img'  => 'width: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .finest-addons-post-widget-item.post-style-list .post-thumbnail-wrapper'  => 'flex: 0 0 {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-addons-post:not(-widget-item.post-style-list) .post-thumbnail img'  => 'width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-addons-post-widget-item.post-style-list .post-thumbnail-wrapper'  => 'flex: 0 0 {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
         $this->add_responsive_control(
             'image_height',
             [
-                'label' => __('Image Height', 'finest-addons'),
+                'label' => __('Image Height', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -786,7 +786,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'image_radius',
             [
-                'label' => __('Image Radius', 'finest-addons'),
+                'label' => __('Image Radius', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -798,7 +798,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'image_margin',
             [
-                'label' => __('Image Margin', 'finest-addons'),
+                'label' => __('Image Margin', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -810,7 +810,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'image_padding',
             [
-                'label' => __('Image Padding', 'finest-addons'),
+                'label' => __('Image Padding', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -830,12 +830,12 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'image_hover_style',
             [
-                'label'             => __('Hover Style', 'finest-addons'),
+                'label'             => __('Hover Style', 'quiktheme-addons'),
                 'type'              => \Elementor\Controls_Manager::SELECT,
                 'default'           => 'hover-default',
                 'options'           => [
-                    'hover-default' =>   __('Default',    'finest-addons'),
-                    'hover-one'     =>   __('Style 01',    'finest-addons'),
+                    'hover-default' =>   __('Default',    'quiktheme-addons'),
+                    'hover-one'     =>   __('Style 01',    'quiktheme-addons'),
                 ],
                 'separator' => 'after',
             ]
@@ -851,7 +851,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_section(
             'category_style',
             [
-                'label' => __('Blog Meta', 'finest-addons'),
+                'label' => __('Blog Meta', 'quiktheme-addons'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'show_category' => 'yes'
@@ -862,7 +862,7 @@ class Finest_Blog extends \Elementor\Widget_Base
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'cat_typography',
-                'label' => __('Category Typography', 'finest-addons'),
+                'label' => __('Category Typography', 'quiktheme-addons'),
                 'selector' => '{{WRAPPER}} .contetn-meta ul li a',
                 'condition' => [
                     'show_category' => 'yes'
@@ -877,14 +877,14 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_tab(
             'category_style_normal_tab',
             [
-                'label' => __('Normal', 'finest-addons'),
+                'label' => __('Normal', 'quiktheme-addons'),
             ]
         );
 
         $this->add_control(
             'category_color',
             [
-                'label' => __('Category Color', 'finest-addons'),
+                'label' => __('Category Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .contetn-meta ul li a' => 'color: {{VALUE}}',
@@ -895,7 +895,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'category_bg_color',
             [
-                'label' => __('Category Background Color', 'finest-addons'),
+                'label' => __('Category Background Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .contetn-meta ul li a' => 'background-color: {{VALUE}}',
@@ -914,14 +914,14 @@ class Finest_Blog extends \Elementor\Widget_Base
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name' => 'category_border',
-                'label' => __('Border', 'finest-addons'),
+                'label' => __('Border', 'quiktheme-addons'),
                 'selector' => '{{WRAPPER}} .contetn-meta ul li a',
             ]
         );
         $this->add_responsive_control(
             'catgory_radius',
             [
-                'label' => __('Border Radius', 'finest-addons'),
+                'label' => __('Border Radius', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -934,7 +934,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'catgory_margin',
             [
-                'label' => __('Margin', 'finest-addons'),
+                'label' => __('Margin', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -947,7 +947,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'catgory_padding',
             [
-                'label' => __('Padding', 'finest-addons'),
+                'label' => __('Padding', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -961,14 +961,14 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_tab(
             'category_style_hover_tab',
             [
-                'label' => __('Hover', 'finest-addons'),
+                'label' => __('Hover', 'quiktheme-addons'),
             ]
         );
 
         $this->add_control(
             'category_color_hover',
             [
-                'label' => __('Category Hover Color', 'finest-addons'),
+                'label' => __('Category Hover Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .contetn-meta ul li a:hover' => 'color: {{VALUE}}',
@@ -978,7 +978,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'category_bg_color_hover',
             [
-                'label' => __('Category Hover Background Color', 'finest-addons'),
+                'label' => __('Category Hover Background Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .contetn-meta ul li a:hover' => 'background-color: {{VALUE}}',
@@ -996,7 +996,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_section(
             'content_style',
             [
-                'label' => __('Content', 'finest-addons'),
+                'label' => __('Content', 'quiktheme-addons'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1005,16 +1005,16 @@ class Finest_Blog extends \Elementor\Widget_Base
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'heading_typography',
-                'label' => __('Title Typography', 'finest-addons'),
-                'selector' => '{{WRAPPER}} .finest-addons-post-widget-item .post-title',
+                'label' => __('Title Typography', 'quiktheme-addons'),
+                'selector' => '{{WRAPPER}} .quiktheme-addons-post-widget-item .post-title',
             ]
         );
         $this->add_group_control(
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'excerpt_typo',
-                'label' => __('Excerpt Typography', 'finest-addons'),
-                'selector' => '{{WRAPPER}} .finest-addons-post-widget-item p',
+                'label' => __('Excerpt Typography', 'quiktheme-addons'),
+                'selector' => '{{WRAPPER}} .quiktheme-addons-post-widget-item p',
                 'condition' => [
                     'show_excerpt' => 'yes'
                 ]
@@ -1027,26 +1027,26 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_tab(
             'content_style_normal_tab',
             [
-                'label' => __('Normal', 'finest-addons'),
+                'label' => __('Normal', 'quiktheme-addons'),
             ]
         );
         $this->add_control(
             'title_color',
             [
-                'label' => __('Title Color', 'finest-addons'),
+                'label' => __('Title Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-post-widget-item .post-title' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-post-widget-item .post-title' => 'color: {{VALUE}}',
                 ],
             ]
         );
         $this->add_control(
             'excerpt_color',
             [
-                'label' => __('Excerpt Color', 'finest-addons'),
+                'label' => __('Excerpt Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-post-widget-item p' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-post-widget-item p' => 'color: {{VALUE}}',
                 ],
                 'condition' => [
                     'show_excerpt' => 'yes'
@@ -1057,13 +1057,13 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_tab(
             'content_style_hover_tab',
             [
-                'label' => __('Hover', 'finest-addons'),
+                'label' => __('Hover', 'quiktheme-addons'),
             ]
         );
         $this->add_control(
             'title_hover_color',
             [
-                'label' => __('Title Color', 'finest-addons'),
+                'label' => __('Title Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .post-title:hover' => 'color: {{VALUE}}',
@@ -1073,10 +1073,10 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'excerpt_hover_color',
             [
-                'label' => __('Excerpt Color', 'finest-addons'),
+                'label' => __('Excerpt Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-post-widget-item:hover p' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-post-widget-item:hover p' => 'color: {{VALUE}}',
                 ],
                 'condition' => [
                     'show_excerpt' => 'yes'
@@ -1097,14 +1097,14 @@ class Finest_Blog extends \Elementor\Widget_Base
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name'     => 'con_box_border',
-                'label'    => __( 'Border', 'finest-addons' ),
-                'selector' => '{{WRAPPER}} .finest-addons-post-widget-item .post-content',
+                'label'    => __( 'Border', 'quiktheme-addons' ),
+                'selector' => '{{WRAPPER}} .quiktheme-addons-post-widget-item .post-content',
             ]
         );
         $this->add_responsive_control(
             'con_border_radius',
             [
-                'label'      => __( 'Border Radius', 'finest-addons' ),
+                'label'      => __( 'Border Radius', 'quiktheme-addons' ),
                 'type'       => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'default'    => [
@@ -1115,7 +1115,7 @@ class Finest_Blog extends \Elementor\Widget_Base
                     'isLinked' => false
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-addons-post-widget-item .post-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                    '{{WRAPPER}} .quiktheme-addons-post-widget-item .post-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
                 ]
             ]
         );
@@ -1124,12 +1124,12 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'title_gap',
             [
-                'label' => __('Title Gap', 'finest-addons'),
+                'label' => __('Title Gap', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    'body:not(.rtl) {{WRAPPER}} .finest-addons-post-widget-item .post-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    'body.rtl {{WRAPPER}} .finest-addons-post-widget-item .post-title' => 'margin: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
+                    'body:not(.rtl) {{WRAPPER}} .quiktheme-addons-post-widget-item .post-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    'body.rtl {{WRAPPER}} .quiktheme-addons-post-widget-item .post-title' => 'margin: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
                 ]
             ]
         );
@@ -1137,12 +1137,12 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'content_padding',
             [
-                'label' => __('Content Padding', 'finest-addons'),
+                'label' => __('Content Padding', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    'body:not(.rtl) {{WRAPPER}} .finest-addons-post-widget-item .post-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    'body.rtl {{WRAPPER}} .finest-addons-post-widget-item .post-content' => 'padding: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
+                    'body:not(.rtl) {{WRAPPER}} .quiktheme-addons-post-widget-item .post-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    'body.rtl {{WRAPPER}} .quiktheme-addons-post-widget-item .post-content' => 'padding: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
                 ]
             ]
         );
@@ -1152,7 +1152,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_section(
             'button_style',
             [
-                'label' => __('Button', 'finest-addons'),
+                'label' => __('Button', 'quiktheme-addons'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1163,7 +1163,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_tab(
             'button_style_normal_tab',
             [
-                'label' => __('Normal', 'finest-addons'),
+                'label' => __('Normal', 'quiktheme-addons'),
             ]
         );
 
@@ -1171,7 +1171,7 @@ class Finest_Blog extends \Elementor\Widget_Base
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'btn_typography',
-                'label' => __('Typography', 'finest-addons'),
+                'label' => __('Typography', 'quiktheme-addons'),
                 'selector' => '{{WRAPPER}} .post-btn',
             ]
         );
@@ -1179,7 +1179,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'icon_color',
             [
-                'label' => __('Icon Color', 'finest-addons'),
+                'label' => __('Icon Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .post-btn .btn-icon' => 'color: {{VALUE}}',
@@ -1190,7 +1190,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'boxed_btn_color',
             [
-                'label' => __('Button Color', 'finest-addons'),
+                'label' => __('Button Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .post-btn' => 'color: {{VALUE}}',
@@ -1200,7 +1200,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'boxed_btn_background',
             [
-                'label' => __('Background Color', 'finest-addons'),
+                'label' => __('Background Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .post-btn' => 'background-color: {{VALUE}}',
@@ -1211,7 +1211,7 @@ class Finest_Blog extends \Elementor\Widget_Base
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name' => 'button_border',
-                'label' => __('Border', 'finest-addons'),
+                'label' => __('Border', 'quiktheme-addons'),
                 'selector' => '{{WRAPPER}} .post-btn',
             ]
         );
@@ -1219,7 +1219,7 @@ class Finest_Blog extends \Elementor\Widget_Base
             \Elementor\Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'button_shadow',
-                'label' => __('Shadow', 'finest-addons'),
+                'label' => __('Shadow', 'quiktheme-addons'),
                 'selector' => '{{WRAPPER}} .post-btn',
             ]
         );
@@ -1227,7 +1227,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'icon_gap',
             [
-                'label' => __('Icon gap', 'finest-addons'),
+                'label' => __('Icon gap', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', '%'],
                 'range' => [
@@ -1258,7 +1258,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'icon_size',
             [
-                'label' => __('Icon Size', 'finest-addons'),
+                'label' => __('Icon Size', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', '%'],
                 'range' => [
@@ -1282,7 +1282,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'button_radius',
             [
-                'label' => __('Border Radius', 'finest-addons'),
+                'label' => __('Border Radius', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -1295,7 +1295,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'button_wrapper_padding',
             [
-                'label' => __('Wrapper Padding', 'finest-addons'),
+                'label' => __('Wrapper Padding', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -1307,7 +1307,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'button_wrapper_margin',
             [
-                'label' => __('Wrapper Margin', 'finest-addons'),
+                'label' => __('Wrapper Margin', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -1320,7 +1320,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'button_padding',
             [
-                'label' => __('Button Padding', 'finest-addons'),
+                'label' => __('Button Padding', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -1332,7 +1332,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'button_margin',
             [
-                'label' => __('Button Margin', 'finest-addons'),
+                'label' => __('Button Margin', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -1346,17 +1346,17 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_tab(
             'button_style_hover_tab',
             [
-                'label' => __('Hover', 'finest-addons'),
+                'label' => __('Hover', 'quiktheme-addons'),
             ]
         );
         $this->add_control(
             'icon_hover_color',
             [
-                'label' => __('Icon Color', 'finest-addons'),
+                'label' => __('Icon Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-post-widget-item:hover .post-btn .btn-icon' => 'color: {{VALUE}}',
-                    '{{WRAPPER}} .finest-addons-post-widget-item:hover .post-btn .btn-icon path' => 'fill: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-post-widget-item:hover .post-btn .btn-icon' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-post-widget-item:hover .post-btn .btn-icon path' => 'fill: {{VALUE}}',
                 ],
             ]
         );
@@ -1364,15 +1364,15 @@ class Finest_Blog extends \Elementor\Widget_Base
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'btn_hover_typography',
-                'label' => __('Typography', 'finest-addons'),
-                'selector' => '{{WRAPPER}} .finest-addons-post-widget-item:hover .post-btn',
+                'label' => __('Typography', 'quiktheme-addons'),
+                'selector' => '{{WRAPPER}} .quiktheme-addons-post-widget-item:hover .post-btn',
             ]
         );
 
         $this->add_control(
             'icon_hover_size',
             [
-                'label' => __('Icon Size', 'finest-addons'),
+                'label' => __('Icon Size', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', '%'],
                 'range' => [
@@ -1387,8 +1387,8 @@ class Finest_Blog extends \Elementor\Widget_Base
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-post-widget-item:hover .post-btn .btn-icon'       => 'font-size: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .finest-addons-post-widget-item:hover .post-btn .btn-icon svg'   => 'width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-addons-post-widget-item:hover .post-btn .btn-icon'       => 'font-size: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-addons-post-widget-item:hover .post-btn .btn-icon svg'   => 'width: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -1396,17 +1396,17 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'btn_hover_color',
             [
-                'label' => __('Button Color', 'finest-addons'),
+                'label' => __('Button Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-post-widget-item:hover .post-btn' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-post-widget-item:hover .post-btn' => 'color: {{VALUE}}',
                 ],
             ]
         );
         $this->add_control(
             'btn_hover_background',
             [
-                'label' => __('Background Color', 'finest-addons'),
+                'label' => __('Background Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .post-btn:hover' => 'background-color: {{VALUE}}',
@@ -1416,11 +1416,11 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'button_hover_padding',
             [
-                'label' => __('Button Padding', 'finest-addons'),
+                'label' => __('Button Padding', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-post-widget-item:hover .post-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-addons-post-widget-item:hover .post-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 
                 ],
             ]
@@ -1428,11 +1428,11 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'button_hover_margin',
             [
-                'label' => __('Button Margin', 'finest-addons'),
+                'label' => __('Button Margin', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-post-widget-item:hover .post-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-addons-post-widget-item:hover .post-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 
                 ],
             ]
@@ -1441,14 +1441,14 @@ class Finest_Blog extends \Elementor\Widget_Base
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name' => 'button_hover_border',
-                'label' => __('Border', 'finest-addons'),
+                'label' => __('Border', 'quiktheme-addons'),
                 'selector' => '{{WRAPPER}} .post-btn:hover',
             ]
         );
         $this->add_control(
             'btn_hover_animation',
             [
-                'label' => __('Hover Animation', 'finest-addons'),
+                'label' => __('Hover Animation', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::HOVER_ANIMATION,
             ]
         );
@@ -1456,14 +1456,14 @@ class Finest_Blog extends \Elementor\Widget_Base
             \Elementor\Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'button_hover_shadow',
-                'label' => __('Button Shadow', 'finest-addons'),
+                'label' => __('Button Shadow', 'quiktheme-addons'),
                 'selector' => '{{WRAPPER}} .post-btn:hover',
             ]
         );
         $this->add_responsive_control(
             'button_hover_radius',
             [
-                'label' => __('Border Radius', 'finest-addons'),
+                'label' => __('Border Radius', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -1475,7 +1475,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'icon_hover_gap',
             [
-                'label' => __('Icon gap', 'finest-addons'),
+                'label' => __('Icon gap', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', '%'],
                 'range' => [
@@ -1505,7 +1505,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_section(
             'content_box',
             [
-                'label' => __('Content Box', 'finest-addons'),
+                'label' => __('Content Box', 'quiktheme-addons'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1515,14 +1515,14 @@ class Finest_Blog extends \Elementor\Widget_Base
                 'name'      => 'content_bg_overly',
                 'types'     => ['classic', 'gradient'],
                 'selector'  => '{{WRAPPER}} .post-content-wrap',
-                'label' => __('Content Background Color', 'finest-addons'),
+                'label' => __('Content Background Color', 'quiktheme-addons'),
             ]
         );
 
         $this->add_responsive_control(
             'content_radius',
             [
-                'label' => __('Border Radius', 'finest-addons'),
+                'label' => __('Border Radius', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -1535,11 +1535,11 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'content_box_margin',
             [
-                'label' => __('Margin', 'finest-addons'),
+                'label' => __('Margin', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    'body:not(.rtl) {{WRAPPER}} .finest-addons-post-widget-item .post-content' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    'body:not(.rtl) {{WRAPPER}} .quiktheme-addons-post-widget-item .post-content' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     'body.rtl {{WRAPPER}} .post-content-wrap' => 'margin: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
                 ],
             ]
@@ -1548,7 +1548,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'content_box_padding',
             [
-                'label' => __('Padding', 'finest-addons'),
+                'label' => __('Padding', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -1567,7 +1567,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_section(
             'arrows_navigation',
             [
-                'label' => __('Navigation - Arrow', 'finest-addons'),
+                'label' => __('Navigation - Arrow', 'quiktheme-addons'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'arrows' => 'yes',
@@ -1580,14 +1580,14 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_tab(
             '_tab_arrow_normal',
             [
-                'label' => __('Normal', 'finest-addons'),
+                'label' => __('Normal', 'quiktheme-addons'),
             ]
         );
 
         $this->add_control(
             'arrow_color',
             [
-                'label' => __('Color', 'finest-addons'),
+                'label' => __('Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -1600,7 +1600,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'arrow_color_fill',
             [
-                'label' => __('Line Color', 'finest-addons'),
+                'label' => __('Line Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -1613,7 +1613,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'arrow_bg_color',
             [
-                'label' => __('Background Color', 'finest-addons'),
+                'label' => __('Background Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .blog-slider-arrow button' => 'background-color: {{VALUE}} !important;',
@@ -1633,7 +1633,7 @@ class Finest_Blog extends \Elementor\Widget_Base
             \Elementor\Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'arrow_shadow',
-                'label' => __('Shadow', 'finest-addons'),
+                'label' => __('Shadow', 'quiktheme-addons'),
                 'selector' => '{{WRAPPER}} .blog-slider-arrow button ',
             ]
         );
@@ -1644,10 +1644,10 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'arrow_position_toggle',
             [
-                'label' => __('Position', 'finest-addons'),
+                'label' => __('Position', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::POPOVER_TOGGLE,
-                'label_off' => __('None', 'finest-addons'),
-                'label_on' => __('Custom', 'finest-addons'),
+                'label_off' => __('None', 'quiktheme-addons'),
+                'label_on' => __('Custom', 'quiktheme-addons'),
                 'return_value' => 'yes',
             ]
         );
@@ -1678,7 +1678,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'arrow_position_top',
             [
-                'label' => __('Vertical', 'finest-addons'),
+                'label' => __('Vertical', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['%', 'px'],
                 'condition' => [
@@ -1705,7 +1705,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'arrow_position_bottom',
             [
-                'label' => __('Vertical', 'finest-addons'),
+                'label' => __('Vertical', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['%', 'px'],
                 'condition' => [
@@ -1732,12 +1732,12 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'arrow_horizontal_position',
             [
-                'label'             => __('Horizontal Position', 'finest-addons'),
+                'label'             => __('Horizontal Position', 'quiktheme-addons'),
                 'type'              => \Elementor\Controls_Manager::SELECT,
                 'default'           => 'default',
                 'options'           => [
-                    'default'    =>   __('Default',    'finest-addons'),
-                    'space_between'    =>   __('Space Between',    'finest-addons'),
+                    'default'    =>   __('Default',    'quiktheme-addons'),
+                    'space_between'    =>   __('Space Between',    'quiktheme-addons'),
                 ],
                 'separator' => 'after',
             ]
@@ -1819,19 +1819,19 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'align_arrow',
             [
-                'label' => __('Alignment', 'finest-addons'),
+                'label' => __('Alignment', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', 'finest-addons'),
+                        'title' => __('Left', 'quiktheme-addons'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'finest-addons'),
+                        'title' => __('Center', 'quiktheme-addons'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', 'finest-addons'),
+                        'title' => __('Right', 'quiktheme-addons'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -1853,7 +1853,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'arrow_icon_size',
             [
-                'label' => __('Icon Size', 'finest-addons'),
+                'label' => __('Icon Size', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -1872,7 +1872,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'arrow_size_box',
             [
-                'label' => __('Size', 'finest-addons'),
+                'label' => __('Size', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -1891,7 +1891,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'arrow_size_line_height',
             [
-                'label' => __('Line Height', 'finest-addons'),
+                'label' => __('Line Height', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -1910,7 +1910,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'arrows_border_radius',
             [
-                'label'      => __('Border Radius', 'finest-addons'),
+                'label'      => __('Border Radius', 'quiktheme-addons'),
                 'type'       => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px'],
                 'selectors'  => [
@@ -1931,14 +1931,14 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_tab(
             '_tab_arrow_hover',
             [
-                'label' => __('Active', 'finest-addons'),
+                'label' => __('Active', 'quiktheme-addons'),
             ]
         );
 
         $this->add_control(
             'arrow_hover_color',
             [
-                'label' => __('Color', 'finest-addons'),
+                'label' => __('Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .blog-slider-arrow .slick-active' => 'color: {{VALUE}};',
@@ -1952,7 +1952,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'arrow_hover_fill_color',
             [
-                'label' => __('Line Color', 'finest-addons'),
+                'label' => __('Line Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .blog-slider-arrow .slick-active' => 'color: {{VALUE}};',
@@ -1966,7 +1966,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_control(
             'arrow_bg_hover_color',
             [
-                'label' => __('Background Color Hover', 'finest-addons'),
+                'label' => __('Background Color Hover', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .blog-slider-arrow button:hover ' => 'background-color: {{VALUE}}  !important;',
@@ -1996,7 +1996,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_section(
             'section_content_box_style',
             [
-                'label' => __('Box', 'finest-addons'),
+                'label' => __('Box', 'quiktheme-addons'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -2007,17 +2007,17 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_tab(
             'box_style_normal_tab',
             [
-                'label' => __('Normal', 'finest-addons'),
+                'label' => __('Normal', 'quiktheme-addons'),
             ]
         );
 
         $this->add_control(
             'box_bg_color',
             [
-                'label' => __('Box Backgroound Color', 'finest-addons'),
+                'label' => __('Box Backgroound Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-post-widget-item' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .quiktheme-addons-post-widget-item' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -2026,8 +2026,8 @@ class Finest_Blog extends \Elementor\Widget_Base
             \Elementor\Group_Control_Box_Shadow::get_type(),
             [
                 'name'     => 'box_shadow',
-                'label' => __('Box Hover Shadow', 'finest-addons'),
-                'selector' => '{{WRAPPER}} .finest-addons-post-widget-item',
+                'label' => __('Box Hover Shadow', 'quiktheme-addons'),
+                'selector' => '{{WRAPPER}} .quiktheme-addons-post-widget-item',
             ]
         );
         $this->add_group_control(
@@ -2035,17 +2035,17 @@ class Finest_Blog extends \Elementor\Widget_Base
             [
                 'name' => 'box_border',
                 'label' => __('Box Border', ''),
-                'selector' => '{{WRAPPER}} .finest-addons-post-widget-item',
+                'selector' => '{{WRAPPER}} .quiktheme-addons-post-widget-item',
             ]
         );
 
         $this->add_control(
             'layout_gap',
             [
-                'label' => __('Item Gap', 'finest-addons'),
+                'label' => __('Item Gap', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::POPOVER_TOGGLE,
-                'label_off' => __('Default', 'finest-addons'),
-                'label_on' => __('Custom', 'finest-addons'),
+                'label_off' => __('Default', 'quiktheme-addons'),
+                'label_on' => __('Custom', 'quiktheme-addons'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -2056,7 +2056,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'gap_right',
             [
-                'label'          => __('Gap Right', 'finest-addons'),
+                'label'          => __('Gap Right', 'quiktheme-addons'),
                 'type'           => \Elementor\Controls_Manager::SLIDER,
                 'size_units'     => ['px'],
                 'range'          => [
@@ -2066,7 +2066,7 @@ class Finest_Blog extends \Elementor\Widget_Base
                     ],
                 ],
                 'selectors'      => [
-                    '{{WRAPPER}} .finest-addons-post-widget-wrap' => 'padding: 0 {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-addons-post-widget-wrap' => 'padding: 0 {{SIZE}}{{UNIT}};',
                     '{{WRAPPER}} .row' => 'margin-right: -{{SIZE}}{{UNIT}};margin-left: -{{SIZE}}{{UNIT}};',
                 ],
             ]
@@ -2075,7 +2075,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'gap_bottom',
             [
-                'label'          => __('Gap Bottom', 'finest-addons'),
+                'label'          => __('Gap Bottom', 'quiktheme-addons'),
                 'type'           => \Elementor\Controls_Manager::SLIDER,
                 'size_units'     => ['px'],
                 'range'          => [
@@ -2085,8 +2085,8 @@ class Finest_Blog extends \Elementor\Widget_Base
                     ],
                 ],
                 'selectors'      => [
-                    '{{WRAPPER}} .finest-addons-post-widget-item' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .finest-addons-wraper' => 'margin-bottom: -{{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-addons-post-widget-item' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-addons-wraper' => 'margin-bottom: -{{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -2095,23 +2095,23 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'box_radius',
             [
-                'label' => __('Box Radius', 'finest-addons'),
+                'label' => __('Box Radius', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    'body:not(.rtl) {{WRAPPER}} .finest-addons-post-widget-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    'body.rtl {{WRAPPER}} .finest-addons-post-widget-item' => 'border-radius: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
+                    'body:not(.rtl) {{WRAPPER}} .quiktheme-addons-post-widget-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    'body.rtl {{WRAPPER}} .quiktheme-addons-post-widget-item' => 'border-radius: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
                 ],
             ]
         );
         $this->add_responsive_control(
             'box_padding',
             [
-                'label' => __('Box Padding', 'finest-addons'),
+                'label' => __('Box Padding', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    ' {{WRAPPER}} .finest-addons-post-widget-item ' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    ' {{WRAPPER}} .quiktheme-addons-post-widget-item ' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -2122,29 +2122,29 @@ class Finest_Blog extends \Elementor\Widget_Base
         $this->start_controls_tab(
             'box_style_hover_tab',
             [
-                'label' => __('Hover', 'finest-addons'),
+                'label' => __('Hover', 'quiktheme-addons'),
             ]
         );
         $this->add_control(
             'box_hover_bg_color',
             [
-                'label' => __('Box Backgroound Color', 'finest-addons'),
+                'label' => __('Box Backgroound Color', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'defautl' => '#233aff',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-post-widget-item:hover:after' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-post-widget-item:hover:after' => 'background-color: {{VALUE}}',
                 ],
             ]
         );
         $this->add_responsive_control(
             'box_hover_radius',
             [
-                'label' => __('Box Radius', 'finest-addons'),
+                'label' => __('Box Radius', 'quiktheme-addons'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    'body:not(.rtl) {{WRAPPER}} .finest-addons-post-widget-item:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    'body.rtl {{WRAPPER}} .finest-addons-post-widget-item:hover' => 'border-radius: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
+                    'body:not(.rtl) {{WRAPPER}} .quiktheme-addons-post-widget-item:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    'body.rtl {{WRAPPER}} .quiktheme-addons-post-widget-item:hover' => 'border-radius: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
                 ],
             ]
         );
@@ -2152,8 +2152,8 @@ class Finest_Blog extends \Elementor\Widget_Base
             \Elementor\Group_Control_Box_Shadow::get_type(),
             [
                 'name'     => 'box_hover_shadow',
-                'label' => __('Box Hover Shadow', 'finest-addons'),
-                'selector' => '{{WRAPPER}} .finest-addons-post-widget-item:hover',
+                'label' => __('Box Hover Shadow', 'quiktheme-addons'),
+                'selector' => '{{WRAPPER}} .quiktheme-addons-post-widget-item:hover',
             ]
         );
         $this->add_group_control(
@@ -2161,7 +2161,7 @@ class Finest_Blog extends \Elementor\Widget_Base
             [
                 'name' => 'box_hover_border',
                 'label' => __('Box Border', ''),
-                'selector' => '{{WRAPPER}} .finest-addons-post-widget-item:hover ',
+                'selector' => '{{WRAPPER}} .quiktheme-addons-post-widget-item:hover ',
             ]
         );
         $this->end_controls_tab();
@@ -2203,7 +2203,7 @@ class Finest_Blog extends \Elementor\Widget_Base
         $grid_classes[] = 'col-md-' . $settings['per_line_tablet'];
         $grid_classes[] = 'col-sm-' . $settings['per_line_mobile'];
         $grid_classes = implode(' ', $grid_classes);
-        $this->add_render_attribute('grid_classes', 'class', [$grid_classes, 'finest-addons-post-widget-wrap']);
+        $this->add_render_attribute('grid_classes', 'class', [$grid_classes, 'quiktheme-addons-post-widget-wrap']);
         
 
         //End code slider option
@@ -2295,7 +2295,7 @@ class Finest_Blog extends \Elementor\Widget_Base
                 ),
             ));
         } ?>
-        <div class="finest-addons-wraper">
+        <div class="quiktheme-addons-wraper">
 
             <div <?php echo $this->get_render_attribute_string('blog_version'); ?>>
 
@@ -2310,7 +2310,7 @@ class Finest_Blog extends \Elementor\Widget_Base
                     ?>
 
                     <div <?php echo $this->get_render_attribute_string('grid_classes'); ?>>
-                        <div class="finest-addons-post-widget-item">
+                        <div class="quiktheme-addons-post-widget-item">
                             <div class="post-thumbnail">
                             <?php if (has_post_thumbnail()) : ?>
                             <div class="post-thumbnail-wrapper">
@@ -2374,4 +2374,4 @@ class Finest_Blog extends \Elementor\Widget_Base
     }
 }
 
-$widgets_manager->register_widget_type(new \Finest_Addons\Widgets\Finest_Blog());
+$widgets_manager->register_widget_type(new \Quik_Theme_Addons\Widgets\Quik_Theme_Blog());

@@ -1,5 +1,5 @@
 <?php
-namespace Finest_Addons\Widgets;
+namespace Quik_Theme_Addons\Widgets;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -9,14 +9,14 @@ use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Box_Shadow;
 use \Elementor\Widget_Base;
 
-class Finest_Fluent_Form extends Widget_Base {
+class Quik_Theme_Fluent_Form extends Widget_Base {
 
 	public function get_name() {
-		return 'finest-fluent-form';
+		return 'quiktheme-fluent-form';
 	}
 
 	public function get_title() {
-		return esc_html__( 'Finest Fluent Form', 'finest-addons' );
+		return esc_html__( 'Quiktheme Fluent Form', 'quiktheme-addons' );
 	}
 
 	public function get_icon() {
@@ -24,7 +24,7 @@ class Finest_Fluent_Form extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'finest-addons' ];
+		return [ 'quiktheme-addons' ];
 	}
 
 	public function get_keywords() {
@@ -35,20 +35,20 @@ class Finest_Fluent_Form extends Widget_Base {
 
         if (!defined('FLUENTFORM')) {
             $this->start_controls_section(
-                'finest_global_warning',
+                'quik_theme_global_warning',
                 [
-                    'label' => __('Warning!', 'finest-addons'),
+                    'label' => __('Warning!', 'quiktheme-addons'),
                 ]
             );
 
             $this->add_control(
-                'finest_wpforms_missing_notice',
+                'quik_theme_wpforms_missing_notice',
                 [
                     'type' => Controls_Manager::RAW_HTML,
                     'raw' => sprintf(
                         __( 'Hello %2$s, looks like %1$s is missing in your site. Please click on the link below and install/activate %1$s. Make sure to refresh this page after installation or activation.', 'happy-elementor-addons' ),
                         '<a href="'.esc_url( admin_url( 'plugin-install.php?s=WPForms&tab=search&type=term' ) ).'" target="_blank" rel="noopener">WPForms</a>',
-                        finest_get_current_user_display_name()
+                        quik_theme_get_current_user_display_name()
                     ),
                     'content_classes' => 'elementor-panel-alert elementor-panel-alert-danger',
                 ]
@@ -59,7 +59,7 @@ class Finest_Fluent_Form extends Widget_Base {
              $this->start_controls_section(
                 'section_form_info_box',
                 [
-                    'label' => __('Fluent Form', 'finest-addons'),
+                    'label' => __('Fluent Form', 'quiktheme-addons'),
                 ]
             );
 
@@ -68,20 +68,20 @@ class Finest_Fluent_Form extends Widget_Base {
             $this->add_control(
                 'form_list',
                 [
-                    'label' => esc_html__('Fluent Form', 'finest-addons'),
+                    'label' => esc_html__('Fluent Form', 'quiktheme-addons'),
                     'type' => Controls_Manager::SELECT,
                     'label_block' => true,
-                    'options' => finest_get_fluent_forms(),
+                    'options' => quik_theme_get_fluent_forms(),
                     'default' => '0',
                 ]
             );
             $this->add_control(
                 'custom_title_description',
                 [
-                    'label' => __('Custom Title & Description', 'finest-addons'),
+                    'label' => __('Custom Title & Description', 'quiktheme-addons'),
                     'type' => Controls_Manager::SWITCHER,
-                    'label_on' => __('Yes', 'finest-addons'),
-                    'label_off' => __('No', 'finest-addons'),
+                    'label_on' => __('Yes', 'quiktheme-addons'),
+                    'label_off' => __('No', 'quiktheme-addons'),
                     'return_value' => 'yes',
                 ]
             );
@@ -89,7 +89,7 @@ class Finest_Fluent_Form extends Widget_Base {
             $this->add_control(
                 'form_title_custom',
                 [
-                    'label' => esc_html__('Title', 'finest-addons'),
+                    'label' => esc_html__('Title', 'quiktheme-addons'),
                     'type' => Controls_Manager::TEXT,
                     'dynamic' => [
                         'active' => true,
@@ -105,7 +105,7 @@ class Finest_Fluent_Form extends Widget_Base {
             $this->add_control(
                 'form_description_custom',
                 [
-                    'label' => esc_html__('Description', 'finest-addons'),
+                    'label' => esc_html__('Description', 'quiktheme-addons'),
                     'type' => Controls_Manager::TEXTAREA,
                     'dynamic' => [
                         'active' => true,
@@ -120,11 +120,11 @@ class Finest_Fluent_Form extends Widget_Base {
             $this->add_control(
                 'labels_switch',
                 [
-                    'label' => __('Labels', 'finest-addons'),
+                    'label' => __('Labels', 'quiktheme-addons'),
                     'type' => Controls_Manager::SWITCHER,
                     'default' => 'yes',
-                    'label_on' => __('Show', 'finest-addons'),
-                    'label_off' => __('Hide', 'finest-addons'),
+                    'label_on' => __('Show', 'quiktheme-addons'),
+                    'label_off' => __('Hide', 'quiktheme-addons'),
                     'return_value' => 'yes'
                 ]
             );
@@ -132,11 +132,11 @@ class Finest_Fluent_Form extends Widget_Base {
             $this->add_control(
                 'placeholder_switch',
                 [
-                    'label' => __('Placeholder', 'finest-addons'),
+                    'label' => __('Placeholder', 'quiktheme-addons'),
                     'type' => Controls_Manager::SWITCHER,
                     'default' => 'yes',
-                    'label_on' => __('Show', 'finest-addons'),
-                    'label_off' => __('Hide', 'finest-addons'),
+                    'label_on' => __('Show', 'quiktheme-addons'),
+                    'label_off' => __('Hide', 'quiktheme-addons'),
                     'return_value' => 'yes',
                 ]
             );
@@ -146,7 +146,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->start_controls_section(
             'section_form_title_style',
             [
-                'label' => __('Title & Description', 'finest-addons'),
+                'label' => __('Title & Description', 'quiktheme-addons'),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'custom_title_description' => 'yes',
@@ -157,26 +157,26 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'heading_alignment',
             [
-                'label' => __('Alignment', 'finest-addons'),
+                'label' => __('Alignment', 'quiktheme-addons'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', 'finest-addons'),
+                        'title' => __('Left', 'quiktheme-addons'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'finest-addons'),
+                        'title' => __('Center', 'quiktheme-addons'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', 'finest-addons'),
+                        'title' => __('Right', 'quiktheme-addons'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-fluentform-title' => 'text-align: {{VALUE}};',
-                    '{{WRAPPER}} .finest-fluentform-description' => 'text-align: {{VALUE}};',
+                    '{{WRAPPER}} .quiktheme-fluentform-title' => 'text-align: {{VALUE}};',
+                    '{{WRAPPER}} .quiktheme-fluentform-description' => 'text-align: {{VALUE}};',
                 ],
                 'condition' => [
                     'custom_title_description' => 'yes',
@@ -187,7 +187,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'title_heading',
             [
-                'label' => __('Title', 'finest-addons'),
+                'label' => __('Title', 'quiktheme-addons'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
                 'condition' => [
@@ -199,11 +199,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'form_title_text_color',
             [
-                'label' => __('Text Color', 'finest-addons'),
+                'label' => __('Text Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-fluentform-title' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-fluentform-title' => 'color: {{VALUE}}',
                 ],
                 'condition' => [
                     'custom_title_description' => 'yes',
@@ -215,8 +215,8 @@ class Finest_Fluent_Form extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'form_title_typography',
-                'label' => __('Typography', 'finest-addons'),
-                'selector' => '{{WRAPPER}} .finest-fluentform-title',
+                'label' => __('Typography', 'quiktheme-addons'),
+                'selector' => '{{WRAPPER}} .quiktheme-fluentform-title',
                 'condition' => [
                     'custom_title_description' => 'yes',
                 ],
@@ -226,7 +226,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'form_title_margin',
             [
-                'label' => __('Margin', 'finest-addons'),
+                'label' => __('Margin', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'allowed_dimensions' => 'vertical',
@@ -237,7 +237,7 @@ class Finest_Fluent_Form extends Widget_Base {
                     'left' => 'auto',
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-fluentform-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-fluentform-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
                 'condition' => [
                     'custom_title_description' => 'yes',
@@ -248,7 +248,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'description_heading',
             [
-                'label' => __('Description', 'finest-addons'),
+                'label' => __('Description', 'quiktheme-addons'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
                 'condition' => [
@@ -260,11 +260,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'form_description_text_color',
             [
-                'label' => __('Text Color', 'finest-addons'),
+                'label' => __('Text Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-fluentform-description' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-fluentform-description' => 'color: {{VALUE}}',
                 ],
                 'condition' => [
                     'custom_title_description' => 'yes',
@@ -276,8 +276,8 @@ class Finest_Fluent_Form extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'form_description_typography',
-                'label' => __('Typography', 'finest-addons'),
-                'selector' => '{{WRAPPER}} .finest-fluentform-description',
+                'label' => __('Typography', 'quiktheme-addons'),
+                'selector' => '{{WRAPPER}} .quiktheme-fluentform-description',
                 'condition' => [
                     'custom_title_description' => 'yes',
                 ],
@@ -287,7 +287,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'form_description_margin',
             [
-                'label' => __('Margin', 'finest-addons'),
+                'label' => __('Margin', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'allowed_dimensions' => 'vertical',
@@ -298,7 +298,7 @@ class Finest_Fluent_Form extends Widget_Base {
                     'left' => 'auto',
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-fluentform-description' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-fluentform-description' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
                 'condition' => [
                     'custom_title_description' => 'yes',
@@ -310,18 +310,18 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->start_controls_section(
             'section_container_style',
             [
-                'label' => __('Form Container', 'finest-addons'),
+                'label' => __('Form Container', 'quiktheme-addons'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
 
         $this->add_control(
-            'finest_contact_form_background',
+            'quik_theme_contact_form_background',
             [
-                'label' => esc_html__('Form Background Color', 'finest-addons'),
+                'label' => esc_html__('Form Background Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form' => 'background: {{VALUE}};',
+                    '{{WRAPPER}} .quiktheme-contact-form' => 'background: {{VALUE}};',
                 ],
             ]
         );
@@ -329,36 +329,36 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'fluentform_link_color',
             [
-                'label' => __('Color', 'finest-addons'),
+                'label' => __('Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group a' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group a' => 'color: {{VALUE}};',
                 ],
             ]
         );
 
         $this->add_responsive_control(
-            'finest_contact_form_alignment',
+            'quik_theme_contact_form_alignment',
             [
-                'label' => esc_html__('Form Alignment', 'finest-addons'),
+                'label' => esc_html__('Form Alignment', 'quiktheme-addons'),
                 'type' => Controls_Manager::CHOOSE,
                 'label_block' => true,
                 'options' => [
                     'default' => [
-                        'title' => __('Default', 'finest-addons'),
+                        'title' => __('Default', 'quiktheme-addons'),
                         'icon' => 'fa fa-ban',
                     ],
                     'left' => [
-                        'title' => esc_html__('Left', 'finest-addons'),
+                        'title' => esc_html__('Left', 'quiktheme-addons'),
                         'icon' => 'eicon-h-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'finest-addons'),
+                        'title' => esc_html__('Center', 'quiktheme-addons'),
                         'icon' => 'eicon-h-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'finest-addons'),
+                        'title' => esc_html__('Right', 'quiktheme-addons'),
                         'icon' => 'eicon-h-align-right',
                     ],
                 ],
@@ -367,9 +367,9 @@ class Finest_Fluent_Form extends Widget_Base {
         );
 
         $this->add_responsive_control(
-            'finest_contact_form_max_width',
+            'quik_theme_contact_form_max_width',
             [
-                'label' => esc_html__('Form Max Width', 'finest-addons'),
+                'label' => esc_html__('Form Max Width', 'quiktheme-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', '%'],
                 'range' => [
@@ -383,44 +383,44 @@ class Finest_Fluent_Form extends Widget_Base {
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form' => 'width: {{SIZE}}{{UNIT}};'
+                    '{{WRAPPER}} .quiktheme-contact-form' => 'width: {{SIZE}}{{UNIT}};'
                 ],
             ]
         );
 
         $this->add_responsive_control(
-            'finest_contact_form_margin',
+            'quik_theme_contact_form_margin',
             [
-                'label' => esc_html__('Form Margin', 'finest-addons'),
+                'label' => esc_html__('Form Margin', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-contact-form' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
 
         $this->add_responsive_control(
-            'finest_contact_form_padding',
+            'quik_theme_contact_form_padding',
             [
-                'label' => esc_html__('Form Padding', 'finest-addons'),
+                'label' => esc_html__('Form Padding', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-contact-form' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
 
         $this->add_control(
-            'finest_contact_form_border_radius',
+            'quik_theme_contact_form_border_radius',
             [
-                'label' => esc_html__('Border Radius', 'finest-addons'),
+                'label' => esc_html__('Border Radius', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'separator' => 'before',
                 'size_units' => ['px'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-contact-form' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -428,16 +428,16 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_group_control(
             Group_Control_Border::get_type(),
             [
-                'name' => 'finest_contact_form_border',
-                'selector' => '{{WRAPPER}} .finest-contact-form',
+                'name' => 'quik_theme_contact_form_border',
+                'selector' => '{{WRAPPER}} .quiktheme-contact-form',
             ]
         );
 
         $this->add_group_control(
             Group_Control_Box_Shadow::get_type(),
             [
-                'name' => 'finest_contact_form_box_shadow',
-                'selector' => '{{WRAPPER}} .finest-contact-form',
+                'name' => 'quik_theme_contact_form_box_shadow',
+                'selector' => '{{WRAPPER}} .quiktheme-contact-form',
             ]
         );
 
@@ -445,7 +445,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->start_controls_section(
             'section_label_style',
             [
-                'label' => __('Labels', 'finest-addons'),
+                'label' => __('Labels', 'quiktheme-addons'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -453,10 +453,10 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'text_color_label',
             [
-                'label' => __('Text Color', 'finest-addons'),
+                'label' => __('Text Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group label' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group label' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -465,8 +465,8 @@ class Finest_Fluent_Form extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'typography_label',
-                'label' => __('Typography', 'finest-addons'),
-                'selector' => '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group label',
+                'label' => __('Typography', 'quiktheme-addons'),
+                'selector' => '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group label',
             ]
         );
 
@@ -475,7 +475,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->start_controls_section(
             'section_fields_style',
             [
-                'label' => __('Input & Textarea', 'finest-addons'),
+                'label' => __('Input & Textarea', 'quiktheme-addons'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -483,27 +483,27 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'input_alignment',
             [
-                'label' => __('Alignment', 'finest-addons'),
+                'label' => __('Alignment', 'quiktheme-addons'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', 'finest-addons'),
+                        'title' => __('Left', 'quiktheme-addons'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'finest-addons'),
+                        'title' => __('Center', 'quiktheme-addons'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', 'finest-addons'),
+                        'title' => __('Right', 'quiktheme-addons'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=text]):not([type=email]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group textarea, {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group select' => 'text-align: {{VALUE}};',
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group input[type=email] ' => 'float: {{VALUE}};',
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group input[type=text] ' => 'float: {{VALUE}};',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=text]):not([type=email]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group textarea, {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group select' => 'text-align: {{VALUE}};',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group input[type=email] ' => 'float: {{VALUE}};',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group input[type=text] ' => 'float: {{VALUE}};',
                 ],
             ]
         );
@@ -513,18 +513,18 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->start_controls_tab(
             'tab_fields_normal',
             [
-                'label' => __('Normal', 'finest-addons'),
+                'label' => __('Normal', 'quiktheme-addons'),
             ]
         );
 
         $this->add_control(
             'field_bg_color',
             [
-                'label' => __('Background Color', 'finest-addons'),
+                'label' => __('Background Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group textarea, {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group select' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group textarea, {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group select' => 'background-color: {{VALUE}}',
                 ],
             ]
         );
@@ -532,11 +532,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'field_text_color',
             [
-                'label' => __('Text Color', 'finest-addons'),
+                'label' => __('Text Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group textarea, {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group select' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group textarea, {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group select' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -545,10 +545,10 @@ class Finest_Fluent_Form extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'field_border',
-                'label' => __('Border', 'finest-addons'),
+                'label' => __('Border', 'quiktheme-addons'),
                 'placeholder' => '1px',
                 'default' => '1px',
-                'selector' => '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group textarea, {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group select',
+                'selector' => '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group textarea, {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group select',
                 'separator' => 'before',
             ]
         );
@@ -556,11 +556,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'field_radius',
             [
-                'label' => __('Border Radius', 'finest-addons'),
+                'label' => __('Border Radius', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group textarea, {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group select' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group textarea, {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group select' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -568,7 +568,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'field_text_indent',
             [
-                'label' => __('Text Indent', 'finest-addons'),
+                'label' => __('Text Indent', 'quiktheme-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -584,7 +584,7 @@ class Finest_Fluent_Form extends Widget_Base {
                 ],
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group textarea, {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group select' => 'text-indent: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group textarea, {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group select' => 'text-indent: {{SIZE}}{{UNIT}}',
                 ],
                 'separator' => 'before',
             ]
@@ -593,7 +593,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'input_width',
             [
-                'label' => __('Input Width', 'finest-addons'),
+                'label' => __('Input Width', 'quiktheme-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -604,7 +604,7 @@ class Finest_Fluent_Form extends Widget_Base {
                 ],
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group select' => 'width: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group select' => 'width: {{SIZE}}{{UNIT}}',
                 ],
             ]
         );
@@ -612,7 +612,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'input_height',
             [
-                'label' => __('Input Height', 'finest-addons'),
+                'label' => __('Input Height', 'quiktheme-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -623,7 +623,7 @@ class Finest_Fluent_Form extends Widget_Base {
                 ],
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group select' => 'height: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group select' => 'height: {{SIZE}}{{UNIT}}',
                 ],
             ]
         );
@@ -631,7 +631,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'textarea_width',
             [
-                'label' => __('Textarea Width', 'finest-addons'),
+                'label' => __('Textarea Width', 'quiktheme-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -642,7 +642,7 @@ class Finest_Fluent_Form extends Widget_Base {
                 ],
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group textarea' => 'width: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group textarea' => 'width: {{SIZE}}{{UNIT}}',
                 ],
             ]
         );
@@ -650,7 +650,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'textarea_height',
             [
-                'label' => __('Textarea Height', 'finest-addons'),
+                'label' => __('Textarea Height', 'quiktheme-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -661,7 +661,7 @@ class Finest_Fluent_Form extends Widget_Base {
                 ],
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group textarea' => 'height: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group textarea' => 'height: {{SIZE}}{{UNIT}}',
                 ],
             ]
         );
@@ -669,11 +669,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'field_padding',
             [
-                'label' => __('Padding', 'finest-addons'),
+                'label' => __('Padding', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group textarea, {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group select' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group textarea, {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group select' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -681,7 +681,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'field_spacing',
             [
-                'label' => __('Spacing', 'finest-addons'),
+                'label' => __('Spacing', 'quiktheme-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -692,7 +692,7 @@ class Finest_Fluent_Form extends Widget_Base {
                 ],
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group' => 'margin-bottom: {{SIZE}}{{UNIT}}',
                 ],
             ]
         );
@@ -701,8 +701,8 @@ class Finest_Fluent_Form extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'field_typography',
-                'label' => __('Typography', 'finest-addons'),
-                'selector' => '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group textarea, {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group select',
+                'label' => __('Typography', 'quiktheme-addons'),
+                'selector' => '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group textarea, {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group select',
                 'separator' => 'before',
             ]
         );
@@ -711,7 +711,7 @@ class Finest_Fluent_Form extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'field_box_shadow',
-                'selector' => '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group textarea, {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group select',
+                'selector' => '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group textarea, {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group select',
                 'separator' => 'before',
             ]
         );
@@ -721,18 +721,18 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->start_controls_tab(
             'tab_fields_focus',
             [
-                'label' => __('Focus', 'finest-addons'),
+                'label' => __('Focus', 'quiktheme-addons'),
             ]
         );
 
         $this->add_control(
             'field_bg_color_focus',
             [
-                'label' => __('Background Color', 'finest-addons'),
+                'label' => __('Background Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus, {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group textarea:focus' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus, {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group textarea:focus' => 'background-color: {{VALUE}}',
                 ],
             ]
         );
@@ -741,10 +741,10 @@ class Finest_Fluent_Form extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'focus_input_border',
-                'label' => __('Border', 'finest-addons'),
+                'label' => __('Border', 'quiktheme-addons'),
                 'placeholder' => '1px',
                 'default' => '1px',
-                'selector' => '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus, {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group textarea:focus',
+                'selector' => '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus, {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group textarea:focus',
             ]
         );
 
@@ -752,7 +752,7 @@ class Finest_Fluent_Form extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'focus_box_shadow',
-                'selector' => '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus, {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group textarea:focus',
+                'selector' => '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus, {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group textarea:focus',
                 'separator' => 'before',
             ]
         );
@@ -770,7 +770,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->start_controls_section(
             'section_placeholder_style',
             [
-                'label' => __('Placeholder', 'finest-addons'),
+                'label' => __('Placeholder', 'quiktheme-addons'),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'placeholder_switch' => 'yes',
@@ -781,10 +781,10 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'text_color_placeholder',
             [
-                'label' => __('Text Color', 'finest-addons'),
+                'label' => __('Text Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group input::-webkit-input-placeholder, {{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group textarea::-webkit-input-placeholder' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group input::-webkit-input-placeholder, {{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group textarea::-webkit-input-placeholder' => 'color: {{VALUE}}',
                 ],
                 'condition' => [
                     'placeholder_switch' => 'yes',
@@ -796,7 +796,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->start_controls_section(
             'section_radio_checkbox_style',
             [
-                'label' => __('Radio & Checkbox', 'finest-addons'),
+                'label' => __('Radio & Checkbox', 'quiktheme-addons'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -804,10 +804,10 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'custom_radio_checkbox',
             [
-                'label' => __('Custom Styles', 'finest-addons'),
+                'label' => __('Custom Styles', 'quiktheme-addons'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'finest-addons'),
-                'label_off' => __('No', 'finest-addons'),
+                'label_on' => __('Yes', 'quiktheme-addons'),
+                'label_off' => __('No', 'quiktheme-addons'),
                 'return_value' => 'yes',
             ]
         );
@@ -815,7 +815,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'radio_checkbox_size',
             [
-                'label' => __('Size', 'finest-addons'),
+                'label' => __('Size', 'quiktheme-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'default' => [
                     'size' => '15',
@@ -830,7 +830,7 @@ class Finest_Fluent_Form extends Widget_Base {
                 ],
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-custom-radio-checkbox input[type="checkbox"], {{WRAPPER}} .finest-custom-radio-checkbox input[type="radio"]' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .quiktheme-custom-radio-checkbox input[type="checkbox"], {{WRAPPER}} .quiktheme-custom-radio-checkbox input[type="radio"]' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}}',
                 ],
                 'condition' => [
                     'custom_radio_checkbox' => 'yes',
@@ -843,7 +843,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->start_controls_tab(
             'radio_checkbox_normal',
             [
-                'label' => __('Normal', 'finest-addons'),
+                'label' => __('Normal', 'quiktheme-addons'),
                 'condition' => [
                     'custom_radio_checkbox' => 'yes',
                 ],
@@ -853,11 +853,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'radio_checkbox_color',
             [
-                'label' => __('Color', 'finest-addons'),
+                'label' => __('Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-custom-radio-checkbox input[type="checkbox"], {{WRAPPER}} .finest-custom-radio-checkbox input[type="radio"]' => 'background: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-custom-radio-checkbox input[type="checkbox"], {{WRAPPER}} .quiktheme-custom-radio-checkbox input[type="radio"]' => 'background: {{VALUE}}',
                 ],
                 'condition' => [
                     'custom_radio_checkbox' => 'yes',
@@ -868,7 +868,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'checkbox_border_width',
             [
-                'label' => __('Border Width', 'finest-addons'),
+                'label' => __('Border Width', 'quiktheme-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -879,7 +879,7 @@ class Finest_Fluent_Form extends Widget_Base {
                 ],
                 'size_units' => ['px'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-custom-radio-checkbox input[type="checkbox"], {{WRAPPER}} .finest-custom-radio-checkbox input[type="radio"]' => 'border-width: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .quiktheme-custom-radio-checkbox input[type="checkbox"], {{WRAPPER}} .quiktheme-custom-radio-checkbox input[type="radio"]' => 'border-width: {{SIZE}}{{UNIT}}',
                 ],
                 'condition' => [
                     'custom_radio_checkbox' => 'yes',
@@ -890,11 +890,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'checkbox_border_color',
             [
-                'label' => __('Border Color', 'finest-addons'),
+                'label' => __('Border Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-custom-radio-checkbox input[type="checkbox"], {{WRAPPER}} .finest-custom-radio-checkbox input[type="radio"]' => 'border-color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-custom-radio-checkbox input[type="checkbox"], {{WRAPPER}} .quiktheme-custom-radio-checkbox input[type="radio"]' => 'border-color: {{VALUE}}',
                 ],
                 'condition' => [
                     'custom_radio_checkbox' => 'yes',
@@ -905,7 +905,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'checkbox_heading',
             [
-                'label' => __('Checkbox', 'finest-addons'),
+                'label' => __('Checkbox', 'quiktheme-addons'),
                 'type' => Controls_Manager::HEADING,
                 'condition' => [
                     'custom_radio_checkbox' => 'yes',
@@ -916,11 +916,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'checkbox_border_radius',
             [
-                'label' => __('Border Radius', 'finest-addons'),
+                'label' => __('Border Radius', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-custom-radio-checkbox input[type="checkbox"], {{WRAPPER}} .finest-custom-radio-checkbox input[type="checkbox"]:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-custom-radio-checkbox input[type="checkbox"], {{WRAPPER}} .quiktheme-custom-radio-checkbox input[type="checkbox"]:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
                 'condition' => [
                     'custom_radio_checkbox' => 'yes',
@@ -931,7 +931,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'radio_heading',
             [
-                'label' => __('Radio Buttons', 'finest-addons'),
+                'label' => __('Radio Buttons', 'quiktheme-addons'),
                 'type' => Controls_Manager::HEADING,
                 'condition' => [
                     'custom_radio_checkbox' => 'yes',
@@ -942,11 +942,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'radio_border_radius',
             [
-                'label' => __('Border Radius', 'finest-addons'),
+                'label' => __('Border Radius', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-custom-radio-checkbox input[type="radio"], {{WRAPPER}} .finest-custom-radio-checkbox input[type="radio"]:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-custom-radio-checkbox input[type="radio"], {{WRAPPER}} .quiktheme-custom-radio-checkbox input[type="radio"]:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
                 'condition' => [
                     'custom_radio_checkbox' => 'yes',
@@ -959,7 +959,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->start_controls_tab(
             'radio_checkbox_checked',
             [
-                'label' => __('Checked', 'finest-addons'),
+                'label' => __('Checked', 'quiktheme-addons'),
                 'condition' => [
                     'custom_radio_checkbox' => 'yes',
                 ],
@@ -969,11 +969,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'radio_checkbox_color_checked',
             [
-                'label' => __('Color', 'finest-addons'),
+                'label' => __('Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-custom-radio-checkbox input[type="checkbox"]:checked:before, {{WRAPPER}} .finest-custom-radio-checkbox input[type="radio"]:checked:before' => 'background: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-custom-radio-checkbox input[type="checkbox"]:checked:before, {{WRAPPER}} .quiktheme-custom-radio-checkbox input[type="radio"]:checked:before' => 'background: {{VALUE}}',
                 ],
                 'condition' => [
                     'custom_radio_checkbox' => 'yes',
@@ -994,7 +994,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->start_controls_section(
             'section_break_style',
             [
-                'label' => __('Section Break Style', 'finest-addons'),
+                'label' => __('Section Break Style', 'quiktheme-addons'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1002,7 +1002,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'section_break_label',
             [
-                'label' => __('Label', 'finest-addons'),
+                'label' => __('Label', 'quiktheme-addons'),
                 'type' => Controls_Manager::HEADING
             ]
         );
@@ -1010,11 +1010,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'section_break_label_color',
             [
-                'label' => __('Color', 'finest-addons'),
+                'label' => __('Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-section-break .ff-el-section-title' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-section-break .ff-el-section-title' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -1023,8 +1023,8 @@ class Finest_Fluent_Form extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'section_break_label_typography',
-                'label' => __('Typography', 'finest-addons'),
-                'selector' => '.finest-contact-form.finest-fluent-form-wrapper .ff-el-section-break .ff-el-section-title',
+                'label' => __('Typography', 'quiktheme-addons'),
+                'selector' => '.quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-section-break .ff-el-section-title',
                 'separator' => 'before',
             ]
         );
@@ -1032,11 +1032,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'section_break_label_padding',
             [
-                'label' => __('Padding', 'finest-addons'),
+                'label' => __('Padding', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-section-break .ff-el-section-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-section-break .ff-el-section-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -1044,11 +1044,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'section_break_label_margin',
             [
-                'label' => __('Margin', 'finest-addons'),
+                'label' => __('Margin', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-section-break .ff-el-section-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-section-break .ff-el-section-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -1056,7 +1056,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'section_break_description',
             [
-                'label' => __('Description', 'finest-addons'),
+                'label' => __('Description', 'quiktheme-addons'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before'
             ]
@@ -1065,11 +1065,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'section_break_description_color',
             [
-                'label' => __('Color', 'finest-addons'),
+                'label' => __('Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-section-break div' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-section-break div' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -1078,8 +1078,8 @@ class Finest_Fluent_Form extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'section_break_description_typography',
-                'label' => __('Typography', 'finest-addons'),
-                'selector' => '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-section-break div',
+                'label' => __('Typography', 'quiktheme-addons'),
+                'selector' => '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-section-break div',
                 'separator' => 'before',
             ]
         );
@@ -1087,11 +1087,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'section_break_description_padding',
             [
-                'label' => __('Padding', 'finest-addons'),
+                'label' => __('Padding', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-section-break div' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-section-break div' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -1099,11 +1099,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'section_break_description_margin',
             [
-                'label' => __('Margin', 'finest-addons'),
+                'label' => __('Margin', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-section-break div' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-section-break div' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -1111,23 +1111,23 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'section_break_alignment',
             [
-                'label' => __('Alignment', 'finest-addons'),
+                'label' => __('Alignment', 'quiktheme-addons'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', 'finest-addons'),
+                        'title' => __('Left', 'quiktheme-addons'),
                         'icon' => 'eicon-h-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'finest-addons'),
+                        'title' => __('Center', 'quiktheme-addons'),
                         'icon' => 'eicon-h-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', 'finest-addons'),
+                        'title' => __('Right', 'quiktheme-addons'),
                         'icon' => 'eicon-h-align-right',
                     ],
                 ],
-                'prefix_class' => 'finest-fluentform-section-break-content-'
+                'prefix_class' => 'quiktheme-fluentform-section-break-content-'
             ]
         );
 
@@ -1135,7 +1135,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->start_controls_section(
             'section_table_grid',
             [
-                'label' => __('Checkbox Grid Style', 'finest-addons'),
+                'label' => __('Checkbox Grid Style', 'quiktheme-addons'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1143,7 +1143,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'section_table_grid_head',
             [
-                'label' => __('Grid Table Head', 'finest-addons'),
+                'label' => __('Grid Table Head', 'quiktheme-addons'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before'
             ]
@@ -1152,11 +1152,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'section_table_grid_head_color',
             [
-                'label' => __('Background Color', 'finest-addons'),
+                'label' => __('Background Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-table thead th' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-table thead th' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -1164,11 +1164,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'section_table_grid_head_text_color',
             [
-                'label' => __('Color', 'finest-addons'),
+                'label' => __('Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-table thead th' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-table thead th' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -1177,8 +1177,8 @@ class Finest_Fluent_Form extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'section_table_grid_head_typography',
-                'label' => __('Typography', 'finest-addons'),
-                'selector' => '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-table thead th',
+                'label' => __('Typography', 'quiktheme-addons'),
+                'selector' => '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-table thead th',
                 'separator' => 'before',
             ]
         );
@@ -1186,7 +1186,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'section_table_grid_head_height',
             [
-                'label' => __('Height', 'finest-addons'),
+                'label' => __('Height', 'quiktheme-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -1197,7 +1197,7 @@ class Finest_Fluent_Form extends Widget_Base {
                 ],
                 'size_units' => ['px', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-table thead th' => 'height: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-table thead th' => 'height: {{SIZE}}{{UNIT}}',
                 ]
             ]
         );
@@ -1205,11 +1205,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'section_table_grid_head_padding',
             [
-                'label' => __('Padding', 'finest-addons'),
+                'label' => __('Padding', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-table thead th' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-table thead th' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -1217,7 +1217,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'section_table_grid_item',
             [
-                'label' => __('Grid Table Item', 'finest-addons'),
+                'label' => __('Grid Table Item', 'quiktheme-addons'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before'
             ]
@@ -1226,11 +1226,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'table_grid_item_color',
             [
-                'label' => __('Color', 'finest-addons'),
+                'label' => __('Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-table tbody tr td' => 'color: {{VALUE}} !important;',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-table tbody tr td' => 'color: {{VALUE}} !important;',
                 ],
             ]
         );
@@ -1238,11 +1238,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'table_grid_item_bg_color',
             [
-                'label' => __('Background Color', 'finest-addons'),
+                'label' => __('Background Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-table tbody tr td' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-table tbody tr td' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -1250,7 +1250,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'table_grid_item_odd_bg_color',
             [
-                'label' => __('Odd Item Background Color', 'finest-addons'),
+                'label' => __('Odd Item Background Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -1263,15 +1263,15 @@ class Finest_Fluent_Form extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'table_grid_item_typography',
-                'label' => __('Typography', 'finest-addons'),
-                'selector' => '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-table tbody tr td',
+                'label' => __('Typography', 'quiktheme-addons'),
+                'selector' => '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-table tbody tr td',
             ]
         );
 
         $this->add_responsive_control(
             'section_table_grid_item_height',
             [
-                'label' => __('Height', 'finest-addons'),
+                'label' => __('Height', 'quiktheme-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -1282,7 +1282,7 @@ class Finest_Fluent_Form extends Widget_Base {
                 ],
                 'size_units' => ['px', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-table tbody tr td' => 'height: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-table tbody tr td' => 'height: {{SIZE}}{{UNIT}}',
                 ]
             ]
         );
@@ -1290,11 +1290,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'section_table_grid_item_padding',
             [
-                'label' => __('Padding', 'finest-addons'),
+                'label' => __('Padding', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-table tbody tr td' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-table tbody tr td' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -1308,7 +1308,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->start_controls_section(
             'section_address_line_style',
             [
-                'label' => __('Address Line Style', 'finest-addons'),
+                'label' => __('Address Line Style', 'quiktheme-addons'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1316,7 +1316,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'address_line_label_color',
             [
-                'label' => __('Label Color', 'finest-addons'),
+                'label' => __('Label Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -1329,7 +1329,7 @@ class Finest_Fluent_Form extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'address_line_label_typography',
-                'label' => __('Typography', 'finest-addons'),
+                'label' => __('Typography', 'quiktheme-addons'),
                 'selector' => '{{WRAPPER}} .fluent-address label',
             ]
         );
@@ -1343,7 +1343,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->start_controls_section(
             'section_submit_button_style',
             [
-                'label' => __('Submit Button', 'finest-addons'),
+                'label' => __('Submit Button', 'quiktheme-addons'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1351,24 +1351,24 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'button_align',
             [
-                'label' => __('Alignment', 'finest-addons'),
+                'label' => __('Alignment', 'quiktheme-addons'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', 'finest-addons'),
+                        'title' => __('Left', 'quiktheme-addons'),
                         'icon' => 'eicon-h-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'finest-addons'),
+                        'title' => __('Center', 'quiktheme-addons'),
                         'icon' => 'eicon-h-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', 'finest-addons'),
+                        'title' => __('Right', 'quiktheme-addons'),
                         'icon' => 'eicon-h-align-right',
                     ],
                 ],
                 'default' => '',
-                'prefix_class' => 'finest-fluentform-form-button-',
+                'prefix_class' => 'quiktheme-fluentform-form-button-',
                 'condition' => [
                     'button_width_type' => 'custom',
                 ],
@@ -1378,21 +1378,21 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'button_width_type',
             [
-                'label' => __('Width', 'finest-addons'),
+                'label' => __('Width', 'quiktheme-addons'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'custom',
                 'options' => [
-                    'full-width' => __('Full Width', 'finest-addons'),
-                    'custom' => __('Custom', 'finest-addons'),
+                    'full-width' => __('Full Width', 'quiktheme-addons'),
+                    'custom' => __('Custom', 'quiktheme-addons'),
                 ],
-                'prefix_class' => 'finest-fluentform-form-button-',
+                'prefix_class' => 'quiktheme-fluentform-form-button-',
             ]
         );
 
         $this->add_responsive_control(
             'button_width',
             [
-                'label' => __('Width', 'finest-addons'),
+                'label' => __('Width', 'quiktheme-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -1403,8 +1403,8 @@ class Finest_Fluent_Form extends Widget_Base {
                 ],
                 'size_units' => ['px', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group .ff-btn-submit' => 'width: {{SIZE}}{{UNIT}}',
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper.finest-contact-form-align-default .ff-el-group .ff-btn-submit' => 'width: {{SIZE}}{{UNIT}};min-width: inherit;',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group .ff-btn-submit' => 'width: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper.quiktheme-contact-form-align-default .ff-el-group .ff-btn-submit' => 'width: {{SIZE}}{{UNIT}};min-width: inherit;',
                 ],
                 'condition' => [
                     'button_width_type' => 'custom',
@@ -1417,18 +1417,18 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->start_controls_tab(
             'tab_button_normal',
             [
-                'label' => __('Normal', 'finest-addons'),
+                'label' => __('Normal', 'quiktheme-addons'),
             ]
         );
 
         $this->add_control(
             'button_bg_color_normal',
             [
-                'label' => __('Background Color', 'finest-addons'),
+                'label' => __('Background Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#409EFF',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group .ff-btn-submit' => 'background-color: {{VALUE}} !important;',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group .ff-btn-submit' => 'background-color: {{VALUE}} !important;',
                 ],
             ]
         );
@@ -1436,11 +1436,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'button_text_color_normal',
             [
-                'label' => __('Text Color', 'finest-addons'),
+                'label' => __('Text Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group .ff-btn-submit' => 'color: {{VALUE}} !important;',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group .ff-btn-submit' => 'color: {{VALUE}} !important;',
                 ],
             ]
         );
@@ -1449,21 +1449,21 @@ class Finest_Fluent_Form extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'button_border_normal',
-                'label' => __('Border', 'finest-addons'),
+                'label' => __('Border', 'quiktheme-addons'),
                 'placeholder' => '1px',
                 'default' => '1px',
-                'selector' => '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group .ff-btn-submit',
+                'selector' => '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group .ff-btn-submit',
             ]
         );
 
         $this->add_control(
             'button_border_radius',
             [
-                'label' => __('Border Radius', 'finest-addons'),
+                'label' => __('Border Radius', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group .ff-btn-submit' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group .ff-btn-submit' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -1471,11 +1471,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'button_padding',
             [
-                'label' => __('Padding', 'finest-addons'),
+                'label' => __('Padding', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group .ff-btn-submit' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group .ff-btn-submit' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -1483,7 +1483,7 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_responsive_control(
             'button_margin',
             [
-                'label' => __('Margin Top', 'finest-addons'),
+                'label' => __('Margin Top', 'quiktheme-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -1494,7 +1494,7 @@ class Finest_Fluent_Form extends Widget_Base {
                 ],
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group .ff-btn-submit' => 'margin-top: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group .ff-btn-submit' => 'margin-top: {{SIZE}}{{UNIT}}',
                 ],
             ]
         );
@@ -1502,7 +1502,7 @@ class Finest_Fluent_Form extends Widget_Base {
 	    $this->add_responsive_control(
 		    'button_position',
 		    [
-			    'label' => __('Button Position', 'finest-addons'),
+			    'label' => __('Button Position', 'quiktheme-addons'),
 			    'type' => Controls_Manager::SLIDER,
 			    'range' => [
 				    'px' => [
@@ -1513,7 +1513,7 @@ class Finest_Fluent_Form extends Widget_Base {
 			    ],
 			    'size_units' => ['px', 'em', '%'],
 			    'selectors' => [
-				    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper.finest-fluent-form-subscription .ff-el-group .ff-btn-submit' => 'right: {{SIZE}}{{UNIT}};position: relative;min-width: inherit;',
+				    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper.quiktheme-fluent-form-subscription .ff-el-group .ff-btn-submit' => 'right: {{SIZE}}{{UNIT}};position: relative;min-width: inherit;',
 			    ],
 		    ]
 	    );
@@ -1524,8 +1524,8 @@ class Finest_Fluent_Form extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'button_typography',
-                'label' => __('Typography', 'finest-addons'),
-                'selector' => '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group .ff-btn-submit',
+                'label' => __('Typography', 'quiktheme-addons'),
+                'selector' => '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group .ff-btn-submit',
                 'separator' => 'before',
             ]
         );
@@ -1534,7 +1534,7 @@ class Finest_Fluent_Form extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'button_box_shadow',
-                'selector' => '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group .ff-btn-submit',
+                'selector' => '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group .ff-btn-submit',
                 'separator' => 'before',
             ]
         );
@@ -1544,18 +1544,18 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->start_controls_tab(
             'tab_button_hover',
             [
-                'label' => __('Hover', 'finest-addons'),
+                'label' => __('Hover', 'quiktheme-addons'),
             ]
         );
 
         $this->add_control(
             'button_bg_color_hover',
             [
-                'label' => __('Background Color', 'finest-addons'),
+                'label' => __('Background Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group .ff-btn-submit:hover' => 'background-color: {{VALUE}} !important;',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group .ff-btn-submit:hover' => 'background-color: {{VALUE}} !important;',
                 ],
             ]
         );
@@ -1563,11 +1563,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'button_text_color_hover',
             [
-                'label' => __('Text Color', 'finest-addons'),
+                'label' => __('Text Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group .ff-btn-submit:hover' => 'color: {{VALUE}} !important;',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group .ff-btn-submit:hover' => 'color: {{VALUE}} !important;',
                 ],
             ]
         );
@@ -1575,11 +1575,11 @@ class Finest_Fluent_Form extends Widget_Base {
         $this->add_control(
             'button_border_color_hover',
             [
-                'label' => __('Border Color', 'finest-addons'),
+                'label' => __('Border Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-contact-form.finest-fluent-form-wrapper .ff-el-group .ff-btn-submit:hover' => 'border-color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-contact-form.quiktheme-fluent-form-wrapper .ff-el-group .ff-btn-submit:hover' => 'border-color: {{VALUE}}',
                 ],
             ]
         );
@@ -1600,7 +1600,7 @@ class Finest_Fluent_Form extends Widget_Base {
             $this->start_controls_section(
                 'section_pagination_style',
                 [
-                    'label' => __('Pagination', 'finest-addons'),
+                    'label' => __('Pagination', 'quiktheme-addons'),
                     'tab' => Controls_Manager::TAB_STYLE,
                 ]
             );
@@ -1610,14 +1610,14 @@ class Finest_Fluent_Form extends Widget_Base {
                 $this->start_controls_tab(
                     'form_progressbar_normal',
                     [
-                        'label' => __('Normal', 'finest-addons'),
+                        'label' => __('Normal', 'quiktheme-addons'),
                     ]
                 );
     
                 $this->add_control(
                     'pagination_progressbar_label',
                     [
-                        'label' => __('Label', 'finest-addons'),
+                        'label' => __('Label', 'quiktheme-addons'),
                         'type' => Controls_Manager::HEADING
                     ]
                 );
@@ -1625,20 +1625,20 @@ class Finest_Fluent_Form extends Widget_Base {
                 $this->add_control(
                     'show_label',
                     [
-                        'label'     => __( 'Show Label', 'finest-addons' ),
+                        'label'     => __( 'Show Label', 'quiktheme-addons' ),
                         'type'      => Controls_Manager::SWITCHER,
-                        'label_on'  => __( 'Show', 'finest-addons' ),
-                        'label_off' => __( 'Hide', 'finest-addons' ),
+                        'label_on'  => __( 'Show', 'quiktheme-addons' ),
+                        'label_off' => __( 'Hide', 'quiktheme-addons' ),
                         'return_value' => 'yes',
                         'default'   => 'yes',
-                        'prefix_class'  => 'finest-ff-step-header-'
+                        'prefix_class'  => 'quiktheme-ff-step-header-'
                     ]
                 );
     
                 $this->add_control(
                     'label_color',
                     [
-                        'label'     => __( 'Label Color', 'finest-addons' ),
+                        'label'     => __( 'Label Color', 'quiktheme-addons' ),
                         'type'      => Controls_Manager::COLOR,
                         'scheme'    => [
                             'type'  => Color::get_type(),
@@ -1657,7 +1657,7 @@ class Finest_Fluent_Form extends Widget_Base {
                     Group_Control_Typography::get_type(),
                     [
                         'name' => 'label_typography',
-                        'label' => __( 'Typography', 'finest-addons' ),
+                        'label' => __( 'Typography', 'quiktheme-addons' ),
                         'scheme' => Typography::TYPOGRAPHY_1,
                         'selector' => '{{WRAPPER}} .ff-el-progress-status',
                         'condition' => [
@@ -1669,7 +1669,7 @@ class Finest_Fluent_Form extends Widget_Base {
                 $this->add_control(
                     'label_space',
                     [
-                        'label' => __( 'Spacing', 'finest-addons' ),
+                        'label' => __( 'Spacing', 'quiktheme-addons' ),
                         'type' => Controls_Manager::DIMENSIONS,
                         'size_units' => [ 'px', '%', 'em' ],
                         'selectors' => [
@@ -1685,7 +1685,7 @@ class Finest_Fluent_Form extends Widget_Base {
                 $this->add_control(
                     'pagination_progressbar',
                     [
-                        'label' => __('Progressbar', 'finest-addons'),
+                        'label' => __('Progressbar', 'quiktheme-addons'),
                         'type' => Controls_Manager::HEADING,
                     ]
                 );
@@ -1693,20 +1693,20 @@ class Finest_Fluent_Form extends Widget_Base {
                 $this->add_control(
                     'show_progressbar',
                     [
-                        'label'     => __( 'Show Progressbar', 'finest-addons' ),
+                        'label'     => __( 'Show Progressbar', 'quiktheme-addons' ),
                         'type'      => Controls_Manager::SWITCHER,
-                        'label_on'  => __( 'Show', 'finest-addons' ),
-                        'label_off' => __( 'Hide', 'finest-addons' ),
+                        'label_on'  => __( 'Show', 'quiktheme-addons' ),
+                        'label_off' => __( 'Hide', 'quiktheme-addons' ),
                         'return_value' => 'yes',
                         'default'   => 'yes',
-                        'prefix_class'  => 'finest-ff-step-progressbar-'
+                        'prefix_class'  => 'quiktheme-ff-step-progressbar-'
                     ]
                 );
     
                 $this->add_control(
                     'progressbar_height',
                     [
-                        'label' => __( 'Height', 'finest-addons' ),
+                        'label' => __( 'Height', 'quiktheme-addons' ),
                         'type' => Controls_Manager::SLIDER,
                         'size_units' => [ 'px' ],
                         'range' => [
@@ -1728,7 +1728,7 @@ class Finest_Fluent_Form extends Widget_Base {
                 $this->add_control(
                     'progressbar_color',
                     [
-                        'label' => __( 'Title Color', 'finest-addons' ),
+                        'label' => __( 'Title Color', 'quiktheme-addons' ),
                         'type'  =>   Controls_Manager::COLOR,
                         'scheme' => [
                             'type' =>   Color::get_type(),
@@ -1747,7 +1747,7 @@ class Finest_Fluent_Form extends Widget_Base {
                     Group_Control_Border::get_type(),
                     [
                         'name' => 'progressbar_border',
-                        'label' => __( 'Border', 'finest-addons' ),
+                        'label' => __( 'Border', 'quiktheme-addons' ),
                         'selector' => '{{WRAPPER}} .ff-el-progress',
                         'condition' => [
                             'show_progressbar'  => 'yes'
@@ -1758,7 +1758,7 @@ class Finest_Fluent_Form extends Widget_Base {
                 $this->add_control(
                     'progressbar_border_radius',
                     [
-                        'label' => __( 'Border Radius', 'finest-addons' ),
+                        'label' => __( 'Border Radius', 'quiktheme-addons' ),
                         'type' => Controls_Manager::DIMENSIONS,
                         'size_units' => [ 'px', '%', 'em' ],
                         'selectors' => [
@@ -1774,7 +1774,7 @@ class Finest_Fluent_Form extends Widget_Base {
                     Group_Control_Background::get_type(),
                     [
                         'name' => 'progressbar_bg',
-                        'label' => __( 'Background', 'finest-addons' ),
+                        'label' => __( 'Background', 'quiktheme-addons' ),
                         'types' => [ 'classic', 'gradient' ],
                         'selector' => '{{WRAPPER}} .ff-el-progress',
                         'condition' => [
@@ -1791,7 +1791,7 @@ class Finest_Fluent_Form extends Widget_Base {
                 $this->start_controls_tab(
                     'form_progressbar_filled',
                     [
-                        'label' => __('Filled', 'finest-addons'),
+                        'label' => __('Filled', 'quiktheme-addons'),
                     ]
                 );
     
@@ -1799,7 +1799,7 @@ class Finest_Fluent_Form extends Widget_Base {
                     Group_Control_Background::get_type(),
                     [
                         'name' => 'progressbar_bg_filled',
-                        'label' => __( 'Background', 'finest-addons' ),
+                        'label' => __( 'Background', 'quiktheme-addons' ),
                         'types' => [ 'classic', 'gradient' ],
                         'selector' => '{{WRAPPER}} .ff-el-progress-bar',
                         'condition' => [
@@ -1827,14 +1827,14 @@ class Finest_Fluent_Form extends Widget_Base {
                 $this->start_controls_tab(
                     'form_pagination_button',
                     [
-                        'label' => __('Normal', 'finest-addons'),
+                        'label' => __('Normal', 'quiktheme-addons'),
                     ]
                 );
     
                 $this->add_control(
                     'pagination_button_style',
                     [
-                        'label' => __('Button', 'finest-addons'),
+                        'label' => __('Button', 'quiktheme-addons'),
                         'type' => Controls_Manager::HEADING
                     ]
                 );
@@ -1842,7 +1842,7 @@ class Finest_Fluent_Form extends Widget_Base {
                 $this->add_control(
                     'pagination_button_color',
                     [
-                        'label' => __( 'Color', 'finest-addons' ),
+                        'label' => __( 'Color', 'quiktheme-addons' ),
                         'type'  =>   Controls_Manager::COLOR,
                         'selectors' => [
                             '{{WRAPPER}} .step-nav button' => 'color: {{VALUE}};',
@@ -1854,7 +1854,7 @@ class Finest_Fluent_Form extends Widget_Base {
                     Group_Control_Typography::get_type(),
                     [
                         'name' => 'pagination_button_typography',
-                        'label' => __( 'Typography', 'finest-addons' ),
+                        'label' => __( 'Typography', 'quiktheme-addons' ),
                         'scheme' => Typography::TYPOGRAPHY_1,
                         'selector' => '{{WRAPPER}} .step-nav button',
                     ]
@@ -1864,7 +1864,7 @@ class Finest_Fluent_Form extends Widget_Base {
                     Group_Control_Background::get_type(),
                     [
                         'name' => 'pagination_button_bg',
-                        'label' => __( 'Background', 'finest-addons' ),
+                        'label' => __( 'Background', 'quiktheme-addons' ),
                         'types' => [ 'classic', 'gradient' ],
                         'selector' => '{{WRAPPER}} .step-nav button',
                     ]
@@ -1874,7 +1874,7 @@ class Finest_Fluent_Form extends Widget_Base {
                     Group_Control_Border::get_type(),
                     [
                         'name' => 'pagination_button_border',
-                        'label' => __( 'Border', 'finest-addons' ),
+                        'label' => __( 'Border', 'quiktheme-addons' ),
                         'selector' => '{{WRAPPER}} .step-nav button',
                     ]
                 );
@@ -1882,7 +1882,7 @@ class Finest_Fluent_Form extends Widget_Base {
                 $this->add_control(
                     'pagination_button_border_radius',
                     [
-                        'label' => __( 'Border Radius', 'finest-addons' ),
+                        'label' => __( 'Border Radius', 'quiktheme-addons' ),
                         'type' => Controls_Manager::DIMENSIONS,
                         'size_units' => [ 'px', '%', 'em' ],
                         'selectors' => [
@@ -1894,7 +1894,7 @@ class Finest_Fluent_Form extends Widget_Base {
                 $this->add_control(
                     'pagination_button_padding',
                     [
-                        'label' => __( 'Padding', 'finest-addons' ),
+                        'label' => __( 'Padding', 'quiktheme-addons' ),
                         'type' => Controls_Manager::DIMENSIONS,
                         'size_units' => [ 'px', '%', 'em' ],
                         'selectors' => [
@@ -1908,14 +1908,14 @@ class Finest_Fluent_Form extends Widget_Base {
                 $this->start_controls_tab(
                     'form_pagination_button_hover',
                     [
-                        'label' => __('Hover', 'finest-addons'),
+                        'label' => __('Hover', 'quiktheme-addons'),
                     ]
                 );
     
                 $this->add_control(
                     'pagination_button_hover_color',
                     [
-                        'label' => __( 'Color', 'finest-addons' ),
+                        'label' => __( 'Color', 'quiktheme-addons' ),
                         'type'  =>   Controls_Manager::COLOR,
                         'selectors' => [
                             '{{WRAPPER}} .step-nav button:hover' => 'color: {{VALUE}};',
@@ -1927,7 +1927,7 @@ class Finest_Fluent_Form extends Widget_Base {
                     Group_Control_Background::get_type(),
                     [
                         'name' => 'pagination_button_hover_bg',
-                        'label' => __( 'Background', 'finest-addons' ),
+                        'label' => __( 'Background', 'quiktheme-addons' ),
                         'types' => [ 'classic', 'gradient' ],
                         'selector' => '{{WRAPPER}} .step-nav button:hover',
                     ]
@@ -1936,7 +1936,7 @@ class Finest_Fluent_Form extends Widget_Base {
                 $this->add_control(
                     'pagination_button_border_hover_radius',
                     [
-                        'label' => __( 'Border Radius', 'finest-addons' ),
+                        'label' => __( 'Border Radius', 'quiktheme-addons' ),
                         'type' => Controls_Manager::DIMENSIONS,
                         'size_units' => [ 'px', '%', 'em' ],
                         'selectors' => [
@@ -1967,53 +1967,53 @@ class Finest_Fluent_Form extends Widget_Base {
         $settings = $this->get_settings_for_display();
 
         $this->add_render_attribute(
-            'finest_fluentform_wrapper',
+            'quik_theme_fluentform_wrapper',
             [
                 'class' => [
-                    'finest-contact-form',
-                    'finest-fluent-form-wrapper',
+                    'quiktheme-contact-form',
+                    'quiktheme-fluent-form-wrapper',
                     'clearfix'
                 ]
             ]
         );
 
         if ( $settings['placeholder_switch'] != 'yes' ) {
-            $this->add_render_attribute( 'finest_fluentform_wrapper', 'class', 'placeholder-hide' );
+            $this->add_render_attribute( 'quik_theme_fluentform_wrapper', 'class', 'placeholder-hide' );
         }
 
         if( $settings['labels_switch'] != 'yes' ) {
-            $this->add_render_attribute( 'finest_fluentform_wrapper', 'class', 'fluent-form-labels-hide' );
+            $this->add_render_attribute( 'quik_theme_fluentform_wrapper', 'class', 'fluent-form-labels-hide' );
         }
 
         if ( $settings['custom_radio_checkbox'] == 'yes' ) {
-            $this->add_render_attribute( 'finest_fluentform_wrapper', 'class', 'finest-custom-radio-checkbox' );
+            $this->add_render_attribute( 'quik_theme_fluentform_wrapper', 'class', 'quiktheme-custom-radio-checkbox' );
         }
-        if ( $settings['finest_contact_form_alignment'] == 'left' ) {
-            $this->add_render_attribute( 'finest_fluentform_wrapper', 'class', 'finest-contact-form-align-left' );
+        if ( $settings['quik_theme_contact_form_alignment'] == 'left' ) {
+            $this->add_render_attribute( 'quik_theme_fluentform_wrapper', 'class', 'quiktheme-contact-form-align-left' );
         }
-        elseif ( $settings['finest_contact_form_alignment'] == 'center' ) {
-            $this->add_render_attribute( 'finest_fluentform_wrapper', 'class', 'finest-contact-form-align-center' );
+        elseif ( $settings['quik_theme_contact_form_alignment'] == 'center' ) {
+            $this->add_render_attribute( 'quik_theme_fluentform_wrapper', 'class', 'quiktheme-contact-form-align-center' );
         }
-        elseif ( $settings['finest_contact_form_alignment'] == 'right' ) {
-            $this->add_render_attribute( 'finest_fluentform_wrapper', 'class', 'finest-contact-form-align-right' );
+        elseif ( $settings['quik_theme_contact_form_alignment'] == 'right' ) {
+            $this->add_render_attribute( 'quik_theme_fluentform_wrapper', 'class', 'quiktheme-contact-form-align-right' );
         }
         else {
-            $this->add_render_attribute( 'finest_fluentform_wrapper', 'class', 'finest-contact-form-align-default' );
+            $this->add_render_attribute( 'quik_theme_fluentform_wrapper', 'class', 'quiktheme-contact-form-align-default' );
         }
 
         
         ?>
-        <div <?php echo $this->get_render_attribute_string('finest_fluentform_wrapper'); ?>>
+        <div <?php echo $this->get_render_attribute_string('quik_theme_fluentform_wrapper'); ?>>
 
             <?php if ( $settings['custom_title_description'] == 'yes' ) { ?>
-                <div class="finest-fluentform-heading">
+                <div class="quiktheme-fluentform-heading">
                     <?php if ( $settings['form_title_custom'] != '' ) { ?>
-                        <h3 class="finest-contact-form-title finest-fluentform-title">
+                        <h3 class="quiktheme-contact-form-title quiktheme-fluentform-title">
                             <?php echo esc_attr( $settings['form_title_custom'] ); ?>
                         </h3>
                     <?php } ?>
                     <?php if ( $settings['form_description_custom'] != '' ) { ?>
-                        <div class="finest-contact-form-description finest-fluentform-description">
+                        <div class="quiktheme-contact-form-description quiktheme-fluentform-description">
                             <?php echo $this->parse_text_editor( $settings['form_description_custom'] ); ?>
                         </div>
                     <?php } ?>
@@ -2028,4 +2028,4 @@ class Finest_Fluent_Form extends Widget_Base {
 	
 
 }
-$widgets_manager->register_widget_type( new \Finest_Addons\Widgets\Finest_Fluent_Form() );
+$widgets_manager->register_widget_type( new \Quik_Theme_Addons\Widgets\Quik_Theme_Fluent_Form() );

@@ -1,5 +1,6 @@
 <?php
-namespace Finest\Widgets\Elementor;
+namespace Quiktheme\Widgets\Elementor;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -13,7 +14,7 @@ use \Elementor\Icons_Manager;
  *
  * @since 1.0.0
  */
-class Finest_Back_To_Top extends Widget_Base {
+class Quik_Theme_Back_To_Top extends Widget_Base {
 	/**
 	 * Get widget name.
 	 *
@@ -25,7 +26,7 @@ class Finest_Back_To_Top extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'finest-back-to-top';
+		return 'quiktheme-back-to-top';
 	}
 	/**
 	 * Get widget title.
@@ -38,7 +39,7 @@ class Finest_Back_To_Top extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Finest Back To Top', 'finest-addons' );
+		return __( 'Quiktheme Back To Top', 'quiktheme-addons' );
 	}
 	/**
 	 * Get widget icon.
@@ -66,7 +67,7 @@ class Finest_Back_To_Top extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'finest-addons' ];
+		return [ 'quiktheme-addons' ];
 	}
 	/**
 	 * Get widget keywords.
@@ -93,13 +94,13 @@ class Finest_Back_To_Top extends Widget_Base {
 		$this->start_controls_section(
 			'section_icon',
 			[
-				'label' => __( 'Icon', 'finest-addons' ),
+				'label' => __( 'Icon', 'quiktheme-addons' ),
 			]
 		);
 		$this->add_control(
 			'selected_icon',
 			[
-				'label' => __( 'Icon', 'finest-addons' ),
+				'label' => __( 'Icon', 'quiktheme-addons' ),
 				'type' => Controls_Manager::ICONS,
 				'fa4compatibility' => 'icon',
 				'default' => [
@@ -111,11 +112,11 @@ class Finest_Back_To_Top extends Widget_Base {
 		$this->add_control(
 			'shape',
 			[
-				'label' => __( 'Shape', 'finest-addons' ),
+				'label' => __( 'Shape', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'circle' => __( 'Circle', 'finest-addons' ),
-					'square' => __( 'Square', 'finest-addons' ),
+					'circle' => __( 'Circle', 'quiktheme-addons' ),
+					'square' => __( 'Square', 'quiktheme-addons' ),
 				],
 				'default' => 'circle',
 				'condition' => [
@@ -127,19 +128,19 @@ class Finest_Back_To_Top extends Widget_Base {
 		$this->add_responsive_control(
 			'align',
 			[
-				'label' => __( 'Alignment', 'finest-addons' ),
+				'label' => __( 'Alignment', 'quiktheme-addons' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'finest-addons' ),
+						'title' => __( 'Left', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'finest-addons' ),
+						'title' => __( 'Center', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'finest-addons' ),
+						'title' => __( 'Right', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -153,7 +154,7 @@ class Finest_Back_To_Top extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_icon',
 			[
-				'label' => __( 'Icon', 'finest-addons' ),
+				'label' => __( 'Icon', 'quiktheme-addons' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -161,13 +162,13 @@ class Finest_Back_To_Top extends Widget_Base {
 		$this->start_controls_tab(
 			'icon_colors_normal',
 			[
-				'label' => __( 'Normal', 'finest-addons' ),
+				'label' => __( 'Normal', 'quiktheme-addons' ),
 			]
 		);
 		$this->add_control(
 			'icon_color',
 			[
-				'label' => __( 'Icon Color', 'finest-addons' ),
+				'label' => __( 'Icon Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -180,11 +181,11 @@ class Finest_Back_To_Top extends Widget_Base {
 		$this->add_control(
 			'background_color',
 			[
-				'label' => __( 'Background Color', 'finest-addons' ),
+				'label' => __( 'Background Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon.finest-addons-icon' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-icon.quiktheme-addons-icon' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -192,13 +193,13 @@ class Finest_Back_To_Top extends Widget_Base {
 		$this->start_controls_tab(
 			'icon_colors_hover',
 			[
-				'label' => __( 'Hover', 'finest-addons' ),
+				'label' => __( 'Hover', 'quiktheme-addons' ),
 			]
 		);
 		$this->add_control(
 			'icon_color_hover',
 			[
-				'label' => __( 'Icon Color', 'finest-addons' ),
+				'label' => __( 'Icon Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -209,7 +210,7 @@ class Finest_Back_To_Top extends Widget_Base {
 		$this->add_control(
 			'background_color_hover',
 			[
-				'label' => __( 'Background Color', 'finest-addons' ),
+				'label' => __( 'Background Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'condition' => [
@@ -223,7 +224,7 @@ class Finest_Back_To_Top extends Widget_Base {
 		$this->add_control(
 			'hover_animation',
 			[
-				'label' => __( 'Hover Animation', 'finest-addons' ),
+				'label' => __( 'Hover Animation', 'quiktheme-addons' ),
 				'type' => Controls_Manager::HOVER_ANIMATION,
 			]
 		);
@@ -232,7 +233,7 @@ class Finest_Back_To_Top extends Widget_Base {
 		$this->add_responsive_control(
 			'size',
 			[
-				'label' => __( 'Size', 'finest-addons' ),
+				'label' => __( 'Size', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -249,7 +250,7 @@ class Finest_Back_To_Top extends Widget_Base {
 		$this->add_control(
 			'icon_box_width',
 			[
-				'label' => __( 'Icon Box Width', 'finest-addons' ),
+				'label' => __( 'Icon Box Width', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-icon' => 'width: {{SIZE}}{{UNIT}};',
@@ -265,7 +266,7 @@ class Finest_Back_To_Top extends Widget_Base {
 		$this->add_control(
 			'icon_box_height',
 			[
-				'label' => __( 'Icon Box Height', 'finest-addons' ),
+				'label' => __( 'Icon Box Height', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-icon' => 'height: {{SIZE}}{{UNIT}};',
@@ -281,7 +282,7 @@ class Finest_Back_To_Top extends Widget_Base {
         $this->add_responsive_control(
             'icon_x_position',
             [
-                'label' => __('Icon Y Position', 'finest-addons'),
+                'label' => __('Icon Y Position', 'quiktheme-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -303,7 +304,7 @@ class Finest_Back_To_Top extends Widget_Base {
         $this->add_responsive_control(
             'icon_y_position',
             [
-                'label' => __('Icon X Position', 'finest-addons'),
+                'label' => __('Icon X Position', 'quiktheme-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -326,7 +327,7 @@ class Finest_Back_To_Top extends Widget_Base {
 		$this->add_responsive_control(
 			'rotate',
 			[
-				'label' => __( 'Rotate', 'finest-addons' ),
+				'label' => __( 'Rotate', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'deg' ],
 				'default' => [
@@ -347,7 +348,7 @@ class Finest_Back_To_Top extends Widget_Base {
 		$this->add_control(
 			'border_width',
 			[
-				'label' => __( 'Border Width', 'finest-addons' ),
+				'label' => __( 'Border Width', 'quiktheme-addons' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-icon' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -361,14 +362,14 @@ class Finest_Back_To_Top extends Widget_Base {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name' => 'icon_border',
-				'label' => __( 'Border', 'finest-addons' ),
+				'label' => __( 'Border', 'quiktheme-addons' ),
 				'selector' => '{{WRAPPER}} .elementor-icon',
 			]
 		);
 		$this->add_control(
 			'border_radius',
 			[
-				'label' => __( 'Border Radius', 'finest-addons' ),
+				'label' => __( 'Border Radius', 'quiktheme-addons' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -388,8 +389,8 @@ class Finest_Back_To_Top extends Widget_Base {
 	 */
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-		$this->add_render_attribute( 'wrapper','class', 'elementor-icon-wrapper finest-addons-back-to-top-wraper');
-		$this->add_render_attribute( 'icon-wrapper', 'class', 'elementor-icon finest-addons-icon' );
+		$this->add_render_attribute( 'wrapper','class', 'elementor-icon-wrapper quiktheme-addons-back-to-top-wraper');
+		$this->add_render_attribute( 'icon-wrapper', 'class', 'elementor-icon quiktheme-addons-icon' );
 		if ( ! empty( $settings['hover_animation'] ) ) {
 			$this->add_render_attribute( 'icon-wrapper', 'class', 'elementor-animation-' . $settings['hover_animation'] );
 		}
@@ -417,4 +418,4 @@ class Finest_Back_To_Top extends Widget_Base {
 		<?php
 	}
 }
-$widgets_manager->register_widget_type( new \Finest\Widgets\Elementor\Finest_Back_To_Top() );
+$widgets_manager->register_widget_type( new \Quiktheme\Widgets\Elementor\Quik_Theme_Back_To_Top() );

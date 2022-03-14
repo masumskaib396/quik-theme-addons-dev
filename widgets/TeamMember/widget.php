@@ -1,5 +1,5 @@
 <?php
-namespace Finest_Addons\Widgets;
+namespace Quik_Theme_Addons\Widgets;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // If this file is called directly, abort.
 
@@ -16,14 +16,14 @@ use \Elementor\Group_Control_Css_Filter;
 use \Elementor\Utils;
 use \Elementor\Widget_Base;
 
-class Finest_Team_Member extends Widget_Base {
+class Quik_Theme_Team_Member extends Widget_Base {
 
 	public function get_name() {
-		return 'finest-team-member';
+		return 'quiktheme-team-member';
 	}
 
 	public function get_title() {
-		return esc_html__( 'Team Member', 'finest-addons' );
+		return esc_html__( 'Team Member', 'quiktheme-addons' );
 	}
 
 	public function get_icon() {
@@ -31,11 +31,11 @@ class Finest_Team_Member extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'finest-addons' ];
+		return [ 'quiktheme-addons' ];
 	}
 
 	public function get_keywords() {
-        return [ 'finest', 'employee', 'staff', 'team', 'member' ];
+        return [ 'quik-theme-addons', 'employee', 'staff', 'team', 'member' ];
     }
 
 	protected function register_controls() {
@@ -44,16 +44,16 @@ class Finest_Team_Member extends Widget_Base {
 		* Team Member Content Section
 		*/
 		$this->start_controls_section(
-			'finest_team_content',
+			'quik_theme_team_content',
 			[
-				'label' => esc_html__( 'Content', 'finest-addons' )
+				'label' => esc_html__( 'Content', 'quiktheme-addons' )
 			]
 		);
 
 		$this->add_control(
-			'finest_team_member_image',
+			'quik_theme_team_member_image',
 			[
-				'label'   => __( 'Image', 'finest-addons' ),
+				'label'   => __( 'Image', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => Utils::get_placeholder_image_src()
@@ -69,39 +69,39 @@ class Finest_Team_Member extends Widget_Base {
 				'name'      => 'team_member_image_size',
 				'default'   => 'medium_large',
 				'condition' => [
-					'finest_team_member_image[url]!' => ''
+					'quik_theme_team_member_image[url]!' => ''
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_team_member_mask_shape_position',
+			'quik_theme_team_member_mask_shape_position',
 			[
-				'label'       => __( 'Position', 'finest-addons' ),
+				'label'       => __( 'Position', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::SELECT,
 				'default'     => 'center',
 				'label_block' => true,
 				'options'     => [
-					'top'     => __( 'Top', 'finest-addons' ),
-					'center'  => __( 'Center', 'finest-addons' ),
-					'left'    => __( 'Left', 'finest-addons' ),
-					'right'   => __( 'Right', 'finest-addons' ),
-					'bottom'  => __( 'Bottom', 'finest-addons' ),
-					'custom'  => __( 'Custom', 'finest-addons' )
+					'top'     => __( 'Top', 'quiktheme-addons' ),
+					'center'  => __( 'Center', 'quiktheme-addons' ),
+					'left'    => __( 'Left', 'quiktheme-addons' ),
+					'right'   => __( 'Right', 'quiktheme-addons' ),
+					'bottom'  => __( 'Bottom', 'quiktheme-addons' ),
+					'custom'  => __( 'Custom', 'quiktheme-addons' )
                 ],
                 'selectors'   => [
-					'{{WRAPPER}} .finest-team-member-thumb img' => '-webkit-mask-position: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-team-member-thumb img' => '-webkit-mask-position: {{VALUE}};'
 				],
 				'condition' 		   => [
-					'finest_team_member_enable_image_mask' => 'yes'
+					'quik_theme_team_member_enable_image_mask' => 'yes'
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_team_member_mask_shape_position_x_offset',
+			'quik_theme_team_member_mask_shape_position_x_offset',
 			[
-				'label'       => __( 'X Offset', 'finest-addons' ),
+				'label'       => __( 'X Offset', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::SLIDER,
 				'size_units'  => [ 'px', '%' ],
 				'range'       => [
@@ -115,19 +115,19 @@ class Finest_Team_Member extends Widget_Base {
 					]
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .finest-team-member-thumb img' => '-webkit-mask-position-y: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-team-member-thumb img' => '-webkit-mask-position-y: {{SIZE}}{{UNIT}};'
                 ],
                 'condition'   => [
-					'finest_team_member_enable_image_mask' => 'yes',
-                    'finest_team_member_mask_shape_position' => 'custom'
+					'quik_theme_team_member_enable_image_mask' => 'yes',
+                    'quik_theme_team_member_mask_shape_position' => 'custom'
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_team_member_mask_shape_position_y_offset',
+			'quik_theme_team_member_mask_shape_position_y_offset',
 			[
-				'label'       => __( 'Y Offset', 'finest-addons' ),
+				'label'       => __( 'Y Offset', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::SLIDER,
 				'size_units'  => [ 'px', '%' ],
 				'range'       => [
@@ -141,41 +141,41 @@ class Finest_Team_Member extends Widget_Base {
 					]
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .finest-team-member-thumb img' => '-webkit-mask-position-x: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-team-member-thumb img' => '-webkit-mask-position-x: {{SIZE}}{{UNIT}};'
                 ],
                 'condition'   => [
-					'finest_team_member_enable_image_mask' => 'yes',
-                    'finest_team_member_mask_shape_position' => 'custom'
+					'quik_theme_team_member_enable_image_mask' => 'yes',
+                    'quik_theme_team_member_mask_shape_position' => 'custom'
 				]
 			]
 		);
 
         $this->add_control(
-			'finest_team_member_mask_shape_size',
+			'quik_theme_team_member_mask_shape_size',
 			[
-				'label'       => __( 'Size', 'finest-addons' ),
+				'label'       => __( 'Size', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::SELECT,
 				'default'     => 'auto',
 				'label_block' => true,
 				'options'     => [
-					'auto'    => __( 'Auto', 'finest-addons' ),
-					'contain' => __( 'Contain', 'finest-addons' ),
-					'cover'   => __( 'Cover', 'finest-addons' ),
-					'custom'  => __( 'Custom', 'finest-addons' )
+					'auto'    => __( 'Auto', 'quiktheme-addons' ),
+					'contain' => __( 'Contain', 'quiktheme-addons' ),
+					'cover'   => __( 'Cover', 'quiktheme-addons' ),
+					'custom'  => __( 'Custom', 'quiktheme-addons' )
                 ],
                 'selectors'   => [
-					'{{WRAPPER}} .finest-team-member-thumb img' => '-webkit-mask-size: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-team-member-thumb img' => '-webkit-mask-size: {{VALUE}};'
 				],
 				'condition' 		   => [
-					'finest_team_member_enable_image_mask' => 'yes'
+					'quik_theme_team_member_enable_image_mask' => 'yes'
 				]
 			]
         );
 
         $this->add_control(
-			'finest_team_member_mask_shape_custome_size',
+			'quik_theme_team_member_mask_shape_custome_size',
 			[
-				'label'       => __( 'Mask Size', 'finest-addons' ),
+				'label'       => __( 'Mask Size', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::SLIDER,
 				'size_units'  => [ 'px', '%' ],
 				'range'       => [
@@ -189,42 +189,42 @@ class Finest_Team_Member extends Widget_Base {
 					]
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .finest-team-member-thumb img' => '-webkit-mask-size: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-team-member-thumb img' => '-webkit-mask-size: {{SIZE}}{{UNIT}};'
                 ],
                 'condition'   => [
-					'finest_team_member_enable_image_mask' => 'yes',
-                    'finest_team_member_mask_shape_size' => 'custom'
+					'quik_theme_team_member_enable_image_mask' => 'yes',
+                    'quik_theme_team_member_mask_shape_size' => 'custom'
 				]
 			]
 		);
 
         $this->add_control(
-			'finest_team_member_mask_shape_repeat',
+			'quik_theme_team_member_mask_shape_repeat',
 			[
-				'label'         => __( 'Repeat', 'finest-addons' ),
+				'label'         => __( 'Repeat', 'quiktheme-addons' ),
 				'type'          => Controls_Manager::SELECT,
 				'default'       => 'no-repeat',
 				'label_block'   => true,
 				'options'       => [
-					'no-repeat' => __( 'No repeat', 'finest-addons' ),
-					'repeat'    => __( 'Repeat', 'finest-addons' )
+					'no-repeat' => __( 'No repeat', 'quiktheme-addons' ),
+					'repeat'    => __( 'Repeat', 'quiktheme-addons' )
                 ],
                 'selectors'     => [
-					'{{WRAPPER}} .finest-team-member-thumb img' => '-webkit-mask-repeat: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-team-member-thumb img' => '-webkit-mask-repeat: {{VALUE}};'
 				],
 				'condition' 	=> [
-					'finest_team_member_enable_image_mask' => 'yes'
+					'quik_theme_team_member_enable_image_mask' => 'yes'
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_team_member_name',
+			'quik_theme_team_member_name',
 			[
-				'label'       => esc_html__( 'Name', 'finest-addons' ),
+				'label'       => esc_html__( 'Name', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default'     => esc_html__( 'John Doe', 'finest-addons' ),
+				'default'     => esc_html__( 'John Doe', 'quiktheme-addons' ),
 				'dynamic' => [
 					'active' => true,
 				]
@@ -232,12 +232,12 @@ class Finest_Team_Member extends Widget_Base {
 		);
 
 		$this->add_control(
-			'finest_team_member_designation',
+			'quik_theme_team_member_designation',
 			[
-				'label'       => esc_html__( 'Designation', 'finest-addons' ),
+				'label'       => esc_html__( 'Designation', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default'     => esc_html__( 'Designation', 'finest-addons' ),
+				'default'     => esc_html__( 'Designation', 'quiktheme-addons' ),
 				'dynamic' => [
 					'active' => true,
 				]
@@ -245,11 +245,11 @@ class Finest_Team_Member extends Widget_Base {
 		);
 
 		$this->add_control(
-			'finest_team_member_description',
+			'quik_theme_team_member_description',
 			[
-				'label'   => esc_html__( 'Description', 'finest-addons' ),
+				'label'   => esc_html__( 'Description', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::TEXTAREA,
-				'default' => esc_html__( 'Put team member details here. Click here to edit it from the inline editor.', 'finest-addons' ),
+				'default' => esc_html__( 'Put team member details here. Click here to edit it from the inline editor.', 'quiktheme-addons' ),
 				'dynamic' => [
 					'active' => true,
 				]
@@ -257,26 +257,26 @@ class Finest_Team_Member extends Widget_Base {
 		);
 
 		$this->add_control(
-			'finest_section_team_members_cta_btn',
+			'quik_theme_section_team_members_cta_btn',
 			[
-				'label'        => __( 'Call To Action', 'finest-addons' ),
+				'label'        => __( 'Call To Action', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'ON', 'finest-addons' ),
-				'label_off'    => __( 'OFF', 'finest-addons' ),
+				'label_on'     => __( 'ON', 'quiktheme-addons' ),
+				'label_off'    => __( 'OFF', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 				'default'      => 'no'
 			]
 		);
 
 		$this->add_control(
-			'finest_team_members_cta_btn_text',
+			'quik_theme_team_members_cta_btn_text',
 			[
-				'label'       => esc_html__( 'Text', 'finest-addons' ),
+				'label'       => esc_html__( 'Text', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default'     => esc_html__( 'Read More', 'finest-addons' ),
+				'default'     => esc_html__( 'Read More', 'quiktheme-addons' ),
 				'condition'   => [
-					'finest_section_team_members_cta_btn' => 'yes'
+					'quik_theme_section_team_members_cta_btn' => 'yes'
 				],
 				'dynamic' => [
 					'active' => true,
@@ -285,9 +285,9 @@ class Finest_Team_Member extends Widget_Base {
 		);
 
 		$this->add_control(
-			'finest_team_members_cta_btn_link',
+			'quik_theme_team_members_cta_btn_link',
 			[
-				'label'       => esc_html__( 'Link', 'finest-addons' ),
+				'label'       => esc_html__( 'Link', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::URL,
 				'label_block' => true,
 				'default'     => [
@@ -296,7 +296,7 @@ class Finest_Team_Member extends Widget_Base {
      			],
 				'show_external' => true,
 				'condition' => [
-					'finest_section_team_members_cta_btn' => 'yes'
+					'quik_theme_section_team_members_cta_btn' => 'yes'
 				]
 			]
 		);
@@ -308,15 +308,15 @@ class Finest_Team_Member extends Widget_Base {
 		*/
 
 		$this->start_controls_section(
-			'finest_section_team_member_social_profiles',
+			'quik_theme_section_team_member_social_profiles',
 			[
-				'label' => esc_html__( 'Social Profiles', 'finest-addons' )
+				'label' => esc_html__( 'Social Profiles', 'quiktheme-addons' )
 			]
 		);
 		$this->add_control(
-			'finest_team_member_enable_social_profiles',
+			'quik_theme_team_member_enable_social_profiles',
 			[
-				'label'   => esc_html__( 'Display Social Profiles?', 'finest-addons' ),
+				'label'   => esc_html__( 'Display Social Profiles?', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::SWITCHER,
 				'default' => 'yes'
 			]
@@ -327,7 +327,7 @@ class Finest_Team_Member extends Widget_Base {
 		$repeater->add_control(
 			'social_icon',
 			[
-				'label'            => __( 'Icon', 'finest-addons' ),
+				'label'            => __( 'Icon', 'quiktheme-addons' ),
 				'type'             => Controls_Manager::ICONS,
 				'label_block'      => true,
 				'default'          => [
@@ -403,7 +403,7 @@ class Finest_Team_Member extends Widget_Base {
 		$repeater->add_control(
 			'link',
 			[
-				'label'       => __( 'Link', 'finest-addons' ),
+				'label'       => __( 'Link', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::URL,
 				'label_block' => true,
 				'default'     => [
@@ -413,18 +413,18 @@ class Finest_Team_Member extends Widget_Base {
 				'dynamic'     => [
 					'active'  => true
 				],
-				'placeholder' => __( 'https://your-link.com', 'finest-addons' )
+				'placeholder' => __( 'https://your-link.com', 'quiktheme-addons' )
 			]
 		);
 
 		$this->add_control(
-			'finest_team_member_social_profile_links',
+			'quik_theme_team_member_social_profile_links',
 			[
-				'label'       => __( 'Social Icons', 'finest-addons' ),
+				'label'       => __( 'Social Icons', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::REPEATER,
 				'fields'      => $repeater->get_controls(),
 				'condition'   => [
-					'finest_team_member_enable_social_profiles!' => ''
+					'quik_theme_team_member_enable_social_profiles!' => ''
 				],
 				'default'     => [
 					[
@@ -468,9 +468,9 @@ class Finest_Team_Member extends Widget_Base {
 		* Team Members Container Style
 		*/
 		$this->start_controls_section(
-			'finest_section_team_members_styles_preset',
+			'quik_theme_section_team_members_styles_preset',
 			[
-				'label' => esc_html__( 'Container', 'finest-addons' ),
+				'label' => esc_html__( 'Container', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE
 			]
 		);
@@ -478,16 +478,16 @@ class Finest_Team_Member extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
-				'name'     => 'finest_team_members_bg',
+				'name'     => 'quik_theme_team_members_bg',
 				'types'    => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .finest-team-member'
+				'selector' => '{{WRAPPER}} .quiktheme-team-member'
 			]
 		);
 
 		// $this->add_control(
-		// 	'finest_team_members_glass_effect',
+		// 	'quik_theme_team_members_glass_effect',
 		// 	[
-		// 		'label' => __( 'Blur Size', 'finest-addons' ),
+		// 		'label' => __( 'Blur Size', 'quiktheme-addons' ),
 		// 		'type' => Controls_Manager::SLIDER,
 		// 		'size_units' => [ 'px' ],
 		// 		'range' => [
@@ -498,7 +498,7 @@ class Finest_Team_Member extends Widget_Base {
 		// 			],
 		// 		],
 		// 		'selectors' => [
-		// 			'{{WRAPPER}} .finest-team-member' => 'backdrop-filter: blur({{SIZE}}{{UNIT}});',
+		// 			'{{WRAPPER}} .quiktheme-team-member' => 'backdrop-filter: blur({{SIZE}}{{UNIT}});',
 		// 		],
 		// 	]
 		// );
@@ -506,15 +506,15 @@ class Finest_Team_Member extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
-				'name'     => 'finest_team_members_border',
-				'selector' => '{{WRAPPER}} .finest-team-member'
+				'name'     => 'quik_theme_team_members_border',
+				'selector' => '{{WRAPPER}} .quiktheme-team-member'
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_team_members_radius',
+			'quik_theme_team_members_radius',
 			[
-				'label'      => __( 'Border radius', 'finest-addons' ),
+				'label'      => __( 'Border radius', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -524,15 +524,15 @@ class Finest_Team_Member extends Widget_Base {
 					'left'   => '0'
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-team-member' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-team-member' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_team_members_padding',
+			'quik_theme_team_members_padding',
 			[
-				'label'      => __( 'Padding', 'finest-addons' ),
+				'label'      => __( 'Padding', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -542,15 +542,15 @@ class Finest_Team_Member extends Widget_Base {
 					'left'   => '0'
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-team-member' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-team-member' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_team_members_margin',
+			'quik_theme_team_members_margin',
 			[
-				'label'      => __( 'Margin', 'finest-addons' ),
+				'label'      => __( 'Margin', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -560,7 +560,7 @@ class Finest_Team_Member extends Widget_Base {
 					'left'   => '0'
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-team-member' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-team-member' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -568,8 +568,8 @@ class Finest_Team_Member extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
-				'name'     => 'finest_team_members_box_shadow',
-				'selector' => '{{WRAPPER}} .finest-team-member',
+				'name'     => 'quik_theme_team_members_box_shadow',
+				'selector' => '{{WRAPPER}} .quiktheme-team-member',
 				'fields_options'         => [
 		            'box_shadow_type'    => [
 		                'default'        =>'yes'
@@ -594,31 +594,31 @@ class Finest_Team_Member extends Widget_Base {
 		 */
 
 		$this->start_controls_section(
-			'finest_section_team_members_image_style',
+			'quik_theme_section_team_members_image_style',
 			[
-				'label' => esc_html__( 'Image', 'finest-addons' ),
+				'label' => esc_html__( 'Image', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE
 			]
 		);
 
 		$this->add_control(
-            'finest_team_membe_image_position',
+            'quik_theme_team_membe_image_position',
             [
-                'label'         => esc_html__( 'Image Position', 'finest-addons' ),
+                'label'         => esc_html__( 'Image Position', 'quiktheme-addons' ),
                 'type'          => Controls_Manager::CHOOSE,
                 'toggle'        => false,
-                'default'       => 'finest-position-top',
+                'default'       => 'quiktheme-position-top',
                 'options'       => [
-                    'finest-position-left'  => [
-                        'title' => esc_html__( 'Left', 'finest-addons' ),
+                    'quiktheme-position-left'  => [
+                        'title' => esc_html__( 'Left', 'quiktheme-addons' ),
                         'icon'  => 'eicon-arrow-left'
                     ],
-                    'finest-position-top'   => [
-                        'title' => esc_html__( 'Top', 'finest-addons' ),
+                    'quiktheme-position-top'   => [
+                        'title' => esc_html__( 'Top', 'quiktheme-addons' ),
                         'icon'  => 'eicon-arrow-up'
                     ],
-                    'finest-position-right' => [
-                        'title' => esc_html__( 'Right', 'finest-addons' ),
+                    'quiktheme-position-right' => [
+                        'title' => esc_html__( 'Right', 'quiktheme-addons' ),
                         'icon'  => 'eicon-arrow-right'
                     ]
                 ]
@@ -626,21 +626,21 @@ class Finest_Team_Member extends Widget_Base {
         );
 
 		$this->add_control(
-			'finest_section_team_members_thumbnail_box',
+			'quik_theme_section_team_members_thumbnail_box',
 			[
-				'label'        => __( 'Image Box', 'finest-addons' ),
+				'label'        => __( 'Image Box', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'finest-addons' ),
-				'label_off'    => __( 'Hide', 'finest-addons' ),
+				'label_on'     => __( 'Show', 'quiktheme-addons' ),
+				'label_off'    => __( 'Hide', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 				'default'      => 'no'
 			]
 		);
 
 		$this->add_responsive_control(
-            'finest_section_team_members_thumbnail_box_height',
+            'quik_theme_section_team_members_thumbnail_box_height',
             [
-                'label'      => __( 'Height', 'finest-addons' ),
+                'label'      => __( 'Height', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'default'    => [
@@ -660,18 +660,18 @@ class Finest_Team_Member extends Widget_Base {
                     ]
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-team-member-thumb'=> 'height: {{SIZE}}{{UNIT}};'
+                    '{{WRAPPER}} .quiktheme-team-member-thumb'=> 'height: {{SIZE}}{{UNIT}};'
                 ],
                 'condition'  => [
-                    'finest_section_team_members_thumbnail_box' => 'yes'
+                    'quik_theme_section_team_members_thumbnail_box' => 'yes'
                 ]
             ]
         );
 
         $this->add_responsive_control(
-            'finest_section_team_members_thumbnail_box_width',
+            'quik_theme_section_team_members_thumbnail_box_width',
             [
-                'label'      => __( 'Width', 'finest-addons' ),
+                'label'      => __( 'Width', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'default'    => [
@@ -691,10 +691,10 @@ class Finest_Team_Member extends Widget_Base {
                     ]
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-team-member-thumb'=> 'width: {{SIZE}}{{UNIT}};'
+                    '{{WRAPPER}} .quiktheme-team-member-thumb'=> 'width: {{SIZE}}{{UNIT}};'
                 ],
                 'condition'  => [
-                    'finest_section_team_members_thumbnail_box' => 'yes'
+                    'quik_theme_section_team_members_thumbnail_box' => 'yes'
                 ]
             ]
         );
@@ -702,18 +702,18 @@ class Finest_Team_Member extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
-				'name'      => 'finest_section_team_members_thumbnail_box_border',
-				'selector'  => '{{WRAPPER}} .finest-team-member-thumb',
+				'name'      => 'quik_theme_section_team_members_thumbnail_box_border',
+				'selector'  => '{{WRAPPER}} .quiktheme-team-member-thumb',
 				'condition' => [
-					'finest_section_team_members_thumbnail_box' => 'yes'
+					'quik_theme_section_team_members_thumbnail_box' => 'yes'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_section_team_members_thumbnail_box_radius',
+			'quik_theme_section_team_members_thumbnail_box_radius',
 			[
-				'label'      => __( 'Border radius', 'finest-addons' ),
+				'label'      => __( 'Border radius', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'separator'  => 'after',
@@ -724,16 +724,16 @@ class Finest_Team_Member extends Widget_Base {
 					'left'   => '0'
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-team-member-thumb' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .finest-team-member-thumb img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-team-member-thumb' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-team-member-thumb img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_section_team_members_thumbnail_box_margin_top',
+			'quik_theme_section_team_members_thumbnail_box_margin_top',
 			[
-				'label'      => __( 'Top Spacing', 'finest-addons' ),
+				'label'      => __( 'Top Spacing', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'default'    => [
@@ -753,18 +753,18 @@ class Finest_Team_Member extends Widget_Base {
                     ]
                 ],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-team-member-thumb' => 'margin-top: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-team-member-thumb' => 'margin-top: {{SIZE}}{{UNIT}};'
 				],
 				'condition'  => [
-					'finest_section_team_members_thumbnail_box' => 'yes'
+					'quik_theme_section_team_members_thumbnail_box' => 'yes'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_section_team_members_thumbnail_box_margin_bottom',
+			'quik_theme_section_team_members_thumbnail_box_margin_bottom',
 			[
-				'label'      => __( 'Bottom Spacing', 'finest-addons' ),
+				'label'      => __( 'Bottom Spacing', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'default'    => [
@@ -784,10 +784,10 @@ class Finest_Team_Member extends Widget_Base {
                     ]
                 ],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-team-member-thumb' => 'margin-bottom: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-team-member-thumb' => 'margin-bottom: {{SIZE}}{{UNIT}};'
 				],
 				'condition'  => [
-					'finest_section_team_members_thumbnail_box' => 'yes'
+					'quik_theme_section_team_members_thumbnail_box' => 'yes'
 				]
 			]
 		);
@@ -795,10 +795,10 @@ class Finest_Team_Member extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
-				'name'      => 'finest_section_team_members_thumbnail_box_shadow',
-				'selector'  => '{{WRAPPER}} .finest-team-member-thumb',
+				'name'      => 'quik_theme_section_team_members_thumbnail_box_shadow',
+				'selector'  => '{{WRAPPER}} .quiktheme-team-member-thumb',
 				'condition' => [
-					'finest_section_team_members_thumbnail_box' => 'yes'
+					'quik_theme_section_team_members_thumbnail_box' => 'yes'
 				]
 			]
 		);
@@ -806,8 +806,8 @@ class Finest_Team_Member extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Css_Filter::get_type(),
 			[
-				'name' => 'finest_section_team_members_thumbnail_css_filter',
-				'selector' => '{{WRAPPER}} .finest-team-member-thumb img',
+				'name' => 'quik_theme_section_team_members_thumbnail_css_filter',
+				'selector' => '{{WRAPPER}} .quiktheme-team-member-thumb img',
 			]
 		);
 
@@ -817,50 +817,50 @@ class Finest_Team_Member extends Widget_Base {
 		* Team Members Content Style
 		*/
 		$this->start_controls_section(
-			'finest_section_team_members_content_style',
+			'quik_theme_section_team_members_content_style',
 			[
-				'label' => esc_html__( 'Content', 'finest-addons' ),
+				'label' => esc_html__( 'Content', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE
 			]
 		);
 
 		$this->add_control(
-			'finest_team_member_content_alignment',
+			'quik_theme_team_member_content_alignment',
 			[
-				'label'   => __( 'Alignment', 'finest-addons' ),
+				'label'   => __( 'Alignment', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::CHOOSE,
 				'toggle'  => false,
 				'options' => [
-					'finest-left'   => [
-						'title'   => __( 'Left', 'finest-addons' ),
+					'quiktheme-left'   => [
+						'title'   => __( 'Left', 'quiktheme-addons' ),
 						'icon'    => 'eicon-text-align-left'
 					],
-					'finest-center' => [
-						'title'   => __( 'Center', 'finest-addons' ),
+					'quiktheme-center' => [
+						'title'   => __( 'Center', 'quiktheme-addons' ),
 						'icon'    => 'eicon-text-align-center'
 					],
-					'finest-right'  => [
-						'title'   => __( 'Right', 'finest-addons' ),
+					'quiktheme-right'  => [
+						'title'   => __( 'Right', 'quiktheme-addons' ),
 						'icon'    => 'eicon-text-align-right'
 					]
 				],
-				'default' => 'finest-center'
+				'default' => 'quiktheme-center'
 			]
 		);
 
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
-				'name'     => 'finest_team_members_content_background',
+				'name'     => 'quik_theme_team_members_content_background',
 				'types'    => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .finest-team-member-content'
+				'selector' => '{{WRAPPER}} .quiktheme-team-member-content'
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_section_team_members_content_padding',
+			'quik_theme_section_team_members_content_padding',
 			[
-				'label'      => __( 'Padding', 'finest-addons' ),
+				'label'      => __( 'Padding', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -870,15 +870,15 @@ class Finest_Team_Member extends Widget_Base {
 					'left'   => '30'
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-team-member-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-team-member-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_section_team_members_content_margin',
+			'quik_theme_section_team_members_content_margin',
 			[
-				'label'      => __( 'Margin', 'finest-addons' ),
+				'label'      => __( 'Margin', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -888,15 +888,15 @@ class Finest_Team_Member extends Widget_Base {
 					'left'   => '0'
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-team-member-content' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-team-member-content' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_team_member_content_border_radius',
+			'quik_theme_team_member_content_border_radius',
 			[
-				'label'      => __( 'Border Radius', 'finest-addons' ),
+				'label'      => __( 'Border Radius', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -906,7 +906,7 @@ class Finest_Team_Member extends Widget_Base {
 					'left'   => '0'
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-team-member-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-team-member-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -914,8 +914,8 @@ class Finest_Team_Member extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
-				'name'     => 'finest_section_team_members_content_box_shadow',
-				'selector' => '{{WRAPPER}} .finest-team-member-content'
+				'name'     => 'quik_theme_section_team_members_content_box_shadow',
+				'selector' => '{{WRAPPER}} .quiktheme-team-member-content'
 			]
 		);
 
@@ -927,19 +927,19 @@ class Finest_Team_Member extends Widget_Base {
 		$this->start_controls_section(
             'section_team_carousel_name',
             [
-				'label' => __('Name', 'finest-addons'),
+				'label' => __('Name', 'quiktheme-addons'),
 				'tab'   => Controls_Manager::TAB_STYLE
             ]
         );
 
         $this->add_control(
-            'finest_team_name_color',
+            'quik_theme_team_name_color',
             [
-				'label'     => __('Color', 'finest-addons'),
+				'label'     => __('Color', 'quiktheme-addons'),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#000000',
 				'selectors' => [
-                    '{{WRAPPER}} .finest-team-member-name' => 'color: {{VALUE}};'
+                    '{{WRAPPER}} .quiktheme-team-member-name' => 'color: {{VALUE}};'
                 ]
             ]
         );
@@ -947,15 +947,15 @@ class Finest_Team_Member extends Widget_Base {
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-				'name'     => 'finest_team_name_typography',
-				'selector' => '{{WRAPPER}} .finest-team-member-name'
+				'name'     => 'quik_theme_team_name_typography',
+				'selector' => '{{WRAPPER}} .quiktheme-team-member-name'
             ]
 		);
 
 		$this->add_responsive_control(
-			'finest_team_members_name_margin',
+			'quik_theme_team_members_name_margin',
 			[
-				'label'        => __( 'Margin', 'finest-addons' ),
+				'label'        => __( 'Margin', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::DIMENSIONS,
 				'size_units'   => [ 'px', '%', 'em' ],
 				'default'      => [
@@ -966,7 +966,7 @@ class Finest_Team_Member extends Widget_Base {
 					'isLinked' => false
 				],
 				'selectors'    => [
-					'{{WRAPPER}} .finest-team-member-name' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-team-member-name' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -979,19 +979,19 @@ class Finest_Team_Member extends Widget_Base {
         $this->start_controls_section(
             'section_team_member_designation',
             [
-				'label' => __('Designation', 'finest-addons'),
+				'label' => __('Designation', 'quiktheme-addons'),
 				'tab'   => Controls_Manager::TAB_STYLE
             ]
         );
 
         $this->add_control(
-            'finest_team_designation_color',
+            'quik_theme_team_designation_color',
             [
-				'label'     => __('Color', 'finest-addons'),
+				'label'     => __('Color', 'quiktheme-addons'),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#8a8d91',
 				'selectors' => [
-                    '{{WRAPPER}} .finest-team-member-designation' => 'color: {{VALUE}};'
+                    '{{WRAPPER}} .quiktheme-team-member-designation' => 'color: {{VALUE}};'
                 ]
             ]
         );
@@ -999,15 +999,15 @@ class Finest_Team_Member extends Widget_Base {
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-				'name'     => 'finest_team_designation_typography',
-				'selector' => '{{WRAPPER}} .finest-team-member-designation'
+				'name'     => 'quik_theme_team_designation_typography',
+				'selector' => '{{WRAPPER}} .quiktheme-team-member-designation'
             ]
 		);
 
 		$this->add_responsive_control(
-			'finest_team_members_designation_margin',
+			'quik_theme_team_members_designation_margin',
 			[
-				'label'        => __( 'Margin', 'finest-addons' ),
+				'label'        => __( 'Margin', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::DIMENSIONS,
 				'size_units'   => [ 'px', '%', 'em' ],
 				'default'      => [
@@ -1018,7 +1018,7 @@ class Finest_Team_Member extends Widget_Base {
 					'isLinked' => false
 				],
 				'selectors'    => [
-					'{{WRAPPER}} .finest-team-member-designation' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-team-member-designation' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1032,19 +1032,19 @@ class Finest_Team_Member extends Widget_Base {
         $this->start_controls_section(
             'section_team_carousel_description',
             [
-				'label' => __('Description', 'finest-addons'),
+				'label' => __('Description', 'quiktheme-addons'),
 				'tab'   => Controls_Manager::TAB_STYLE
             ]
         );
 
         $this->add_control(
-            'finest_description_color',
+            'quik_theme_description_color',
             [
-				'label'     => __('Color', 'finest-addons'),
+				'label'     => __('Color', 'quiktheme-addons'),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#8a8d91',
 				'selectors' => [
-                    '{{WRAPPER}} .finest-team-member-about' => 'color: {{VALUE}};'
+                    '{{WRAPPER}} .quiktheme-team-member-about' => 'color: {{VALUE}};'
                 ]
             ]
         );
@@ -1052,8 +1052,8 @@ class Finest_Team_Member extends Widget_Base {
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-				'name'     => 'finest_description_typography',
-				'selector' => '{{WRAPPER}} .finest-team-member-about',
+				'name'     => 'quik_theme_description_typography',
+				'selector' => '{{WRAPPER}} .quiktheme-team-member-about',
 				'fields_options'          => [
 		              'line_height'       => [
 		                'desktop_default' => [
@@ -1066,9 +1066,9 @@ class Finest_Team_Member extends Widget_Base {
 		);
 
 		$this->add_responsive_control(
-			'finest_team_members_description_margin',
+			'quik_theme_team_members_description_margin',
 			[
-				'label'        => __( 'Margin', 'finest-addons' ),
+				'label'        => __( 'Margin', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::DIMENSIONS,
 				'size_units'   => [ 'px', '%', 'em' ],
 				'default'      => [
@@ -1079,7 +1079,7 @@ class Finest_Team_Member extends Widget_Base {
 					'isLinked' => false
 				],
 				'selectors'    => [
-					'{{WRAPPER}} .finest-team-member-about' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-team-member-about' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1090,12 +1090,12 @@ class Finest_Team_Member extends Widget_Base {
 		 * Call to action Style
 		 */
         $this->start_controls_section(
-            'finest_team_member_cta_btn_style',
+            'quik_theme_team_member_cta_btn_style',
             [
-				'label'     => __('Call To Action', 'finest-addons'),
+				'label'     => __('Call To Action', 'quiktheme-addons'),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'finest_section_team_members_cta_btn' => 'yes'
+					'quik_theme_section_team_members_cta_btn' => 'yes'
 				]
             ]
 		);
@@ -1103,15 +1103,15 @@ class Finest_Team_Member extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name'     => 'finest_team_member_cta_btn_typography',
-				'selector' => '{{WRAPPER}} .finest-team-member-cta'
+				'name'     => 'quik_theme_team_member_cta_btn_typography',
+				'selector' => '{{WRAPPER}} .quiktheme-team-member-cta'
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_team_member_cta_btn_margin',
+			'quik_theme_team_member_cta_btn_margin',
 			[
-				'label'        => __( 'Margin', 'finest-addons' ),
+				'label'        => __( 'Margin', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::DIMENSIONS,
 				'size_units'   => [ 'px', '%', 'em' ],
 				'default'      => [
@@ -1122,15 +1122,15 @@ class Finest_Team_Member extends Widget_Base {
 					'isLinked' => false
 				],
 				'selectors'    => [
-					'{{WRAPPER}} .finest-team-member-cta' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-team-member-cta' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_team_member_cta_btn_padding',
+			'quik_theme_team_member_cta_btn_padding',
 			[
-				'label'        => __( 'Padding', 'finest-addons' ),
+				'label'        => __( 'Padding', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::DIMENSIONS,
 				'size_units'   => [ 'px', '%', 'em' ],
 				'default'      => [
@@ -1141,15 +1141,15 @@ class Finest_Team_Member extends Widget_Base {
 					'isLinked' => false
 				],
 				'selectors'    => [
-					'{{WRAPPER}} .finest-team-member-cta' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-team-member-cta' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_team_member_cta_btn_radius',
+			'quik_theme_team_member_cta_btn_radius',
 			[
-				'label'      => __( 'Border Radius', 'finest-addons' ),
+				'label'      => __( 'Border Radius', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -1159,35 +1159,35 @@ class Finest_Team_Member extends Widget_Base {
 					'left'   => '0'
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-team-member-cta' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-team-member-cta' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
-		$this->start_controls_tabs( 'finest_team_member_cta_btn_tabs' );
+		$this->start_controls_tabs( 'quik_theme_team_member_cta_btn_tabs' );
 
-			$this->start_controls_tab( 'finest_team_member_cta_btn_tab_normal', [ 'label' => esc_html__( 'Normal', 'finest-addons' ) ] );
+			$this->start_controls_tab( 'quik_theme_team_member_cta_btn_tab_normal', [ 'label' => esc_html__( 'Normal', 'quiktheme-addons' ) ] );
 
 				$this->add_control(
-					'finest_team_member_cta_btn_text_color_normal',
+					'quik_theme_team_member_cta_btn_text_color_normal',
 					[
-						'label'     => esc_html__( 'Text Color', 'finest-addons' ),
+						'label'     => esc_html__( 'Text Color', 'quiktheme-addons' ),
 						'type'      => Controls_Manager::COLOR,
 						'default'   => '#222222',
 						'selectors' => [
-							'{{WRAPPER}} .finest-team-member-cta' => 'color: {{VALUE}};'
+							'{{WRAPPER}} .quiktheme-team-member-cta' => 'color: {{VALUE}};'
 						]
 					]
 				);
 
 				$this->add_control(
-					'finest_team_member_cta_btn_background_normal',
+					'quik_theme_team_member_cta_btn_background_normal',
 					[
-						'label'     => esc_html__( 'Background Color', 'finest-addons' ),
+						'label'     => esc_html__( 'Background Color', 'quiktheme-addons' ),
 						'type'      => Controls_Manager::COLOR,
 						'default'   => '#d6d6d6',
 						'selectors' => [
-							'{{WRAPPER}} .finest-team-member-cta' => 'background-color: {{VALUE}};'
+							'{{WRAPPER}} .quiktheme-team-member-cta' => 'background-color: {{VALUE}};'
 						]
 					]
 				);
@@ -1195,35 +1195,35 @@ class Finest_Team_Member extends Widget_Base {
 				$this->add_group_control(
 					Group_Control_Border::get_type(),
 					[
-						'name'     => 'finest_team_member_cta_btn_border_normal',
-						'selector' => '{{WRAPPER}} .finest-team-member-cta'
+						'name'     => 'quik_theme_team_member_cta_btn_border_normal',
+						'selector' => '{{WRAPPER}} .quiktheme-team-member-cta'
 					]
 				);
 
 			$this->end_controls_tab();
 
-			$this->start_controls_tab( 'finest_team_member_cta_btn_tab_hover', [ 'label' => esc_html__( 'Hover', 'finest-addons' ) ] );
+			$this->start_controls_tab( 'quik_theme_team_member_cta_btn_tab_hover', [ 'label' => esc_html__( 'Hover', 'quiktheme-addons' ) ] );
 
 				$this->add_control(
-					'finest_team_member_cta_btn_text_color_hover',
+					'quik_theme_team_member_cta_btn_text_color_hover',
 					[
-						'label'     => esc_html__( 'Text Color', 'finest-addons' ),
+						'label'     => esc_html__( 'Text Color', 'quiktheme-addons' ),
 						'type'      => Controls_Manager::COLOR,
 						'default'   => '#d6d6d6',
 						'selectors' => [
-							'{{WRAPPER}} .finest-team-member-cta:hover' => 'color: {{VALUE}};'
+							'{{WRAPPER}} .quiktheme-team-member-cta:hover' => 'color: {{VALUE}};'
 						]
 					]
 				);
 
 				$this->add_control(
-					'finest_team_member_cta_btn_background_hover',
+					'quik_theme_team_member_cta_btn_background_hover',
 					[
-						'label'     => esc_html__( 'Background Color', 'finest-addons' ),
+						'label'     => esc_html__( 'Background Color', 'quiktheme-addons' ),
 						'type'      => Controls_Manager::COLOR,
 						'default'   => '#222222',
 						'selectors' => [
-							'{{WRAPPER}} .finest-team-member-cta:hover' => 'background-color: {{VALUE}};'
+							'{{WRAPPER}} .quiktheme-team-member-cta:hover' => 'background-color: {{VALUE}};'
 						]
 					]
 				);
@@ -1231,8 +1231,8 @@ class Finest_Team_Member extends Widget_Base {
 				$this->add_group_control(
 					Group_Control_Border::get_type(),
 					[
-						'name'     => 'finest_team_member_cta_btn_border_hover',
-						'selector' => '{{WRAPPER}} .finest-team-member-cta:hover'
+						'name'     => 'quik_theme_team_member_cta_btn_border_hover',
+						'selector' => '{{WRAPPER}} .quiktheme-team-member-cta:hover'
 					]
 				);
 
@@ -1246,21 +1246,21 @@ class Finest_Team_Member extends Widget_Base {
 		 * Social icons style
 		 */
         $this->start_controls_section(
-            'finest_team_member_social_section',
+            'quik_theme_team_member_social_section',
             [
-				'label'     => __('Social Icons', 'finest-addons'),
+				'label'     => __('Social Icons', 'quiktheme-addons'),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => [
-					'finest_team_member_enable_social_profiles!' => ''
+					'quik_theme_team_member_enable_social_profiles!' => ''
 				]
             ]
 		);
 
 
 		$this->add_responsive_control(
-			'finest_team_members_social_icon_size',
+			'quik_theme_team_members_social_icon_size',
 			[
-				'label'        => __( 'Size', 'finest-addons' ),
+				'label'        => __( 'Size', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::SLIDER,
 				'size_units'   => [ 'px' ],
 				'range'        => [
@@ -1275,16 +1275,16 @@ class Finest_Team_Member extends Widget_Base {
 					'size'     => 14
 				],
 				'selectors'    => [
-					'{{WRAPPER}} .finest-team-member-social li a i' => 'font-size: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .finest-team-member-social li a svg' => 'height: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-team-member-social li a i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-team-member-social li a svg' => 'height: {{SIZE}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_team_member_social_padding',
+			'quik_theme_team_member_social_padding',
 			[
-				'label'      => __( 'Padding', 'finest-addons' ),
+				'label'      => __( 'Padding', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'separator'  => 'after',
@@ -1295,15 +1295,15 @@ class Finest_Team_Member extends Widget_Base {
 					'left'   => '15'
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-team-member-social li a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-team-member-social li a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_team_members_social_box_radius',
+			'quik_theme_team_members_social_box_radius',
 			[
-				'label'      => __( 'Border radius', 'finest-addons' ),
+				'label'      => __( 'Border radius', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -1313,49 +1313,49 @@ class Finest_Team_Member extends Widget_Base {
 					'left'   => '0'
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-team-member-social li a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-team-member-social li a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_team_member_social_margin',
+			'quik_theme_team_member_social_margin',
 			[
-				'label'      => __( 'Margin', 'finest-addons' ),
+				'label'      => __( 'Margin', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'separator'  => 'after',
 				'selectors'  => [
-					'{{WRAPPER}} .finest-team-member-social li a' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-team-member-social li a' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
-		$this->start_controls_tabs( 'finest_team_members_social_icons_style_tabs' );
+		$this->start_controls_tabs( 'quik_theme_team_members_social_icons_style_tabs' );
 
-			$this->start_controls_tab( 'finest_team_members_social_icon_tab', [ 'label' => esc_html__( 'Normal', 'finest-addons' ) ] );
+			$this->start_controls_tab( 'quik_theme_team_members_social_icon_tab', [ 'label' => esc_html__( 'Normal', 'quiktheme-addons' ) ] );
 
 				$this->add_control(
-					'finest_team_carousel_social_icon_color_normal',
+					'quik_theme_team_carousel_social_icon_color_normal',
 					[
-						'label'     => esc_html__( 'Icon Color', 'finest-addons' ),
+						'label'     => esc_html__( 'Icon Color', 'quiktheme-addons' ),
 						'type'      => Controls_Manager::COLOR,
 						'default'   => '#a4a7aa',
 						'selectors' => [
-							'{{WRAPPER}} .finest-team-member-social li a i' => 'color: {{VALUE}};',
-							'{{WRAPPER}} .finest-team-member-social li a svg path' => 'fill: {{VALUE}};'
+							'{{WRAPPER}} .quiktheme-team-member-social li a i' => 'color: {{VALUE}};',
+							'{{WRAPPER}} .quiktheme-team-member-social li a svg path' => 'fill: {{VALUE}};'
 						]
 					]
 				);
 
 				$this->add_control(
-					'finest_team_carousel_social_bg_color_normal',
+					'quik_theme_team_carousel_social_bg_color_normal',
 					[
-						'label'     => esc_html__( 'Background Color', 'finest-addons' ),
+						'label'     => esc_html__( 'Background Color', 'quiktheme-addons' ),
 						'type'      => Controls_Manager::COLOR,
 						'default'   => '',
 						'selectors' => [
-							'{{WRAPPER}} .finest-team-member-social li a' => 'background-color: {{VALUE}};'
+							'{{WRAPPER}} .quiktheme-team-member-social li a' => 'background-color: {{VALUE}};'
 						]
 					]
 				);
@@ -1363,35 +1363,35 @@ class Finest_Team_Member extends Widget_Base {
 				$this->add_group_control(
 					Group_Control_Border::get_type(),
 					[
-						'name'     => 'finest_team_carousel_social_border_normal',
-						'selector' => '{{WRAPPER}} .finest-team-member-social li a'
+						'name'     => 'quik_theme_team_carousel_social_border_normal',
+						'selector' => '{{WRAPPER}} .quiktheme-team-member-social li a'
 					]
 				);
 
 			$this->end_controls_tab();
 
-			$this->start_controls_tab( 'finest_team_members_social_icon_hover', [ 'label' => esc_html__( 'Hover', 'finest-addons' ) ] );
+			$this->start_controls_tab( 'quik_theme_team_members_social_icon_hover', [ 'label' => esc_html__( 'Hover', 'quiktheme-addons' ) ] );
 
 				$this->add_control(
-					'finest_team_carousel_social_icon_color_hover',
+					'quik_theme_team_carousel_social_icon_color_hover',
 					[
-						'label'     => esc_html__( 'Icon Color', 'finest-addons' ),
+						'label'     => esc_html__( 'Icon Color', 'quiktheme-addons' ),
 						'type'      => Controls_Manager::COLOR,
 						'default'   => '#8a8d91',
 						'selectors' => [
-							'{{WRAPPER}} .finest-team-member-social li a:hover i' => 'color: {{VALUE}};',
-							'{{WRAPPER}} .finest-team-member-social li a:hover svg path' => 'fill: {{VALUE}};'
+							'{{WRAPPER}} .quiktheme-team-member-social li a:hover i' => 'color: {{VALUE}};',
+							'{{WRAPPER}} .quiktheme-team-member-social li a:hover svg path' => 'fill: {{VALUE}};'
 						]
 					]
 				);
 
 				$this->add_control(
-					'finest_team_carousel_social_bg_color_hover',
+					'quik_theme_team_carousel_social_bg_color_hover',
 					[
-						'label'     => esc_html__( 'Background Color', 'finest-addons' ),
+						'label'     => esc_html__( 'Background Color', 'quiktheme-addons' ),
 						'type'      => Controls_Manager::COLOR,
 						'selectors' => [
-							'{{WRAPPER}} .finest-team-member-social li a:hover' => 'background-color: {{VALUE}};'
+							'{{WRAPPER}} .quiktheme-team-member-social li a:hover' => 'background-color: {{VALUE}};'
 						]
 					]
 				);
@@ -1399,8 +1399,8 @@ class Finest_Team_Member extends Widget_Base {
 				$this->add_group_control(
 					Group_Control_Border::get_type(),
 					[
-						'name'     => 'finest_team_carousel_social_border_hover',
-						'selector' => '{{WRAPPER}} .finest-team-member-social li a:hover'
+						'name'     => 'quik_theme_team_carousel_social_border_hover',
+						'selector' => '{{WRAPPER}} .quiktheme-team-member-social li a:hover'
 					]
 				);
 
@@ -1415,38 +1415,38 @@ class Finest_Team_Member extends Widget_Base {
 		*/
 
 		$this->start_controls_section(
-			'finest_section_team_member_animating_mask',
+			'quik_theme_section_team_member_animating_mask',
 			[
-				'label' 	=> esc_html__( 'Animating Mask', 'finest-addons' ),
+				'label' 	=> esc_html__( 'Animating Mask', 'quiktheme-addons' ),
 				'tab'   	=> Controls_Manager::TAB_STYLE,
 			]
 		);
 
 		$this->add_control(
-			'finest_team_member_animating_mask_switcher',
+			'quik_theme_team_member_animating_mask_switcher',
 			[
-				'label' 		=> __( 'Enable Animating Mask', 'finest-addons' ),
+				'label' 		=> __( 'Enable Animating Mask', 'quiktheme-addons' ),
 				'type' 			=> Controls_Manager::SWITCHER,
-				'label_on' 		=> __( 'ON', 'finest-addons' ),
-				'label_off' 	=> __( 'OFF', 'finest-addons' ),
+				'label_on' 		=> __( 'ON', 'quiktheme-addons' ),
+				'label_off' 	=> __( 'OFF', 'quiktheme-addons' ),
 				'return_value' 	=> 'yes',
 				'default' 		=> 'no',
 			]
 		);
 
 		$this->add_control(
-			'finest_team_member_animating_mask_style',
+			'quik_theme_team_member_animating_mask_style',
 			[
-				'label'        => __( 'Animating Mask Style', 'finest-addons' ),
+				'label'        => __( 'Animating Mask Style', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::SELECT,
 				'default'      => 'style_1',
 				'options'      => [
-					'style_1'  => __( 'Style 1', 'finest-addons' ),
-					'style_2'  => __( 'Style 2', 'finest-addons' ),
-					'style_3'  => __( 'Style 3', 'finest-addons' ),
+					'style_1'  => __( 'Style 1', 'quiktheme-addons' ),
+					'style_2'  => __( 'Style 2', 'quiktheme-addons' ),
+					'style_3'  => __( 'Style 3', 'quiktheme-addons' ),
 				],
 				'condition'		=> [
-					'finest_team_member_animating_mask_switcher' => 'yes'
+					'quik_theme_team_member_animating_mask_switcher' => 'yes'
 				]
 			]
 		);
@@ -1458,11 +1458,11 @@ class Finest_Team_Member extends Widget_Base {
 	private function team_member_cta() {
 		$settings = $this->get_settings_for_display();
 
-		$this->add_render_attribute( 'finest_team_members_cta_btn_text', 'class', 'finest-team-cta-button-text' );
-		$this->add_inline_editing_attributes( 'finest_team_members_cta_btn_text', 'none' );
+		$this->add_render_attribute( 'quik_theme_team_members_cta_btn_text', 'class', 'quiktheme-team-cta-button-text' );
+		$this->add_inline_editing_attributes( 'quik_theme_team_members_cta_btn_text', 'none' );
 		?>
-		<span <?php echo $this->get_render_attribute_string( 'finest_team_members_cta_btn_text' ); ?>>
-			<?php echo esc_html( $settings['finest_team_members_cta_btn_text'] );	?>
+		<span <?php echo $this->get_render_attribute_string( 'quik_theme_team_members_cta_btn_text' ); ?>>
+			<?php echo esc_html( $settings['quik_theme_team_members_cta_btn_text'] );	?>
 		</span>
 		<?php
 	}
@@ -1470,75 +1470,75 @@ class Finest_Team_Member extends Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 
-		$this->add_render_attribute( 'finest_team_member_name', 'class', 'finest-team-member-name' );
-		$this->add_inline_editing_attributes( 'finest_team_member_name', 'basic' );
+		$this->add_render_attribute( 'quik_theme_team_member_name', 'class', 'quiktheme-team-member-name' );
+		$this->add_inline_editing_attributes( 'quik_theme_team_member_name', 'basic' );
 
-		$this->add_render_attribute( 'finest_team_member_designation', 'class', 'finest-team-member-designation' );
-		$this->add_inline_editing_attributes( 'finest_team_member_designation', 'basic' );
+		$this->add_render_attribute( 'quik_theme_team_member_designation', 'class', 'quiktheme-team-member-designation' );
+		$this->add_inline_editing_attributes( 'quik_theme_team_member_designation', 'basic' );
 
-		$this->add_render_attribute( 'finest_team_member_description', 'class', 'finest-team-member-about' );
-		$this->add_inline_editing_attributes( 'finest_team_member_description', 'basic' );
+		$this->add_render_attribute( 'quik_theme_team_member_description', 'class', 'quiktheme-team-member-about' );
+		$this->add_inline_editing_attributes( 'quik_theme_team_member_description', 'basic' );
 
-		$this->add_render_attribute( 'finest_team_member_item', [
+		$this->add_render_attribute( 'quik_theme_team_member_item', [
             'class' => [
-                'finest-team-member',
-                esc_attr( $settings['finest_team_member_content_alignment'] ),
-                esc_attr( $settings['finest_team_membe_image_position'] )
+                'quiktheme-team-member',
+                esc_attr( $settings['quik_theme_team_member_content_alignment'] ),
+                esc_attr( $settings['quik_theme_team_membe_image_position'] )
             ]
         ]);
 
-		$this->add_render_attribute( 'finest_team_members_cta_btn_link', 'class', 'finest-team-member-cta' );
-		if( isset( $settings['finest_team_members_cta_btn_link']['url'] ) ) {
-            $this->add_render_attribute( 'finest_team_members_cta_btn_link', 'href', esc_url( $settings['finest_team_members_cta_btn_link']['url'] ) );
-	        if( $settings['finest_team_members_cta_btn_link']['is_external'] ) {
-	            $this->add_render_attribute( 'finest_team_members_cta_btn_link', 'target', '_blank' );
+		$this->add_render_attribute( 'quik_theme_team_members_cta_btn_link', 'class', 'quiktheme-team-member-cta' );
+		if( isset( $settings['quik_theme_team_members_cta_btn_link']['url'] ) ) {
+            $this->add_render_attribute( 'quik_theme_team_members_cta_btn_link', 'href', esc_url( $settings['quik_theme_team_members_cta_btn_link']['url'] ) );
+	        if( $settings['quik_theme_team_members_cta_btn_link']['is_external'] ) {
+	            $this->add_render_attribute( 'quik_theme_team_members_cta_btn_link', 'target', '_blank' );
 	        }
-	        if( $settings['finest_team_members_cta_btn_link']['nofollow'] ) {
-	            $this->add_render_attribute( 'finest_team_members_cta_btn_link', 'rel', 'nofollow' );
+	        if( $settings['quik_theme_team_members_cta_btn_link']['nofollow'] ) {
+	            $this->add_render_attribute( 'quik_theme_team_members_cta_btn_link', 'rel', 'nofollow' );
 	        }
         }
 
 		?>
 
-		<div class="finest-team-item">
-			<div <?php echo $this->get_render_attribute_string( 'finest_team_member_item' ); ?>>
-				<?php do_action('finest_team_member_wrapper_before'); ?>
+		<div class="quiktheme-team-item">
+			<div <?php echo $this->get_render_attribute_string( 'quik_theme_team_member_item' ); ?>>
+				<?php do_action('quik_theme_team_member_wrapper_before'); ?>
 				<?php
-					if ( $settings['finest_team_member_image']['url'] || $settings['finest_team_member_image']['id'] ) { ?>
-						<div class="finest-team-member-thumb<?php echo ( 'yes' === $settings['finest_team_member_animating_mask_switcher'] ) ? ' '.$settings['finest_team_member_animating_mask_style'] : ''; ?>">
-							<?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'team_member_image_size', 'finest_team_member_image' ); ?>
+					if ( $settings['quik_theme_team_member_image']['url'] || $settings['quik_theme_team_member_image']['id'] ) { ?>
+						<div class="quiktheme-team-member-thumb<?php echo ( 'yes' === $settings['quik_theme_team_member_animating_mask_switcher'] ) ? ' '.$settings['quik_theme_team_member_animating_mask_style'] : ''; ?>">
+							<?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'team_member_image_size', 'quik_theme_team_member_image' ); ?>
 						</div>
 					<?php
 					}
 				?>
 
-				<div class="finest-team-member-content">
-					<?php do_action('finest_team_member_content_area_before'); ?>
-					<?php if ( !empty( $settings['finest_team_member_name'] ) ) : ?>
-						<h2 <?php echo $this->get_render_attribute_string( 'finest_team_member_name' ); ?>><?php echo finest_wp_kses( $settings['finest_team_member_name'] ); ?></h2>
+				<div class="quiktheme-team-member-content">
+					<?php do_action('quik_theme_team_member_content_area_before'); ?>
+					<?php if ( !empty( $settings['quik_theme_team_member_name'] ) ) : ?>
+						<h2 <?php echo $this->get_render_attribute_string( 'quik_theme_team_member_name' ); ?>><?php echo quik_theme_wp_kses( $settings['quik_theme_team_member_name'] ); ?></h2>
 					<?php endif; ?>
 
-					<?php if ( !empty( $settings['finest_team_member_designation'] ) ) : ?>
-						<span <?php echo $this->get_render_attribute_string( 'finest_team_member_designation' ); ?>><?php echo finest_wp_kses( $settings['finest_team_member_designation'] ); ?></span>
+					<?php if ( !empty( $settings['quik_theme_team_member_designation'] ) ) : ?>
+						<span <?php echo $this->get_render_attribute_string( 'quik_theme_team_member_designation' ); ?>><?php echo quik_theme_wp_kses( $settings['quik_theme_team_member_designation'] ); ?></span>
 					<?php endif; ?>
 
-					<?php do_action('finest_team_member_description_before'); ?>
-					<?php if ( !empty( $settings['finest_team_member_description'] ) ) : ?>
-						<div <?php echo $this->get_render_attribute_string( 'finest_team_member_description' ); ?>><?php echo wp_kses_post( $settings['finest_team_member_description'] ); ?></div>
+					<?php do_action('quik_theme_team_member_description_before'); ?>
+					<?php if ( !empty( $settings['quik_theme_team_member_description'] ) ) : ?>
+						<div <?php echo $this->get_render_attribute_string( 'quik_theme_team_member_description' ); ?>><?php echo wp_kses_post( $settings['quik_theme_team_member_description'] ); ?></div>
 					<?php endif; ?>
-					<?php do_action('finest_team_member_description_after'); ?>
+					<?php do_action('quik_theme_team_member_description_after'); ?>
 
-					<?php if ( 'yes' === $settings['finest_section_team_members_cta_btn'] && !empty( $settings['finest_team_members_cta_btn_text'] ) ) : ?>
-						<a <?php echo $this->get_render_attribute_string( 'finest_team_members_cta_btn_link' ); ?>>
+					<?php if ( 'yes' === $settings['quik_theme_section_team_members_cta_btn'] && !empty( $settings['quik_theme_team_members_cta_btn_text'] ) ) : ?>
+						<a <?php echo $this->get_render_attribute_string( 'quik_theme_team_members_cta_btn_link' ); ?>>
 							<?php echo $this->team_member_cta(); ?>
 						</a>
 					<?php
 					endif;
 
-					if ( 'yes' === $settings['finest_team_member_enable_social_profiles'] ) : ?>
-						<ul class="list-inline finest-team-member-social">
+					if ( 'yes' === $settings['quik_theme_team_member_enable_social_profiles'] ) : ?>
+						<ul class="list-inline quiktheme-team-member-social">
 							<?php
-							foreach ( $settings['finest_team_member_social_profile_links'] as $index => $item ) :
+							foreach ( $settings['quik_theme_team_member_social_profile_links'] as $index => $item ) :
 								$social   = '';
 								$link_key = 'link_' . $index;
 
@@ -1565,7 +1565,7 @@ class Finest_Team_Member extends Widget_Base {
 								}
 
 								$this->add_render_attribute( $link_key, 'class', [
-									'finest-social-icon',
+									'quiktheme-social-icon',
 									'elementor-repeater-item-' . $item['_id'],
 								] );
 								?>
@@ -1579,13 +1579,13 @@ class Finest_Team_Member extends Widget_Base {
 					<?php
 					endif;
 
-					do_action('finest_team_member_content_area_after'); ?>
+					do_action('quik_theme_team_member_content_area_after'); ?>
 
 				</div>
-				<?php do_action('finest_team_member_wrapper_after'); ?>
+				<?php do_action('quik_theme_team_member_wrapper_after'); ?>
 			</div>
 		</div>
 		<?php
 	}
 }
-$widgets_manager->register_widget_type( new \Finest_Addons\Widgets\Finest_Team_Member() );
+$widgets_manager->register_widget_type( new \Quik_Theme_Addons\Widgets\Quik_Theme_Team_Member() );

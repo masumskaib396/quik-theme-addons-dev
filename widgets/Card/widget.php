@@ -1,5 +1,5 @@
 <?php
-namespace Finest_Addons\Widgets;
+namespace Quik_Theme_Addons\Widgets;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -16,14 +16,14 @@ use \Elementor\Icons_Manager;
 use \Elementor\Utils;
 use \Elementor\Widget_Base;
 
-class Finest_Card extends Widget_Base {
+class Quik_Theme_Card extends Widget_Base {
 
 	public function get_name() {
-		return 'finest-card';
+		return 'quiktheme-card';
 	}
 
 	public function get_title() {
-		return esc_html__( 'Finest Card', 'finest-addons' );
+		return esc_html__( 'Quiktheme Card', 'quiktheme-addons' );
 	}
 
 	public function get_icon() {
@@ -31,7 +31,7 @@ class Finest_Card extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'finest-addons' ];
+		return [ 'quiktheme-addons' ];
 	}
 
 	public function get_keywords() {
@@ -43,15 +43,15 @@ class Finest_Card extends Widget_Base {
 		$this->start_controls_section(
 			'_section_image',
 			[
-				'label' => esc_html__( 'Image & Badge', 'finest-addons' ),
+				'label' => esc_html__( 'Image & Badge', 'quiktheme-addons' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
 
 		$this->add_control(
-			'finest_card_image',
+			'quik_theme_card_image',
 			[
-				'label'   => __( 'Image', 'finest-addons' ),
+				'label'   => __( 'Image', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => Utils::get_placeholder_image_src()
@@ -68,7 +68,7 @@ class Finest_Card extends Widget_Base {
 				'name'      => 'thumbnail', 
 				'default'   => 'full',
 				'condition' => [
-					'finest_card_image[url]!' => ''
+					'quik_theme_card_image[url]!' => ''
 				]
 			]
 		);
@@ -76,21 +76,21 @@ class Finest_Card extends Widget_Base {
 		$this->add_responsive_control(
 			'image_position',
 			[
-				'label' => __( 'Image Position', 'finest-addons' ),
-				'description' => __( 'You can adjust the image width and height from <mark>Style</mark> tab to get your expected design.', 'finest-addons' ),
+				'label' => __( 'Image Position', 'quiktheme-addons' ),
+				'description' => __( 'You can adjust the image width and height from <mark>Style</mark> tab to get your expected design.', 'quiktheme-addons' ),
 				'type' => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'finest-addons' ),
+						'title' => __( 'Left', 'quiktheme-addons' ),
 						'icon' => 'eicon-h-align-left',
 					],
 					'top' => [
-						'title' => __( 'Top', 'finest-addons' ),
+						'title' => __( 'Top', 'quiktheme-addons' ),
 						'icon' => 'eicon-v-align-top',
 					],
 					'right' => [
-						'title' => __( 'Right', 'finest-addons' ),
+						'title' => __( 'Right', 'quiktheme-addons' ),
 						'icon' => 'eicon-h-align-right',
 					],
 				],
@@ -98,10 +98,10 @@ class Finest_Card extends Widget_Base {
 				'desktop_default' => 'top',
 				'tablet_default' => 'top',
 				'mobile_default' => 'top',
-				'prefix_class' => 'finest-card-%s-',
+				'prefix_class' => 'quiktheme-card-%s-',
 				'style_transfer' => true,
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-wrap' => '{{VALUE}};',
+					'{{WRAPPER}} .quiktheme-card-wrap' => '{{VALUE}};',
 				],
 				'selectors_dictionary' => [
 					'left' => '-webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row;',
@@ -112,27 +112,27 @@ class Finest_Card extends Widget_Base {
 		);
 
 		$this->add_control(
-			'finest_card_badge_switcher',
+			'quik_theme_card_badge_switcher',
 			[
-				'label' => __( 'Enable Badge', 'finest-addons' ),
+				'label' => __( 'Enable Badge', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'finest-addons' ),
-				'label_off' => __( 'Hide', 'finest-addons' ),
+				'label_on' => __( 'Show', 'quiktheme-addons' ),
+				'label_off' => __( 'Hide', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
 		);
 
 		$this->add_control(
-			'finest_badge_text',
+			'quik_theme_badge_text',
 			[
-				'label'       => esc_html__( 'Badge Text', 'finest-addons' ),
+				'label'       => esc_html__( 'Badge Text', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
 				'separator'   => 'before',
-				'default'     => esc_html__( 'Card Badge', 'finest-addons' ),
+				'default'     => esc_html__( 'Card Badge', 'quiktheme-addons' ),
 				'condition'   => [
-					'finest_card_badge_switcher' => 'yes'
+					'quik_theme_card_badge_switcher' => 'yes'
 				],
 				'dynamic' => [
 					'active' => true,
@@ -145,7 +145,7 @@ class Finest_Card extends Widget_Base {
 		$this->start_controls_section(
 			'_section_title',
 			[
-				'label' => __( 'Title & Description', 'finest-addons' ),
+				'label' => __( 'Title & Description', 'quiktheme-addons' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -153,11 +153,11 @@ class Finest_Card extends Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label' => __( 'Title', 'finest-addons' ),
+				'label' => __( 'Title', 'quiktheme-addons' ),
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Card Title', 'finest-addons' ),
-				'placeholder' => __( 'Card Title', 'finest-addons' ),
+				'default' => __( 'Card Title', 'quiktheme-addons' ),
+				'placeholder' => __( 'Card Title', 'quiktheme-addons' ),
 				'dynamic' => [
 					'active' => true,
 				]
@@ -167,31 +167,31 @@ class Finest_Card extends Widget_Base {
 		$this->add_control(
 			'title_tag',
 			[
-				'label' => __( 'Title HTML Tag', 'finest-addons' ),
+				'label' => __( 'Title HTML Tag', 'quiktheme-addons' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'h1'  => [
-						'title' => __( 'H1', 'finest-addons' ),
+						'title' => __( 'H1', 'quiktheme-addons' ),
 						'icon' => 'eicon-editor-h1'
 					],
 					'h2'  => [
-						'title' => __( 'H2', 'finest-addons' ),
+						'title' => __( 'H2', 'quiktheme-addons' ),
 						'icon' => 'eicon-editor-h2'
 					],
 					'h3'  => [
-						'title' => __( 'H3', 'finest-addons' ),
+						'title' => __( 'H3', 'quiktheme-addons' ),
 						'icon' => 'eicon-editor-h3'
 					],
 					'h4'  => [
-						'title' => __( 'H4', 'finest-addons' ),
+						'title' => __( 'H4', 'quiktheme-addons' ),
 						'icon' => 'eicon-editor-h4'
 					],
 					'h5'  => [
-						'title' => __( 'H5', 'finest-addons' ),
+						'title' => __( 'H5', 'quiktheme-addons' ),
 						'icon' => 'eicon-editor-h5'
 					],
 					'h6'  => [
-						'title' => __( 'H6', 'finest-addons' ),
+						'title' => __( 'H6', 'quiktheme-addons' ),
 						'icon' => 'eicon-editor-h6'
 					]
 				],
@@ -200,11 +200,11 @@ class Finest_Card extends Widget_Base {
 			]
 		);
 		$this->add_control(
-			'finest_card_description',
+			'quik_theme_card_description',
 			[
-				'label'   => esc_html__( 'Description', 'finest-addons' ),
+				'label'   => esc_html__( 'Description', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::TEXTAREA,
-				'default' => esc_html__( 'Basic description about the Card', 'finest-addons' ),
+				'default' => esc_html__( 'Basic description about the Card', 'quiktheme-addons' ),
 				'dynamic' => [
 					'active' => true,
 				]
@@ -214,29 +214,29 @@ class Finest_Card extends Widget_Base {
 		$this->add_responsive_control(
 			'align',
 			[
-				'label' => __( 'Alignment', 'finest-addons' ),
+				'label' => __( 'Alignment', 'quiktheme-addons' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'finest-addons' ),
+						'title' => __( 'Left', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'finest-addons' ),
+						'title' => __( 'Center', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'finest-addons' ),
+						'title' => __( 'Right', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-right',
 					],
 					'justify' => [
-						'title' => __( 'Justify', 'finest-addons' ),
+						'title' => __( 'Justify', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-justify',
 					],
 				],
 				'toggle' => true,
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-body' => 'text-align: {{VALUE}};'
+					'{{WRAPPER}} .quiktheme-card-body' => 'text-align: {{VALUE}};'
 				]
 			]
 		);
@@ -246,18 +246,18 @@ class Finest_Card extends Widget_Base {
 		$this->start_controls_section(
 			'_section_button',
 			[
-				'label' => __( 'Button', 'finest-addons' ),
+				'label' => __( 'Button', 'quiktheme-addons' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
 
 		$this->add_control(
-			'finest_card_action_text',
+			'quik_theme_card_action_text',
 			[
-				'label'       => esc_html__( 'Text', 'finest-addons' ),
+				'label'       => esc_html__( 'Text', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default'     => esc_html__( 'Details', 'finest-addons' ),
+				'default'     => esc_html__( 'Details', 'quiktheme-addons' ),
 				'dynamic' => [
 					'active' => true,
 				]
@@ -265,11 +265,11 @@ class Finest_Card extends Widget_Base {
 		);
 
 		$this->add_control(
-			'finest_card_action_link',
+			'quik_theme_card_action_link',
 			[
-				'label'       => __( 'URL', 'finest-addons' ),
+				'label'       => __( 'URL', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'finest-addons' ),
+				'placeholder' => __( 'https://your-link.com', 'quiktheme-addons' ),
 				'label_block' => true,
 				'default'     => [
 					'url'         => '#',
@@ -279,60 +279,60 @@ class Finest_Card extends Widget_Base {
 		);
 
 		$this->add_control(
-			'finest_card_action_link_icon',
+			'quik_theme_card_action_link_icon',
 			[
-				'label'       => __( 'Icon', 'finest-addons' ),
+				'label'       => __( 'Icon', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::ICONS,
 				'condition'   => [
-					'finest_card_action_text!' => ''
+					'quik_theme_card_action_text!' => ''
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_card_action_link_icon_position',
+			'quik_theme_card_action_link_icon_position',
 			[
-				'label'     => __( 'Icon Position', 'finest-addons' ),
+				'label'     => __( 'Icon Position', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => [
 					'icon_pos_left'  => [
-						'title'      => __( 'Left', 'finest-addons' ),
+						'title'      => __( 'Left', 'quiktheme-addons' ),
 						'icon'       => 'eicon-angle-left'
 					],
 					'icon_pos_right' => [
-						'title'      => __( 'Right', 'finest-addons' ),
+						'title'      => __( 'Right', 'quiktheme-addons' ),
 						'icon'       => 'eicon-angle-right'
 					]
 				],
 				'default'   => 'icon_pos_right',
 				'toggle'    => false,
 				'condition' => [
-                    'finest_card_action_link_icon[value]!' => '',
-                    'finest_card_action_text!' => ''
+                    'quik_theme_card_action_link_icon[value]!' => '',
+                    'quik_theme_card_action_text!' => ''
                 ]
 			]
 		);
 		$this->add_control(
 			'button_icon_spacing',
 			[
-				'label' => __( 'Icon Spacing', 'finest-addons' ),
+				'label' => __( 'Icon Spacing', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-button a span.icon_pos_left i' => 'margin-right: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .finest-card-button a span.icon_pos_right i' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-card-button a span.icon_pos_left i' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-card-button a span.icon_pos_right i' => 'margin-left: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
 		$this->add_control(
 			'button_fullwidth',
 			[
-				'label' => __( 'Full Width?', 'finest-addons' ),
+				'label' => __( 'Full Width?', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => false,
 				'return_value' => 'yes',
 				'style_transfer' => true,
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-button a' => 'display: -webkit-box; display: -ms-flexbox; display: flex;',
+					'{{WRAPPER}} .quiktheme-card-button a' => 'display: -webkit-box; display: -ms-flexbox; display: flex;',
 				]
 			]
 		);
@@ -340,30 +340,30 @@ class Finest_Card extends Widget_Base {
 		$this->add_control(
 			'button_align',
 			[
-				'label' => __( 'Alignment', 'finest-addons' ),
+				'label' => __( 'Alignment', 'quiktheme-addons' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'finest-addons' ),
+						'title' => __( 'Left', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'finest-addons' ),
+						'title' => __( 'Center', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'finest-addons' ),
+						'title' => __( 'Right', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-right',
 					],
 					'stretch' => [
-						'title' => __( 'Stretch', 'finest-addons' ),
+						'title' => __( 'Stretch', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-justify',
 					],
 				],
 				'toggle' => false,
 				'default' => 'center',
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-button a' => '{{VALUE}}',
+					'{{WRAPPER}} .quiktheme-card-button a' => '{{VALUE}}',
 				],
 				'selectors_dictionary' => [
 					'left' => '-webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start;',
@@ -380,19 +380,19 @@ class Finest_Card extends Widget_Base {
 		/**
 		 * Register widget style controls
 		 */
-		$this->finest_image_style_controls();
-		$this->finest_badge_style_controls();
-		$this->finest_title_desc_style_controls();
-		$this->finest_button_style_controls();
+		$this->quik_theme_image_style_controls();
+		$this->quik_theme_badge_style_controls();
+		$this->quik_theme_title_desc_style_controls();
+		$this->quik_theme_button_style_controls();
 
 	}
 
-	protected function finest_image_style_controls() {
+	protected function quik_theme_image_style_controls() {
 
 		$this->start_controls_section(
 			'section_style_image',
 			[
-				'label' => __( 'Image', 'finest-addons' ),
+				'label' => __( 'Image', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -400,7 +400,7 @@ class Finest_Card extends Widget_Base {
 		$this->add_responsive_control(
 			'image_width',
 			[
-				'label' => __( 'Width', 'finest-addons' ),
+				'label' => __( 'Width', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'unit' => '%'
@@ -417,7 +417,7 @@ class Finest_Card extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-thumb img ' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-card-thumb img ' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -425,7 +425,7 @@ class Finest_Card extends Widget_Base {
 		$this->add_responsive_control(
 			'image_height',
 			[
-				'label' => __( 'Height', 'finest-addons' ),
+				'label' => __( 'Height', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'unit' => 'px'
@@ -442,7 +442,7 @@ class Finest_Card extends Widget_Base {
 					'size' => 250,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-thumb' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-card-thumb' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -450,11 +450,11 @@ class Finest_Card extends Widget_Base {
 		$this->add_responsive_control(
 			'image_padding',
 			[
-				'label' => __( 'Padding', 'finest-addons' ),
+				'label' => __( 'Padding', 'quiktheme-addons' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-thumb img ' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-card-thumb img ' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -463,18 +463,18 @@ class Finest_Card extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'image_border',
-				'selector' => '{{WRAPPER}} .finest-card-thumb img ',
+				'selector' => '{{WRAPPER}} .quiktheme-card-thumb img ',
 			]
 		);
 
 		$this->add_responsive_control(
 			'image_border_radius',
 			[
-				'label' => __( 'Border Radius', 'finest-addons' ),
+				'label' => __( 'Border Radius', 'quiktheme-addons' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-thumb' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-card-thumb' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -490,14 +490,14 @@ class Finest_Card extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_image_effects_normal',
 			[
-				'label' => __( 'Normal', 'finest-addons' ),
+				'label' => __( 'Normal', 'quiktheme-addons' ),
 			]
 		);
 
 		$this->add_control(
 			'image_opacity',
 			[
-				'label' => __( 'Opacity', 'finest-addons' ),
+				'label' => __( 'Opacity', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -507,7 +507,7 @@ class Finest_Card extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-thumb img ' => 'opacity: {{SIZE}};',
+					'{{WRAPPER}} .quiktheme-card-thumb img ' => 'opacity: {{SIZE}};',
 				],
 			]
 		);
@@ -516,7 +516,7 @@ class Finest_Card extends Widget_Base {
 			Group_Control_Css_Filter::get_type(),
 			[
 				'name' => 'image_css_filters',
-				'selector' => '{{WRAPPER}} .finest-card-thumb img ',
+				'selector' => '{{WRAPPER}} .quiktheme-card-thumb img ',
 			]
 		);
 
@@ -524,14 +524,14 @@ class Finest_Card extends Widget_Base {
 
 		$this->start_controls_tab( 'hover',
 			[
-				'label' => __( 'Hover', 'finest-addons' ),
+				'label' => __( 'Hover', 'quiktheme-addons' ),
 			]
 		);
 
 		$this->add_control(
 			'image_opacity_hover',
 			[
-				'label' => __( 'Opacity', 'finest-addons' ),
+				'label' => __( 'Opacity', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -541,7 +541,7 @@ class Finest_Card extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-thumb:hover img' => 'opacity: {{SIZE}};',
+					'{{WRAPPER}} .quiktheme-card-thumb:hover img' => 'opacity: {{SIZE}};',
 				],
 			]
 		);
@@ -550,14 +550,14 @@ class Finest_Card extends Widget_Base {
 			Group_Control_Css_Filter::get_type(),
 			[
 				'name' => 'image_css_filters_hover',
-				'selector' => '{{WRAPPER}} .finest-card-thumb:hover img',
+				'selector' => '{{WRAPPER}} .quiktheme-card-thumb:hover img',
 			]
 		);
 
 		$this->add_control(
 			'image_background_hover_transition',
 			[
-				'label' => __( 'Transition Duration', 'finest-addons' ),
+				'label' => __( 'Transition Duration', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -566,7 +566,7 @@ class Finest_Card extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-thumb img' => 'transition-duration: {{SIZE}}s;',
+					'{{WRAPPER}} .quiktheme-card-thumb img' => 'transition-duration: {{SIZE}}s;',
 				],
 			]
 		);
@@ -574,7 +574,7 @@ class Finest_Card extends Widget_Base {
 		$this->add_control(
 			'hover_animation',
 			[
-				'label' => __( 'Hover Animation', 'finest-addons' ),
+				'label' => __( 'Hover Animation', 'quiktheme-addons' ),
 				'type' => Controls_Manager::HOVER_ANIMATION,
 				'label_block' => true,
 			]
@@ -584,21 +584,21 @@ class Finest_Card extends Widget_Base {
 		$this->end_controls_tabs();
 
 		$this->add_control(
-			'finest_card_image_animation_heading',
+			'quik_theme_card_image_animation_heading',
 			[
-				'label'     => __( 'Animation', 'finest-addons' ),
+				'label'     => __( 'Animation', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before'
 			]
 		);
 
 		$this->add_control(
-			'finest_card_image_zoom_animation',
+			'quik_theme_card_image_zoom_animation',
 			[
-				'label'        => __( 'Zoom Animation', 'finest-addons' ),
+				'label'        => __( 'Zoom Animation', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'ON', 'finest-addons' ),
-				'label_off'    => __( 'OFF', 'finest-addons' ),
+				'label_on'     => __( 'ON', 'quiktheme-addons' ),
+				'label_off'    => __( 'OFF', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 				'default'      => 'yes'
 			]
@@ -606,30 +606,30 @@ class Finest_Card extends Widget_Base {
 
 		$this->end_controls_section();
 	}
-	protected function finest_badge_style_controls() {
+	protected function quik_theme_badge_style_controls() {
 
 		$this->start_controls_section(
 			'section_style_badge',
 			[
-				'label' => __( 'Badge', 'finest-addons' ),
+				'label' => __( 'Badge', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
 		$this->add_control(
 			'badge_position',
 			[
-				'label' => __( 'Position', 'finest-addons' ),
+				'label' => __( 'Position', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'top-left'      => __( 'Top Left', 'finest-addons' ),
-					'top-center'    => __( 'Top Center', 'finest-addons' ),
-					'top-right'     => __( 'Top Right', 'finest-addons' ),
-					'middle-left'   => __( 'Middle Left', 'finest-addons' ),
-					'middle-center' => __( 'Middle Center', 'finest-addons' ),
-					'middle-right'  => __( 'Middle Right', 'finest-addons' ),
-					'bottom-left'   => __( 'Bottom Left', 'finest-addons' ),
-					'bottom-center' => __( 'Bottom Center', 'finest-addons' ),
-					'bottom-right'  => __( 'Bottom Right', 'finest-addons' ),
+					'top-left'      => __( 'Top Left', 'quiktheme-addons' ),
+					'top-center'    => __( 'Top Center', 'quiktheme-addons' ),
+					'top-right'     => __( 'Top Right', 'quiktheme-addons' ),
+					'middle-left'   => __( 'Middle Left', 'quiktheme-addons' ),
+					'middle-center' => __( 'Middle Center', 'quiktheme-addons' ),
+					'middle-right'  => __( 'Middle Right', 'quiktheme-addons' ),
+					'bottom-left'   => __( 'Bottom Left', 'quiktheme-addons' ),
+					'bottom-center' => __( 'Bottom Center', 'quiktheme-addons' ),
+					'bottom-right'  => __( 'Bottom Right', 'quiktheme-addons' ),
 				],
 				'default' => 'top-right',
 			]
@@ -637,10 +637,10 @@ class Finest_Card extends Widget_Base {
 		$this->add_control(
 			'badge_offset_toggle',
 			[
-				'label' => __( 'Offset', 'finest-addons' ),
+				'label' => __( 'Offset', 'quiktheme-addons' ),
 				'type' => Controls_Manager::POPOVER_TOGGLE,
-				'label_off' => __( 'None', 'finest-addons' ),
-				'label_on' => __( 'Custom', 'finest-addons' ),
+				'label_off' => __( 'None', 'quiktheme-addons' ),
+				'label_on' => __( 'Custom', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 			]
 		);
@@ -650,7 +650,7 @@ class Finest_Card extends Widget_Base {
 		$this->add_responsive_control(
 			'badge_offset_x',
 			[
-				'label' => __( 'Offset Left', 'finest-addons' ),
+				'label' => __( 'Offset Left', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px'],
 				'condition' => [
@@ -667,7 +667,7 @@ class Finest_Card extends Widget_Base {
 					'size' => '',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-wrap .finest-badge' => 'left: {{SIZE}}{{UNIT}}; right:auto;',
+					'{{WRAPPER}} .quiktheme-card-wrap .quiktheme-badge' => 'left: {{SIZE}}{{UNIT}}; right:auto;',
 				],
 			]
 		);
@@ -675,7 +675,7 @@ class Finest_Card extends Widget_Base {
 		$this->add_responsive_control(
 			'badge_offset_y',
 			[
-				'label' => __( 'Offset Top', 'finest-addons' ),
+				'label' => __( 'Offset Top', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px'],
 				'condition' => [
@@ -692,7 +692,7 @@ class Finest_Card extends Widget_Base {
 					'size' => '',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-wrap .finest-badge' => 'top: {{SIZE}}{{UNIT}};bottom:auto;',
+					'{{WRAPPER}} .quiktheme-card-wrap .quiktheme-badge' => 'top: {{SIZE}}{{UNIT}};bottom:auto;',
 				],
 			]
 		);
@@ -701,14 +701,14 @@ class Finest_Card extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'badge_typography',
-				'label' => __( 'Typography', 'finest-addons' ),
+				'label' => __( 'Typography', 'quiktheme-addons' ),
 				'exclude' => [
 					'line_height'
 				],
 				'default' => [
 					'font_size' => ['']
 				],
-				'selector' => '{{WRAPPER}} .finest-card-wrap .finest-badge',
+				'selector' => '{{WRAPPER}} .quiktheme-card-wrap .quiktheme-badge',
 				'scheme' => Typography::TYPOGRAPHY_3,
 			]
 		);
@@ -718,16 +718,16 @@ class Finest_Card extends Widget_Base {
 		$this->start_controls_tab(
 			'badge_normal_tab',
 			[
-				'label' => esc_html__( 'Normal', 'finest-addons' ),
+				'label' => esc_html__( 'Normal', 'quiktheme-addons' ),
 			]
 		);
 		$this->add_control(
 			'badge_color',
 			[
-				'label' => __( 'Text Color', 'finest-addons' ),
+				'label' => __( 'Text Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-wrap .finest-badge' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-card-wrap .quiktheme-badge' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -735,10 +735,10 @@ class Finest_Card extends Widget_Base {
 		$this->add_control(
 			'badge_bg_color',
 			[
-				'label' => __( 'Background Color', 'finest-addons' ),
+				'label' => __( 'Background Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-wrap .finest-badge' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-card-wrap .quiktheme-badge' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -746,18 +746,18 @@ class Finest_Card extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'badge_border',
-				'selector' => '{{WRAPPER}} .finest-card-wrap .finest-badge',
+				'selector' => '{{WRAPPER}} .quiktheme-card-wrap .quiktheme-badge',
 			]
 		);
 
 		$this->add_responsive_control(
 			'badge_border_radius',
 			[
-				'label' => __( 'Border Radius', 'finest-addons' ),
+				'label' => __( 'Border Radius', 'quiktheme-addons' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-wrap .finest-badge' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-card-wrap .quiktheme-badge' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -771,10 +771,10 @@ class Finest_Card extends Widget_Base {
 		$this->add_control(
 			'badge_hover_color',
 			[
-				'label' => __( 'Text Color', 'finest-addons' ),
+				'label' => __( 'Text Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-wrap .finest-badge:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-card-wrap .quiktheme-badge:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -782,10 +782,10 @@ class Finest_Card extends Widget_Base {
 		$this->add_control(
 			'badge_hover_bg_color',
 			[
-				'label' => __( 'Background Color', 'finest-addons' ),
+				'label' => __( 'Background Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-wrap .finest-badge:hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-card-wrap .quiktheme-badge:hover' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -793,18 +793,18 @@ class Finest_Card extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'badge_hover_border',
-				'selector' => '{{WRAPPER}} .finest-card-wrap .finest-badge:hover',
+				'selector' => '{{WRAPPER}} .quiktheme-card-wrap .quiktheme-badge:hover',
 			]
 		);
 
 		$this->add_responsive_control(
 			'badge_hover_border_radius',
 			[
-				'label' => __( 'Border Radius', 'finest-addons' ),
+				'label' => __( 'Border Radius', 'quiktheme-addons' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-wrap .finest-badge:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-card-wrap .quiktheme-badge:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -814,11 +814,11 @@ class Finest_Card extends Widget_Base {
 		$this->add_responsive_control(
 			'badge_padding',
 			[
-				'label' => __( 'Padding', 'finest-addons' ),
+				'label' => __( 'Padding', 'quiktheme-addons' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-wrap .finest-badge' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-card-wrap .quiktheme-badge' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -830,18 +830,18 @@ class Finest_Card extends Widget_Base {
 				'exclude' => [
 					'box_shadow_position',
 				],
-				'selector' => '{{WRAPPER}} .finest-card-wrap .finest-badge',
+				'selector' => '{{WRAPPER}} .quiktheme-card-wrap .quiktheme-badge',
 			]
 		);
 
 		$this->end_controls_section();
 	}
-	protected function finest_title_desc_style_controls() {
+	protected function quik_theme_title_desc_style_controls() {
 
 		$this->start_controls_section(
 			'section_style_content',
 			[
-				'label' => __( 'Title & Description', 'finest-addons' ),
+				'label' => __( 'Title & Description', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -849,7 +849,7 @@ class Finest_Card extends Widget_Base {
 			'content_area',
 			[
 				'type' => Controls_Manager::HEADING,
-				'label' => __( 'Contetn Area', 'finest-addons' ),
+				'label' => __( 'Contetn Area', 'quiktheme-addons' ),
 				'separator' => 'before'
 			]
 		);
@@ -861,7 +861,7 @@ class Finest_Card extends Widget_Base {
 				'label' => esc_html__( 'Background Color', 'plugin-name' ),
 				'default' => '#fff',
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-wrap' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-card-wrap' => 'background-color: {{VALUE}}',
 				],
 			]
 		);
@@ -869,28 +869,28 @@ class Finest_Card extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'content_box_shadow',
-				'selector' => '{{WRAPPER}} .finest-card-wrap',
+				'selector' => '{{WRAPPER}} .quiktheme-card-wrap',
 			]
 		);
 		$this->add_control(
 			'content_radius',
 			[
-				'label' => __( 'Border Radius', 'finest-addons' ),
+				'label' => __( 'Border Radius', 'quiktheme-addons' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-wrap' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-card-wrap' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
 		$this->add_responsive_control(
 			'content_padding',
 			[
-				'label' => __( 'Content Padding', 'finest-addons' ),
+				'label' => __( 'Content Padding', 'quiktheme-addons' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-body' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-card-body' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -899,7 +899,7 @@ class Finest_Card extends Widget_Base {
 			'heading_title',
 			[
 				'type' => Controls_Manager::HEADING,
-				'label' => __( 'Title', 'finest-addons' ),
+				'label' => __( 'Title', 'quiktheme-addons' ),
 				'separator' => 'before'
 			]
 		);
@@ -907,39 +907,39 @@ class Finest_Card extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'title_typography',
-				'label' => __( 'Typography', 'finest-addons' ),
-				'selector' => '{{WRAPPER}} .finest-card-title .finest-card-title',
+				'label' => __( 'Typography', 'quiktheme-addons' ),
+				'selector' => '{{WRAPPER}} .quiktheme-card-title .quiktheme-card-title',
 				'scheme' => Typography::TYPOGRAPHY_2,
 			]
 		);
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Title Color', 'finest-addons' ),
+				'label' => __( 'Title Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-title .finest-card-title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-card-title .quiktheme-card-title' => 'color: {{VALUE}}',
 				],
 			]
 		);
 		$this->add_control(
 			'title_hover_color',
 			[
-				'label' => __( 'Title Hover Color', 'finest-addons' ),
+				'label' => __( 'Title Hover Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-title .finest-card-title:hover' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-card-title .quiktheme-card-title:hover' => 'color: {{VALUE}}',
 				],
 			]
 		);
 		$this->add_responsive_control(
 			'title_spacing',
 			[
-				'label' => __( 'Bottom Spacing', 'finest-addons' ),
+				'label' => __( 'Bottom Spacing', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px'],
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-title .finest-card-title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-card-title .quiktheme-card-title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -948,7 +948,7 @@ class Finest_Card extends Widget_Base {
 			'heading_description',
 			[
 				'type' => Controls_Manager::HEADING,
-				'label' => __( 'Description', 'finest-addons' ),
+				'label' => __( 'Description', 'quiktheme-addons' ),
 				'separator' => 'before'
 			]
 		);
@@ -957,51 +957,51 @@ class Finest_Card extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'description_typography',
-				'label' => __( 'Typography', 'finest-addons' ),
-				'selector' => '{{WRAPPER}} .finest-card-description>p',
+				'label' => __( 'Typography', 'quiktheme-addons' ),
+				'selector' => '{{WRAPPER}} .quiktheme-card-description>p',
 				'scheme' => Typography::TYPOGRAPHY_3,
 			]
 		);
 		$this->add_control(
 			'description_color',
 			[
-				'label' => __( 'Text Color', 'finest-addons' ),
+				'label' => __( 'Text Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-description>p' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-card-description>p' => 'color: {{VALUE}};',
 				],
 			]
 		);
 		$this->add_control(
 			'over_description_color',
 			[
-				'label' => __( 'Text Hover Color', 'finest-addons' ),
+				'label' => __( 'Text Hover Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-description>p:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-card-description>p:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
 		$this->add_responsive_control(
 			'description_spacing',
 			[
-				'label' => __( 'Bottom Spacing', 'finest-addons' ),
+				'label' => __( 'Bottom Spacing', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => ['px'],
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-description>p' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-card-description>p' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
 
 		$this->end_controls_section();
 	}
-	protected function finest_button_style_controls() {
+	protected function quik_theme_button_style_controls() {
 
 		$this->start_controls_section(
 			'section_style_button',
 			[
-				'label' => __( 'Button', 'finest-addons' ),
+				'label' => __( 'Button', 'quiktheme-addons' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1010,7 +1010,7 @@ class Finest_Card extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'button_typography',
-				'selector' => '{{WRAPPER}} .finest-card-button a',
+				'selector' => '{{WRAPPER}} .quiktheme-card-button a',
 				'scheme' => Typography::TYPOGRAPHY_4,
 			]
 		);
@@ -1028,18 +1028,18 @@ class Finest_Card extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_normal',
 			[
-				'label' => __( 'Normal', 'finest-addons' ),
+				'label' => __( 'Normal', 'quiktheme-addons' ),
 			]
 		);
 
 		$this->add_control(
 			'button_color',
 			[
-				'label' => __( 'Text Color', 'finest-addons' ),
+				'label' => __( 'Text Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#000000',
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-button a' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-card-button a' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1047,10 +1047,10 @@ class Finest_Card extends Widget_Base {
 		$this->add_control(
 			'button_bg_color',
 			[
-				'label' => __( 'Background Color', 'finest-addons' ),
+				'label' => __( 'Background Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-button a' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-card-button a' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -1058,17 +1058,17 @@ class Finest_Card extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'normal_button_border',
-				'selector' => '{{WRAPPER}} .finest-card-button a',
+				'selector' => '{{WRAPPER}} .quiktheme-card-button a',
 			]
 		);
 		$this->add_control(
 			'normal_button_border_radius',
 			[
-				'label' => __( 'Border Radius', 'finest-addons' ),
+				'label' => __( 'Border Radius', 'quiktheme-addons' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-button a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-card-button a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1077,17 +1077,17 @@ class Finest_Card extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_hover',
 			[
-				'label' => __( 'Hover', 'finest-addons' ),
+				'label' => __( 'Hover', 'quiktheme-addons' ),
 			]
 		);
 
 		$this->add_control(
 			'button_hover_color',
 			[
-				'label' => __( 'Hover Text Color', 'finest-addons' ),
+				'label' => __( 'Hover Text Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-button a:hover, {{WRAPPER}} .finest-card-button a:focus' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-card-button a:hover, {{WRAPPER}} .quiktheme-card-button a:focus' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1095,10 +1095,10 @@ class Finest_Card extends Widget_Base {
 		$this->add_control(
 			'button_hover_bg_color',
 			[
-				'label' => __( 'Hover Background Color', 'finest-addons' ),
+				'label' => __( 'Hover Background Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-button a:hover, {{WRAPPER}} .finest-card-button a:focus' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-card-button a:hover, {{WRAPPER}} .quiktheme-card-button a:focus' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -1106,17 +1106,17 @@ class Finest_Card extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'hover_button_border',
-				'selector' => '{{WRAPPER}} .finest-card-button a:hover',
+				'selector' => '{{WRAPPER}} .quiktheme-card-button a:hover',
 			]
 		);
 		$this->add_control(
 			'hover_button_border_radius',
 			[
-				'label' => __( 'Hover Border Radius', 'finest-addons' ),
+				'label' => __( 'Hover Border Radius', 'quiktheme-addons' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-button a:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-card-button a:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1126,11 +1126,11 @@ class Finest_Card extends Widget_Base {
 		$this->add_responsive_control(
 			'button_padding',
 			[
-				'label' => __( 'Padding', 'finest-addons' ),
+				'label' => __( 'Padding', 'quiktheme-addons' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .finest-card-button a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-card-button a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1139,7 +1139,7 @@ class Finest_Card extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'button_box_shadow',
-				'selector' => '{{WRAPPER}} .finest-card-button a',
+				'selector' => '{{WRAPPER}} .quiktheme-card-button a',
 			]
 		);
 		
@@ -1147,29 +1147,29 @@ class Finest_Card extends Widget_Base {
 	}
 	protected function render() { 
 		$settings = $this->get_settings_for_display();
-		$this->add_render_attribute( 'finest_card_wrap', 'class',[ 'finest-card-wrap',esc_attr( $settings['finest_card_image_zoom_animation'] )]);
-		$this->add_inline_editing_attributes( 'finest_badge_text', 'none' );
-		$this->add_render_attribute('finest_badge_text','class',[ 'finest-badge',sprintf( 'finest-badge-%s', esc_attr( $settings['badge_position'] ) ) ] );
-		$this->add_render_attribute('finest_card_body','class',[ 'finest-card-body' ]);
-		$this->add_render_attribute('finest_card_title','class',[ 'finest-card-title' ]);
+		$this->add_render_attribute( 'quik_theme_card_wrap', 'class',[ 'quiktheme-card-wrap',esc_attr( $settings['quik_theme_card_image_zoom_animation'] )]);
+		$this->add_inline_editing_attributes( 'quik_theme_badge_text', 'none' );
+		$this->add_render_attribute('quik_theme_badge_text','class',[ 'quiktheme-badge',sprintf( 'quiktheme-badge-%s', esc_attr( $settings['badge_position'] ) ) ] );
+		$this->add_render_attribute('quik_theme_card_body','class',[ 'quiktheme-card-body' ]);
+		$this->add_render_attribute('quik_theme_card_title','class',[ 'quiktheme-card-title' ]);
 		$this->add_inline_editing_attributes( 'title', 'basic' );
-		$this->add_render_attribute( 'title', 'class', 'finest-card-title' );
-		$this->add_render_attribute( 'finest_card_description', 'class', 'finest-card-description' );
-		$this->add_inline_editing_attributes( 'finest_card_description', 'basic' );
-		$this->add_render_attribute( 'finest_card_button', 'class', 'finest-card-button' );
+		$this->add_render_attribute( 'title', 'class', 'quiktheme-card-title' );
+		$this->add_render_attribute( 'quik_theme_card_description', 'class', 'quiktheme-card-description' );
+		$this->add_inline_editing_attributes( 'quik_theme_card_description', 'basic' );
+		$this->add_render_attribute( 'quik_theme_card_button', 'class', 'quiktheme-card-button' );
 		?>
-		<div <?php echo $this->get_render_attribute_string( 'finest_card_wrap' ); ?> >
-		<?php if ( $settings['finest_card_image']['url'] || $settings['finest_card_image']['id'] ) : ?>
-			<div class="finest-card-thumb">
-				<?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'thumbnail', 'finest_card_image' ); 
-				if( $settings['finest_card_badge_switcher'] === 'yes' ) : ?>
-				<div <?php echo $this->get_render_attribute_string( 'finest_badge_text' ); ?>>
-					<?php echo wp_kses_post( $settings['finest_badge_text'] ); ?>
+		<div <?php echo $this->get_render_attribute_string( 'quik_theme_card_wrap' ); ?> >
+		<?php if ( $settings['quik_theme_card_image']['url'] || $settings['quik_theme_card_image']['id'] ) : ?>
+			<div class="quiktheme-card-thumb">
+				<?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'thumbnail', 'quik_theme_card_image' ); 
+				if( $settings['quik_theme_card_badge_switcher'] === 'yes' ) : ?>
+				<div <?php echo $this->get_render_attribute_string( 'quik_theme_badge_text' ); ?>>
+					<?php echo wp_kses_post( $settings['quik_theme_badge_text'] ); ?>
 				</div>
 				<?php endif; ?>
 			</div>
-				<div <?php echo $this->get_render_attribute_string( 'finest_card_body' ); ?> >
-					<div <?php echo $this->get_render_attribute_string( 'finest_card_title' ); ?> >
+				<div <?php echo $this->get_render_attribute_string( 'quik_theme_card_body' ); ?> >
+					<div <?php echo $this->get_render_attribute_string( 'quik_theme_card_title' ); ?> >
 					<?php
 						if ( $settings['title' ] ) :
 							printf( '<%1$s %2$s>%3$s</%1$s>', $settings['title_tag'],
@@ -1177,28 +1177,28 @@ class Finest_Card extends Widget_Base {
 						endif;
 						?>
 					</div>
-					<?php if ( $settings['finest_card_description'] ) : ?>
-						<div <?php echo $this->get_render_attribute_string( 'finest_card_description' ); ?>>
-							<p><?php echo wp_kses_post( $settings['finest_card_description'] ); ?></p>
+					<?php if ( $settings['quik_theme_card_description'] ) : ?>
+						<div <?php echo $this->get_render_attribute_string( 'quik_theme_card_description' ); ?>>
+							<p><?php echo wp_kses_post( $settings['quik_theme_card_description'] ); ?></p>
 						</div>
 					<?php endif; ?>
 					
 					<?php 
-					if ( !empty( $settings['finest_card_action_text'] ) ) : ?>
-					<div <?php echo $this->get_render_attribute_string( 'finest_card_button' ); ?> >
-					<a href="<?php echo esc_url($settings['finest_card_action_link']['url']); ?>" >
-						<?php if( 'icon_pos_left' === $settings['finest_card_action_link_icon_position'] &&  !empty( $settings['finest_card_action_link_icon']['value'] ) ) { ?>
-							<span class="<?php echo esc_attr( $settings['finest_card_action_link_icon_position'] ); ?>">
-								<?php Icons_Manager::render_icon( $settings['finest_card_action_link_icon'] ); ?>
+					if ( !empty( $settings['quik_theme_card_action_text'] ) ) : ?>
+					<div <?php echo $this->get_render_attribute_string( 'quik_theme_card_button' ); ?> >
+					<a href="<?php echo esc_url($settings['quik_theme_card_action_link']['url']); ?>" >
+						<?php if( 'icon_pos_left' === $settings['quik_theme_card_action_link_icon_position'] &&  !empty( $settings['quik_theme_card_action_link_icon']['value'] ) ) { ?>
+							<span class="<?php echo esc_attr( $settings['quik_theme_card_action_link_icon_position'] ); ?>">
+								<?php Icons_Manager::render_icon( $settings['quik_theme_card_action_link_icon'] ); ?>
 							</span>
 						<?php	
 						}
 						?>
-						<?php echo esc_html( $settings['finest_card_action_text'] ); ?>
+						<?php echo esc_html( $settings['quik_theme_card_action_text'] ); ?>
 						<?php
-						if( 'icon_pos_right' === $settings['finest_card_action_link_icon_position'] &&  !empty( $settings['finest_card_action_link_icon']['value'] ) ) { ?>
-							<span class="<?php echo esc_attr( $settings['finest_card_action_link_icon_position'] ); ?>">
-								<?php Icons_Manager::render_icon( $settings['finest_card_action_link_icon'] ); ?>
+						if( 'icon_pos_right' === $settings['quik_theme_card_action_link_icon_position'] &&  !empty( $settings['quik_theme_card_action_link_icon']['value'] ) ) { ?>
+							<span class="<?php echo esc_attr( $settings['quik_theme_card_action_link_icon_position'] ); ?>">
+								<?php Icons_Manager::render_icon( $settings['quik_theme_card_action_link_icon'] ); ?>
 							</span>
 						<?php } ?>
 	            	</a>
@@ -1211,4 +1211,4 @@ class Finest_Card extends Widget_Base {
 	<?php } 
 
 }
-$widgets_manager->register_widget_type( new \Finest_Addons\Widgets\Finest_Card() );
+$widgets_manager->register_widget_type( new \Quik_Theme_Addons\Widgets\Quik_Theme_Card() );

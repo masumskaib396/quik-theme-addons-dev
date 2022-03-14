@@ -1,5 +1,5 @@
 <?php
-namespace Finest_Addons\Widgets;
+namespace Quik_Theme_Addons\Widgets;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // If this file is called directly, abort.
 
@@ -15,14 +15,14 @@ use \Elementor\Utils;
 use \Elementor\Repeater;
 use \Elementor\Widget_Base;
 
-class Finest_List_group extends Widget_Base {
+class Quik_Theme_List_group extends Widget_Base {
 
 	public function get_name() {
-		return 'finest-list-group';
+		return 'quiktheme-list-group';
 	}
 
 	public function get_title() {
-		return esc_html__( 'List Group', 'finest-addons' );
+		return esc_html__( 'List Group', 'quiktheme-addons' );
 	}
 
 	public function get_icon() {
@@ -30,11 +30,11 @@ class Finest_List_group extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'finest-addons' ];
+		return [ 'quiktheme-addons' ];
 	}
 
 	public function get_keywords() {
-		return [ 'finest', 'information', 'group', 'list', 'icon' ];
+		return [ 'quik-theme-addons', 'information', 'group', 'list', 'icon' ];
 	}
 
 	protected function register_controls() {
@@ -43,31 +43,31 @@ class Finest_List_group extends Widget_Base {
 		* Icon List Content
 		*/
 		$this->start_controls_section(
-			'finest_section_list_content',
+			'quik_theme_section_list_content',
 			[
-				'label' => esc_html__( 'Content', 'finest-addons' )
+				'label' => esc_html__( 'Content', 'quiktheme-addons' )
 			]
 		);
 
 		$repeater = new Repeater();
 
 		$repeater->add_control(
-            'finest_list_icon_type',
+            'quik_theme_list_icon_type',
             [
-                'label' => __( 'Media Type', 'finest-addons' ),
+                'label' => __( 'Media Type', 'quiktheme-addons' ),
                 'type' => Controls_Manager::CHOOSE,
                 'default' => 'icon',
 				'options' => [
 					'icon' => [
-						'title' => __( 'Icon', 'finest-addons' ),
+						'title' => __( 'Icon', 'quiktheme-addons' ),
 						'icon' => 'eicon-star',
 					],
 					'number' => [
-						'title' => __( 'Number', 'finest-addons' ),
+						'title' => __( 'Number', 'quiktheme-addons' ),
 						'icon' => 'eicon-number-field',
 					],
 					'image' => [
-						'title' => __( 'Image', 'finest-addons' ),
+						'title' => __( 'Image', 'quiktheme-addons' ),
 						'icon' => 'eicon-image',
 					],
 				],
@@ -77,9 +77,9 @@ class Finest_List_group extends Widget_Base {
         );
 
 		$repeater->add_control(
-			'finest_list_icon',
+			'quik_theme_list_icon',
 			[
-				'label'       => __( 'Icon', 'finest-addons' ),
+				'label'       => __( 'Icon', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::ICONS,
 				'label_block' => true,
 				'separator'   =>'after',
@@ -88,28 +88,28 @@ class Finest_List_group extends Widget_Base {
 					'library' => 'fa-regular'
 				],
 				'condition' =>[
-					'finest_list_icon_type' => 'icon'
+					'quik_theme_list_icon_type' => 'icon'
 				]
 			]
 		);
 
 		$repeater->add_control(
-			'finest_list_icon_number',
+			'quik_theme_list_icon_number',
 			[
-				'label'   => esc_html__( 'Number', 'finest-addons' ),
+				'label'   => esc_html__( 'Number', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( '1', 'finest-addons' ),
+				'default' => esc_html__( '1', 'quiktheme-addons' ),
 				'separator'   =>'after',
 				'condition' =>[
-					'finest_list_icon_type' => 'number'
+					'quik_theme_list_icon_type' => 'number'
 				]
 			]
 		);
 
 		$repeater->add_control(
-			'finest_list_icon_number_image',
+			'quik_theme_list_icon_number_image',
 			[
-				'label' => __( 'Choose Image', 'finest-addons' ),
+				'label' => __( 'Choose Image', 'quiktheme-addons' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => Utils::get_placeholder_image_src(),
@@ -119,28 +119,28 @@ class Finest_List_group extends Widget_Base {
 					'active' => true,
 				],
 				'condition' =>[
-					'finest_list_icon_type' => 'image'
+					'quik_theme_list_icon_type' => 'image'
 				]
 			]
 		);
 
         $repeater->add_control(
-			'finest_list_text',
+			'quik_theme_list_text',
 			[
-				'label'   => esc_html__( 'Text', 'finest-addons' ),
+				'label'   => esc_html__( 'Text', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => esc_html__( 'List Text', 'finest-addons' ),
+				'default' => esc_html__( 'List Text', 'quiktheme-addons' ),
 				'dynamic' => [ 'active' => true ]
 			]
 		);
 
 		$repeater->add_control(
-			'finest_list_link',
+			'quik_theme_list_link',
 			[
-				'label' => __( 'List URL', 'finest-addons' ),
+				'label' => __( 'List URL', 'quiktheme-addons' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'finest-addons' ),
+				'placeholder' => __( 'https://your-link.com', 'quiktheme-addons' ),
 				'show_external' => true,
 				'default' => [
 					'url' => '',
@@ -151,35 +151,35 @@ class Finest_List_group extends Widget_Base {
 		);
 
 		$this->add_control(
-			'finest_list_group',
+			'quik_theme_list_group',
 			[
 				'label' => __( 'List Items', 'elementor' ),
 				'type' 		=> Controls_Manager::REPEATER,
 				'fields' 	=> $repeater->get_controls(),
 				'default' => [
 					[
-						'finest_list_text' => __( 'List Item #1', 'elementor' ),
-						'finest_list_icon' => [
+						'quik_theme_list_text' => __( 'List Item #1', 'elementor' ),
+						'quik_theme_list_icon' => [
 							'value' => 'fas fa-check',
 							'library' => 'fa-solid',
 						],
 					],
 					[
-						'finest_list_text' => __( 'List Item #2', 'elementor' ),
-						'finest_list_icon' => [
+						'quik_theme_list_text' => __( 'List Item #2', 'elementor' ),
+						'quik_theme_list_icon' => [
 							'value' => 'fas fa-check',
 							'library' => 'fa-solid',
 						],
 					],
 					[
-						'finest_list_text' => __( 'List Item #3', 'elementor' ),
-						'finest_list_icon' => [
+						'quik_theme_list_text' => __( 'List Item #3', 'elementor' ),
+						'quik_theme_list_icon' => [
 							'value' => 'fas fa-check',
 							'library' => 'fa-solid',
 						],
 					],
 				],
-				'title_field' => '{{{ elementor.helpers.renderIcon( this, finest_list_icon, {}, "i", "panel" ) }}}{{{ finest_list_text }}}'
+				'title_field' => '{{{ elementor.helpers.renderIcon( this, quik_theme_list_icon, {}, "i", "panel" ) }}}{{{ quik_theme_list_text }}}'
 			]
 		);
 
@@ -189,75 +189,75 @@ class Finest_List_group extends Widget_Base {
 		* Icon List Content
 		*/
 		$this->start_controls_section(
-			'finest_section_list_style',
+			'quik_theme_section_list_style',
 			[
-				'label' => esc_html__( 'Container', 'finest-addons' ),
+				'label' => esc_html__( 'Container', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE
 			]
 		);
 
 		$this->add_control(
-			'finest_section_list_layout',
+			'quik_theme_section_list_layout',
 			[
-				'label' => __( 'Layout', 'finest-addons' ),
+				'label' => __( 'Layout', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'layout_1',
 				'options' => [
-					'layout_1' => __( 'Layout 1', 'finest-addons' ),
-					'layout_2' => __( 'Layout 2', 'finest-addons' ),
-					'layout_3' => __( 'Layout 3', 'finest-addons' ),
+					'layout_1' => __( 'Layout 1', 'quiktheme-addons' ),
+					'layout_2' => __( 'Layout 2', 'quiktheme-addons' ),
+					'layout_3' => __( 'Layout 3', 'quiktheme-addons' ),
 				],
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_section_list_alignment',
+			'quik_theme_section_list_alignment',
 			[
-				'label'       => esc_html__( 'Alignment', 'finest-addons' ),
+				'label'       => esc_html__( 'Alignment', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'toggle'      => false,
 				'label_block' => false,
 				'options'     => [
-					'finest-list-group-left'   => [
-						'title' => esc_html__( 'Left', 'finest-addons' ),
+					'quiktheme-list-group-left'   => [
+						'title' => esc_html__( 'Left', 'quiktheme-addons' ),
 						'icon'  => 'eicon-text-align-left'
 					],
-					'finest-list-group-center' => [
-						'title' => esc_html__( 'Center', 'finest-addons' ),
+					'quiktheme-list-group-center' => [
+						'title' => esc_html__( 'Center', 'quiktheme-addons' ),
 						'icon'  => 'eicon-text-align-center'
 					],
-					'finest-list-group-right'  => [
-						'title' => esc_html__( 'Right', 'finest-addons' ),
+					'quiktheme-list-group-right'  => [
+						'title' => esc_html__( 'Right', 'quiktheme-addons' ),
 						'icon'  => 'eicon-text-align-right'
 					]
 				],
 				'selectors_dictionary' => [
-					'finest-list-group-left' => 'justify-content: flex-start; text-align: left;',
-					'finest-list-group-center' => 'justify-content: center; text-align: center;',
-					'finest-list-group-right' => 'justify-content: flex-end; text-align: right;',
+					'quiktheme-list-group-left' => 'justify-content: flex-start; text-align: left;',
+					'quiktheme-list-group-center' => 'justify-content: center; text-align: center;',
+					'quiktheme-list-group-right' => 'justify-content: flex-end; text-align: right;',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper' => '{{VALUE}};',
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item' => '{{VALUE}};',
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item a' => '{{VALUE}};',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper' => '{{VALUE}};',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item' => '{{VALUE}};',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item a' => '{{VALUE}};',
 				],
-				'default'     => 'finest-list-group-left',
+				'default'     => 'quiktheme-list-group-left',
 			]
 		);
 
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
-				'name'            => 'finest_section_list_group_background',
+				'name'            => 'quik_theme_section_list_group_background',
 				'types'           => [ 'classic', 'gradient' ],
-				'selector'        => '{{WRAPPER}} .finest-list-group',
+				'selector'        => '{{WRAPPER}} .quiktheme-list-group',
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_section_list_group_padding',
+			'quik_theme_section_list_group_padding',
 			[
-				'label'      => __( 'Padding', 'finest-addons' ),
+				'label'      => __( 'Padding', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'default'    => [
@@ -269,7 +269,7 @@ class Finest_List_group extends Widget_Base {
                     'isLinked' => true
                 ],
 				'selectors'  => [
-					'{{WRAPPER}} .finest-list-group' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-list-group' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -277,15 +277,15 @@ class Finest_List_group extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
-				'name'      => 'finest_section_list_group_border',
-				'selector'  => '{{WRAPPER}} .finest-list-group'
+				'name'      => 'quik_theme_section_list_group_border',
+				'selector'  => '{{WRAPPER}} .quiktheme-list-group'
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_section_list_group_radius',
+			'quik_theme_section_list_group_radius',
 			[
-				'label'        => __( 'Border Radius', 'finest-addons' ),
+				'label'        => __( 'Border Radius', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::DIMENSIONS,
 				'size_units'   => [ 'px', '%', 'em' ],
 				'default'      => [
@@ -296,7 +296,7 @@ class Finest_List_group extends Widget_Base {
 					'unit'     => 'px'
 				],
 				'selectors'    => [
-					'{{WRAPPER}} .finest-list-group' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-list-group' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -304,8 +304,8 @@ class Finest_List_group extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
-				'name'     => 'finest_section_list_group_shadow',
-				'selector' => '{{WRAPPER}} .finest-list-group'
+				'name'     => 'quik_theme_section_list_group_shadow',
+				'selector' => '{{WRAPPER}} .quiktheme-list-group'
 			]
 		);
 
@@ -315,17 +315,17 @@ class Finest_List_group extends Widget_Base {
 		* Icon List Content
 		*/
 		$this->start_controls_section(
-			'finest_section_list_item_style',
+			'quik_theme_section_list_item_style',
 			[
-				'label' => esc_html__( 'List Item', 'finest-addons' ),
+				'label' => esc_html__( 'List Item', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_section_list_item_padding',
+			'quik_theme_section_list_item_padding',
 			[
-				'label'        => __( 'Item Padding', 'finest-addons' ),
+				'label'        => __( 'Item Padding', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::DIMENSIONS,
 				'size_units'   => [ 'px', '%', 'em' ],
 				'default'      => [
@@ -336,30 +336,30 @@ class Finest_List_group extends Widget_Base {
 					'unit'     => 'px'
 				],
 				'selectors'    => [
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_section_list_item_separator',
+			'quik_theme_section_list_item_separator',
             [
-				'label'        => __( 'Item Separator', 'finest-addons' ),
+				'label'        => __( 'Item Separator', 'quiktheme-addons' ),
 				'type'         =>  Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'finest-addons' ),
-				'label_off'    => __( 'Hide', 'finest-addons' ),
+				'label_on'     => __( 'Show', 'quiktheme-addons' ),
+				'label_off'    => __( 'Hide', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 				'default'      => 'no',
 				'condition'    => [
-					'finest_section_list_layout!' => 'layout_3'
+					'quik_theme_section_list_layout!' => 'layout_3'
 				]
 			]
         );
 
 		$this->add_responsive_control(
-			'finest_section_list_item_separator_height',
+			'quik_theme_section_list_item_separator_height',
 			[
-				'label' => __( 'Separator Height', 'finest-addons' ),
+				'label' => __( 'Separator Height', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -374,37 +374,37 @@ class Finest_List_group extends Widget_Base {
 					'size' => 1,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper.layout_1 .finest-list-group-item:not(:last-child):after' => 'height: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper.layout_2 .finest-list-group-item:not(:last-child):after' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper.layout_1 .quiktheme-list-group-item:not(:last-child):after' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper.layout_2 .quiktheme-list-group-item:not(:last-child):after' => 'width: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => [
-					'finest_section_list_item_separator' => 'yes',
-					'finest_section_list_layout!' => 'layout_3'
+					'quik_theme_section_list_item_separator' => 'yes',
+					'quik_theme_section_list_layout!' => 'layout_3'
 				]
 			]
 		);
 
 		$this->add_control(
-			'finest_section_list_item_separator_color',
+			'quik_theme_section_list_item_separator_color',
 			[
-				'label' => __( 'Separator Color', 'finest-addons' ),
+				'label' => __( 'Separator Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '#e5e5e5',
 				'selectors' => [
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper.layout_1 .finest-list-group-item:not(:last-child):after' => 'background: {{VALUE}}',
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper.layout_2 .finest-list-group-item:not(:last-child):after' => 'background: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper.layout_1 .quiktheme-list-group-item:not(:last-child):after' => 'background: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper.layout_2 .quiktheme-list-group-item:not(:last-child):after' => 'background: {{VALUE}}',
 				],
 				'condition' => [
-					'finest_section_list_item_separator' => 'yes',
-					'finest_section_list_layout!' => 'layout_3'
+					'quik_theme_section_list_item_separator' => 'yes',
+					'quik_theme_section_list_layout!' => 'layout_3'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_list_item_spacing',
+			'quik_theme_list_item_spacing',
 			[
-				'label' => __( 'Item Spacing', 'finest-addons' ),
+				'label' => __( 'Item Spacing', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -419,10 +419,10 @@ class Finest_List_group extends Widget_Base {
 					'size' => 10,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper.layout_3 .finest-list-group-item:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper.layout_3 .quiktheme-list-group-item:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => [
-					'finest_section_list_layout' => 'layout_3'
+					'quik_theme_section_list_layout' => 'layout_3'
 				]
 			]
 		);
@@ -430,11 +430,11 @@ class Finest_List_group extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
-				'name'            => 'finest_list_item_background',
+				'name'            => 'quik_theme_list_item_background',
 				'types'           => [ 'classic', 'gradient' ],
-				'selector'        => '{{WRAPPER}} .finest-list-group .finest-list-group-wrapper.layout_3 .finest-list-group-item',
+				'selector'        => '{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper.layout_3 .quiktheme-list-group-item',
 				'condition' => [
-					'finest_section_list_layout' => 'layout_3'
+					'quik_theme_section_list_layout' => 'layout_3'
 				]
 			]
 		);
@@ -442,8 +442,8 @@ class Finest_List_group extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
-				'name'      => 'finest_list_item_border',
-				'selector'  => '{{WRAPPER}} .finest-list-group .finest-list-group-wrapper.layout_3 .finest-list-group-item',
+				'name'      => 'quik_theme_list_item_border',
+				'selector'  => '{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper.layout_3 .quiktheme-list-group-item',
 				'fields_options'  => [
                     'border' 	  => [
                         'default' => 'solid'
@@ -461,15 +461,15 @@ class Finest_List_group extends Widget_Base {
                     ]
                 ],
 				'condition' => [
-					'finest_section_list_layout' => 'layout_3'
+					'quik_theme_section_list_layout' => 'layout_3'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_list_item_radius',
+			'quik_theme_list_item_radius',
 			[
-				'label'        => __( 'Border Radius', 'finest-addons' ),
+				'label'        => __( 'Border Radius', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::DIMENSIONS,
 				'size_units'   => [ 'px', '%', 'em' ],
 				'default'      => [
@@ -480,10 +480,10 @@ class Finest_List_group extends Widget_Base {
 					'unit'     => 'px'
 				],
 				'selectors'    => [
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper.layout_3 .finest-list-group-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper.layout_3 .quiktheme-list-group-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				],
 				'condition' => [
-					'finest_section_list_layout' => 'layout_3'
+					'quik_theme_section_list_layout' => 'layout_3'
 				]
 			]
 		);
@@ -491,10 +491,10 @@ class Finest_List_group extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
-				'name'     => 'finest_list_item_shadow',
-				'selector' => '{{WRAPPER}} .finest-list-group .finest-list-group-wrapper.layout_3 .finest-list-group-item',
+				'name'     => 'quik_theme_list_item_shadow',
+				'selector' => '{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper.layout_3 .quiktheme-list-group-item',
 				'condition' => [
-					'finest_section_list_layout' => 'layout_3'
+					'quik_theme_section_list_layout' => 'layout_3'
 				]
 			]
 		);
@@ -505,115 +505,115 @@ class Finest_List_group extends Widget_Base {
 		* Icon List Icon Style
 		*/
 		$this->start_controls_section(
-			'finest_section_list_icon_style',
+			'quik_theme_section_list_icon_style',
 			[
-				'label' => esc_html__( 'Icon', 'finest-addons' ),
+				'label' => esc_html__( 'Icon', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_list_icon_position',
+			'quik_theme_list_icon_position',
 			[
-				'label'       => esc_html__( 'Icon Position', 'finest-addons' ),
+				'label'       => esc_html__( 'Icon Position', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'toggle'      => false,
 				'label_block' => false,
 				'options'     => [
-					'finest-icon-left'   => [
-						'title' => esc_html__( 'Left', 'finest-addons' ),
+					'quiktheme-icon-left'   => [
+						'title' => esc_html__( 'Left', 'quiktheme-addons' ),
 						'icon'  => 'eicon-h-align-left'
 					],
-					'finest-icon-center' => [
-						'title' => esc_html__( 'Center', 'finest-addons' ),
+					'quiktheme-icon-center' => [
+						'title' => esc_html__( 'Center', 'quiktheme-addons' ),
 						'icon'  => 'eicon-v-align-top'
 					],
-					'finest-icon-right'  => [
-						'title' => esc_html__( 'Right', 'finest-addons' ),
+					'quiktheme-icon-right'  => [
+						'title' => esc_html__( 'Right', 'quiktheme-addons' ),
 						'icon'  => 'eicon-h-align-right'
 					]
 				],
-				'default'     => 'finest-icon-left'
+				'default'     => 'quiktheme-icon-left'
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_list_icon_alignment',
+			'quik_theme_list_icon_alignment',
 			[
-				'label'       => esc_html__( 'Icon Vertical Alignment', 'finest-addons' ),
+				'label'       => esc_html__( 'Icon Vertical Alignment', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'toggle'      => false,
 				'label_block' => false,
 				'options'     => [
-					'finest-icon-align-left'   => [
-						'title' => esc_html__( 'Top', 'finest-addons' ),
+					'quiktheme-icon-align-left'   => [
+						'title' => esc_html__( 'Top', 'quiktheme-addons' ),
 						'icon'  => 'eicon-v-align-top'
 					],
-					'finest-icon-align-center' => [
-						'title' => esc_html__( 'Center', 'finest-addons' ),
+					'quiktheme-icon-align-center' => [
+						'title' => esc_html__( 'Center', 'quiktheme-addons' ),
 						'icon'  => 'eicon-v-align-middle'
 					],
-					'finest-icon-align-right'  => [
-						'title' => esc_html__( 'Bottom', 'finest-addons' ),
+					'quiktheme-icon-align-right'  => [
+						'title' => esc_html__( 'Bottom', 'quiktheme-addons' ),
 						'icon'  => 'eicon-v-align-bottom'
 					]
 				],
-				'default'     => 'finest-icon-align-left',
+				'default'     => 'quiktheme-icon-align-left',
 				'selectors_dictionary' => [
-					'finest-icon-align-left' => 'align-items: flex-start;',
-					'finest-icon-align-center' => 'align-items: center;',
-					'finest-icon-align-right' => 'align-items: flex-end;',
+					'quiktheme-icon-align-left' => 'align-items: flex-start;',
+					'quiktheme-icon-align-center' => 'align-items: center;',
+					'quiktheme-icon-align-right' => 'align-items: flex-end;',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item' => '{{VALUE}};',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item' => '{{VALUE}};',
 				],
 				'condition' => [
-					'finest_list_icon_position!' => 'finest-icon-center'
+					'quik_theme_list_icon_position!' => 'quiktheme-icon-center'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_list_icon_top_alignment',
+			'quik_theme_list_icon_top_alignment',
 			[
-				'label'       => esc_html__( 'Icon Alignment', 'finest-addons' ),
+				'label'       => esc_html__( 'Icon Alignment', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'toggle'      => false,
 				'label_block' => false,
 				'options'     => [
-					'finest-icon-top-align-left'   => [
-						'title' => esc_html__( 'Left', 'finest-addons' ),
+					'quiktheme-icon-top-align-left'   => [
+						'title' => esc_html__( 'Left', 'quiktheme-addons' ),
 						'icon'  => 'eicon-v-align-top'
 					],
-					'finest-icon-top-align-center' => [
-						'title' => esc_html__( 'Center', 'finest-addons' ),
+					'quiktheme-icon-top-align-center' => [
+						'title' => esc_html__( 'Center', 'quiktheme-addons' ),
 						'icon'  => 'eicon-v-align-middle'
 					],
-					'finest-icon-top-align-right'  => [
-						'title' => esc_html__( 'Right', 'finest-addons' ),
+					'quiktheme-icon-top-align-right'  => [
+						'title' => esc_html__( 'Right', 'quiktheme-addons' ),
 						'icon'  => 'eicon-v-align-bottom'
 					]
 				],
-				'default'     => 'finest-icon-left',
+				'default'     => 'quiktheme-icon-left',
 				'selectors_dictionary' => [
-					'finest-icon-top-align-left' => 'text-align: left; margin-right: auto;',
-					'finest-icon-top-align-center' => 'text-align: center; margin-left: auto; margin-right: auto;',
-					'finest-icon-top-align-right' => 'text-align: right; margin-left: auto;',
+					'quiktheme-icon-top-align-left' => 'text-align: left; margin-right: auto;',
+					'quiktheme-icon-top-align-center' => 'text-align: center; margin-left: auto; margin-right: auto;',
+					'quiktheme-icon-top-align-right' => 'text-align: right; margin-left: auto;',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon' => '{{VALUE}};',
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon .finest-list-group-icon-image' => '{{VALUE}};',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item .quiktheme-list-group-icon' => '{{VALUE}};',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item .quiktheme-list-group-icon .quiktheme-list-group-icon-image' => '{{VALUE}};',
 				],
 				'condition' => [
-					'finest_list_icon_position' => 'finest-icon-center'
+					'quik_theme_list_icon_position' => 'quiktheme-icon-center'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_section_list_item_icon_spacing',
+			'quik_theme_section_list_item_icon_spacing',
 			[
-				'label' => __( 'Icon Right Spacing', 'finest-addons' ),
+				'label' => __( 'Icon Right Spacing', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -628,17 +628,17 @@ class Finest_List_group extends Widget_Base {
 					'size' => 10,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-text' => 'padding-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item .quiktheme-list-group-text' => 'padding-left: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => [
-					'finest_list_icon_position' => 'finest-icon-left'
+					'quik_theme_list_icon_position' => 'quiktheme-icon-left'
 				]
 			]
 		);
 		$this->add_responsive_control(
-			'finest_section_list_item_icon_left_spacing',
+			'quik_theme_section_list_item_icon_left_spacing',
 			[
-				'label' => __( 'Icon Left Spacing', 'finest-addons' ),
+				'label' => __( 'Icon Left Spacing', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -653,17 +653,17 @@ class Finest_List_group extends Widget_Base {
 					'size' => 10,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item .quiktheme-list-group-icon' => 'margin-left: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => [
-					'finest_list_icon_position' => 'finest-icon-right'
+					'quik_theme_list_icon_position' => 'quiktheme-icon-right'
 				]
 			]
 		);
 		$this->add_responsive_control(
-			'finest_section_list_item_icon_bottom_spacing',
+			'quik_theme_section_list_item_icon_bottom_spacing',
 			[
-				'label' => __( 'Icon Bottom Spacing', 'finest-addons' ),
+				'label' => __( 'Icon Bottom Spacing', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -678,18 +678,18 @@ class Finest_List_group extends Widget_Base {
 					'size' => 10,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item .quiktheme-list-group-icon' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => [
-					'finest_list_icon_position' => 'finest-icon-center'
+					'quik_theme_list_icon_position' => 'quiktheme-icon-center'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_section_list_item_icon_size',
+			'quik_theme_section_list_item_icon_size',
 			[
-				'label' => __( 'Icon Size', 'finest-addons' ),
+				'label' => __( 'Icon Size', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -704,29 +704,29 @@ class Finest_List_group extends Widget_Base {
 					'size' => 16,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon svg' => 'height: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon .finest-list-group-icon-image' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item .quiktheme-list-group-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item .quiktheme-list-group-icon svg' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item .quiktheme-list-group-icon .quiktheme-list-group-icon-image' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
 
 		$this->add_control(
-			'finest_section_list_item_icon_color',
+			'quik_theme_section_list_item_icon_color',
 			[
-				'label' => __( 'Icon Color', 'finest-addons' ),
+				'label' => __( 'Icon Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon i' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon svg path' => 'fill: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item .quiktheme-list-group-icon i' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item .quiktheme-list-group-icon svg path' => 'fill: {{VALUE}}',
 				],
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_section_list_item_image_radius',
+			'quik_theme_section_list_item_image_radius',
 			[
-				'label'        => __( 'Image Radius', 'finest-addons' ),
+				'label'        => __( 'Image Radius', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::DIMENSIONS,
 				'size_units'   => [ 'px', '%', 'em' ],
 				'default'      => [
@@ -737,18 +737,18 @@ class Finest_List_group extends Widget_Base {
 					'unit'     => 'px'
 				],
 				'selectors'    => [
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon .finest-list-group-icon-image img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item .quiktheme-list-group-icon .quiktheme-list-group-icon-image img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				],
 			]
 		);
 
 		$this->add_control(
-			'finest_list_item_icon_box_enable',
+			'quik_theme_list_item_icon_box_enable',
 			[
-				'label' => __( 'Enable Icon Box', 'finest-addons' ),
+				'label' => __( 'Enable Icon Box', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'finest-addons' ),
-				'label_off' => __( 'Hide', 'finest-addons' ),
+				'label_on' => __( 'Show', 'quiktheme-addons' ),
+				'label_off' => __( 'Hide', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 				'default' => 'no',
 				'separator' => 'before',
@@ -756,9 +756,9 @@ class Finest_List_group extends Widget_Base {
 		);
 
 		$this->add_responsive_control(
-			'finest_list_item_icon_box_width',
+			'quik_theme_list_item_icon_box_width',
 			[
-				'label' => __( 'Icon Box Width', 'finest-addons' ),
+				'label' => __( 'Icon Box Width', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -773,21 +773,21 @@ class Finest_List_group extends Widget_Base {
 					'size' => 40,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon.yes' => 'width: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper.layout_1 .finest-list-group-item .finest-list-group-text' => 'width: calc( 100% - {{SIZE}}{{UNIT}} );',
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper.layout_2 .finest-list-group-item .finest-list-group-text' => 'width: calc( 100% - {{SIZE}}{{UNIT}} );',
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper.layout_3 .finest-list-group-item .finest-list-group-text' => 'width: calc( 100% - {{SIZE}}{{UNIT}} );',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item .quiktheme-list-group-icon.yes' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper.layout_1 .quiktheme-list-group-item .quiktheme-list-group-text' => 'width: calc( 100% - {{SIZE}}{{UNIT}} );',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper.layout_2 .quiktheme-list-group-item .quiktheme-list-group-text' => 'width: calc( 100% - {{SIZE}}{{UNIT}} );',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper.layout_3 .quiktheme-list-group-item .quiktheme-list-group-text' => 'width: calc( 100% - {{SIZE}}{{UNIT}} );',
 				],
 				'condition' => [
-					'finest_list_item_icon_box_enable' => 'yes'
+					'quik_theme_list_item_icon_box_enable' => 'yes'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_list_item_icon_box_height',
+			'quik_theme_list_item_icon_box_height',
 			[
-				'label' => __( 'Icon Box Height', 'finest-addons' ),
+				'label' => __( 'Icon Box Height', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -802,10 +802,10 @@ class Finest_List_group extends Widget_Base {
 					'size' => 40,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon.yes' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item .quiktheme-list-group-icon.yes' => 'height: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => [
-					'finest_list_item_icon_box_enable' => 'yes'
+					'quik_theme_list_item_icon_box_enable' => 'yes'
 				]
 			]
 		);
@@ -813,11 +813,11 @@ class Finest_List_group extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
-				'name'            => 'finest_list_item_icon_box_background',
+				'name'            => 'quik_theme_list_item_icon_box_background',
 				'types'           => [ 'classic', 'gradient' ],
-				'selector'        => '{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon.yes',
+				'selector'        => '{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item .quiktheme-list-group-icon.yes',
 				'condition' => [
-					'finest_list_item_icon_box_enable' => 'yes'
+					'quik_theme_list_item_icon_box_enable' => 'yes'
 				]
 			]
 		);
@@ -825,18 +825,18 @@ class Finest_List_group extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
-				'name'      => 'finest_list_item_icon_box_border',
-				'selector'  => '{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon.yes',
+				'name'      => 'quik_theme_list_item_icon_box_border',
+				'selector'  => '{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item .quiktheme-list-group-icon.yes',
 				'condition' => [
-					'finest_list_item_icon_box_enable' => 'yes'
+					'quik_theme_list_item_icon_box_enable' => 'yes'
 				]
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_list_item_icon_box_radius',
+			'quik_theme_list_item_icon_box_radius',
 			[
-				'label'        => __( 'Border Radius', 'finest-addons' ),
+				'label'        => __( 'Border Radius', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::DIMENSIONS,
 				'size_units'   => [ 'px', '%', 'em' ],
 				'default'      => [
@@ -847,10 +847,10 @@ class Finest_List_group extends Widget_Base {
 					'unit'     => 'px'
 				],
 				'selectors'    => [
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon.yes' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item .quiktheme-list-group-icon.yes' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				],
 				'condition' => [
-					'finest_list_item_icon_box_enable' => 'yes'
+					'quik_theme_list_item_icon_box_enable' => 'yes'
 				]
 			]
 		);
@@ -858,10 +858,10 @@ class Finest_List_group extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
-				'name'     => 'finest_list_item_icon_box_shadow',
-				'selector' => '{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-icon.yes',
+				'name'     => 'quik_theme_list_item_icon_box_shadow',
+				'selector' => '{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item .quiktheme-list-group-icon.yes',
 				'condition' => [
-					'finest_list_item_icon_box_enable' => 'yes'
+					'quik_theme_list_item_icon_box_enable' => 'yes'
 				]
 			]
 		);
@@ -872,45 +872,45 @@ class Finest_List_group extends Widget_Base {
 		* Icon List Text
 		*/
 		$this->start_controls_section(
-			'finest_section_list_text_style',
+			'quik_theme_section_list_text_style',
 			[
-				'label' => esc_html__( 'Text', 'finest-addons' ),
+				'label' => esc_html__( 'Text', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE
 			]
 		);
 
 		$this->add_responsive_control(
-			'finest_section_list_text_alignment',
+			'quik_theme_section_list_text_alignment',
 			[
-				'label'       => esc_html__( 'Text Alignment', 'finest-addons' ),
+				'label'       => esc_html__( 'Text Alignment', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'toggle'      => false,
 				'label_block' => false,
 				'options'     => [
-					'finest-text-align-left'   => [
-						'title' => esc_html__( 'Left', 'finest-addons' ),
+					'quiktheme-text-align-left'   => [
+						'title' => esc_html__( 'Left', 'quiktheme-addons' ),
 						'icon'  => 'eicon-text-align-left'
 					],
-					'finest-text-align-center' => [
-						'title' => esc_html__( 'Center', 'finest-addons' ),
+					'quiktheme-text-align-center' => [
+						'title' => esc_html__( 'Center', 'quiktheme-addons' ),
 						'icon'  => 'eicon-text-align-left'
 					],
-					'finest-text-align-right'  => [
-						'title' => esc_html__( 'Right', 'finest-addons' ),
+					'quiktheme-text-align-right'  => [
+						'title' => esc_html__( 'Right', 'quiktheme-addons' ),
 						'icon'  => 'eicon-text-align-left'
 					]
 				],
-				'default'     => 'finest-text-align-left',
+				'default'     => 'quiktheme-text-align-left',
 				'selectors_dictionary' => [
-					'finest-text-align-left' => 'text-align: left;',
-					'finest-text-align-center' => 'text-align: center;',
-					'finest-text-align-right' => 'text-align: right;',
+					'quiktheme-text-align-left' => 'text-align: left;',
+					'quiktheme-text-align-center' => 'text-align: center;',
+					'quiktheme-text-align-right' => 'text-align: right;',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-text' => '{{VALUE}};',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item .quiktheme-list-group-text' => '{{VALUE}};',
 				],
 				'condition' => [
-					'finest_list_icon_position' => 'finest-icon-center'
+					'quik_theme_list_icon_position' => 'quiktheme-icon-center'
 				]
 			]
 		);
@@ -918,19 +918,19 @@ class Finest_List_group extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'name' => 'finest_section_list_text_typography',
-				'label' => __( 'Typography', 'finest-addons' ),
-				'selector' => '{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-text',
+				'name' => 'quik_theme_section_list_text_typography',
+				'label' => __( 'Typography', 'quiktheme-addons' ),
+				'selector' => '{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item .quiktheme-list-group-text',
 			]
 		);
 
 		$this->add_control(
-			'finest_section_list_text_color',
+			'quik_theme_section_list_text_color',
 			[
-				'label' => __( 'Title Color', 'finest-addons' ),
+				'label' => __( 'Title Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-list-group .finest-list-group-wrapper .finest-list-group-item .finest-list-group-text' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-list-group .quiktheme-list-group-wrapper .quiktheme-list-group-item .quiktheme-list-group-text' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -942,38 +942,38 @@ class Finest_List_group extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		?>
-		<div class="finest-list-group">
-			<ul class="finest-list-group-wrapper <?php echo $settings['finest_section_list_layout']; ?>">
-				<?php foreach( $settings['finest_list_group'] as $list ) : ?>
+		<div class="quiktheme-list-group">
+			<ul class="quiktheme-list-group-wrapper <?php echo $settings['quik_theme_section_list_layout']; ?>">
+				<?php foreach( $settings['quik_theme_list_group'] as $list ) : ?>
 				<?php
-					$target = $list['finest_list_link']['is_external'] ? ' target="_blank"' : '';
-					$nofollow = $list['finest_list_link']['nofollow'] ? ' rel="nofollow"' : '';
+					$target = $list['quik_theme_list_link']['is_external'] ? ' target="_blank"' : '';
+					$nofollow = $list['quik_theme_list_link']['nofollow'] ? ' rel="nofollow"' : '';
 				?>
-					<li class="finest-list-group-item <?php echo $settings['finest_list_icon_position']?>">
-						<?php if ( !empty( $list['finest_list_link']['url'] ) ) { ?>
-						<a href="<?php echo $list['finest_list_link']['url']; ?>" <?php echo $target; ?> <?php echo $nofollow; ?> >
+					<li class="quiktheme-list-group-item <?php echo $settings['quik_theme_list_icon_position']?>">
+						<?php if ( !empty( $list['quik_theme_list_link']['url'] ) ) { ?>
+						<a href="<?php echo $list['quik_theme_list_link']['url']; ?>" <?php echo $target; ?> <?php echo $nofollow; ?> >
 						<?php } ?>
-							<span class="finest-list-group-icon <?php echo $settings['finest_list_item_icon_box_enable']; ?>">
-								<?php if ( $list['finest_list_icon_type'] === 'icon' && !empty($list['finest_list_icon']) ){ ?>
-									<?php Icons_Manager::render_icon( $list['finest_list_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+							<span class="quiktheme-list-group-icon <?php echo $settings['quik_theme_list_item_icon_box_enable']; ?>">
+								<?php if ( $list['quik_theme_list_icon_type'] === 'icon' && !empty($list['quik_theme_list_icon']) ){ ?>
+									<?php Icons_Manager::render_icon( $list['quik_theme_list_icon'], [ 'aria-hidden' => 'true' ] ); ?>
 								<?php } ?>
-								<?php if ( $list['finest_list_icon_type'] === 'number' && !empty($list['finest_list_icon_type']) ){ ?>
-									<div class="finest-list-group-icon-number">
-										<?php echo $list['finest_list_icon_number']; ?>
+								<?php if ( $list['quik_theme_list_icon_type'] === 'number' && !empty($list['quik_theme_list_icon_type']) ){ ?>
+									<div class="quiktheme-list-group-icon-number">
+										<?php echo $list['quik_theme_list_icon_number']; ?>
 									</div>
 								<?php } ?>
-								<?php if ( $list['finest_list_icon_type'] === 'image' && !empty($list['finest_list_icon_type']) ){ ?>
-									<div class="finest-list-group-icon-image">
-										<img src="<?php echo $list['finest_list_icon_number_image']['url'] ?>" alt="<?php echo $list['finest_list_text']; ?>">
+								<?php if ( $list['quik_theme_list_icon_type'] === 'image' && !empty($list['quik_theme_list_icon_type']) ){ ?>
+									<div class="quiktheme-list-group-icon-image">
+										<img src="<?php echo $list['quik_theme_list_icon_number_image']['url'] ?>" alt="<?php echo $list['quik_theme_list_text']; ?>">
 									</div>
 								<?php } ?>
 							</span>
-							<?php if ( !empty( $list['finest_list_text'] ) ) { ?>
-								<span class="finest-list-group-text">
-									<?php echo $list['finest_list_text']; ?>
+							<?php if ( !empty( $list['quik_theme_list_text'] ) ) { ?>
+								<span class="quiktheme-list-group-text">
+									<?php echo $list['quik_theme_list_text']; ?>
 								</span>
 							<?php } ?>
-						<?php if ( !empty( $list['finest_list_link']['url'] ) ) { ?>
+						<?php if ( !empty( $list['quik_theme_list_link']['url'] ) ) { ?>
 						</a>
 						<?php } ?>
 					</li>
@@ -983,4 +983,4 @@ class Finest_List_group extends Widget_Base {
 		<?php
 	}
 }
-$widgets_manager->register_widget_type( new \Finest_Addons\Widgets\Finest_List_group() );
+$widgets_manager->register_widget_type( new \Quik_Theme_Addons\Widgets\Quik_Theme_List_group() );

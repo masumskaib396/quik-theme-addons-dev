@@ -1,5 +1,5 @@
 <?php
-namespace Finest\Widgets\Elementor;
+namespace Quiktheme\Widgets\Elementor;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 use \Elementor\Controls_Manager;
@@ -14,7 +14,7 @@ use \Elementor\Widget_Base;
  *
  * @since 1.0.0
  */
-class Finest_CountDown extends Widget_Base {
+class Quik_Theme_CountDown extends Widget_Base {
 
 	/**
 	 * Retrieve the widget name.
@@ -26,7 +26,7 @@ class Finest_CountDown extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'finest-addons-countdown';
+		return 'quiktheme-addons-countdown';
 	}
 
 	/**
@@ -39,7 +39,7 @@ class Finest_CountDown extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Countdown', 'finest-addons' );
+		return __( 'Countdown', 'quiktheme-addons' );
 	}
 
 	/**
@@ -70,7 +70,7 @@ class Finest_CountDown extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	 public function get_categories() {
- 	   return [ 'finest-addons' ];
+ 	   return [ 'quiktheme-addons' ];
  	}
 
 	/**
@@ -86,18 +86,18 @@ class Finest_CountDown extends Widget_Base {
 		$this->start_controls_section(
 			'section_countdown',
 			[
-				'label' => __( 'Countdown', 'finest-addons' ),
+				'label' => __( 'Countdown', 'quiktheme-addons' ),
 			]
 		);
 
 		$this->add_control(
 			'countdown_type',
 			[
-				'label' => __( 'Type', 'finest-addons' ),
+				'label' => __( 'Type', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'due_date' => __( 'Due Date', 'finest-addons' ),
-					'evergreen' => __( 'Evergreen Timer', 'finest-addons' ),
+					'due_date' => __( 'Due Date', 'quiktheme-addons' ),
+					'evergreen' => __( 'Evergreen Timer', 'quiktheme-addons' ),
 				],
 				'default' => 'due_date',
 			]
@@ -106,11 +106,11 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'due_date',
 			[
-				'label' => __( 'Due Date', 'finest-addons' ),
+				'label' => __( 'Due Date', 'quiktheme-addons' ),
 				'type' => Controls_Manager::DATE_TIME,
 				'default' => gmdate( 'Y-m-d H:i', strtotime( '+1 month' ) + ( get_option( 'gmt_offset' ) * HOUR_IN_SECONDS ) ),
 				/* translators: %s: Time zone. */
-				'description' => sprintf( __( 'Date set according to your timezone: %s.', 'finest-addons' ), Utils::get_timezone_string() ),
+				'description' => sprintf( __( 'Date set according to your timezone: %s.', 'quiktheme-addons' ), Utils::get_timezone_string() ),
 				'condition' => [
 					'countdown_type' => 'due_date',
 				],
@@ -120,10 +120,10 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'evergreen_counter_hours',
 			[
-				'label' => __( 'Hours', 'finest-addons' ),
+				'label' => __( 'Hours', 'quiktheme-addons' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 47,
-				'placeholder' => __( 'Hours', 'finest-addons' ),
+				'placeholder' => __( 'Hours', 'quiktheme-addons' ),
 				'condition' => [
 					'countdown_type' => 'evergreen',
 				],
@@ -133,10 +133,10 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'evergreen_counter_minutes',
 			[
-				'label' => __( 'Minutes', 'finest-addons' ),
+				'label' => __( 'Minutes', 'quiktheme-addons' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 59,
-				'placeholder' => __( 'Minutes', 'finest-addons' ),
+				'placeholder' => __( 'Minutes', 'quiktheme-addons' ),
 				'condition' => [
 					'countdown_type' => 'evergreen',
 				],
@@ -146,7 +146,7 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'divider',
 			[
-				'label' => __( 'Divider', 'finest-addons' ),
+				'label' => __( 'Divider', 'quiktheme-addons' ),
 				'type' => Controls_Manager::TEXT,
 	
 			]
@@ -155,10 +155,10 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'divider_hide_in_mobile',
 			[
-				'label' => __( 'Hide divider in mobile ?', 'finest-addons' ),
+				'label' => __( 'Hide divider in mobile ?', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'finest-addons' ),
-				'label_off' => __( 'No', 'finest-addons' ),
+				'label_on' => __( 'Yes', 'quiktheme-addons' ),
+				'label_off' => __( 'No', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 				'default' => 'no',
 			]
@@ -167,10 +167,10 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'active_inline',
 			[
-				'label' => __( 'Active Inline', 'finest-addons' ),
+				'label' => __( 'Active Inline', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Yes', 'finest-addons' ),
-				'label_off' => __( 'No', 'finest-addons' ),
+				'label_on' => __( 'Yes', 'quiktheme-addons' ),
+				'label_off' => __( 'No', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 				'default' => 'no',
 			]
@@ -179,10 +179,10 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'show_days',
 			[
-				'label' => __( 'Days', 'finest-addons' ),
+				'label' => __( 'Days', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'finest-addons' ),
-				'label_off' => __( 'Hide', 'finest-addons' ),
+				'label_on' => __( 'Show', 'quiktheme-addons' ),
+				'label_off' => __( 'Hide', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -191,10 +191,10 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'show_hours',
 			[
-				'label' => __( 'Hours', 'finest-addons' ),
+				'label' => __( 'Hours', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'finest-addons' ),
-				'label_off' => __( 'Hide', 'finest-addons' ),
+				'label_on' => __( 'Show', 'quiktheme-addons' ),
+				'label_off' => __( 'Hide', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -203,10 +203,10 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'show_minutes',
 			[
-				'label' => __( 'Minutes', 'finest-addons' ),
+				'label' => __( 'Minutes', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'finest-addons' ),
-				'label_off' => __( 'Hide', 'finest-addons' ),
+				'label_on' => __( 'Show', 'quiktheme-addons' ),
+				'label_off' => __( 'Hide', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -215,10 +215,10 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'show_seconds',
 			[
-				'label' => __( 'Seconds', 'finest-addons' ),
+				'label' => __( 'Seconds', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'finest-addons' ),
-				'label_off' => __( 'Hide', 'finest-addons' ),
+				'label_on' => __( 'Show', 'quiktheme-addons' ),
+				'label_off' => __( 'Hide', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -227,10 +227,10 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'show_labels',
 			[
-				'label' => __( 'Show Label', 'finest-addons' ),
+				'label' => __( 'Show Label', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'finest-addons' ),
-				'label_off' => __( 'Hide', 'finest-addons' ),
+				'label_on' => __( 'Show', 'quiktheme-addons' ),
+				'label_off' => __( 'Hide', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 				'separator' => 'before',
@@ -240,7 +240,7 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'custom_labels',
 			[
-				'label' => __( 'Custom Label', 'finest-addons' ),
+				'label' => __( 'Custom Label', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 				'condition' => [
@@ -252,10 +252,10 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'label_days',
 			[
-				'label' => __( 'Days', 'finest-addons' ),
+				'label' => __( 'Days', 'quiktheme-addons' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Days', 'finest-addons' ),
-				'placeholder' => __( 'Days', 'finest-addons' ),
+				'default' => __( 'Days', 'quiktheme-addons' ),
+				'placeholder' => __( 'Days', 'quiktheme-addons' ),
 				'condition' => [
 					'show_labels!' => '',
 					'custom_labels!' => '',
@@ -267,10 +267,10 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'label_hours',
 			[
-				'label' => __( 'Hours', 'finest-addons' ),
+				'label' => __( 'Hours', 'quiktheme-addons' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Hours', 'finest-addons' ),
-				'placeholder' => __( 'Hours', 'finest-addons' ),
+				'default' => __( 'Hours', 'quiktheme-addons' ),
+				'placeholder' => __( 'Hours', 'quiktheme-addons' ),
 				'condition' => [
 					'show_labels!' => '',
 					'custom_labels!' => '',
@@ -282,10 +282,10 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'label_minutes',
 			[
-				'label' => __( 'Minutes', 'finest-addons' ),
+				'label' => __( 'Minutes', 'quiktheme-addons' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Minutes', 'finest-addons' ),
-				'placeholder' => __( 'Minutes', 'finest-addons' ),
+				'default' => __( 'Minutes', 'quiktheme-addons' ),
+				'placeholder' => __( 'Minutes', 'quiktheme-addons' ),
 				'condition' => [
 					'show_labels!' => '',
 					'custom_labels!' => '',
@@ -297,10 +297,10 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'label_seconds',
 			[
-				'label' => __( 'Seconds', 'finest-addons' ),
+				'label' => __( 'Seconds', 'quiktheme-addons' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Seconds', 'finest-addons' ),
-				'placeholder' => __( 'Seconds', 'finest-addons' ),
+				'default' => __( 'Seconds', 'quiktheme-addons' ),
+				'placeholder' => __( 'Seconds', 'quiktheme-addons' ),
 				'condition' => [
 					'show_labels!' => '',
 					'custom_labels!' => '',
@@ -337,12 +337,12 @@ class Finest_CountDown extends Widget_Base {
 /* 		$this->add_control(
 			'expire_actions',
 			[
-				'label' => __( 'Actions After Expire', 'finest-addons' ),
+				'label' => __( 'Actions After Expire', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SELECT2,
 				'options' => [
-					'redirect' => __( 'Redirect', 'finest-addons' ),
-					'hide' => __( 'Hide', 'finest-addons' ),
-					'message' => __( 'Show Message', 'finest-addons' ),
+					'redirect' => __( 'Redirect', 'quiktheme-addons' ),
+					'hide' => __( 'Hide', 'quiktheme-addons' ),
+					'message' => __( 'Show Message', 'quiktheme-addons' ),
 				],
 				'label_block' => true,
 				'separator' => 'before',
@@ -354,7 +354,7 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'message_after_expire',
 			[
-				'label' => __( 'Message', 'finest-addons' ),
+				'label' => __( 'Message', 'quiktheme-addons' ),
 				'type' => Controls_Manager::TEXTAREA,
 				'separator' => 'before',
 				'dynamic' => [
@@ -369,7 +369,7 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'expire_redirect_url',
 			[
-				'label' => __( 'Redirect URL', 'finest-addons' ),
+				'label' => __( 'Redirect URL', 'quiktheme-addons' ),
 				'type' => Controls_Manager::URL,
 				'separator' => 'before',
 				'options' => false,
@@ -387,7 +387,7 @@ class Finest_CountDown extends Widget_Base {
 		$this->start_controls_section(
 			'section_box_style',
 			[
-				'label' => __( 'Boxes', 'finest-addons' ),
+				'label' => __( 'Boxes', 'quiktheme-addons' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -395,7 +395,7 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_responsive_control(
 			'container_width',
 			[
-				'label' => __( 'Container Width', 'finest-addons' ),
+				'label' => __( 'Container Width', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'unit' => '%',
@@ -419,7 +419,7 @@ class Finest_CountDown extends Widget_Base {
 				],
 				'size_units' => [ '%', 'px' ],
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-countdown' => 'max-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-countdown' => 'max-width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -427,10 +427,10 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'box_background_color',
 			[
-				'label' => __( 'Background Color', 'finest-addons' ),
+				'label' => __( 'Background Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-countdown-item' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-addons-countdown-item' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -439,7 +439,7 @@ class Finest_CountDown extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'box_border',
-				'selector' => '{{WRAPPER}} .finest-addons-countdown-item',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-countdown-item',
 				'separator' => 'before',
 			]
 		);
@@ -447,11 +447,11 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'box_border_radius',
 			[
-				'label' => __( 'Border Radius', 'finest-addons' ),
+				'label' => __( 'Border Radius', 'quiktheme-addons' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-countdown-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-countdown-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -459,7 +459,7 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_responsive_control(
 			'box_spacing',
 			[
-				'label' => __( 'Space Between', 'finest-addons' ),
+				'label' => __( 'Space Between', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 10,
@@ -471,10 +471,10 @@ class Finest_CountDown extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'body:not(.rtl) {{WRAPPER}} .finest-addons-countdown-item:not(:first-of-type)' => 'margin-left:{{SIZE}}{{UNIT}};',
-					'body:not(.rtl) {{WRAPPER}} .finest-addons-countdown-item:not(:last-of-type)' => 'margin-right:{{SIZE}}{{UNIT}};',
-					'body.rtl {{WRAPPER}} .finest-addons-countdown-item:not(:first-of-type)' => 'margin-right:{{SIZE}}{{UNIT}};',
-					'body.rtl {{WRAPPER}} .finest-addons-countdown-item:not(:last-of-type)' => 'margin-left:{{SIZE}}{{UNIT}};',
+					'body:not(.rtl) {{WRAPPER}} .quiktheme-addons-countdown-item:not(:first-of-type)' => 'margin-left:{{SIZE}}{{UNIT}};',
+					'body:not(.rtl) {{WRAPPER}} .quiktheme-addons-countdown-item:not(:last-of-type)' => 'margin-right:{{SIZE}}{{UNIT}};',
+					'body.rtl {{WRAPPER}} .quiktheme-addons-countdown-item:not(:first-of-type)' => 'margin-right:{{SIZE}}{{UNIT}};',
+					'body.rtl {{WRAPPER}} .quiktheme-addons-countdown-item:not(:last-of-type)' => 'margin-left:{{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -482,11 +482,11 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_responsive_control(
 			'box_padding',
 			[
-				'label' => __( 'Padding', 'finest-addons' ),
+				'label' => __( 'Padding', 'quiktheme-addons' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-countdown-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-countdown-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -496,7 +496,7 @@ class Finest_CountDown extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => __( 'Content', 'finest-addons' ),
+				'label' => __( 'Content', 'quiktheme-addons' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -504,7 +504,7 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'heading_digits',
 			[
-				'label' => __( 'Digits', 'finest-addons' ),
+				'label' => __( 'Digits', 'quiktheme-addons' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
@@ -512,10 +512,10 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'digits_color',
 			[
-				'label' => __( 'Color', 'finest-addons' ),
+				'label' => __( 'Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-countdown__count' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-addons-countdown__count' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -524,18 +524,18 @@ class Finest_CountDown extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'digits_typography',
-				'selector' => '{{WRAPPER}} .finest-addons-countdown__count',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-countdown__count',
 			]
 		);
 
 		$this->add_responsive_control(
 			'digits_width',
 			[
-				'label' => __( 'Digits Width', 'finest-addons' ),
+				'label' => __( 'Digits Width', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-countdown__count' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-countdown__count' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -543,11 +543,11 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_responsive_control(
 			'digits_padding',
 			[
-				'label' => __( 'Padding', 'finest-addons' ),
+				'label' => __( 'Padding', 'quiktheme-addons' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-countdown__count' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-countdown__count' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -555,7 +555,7 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'heading_label',
 			[
-				'label' => __( 'Label', 'finest-addons' ),
+				'label' => __( 'Label', 'quiktheme-addons' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -564,10 +564,10 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'label_color',
 			[
-				'label' => __( 'Color', 'finest-addons' ),
+				'label' => __( 'Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-addons-countdown-item .text' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-addons-countdown-item .text' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -576,18 +576,18 @@ class Finest_CountDown extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'label_typography',
-				'selector' => '{{WRAPPER}} .finest-addons-countdown-item .text',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-countdown-item .text',
 			]
 		);
 
 		$this->add_responsive_control(
 			'label_padding',
 			[
-				'label' => __( 'Padding', 'finest-addons' ),
+				'label' => __( 'Padding', 'quiktheme-addons' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .elemefinest-addons-countdown-item .text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .elemequiktheme-addons-countdown-item .text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -595,7 +595,7 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'divider_style',
 			[
-				'label' => __( 'Divider', 'finest-addons' ),
+				'label' => __( 'Divider', 'quiktheme-addons' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -604,7 +604,7 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'divider_color',
 			[
-				'label' => __( 'Color', 'finest-addons' ),
+				'label' => __( 'Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .divider' => 'color: {{VALUE}};',
@@ -623,7 +623,7 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_responsive_control(
 			'divider_positon',
 			[
-				'label' => __( 'Divider Position', 'finest-addons' ),
+				'label' => __( 'Divider Position', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -641,7 +641,7 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_responsive_control(
 			'divider_padding',
 			[
-				'label' => __( 'Padding', 'finest-addons' ),
+				'label' => __( 'Padding', 'quiktheme-addons' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -655,7 +655,7 @@ class Finest_CountDown extends Widget_Base {
 /* 		$this->start_controls_section(
 			'section_expire_message_style',
 			[
-				'label' => __( 'Message', 'finest-addons' ),
+				'label' => __( 'Message', 'quiktheme-addons' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'expire_actions' => 'message',
@@ -666,19 +666,19 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_responsive_control(
 			'align',
 			[
-				'label' => __( 'Alignment', 'finest-addons' ),
+				'label' => __( 'Alignment', 'quiktheme-addons' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'finest-addons' ),
+						'title' => __( 'Left', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'finest-addons' ),
+						'title' => __( 'Center', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'finest-addons' ),
+						'title' => __( 'Right', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-right',
 					],
 				],
@@ -691,7 +691,7 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_control(
 			'text_color',
 			[
-				'label' => __( 'Text Color', 'finest-addons' ),
+				'label' => __( 'Text Color', 'quiktheme-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -717,7 +717,7 @@ class Finest_CountDown extends Widget_Base {
 		$this->add_responsive_control(
 			'message_padding',
 			[
-				'label' => __( 'Padding', 'finest-addons' ),
+				'label' => __( 'Padding', 'quiktheme-addons' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -751,10 +751,10 @@ class Finest_CountDown extends Widget_Base {
 
 		if( 'yes' == $settings['show_labels'] ){
 
-			$label_days = $settings['label_days'] ? $settings['label_days'] : __( 'Days', 'finest-addons' );
-			$label_hours = $settings['label_hours'] ? $settings['label_hours'] : __( 'Hours', 'finest-addons' );
-			$label_minutes = $settings['label_minutes'] ? $settings['label_minutes'] : __( 'Minutes', 'finest-addons' );
-			$label_seconds = $settings['label_seconds'] ? $settings['label_seconds'] : __( 'Seconds', 'finest-addons' );
+			$label_days = $settings['label_days'] ? $settings['label_days'] : __( 'Days', 'quiktheme-addons' );
+			$label_hours = $settings['label_hours'] ? $settings['label_hours'] : __( 'Hours', 'quiktheme-addons' );
+			$label_minutes = $settings['label_minutes'] ? $settings['label_minutes'] : __( 'Minutes', 'quiktheme-addons' );
+			$label_seconds = $settings['label_seconds'] ? $settings['label_seconds'] : __( 'Seconds', 'quiktheme-addons' );
 
 		}
 		
@@ -766,11 +766,11 @@ class Finest_CountDown extends Widget_Base {
 		}
 
 		?>
-		<div class="finest-addons-countdown-wrapper ">
-			<ul class="finest-addons-countdown d-inline-flex flex-wrap align-items-center justify-content-lg-start" id="date" data-date="<?php echo $due_date; ?>">
+		<div class="quiktheme-addons-countdown-wrapper ">
+			<ul class="quiktheme-addons-countdown d-inline-flex flex-wrap align-items-center justify-content-lg-start" id="date" data-date="<?php echo $due_date; ?>">
 	
-				<li class="finest-addons-countdown-item count-down-<?php echo esc_attr( $label_display ) ?> show-<?php echo ( 'yes' == $settings['show_days'] ) ? esc_attr( 'yes' ) : esc_attr( 'no' ); ?>">
-					<span class="finest-addons-countdown__count h3-font font-w-700 color-primary" id="days"></span>
+				<li class="quiktheme-addons-countdown-item count-down-<?php echo esc_attr( $label_display ) ?> show-<?php echo ( 'yes' == $settings['show_days'] ) ? esc_attr( 'yes' ) : esc_attr( 'no' ); ?>">
+					<span class="quiktheme-addons-countdown__count h3-font font-w-700 color-primary" id="days"></span>
 	
 					<?php echo ( 'yes' == $settings['show_labels'] ) ? sprintf( '<span class="text">%s</span>', $label_days ) : ''; ?>
 	
@@ -782,8 +782,8 @@ class Finest_CountDown extends Widget_Base {
 				}
 				?>
 	
-				<li class="finest-addons-countdown-item count-down-<?php echo esc_attr( $label_display ) ?> show-<?php echo ( 'yes' == $settings['show_hours'] ) ? esc_attr( 'yes' ) : esc_attr( 'no' ); ?>">
-					<span class="finest-addons-countdown__count h3-font font-w-700 color-primary" id="hours"></span>
+				<li class="quiktheme-addons-countdown-item count-down-<?php echo esc_attr( $label_display ) ?> show-<?php echo ( 'yes' == $settings['show_hours'] ) ? esc_attr( 'yes' ) : esc_attr( 'no' ); ?>">
+					<span class="quiktheme-addons-countdown__count h3-font font-w-700 color-primary" id="hours"></span>
 				<?php echo ( 'yes' == $settings['show_labels'] ) ? sprintf( '<span class="text">%s</span>', $label_hours ) : ''; ?>
 	
 	
@@ -796,9 +796,9 @@ class Finest_CountDown extends Widget_Base {
 	
 	
 		
-				<li class="finest-addons-countdown-item count-down-<?php echo esc_attr( $label_display ) ?> show-<?php echo ( 'yes' == $settings['show_minutes'] ) ? esc_attr( 'yes' ) : esc_attr( 'no' ); ?>">
+				<li class="quiktheme-addons-countdown-item count-down-<?php echo esc_attr( $label_display ) ?> show-<?php echo ( 'yes' == $settings['show_minutes'] ) ? esc_attr( 'yes' ) : esc_attr( 'no' ); ?>">
 	
-					<span class="finest-addons-countdown__count h3-font font-w-700 color-primary" id="minutes"></span>
+					<span class="quiktheme-addons-countdown__count h3-font font-w-700 color-primary" id="minutes"></span>
 	
 					<?php echo ( 'yes' == $settings['show_labels'] ) ? sprintf( '<span class="text">%s</span>', $label_minutes ) : ''; ?>
 	
@@ -812,8 +812,8 @@ class Finest_CountDown extends Widget_Base {
 	
 	
 	
-				<li class="finest-addons-countdown-item count-down-<?php echo esc_attr( $label_display ) ?> show-<?php echo ( 'yes' == $settings['show_seconds'] ) ? esc_attr( 'yes' ) : esc_attr( 'no' ); ?>">
-					<span class="finest-addons-countdown__count h3-font font-w-700 color-primary" id="seconds"></span>
+				<li class="quiktheme-addons-countdown-item count-down-<?php echo esc_attr( $label_display ) ?> show-<?php echo ( 'yes' == $settings['show_seconds'] ) ? esc_attr( 'yes' ) : esc_attr( 'no' ); ?>">
+					<span class="quiktheme-addons-countdown__count h3-font font-w-700 color-primary" id="seconds"></span>
 					<?php echo ( 'yes' == $settings['show_labels'] ) ? sprintf( '<span class="text">%s</span>', $label_seconds ) : ''; ?>
 				</li>
 	
@@ -825,4 +825,4 @@ class Finest_CountDown extends Widget_Base {
 	}
 
 }
-$widgets_manager->register_widget_type( new \Finest\Widgets\Elementor\Finest_CountDown() );
+$widgets_manager->register_widget_type( new \Quiktheme\Widgets\Elementor\Quik_Theme_CountDown() );

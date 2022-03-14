@@ -1,5 +1,5 @@
 <?php
-namespace Finest_Addons\Widgets;
+namespace Quik_Theme_Addons\Widgets;
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
@@ -17,7 +17,7 @@ use Elementor\Icons_Manager;
  *
  * @since 1.0.0
  */
-class Finest_Blog_Category extends Widget_Base {
+class Quik_Theme_Blog_Category extends Widget_Base {
     /**
      * Get widget name.
      *
@@ -29,7 +29,7 @@ class Finest_Blog_Category extends Widget_Base {
      * @return string Widget name.
      */
     public function get_name() {
-        return 'finest-category';
+        return 'quiktheme-category';
     }
     /**
      * Get widget title.
@@ -42,7 +42,7 @@ class Finest_Blog_Category extends Widget_Base {
      * @return string Widget title.
      */
     public function get_title() {
-        return __('Finest Blog Category', 'finest-addons');
+        return __('Quiktheme Blog Category', 'quiktheme-addons');
     }
 
     /**
@@ -71,7 +71,7 @@ class Finest_Blog_Category extends Widget_Base {
      * @return array Widget categories.
      */
     public function get_categories() {
-		return [ 'finest-addons' ];
+		return [ 'quiktheme-addons' ];
     }
     /**
      * Get widget keywords.
@@ -98,14 +98,14 @@ class Finest_Blog_Category extends Widget_Base {
         $this->start_controls_section(
             'section_content',
             [
-                'label' => __('Content', 'finest-addons'),
+                'label' => __('Content', 'quiktheme-addons'),
             ]
         );
 
         $this->add_control(
             'category_count',
             [
-                'label'       => __('Category Limit', 'finest-addons'),
+                'label'       => __('Category Limit', 'quiktheme-addons'),
                 'type'        => Controls_Manager::NUMBER,
                 'default'     => '',
                 'description' => 'user emty value show all posts',
@@ -113,7 +113,7 @@ class Finest_Blog_Category extends Widget_Base {
             ]
         );
         $this->add_responsive_control('per_line', [
-            'label'              => __('Columns per row', 'finest-addons'),
+            'label'              => __('Columns per row', 'quiktheme-addons'),
             'type'               => Controls_Manager::SELECT,
             'default'            => '3',
             'tablet_default'     => '4',
@@ -133,7 +133,7 @@ class Finest_Blog_Category extends Widget_Base {
         */
         $this->start_controls_section('cate_box_title',
             [
-                'label' => __('Category', 'finest-addons'),
+                'label' => __('Category', 'quiktheme-addons'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -146,16 +146,16 @@ class Finest_Blog_Category extends Widget_Base {
         $this->start_controls_tab(
             'cate_normal',
             [
-                'label' => __('Normal', 'finest-addons'),
+                'label' => __('Normal', 'quiktheme-addons'),
             ]
         );
         $this->add_control(
             'advis_title_color',
             [
-                'label'     => __('Color', 'finest-addons'),
+                'label'     => __('Color', 'quiktheme-addons'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}}  .finest-addons-cat-title' => 'color: {{VALUE}}',
+                    '{{WRAPPER}}  .quiktheme-addons-cat-title' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -164,15 +164,15 @@ class Finest_Blog_Category extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'advis_title_typo',
-                'label'    => __('Typography', 'finest-addons'),
-                'selector' => '{{WRAPPER}}   .finest-addons-cat-title',
+                'label'    => __('Typography', 'quiktheme-addons'),
+                'selector' => '{{WRAPPER}}   .quiktheme-addons-cat-title',
             ]
         );
         $this->add_group_control(
             Group_Control_Border::get_type(),
             [
                 'name'      => 'title_border',
-                'selector'  => '{{WRAPPER}} .finest-addons-cat-title',
+                'selector'  => '{{WRAPPER}} .quiktheme-addons-cat-title',
             ]
         );
 
@@ -183,42 +183,42 @@ class Finest_Blog_Category extends Widget_Base {
                 'exclude'  => [
                     'box_shadow_position',
                 ],
-                'selector' => '{{WRAPPER}} .finest-addons-cat-title',
+                'selector' => '{{WRAPPER}} .quiktheme-addons-cat-title',
             ]
         );
         $this->add_responsive_control(
             'title_border_radius',
             [
-                'label'      => __('Border Radius', 'finest-addons'),
+                'label'      => __('Border Radius', 'quiktheme-addons'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-addons-cat-title' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    'body.rtl {{WRAPPER}} .finest-addons-cat-title' => 'border-radius: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-addons-cat-title' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    'body.rtl {{WRAPPER}} .quiktheme-addons-cat-title' => 'border-radius: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
                 ],
             ]
         );
         $this->add_responsive_control(
             'advis_title_padding',
             [
-                'label'      => __('Padding', 'finest-addons'),
+                'label'      => __('Padding', 'quiktheme-addons'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px'],
                 'selectors'  => [
-                    '{{WRAPPER}}  .finest-addons-cat-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    'body.rtl {{WRAPPER}}  .finest-addons-cat-title' => 'padding: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
+                    '{{WRAPPER}}  .quiktheme-addons-cat-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    'body.rtl {{WRAPPER}}  .quiktheme-addons-cat-title' => 'padding: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
                 ],
             ]
         );
         $this->add_responsive_control(
             'advis_title_margin',
             [
-                'label'      => __('Margin', 'finest-addons'),
+                'label'      => __('Margin', 'quiktheme-addons'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px'],
                 'selectors'  => [
-                    '{{WRAPPER}}  .finest-addons-cat-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    'body.rtl {{WRAPPER}}  .finest-addons-cat-title' => 'margin: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
+                    '{{WRAPPER}}  .quiktheme-addons-cat-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    'body.rtl {{WRAPPER}}  .quiktheme-addons-cat-title' => 'margin: {{TOP}}{{UNIT}} {{LEFT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{RIGHT}}{{UNIT}};',
                 ],
             ]
         );
@@ -228,16 +228,16 @@ class Finest_Blog_Category extends Widget_Base {
         $this->start_controls_tab(
             'cate_hover',
             [
-                'label' => __('Hover', 'finest-addons'),
+                'label' => __('Hover', 'quiktheme-addons'),
             ]
         );
         $this->add_control(
             'advis_title_bg_color_hover',
             [
-                'label'     => __('Background Color', 'finest-addons'),
+                'label'     => __('Background Color', 'quiktheme-addons'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}}  .finest-addons-cat:hover .finest-addons-cat-title' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}}  .quiktheme-addons-cat:hover .quiktheme-addons-cat-title' => 'background-color: {{VALUE}}',
                 ],
             ]
         );
@@ -301,9 +301,9 @@ class Finest_Blog_Category extends Widget_Base {
                 $list = ''; 
                 ?> 
                 <div <?php echo $this->get_render_attribute_string('cat_grid_classes'); ?>>
-                    <a class="finest-addons-cat" href="<?php echo get_term_link($cat->slug, 'category') ?>">
+                    <a class="quiktheme-addons-cat" href="<?php echo get_term_link($cat->slug, 'category') ?>">
                         <div class="advis-cat-contnt">
-                            <h4 class="finest-addons-cat-title"><?php echo $cat->name ?></h4>
+                            <h4 class="quiktheme-addons-cat-title"><?php echo $cat->name ?></h4>
                         </div>
                     </a>
                 </div>
@@ -314,4 +314,4 @@ class Finest_Blog_Category extends Widget_Base {
         <?php 
     }
 }
-$widgets_manager->register_widget_type( new \Finest_Addons\Widgets\Finest_Blog_Category() );
+$widgets_manager->register_widget_type( new \Quik_Theme_Addons\Widgets\Quik_Theme_Blog_Category() );

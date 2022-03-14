@@ -1,5 +1,5 @@
 <?php
-namespace Finest_Addons\Widgets;
+namespace Quik_Theme_Addons\Widgets;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -14,7 +14,7 @@ use Elementor\Group_Control_Text_Shadow;
  *
  * @since 1.0.0
  */
-class Finest_Excerpt extends Widget_Base
+class Quik_Theme_Excerpt extends Widget_Base
 {
     /**
      * Get widget name.
@@ -28,7 +28,7 @@ class Finest_Excerpt extends Widget_Base
      */
     public function get_name()
     {
-        return 'finest-excerpt';
+        return 'quiktheme-excerpt';
     }
     /**
      * Get widget title.
@@ -42,7 +42,7 @@ class Finest_Excerpt extends Widget_Base
      */
     public function get_title()
     {
-        return __('Excerpt', 'finest-addons');
+        return __('Excerpt', 'quiktheme-addons');
     }
     /**
      * Get widget icon.
@@ -70,7 +70,7 @@ class Finest_Excerpt extends Widget_Base
      */
     public function get_categories()
     {
-        return ['finest-addons'];
+        return ['quiktheme-addons'];
     }
 
      /**
@@ -84,7 +84,7 @@ class Finest_Excerpt extends Widget_Base
      * @return array Widget keywords.
      */
     public function get_keywords() {
-        return ['excerpt', 'title', 'text', 'finest'];
+        return ['excerpt', 'title', 'text', 'quik-theme-addons'];
     }
 
     /**
@@ -103,44 +103,44 @@ class Finest_Excerpt extends Widget_Base
         $this->start_controls_section(
             'general',
             [
-                'label' => __('Content', 'finest-addons'),
+                'label' => __('Content', 'quiktheme-addons'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
 
         $this->add_responsive_control(
-            'finest_align',
+            'quik_theme_align',
             [
-                'label' => __('Align', 'finest-addons'),
+                'label' => __('Align', 'quiktheme-addons'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', 'finest-addons'),
+                        'title' => __('Left', 'quiktheme-addons'),
                         'icon' => 'fa fa-align-left',
                     ],
                     'center' => [
-                        'title' => __('top', 'finest-addons'),
+                        'title' => __('top', 'quiktheme-addons'),
                         'icon' => 'fa fa-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', 'finest-addons'),
+                        'title' => __('Right', 'quiktheme-addons'),
                         'icon' => 'fa fa-align-right',
                     ],
                 ],
                 'toggle' => true,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-excerpt' => 'text-align: {{VALUE}};',
+                    '{{WRAPPER}} .quiktheme-excerpt' => 'text-align: {{VALUE}};',
                 ],
             ]
         );
 
         $this->add_control(
-            'finest_color',
+            'quik_theme_color',
             [
-                'label' => __('Color', 'finest-addons'),
+                'label' => __('Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-excerpt' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .quiktheme-excerpt' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -148,9 +148,9 @@ class Finest_Excerpt extends Widget_Base
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'name' => 'finest_typography',
-                'label' => __('Typography', 'finest-addons'),
-                'selector' => '{{WRAPPER}} .finest-excerpt',
+                'name' => 'quik_theme_typography',
+                'label' => __('Typography', 'quiktheme-addons'),
+                'selector' => '{{WRAPPER}} .quiktheme-excerpt',
             ]
         );
 
@@ -169,10 +169,10 @@ class Finest_Excerpt extends Widget_Base
         $settings = $this->get_settings_for_display();
 
         ?>
-            <span class="finest-excerpt">
+            <span class="quiktheme-excerpt">
                 <?php the_excerpt() ?>
             </span>
         <?php
     }
 }
-$widgets_manager->register_widget_type( new \Finest_Addons\Widgets\Finest_Excerpt() );
+$widgets_manager->register_widget_type( new \Quik_Theme_Addons\Widgets\Quik_Theme_Excerpt() );

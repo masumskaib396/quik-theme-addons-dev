@@ -11,7 +11,7 @@ $(window).on("elementor/frontend/init", function () {
             if (e == 'unfold_text' || e == 'unfold_icon' || e == 'fold_text' || e == 'fold_icon' || e == 'fold_height' || e == 'transition_duration' || e == 'trigger' ) {
                 this.run();
                 if(e == 'fold_height') {
-                    this.$element.find(".finest-unfold-data").css('height', this.getCollapseHeight() + "px");
+                    this.$element.find(".quiktheme-unfold-data").css('height', this.getCollapseHeight() + "px");
                 }
             }
         },
@@ -95,9 +95,9 @@ $(window).on("elementor/frontend/init", function () {
 
         run: function () {
             var $this = this;
-            var button = this.$element.find(".finest-unfold-btn"),
-                unfoldData = this.$element.find(".finest-unfold-data"),
-                unfoldRender = this.$element.find(".finest-unfold-data-render");
+            var button = this.$element.find(".quiktheme-unfold-btn"),
+                unfoldData = this.$element.find(".quiktheme-unfold-data"),
+                unfoldRender = this.$element.find(".quiktheme-unfold-data-render");
 
             var unfoldSettings = this.getReadySettings();
 
@@ -138,7 +138,7 @@ $(window).on("elementor/frontend/init", function () {
     });
 
 
-    elementorFrontend.hooks.addAction( 'frontend/element_ready/finest-unfold.default', function ($scope) {
+    elementorFrontend.hooks.addAction( 'frontend/element_ready/quiktheme-unfold.default', function ($scope) {
             elementorFrontend.elementsHandler.addHandler(Unfold, {
                 $element: $scope,
             });

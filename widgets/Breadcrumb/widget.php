@@ -1,5 +1,5 @@
 <?php
-namespace Finest_Addons\Widgets;
+namespace Quik_Theme_Addons\Widgets;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,7 +16,7 @@ use Elementor\Icons_Manager;
 use Elementor\Repeater;
 use Elementor\Core\Schemes;
 use Elementor\Utils;
-use Finest_Addons\Finest_Addons_Breadcrumb_Trail;
+use Quik_Theme_Addons\Quik_Theme_Addons_Breadcrumb_Trail;
 
 /**
  * Elementor oEmbed Widget.
@@ -25,7 +25,7 @@ use Finest_Addons\Finest_Addons_Breadcrumb_Trail;
  *
  * @since 1.0.0
  */
-class Finest_Addons_Breadcrumb extends Widget_Base
+class Quik_Theme_Addons_Breadcrumb extends Widget_Base
 {
     /**
      * Get widget name.
@@ -39,7 +39,7 @@ class Finest_Addons_Breadcrumb extends Widget_Base
      */
     public function get_name()
     {
-        return 'finest-addons-breadcrumb';
+        return 'quiktheme-addons-breadcrumb';
     }
     /**
      * Get widget title.
@@ -53,7 +53,7 @@ class Finest_Addons_Breadcrumb extends Widget_Base
      */
     public function get_title()
     {
-        return __('Breadcrumb', 'finest-addons');
+        return __('Breadcrumb', 'quiktheme-addons');
     }
     /**
      * Get widget icon.
@@ -81,7 +81,7 @@ class Finest_Addons_Breadcrumb extends Widget_Base
      */
     public function get_categories()
     {
-        return ['finest-addons'];
+        return ['quiktheme-addons'];
     }
 
     /**
@@ -98,7 +98,7 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->start_controls_section(
 			'_section_breadcrumbs_display',
 			[
-				'label' => __('Display Text', 'finest-addons'),
+				'label' => __('Display Text', 'quiktheme-addons'),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -106,36 +106,36 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->add_control(
 			'home',
 			[
-				'label'                 => __( 'Homepage', 'finest-addons' ),
+				'label'                 => __( 'Homepage', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::TEXT,
-				'default'               => __( 'Home', 'finest-addons' ),
+				'default'               => __( 'Home', 'quiktheme-addons' ),
 			]
 		);
 
 		$this->add_control(
 			'page_title',
 			[
-				'label'                 => __( 'Pages', 'finest-addons' ),
+				'label'                 => __( 'Pages', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::TEXT,
-				'default'               => __( 'Pages', 'finest-addons' ),
+				'default'               => __( 'Pages', 'quiktheme-addons' ),
 			]
 		);
 
 		$this->add_control(
 			'search',
 			[
-				'label'                 => __( 'Search', 'finest-addons' ),
+				'label'                 => __( 'Search', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::TEXT,
-				'default'               => __( 'Search results for:', 'finest-addons' ),
+				'default'               => __( 'Search results for:', 'quiktheme-addons' ),
 			]
 		);
 
 		$this->add_control(
 			'error_404',
 			[
-				'label'                 => __( 'Error 404', 'finest-addons' ),
+				'label'                 => __( 'Error 404', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::TEXT,
-				'default'               => __( '404 Not Found', 'finest-addons' ),
+				'default'               => __( '404 Not Found', 'quiktheme-addons' ),
 			]
 		);
 
@@ -144,7 +144,7 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->start_controls_section(
 			'_section_breadcrumbs',
 			[
-				'label' => __('Breadcrumbs', 'finest-addons'),
+				'label' => __('Breadcrumbs', 'quiktheme-addons'),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -152,7 +152,7 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->add_control(
 			'home_icon',
 			[
-				'label'					=> __( 'Home Icon', 'finest-addons' ),
+				'label'					=> __( 'Home Icon', 'quiktheme-addons' ),
 				'label_block'			=> false,
 				'type'					=> Controls_Manager::ICONS,
 				'default'				=> [
@@ -167,12 +167,12 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->add_control(
 			'separator_type',
 			[
-				'label'                 => __( 'Separator Type', 'finest-addons' ),
+				'label'                 => __( 'Separator Type', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::SELECT,
 				'default'               => 'icon',
 				'options'               => [
-					'text'          => __( 'Text', 'finest-addons' ),
-					'icon'          => __( 'Icon', 'finest-addons' ),
+					'text'          => __( 'Text', 'quiktheme-addons' ),
+					'icon'          => __( 'Icon', 'quiktheme-addons' ),
 				],
 			]
 		);
@@ -180,9 +180,9 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->add_control(
 			'separator_text',
 			[
-				'label'                 => __( 'Separator', 'finest-addons' ),
+				'label'                 => __( 'Separator', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::TEXT,
-				'default'               => __( '>', 'finest-addons' ),
+				'default'               => __( '>', 'quiktheme-addons' ),
 				'condition'             => [
 					'separator_type'    => 'text'
 				],
@@ -192,7 +192,7 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->add_control(
 			'separator_icon',
 			[
-				'label'					=> __( 'Separator', 'finest-addons' ),
+				'label'					=> __( 'Separator', 'quiktheme-addons' ),
 				'label_block'			=> false,
 				'type'					=> Controls_Manager::ICONS,
 				'default'				=> [
@@ -210,7 +210,7 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->add_control(
 			'show_on_front',
 			[
-				'label' => __( 'Show on front page', 'finest-addons' ),
+				'label' => __( 'Show on front page', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SWITCHER,
 				'label_on' => __( 'Show', 'your-plugin' ),
 				'label_off' => __( 'Hide', 'your-plugin' ),
@@ -222,7 +222,7 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->add_control(
 			'show_before_page',
 			[
-				'label' => __( 'Show on Menu page', 'finest-addons' ),
+				'label' => __( 'Show on Menu page', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SWITCHER,
 				'label_on' => __( 'Show', 'your-plugin' ),
 				'label_off' => __( 'Hide', 'your-plugin' ),
@@ -234,7 +234,7 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->add_control(
 			'show_title',
 			[
-				'label' => __( 'Show last item', 'finest-addons' ),
+				'label' => __( 'Show last item', 'quiktheme-addons' ),
 				'type' => Controls_Manager::SWITCHER,
 				'label_on' => __( 'Show', 'your-plugin' ),
 				'label_off' => __( 'Hide', 'your-plugin' ),
@@ -246,25 +246,25 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->add_responsive_control(
 			'align',
 			[
-				'label'                 => __( 'Alignment', 'finest-addons' ),
+				'label'                 => __( 'Alignment', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::CHOOSE,
 				'default'               => '',
 				'options'               => [
 					'left'      => [
-						'title' => __( 'Left', 'finest-addons' ),
+						'title' => __( 'Left', 'quiktheme-addons' ),
 						'icon'  => 'eicon-h-align-left',
 					],
 					'center'    => [
-						'title' => __( 'Center', 'finest-addons' ),
+						'title' => __( 'Center', 'quiktheme-addons' ),
 						'icon'  => 'eicon-h-align-center',
 					],
 					'right'     => [
-						'title' => __( 'Right', 'finest-addons' ),
+						'title' => __( 'Right', 'quiktheme-addons' ),
 						'icon'  => 'eicon-h-align-right',
 					],
 				],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-addons-breadcrumbs'   => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs'   => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -275,7 +275,7 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->start_controls_section(
 			'_section_breadcrumbs_style',
 			[
-				'label' => __('Breadcrumbs', 'finest-addons'),
+				'label' => __('Breadcrumbs', 'quiktheme-addons'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -284,9 +284,9 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'breadcrumbs_background',
-				'label' => __( 'Background', 'finest-addons' ),
+				'label' => __( 'Background', 'quiktheme-addons' ),
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .finest-addons-breadcrumbs',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-breadcrumbs',
 			]
 		);
 
@@ -294,19 +294,19 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 			Group_Control_Border::get_type(),
 			[
 				'name'                  => 'breadcrumbs_border',
-				'label'                 => __( 'Border', 'finest-addons' ),
-				'selector'              => '{{WRAPPER}} .finest-addons-breadcrumbs',
+				'label'                 => __( 'Border', 'quiktheme-addons' ),
+				'selector'              => '{{WRAPPER}} .quiktheme-addons-breadcrumbs',
 			]
 		);
 
 		$this->add_control(
 			'breadcrumbs_border_radius',
 			[
-				'label'                 => __( 'Border Radius', 'finest-addons' ),
+				'label'                 => __( 'Border Radius', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::DIMENSIONS,
 				'size_units'            => [ 'px', '%' ],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-addons-breadcrumbs' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -315,19 +315,19 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'breadcrumbs_shadow',
-				'label' => __( 'Box Shadow', 'finest-addons' ),
-				'selector' => '{{WRAPPER}} .finest-addons-breadcrumbs',
+				'label' => __( 'Box Shadow', 'quiktheme-addons' ),
+				'selector' => '{{WRAPPER}} .quiktheme-addons-breadcrumbs',
 			]
 		);
 
 		$this->add_responsive_control(
 			'breadcrumbs_margin',
 			[
-				'label'                 => __( 'Margin', 'finest-addons' ),
+				'label'                 => __( 'Margin', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::DIMENSIONS,
 				'size_units'            => [ 'px', '%' ],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-addons-breadcrumbs' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -335,11 +335,11 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->add_responsive_control(
 			'breadcrumbs_padding',
 			[
-				'label'                 => __( 'Padding', 'finest-addons' ),
+				'label'                 => __( 'Padding', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::DIMENSIONS,
 				'size_units'            => [ 'px', 'em', '%' ],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-addons-breadcrumbs' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -350,7 +350,7 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->start_controls_section(
 			'_section_common_style',
 			[
-				'label' => __('Common', 'finest-addons'),
+				'label' => __('Common', 'quiktheme-addons'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -358,7 +358,7 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->add_control(
 			'common_spacing',
 			[
-				'label'                 => __( 'Spacing', 'finest-addons' ),
+				'label'                 => __( 'Spacing', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::SLIDER,
 				'range'                 => [
 					'px' 	=> [
@@ -366,8 +366,8 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 					],
 				],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-addons-breadcrumbs li' => 'margin-right: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .finest-addons-breadcrumbs li:last-child' => 'margin-right: 0;',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li:last-child' => 'margin-right: 0;',
 				],
 			]
 		);
@@ -377,17 +377,17 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->start_controls_tab(
 			'tab_common_normal',
 			[
-				'label'                 => __( 'Normal', 'finest-addons' ),
+				'label'                 => __( 'Normal', 'quiktheme-addons' ),
 			]
 		);
 
 		$this->add_control(
 			'common_color',
 			[
-				'label'                 => __( 'Color', 'finest-addons' ),
+				'label'                 => __( 'Color', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::COLOR,
 				'selectors'             => [
-					'{{WRAPPER}} .finest-addons-breadcrumbs li span.finest-addons-breadcrumbs-text' => 'color: {{VALUE}}'
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li span.quiktheme-addons-breadcrumbs-text' => 'color: {{VALUE}}'
 				],
 			]
 		);
@@ -396,9 +396,9 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'common_background_color',
-				'label' => __( 'Background', 'finest-addons' ),
+				'label' => __( 'Background', 'quiktheme-addons' ),
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .finest-addons-breadcrumbs li span.finest-addons-breadcrumbs-text',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-breadcrumbs li span.quiktheme-addons-breadcrumbs-text',
 			]
 		);
 
@@ -406,8 +406,8 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 			Group_Control_Typography::get_type(),
 			[
 				'name'                  => 'common_typography',
-				'label'                 => __( 'Typography', 'finest-addons' ),
-				'selector'              => '{{WRAPPER}} .finest-addons-breadcrumbs li span.finest-addons-breadcrumbs-text',
+				'label'                 => __( 'Typography', 'quiktheme-addons' ),
+				'selector'              => '{{WRAPPER}} .quiktheme-addons-breadcrumbs li span.quiktheme-addons-breadcrumbs-text',
 			]
 		);
 
@@ -415,20 +415,20 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 			Group_Control_Border::get_type(),
 			[
 				'name'                  => 'common_border',
-				'label'                 => __( 'Border', 'finest-addons' ),
-				'selector'              => '{{WRAPPER}} .finest-addons-breadcrumbs li span.finest-addons-breadcrumbs-text',
+				'label'                 => __( 'Border', 'quiktheme-addons' ),
+				'selector'              => '{{WRAPPER}} .quiktheme-addons-breadcrumbs li span.quiktheme-addons-breadcrumbs-text',
 			]
 		);
 
 		$this->add_control(
 			'common_border_radius',
 			[
-				'label'                 => __( 'Border Radius', 'finest-addons' ),
+				'label'                 => __( 'Border Radius', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::DIMENSIONS,
 				'size_units'            => [ 'px', '%' ],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-item a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .finest-addons-breadcrumbs li span.finest-addons-breadcrumbs-text' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-item a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li span.quiktheme-addons-breadcrumbs-text' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -438,17 +438,17 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->start_controls_tab(
 			'tab_common_hover',
 			[
-				'label'                 => __( 'Hover', 'finest-addons' ),
+				'label'                 => __( 'Hover', 'quiktheme-addons' ),
 			]
 		);
 
 		$this->add_control(
 			'common_color_hover',
 			[
-				'label'                 => __( 'Color', 'finest-addons' ),
+				'label'                 => __( 'Color', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::COLOR,
 				'selectors'             => [
-					'{{WRAPPER}} .finest-addons-breadcrumbs li span.finest-addons-breadcrumbs-text:hover' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li span.quiktheme-addons-breadcrumbs-text:hover' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -457,9 +457,9 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'common_background_color_hover',
-				'label' => __( 'Background', 'finest-addons' ),
+				'label' => __( 'Background', 'quiktheme-addons' ),
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .finest-addons-breadcrumbs li span.finest-addons-breadcrumbs-text:hover',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-breadcrumbs li span.quiktheme-addons-breadcrumbs-text:hover',
 			]
 		);
 
@@ -467,7 +467,7 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 			Group_Control_Typography::get_type(),
 			[
 				'name'                  => 'common_typography_hover',
-				'label'                 => __( 'Typography', 'finest-addons' ),
+				'label'                 => __( 'Typography', 'quiktheme-addons' ),
 				'exclude' => [
 					'font_family',
 					'font_size',
@@ -476,17 +476,17 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 					'line_height',
 					'letter_spacing',
 				],
-				'selector'              => '{{WRAPPER}} .finest-addons-breadcrumbs li span.finest-addons-breadcrumbs-text:hover',
+				'selector'              => '{{WRAPPER}} .quiktheme-addons-breadcrumbs li span.quiktheme-addons-breadcrumbs-text:hover',
 			]
 		);
 
 		$this->add_control(
 			'common_border_color_hover',
 			[
-				'label'                 => __( 'Border Color', 'finest-addons' ),
+				'label'                 => __( 'Border Color', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::COLOR,
 				'selectors'             => [
-					'{{WRAPPER}} .finest-addons-breadcrumbs li span.finest-addons-breadcrumbs-text:hover' => 'border-color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li span.quiktheme-addons-breadcrumbs-text:hover' => 'border-color: {{VALUE}}',
 				],
 			]
 		);
@@ -498,19 +498,19 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'common_shadow',
-				'label' => __( 'Box Shadow', 'finest-addons' ),
-				'selector' => '{{WRAPPER}} .finest-addons-breadcrumbs li span.finest-addons-breadcrumbs-text',
+				'label' => __( 'Box Shadow', 'quiktheme-addons' ),
+				'selector' => '{{WRAPPER}} .quiktheme-addons-breadcrumbs li span.quiktheme-addons-breadcrumbs-text',
 			]
 		);
 
 		$this->add_responsive_control(
 			'common_padding',
 			[
-				'label'                 => __( 'Padding', 'finest-addons' ),
+				'label'                 => __( 'Padding', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::DIMENSIONS,
 				'size_units'            => [ 'px', 'em', '%' ],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-addons-breadcrumbs li span.finest-addons-breadcrumbs-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li span.quiktheme-addons-breadcrumbs-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -521,7 +521,7 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->start_controls_section(
 			'_section_home_style',
 			[
-				'label' => __('Home', 'finest-addons'),
+				'label' => __('Home', 'quiktheme-addons'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -531,17 +531,17 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->start_controls_tab(
 			'tab_home_normal',
 			[
-				'label'                 => __( 'Normal', 'finest-addons' ),
+				'label'                 => __( 'Normal', 'quiktheme-addons' ),
 			]
 		);
 
 		$this->add_control(
 			'home_color',
 			[
-				'label'                 => __( 'Color', 'finest-addons' ),
+				'label'                 => __( 'Color', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::COLOR,
 				'selectors'             => [
-					'{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-start span.finest-addons-breadcrumbs-text' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-start span.quiktheme-addons-breadcrumbs-text' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -549,10 +549,10 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->add_control(
 			'home_icon_color',
 			[
-				'label'                 => __( 'Home Icon Color', 'finest-addons' ),
+				'label'                 => __( 'Home Icon Color', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::COLOR,
 				'selectors'             => [
-					'{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-start span.finest-addons-breadcrumbs-text .finest-addons-breadcrumbs-home-icon' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-start span.quiktheme-addons-breadcrumbs-text .quiktheme-addons-breadcrumbs-home-icon' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -561,9 +561,9 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'home_background_color',
-				'label' => __( 'Background', 'finest-addons' ),
+				'label' => __( 'Background', 'quiktheme-addons' ),
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-start span.finest-addons-breadcrumbs-text',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-start span.quiktheme-addons-breadcrumbs-text',
 			]
 		);
 
@@ -571,8 +571,8 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 			Group_Control_Typography::get_type(),
 			[
 				'name'                  => 'home_typography',
-				'label'                 => __( 'Typography', 'finest-addons' ),
-				'selector'              => '{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-start span.finest-addons-breadcrumbs-text',
+				'label'                 => __( 'Typography', 'quiktheme-addons' ),
+				'selector'              => '{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-start span.quiktheme-addons-breadcrumbs-text',
 			]
 		);
 
@@ -580,20 +580,20 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 			Group_Control_Border::get_type(),
 			[
 				'name'                  => 'home_border',
-				'label'                 => __( 'Border', 'finest-addons' ),
-				'selector'              => '{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-start span.finest-addons-breadcrumbs-text',
+				'label'                 => __( 'Border', 'quiktheme-addons' ),
+				'selector'              => '{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-start span.quiktheme-addons-breadcrumbs-text',
 			]
 		);
 
 		$this->add_control(
 			'home_border_radius',
 			[
-				'label'                 => __( 'Border Radius', 'finest-addons' ),
+				'label'                 => __( 'Border Radius', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::DIMENSIONS,
 				'size_units'            => [ 'px', '%' ],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-start a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-start span.finest-addons-breadcrumbs-text' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-start a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-start span.quiktheme-addons-breadcrumbs-text' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -603,18 +603,18 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->start_controls_tab(
 			'tab_home_hover',
 			[
-				'label'                 => __( 'Hover', 'finest-addons' ),
+				'label'                 => __( 'Hover', 'quiktheme-addons' ),
 			]
 		);
 
 		$this->add_control(
 			'home_color_hover',
 			[
-				'label'                 => __( 'Color', 'finest-addons' ),
+				'label'                 => __( 'Color', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::COLOR,
 				'default'               => '',
 				'selectors'             => [
-					'{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-start span.finest-addons-breadcrumbs-text:hover' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-start span.quiktheme-addons-breadcrumbs-text:hover' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -622,12 +622,12 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->add_control(
 			'home_icon_color_hover',
 			[
-				'label'                 => __( 'Home Icon Color', 'finest-addons' ),
+				'label'                 => __( 'Home Icon Color', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::COLOR,
 				'default'               => '',
 				'selectors'             => [
-					'{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-start span.finest-addons-breadcrumbs-text:hover .finest-addons-breadcrumbs-home-icon' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-start span.finest-addons-breadcrumbs-text .finest-addons-breadcrumbs-home-icon' => '-webkit-transition: all .4s;transition: all .4s;',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-start span.quiktheme-addons-breadcrumbs-text:hover .quiktheme-addons-breadcrumbs-home-icon' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-start span.quiktheme-addons-breadcrumbs-text .quiktheme-addons-breadcrumbs-home-icon' => '-webkit-transition: all .4s;transition: all .4s;',
 				],
 			]
 		);
@@ -636,9 +636,9 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'home_background_color_hover',
-				'label' => __( 'Background', 'finest-addons' ),
+				'label' => __( 'Background', 'quiktheme-addons' ),
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-start span.finest-addons-breadcrumbs-text:hover',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-start span.quiktheme-addons-breadcrumbs-text:hover',
 			]
 		);
 
@@ -646,7 +646,7 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 			Group_Control_Typography::get_type(),
 			[
 				'name'                  => 'home_typography_hover',
-				'label'                 => __( 'Typography', 'finest-addons' ),
+				'label'                 => __( 'Typography', 'quiktheme-addons' ),
 				'exclude' => [
 					'font_family',
 					'font_size',
@@ -655,18 +655,18 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 					'line_height',
 					'letter_spacing',
 				],
-				'selector'              => '{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-start span.finest-addons-breadcrumbs-text:hover',
+				'selector'              => '{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-start span.quiktheme-addons-breadcrumbs-text:hover',
 			]
 		);
 
 		$this->add_control(
 			'home_border_color_hover',
 			[
-				'label'                 => __( 'Border Color', 'finest-addons' ),
+				'label'                 => __( 'Border Color', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::COLOR,
 				'default'               => '',
 				'selectors'             => [
-					'{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-start span.finest-addons-breadcrumbs-text:hover' => 'border-color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-start span.quiktheme-addons-breadcrumbs-text:hover' => 'border-color: {{VALUE}}',
 				],
 			]
 		);
@@ -677,7 +677,7 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->add_control(
 			'home_spacing',
 			[
-				'label'                 => __( 'Home Icon Spacing', 'finest-addons' ),
+				'label'                 => __( 'Home Icon Spacing', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::SLIDER,
 				'range'                 => [
 					'px' 	=> [
@@ -685,7 +685,7 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 					],
 				],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-addons-breadcrumbs li span.finest-addons-breadcrumbs-home-icon' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li span.quiktheme-addons-breadcrumbs-home-icon' => 'margin-right: {{SIZE}}{{UNIT}};',
 				],
 				'separator'             => 'before',
 			]
@@ -697,7 +697,7 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->start_controls_section(
 			'_section_separator_style',
 			[
-				'label' => __('Separator', 'finest-addons'),
+				'label' => __('Separator', 'quiktheme-addons'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -705,11 +705,11 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->add_control(
 			'separator_color',
 			[
-				'label'                 => __( 'Color', 'finest-addons' ),
+				'label'                 => __( 'Color', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::COLOR,
 				'selectors'             => [
-					'{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-separator span.finest-addons-breadcrumbs-separator-icon' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-separator span.finest-addons-breadcrumbs-separator-text' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-separator span.quiktheme-addons-breadcrumbs-separator-icon' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-separator span.quiktheme-addons-breadcrumbs-separator-text' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -718,9 +718,9 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'separator_background_color',
-				'label' => __( 'Background', 'finest-addons' ),
+				'label' => __( 'Background', 'quiktheme-addons' ),
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-separator span.finest-addons-breadcrumbs-separator-icon, {{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-separator span.finest-addons-breadcrumbs-separator-text',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-separator span.quiktheme-addons-breadcrumbs-separator-icon, {{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-separator span.quiktheme-addons-breadcrumbs-separator-text',
 			]
 		);
 
@@ -728,8 +728,8 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 			Group_Control_Typography::get_type(),
 			[
 				'name'                  => 'separator_typography',
-				'label'                 => __( 'Typography', 'finest-addons' ),
-				'selector'              => '{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-separator span.finest-addons-breadcrumbs-separator-icon, {{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-separator span.finest-addons-breadcrumbs-separator-text',
+				'label'                 => __( 'Typography', 'quiktheme-addons' ),
+				'selector'              => '{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-separator span.quiktheme-addons-breadcrumbs-separator-icon, {{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-separator span.quiktheme-addons-breadcrumbs-separator-text',
 			]
 		);
 
@@ -737,20 +737,20 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 			Group_Control_Border::get_type(),
 			[
 				'name'                  => 'separator_border',
-				'label'                 => __( 'Border', 'finest-addons' ),
-				'selector'              => '{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-separator span.finest-addons-breadcrumbs-separator-icon, {{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-separator span.finest-addons-breadcrumbs-separator-icon',
+				'label'                 => __( 'Border', 'quiktheme-addons' ),
+				'selector'              => '{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-separator span.quiktheme-addons-breadcrumbs-separator-icon, {{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-separator span.quiktheme-addons-breadcrumbs-separator-icon',
 			]
 		);
 
 		$this->add_control(
 			'separator_border_radius',
 			[
-				'label'                 => __( 'Border Radius', 'finest-addons' ),
+				'label'                 => __( 'Border Radius', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::DIMENSIONS,
 				'size_units'            => [ 'px', '%' ],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-separator span.finest-addons-breadcrumbs-separator-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-separator span.finest-addons-breadcrumbs-separator-text' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-separator span.quiktheme-addons-breadcrumbs-separator-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-separator span.quiktheme-addons-breadcrumbs-separator-text' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -758,12 +758,12 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->add_responsive_control(
 			'separator_padding',
 			[
-				'label'                 => __( 'Padding', 'finest-addons' ),
+				'label'                 => __( 'Padding', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::DIMENSIONS,
 				'size_units'            => [ 'px', 'em', '%' ],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-separator span.finest-addons-breadcrumbs-separator-icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-separator span.finest-addons-breadcrumbs-separator-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-separator span.quiktheme-addons-breadcrumbs-separator-icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-separator span.quiktheme-addons-breadcrumbs-separator-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -774,7 +774,7 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->start_controls_section(
 			'_section_current_style',
 			[
-				'label' => __('Current', 'finest-addons'),
+				'label' => __('Current', 'quiktheme-addons'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -782,10 +782,10 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$this->add_control(
 			'current_color',
 			[
-				'label'                 => __( 'Color', 'finest-addons' ),
+				'label'                 => __( 'Color', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::COLOR,
 				'selectors'             => [
-					'{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-item.finest-addons-breadcrumbs-end span.finest-addons-breadcrumbs-text' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-item.quiktheme-addons-breadcrumbs-end span.quiktheme-addons-breadcrumbs-text' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -794,9 +794,9 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'current_background_color',
-				'label' => __( 'Background', 'finest-addons' ),
+				'label' => __( 'Background', 'quiktheme-addons' ),
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-item.finest-addons-breadcrumbs-end span.finest-addons-breadcrumbs-text',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-item.quiktheme-addons-breadcrumbs-end span.quiktheme-addons-breadcrumbs-text',
 			]
 		);
 
@@ -804,8 +804,8 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 			Group_Control_Typography::get_type(),
 			[
 				'name'                  => 'current_typography',
-				'label'                 => __( 'Typography', 'finest-addons' ),
-				'selector'              => '{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-item.finest-addons-breadcrumbs-end span.finest-addons-breadcrumbs-text',
+				'label'                 => __( 'Typography', 'quiktheme-addons' ),
+				'selector'              => '{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-item.quiktheme-addons-breadcrumbs-end span.quiktheme-addons-breadcrumbs-text',
 			]
 		);
 
@@ -813,19 +813,19 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 			Group_Control_Border::get_type(),
 			[
 				'name'                  => 'current_border',
-				'label'                 => __( 'Border', 'finest-addons' ),
-				'selector'              => '{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-item.finest-addons-breadcrumbs-end span.finest-addons-breadcrumbs-text',
+				'label'                 => __( 'Border', 'quiktheme-addons' ),
+				'selector'              => '{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-item.quiktheme-addons-breadcrumbs-end span.quiktheme-addons-breadcrumbs-text',
 			]
 		);
 
 		$this->add_control(
 			'current_border_radius',
 			[
-				'label'                 => __( 'Border Radius', 'finest-addons' ),
+				'label'                 => __( 'Border Radius', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::DIMENSIONS,
 				'size_units'            => [ 'px', '%' ],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-addons-breadcrumbs li.finest-addons-breadcrumbs-item.finest-addons-breadcrumbs-end span.finest-addons-breadcrumbs-text' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-breadcrumbs li.quiktheme-addons-breadcrumbs-item.quiktheme-addons-breadcrumbs-end span.quiktheme-addons-breadcrumbs-text' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -845,10 +845,10 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		$separator = '';
 		if( 'icon' === $settings['separator_type'] && $settings['separator_icon']['value'] ){
 			$icon = sprintf( '<%1$s class="%2$s" aria-hidden="true"></%1$s>', tag_escape( 'i' ), esc_attr( $settings['separator_icon']['value'] ) );
-			$attributes = 'class="finest-addons-breadcrumbs-separator-icon"';
+			$attributes = 'class="quiktheme-addons-breadcrumbs-separator-icon"';
 			$separator = sprintf( '<%1$s %2$s>%3$s</%1$s>', tag_escape( 'span' ), $attributes, $icon );
 		}elseif( 'text' === $settings['separator_type'] && $settings['separator_text'] ){
-			$attributes = 'class="finest-addons-breadcrumbs-separator-text"';
+			$attributes = 'class="quiktheme-addons-breadcrumbs-separator-text"';
 			$separator = sprintf( '<%1$s %2$s>%3$s</%1$s>', tag_escape( 'span' ), $attributes, esc_html( $settings['separator_text'] ) );
 		}
 
@@ -860,20 +860,20 @@ class Finest_Addons_Breadcrumb extends Widget_Base
 		);
 
 		$args = array(
-			'list_class'      => 'finest-addons-breadcrumbs',
-			'item_class'      => 'finest-addons-breadcrumbs-item',
+			'list_class'      => 'quiktheme-addons-breadcrumbs',
+			'item_class'      => 'quiktheme-addons-breadcrumbs-item',
 			'separator'      => $separator,
-			'separator_class' => 'finest-addons-breadcrumbs-separator',
+			'separator_class' => 'quiktheme-addons-breadcrumbs-separator',
 			'home_icon' => $home_icon,
-			'home_icon_class' => 'finest-addons-breadcrumbs-home-icon',
+			'home_icon_class' => 'quiktheme-addons-breadcrumbs-home-icon',
 			'labels' => $labels,
 			'show_on_front' => 'yes' === $settings['show_on_front'] ? true : false,
 			'show_title' => 'yes' === $settings['show_title'] ? true : false,
 		);
 
-		$breadcrumb = new Finest_Addons_Breadcrumb_Trail( $args );
+		$breadcrumb = new Quik_Theme_Addons_Breadcrumb_Trail( $args );
 		echo $breadcrumb->trail();
 	}
 
 }
-$widgets_manager->register_widget_type( new \Finest_Addons\Widgets\Finest_Addons_Breadcrumb() );
+$widgets_manager->register_widget_type( new \Quik_Theme_Addons\Widgets\Quik_Theme_Addons_Breadcrumb() );

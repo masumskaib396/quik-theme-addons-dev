@@ -1,5 +1,5 @@
 <?php
-namespace Finest_Addons\Widgets;
+namespace Quik_Theme_Addons\Widgets;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Background;
@@ -10,7 +10,7 @@ use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
 
-class Finest_Unfold extends Widget_Base {
+class Quik_Theme_Unfold extends Widget_Base {
 
     public $button_condition = [
         'relation' => 'or',
@@ -43,17 +43,17 @@ class Finest_Unfold extends Widget_Base {
     ];
 
     public function get_name() {
-		return 'finest-unfold';
+		return 'quiktheme-unfold';
 	}
     public function get_title() {
-        return __('Unfold', 'finest-addons');
+        return __('Unfold', 'quiktheme-addons');
     }
 
     public function get_icon() {
         return 'feather icon-film';
     }
     public function get_categories() {
-        return [ 'finest-addons' ];
+        return [ 'quiktheme-addons' ];
     }
 
     public function get_keywords() {
@@ -66,7 +66,7 @@ class Finest_Unfold extends Widget_Base {
         $this->start_controls_section(
             '_section_content',
             [
-                'label' => __('Content', 'finest-addons'),
+                'label' => __('Content', 'quiktheme-addons'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -75,9 +75,9 @@ class Finest_Unfold extends Widget_Base {
             'title',
             [
                 'type' => Controls_Manager::TEXT,
-                'label' => __('Title', 'finest-addons'),
-                'default' => __('Unfold Magic', 'finest-addons'),
-                'placeholder' => __('Type Unfold Title', 'finest-addons'),
+                'label' => __('Title', 'quiktheme-addons'),
+                'default' => __('Unfold Magic', 'quiktheme-addons'),
+                'placeholder' => __('Type Unfold Title', 'quiktheme-addons'),
                 'dynamic' => [
                     'active' => true,
                 ]
@@ -87,7 +87,7 @@ class Finest_Unfold extends Widget_Base {
         $this->add_control(
             'editor',
             [
-                'label' => __('Content Editor', 'finest-addons'),
+                'label' => __('Content Editor', 'quiktheme-addons'),
                 'show_label' => false,
                 'type' => Controls_Manager::WYSIWYG,
                 'default' => '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
@@ -103,26 +103,26 @@ class Finest_Unfold extends Widget_Base {
         $this->add_responsive_control(
             'content_align',
             [
-                'label' => __('Alignment', 'finest-addons'),
+                'label' => __('Alignment', 'quiktheme-addons'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'start' => [
-                        'title' => __('Left', 'finest-addons'),
+                        'title' => __('Left', 'quiktheme-addons'),
                         'icon' => 'eicon-h-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'finest-addons'),
+                        'title' => __('Center', 'quiktheme-addons'),
                         'icon' => 'eicon-h-align-center',
                     ],
                     'end' => [
-                        'title' => __('Right', 'finest-addons'),
+                        'title' => __('Right', 'quiktheme-addons'),
                         'icon' => 'eicon-h-align-right',
                     ],
                 ],
                 'default' => 'center',
                 'toggle' => false,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-unfold-widget-wrapper' => 'align-items:{{VALUE}}; text-align: {{VALUE}}'
+                    '{{WRAPPER}} .quiktheme-unfold-widget-wrapper' => 'align-items:{{VALUE}}; text-align: {{VALUE}}'
                 ],
                 'style_transfer' => true,
             ]
@@ -135,7 +135,7 @@ class Finest_Unfold extends Widget_Base {
         $this->start_controls_section(
             '_section_fold',
             [
-                'label' => __('Fold/ Unfold Options', 'finest-addons'),
+                'label' => __('Fold/ Unfold Options', 'quiktheme-addons'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -143,12 +143,12 @@ class Finest_Unfold extends Widget_Base {
         $this->add_control(
             'trigger',
             [
-                'label' => __('Trigger', 'finest-addons'),
+                'label' => __('Trigger', 'quiktheme-addons'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'click',
                 'options' => [
-                    'click'  => __('Click', 'finest-addons'),
-                    'hover' => __('Hover', 'finest-addons'),
+                    'click'  => __('Click', 'quiktheme-addons'),
+                    'hover' => __('Hover', 'quiktheme-addons'),
                 ],
                 'frontend_available' => true,
             ]
@@ -157,7 +157,7 @@ class Finest_Unfold extends Widget_Base {
         $this->add_control(
             'trigger_notice',
             [
-                'raw' => '<strong>' . esc_html__('Note!', 'finest-addons') . '</strong> ' . esc_html__('Please disable the button under "Button" section. ', 'finest-addons') . '<br>'. esc_html__('Having both button & trigger hover will make the button non functioning.', 'finest-addons'),
+                'raw' => '<strong>' . esc_html__('Note!', 'quiktheme-addons') . '</strong> ' . esc_html__('Please disable the button under "Button" section. ', 'quiktheme-addons') . '<br>'. esc_html__('Having both button & trigger hover will make the button non functioning.', 'quiktheme-addons'),
                 'type' => Controls_Manager::RAW_HTML,
                 'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
                 'render_type' => 'ui',
@@ -170,7 +170,7 @@ class Finest_Unfold extends Widget_Base {
         $this->add_responsive_control(
             'fold_height',
             [
-                'label' => __('Fold Height (px)', 'finest-addons'),
+                'label' => __('Fold Height (px)', 'quiktheme-addons'),
                 'type' => Controls_Manager::NUMBER,
                 'min' => 0,
                 'max' => 1000,
@@ -183,7 +183,7 @@ class Finest_Unfold extends Widget_Base {
         $this->add_control(
             'transition_duration',
             [
-                'label' => __('Transition Duration (ms)', 'finest-addons'),
+                'label' => __('Transition Duration (ms)', 'quiktheme-addons'),
                 'type' => Controls_Manager::NUMBER,
                 'min' => 0,
                 'max' => 3000,
@@ -200,7 +200,7 @@ class Finest_Unfold extends Widget_Base {
         $this->start_controls_section(
             '_section_button',
             [
-                'label' => __('Button', 'finest-addons'),
+                'label' => __('Button', 'quiktheme-addons'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -208,10 +208,10 @@ class Finest_Unfold extends Widget_Base {
         $this->add_control(
             'button_disable',
             [
-                'label' => __('Disable Button?', 'finest-addons'),
+                'label' => __('Disable Button?', 'quiktheme-addons'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'finest-addons'),
-                'label_off' => __('No', 'finest-addons'),
+                'label_on' => __('Yes', 'quiktheme-addons'),
+                'label_off' => __('No', 'quiktheme-addons'),
                 'return_value' => 'yes',
                 'default' => '',
                 'condition' => [
@@ -223,10 +223,10 @@ class Finest_Unfold extends Widget_Base {
         $this->add_control(
             'content_position',
             [
-                'label' => __('Button Position Above Content?', 'finest-addons'),
+                'label' => __('Button Position Above Content?', 'quiktheme-addons'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Yes', 'finest-addons'),
-                'label_off' => __('No', 'finest-addons'),
+                'label_on' => __('Yes', 'quiktheme-addons'),
+                'label_off' => __('No', 'quiktheme-addons'),
                 'return_value' => 'yes',
                 'default' => '',
                 'conditions' => $this->button_condition,
@@ -237,9 +237,9 @@ class Finest_Unfold extends Widget_Base {
             'unfold_text',
             [
                 'type' => Controls_Manager::TEXT,
-                'label' => __('Unfold Text', 'finest-addons'),
-                'default' => __('Read More', 'finest-addons'),
-                'placeholder' => __('Type Unfold Text', 'finest-addons'),
+                'label' => __('Unfold Text', 'quiktheme-addons'),
+                'default' => __('Read More', 'quiktheme-addons'),
+                'placeholder' => __('Type Unfold Text', 'quiktheme-addons'),
                 'frontend_available' => true,
                 'conditions' => $this->button_condition,
                 'dynamic' => [
@@ -251,7 +251,7 @@ class Finest_Unfold extends Widget_Base {
         $this->add_control(
             'unfold_icon',
             [
-                'label' => __('Unfold Icon', 'finest-addons'),
+                'label' => __('Unfold Icon', 'quiktheme-addons'),
                 'type' => Controls_Manager::ICONS,
                 'label_block' => false,
                 'skin' => 'inline',
@@ -265,9 +265,9 @@ class Finest_Unfold extends Widget_Base {
             'fold_text',
             [
                 'type' => Controls_Manager::TEXT,
-                'label' => __('Fold Text', 'finest-addons'),
-                'default' => __('Read Less', 'finest-addons'),
-                'placeholder' => __('Type Fold Text', 'finest-addons'),
+                'label' => __('Fold Text', 'quiktheme-addons'),
+                'default' => __('Read Less', 'quiktheme-addons'),
+                'placeholder' => __('Type Fold Text', 'quiktheme-addons'),
                 'frontend_available' => true,
                 'conditions' => $this->button_condition,
                 'dynamic' => [
@@ -280,7 +280,7 @@ class Finest_Unfold extends Widget_Base {
         $this->add_control(
             'fold_icon',
             [
-                'label' => __('Fold Icon', 'finest-addons'),
+                'label' => __('Fold Icon', 'quiktheme-addons'),
                 'type' => Controls_Manager::ICONS,
                 'label_block' => false,
                 'skin' => 'inline',
@@ -293,12 +293,12 @@ class Finest_Unfold extends Widget_Base {
         $this->add_control(
             'icon_position',
             [
-                'label' => __('Icon Position', 'finest-addons'),
+                'label' => __('Icon Position', 'quiktheme-addons'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'before',
                 'options' => [
-                    'before'  => __('Before', 'finest-addons'),
-                    'after' => __('After', 'finest-addons'),
+                    'before'  => __('Before', 'quiktheme-addons'),
+                    'after' => __('After', 'quiktheme-addons'),
                 ],
                 'conditions' => $this->button_condition,
             ]
@@ -307,25 +307,25 @@ class Finest_Unfold extends Widget_Base {
         $this->add_responsive_control(
             'button_align',
             [
-                'label' => __('Alignment', 'finest-addons'),
+                'label' => __('Alignment', 'quiktheme-addons'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'start' => [
-                        'title' => __('Left', 'finest-addons'),
+                        'title' => __('Left', 'quiktheme-addons'),
                         'icon' => 'eicon-h-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'finest-addons'),
+                        'title' => __('Center', 'quiktheme-addons'),
                         'icon' => 'eicon-h-align-center',
                     ],
                     'end' => [
-                        'title' => __('Right', 'finest-addons'),
+                        'title' => __('Right', 'quiktheme-addons'),
                         'icon' => 'eicon-h-align-right',
                     ],
                 ],
                 'toggle' => true,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-btn' => 'align-self:{{VALUE}};'
+                    '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-btn' => 'align-self:{{VALUE}};'
                 ],
                 'style_transfer' => true,
                 'conditions' => $this->button_condition,
@@ -337,7 +337,7 @@ class Finest_Unfold extends Widget_Base {
         $this->start_controls_section(
             '_section_style_box',
             [
-                'label' => __('Box', 'finest-addons'),
+                'label' => __('Box', 'quiktheme-addons'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -345,11 +345,11 @@ class Finest_Unfold extends Widget_Base {
         $this->add_responsive_control(
             'box_margin',
             [
-                'label' => __('Margin', 'finest-addons'),
+                'label' => __('Margin', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-unfold-widget-wrapper' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-unfold-widget-wrapper' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -357,7 +357,7 @@ class Finest_Unfold extends Widget_Base {
         $this->add_responsive_control(
             'box_padding',
             [
-                'label' => __('Padding', 'finest-addons'),
+                'label' => __('Padding', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'default' => [
@@ -369,7 +369,7 @@ class Finest_Unfold extends Widget_Base {
                     'isLinked' => 'true',
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-unfold-widget-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-unfold-widget-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -378,7 +378,7 @@ class Finest_Unfold extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'box_border',
-                'label' => __('Border', 'finest-addons'),
+                'label' => __('Border', 'quiktheme-addons'),
                 'selector' => '{{WRAPPER}} > .elementor-widget-container',
             ]
         );
@@ -386,7 +386,7 @@ class Finest_Unfold extends Widget_Base {
         $this->add_control(
             'box_border_radius',
             [
-                'label' => __('Border Radius', 'finest-addons'),
+                'label' => __('Border Radius', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
@@ -400,7 +400,7 @@ class Finest_Unfold extends Widget_Base {
         $this->start_controls_tab(
             'box_background_tab',
             [
-                'label' => __('Normal', 'finest-addons'),
+                'label' => __('Normal', 'quiktheme-addons'),
 
             ]
         );
@@ -409,9 +409,9 @@ class Finest_Unfold extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'box_background',
-                'label' => __('Background', 'finest-addons'),
+                'label' => __('Background', 'quiktheme-addons'),
                 'types' => ['classic', 'gradient'],
-                'selector' => '{{WRAPPER}} .finest-unfold-widget-wrapper',
+                'selector' => '{{WRAPPER}} .quiktheme-unfold-widget-wrapper',
             ]
         );
 
@@ -419,7 +419,7 @@ class Finest_Unfold extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'box_shadow',
-                'label' => __('Box Shadow', 'finest-addons'),
+                'label' => __('Box Shadow', 'quiktheme-addons'),
                 'selector' => '{{WRAPPER}} > .elementor-widget-container',
             ]
         );
@@ -429,7 +429,7 @@ class Finest_Unfold extends Widget_Base {
         $this->start_controls_tab(
             'box_background_tab_hover',
             [
-                'label' => __('Hover', 'finest-addons'),
+                'label' => __('Hover', 'quiktheme-addons'),
 
             ]
         );
@@ -438,9 +438,9 @@ class Finest_Unfold extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'box_background_hover',
-                'label' => __('Background', 'finest-addons'),
+                'label' => __('Background', 'quiktheme-addons'),
                 'types' => ['classic', 'gradient'],
-                'selector' => '{{WRAPPER}} .finest-unfold-widget-wrapper:hover',
+                'selector' => '{{WRAPPER}} .quiktheme-unfold-widget-wrapper:hover',
             ]
         );
 
@@ -448,7 +448,7 @@ class Finest_Unfold extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'box_shadow_hover',
-                'label' => __('Box Shadow', 'finest-addons'),
+                'label' => __('Box Shadow', 'quiktheme-addons'),
                 'selector' => '{{WRAPPER}}:hover .elementor-widget-container',
             ]
         );
@@ -456,7 +456,7 @@ class Finest_Unfold extends Widget_Base {
         $this->add_control(
             'box_border_color_hover',
             [
-                'label' => __('Border Color', 'finest-addons'),
+                'label' => __('Border Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'condition' => [
                     'box_border_border!' => '',
@@ -474,7 +474,7 @@ class Finest_Unfold extends Widget_Base {
         $this->add_responsive_control(
             'overlay_height',
             [
-                'label' => __('Overlay Height', 'finest-addons'),
+                'label' => __('Overlay Height', 'quiktheme-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'separator' => 'before',
                 'size_units' => ['px', '%'],
@@ -494,7 +494,7 @@ class Finest_Unfold extends Widget_Base {
                     'size' => 50,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-data::after' => 'height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-data::after' => 'height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -503,12 +503,12 @@ class Finest_Unfold extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name'     => 'overlay_color',
-                'label'    => esc_html__('Overlay Color', 'finest-addons'),
+                'label'    => esc_html__('Overlay Color', 'quiktheme-addons'),
                 'types'    => ['gradient'],
-                'selector' => '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-data::after',
+                'selector' => '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-data::after',
                 'fields_options' => [
                     'background' => [
-                        'label' => esc_html__('Overlay Color', 'finest-addons'),
+                        'label' => esc_html__('Overlay Color', 'quiktheme-addons'),
                     ],
                 ],
             ]
@@ -520,7 +520,7 @@ class Finest_Unfold extends Widget_Base {
         $this->start_controls_section(
             '_section_style_title',
             [
-                'label' => __('Title', 'finest-addons'),
+                'label' => __('Title', 'quiktheme-addons'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -528,11 +528,11 @@ class Finest_Unfold extends Widget_Base {
         $this->add_responsive_control(
             'title_margin',
             [
-                'label' => __('Margin', 'finest-addons'),
+                'label' => __('Margin', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-heading' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-heading' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -540,10 +540,10 @@ class Finest_Unfold extends Widget_Base {
         $this->add_control(
             'title_color',
             [
-                'label' => __('Color', 'finest-addons'),
+                'label' => __('Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-heading' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-heading' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -552,8 +552,8 @@ class Finest_Unfold extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'title_typography',
-                'label' => __('Typography', 'finest-addons'),
-                'selector' => '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-heading',
+                'label' => __('Typography', 'quiktheme-addons'),
+                'selector' => '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-heading',
             ]
         );
 
@@ -561,8 +561,8 @@ class Finest_Unfold extends Widget_Base {
             Group_Control_Text_Shadow::get_type(),
             [
                 'name' => 'title_shadow',
-                'label' => __('Text Shadow', 'finest-addons'),
-                'selector' => '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-heading',
+                'label' => __('Text Shadow', 'quiktheme-addons'),
+                'selector' => '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-heading',
             ]
         );
 
@@ -572,7 +572,7 @@ class Finest_Unfold extends Widget_Base {
         $this->start_controls_section(
             '_section_style_content',
             [
-                'label' => __('Content', 'finest-addons'),
+                'label' => __('Content', 'quiktheme-addons'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -580,7 +580,7 @@ class Finest_Unfold extends Widget_Base {
         $this->add_responsive_control(
             'content_margin',
             [
-                'label' => __('Margin', 'finest-addons'),
+                'label' => __('Margin', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'default' => [
@@ -592,7 +592,7 @@ class Finest_Unfold extends Widget_Base {
                     'isLinked' => 'true',
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-data-render' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-data-render' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -600,10 +600,10 @@ class Finest_Unfold extends Widget_Base {
         $this->add_control(
             'content_color',
             [
-                'label' => __('Color', 'finest-addons'),
+                'label' => __('Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-data-render' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-data-render' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -612,8 +612,8 @@ class Finest_Unfold extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'content_typography',
-                'label' => __('Typography', 'finest-addons'),
-                'selector' => '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-data-render',
+                'label' => __('Typography', 'quiktheme-addons'),
+                'selector' => '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-data-render',
             ]
         );
 
@@ -621,8 +621,8 @@ class Finest_Unfold extends Widget_Base {
             Group_Control_Text_Shadow::get_type(),
             [
                 'name' => 'content_shadow',
-                'label' => __('Shadow', 'finest-addons'),
-                'selector' => '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-data-render',
+                'label' => __('Shadow', 'quiktheme-addons'),
+                'selector' => '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-data-render',
             ]
         );
 
@@ -632,7 +632,7 @@ class Finest_Unfold extends Widget_Base {
         $this->start_controls_section(
             '_section_style_button',
             [
-                'label' => __('Button', 'finest-addons'),
+                'label' => __('Button', 'quiktheme-addons'),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'conditions' => $this->button_condition,
             ]
@@ -641,11 +641,11 @@ class Finest_Unfold extends Widget_Base {
         $this->add_responsive_control(
             'button_margin',
             [
-                'label' => __('Margin', 'finest-addons'),
+                'label' => __('Margin', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -653,7 +653,7 @@ class Finest_Unfold extends Widget_Base {
         $this->add_responsive_control(
             'button_padding',
             [
-                'label' => __('Padding', 'finest-addons'),
+                'label' => __('Padding', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'default' => [
@@ -665,7 +665,7 @@ class Finest_Unfold extends Widget_Base {
                     'isLinked' => 'false',
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -673,7 +673,7 @@ class Finest_Unfold extends Widget_Base {
         $this->add_responsive_control(
             'button_space_between',
             [
-                'label' => __('Space Between Icon & Text', 'finest-addons'),
+                'label' => __('Space Between Icon & Text', 'quiktheme-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -692,8 +692,8 @@ class Finest_Unfold extends Widget_Base {
                     'size' => 10,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-btn.finest-unfold-icon-after i + span' => 'margin-right: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-btn.finest-unfold-icon-before i + span' => 'margin-left: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-btn.quiktheme-unfold-icon-after i + span' => 'margin-right: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-btn.quiktheme-unfold-icon-before i + span' => 'margin-left: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -702,8 +702,8 @@ class Finest_Unfold extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'button_typography',
-                'label' => __('Typography', 'finest-addons'),
-                'selector' => '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-btn',
+                'label' => __('Typography', 'quiktheme-addons'),
+                'selector' => '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-btn',
             ]
         );
 
@@ -712,19 +712,19 @@ class Finest_Unfold extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'button_border',
-                'label' => __('Border', 'finest-addons'),
-                'selector' => '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-btn',
+                'label' => __('Border', 'quiktheme-addons'),
+                'selector' => '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-btn',
             ]
         );
 
         $this->add_control(
             'button_border_radius',
             [
-                'label' => __('Border Radius', 'finest-addons'),
+                'label' => __('Border Radius', 'quiktheme-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -734,7 +734,7 @@ class Finest_Unfold extends Widget_Base {
         $this->start_controls_tab(
             'button_tab',
             [
-                'label' => __('Normal', 'finest-addons'),
+                'label' => __('Normal', 'quiktheme-addons'),
 
             ]
         );
@@ -742,10 +742,10 @@ class Finest_Unfold extends Widget_Base {
         $this->add_control(
             'button_text_color',
             [
-                'label' => __('Text Color', 'finest-addons'),
+                'label' => __('Text Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-btn span' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-btn span' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -753,10 +753,10 @@ class Finest_Unfold extends Widget_Base {
         $this->add_control(
             'button_icon_color',
             [
-                'label' => __('Icon Color', 'finest-addons'),
+                'label' => __('Icon Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-btn i' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-btn i' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -766,9 +766,9 @@ class Finest_Unfold extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'button_background',
-                'label' => __('Background', 'finest-addons'),
+                'label' => __('Background', 'quiktheme-addons'),
                 'types' => ['classic', 'gradient'],
-                'selector' => '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-btn',
+                'selector' => '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-btn',
             ]
         );
 
@@ -776,9 +776,9 @@ class Finest_Unfold extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'button_shadow',
-                'label' => __('Box Shadow', 'finest-addons'),
+                'label' => __('Box Shadow', 'quiktheme-addons'),
                 'separator' => 'before',
-                'selector' => '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-btn',
+                'selector' => '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-btn',
             ]
         );
 
@@ -787,7 +787,7 @@ class Finest_Unfold extends Widget_Base {
         $this->start_controls_tab(
             'button_tab_hover',
             [
-                'label' => __('Hover', 'finest-addons'),
+                'label' => __('Hover', 'quiktheme-addons'),
 
             ]
         );
@@ -796,10 +796,10 @@ class Finest_Unfold extends Widget_Base {
         $this->add_control(
             'button_text_color_hover',
             [
-                'label' => __('Text Color', 'finest-addons'),
+                'label' => __('Text Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-btn:hover span' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-btn:hover span' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -807,10 +807,10 @@ class Finest_Unfold extends Widget_Base {
         $this->add_control(
             'button_icon_color_hover',
             [
-                'label' => __('Icon Color', 'finest-addons'),
+                'label' => __('Icon Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-btn:hover i' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-btn:hover i' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -819,9 +819,9 @@ class Finest_Unfold extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'button_background_hover',
-                'label' => __('Background', 'finest-addons'),
+                'label' => __('Background', 'quiktheme-addons'),
                 'types' => ['classic', 'gradient'],
-                'selector' => '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-btn:hover',
+                'selector' => '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-btn:hover',
             ]
         );
 
@@ -829,13 +829,13 @@ class Finest_Unfold extends Widget_Base {
         $this->add_control(
             'button_border_color_hover',
             [
-                'label' => __('Border Color', 'finest-addons'),
+                'label' => __('Border Color', 'quiktheme-addons'),
                 'type' => Controls_Manager::COLOR,
                 'condition' => [
                     'button_border_border!' => '',
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-btn:hover' => 'border-color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-btn:hover' => 'border-color: {{VALUE}}',
                 ],
             ]
         );
@@ -844,9 +844,9 @@ class Finest_Unfold extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'button_shadow_hover',
-                'label' => __('Box Shadow', 'finest-addons'),
+                'label' => __('Box Shadow', 'quiktheme-addons'),
                 'separator' => 'before',
-                'selector' => '{{WRAPPER}} .finest-unfold-widget-wrapper .finest-unfold-btn:hover',
+                'selector' => '{{WRAPPER}} .quiktheme-unfold-widget-wrapper .quiktheme-unfold-btn:hover',
             ]
         );
 
@@ -862,12 +862,12 @@ class Finest_Unfold extends Widget_Base {
 
         ?>
 
-        <div class="finest-unfold-widget-wrapper<?php echo esc_attr(($settings['content_position'] == 'yes') ? ' finest-unfold-direction-below' : ''); ?>">
+        <div class="quiktheme-unfold-widget-wrapper<?php echo esc_attr(($settings['content_position'] == 'yes') ? ' quiktheme-unfold-direction-below' : ''); ?>">
             <?php if (!empty($settings['title'])) : ?>
-                <h2 class="finest-unfold-heading"><?php echo esc_html($settings['title'] ); ?></h2>
+                <h2 class="quiktheme-unfold-heading"><?php echo esc_html($settings['title'] ); ?></h2>
             <?php endif; ?>
-            <div class="finest-unfold-data">
-                <div class="finest-unfold-data-render">
+            <div class="quiktheme-unfold-data">
+                <div class="quiktheme-unfold-data-render">
                     <?php
 
                     echo $this->parse_text_editor($settings['editor']);
@@ -877,7 +877,7 @@ class Finest_Unfold extends Widget_Base {
             </div>
 
             <?php if (  $settings['button_disable'] == null && $settings['button_disable'] != 'yes' ) : ?>
-                <button class="finest-unfold-btn finest-unfold-icon-<?php echo esc_attr($settings['icon_position']); ?>">
+                <button class="quiktheme-unfold-btn quiktheme-unfold-icon-<?php echo esc_attr($settings['icon_position']); ?>">
                     <?php Icons_Manager::render_icon($settings['unfold_icon'], ['aria-hidden' => 'true']); ?>
                     <?php if (!empty($settings['unfold_text'])) : ?>
                         <span><?php echo esc_html($settings['unfold_text']); ?></span>
@@ -889,4 +889,4 @@ class Finest_Unfold extends Widget_Base {
     <?php
     }
 }
-$widgets_manager->register_widget_type( new \Finest_Addons\Widgets\Finest_Unfold() );
+$widgets_manager->register_widget_type( new \Quik_Theme_Addons\Widgets\Quik_Theme_Unfold() );

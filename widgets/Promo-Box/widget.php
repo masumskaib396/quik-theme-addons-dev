@@ -1,5 +1,5 @@
 <?php
-namespace Finest_Addons\Widgets;
+namespace Quik_Theme_Addons\Widgets;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -13,14 +13,14 @@ use \Elementor\Icons_Manager;
 use \Elementor\Utils;
 use \Elementor\Widget_Base;
 
-class Finest_Promo_Box extends Widget_Base {
+class Quik_Theme_Promo_Box extends Widget_Base {
 
 	public function get_name() {
-		return 'finest-promo-box';
+		return 'quiktheme-promo-box';
 	}
 
 	public function get_title() {
-		return esc_html__( 'Finest Promo Box', 'finest-addons' );
+		return esc_html__( 'Quiktheme Promo Box', 'quiktheme-addons' );
 	}
 
 	public function get_icon() {
@@ -28,7 +28,7 @@ class Finest_Promo_Box extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'finest-addons' ];
+		return [ 'quiktheme-addons' ];
 	}
 
 	public function get_keywords() {
@@ -39,39 +39,39 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_promo_box',
 			array(
-				'label' => __( 'Content', 'finest-addons' ),
+				'label' => __( 'Content', 'quiktheme-addons' ),
 			)
 		);
 		$this->add_control(
 			'heading',
 			array(
-				'label'   => __( 'Heading', 'finest-addons' ),
+				'label'   => __( 'Heading', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::TEXT,
 				'label_block' => true,
 				'dynamic' => array(
 					'active' => true,
 				),
-				'default' => __( '90% OFF', 'finest-addons' ),
+				'default' => __( '90% OFF', 'quiktheme-addons' ),
 			)
 		);
 
 		$this->add_control(
 			'heading_html_tag',
 			array(
-				'label'   => __( 'Heading HTML Tag', 'finest-addons' ),
+				'label'   => __( 'Heading HTML Tag', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::SELECT,
 				'label_block' => true,
 				'default' => 'h4',
 				'options' => array(
-					'h1'   => __( 'H1', 'finest-addons' ),
-					'h2'   => __( 'H2', 'finest-addons' ),
-					'h3'   => __( 'H3', 'finest-addons' ),
-					'h4'   => __( 'H4', 'finest-addons' ),
-					'h5'   => __( 'H5', 'finest-addons' ),
-					'h6'   => __( 'H6', 'finest-addons' ),
-					'div'  => __( 'div', 'finest-addons' ),
-					'span' => __( 'span', 'finest-addons' ),
-					'p'    => __( 'p', 'finest-addons' ),
+					'h1'   => __( 'H1', 'quiktheme-addons' ),
+					'h2'   => __( 'H2', 'quiktheme-addons' ),
+					'h3'   => __( 'H3', 'quiktheme-addons' ),
+					'h4'   => __( 'H4', 'quiktheme-addons' ),
+					'h5'   => __( 'H5', 'quiktheme-addons' ),
+					'h6'   => __( 'H6', 'quiktheme-addons' ),
+					'div'  => __( 'div', 'quiktheme-addons' ),
+					'span' => __( 'span', 'quiktheme-addons' ),
+					'p'    => __( 'p', 'quiktheme-addons' ),
 				),
 			)
 		);
@@ -79,11 +79,11 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'divider_heading_switch',
 			array(
-				'label'        => __( 'Heading Divider', 'finest-addons' ),
+				'label'        => __( 'Heading Divider', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'default'      => '',
-				'label_on'     => __( 'On', 'finest-addons' ),
-				'label_off'    => __( 'Off', 'finest-addons' ),
+				'label_on'     => __( 'On', 'quiktheme-addons' ),
+				'label_off'    => __( 'Off', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 				'condition'    => array(
 					'heading!' => '',
@@ -94,33 +94,33 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'sub_heading',
 			array(
-				'label'   => __( 'Sub Heading', 'finest-addons' ),
+				'label'   => __( 'Sub Heading', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::TEXT,
 				'label_block' => true,
 				'dynamic' => array(
 					'active' => true,
 				),
-				'default' => __( 'Buy 1 Get 1 Free Offer', 'finest-addons' ),
+				'default' => __( 'Buy 1 Get 1 Free Offer', 'quiktheme-addons' ),
 			)
 		);
 
 		$this->add_control(
 			'sub_heading_html_tag',
 			array(
-				'label'   => __( 'Sub Heading HTML Tag', 'finest-addons' ),
+				'label'   => __( 'Sub Heading HTML Tag', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::SELECT,
 				'label_block' => true,
 				'default' => 'h5',
 				'options' => array(
-					'h1'   => __( 'H1', 'finest-addons' ),
-					'h2'   => __( 'H2', 'finest-addons' ),
-					'h3'   => __( 'H3', 'finest-addons' ),
-					'h4'   => __( 'H4', 'finest-addons' ),
-					'h5'   => __( 'H5', 'finest-addons' ),
-					'h6'   => __( 'H6', 'finest-addons' ),
-					'div'  => __( 'div', 'finest-addons' ),
-					'span' => __( 'span', 'finest-addons' ),
-					'p'    => __( 'p', 'finest-addons' ),
+					'h1'   => __( 'H1', 'quiktheme-addons' ),
+					'h2'   => __( 'H2', 'quiktheme-addons' ),
+					'h3'   => __( 'H3', 'quiktheme-addons' ),
+					'h4'   => __( 'H4', 'quiktheme-addons' ),
+					'h5'   => __( 'H5', 'quiktheme-addons' ),
+					'h6'   => __( 'H6', 'quiktheme-addons' ),
+					'div'  => __( 'div', 'quiktheme-addons' ),
+					'span' => __( 'span', 'quiktheme-addons' ),
+					'p'    => __( 'p', 'quiktheme-addons' ),
 				),
 			)
 		);
@@ -128,11 +128,11 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'divider_subheading_switch',
 			array(
-				'label'        => __( 'Sub Heading Divider', 'finest-addons' ),
+				'label'        => __( 'Sub Heading Divider', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'default'      => '',
-				'label_on'     => __( 'On', 'finest-addons' ),
-				'label_off'    => __( 'Off', 'finest-addons' ),
+				'label_on'     => __( 'On', 'quiktheme-addons' ),
+				'label_off'    => __( 'Off', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 				'condition'    => array(
 					'sub_heading!' => '',
@@ -143,13 +143,13 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'content',
 			array(
-				'label'   => __( 'Description', 'finest-addons' ),
+				'label'   => __( 'Description', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::TEXTAREA,
 				'label_block' => true,
 				'dynamic' => array(
 					'active' => true,
 				),
-				'default' => __( 'Enter promo box description', 'finest-addons' ),
+				'default' => __( 'Enter promo box description', 'quiktheme-addons' ),
 			)
 		);
 
@@ -161,18 +161,18 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_promo_box_icon',
 			array(
-				'label' => __( 'Icon', 'finest-addons' ),
+				'label' => __( 'Icon', 'quiktheme-addons' ),
 			)
 		);
 
 		$this->add_control(
 			'icon_switch',
 			array(
-				'label'        => __( 'Show Icon', 'finest-addons' ),
+				'label'        => __( 'Show Icon', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'default'      => '',
-				'label_on'     => __( 'Yes', 'finest-addons' ),
-				'label_off'    => __( 'No', 'finest-addons' ),
+				'label_on'     => __( 'Yes', 'quiktheme-addons' ),
+				'label_off'    => __( 'No', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 			)
 		);
@@ -180,12 +180,12 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'icon_type',
 			array(
-				'label'     => __( 'Icon Type', 'finest-addons' ),
+				'label'     => __( 'Icon Type', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'icon',
 				'options'   => array(
-					'icon'  => __( 'Icon', 'finest-addons' ),
-					'image' => __( 'Image', 'finest-addons' ),
+					'icon'  => __( 'Icon', 'quiktheme-addons' ),
+					'image' => __( 'Image', 'quiktheme-addons' ),
 				),
 				'condition' => array(
 					'icon_switch' => 'yes',
@@ -196,7 +196,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'selected_icon',
 			array(
-				'label'            => __( 'Choose', 'finest-addons' ) . ' ' . __( 'Icon', 'finest-addons' ),
+				'label'            => __( 'Choose', 'quiktheme-addons' ) . ' ' . __( 'Icon', 'quiktheme-addons' ),
 				'type'             => Controls_Manager::ICONS,
 				'fa4compatibility' => 'icon',
 				'default'          => array(
@@ -213,7 +213,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'icon_image',
 			array(
-				'label'     => __( 'Image', 'finest-addons' ),
+				'label'     => __( 'Image', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::MEDIA,
 				'default'   => array(
 					'url' => Utils::get_placeholder_image_src(),
@@ -241,12 +241,12 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'icon_position',
 			array(
-				'label'     => __( 'Icon Position', 'finest-addons' ),
+				'label'     => __( 'Icon Position', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'above-title',
 				'options'   => array(
-					'above-title' => __( 'Above Title', 'finest-addons' ),
-					'below-title' => __( 'Below Title', 'finest-addons' ),
+					'above-title' => __( 'Above Title', 'quiktheme-addons' ),
+					'below-title' => __( 'Below Title', 'quiktheme-addons' ),
 				),
 				'condition' => array(
 					'icon_switch' => 'yes',
@@ -262,18 +262,18 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_promo_box_button',
 			array(
-				'label' => __( 'Button', 'finest-addons' ),
+				'label' => __( 'Button', 'quiktheme-addons' ),
 			)
 		);
 
 		$this->add_control(
 			'button_switch',
 			array(
-				'label'        => __( 'Button', 'finest-addons' ),
+				'label'        => __( 'Button', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'default'      => '',
-				'label_on'     => __( 'On', 'finest-addons' ),
-				'label_off'    => __( 'Off', 'finest-addons' ),
+				'label_on'     => __( 'On', 'quiktheme-addons' ),
+				'label_off'    => __( 'Off', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 			)
 		);
@@ -281,13 +281,13 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'button_text',
 			array(
-				'label'     => __( 'Button Text', 'finest-addons' ),
+				'label'     => __( 'Button Text', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::TEXT,
 				'label_block' => true,
 				'dynamic'   => array(
 					'active' => true,
 				),
-				'default'   => __( 'Get Started', 'finest-addons' ),
+				'default'   => __( 'Get Started', 'quiktheme-addons' ),
 				'condition' => array(
 					'button_switch' => 'yes',
 				),
@@ -297,7 +297,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'link',
 			array(
-				'label'       => __( 'Link', 'finest-addons' ),
+				'label'       => __( 'Link', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::URL,
 				'label_block' => true,
 				'dynamic'     => array(
@@ -328,7 +328,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_promo_box_style',
 			array(
-				'label' => __( 'Promo Box', 'finest-addons' ),
+				'label' => __( 'Promo Box', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -337,16 +337,16 @@ class Finest_Promo_Box extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'     => 'box_bg',
-				'label'    => __( 'Background', 'finest-addons' ),
+				'label'    => __( 'Background', 'quiktheme-addons' ),
 				'types'    => array( 'classic', 'gradient' ),
-				'selector' => '{{WRAPPER}} .finest-promo-box-bg',
+				'selector' => '{{WRAPPER}} .quiktheme-promo-box-bg',
 			)
 		);
 
 		$this->add_responsive_control(
 			'box_height',
 			array(
-				'label'      => __( 'Height', 'finest-addons' ),
+				'label'      => __( 'Height', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'range'      => array(
 					'px' => array(
@@ -357,7 +357,7 @@ class Finest_Promo_Box extends Widget_Base {
 				),
 				'size_units' => array( 'px', 'em' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .finest-promo-box' => 'height: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .quiktheme-promo-box' => 'height: {{SIZE}}{{UNIT}}',
 				),
 				'separator'  => 'before',
 			)
@@ -367,21 +367,21 @@ class Finest_Promo_Box extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'        => 'promo_box_border',
-				'label'       => __( 'Border', 'finest-addons' ),
+				'label'       => __( 'Border', 'quiktheme-addons' ),
 				'placeholder' => '1px',
 				'default'     => '1px',
-				'selector'    => '{{WRAPPER}} .finest-promo-box-wrap',
+				'selector'    => '{{WRAPPER}} .quiktheme-promo-box-wrap',
 			)
 		);
 
 		$this->add_control(
 			'promo_box_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'finest-addons' ),
+				'label'      => __( 'Border Radius', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .finest-promo-box, {{WRAPPER}} .finest-promo-box-wrap, {{WRAPPER}} .finest-promo-box .finest-promo-box-banner' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-promo-box, {{WRAPPER}} .quiktheme-promo-box-wrap, {{WRAPPER}} .quiktheme-promo-box .quiktheme-promo-box-banner' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
 		);
@@ -389,11 +389,11 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'box_padding',
 			array(
-				'label'      => __( 'Padding', 'finest-addons' ),
+				'label'      => __( 'Padding', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .finest-promo-box-wrap' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-promo-box-wrap' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
 		);
@@ -406,7 +406,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_promo_overlay_style',
 			array(
-				'label' => __( 'Overlay', 'finest-addons' ),
+				'label' => __( 'Overlay', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -414,11 +414,11 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'overlay_switch',
 			array(
-				'label'        => __( 'Overlay', 'finest-addons' ),
+				'label'        => __( 'Overlay', 'quiktheme-addons' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'default'      => '',
-				'label_on'     => __( 'On', 'finest-addons' ),
-				'label_off'    => __( 'Off', 'finest-addons' ),
+				'label_on'     => __( 'On', 'quiktheme-addons' ),
+				'label_off'    => __( 'Off', 'quiktheme-addons' ),
 				'return_value' => 'yes',
 				'separator'    => 'before',
 			)
@@ -428,9 +428,9 @@ class Finest_Promo_Box extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'      => 'overlay_color',
-				'label'     => __( 'Color', 'finest-addons' ),
+				'label'     => __( 'Color', 'quiktheme-addons' ),
 				'types'     => array( 'classic', 'gradient' ),
-				'selector'  => '{{WRAPPER}} .finest-promo-box-overlay',
+				'selector'  => '{{WRAPPER}} .quiktheme-promo-box-overlay',
 				'condition' => array(
 					'overlay_switch' => 'yes',
 				),
@@ -445,7 +445,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_promo_content_style',
 			array(
-				'label' => __( 'Content Area', 'finest-addons' ),
+				'label' => __( 'Content Area', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -453,7 +453,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'content_width',
 			array(
-				'label'      => __( 'Width', 'finest-addons' ),
+				'label'      => __( 'Width', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'range'      => array(
 					'px' => array(
@@ -469,7 +469,7 @@ class Finest_Promo_Box extends Widget_Base {
 				),
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .finest-promo-box-wrap' => 'width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .quiktheme-promo-box-wrap' => 'width: {{SIZE}}{{UNIT}}',
 				),
 				'separator'  => 'before',
 			)
@@ -478,26 +478,26 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'align',
 			array(
-				'label'       => __( 'Alignment', 'finest-addons' ),
+				'label'       => __( 'Alignment', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options'     => array(
 					'left'   => array(
-						'title' => __( 'Left', 'finest-addons' ),
+						'title' => __( 'Left', 'quiktheme-addons' ),
 						'icon'  => 'eicon-h-align-left',
 					),
 					'center' => array(
-						'title' => __( 'Center', 'finest-addons' ),
+						'title' => __( 'Center', 'quiktheme-addons' ),
 						'icon'  => 'eicon-v-align-top',
 					),
 					'right'  => array(
-						'title' => __( 'Right', 'finest-addons' ),
+						'title' => __( 'Right', 'quiktheme-addons' ),
 						'icon'  => 'eicon-h-align-right',
 					),
 				),
 				'default'     => '',
 				'selectors'   => array(
-					'{{WRAPPER}} .finest-promo-box' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-promo-box' => 'text-align: {{VALUE}};',
 				),
 			)
 		);
@@ -505,26 +505,26 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'vertical_align',
 			array(
-				'label'       => __( 'Vertical Alignment', 'finest-addons' ),
+				'label'       => __( 'Vertical Alignment', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'default'     => 'middle',
 				'options'     => array(
 					'top'    => array(
-						'title' => __( 'Top', 'finest-addons' ),
+						'title' => __( 'Top', 'quiktheme-addons' ),
 						'icon'  => 'eicon-v-align-top',
 					),
 					'middle' => array(
-						'title' => __( 'Center', 'finest-addons' ),
+						'title' => __( 'Center', 'quiktheme-addons' ),
 						'icon'  => 'eicon-v-align-middle',
 					),
 					'bottom' => array(
-						'title' => __( 'Bottom', 'finest-addons' ),
+						'title' => __( 'Bottom', 'quiktheme-addons' ),
 						'icon'  => 'eicon-v-align-bottom',
 					),
 				),
 				'selectors'   => array(
-					'{{WRAPPER}} .finest-promo-box-inner-content'   => 'vertical-align: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-promo-box-inner-content'   => 'vertical-align: {{VALUE}};',
 				),
 			)
 		);
@@ -533,9 +533,9 @@ class Finest_Promo_Box extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'      => 'content_bg',
-				'label'     => __( 'Background', 'finest-addons' ),
+				'label'     => __( 'Background', 'quiktheme-addons' ),
 				'types'     => array( 'classic', 'gradient' ),
-				'selector'  => '{{WRAPPER}} .finest-promo-box-inner',
+				'selector'  => '{{WRAPPER}} .quiktheme-promo-box-inner',
 				'separator' => 'before',
 			)
 		);
@@ -544,10 +544,10 @@ class Finest_Promo_Box extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'        => 'content_border',
-				'label'       => __( 'Border', 'finest-addons' ),
+				'label'       => __( 'Border', 'quiktheme-addons' ),
 				'placeholder' => '1px',
 				'default'     => '1px',
-				'selector'    => '{{WRAPPER}} .finest-promo-box-inner',
+				'selector'    => '{{WRAPPER}} .quiktheme-promo-box-inner',
 				'separator'   => 'before',
 			)
 		);
@@ -555,11 +555,11 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'content_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'finest-addons' ),
+				'label'      => __( 'Border Radius', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .finest-promo-box-inner' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-promo-box-inner' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
 		);
@@ -567,11 +567,11 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			array(
-				'label'      => __( 'Padding', 'finest-addons' ),
+				'label'      => __( 'Padding', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', 'em', '%' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .finest-promo-box-inner' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-promo-box-inner' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
 		);
@@ -584,7 +584,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_promo_box_icon_style',
 			array(
-				'label'     => __( 'Icon', 'finest-addons' ),
+				'label'     => __( 'Icon', 'quiktheme-addons' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'icon_switch' => 'yes',
@@ -595,7 +595,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_size',
 			array(
-				'label'      => __( 'Icon Size', 'finest-addons' ),
+				'label'      => __( 'Icon Size', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'default'    => array(
 					'unit' => 'px',
@@ -610,8 +610,8 @@ class Finest_Promo_Box extends Widget_Base {
 				),
 				'size_units' => array( 'px', 'em' ),
 				'selectors'  => [
-					'{{WRAPPER}} .finest-promo-box-icon .finest-promo-box-icon-inner i' => 'font-size: {{SIZE}}{{UNIT}}',
-					'{{WRAPPER}} .finest-promo-box-icon .finest-promo-box-icon-inner svg' => 'height: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .quiktheme-promo-box-icon .quiktheme-promo-box-icon-inner i' => 'font-size: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .quiktheme-promo-box-icon .quiktheme-promo-box-icon-inner svg' => 'height: {{SIZE}}{{UNIT}}',
 				],
 				'condition'  => array(
 					'icon_switch' => 'yes',
@@ -623,7 +623,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_img_width',
 			array(
-				'label'      => __( 'Width', 'finest-addons' ),
+				'label'      => __( 'Width', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'range'      => array(
 					'px' => array(
@@ -639,7 +639,7 @@ class Finest_Promo_Box extends Widget_Base {
 				),
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .finest-promo-box-icon img' => 'width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .quiktheme-promo-box-icon img' => 'width: {{SIZE}}{{UNIT}}',
 				),
 				'condition'  => array(
 					'icon_switch' => 'yes',
@@ -653,19 +653,19 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_icon_normal',
 			array(
-				'label' => __( 'Normal', 'finest-addons' ),
+				'label' => __( 'Normal', 'quiktheme-addons' ),
 			)
 		);
 
 		$this->add_control(
 			'icon_color_normal',
 			array(
-				'label'     => __( 'Icon Color', 'finest-addons' ),
+				'label'     => __( 'Icon Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
-					'{{WRAPPER}} .finest-promo-box-icon .finest-promo-box-icon-inner i'   => 'color: {{VALUE}}',
-					'{{WRAPPER}} .finest-promo-box-icon .finest-promo-box-icon-inner svg path' => 'fill: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-promo-box-icon .quiktheme-promo-box-icon-inner i'   => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-promo-box-icon .quiktheme-promo-box-icon-inner svg path' => 'fill: {{VALUE}}',
 				),
 				'condition' => array(
 					'icon_switch' => 'yes',
@@ -677,11 +677,11 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'icon_bg_color_normal',
 			array(
-				'label'     => __( 'Background Color', 'finest-addons' ),
+				'label'     => __( 'Background Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
-					'{{WRAPPER}} .finest-promo-box-icon' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-promo-box-icon' => 'background-color: {{VALUE}}',
 				),
 			)
 		);
@@ -689,11 +689,11 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_padding',
 			array(
-				'label'      => __( 'Padding', 'finest-addons' ),
+				'label'      => __( 'Padding', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .finest-promo-box-icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-promo-box-icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
 		);
@@ -702,21 +702,21 @@ class Finest_Promo_Box extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'        => 'icon_border',
-				'label'       => __( 'Border', 'finest-addons' ),
+				'label'       => __( 'Border', 'quiktheme-addons' ),
 				'placeholder' => '1px',
 				'default'     => '1px',
-				'selector'    => '{{WRAPPER}} .finest-promo-box-icon',
+				'selector'    => '{{WRAPPER}} .quiktheme-promo-box-icon',
 			)
 		);
 
 		$this->add_control(
 			'icon_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'finest-addons' ),
+				'label'      => __( 'Border Radius', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .finest-promo-box-icon, {{WRAPPER}} .finest-promo-box-icon img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-promo-box-icon, {{WRAPPER}} .quiktheme-promo-box-icon img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
 		);
@@ -724,7 +724,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_margin',
 			array(
-				'label'       => __( 'Margin', 'finest-addons' ),
+				'label'       => __( 'Margin', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::DIMENSIONS,
 				'size_units'  => array( 'px', '%' ),
 				'placeholder' => array(
@@ -734,7 +734,7 @@ class Finest_Promo_Box extends Widget_Base {
 					'left'   => '',
 				),
 				'selectors'   => array(
-					'{{WRAPPER}} .finest-promo-box-icon' => 'margin-top: {{TOP}}{{UNIT}}; margin-left: {{LEFT}}{{UNIT}}; margin-right: {{RIGHT}}{{UNIT}}; margin-bottom: {{BOTTOM}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-promo-box-icon' => 'margin-top: {{TOP}}{{UNIT}}; margin-left: {{LEFT}}{{UNIT}}; margin-right: {{RIGHT}}{{UNIT}}; margin-bottom: {{BOTTOM}}{{UNIT}};',
 				),
 			)
 		);
@@ -744,19 +744,19 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_icon_hover',
 			array(
-				'label' => __( 'Hover', 'finest-addons' ),
+				'label' => __( 'Hover', 'quiktheme-addons' ),
 			)
 		);
 
 		$this->add_control(
 			'icon_color_hover',
 			array(
-				'label'     => __( 'Icon Color', 'finest-addons' ),
+				'label'     => __( 'Icon Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
-					'{{WRAPPER}} .finest-promo-box:hover .finest-promo-box-icon i' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .finest-promo-box:hover .finest-promo-box-icon svg path' => 'fill: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-promo-box:hover .quiktheme-promo-box-icon i' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-promo-box:hover .quiktheme-promo-box-icon svg path' => 'fill: {{VALUE}}',
 				),
 				'condition' => array(
 					'icon_switch' => 'yes',
@@ -768,11 +768,11 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'icon_bg_color_hover',
 			array(
-				'label'     => __( 'Background Color', 'finest-addons' ),
+				'label'     => __( 'Background Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
-					'{{WRAPPER}} .finest-promo-box:hover .finest-promo-box-icon' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-promo-box:hover .quiktheme-promo-box-icon' => 'background-color: {{VALUE}}',
 				),
 			)
 		);
@@ -780,7 +780,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'hover_animation_icon',
 			array(
-				'label' => __( 'Icon Animation', 'finest-addons' ),
+				'label' => __( 'Icon Animation', 'quiktheme-addons' ),
 				'type'  => Controls_Manager::HOVER_ANIMATION,
 			)
 		);
@@ -797,7 +797,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_promo_box_heading_style',
 			array(
-				'label' => __( 'Heading', 'finest-addons' ),
+				'label' => __( 'Heading', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -805,11 +805,11 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			array(
-				'label'     => __( 'Color', 'finest-addons' ),
+				'label'     => __( 'Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
-					'{{WRAPPER}} .finest-promo-box-title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-promo-box-title' => 'color: {{VALUE}}',
 				),
 			)
 		);
@@ -818,15 +818,15 @@ class Finest_Promo_Box extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'title_typography',
-				'label'    => __( 'Typography', 'finest-addons' ),
-				'selector' => '{{WRAPPER}} .finest-promo-box-title',
+				'label'    => __( 'Typography', 'quiktheme-addons' ),
+				'selector' => '{{WRAPPER}} .quiktheme-promo-box-title',
 			)
 		);
 
 		$this->add_responsive_control(
 			'title_margin',
 			array(
-				'label'      => __( 'Spacing', 'finest-addons' ),
+				'label'      => __( 'Spacing', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'default'    => array(
 					'size' => 20,
@@ -845,7 +845,7 @@ class Finest_Promo_Box extends Widget_Base {
 				),
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .finest-promo-box-title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .quiktheme-promo-box-title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				),
 			)
 		);
@@ -858,7 +858,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_heading_divider_style',
 			array(
-				'label'     => __( 'Heading Divider', 'finest-addons' ),
+				'label'     => __( 'Heading Divider', 'quiktheme-addons' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'divider_heading_switch' => 'yes',
@@ -869,12 +869,12 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'divider_heading_type',
 			array(
-				'label'     => __( 'Divider Type', 'finest-addons' ),
+				'label'     => __( 'Divider Type', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'border',
 				'options'   => array(
-					'border' => __( 'Border', 'finest-addons' ),
-					'image'  => __( 'Image', 'finest-addons' ),
+					'border' => __( 'Border', 'quiktheme-addons' ),
+					'image'  => __( 'Image', 'quiktheme-addons' ),
 				),
 				'condition' => array(
 					'divider_heading_switch' => 'yes',
@@ -885,7 +885,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'divider_title_image',
 			array(
-				'label'     => __( 'Image', 'finest-addons' ),
+				'label'     => __( 'Image', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::MEDIA,
 				'condition' => array(
 					'divider_heading_switch' => 'yes',
@@ -897,17 +897,17 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'divider_heading_border_type',
 			array(
-				'label'     => __( 'Border Type', 'finest-addons' ),
+				'label'     => __( 'Border Type', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'solid',
 				'options'   => array(
-					'solid'  => __( 'Solid', 'finest-addons' ),
-					'double' => __( 'Double', 'finest-addons' ),
-					'dotted' => __( 'Dotted', 'finest-addons' ),
-					'dashed' => __( 'Dashed', 'finest-addons' ),
+					'solid'  => __( 'Solid', 'quiktheme-addons' ),
+					'double' => __( 'Double', 'quiktheme-addons' ),
+					'dotted' => __( 'Dotted', 'quiktheme-addons' ),
+					'dashed' => __( 'Dashed', 'quiktheme-addons' ),
 				),
 				'selectors' => array(
-					'{{WRAPPER}} .finest-promo-box-heading-divider' => 'border-bottom-style: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-promo-box-heading-divider' => 'border-bottom-style: {{VALUE}}',
 				),
 				'condition' => array(
 					'divider_heading_switch' => 'yes',
@@ -919,7 +919,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'divider_title_width',
 			array(
-				'label'      => __( 'Width', 'finest-addons' ),
+				'label'      => __( 'Width', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'default'    => array(
 					'size' => 30,
@@ -938,7 +938,7 @@ class Finest_Promo_Box extends Widget_Base {
 				),
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .finest-promo-box-heading-divider' => 'width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .quiktheme-promo-box-heading-divider' => 'width: {{SIZE}}{{UNIT}}',
 				),
 				'condition'  => array(
 					'divider_heading_switch' => 'yes',
@@ -949,7 +949,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'divider_heading_border_weight',
 			array(
-				'label'      => __( 'Border Weight', 'finest-addons' ),
+				'label'      => __( 'Border Weight', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'default'    => array(
 					'size' => 4,
@@ -963,7 +963,7 @@ class Finest_Promo_Box extends Widget_Base {
 				),
 				'size_units' => array( 'px' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .finest-promo-box-heading-divider' => 'border-bottom-width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .quiktheme-promo-box-heading-divider' => 'border-bottom-width: {{SIZE}}{{UNIT}}',
 				),
 				'condition'  => array(
 					'divider_heading_switch' => 'yes',
@@ -975,11 +975,11 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'divider_heading_border_color',
 			array(
-				'label'     => __( 'Border Color', 'finest-addons' ),
+				'label'     => __( 'Border Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#000000',
 				'selectors' => array(
-					'{{WRAPPER}} .finest-promo-box-heading-divider' => 'border-bottom-color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-promo-box-heading-divider' => 'border-bottom-color: {{VALUE}}',
 				),
 				'condition' => array(
 					'divider_heading_switch' => 'yes',
@@ -991,7 +991,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'divider_title_margin',
 			array(
-				'label'      => __( 'Spacing', 'finest-addons' ),
+				'label'      => __( 'Spacing', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'default'    => array(
 					'size' => 20,
@@ -1010,7 +1010,7 @@ class Finest_Promo_Box extends Widget_Base {
 				),
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .finest-promo-box-heading-divider-wrap' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .quiktheme-promo-box-heading-divider-wrap' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				),
 				'condition'  => array(
 					'divider_heading_switch' => 'yes',
@@ -1026,7 +1026,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_subheading_style',
 			array(
-				'label' => __( 'Sub Heading', 'finest-addons' ),
+				'label' => __( 'Sub Heading', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -1034,11 +1034,11 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'subtitle_color',
 			array(
-				'label'     => __( 'Color', 'finest-addons' ),
+				'label'     => __( 'Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
-					'{{WRAPPER}} .finest-promo-box-subtitle' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-promo-box-subtitle' => 'color: {{VALUE}}',
 				),
 			)
 		);
@@ -1047,15 +1047,15 @@ class Finest_Promo_Box extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'subtitle_typography',
-				'label'    => __( 'Typography', 'finest-addons' ),
-				'selector' => '{{WRAPPER}} .finest-promo-box-subtitle',
+				'label'    => __( 'Typography', 'quiktheme-addons' ),
+				'selector' => '{{WRAPPER}} .quiktheme-promo-box-subtitle',
 			)
 		);
 
 		$this->add_responsive_control(
 			'subtitle_margin',
 			array(
-				'label'      => __( 'Spacing', 'finest-addons' ),
+				'label'      => __( 'Spacing', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'default'    => array(
 					'size' => 20,
@@ -1074,7 +1074,7 @@ class Finest_Promo_Box extends Widget_Base {
 				),
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .finest-promo-box-subtitle' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .quiktheme-promo-box-subtitle' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				),
 			)
 		);
@@ -1087,7 +1087,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_subheading_divider_style',
 			array(
-				'label'     => __( 'Sub Heading Divider', 'finest-addons' ),
+				'label'     => __( 'Sub Heading Divider', 'quiktheme-addons' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'divider_subheading_switch' => 'yes',
@@ -1098,12 +1098,12 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'divider_subheading_type',
 			array(
-				'label'     => __( 'Divider Type', 'finest-addons' ),
+				'label'     => __( 'Divider Type', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'border',
 				'options'   => array(
-					'border' => __( 'Border', 'finest-addons' ),
-					'image'  => __( 'Image', 'finest-addons' ),
+					'border' => __( 'Border', 'quiktheme-addons' ),
+					'image'  => __( 'Image', 'quiktheme-addons' ),
 				),
 				'condition' => array(
 					'divider_subheading_switch' => 'yes',
@@ -1114,7 +1114,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'divider_subheading_image',
 			array(
-				'label'     => __( 'Image', 'finest-addons' ),
+				'label'     => __( 'Image', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::MEDIA,
 				'condition' => array(
 					'divider_subheading_switch' => 'yes',
@@ -1126,17 +1126,17 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'divider_subheading_border_type',
 			array(
-				'label'     => __( 'Border Type', 'finest-addons' ),
+				'label'     => __( 'Border Type', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'solid',
 				'options'   => array(
-					'solid'  => __( 'Solid', 'finest-addons' ),
-					'double' => __( 'Double', 'finest-addons' ),
-					'dotted' => __( 'Dotted', 'finest-addons' ),
-					'dashed' => __( 'Dashed', 'finest-addons' ),
+					'solid'  => __( 'Solid', 'quiktheme-addons' ),
+					'double' => __( 'Double', 'quiktheme-addons' ),
+					'dotted' => __( 'Dotted', 'quiktheme-addons' ),
+					'dashed' => __( 'Dashed', 'quiktheme-addons' ),
 				),
 				'selectors' => array(
-					'{{WRAPPER}} .finest-promo-box-subheading-divider' => 'border-bottom-style: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-promo-box-subheading-divider' => 'border-bottom-style: {{VALUE}}',
 				),
 				'condition' => array(
 					'divider_subheading_switch' => 'yes',
@@ -1148,7 +1148,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'divider_subheading_width',
 			array(
-				'label'      => __( 'Width', 'finest-addons' ),
+				'label'      => __( 'Width', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'default'    => array(
 					'size' => 30,
@@ -1167,7 +1167,7 @@ class Finest_Promo_Box extends Widget_Base {
 				),
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .finest-promo-box-subheading-divider' => 'width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .quiktheme-promo-box-subheading-divider' => 'width: {{SIZE}}{{UNIT}}',
 				),
 				'condition'  => array(
 					'divider_subheading_switch' => 'yes',
@@ -1178,7 +1178,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'divider_subheading_border_weight',
 			array(
-				'label'      => __( 'Border Weight', 'finest-addons' ),
+				'label'      => __( 'Border Weight', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'default'    => array(
 					'size' => 4,
@@ -1192,7 +1192,7 @@ class Finest_Promo_Box extends Widget_Base {
 				),
 				'size_units' => array( 'px' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .finest-promo-box-subheading-divider' => 'border-bottom-width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .quiktheme-promo-box-subheading-divider' => 'border-bottom-width: {{SIZE}}{{UNIT}}',
 				),
 				'condition'  => array(
 					'divider_subheading_switch' => 'yes',
@@ -1204,11 +1204,11 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'divider_subheading_border_color',
 			array(
-				'label'     => __( 'Border Color', 'finest-addons' ),
+				'label'     => __( 'Border Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#000000',
 				'selectors' => array(
-					'{{WRAPPER}} .finest-promo-box-subheading-divider' => 'border-bottom-color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-promo-box-subheading-divider' => 'border-bottom-color: {{VALUE}}',
 				),
 				'condition' => array(
 					'divider_subheading_switch' => 'yes',
@@ -1220,7 +1220,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'divider_subheading_margin',
 			array(
-				'label'      => __( 'Spacing', 'finest-addons' ),
+				'label'      => __( 'Spacing', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'default'    => array(
 					'size' => 20,
@@ -1239,7 +1239,7 @@ class Finest_Promo_Box extends Widget_Base {
 				),
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .finest-promo-box-subheading-divider-wrap' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .quiktheme-promo-box-subheading-divider-wrap' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				),
 			)
 		);
@@ -1252,7 +1252,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_promo_description_style',
 			array(
-				'label' => __( 'Description', 'finest-addons' ),
+				'label' => __( 'Description', 'quiktheme-addons' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -1260,11 +1260,11 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'content_color',
 			array(
-				'label'     => __( 'Color', 'finest-addons' ),
+				'label'     => __( 'Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
-					'{{WRAPPER}} .finest-promo-box-content' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-promo-box-content' => 'color: {{VALUE}}',
 				),
 			)
 		);
@@ -1273,15 +1273,15 @@ class Finest_Promo_Box extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'content_typography',
-				'label'    => __( 'Typography', 'finest-addons' ),
-				'selector' => '{{WRAPPER}} .finest-promo-box-content',
+				'label'    => __( 'Typography', 'quiktheme-addons' ),
+				'selector' => '{{WRAPPER}} .quiktheme-promo-box-content',
 			)
 		);
 
 		$this->add_responsive_control(
 			'content_margin',
 			array(
-				'label'      => __( 'Spacing', 'finest-addons' ),
+				'label'      => __( 'Spacing', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'default'    => array(
 					'size' => 0,
@@ -1300,7 +1300,7 @@ class Finest_Promo_Box extends Widget_Base {
 				),
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .finest-promo-box-content' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .quiktheme-promo-box-content' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				),
 			)
 		);
@@ -1314,7 +1314,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_promo_box_button_style',
 			array(
-				'label'     => __( 'Button', 'finest-addons' ),
+				'label'     => __( 'Button', 'quiktheme-addons' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'button_switch' => 'yes',
@@ -1326,23 +1326,23 @@ class Finest_Promo_Box extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'button_typography',
-				'label'    => __( 'Typography', 'finest-addons' ),
-				'selector' => '{{WRAPPER}} .finest-promo-box-button',
+				'label'    => __( 'Typography', 'quiktheme-addons' ),
+				'selector' => '{{WRAPPER}} .quiktheme-promo-box-button',
 			)
 		);
 
 		$this->add_control(
 			'button_size',
 			array(
-				'label'     => __( 'Size', 'finest-addons' ),
+				'label'     => __( 'Size', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'md',
 				'options'   => array(
-					'xs' => __( 'Extra Small', 'finest-addons' ),
-					'sm' => __( 'Small', 'finest-addons' ),
-					'md' => __( 'Medium', 'finest-addons' ),
-					'lg' => __( 'Large', 'finest-addons' ),
-					'xl' => __( 'Extra Large', 'finest-addons' ),
+					'xs' => __( 'Extra Small', 'quiktheme-addons' ),
+					'sm' => __( 'Small', 'quiktheme-addons' ),
+					'md' => __( 'Medium', 'quiktheme-addons' ),
+					'lg' => __( 'Large', 'quiktheme-addons' ),
+					'xl' => __( 'Extra Large', 'quiktheme-addons' ),
 				),
 				'condition' => array(
 					'button_text!' => '',
@@ -1355,18 +1355,18 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_normal',
 			array(
-				'label' => __( 'Normal', 'finest-addons' ),
+				'label' => __( 'Normal', 'quiktheme-addons' ),
 			)
 		);
 
 		$this->add_control(
 			'button_bg_color_normal',
 			array(
-				'label'     => __( 'Background Color', 'finest-addons' ),
+				'label'     => __( 'Background Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
-					'{{WRAPPER}} .finest-promo-box-button' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-promo-box-button' => 'background-color: {{VALUE}}',
 				),
 			)
 		);
@@ -1374,11 +1374,11 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'button_text_color_normal',
 			array(
-				'label'     => __( 'Text Color', 'finest-addons' ),
+				'label'     => __( 'Text Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
-					'{{WRAPPER}} .finest-promo-box-button' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-promo-box-button' => 'color: {{VALUE}}',
 				),
 			)
 		);
@@ -1387,21 +1387,21 @@ class Finest_Promo_Box extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'        => 'button_border_normal',
-				'label'       => __( 'Border', 'finest-addons' ),
+				'label'       => __( 'Border', 'quiktheme-addons' ),
 				'placeholder' => '1px',
 				'default'     => '1px',
-				'selector'    => '{{WRAPPER}} .finest-promo-box-button',
+				'selector'    => '{{WRAPPER}} .quiktheme-promo-box-button',
 			)
 		);
 
 		$this->add_control(
 			'button_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'finest-addons' ),
+				'label'      => __( 'Border Radius', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .finest-promo-box-button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-promo-box-button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
 		);
@@ -1409,11 +1409,11 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'button_padding',
 			array(
-				'label'      => __( 'Padding', 'finest-addons' ),
+				'label'      => __( 'Padding', 'quiktheme-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', 'em', '%' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .finest-promo-box-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-promo-box-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
 		);
@@ -1422,7 +1422,7 @@ class Finest_Promo_Box extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			array(
 				'name'     => 'button_box_shadow',
-				'selector' => '{{WRAPPER}} .finest-promo-box-button',
+				'selector' => '{{WRAPPER}} .quiktheme-promo-box-button',
 			)
 		);
 
@@ -1431,18 +1431,18 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_hover',
 			array(
-				'label' => __( 'Hover', 'finest-addons' ),
+				'label' => __( 'Hover', 'quiktheme-addons' ),
 			)
 		);
 
 		$this->add_control(
 			'button_bg_color_hover',
 			array(
-				'label'     => __( 'Background Color', 'finest-addons' ),
+				'label'     => __( 'Background Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
-					'{{WRAPPER}} .finest-promo-box-button:hover' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-promo-box-button:hover' => 'background-color: {{VALUE}}',
 				),
 			)
 		);
@@ -1450,11 +1450,11 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'button_text_color_hover',
 			array(
-				'label'     => __( 'Text Color', 'finest-addons' ),
+				'label'     => __( 'Text Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
-					'{{WRAPPER}} .finest-promo-box-button:hover' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-promo-box-button:hover' => 'color: {{VALUE}}',
 				),
 			)
 		);
@@ -1462,11 +1462,11 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'button_border_color_hover',
 			array(
-				'label'     => __( 'Border Color', 'finest-addons' ),
+				'label'     => __( 'Border Color', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
-					'{{WRAPPER}} .finest-promo-box-button:hover' => 'border-color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-promo-box-button:hover' => 'border-color: {{VALUE}}',
 				),
 			)
 		);
@@ -1474,7 +1474,7 @@ class Finest_Promo_Box extends Widget_Base {
 		$this->add_control(
 			'button_hover_animation',
 			array(
-				'label' => __( 'Animation', 'finest-addons' ),
+				'label' => __( 'Animation', 'quiktheme-addons' ),
 				'type'  => Controls_Manager::HOVER_ANIMATION,
 			)
 		);
@@ -1483,7 +1483,7 @@ class Finest_Promo_Box extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			array(
 				'name'     => 'button_box_shadow_hover',
-				'selector' => '{{WRAPPER}} .finest-promo-box-button:hover',
+				'selector' => '{{WRAPPER}} .quiktheme-promo-box-button:hover',
 			)
 		);
 
@@ -1495,7 +1495,7 @@ class Finest_Promo_Box extends Widget_Base {
 	protected function render_promobox_icon() {
 		$settings = $this->get_settings_for_display();
 
-		$this->add_render_attribute( 'icon', 'class', array( 'finest-promo-box-icon', 'finest-icon' ) );
+		$this->add_render_attribute( 'icon', 'class', array( 'quiktheme-promo-box-icon', 'quiktheme-icon' ) );
 
 		if ( $settings['hover_animation_icon'] ) {
 			$this->add_render_attribute( 'icon', 'class', 'elementor-animation-' . $settings['hover_animation_icon'] );
@@ -1521,10 +1521,10 @@ class Finest_Promo_Box extends Widget_Base {
 		$migrated = isset( $settings['__fa4_migrated']['selected_icon'] );
 		$is_new   = ! isset( $settings['icon'] ) && Icons_Manager::is_migration_allowed();
 		?>
-		 <div class="finest-promo-box-icon-wrap">
+		 <div class="quiktheme-promo-box-icon-wrap">
 			<span <?php echo $this->get_render_attribute_string( 'icon' ); ?>>
 				<?php if ( $settings['icon_type'] == 'icon' ) { ?>
-					<span class="finest-promo-box-icon-inner">
+					<span class="quiktheme-promo-box-icon-inner">
 					<?php
 					if ( $is_new || $migrated ) {
 						Icons_Manager::render_icon( $settings['selected_icon'], array( 'aria-hidden' => 'true' ) );
@@ -1537,7 +1537,7 @@ class Finest_Promo_Box extends Widget_Base {
 					 </span>
 				<?php } elseif ( $settings['icon_type'] == 'image' ) { ?>
 					<?php if ( ! empty( $settings['icon_image']['url'] ) ) { ?>
-					<span class="finest-promo-box-icon-inner">
+					<span class="quiktheme-promo-box-icon-inner">
 						<?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'image', 'icon_image' ); ?>
 					</span>
 					<?php } ?>
@@ -1548,16 +1548,16 @@ class Finest_Promo_Box extends Widget_Base {
 	}
 	protected function render() { 
 		$settings = $this->get_settings_for_display();
-		$this->add_render_attribute( 'promo-box', 'class', 'finest-promo-box' );
+		$this->add_render_attribute( 'promo-box', 'class', 'quiktheme-promo-box' );
 
 		$this->add_inline_editing_attributes( 'heading', 'none' );
-		$this->add_render_attribute( 'heading', 'class', 'finest-promo-box-title' );
+		$this->add_render_attribute( 'heading', 'class', 'quiktheme-promo-box-title' );
 
 		$this->add_inline_editing_attributes( 'sub_heading', 'none' );
-		$this->add_render_attribute( 'sub_heading', 'class', 'finest-promo-box-subtitle' );
+		$this->add_render_attribute( 'sub_heading', 'class', 'quiktheme-promo-box-subtitle' );
 
 		$this->add_inline_editing_attributes( 'content', 'none' );
-		$this->add_render_attribute( 'content', 'class', 'finest-promo-box-content' );
+		$this->add_render_attribute( 'content', 'class', 'quiktheme-promo-box-content' );
 
 		$this->add_inline_editing_attributes( 'button_text', 'none' );
 
@@ -1565,19 +1565,19 @@ class Finest_Promo_Box extends Widget_Base {
 			'button_text',
 			'class',
 			array(
-				'finest-promo-box-button',
+				'quiktheme-promo-box-button',
 				'elementor-button',
 				'elementor-size-' . $settings['button_size'],
 			)
 		);
-		$this->add_render_attribute( 'finest_promo_box_bg', 'class', 'finest-promo-box-bg' );
-		$this->add_render_attribute( 'finest_pb_overly', 'class', 'finest-promo-box-overlay' );
-		$this->add_render_attribute( 'finest_promo_box_wrap', 'class', 'finest-promo-box-wrap' );
-		$this->add_render_attribute( 'finest_promo_box_inner', 'class', 'finest-promo-box-inner' );
-		$this->add_render_attribute( 'finest_promo_box_inner_content', 'class', 'finest-promo-box-inner-content' );
-		$this->add_render_attribute( 'finest_promo_box_heading_divider_wrap', 'class', 'finest-promo-box-heading-divider-wrap' );
-		$this->add_render_attribute( 'finest_promo_box_subheading_divider', 'class', 'finest-promo-box-subheading-divider' );
-		$this->add_render_attribute( 'finest_promo_box_footer', 'class', 'finest-promo-box-footer' );
+		$this->add_render_attribute( 'quik_theme_promo_box_bg', 'class', 'quiktheme-promo-box-bg' );
+		$this->add_render_attribute( 'quik_theme_pb_overly', 'class', 'quiktheme-promo-box-overlay' );
+		$this->add_render_attribute( 'quik_theme_promo_box_wrap', 'class', 'quiktheme-promo-box-wrap' );
+		$this->add_render_attribute( 'quik_theme_promo_box_inner', 'class', 'quiktheme-promo-box-inner' );
+		$this->add_render_attribute( 'quik_theme_promo_box_inner_content', 'class', 'quiktheme-promo-box-inner-content' );
+		$this->add_render_attribute( 'quik_theme_promo_box_heading_divider_wrap', 'class', 'quiktheme-promo-box-heading-divider-wrap' );
+		$this->add_render_attribute( 'quik_theme_promo_box_subheading_divider', 'class', 'quiktheme-promo-box-subheading-divider' );
+		$this->add_render_attribute( 'quik_theme_promo_box_footer', 'class', 'quiktheme-promo-box-footer' );
 
 		if ( ! empty( $settings['link']['url'] ) ) {
 
@@ -1590,13 +1590,13 @@ class Finest_Promo_Box extends Widget_Base {
 		}
 		?>
 		<div <?php echo $this->get_render_attribute_string( 'promo-box' ); ?>>
-			<div <?php echo $this->get_render_attribute_string( 'finest_promo_box_bg' ); ?>></div>
+			<div <?php echo $this->get_render_attribute_string( 'quik_theme_promo_box_bg' ); ?>></div>
 			<?php if ( $settings['overlay_switch'] == 'yes' ) { ?>
-				<div <?php echo $this->get_render_attribute_string( 'finest_pb_overly' ); ?>></div>
+				<div <?php echo $this->get_render_attribute_string( 'quik_theme_pb_overly' ); ?>></div>
 			<?php } ?>
-			<div <?php echo $this->get_render_attribute_string( 'finest_promo_box_wrap' ); ?>>
-				<div <?php echo $this->get_render_attribute_string( 'finest_promo_box_inner' ); ?>>
-					<div <?php echo $this->get_render_attribute_string( 'finest_promo_box_inner_content' ); ?>>
+			<div <?php echo $this->get_render_attribute_string( 'quik_theme_promo_box_wrap' ); ?>>
+				<div <?php echo $this->get_render_attribute_string( 'quik_theme_promo_box_inner' ); ?>>
+					<div <?php echo $this->get_render_attribute_string( 'quik_theme_promo_box_inner_content' ); ?>>
 						<?php
 						if ( $settings['icon_switch'] == 'yes' ) {
 							if ( $settings['icon_position'] == 'above-title' ) {
@@ -1612,8 +1612,8 @@ class Finest_Promo_Box extends Widget_Base {
 						<?php } ?>
 
 						<?php if ( $settings['divider_heading_switch'] == 'yes' ) { ?>
-							<div class="finest-promo-box-heading-divider-wrap">
-								<div class="finest-promo-box-heading-divider">
+							<div class="quiktheme-promo-box-heading-divider-wrap">
+								<div class="quiktheme-promo-box-heading-divider">
 									<?php if ( $settings['divider_heading_type'] == 'image' && $settings['divider_title_image']['url'] != '' ) { ?>
 										<img src="<?php echo esc_url( $settings['divider_title_image']['url'] ); ?>">
 									<?php } ?>
@@ -1636,8 +1636,8 @@ class Finest_Promo_Box extends Widget_Base {
 						<?php } ?>
 
 						<?php if ( $settings['divider_subheading_switch'] == 'yes' ) { ?>
-							<div <?php echo $this->get_render_attribute_string( 'finest_promo_box_heading_divider_wrap' ); ?>>
-								<div <?php echo $this->get_render_attribute_string( 'finest_promo_box_subheading_divider' ); ?>>
+							<div <?php echo $this->get_render_attribute_string( 'quik_theme_promo_box_heading_divider_wrap' ); ?>>
+								<div <?php echo $this->get_render_attribute_string( 'quik_theme_promo_box_subheading_divider' ); ?>>
 									<?php if ( $settings['divider_subheading_type'] == 'image' && $settings['divider_subheading_image']['url'] != '' ) { ?>
 										<img src="<?php echo esc_url( $settings['divider_subheading_image']['url'] ); ?>">
 									<?php } ?>
@@ -1652,16 +1652,16 @@ class Finest_Promo_Box extends Widget_Base {
 						<?php } ?>
 						<?php if ( $settings['button_switch'] == 'yes' ) { ?>
 							<?php if ( ! empty( $settings['button_text'] ) ) { ?>
-								<div <?php echo $this->get_render_attribute_string('finest_promo_box_footer'); ?> >
+								<div <?php echo $this->get_render_attribute_string('quik_theme_promo_box_footer'); ?> >
 									<a <?php echo $this->get_render_attribute_string( 'button_text' ); ?>>
 										<?php echo esc_attr( $settings['button_text'] ); ?>
 									</a>
 								</div>
 							<?php } ?>
 						<?php } ?>
-					</div><!-- .finest-promo-box-inner-content -->
-				</div><!-- .finest-promo-box-inner -->
-			</div><!-- .finest-promo-box-wrap -->
+					</div><!-- .quiktheme-promo-box-inner-content -->
+				</div><!-- .quiktheme-promo-box-inner -->
+			</div><!-- .quiktheme-promo-box-wrap -->
 		</div>
 			
 	<?php } 
@@ -1671,10 +1671,10 @@ class Finest_Promo_Box extends Widget_Base {
 			var iconHTML = elementor.helpers.renderIcon( view, settings.selected_icon, { 'aria-hidden': true }, 'i' , 'object' ),
 			 migrated = elementor.helpers.isIconMigrated( settings, 'selected_icon' );
 		 #>
-		 <div class="finest-promo-box-icon-wrap">
-			 <span class="finest-promo-box-icon finest-icon elementor-animation-{{ settings.hover_animation_icon }}">
+		 <div class="quiktheme-promo-box-icon-wrap">
+			 <span class="quiktheme-promo-box-icon quiktheme-icon elementor-animation-{{ settings.hover_animation_icon }}">
 				 <# if ( settings.icon_type == 'icon' ) { #>
-					 <span class="finest-promo-box-icon-inner">
+					 <span class="quiktheme-promo-box-icon-inner">
 						 <# if ( settings.icon || settings.selected_icon ) { #>
 						 <# if ( iconHTML && iconHTML.rendered && ( ! settings.icon || migrated ) ) { #>
 						 {{{ iconHTML.value }}}
@@ -1684,7 +1684,7 @@ class Finest_Promo_Box extends Widget_Base {
 						 <# } #>
 					 </span>
 				 <# } else if ( settings.icon_type == 'image' ) { #>
-					 <span class="finest-promo-box-icon-inner">
+					 <span class="quiktheme-promo-box-icon-inner">
 						 <#
 						 var image = {
 							 id: settings.icon_image.id,
@@ -1703,14 +1703,14 @@ class Finest_Promo_Box extends Widget_Base {
 		 <#
 	}
  #>
- <div class="finest-promo-box">
-	 <div class="finest-promo-box-bg"></div>
+ <div class="quiktheme-promo-box">
+	 <div class="quiktheme-promo-box-bg"></div>
 	 <# if ( settings.overlay_switch == 'yes' ) { #>
-		 <div class="finest-promo-box-overlay"></div>
+		 <div class="quiktheme-promo-box-overlay"></div>
 	 <# } #>
-	 <div class="finest-promo-box-wrap">
-		 <div class="finest-promo-box-inner">
-			 <div class="finest-promo-box-inner-content">
+	 <div class="quiktheme-promo-box-wrap">
+		 <div class="quiktheme-promo-box-inner">
+			 <div class="quiktheme-promo-box-inner-content">
 				 <# if ( settings.icon_switch == 'yes' ) { #>
 					 <# if ( settings.icon_position == 'above-title' ) { #>
 						 <# icon_template(); #>
@@ -1720,7 +1720,7 @@ class Finest_Promo_Box extends Widget_Base {
 				 if ( settings.heading != '' ) {
 					 var heading = settings.heading;
 
-					 view.addRenderAttribute( 'heading', 'class', 'finest-promo-box-title' );
+					 view.addRenderAttribute( 'heading', 'class', 'quiktheme-promo-box-title' );
 
 					 view.addInlineEditingAttributes( 'heading' );
 
@@ -1730,8 +1730,8 @@ class Finest_Promo_Box extends Widget_Base {
 				 }
 					
 				 if ( settings.divider_heading_switch == 'yes' ) { #>
-					 <div class="finest-promo-box-heading-divider-wrap">
-						 <div class="finest-promo-box-heading-divider">
+					 <div class="quiktheme-promo-box-heading-divider-wrap">
+						 <div class="quiktheme-promo-box-heading-divider">
 							 <# if ( settings.divider_heading_type == 'image' ) { #>
 								 <# if ( settings.divider_title_image.url != '' ) { #>
 									 <img src="{{ settings.divider_title_image.url }}">
@@ -1750,7 +1750,7 @@ class Finest_Promo_Box extends Widget_Base {
 				 if ( settings.sub_heading != '' ) {
 					 var sub_heading = settings.sub_heading;
 
-					 view.addRenderAttribute( 'sub_heading', 'class', 'finest-promo-box-subtitle' );
+					 view.addRenderAttribute( 'sub_heading', 'class', 'quiktheme-promo-box-subtitle' );
 
 					 view.addInlineEditingAttributes( 'sub_heading' );
 
@@ -1760,8 +1760,8 @@ class Finest_Promo_Box extends Widget_Base {
 				 } #>
 
 				 <# if ( settings.divider_subheading_switch == 'yes' ) { #>
-					 <div class="finest-promo-box-subheading-divider-wrap">
-						 <div class="finest-promo-box-subheading-divider">
+					 <div class="quiktheme-promo-box-subheading-divider-wrap">
+						 <div class="quiktheme-promo-box-subheading-divider">
 							 <# if ( settings.divider_subheading_type == 'image' ) { #>
 								 <# if ( settings.divider_subheading_image.url != '' ) { #>
 									 <img src="{{ settings.divider_subheading_image.url }}">
@@ -1774,7 +1774,7 @@ class Finest_Promo_Box extends Widget_Base {
 				 if ( settings.content != '' ) {
 					 var content = settings.content;
 
-					 view.addRenderAttribute( 'content', 'class', 'finest-promo-box-content' );
+					 view.addRenderAttribute( 'content', 'class', 'quiktheme-promo-box-content' );
 
 					 view.addInlineEditingAttributes( 'content' );
 
@@ -1785,11 +1785,11 @@ class Finest_Promo_Box extends Widget_Base {
 					
 				 if ( settings.button_switch == 'yes' ) { #>
 					 <# if ( settings.button_text != '' ) { #>
-						 <div class="finest-promo-box-footer">
+						 <div class="quiktheme-promo-box-footer">
 							 <#
 								 var button_text = settings.button_text;
 
-								 view.addRenderAttribute( 'button_text', 'class', [ 'finest-promo-box-button', 'elementor-button', 'elementor-size-' + settings.button_size, 'elementor-animation-' + settings.button_hover_animation ] );
+								 view.addRenderAttribute( 'button_text', 'class', [ 'quiktheme-promo-box-button', 'elementor-button', 'elementor-size-' + settings.button_size, 'elementor-animation-' + settings.button_hover_animation ] );
 
 								 view.addInlineEditingAttributes( 'button_text' );
 
@@ -1800,12 +1800,12 @@ class Finest_Promo_Box extends Widget_Base {
 						 </div>
 					 <# } #>
 				 <# } #>
-			 </div><!-- .finest-promo-box-inner-content -->
-		 </div><!-- .finest-promo-box-inner -->
-	 </div><!-- .finest-promo-box-wrap -->
+			 </div><!-- .quiktheme-promo-box-inner-content -->
+		 </div><!-- .quiktheme-promo-box-inner -->
+	 </div><!-- .quiktheme-promo-box-wrap -->
  </div>
  <?php 
 	}
 
 }
-$widgets_manager->register_widget_type( new \Finest_Addons\Widgets\Finest_Promo_Box() );
+$widgets_manager->register_widget_type( new \Quik_Theme_Addons\Widgets\Quik_Theme_Promo_Box() );

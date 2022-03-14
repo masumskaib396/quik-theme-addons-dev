@@ -1,5 +1,5 @@
 <?php
-namespace Finest_Addons\Widgets;
+namespace Quik_Theme_Addons\Widgets;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -13,14 +13,14 @@ use \Elementor\Icons_Manager;
 use \Elementor\Utils;
 use \Elementor\Widget_Base;
 
-class Finest_Flip_Box extends Widget_Base {
+class Quik_Theme_Flip_Box extends Widget_Base {
 
 	public function get_name() {
-		return 'finest-flipbox';
+		return 'quiktheme-flipbox';
 	}
 
 	public function get_title() {
-		return esc_html__( 'Finest Flip Box', 'finest-addons' );
+		return esc_html__( 'Quiktheme Flip Box', 'quiktheme-addons' );
 	}
 
 	public function get_icon() {
@@ -28,7 +28,7 @@ class Finest_Flip_Box extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'finest-addons' ];
+		return [ 'quiktheme-addons' ];
 	}
 
 	public function get_keywords() {
@@ -38,48 +38,48 @@ class Finest_Flip_Box extends Widget_Base {
 	protected function _register_controls() {
 
 		/* Content Tab */
-		$this->finest_register_content_front_controls();
-		$this->finest_register_content_back_controls();
-		$this->finest_register_content_settings_controls();
+		$this->quik_theme_register_content_front_controls();
+		$this->quik_theme_register_content_back_controls();
+		$this->quik_theme_register_content_settings_controls();
 		/* Style Tab */
-		$this->finest_register_style_front_controls();
-		$this->finest_register_style_back_controls();
-		$this->finest_register_style_button_controls();
+		$this->quik_theme_register_style_front_controls();
+		$this->quik_theme_register_style_back_controls();
+		$this->quik_theme_register_style_button_controls();
 
 		
 	}
-	protected function finest_register_content_front_controls() {
+	protected function quik_theme_register_content_front_controls() {
 		/**
 		 * Content Tab: Front
 		 */
 		$this->start_controls_section(
 			'section_front',
 			[
-				'label'  => esc_html__( 'Front', 'finest-addons' ),
+				'label'  => esc_html__( 'Front', 'quiktheme-addons' ),
 			]
 		);
 
 		$this->add_control(
 			'icon_type',
 			[
-				'label'                 => esc_html__( 'Icon Type', 'finest-addons' ),
+				'label'                 => esc_html__( 'Icon Type', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::CHOOSE,
 				'label_block'           => false,
 				'options'               => [
 					'none' => [
-						'title'   => __( 'None', 'finest-addons' ),
+						'title'   => __( 'None', 'quiktheme-addons' ),
 						'icon'    => 'fa fa-ban',
 					],
 					'image' => [
-						'title'   => __( 'Image', 'finest-addons' ),
+						'title'   => __( 'Image', 'quiktheme-addons' ),
 						'icon'    => 'fa fa-picture-o',
 					],
 					'icon' => [
-						'title'   => __( 'Icon', 'finest-addons' ),
+						'title'   => __( 'Icon', 'quiktheme-addons' ),
 						'icon'    => 'fa fa-star',
 					],
 					'text'  => array(
-						'title' => esc_html__( 'Text', 'finest-addons' ),
+						'title' => esc_html__( 'Text', 'quiktheme-addons' ),
 						'icon'  => 'fa fa-font',
 					),
 				],
@@ -90,7 +90,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'icon_image',
 			[
-				'label'                 => esc_html__( 'Choose Image', 'finest-addons' ),
+				'label'                 => esc_html__( 'Choose Image', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::MEDIA,
 				'default'               => [
 					'url' => Utils::get_placeholder_image_src(),
@@ -104,7 +104,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'select_icon',
 			[
-				'label'                 => __( 'Icon', 'finest-addons' ),
+				'label'                 => __( 'Icon', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::ICONS,
 				'fa4compatibility'      => 'icon',
 				'default'               => [
@@ -132,7 +132,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'icon_text',
 			array(
-				'label'     => __( 'Icon Text', 'finest-addons' ),
+				'label'     => __( 'Icon Text', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::TEXT,
 				'dynamic'   => array(
 					'active' => true,
@@ -147,77 +147,77 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'title_front',
 			[
-				'label'                 => esc_html__( 'Title', 'finest-addons' ),
+				'label'                 => esc_html__( 'Title', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::TEXT,
 				'label_block'           => true,
-				'default'               => esc_html__( 'This is the heading', 'finest-addons' ),
+				'default'               => esc_html__( 'This is the heading', 'quiktheme-addons' ),
 				'separator'             => 'before',
 			]
 		);
 		$this->add_control(
 			'description_front',
 			[
-				'label'                 => esc_html__( 'Description', 'finest-addons' ),
+				'label'                 => esc_html__( 'Description', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::TEXTAREA,
 				'label_block'           => true,
-				'default'               => __( 'This is the front content. Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'finest-addons' ),
+				'default'               => __( 'This is the front content. Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'quiktheme-addons' ),
 			]
 		);
 
 		$this->add_control(
 			'title_html_tag_front',
 			array(
-				'label'   => __( 'Title HTML Tag', 'finest-addons' ),
+				'label'   => __( 'Title HTML Tag', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'h3',
 				'options' => array(
-					'h1'   => __( 'H1', 'finest-addons' ),
-					'h2'   => __( 'H2', 'finest-addons' ),
-					'h3'   => __( 'H3', 'finest-addons' ),
-					'h4'   => __( 'H4', 'finest-addons' ),
-					'h5'   => __( 'H5', 'finest-addons' ),
-					'h6'   => __( 'H6', 'finest-addons' ),
-					'div'  => __( 'div', 'finest-addons' ),
-					'span' => __( 'span', 'finest-addons' ),
-					'p'    => __( 'p', 'finest-addons' ),
+					'h1'   => __( 'H1', 'quiktheme-addons' ),
+					'h2'   => __( 'H2', 'quiktheme-addons' ),
+					'h3'   => __( 'H3', 'quiktheme-addons' ),
+					'h4'   => __( 'H4', 'quiktheme-addons' ),
+					'h5'   => __( 'H5', 'quiktheme-addons' ),
+					'h6'   => __( 'H6', 'quiktheme-addons' ),
+					'div'  => __( 'div', 'quiktheme-addons' ),
+					'span' => __( 'span', 'quiktheme-addons' ),
+					'p'    => __( 'p', 'quiktheme-addons' ),
 				),
 			)
 		);
 
 		$this->end_controls_section();
 	}
-	protected function finest_register_content_back_controls() {
+	protected function quik_theme_register_content_back_controls() {
 		/**
 		 * Content Tab: Back
 		 */
 		$this->start_controls_section(
 			'section_back',
 			[
-				'label'                 => esc_html__( 'Back', 'finest-addons' ),
+				'label'                 => esc_html__( 'Back', 'quiktheme-addons' ),
 			]
 		);
 
 		$this->add_control(
 			'icon_type_back',
 			[
-				'label'                 => esc_html__( 'Icon Type', 'finest-addons' ),
+				'label'                 => esc_html__( 'Icon Type', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::CHOOSE,
 				'label_block'           => false,
 				'options'               => [
 					'none' => [
-						'title'   => __( 'None', 'finest-addons' ),
+						'title'   => __( 'None', 'quiktheme-addons' ),
 						'icon'    => 'fa fa-ban',
 					],
 					'image' => [
-						'title'   => __( 'Image', 'finest-addons' ),
+						'title'   => __( 'Image', 'quiktheme-addons' ),
 						'icon'    => 'fa fa-picture-o',
 					],
 					'icon' => [
-						'title'   => __( 'Icon', 'finest-addons' ),
+						'title'   => __( 'Icon', 'quiktheme-addons' ),
 						'icon'    => 'fa fa-star',
 					],
 					'text'  => array(
-						'title' => esc_html__( 'Text', 'finest-addons' ),
+						'title' => esc_html__( 'Text', 'quiktheme-addons' ),
 						'icon'  => 'fa fa-font',
 					),
 				],
@@ -228,7 +228,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'icon_image_back',
 			[
-				'label'                 => esc_html__( 'Flipbox Image', 'finest-addons' ),
+				'label'                 => esc_html__( 'Flipbox Image', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::MEDIA,
 				'default'               => [
 					'url' => Utils::get_placeholder_image_src(),
@@ -242,7 +242,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'select_icon_back',
 			[
-				'label'                 => __( 'Icon', 'finest-addons' ),
+				'label'                 => __( 'Icon', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::ICONS,
 				'fa4compatibility'      => 'icon_back',
 				'default'               => [
@@ -270,7 +270,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'icon_text_back',
 			array(
-				'label'     => __( 'Icon Text', 'finest-addons' ),
+				'label'     => __( 'Icon Text', 'quiktheme-addons' ),
 				'type'      => Controls_Manager::TEXT,
 				'dynamic'   => array(
 					'active' => true,
@@ -285,10 +285,10 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'title_back',
 			[
-				'label'                 => esc_html__( 'Title', 'finest-addons' ),
+				'label'                 => esc_html__( 'Title', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::TEXT,
 				'label_block'           => true,
-				'default'               => esc_html__( 'This is the heading', 'finest-addons' ),
+				'default'               => esc_html__( 'This is the heading', 'quiktheme-addons' ),
 				'separator'             => 'before',
 			]
 		);
@@ -296,29 +296,29 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'description_back',
 			[
-				'label'                 => esc_html__( 'Description', 'finest-addons' ),
+				'label'                 => esc_html__( 'Description', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::TEXTAREA,
 				'label_block'           => true,
-				'default'               => __( 'This is the front content. Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'finest-addons' ),
+				'default'               => __( 'This is the front content. Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'quiktheme-addons' ),
 			]
 		);
 
 		$this->add_control(
 			'title_html_tag_back',
 			array(
-				'label'   => __( 'Title HTML Tag', 'finest-addons' ),
+				'label'   => __( 'Title HTML Tag', 'quiktheme-addons' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'h3',
 				'options' => array(
-					'h1'   => __( 'H1', 'finest-addons' ),
-					'h2'   => __( 'H2', 'finest-addons' ),
-					'h3'   => __( 'H3', 'finest-addons' ),
-					'h4'   => __( 'H4', 'finest-addons' ),
-					'h5'   => __( 'H5', 'finest-addons' ),
-					'h6'   => __( 'H6', 'finest-addons' ),
-					'div'  => __( 'div', 'finest-addons' ),
-					'span' => __( 'span', 'finest-addons' ),
-					'p'    => __( 'p', 'finest-addons' ),
+					'h1'   => __( 'H1', 'quiktheme-addons' ),
+					'h2'   => __( 'H2', 'quiktheme-addons' ),
+					'h3'   => __( 'H3', 'quiktheme-addons' ),
+					'h4'   => __( 'H4', 'quiktheme-addons' ),
+					'h5'   => __( 'H5', 'quiktheme-addons' ),
+					'h6'   => __( 'H6', 'quiktheme-addons' ),
+					'div'  => __( 'div', 'quiktheme-addons' ),
+					'span' => __( 'span', 'quiktheme-addons' ),
+					'p'    => __( 'p', 'quiktheme-addons' ),
 				),
 			)
 		);
@@ -326,14 +326,14 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'link_type',
 			[
-				'label'                 => __( 'Link Type', 'finest-addons' ),
+				'label'                 => __( 'Link Type', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::SELECT,
 				'default'               => 'none',
 				'options'               => [
-					'none'      => __( 'None', 'finest-addons' ),
-					'title'     => __( 'Title', 'finest-addons' ),
-					'button'    => __( 'Button', 'finest-addons' ),
-					'box'       => __( 'Box', 'finest-addons' ),
+					'none'      => __( 'None', 'quiktheme-addons' ),
+					'title'     => __( 'Title', 'quiktheme-addons' ),
+					'button'    => __( 'Button', 'quiktheme-addons' ),
+					'box'       => __( 'Box', 'quiktheme-addons' ),
 				],
 			]
 		);
@@ -341,7 +341,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'link',
 			[
-				'label'                 => __( 'Link', 'finest-addons' ),
+				'label'                 => __( 'Link', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::URL,
 				'dynamic'               => [
 					'active'        => true,
@@ -359,12 +359,12 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'flipbox_button_text',
 			[
-				'label'                 => __( 'Button Text', 'finest-addons' ),
+				'label'                 => __( 'Button Text', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::TEXT,
 				'dynamic'               => [
 					'active'   => true,
 				],
-				'default'               => __( 'Get Started', 'finest-addons' ),
+				'default'               => __( 'Get Started', 'quiktheme-addons' ),
 				'condition'             => [
 					'link_type'   => 'button',
 				],
@@ -374,7 +374,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'select_button_icon',
 			[
-				'label'                 => __( 'Button Icon', 'finest-addons' ),
+				'label'                 => __( 'Button Icon', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::ICONS,
 				'fa4compatibility'      => 'button_icon',
 				'condition'             => [
@@ -386,12 +386,12 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'button_icon_position',
 			[
-				'label'                 => __( 'Icon Position', 'finest-addons' ),
+				'label'                 => __( 'Icon Position', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::SELECT,
 				'default'               => 'after',
 				'options'               => [
-					'after'     => __( 'After', 'finest-addons' ),
-					'before'    => __( 'Before', 'finest-addons' ),
+					'after'     => __( 'After', 'quiktheme-addons' ),
+					'before'    => __( 'Before', 'quiktheme-addons' ),
 				],
 				'condition'             => [
 					'link_type'     => 'button',
@@ -402,21 +402,21 @@ class Finest_Flip_Box extends Widget_Base {
 
 		$this->end_controls_section();
 	}
-	protected function finest_register_content_settings_controls() {
+	protected function quik_theme_register_content_settings_controls() {
 		/**
 		 * Content Tab: Settings
 		 */
 		$this->start_controls_section(
 			'section_settings',
 			[
-				'label'                 => esc_html__( 'Settings', 'finest-addons' ),
+				'label'                 => esc_html__( 'Settings', 'quiktheme-addons' ),
 			]
 		);
 
 		$this->add_responsive_control(
 			'height',
 			[
-				'label'                 => __( 'Height', 'finest-addons' ),
+				'label'                 => __( 'Height', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::SLIDER,
 				'size_units'            => [ 'px'],
 				'range'                 => [
@@ -430,7 +430,7 @@ class Finest_Flip_Box extends Widget_Base {
 					],
 				],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-container' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-flipbox-container' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -438,7 +438,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'border_radius',
 			[
-				'label'                 => __( 'Border Radius', 'finest-addons' ),
+				'label'                 => __( 'Border Radius', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::SLIDER,
 				'size_units'            => [ 'px', '%' ],
 				'range'                 => [
@@ -448,7 +448,7 @@ class Finest_Flip_Box extends Widget_Base {
 					],
 				],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-back, {{WRAPPER}} .finest-flipbox-front' => 'border-radius: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .quiktheme-flipbox-back, {{WRAPPER}} .quiktheme-flipbox-front' => 'border-radius: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -456,17 +456,17 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'flip_effect',
 			[
-				'label'                 => esc_html__( 'Flip Effect', 'finest-addons' ),
+				'label'                 => esc_html__( 'Flip Effect', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::SELECT,
 				'default'               => 'flip',
 				'label_block'           => false,
 				'options'               => [
-					'flip'     => esc_html__( 'Flip', 'finest-addons' ),
-					'slide'    => esc_html__( 'Slide', 'finest-addons' ),
-					'push'     => esc_html__( 'Push', 'finest-addons' ),
-					'zoom-in'  => esc_html__( 'Zoom In', 'finest-addons' ),
-					'zoom-out' => esc_html__( 'Zoom Out', 'finest-addons' ),
-					'fade'     => esc_html__( 'Fade', 'finest-addons' ),
+					'flip'     => esc_html__( 'Flip', 'quiktheme-addons' ),
+					'slide'    => esc_html__( 'Slide', 'quiktheme-addons' ),
+					'push'     => esc_html__( 'Push', 'quiktheme-addons' ),
+					'zoom-in'  => esc_html__( 'Zoom In', 'quiktheme-addons' ),
+					'zoom-out' => esc_html__( 'Zoom Out', 'quiktheme-addons' ),
+					'fade'     => esc_html__( 'Fade', 'quiktheme-addons' ),
 				],
 				'separator'             => 'before',
 			]
@@ -475,15 +475,15 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'flip_direction',
 			[
-				'label'                 => esc_html__( 'Flip Direction', 'finest-addons' ),
+				'label'                 => esc_html__( 'Flip Direction', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::SELECT,
 				'default'               => 'left',
 				'label_block'           => false,
 				'options'               => [
-					'left'     => esc_html__( 'Left', 'finest-addons' ),
-					'right'    => esc_html__( 'Right', 'finest-addons' ),
-					'up'       => esc_html__( 'Top', 'finest-addons' ),
-					'down'     => esc_html__( 'Bottom', 'finest-addons' ),
+					'left'     => esc_html__( 'Left', 'quiktheme-addons' ),
+					'right'    => esc_html__( 'Right', 'quiktheme-addons' ),
+					'up'       => esc_html__( 'Top', 'quiktheme-addons' ),
+					'down'     => esc_html__( 'Bottom', 'quiktheme-addons' ),
 				],
 				'condition'             => [
 					'flip_effect!' => [
@@ -497,14 +497,14 @@ class Finest_Flip_Box extends Widget_Base {
 
 		$this->end_controls_section();
 	}
-	protected function finest_register_style_front_controls() {
+	protected function quik_theme_register_style_front_controls() {
 		/**
 		 * Style Tab: Front
 		 */
 		$this->start_controls_section(
 			'section_front_style',
 			[
-				'label'                 => esc_html__( 'Front', 'finest-addons' ),
+				'label'                 => esc_html__( 'Front', 'quiktheme-addons' ),
 				'tab'                   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -512,11 +512,11 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'padding_front',
 			[
-				'label'                 => esc_html__( 'Padding', 'finest-addons' ),
+				'label'                 => esc_html__( 'Padding', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::DIMENSIONS,
 				'size_units'            => [ 'px', 'em', '%' ],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-front .finest-flipbox-overlay' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-flipbox-front .quiktheme-flipbox-overlay' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -524,26 +524,26 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'content_alignment_front',
 			[
-				'label'                 => esc_html__( 'Alignment', 'finest-addons' ),
+				'label'                 => esc_html__( 'Alignment', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::CHOOSE,
 				'label_block'           => false,
 				'options'               => [
 					'left' => [
-						'title'   => esc_html__( 'Left', 'finest-addons' ),
+						'title'   => esc_html__( 'Left', 'quiktheme-addons' ),
 						'icon'    => 'fa fa-align-left',
 					],
 					'center' => [
-						'title'   => esc_html__( 'Center', 'finest-addons' ),
+						'title'   => esc_html__( 'Center', 'quiktheme-addons' ),
 						'icon'    => 'fa fa-align-center',
 					],
 					'right' => [
-						'title'   => esc_html__( 'Right', 'finest-addons' ),
+						'title'   => esc_html__( 'Right', 'quiktheme-addons' ),
 						'icon'    => 'fa fa-align-right',
 					],
 				],
 				'default'               => 'center',
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-front .finest-flipbox-overlay' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-flipbox-front .quiktheme-flipbox-overlay' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -551,20 +551,20 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'vertical_position_front',
 			[
-				'label'                 => __( 'Vertical Position', 'finest-addons' ),
+				'label'                 => __( 'Vertical Position', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::CHOOSE,
 				'label_block'           => false,
 				'options'               => [
 					'top' => [
-						'title' => __( 'Top', 'finest-addons' ),
+						'title' => __( 'Top', 'quiktheme-addons' ),
 						'icon' => 'eicon-v-align-top',
 					],
 					'middle' => [
-						'title' => __( 'Middle', 'finest-addons' ),
+						'title' => __( 'Middle', 'quiktheme-addons' ),
 						'icon' => 'eicon-v-align-middle',
 					],
 					'bottom' => [
-						'title' => __( 'Bottom', 'finest-addons' ),
+						'title' => __( 'Bottom', 'quiktheme-addons' ),
 						'icon' => 'eicon-v-align-bottom',
 					],
 				],
@@ -574,7 +574,7 @@ class Finest_Flip_Box extends Widget_Base {
 					'bottom' => 'flex-end',
 				],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-front .finest-flipbox-overlay' => 'justify-content: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-flipbox-front .quiktheme-flipbox-overlay' => 'justify-content: {{VALUE}}',
 				],
 			]
 		);
@@ -584,7 +584,7 @@ class Finest_Flip_Box extends Widget_Base {
 			[
 				'name'                  => 'background_front',
 				'types'                 => [ 'classic', 'gradient' ],
-				'selector'              => '{{WRAPPER}} .finest-flipbox-front',
+				'selector'              => '{{WRAPPER}} .quiktheme-flipbox-front',
 				'separator'             => 'before',
 			]
 		);
@@ -593,8 +593,8 @@ class Finest_Flip_Box extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'                  => 'border_front',
-				'label'                 => esc_html__( 'Border Style', 'finest-addons' ),
-				'selector'              => '{{WRAPPER}} .finest-flipbox-front',
+				'label'                 => esc_html__( 'Border Style', 'quiktheme-addons' ),
+				'selector'              => '{{WRAPPER}} .quiktheme-flipbox-front',
 				'separator'             => 'before',
 			]
 		);
@@ -602,7 +602,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'overlay_front',
 			[
-				'label'                 => esc_html__( 'Overlay', 'finest-addons' ),
+				'label'                 => esc_html__( 'Overlay', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::HEADING,
 				'separator'             => 'before',
 			]
@@ -614,14 +614,14 @@ class Finest_Flip_Box extends Widget_Base {
 				'name'                  => 'overlay_front',
 				'types'                 => [ 'classic', 'gradient' ],
 				'exclude'               => [ 'image' ],
-				'selector'              => '{{WRAPPER}} .finest-flipbox-front .finest-flipbox-overlay',
+				'selector'              => '{{WRAPPER}} .quiktheme-flipbox-front .quiktheme-flipbox-overlay',
 			]
 		);
 
 		$this->add_control(
 			'image_style_heading_front',
 			[
-				'label'                 => esc_html__( 'Image', 'finest-addons' ),
+				'label'                 => esc_html__( 'Image', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::HEADING,
 				'separator'             => 'before',
 				'condition'             => [
@@ -633,7 +633,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'image_spacing_front',
 			[
-				'label'                 => __( 'Spacing', 'finest-addons' ),
+				'label'                 => __( 'Spacing', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::SLIDER,
 				'range'                 => [
 					'px' => [
@@ -642,7 +642,7 @@ class Finest_Flip_Box extends Widget_Base {
 					],
 				],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-icon-image' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-flipbox-icon-image' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 				'condition'             => [
 					'icon_type' => 'image',
@@ -653,13 +653,13 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'image_size_front',
 			[
-				'label'                 => esc_html__( 'Size (%)', 'finest-addons' ),
+				'label'                 => esc_html__( 'Size (%)', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::SLIDER,
 				'default'               => [
 					'size' => '',
 				],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-icon-image > img' => 'width: {{SIZE}}%;',
+					'{{WRAPPER}} .quiktheme-flipbox-icon-image > img' => 'width: {{SIZE}}%;',
 				],
 				'condition'             => [
 					'icon_type' => 'image',
@@ -670,7 +670,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'icon_style_heading_front',
 			[
-				'label'                 => esc_html__( 'Icon', 'finest-addons' ),
+				'label'                 => esc_html__( 'Icon', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::HEADING,
 				'separator'             => 'before',
 				'condition'             => [
@@ -682,12 +682,12 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'icon_color_front',
 			[
-				'label'                 => esc_html__( 'Color', 'finest-addons' ),
+				'label'                 => esc_html__( 'Color', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::COLOR,
 				'default'               => '#ffffff',
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-icon-image, {{WRAPPER}} .finest-flipbox-icon-image i' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .finest-flipbox-icon-image svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-flipbox-icon-image, {{WRAPPER}} .quiktheme-flipbox-icon-image i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-flipbox-icon-image svg' => 'fill: {{VALUE}};',
 				],
 				'condition'             => [
 					'icon_type' => [ 'icon', 'text' ],
@@ -698,7 +698,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_size_front',
 			[
-				'label'                 => __( 'Icon Size', 'finest-addons' ),
+				'label'                 => __( 'Icon Size', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::SLIDER,
 				'default'               => [
 					'size' => 40,
@@ -711,7 +711,7 @@ class Finest_Flip_Box extends Widget_Base {
 					],
 				],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-icon-image, {{WRAPPER}} .finest-flipbox-icon-image i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-flipbox-icon-image, {{WRAPPER}} .quiktheme-flipbox-icon-image i' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 				'condition'             => [
 					'icon_type' => 'icon',
@@ -723,7 +723,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_spacing_front',
 			[
-				'label'                 => __( 'Spacing', 'finest-addons' ),
+				'label'                 => __( 'Spacing', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::SLIDER,
 				'range'                 => [
 					'px' => [
@@ -732,7 +732,7 @@ class Finest_Flip_Box extends Widget_Base {
 					],
 				],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-icon-image' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-flipbox-icon-image' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 				'condition'             => [
 					'icon_type' => [ 'icon', 'text' ],
@@ -743,7 +743,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'title_heading_front',
 			[
-				'label'                 => esc_html__( 'Title', 'finest-addons' ),
+				'label'                 => esc_html__( 'Title', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::HEADING,
 				'separator'             => 'before',
 				'condition'             => [
@@ -755,11 +755,11 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'title_color_front',
 			[
-				'label'                 => esc_html__( 'Color', 'finest-addons' ),
+				'label'                 => esc_html__( 'Color', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::COLOR,
 				'default'               => '#fff',
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-front .finest-flipbox-heading' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-flipbox-front .quiktheme-flipbox-heading' => 'color: {{VALUE}};',
 				],
 				'condition'             => [
 					'title_front!' => '',
@@ -771,7 +771,7 @@ class Finest_Flip_Box extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'                  => 'title_typography_front',
-				'selector'              => '{{WRAPPER}} .finest-flipbox-front .finest-flipbox-heading',
+				'selector'              => '{{WRAPPER}} .quiktheme-flipbox-front .quiktheme-flipbox-heading',
 				'condition'             => [
 					'title_front!' => '',
 				],
@@ -781,7 +781,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'title_spacing_front',
 			[
-				'label'                 => __( 'Spacing', 'finest-addons' ),
+				'label'                 => __( 'Spacing', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::SLIDER,
 				'range'                 => [
 					'px' => [
@@ -790,7 +790,7 @@ class Finest_Flip_Box extends Widget_Base {
 					],
 				],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-front .finest-flipbox-heading' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-flipbox-front .quiktheme-flipbox-heading' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 				'condition'             => [
 					'title_front!' => '',
@@ -801,7 +801,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'description_heading_front',
 			[
-				'label'                 => esc_html__( 'Description', 'finest-addons' ),
+				'label'                 => esc_html__( 'Description', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::HEADING,
 				'separator'             => 'before',
 				'condition'             => [
@@ -813,11 +813,11 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'description_color_front',
 			[
-				'label'                 => esc_html__( 'Color', 'finest-addons' ),
+				'label'                 => esc_html__( 'Color', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::COLOR,
 				'default'               => '#fff',
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-front .finest-flipbox-content' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-flipbox-front .quiktheme-flipbox-content' => 'color: {{VALUE}};',
 				],
 				'condition'             => [
 					'description_front!' => '',
@@ -829,7 +829,7 @@ class Finest_Flip_Box extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'                  => 'description_typography_front',
-				'selector'              => '{{WRAPPER}} .finest-flipbox-front .finest-flipbox-content',
+				'selector'              => '{{WRAPPER}} .quiktheme-flipbox-front .quiktheme-flipbox-content',
 				'condition'             => [
 					'description_front!' => '',
 				],
@@ -838,14 +838,14 @@ class Finest_Flip_Box extends Widget_Base {
 
 		$this->end_controls_section();
 	}
-	protected function finest_register_style_back_controls() {
+	protected function quik_theme_register_style_back_controls() {
 		/**
 		 * Style Tab: Back
 		 */
 		$this->start_controls_section(
 			'section_back_style',
 			[
-				'label'                 => esc_html__( 'Back', 'finest-addons' ),
+				'label'                 => esc_html__( 'Back', 'quiktheme-addons' ),
 				'tab'                   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -853,11 +853,11 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'padding_back',
 			[
-				'label'                 => esc_html__( 'Padding', 'finest-addons' ),
+				'label'                 => esc_html__( 'Padding', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::DIMENSIONS,
 				'size_units'            => [ 'px', 'em', '%' ],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-back .finest-flipbox-overlay' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-flipbox-back .quiktheme-flipbox-overlay' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -865,26 +865,26 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'content_alignment_back',
 			[
-				'label'                 => esc_html__( 'Alignment', 'finest-addons' ),
+				'label'                 => esc_html__( 'Alignment', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::CHOOSE,
 				'label_block'           => false,
 				'options'               => [
 					'left' => [
-						'title'   => esc_html__( 'Left', 'finest-addons' ),
+						'title'   => esc_html__( 'Left', 'quiktheme-addons' ),
 						'icon'    => 'fa fa-align-left',
 					],
 					'center' => [
-						'title'   => esc_html__( 'Center', 'finest-addons' ),
+						'title'   => esc_html__( 'Center', 'quiktheme-addons' ),
 						'icon'    => 'fa fa-align-center',
 					],
 					'right' => [
-						'title'   => esc_html__( 'Right', 'finest-addons' ),
+						'title'   => esc_html__( 'Right', 'quiktheme-addons' ),
 						'icon'    => 'fa fa-align-right',
 					],
 				],
 				'default'               => 'center',
 				'selectors' => [
-					'{{WRAPPER}} .finest-flipbox-back .finest-flipbox-overlay' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-flipbox-back .quiktheme-flipbox-overlay' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -892,20 +892,20 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'vertical_position_back',
 			[
-				'label'                 => __( 'Vertical Position', 'finest-addons' ),
+				'label'                 => __( 'Vertical Position', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::CHOOSE,
 				'label_block'           => false,
 				'options'               => [
 					'top' => [
-						'title' => __( 'Top', 'finest-addons' ),
+						'title' => __( 'Top', 'quiktheme-addons' ),
 						'icon' => 'eicon-v-align-top',
 					],
 					'middle' => [
-						'title' => __( 'Middle', 'finest-addons' ),
+						'title' => __( 'Middle', 'quiktheme-addons' ),
 						'icon' => 'eicon-v-align-middle',
 					],
 					'bottom' => [
-						'title' => __( 'Bottom', 'finest-addons' ),
+						'title' => __( 'Bottom', 'quiktheme-addons' ),
 						'icon' => 'eicon-v-align-bottom',
 					],
 				],
@@ -915,7 +915,7 @@ class Finest_Flip_Box extends Widget_Base {
 					'bottom' => 'flex-end',
 				],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-back .finest-flipbox-overlay' => 'justify-content: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-flipbox-back .quiktheme-flipbox-overlay' => 'justify-content: {{VALUE}}',
 				],
 			]
 		);
@@ -925,7 +925,7 @@ class Finest_Flip_Box extends Widget_Base {
 			[
 				'name'                  => 'background_back',
 				'types'                 => [ 'classic', 'gradient' ],
-				'selector'              => '{{WRAPPER}} .finest-flipbox-back',
+				'selector'              => '{{WRAPPER}} .quiktheme-flipbox-back',
 				'separator'             => 'before',
 			]
 		);
@@ -934,8 +934,8 @@ class Finest_Flip_Box extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'                  => 'border_back',
-				'label'                 => esc_html__( 'Border Style', 'finest-addons' ),
-				'selector'              => '{{WRAPPER}} .finest-flipbox-back',
+				'label'                 => esc_html__( 'Border Style', 'quiktheme-addons' ),
+				'selector'              => '{{WRAPPER}} .quiktheme-flipbox-back',
 				'separator'             => 'before',
 			]
 		);
@@ -943,7 +943,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'overlay_back',
 			[
-				'label'                 => esc_html__( 'Overlay', 'finest-addons' ),
+				'label'                 => esc_html__( 'Overlay', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::HEADING,
 				'separator'             => 'before',
 			]
@@ -955,14 +955,14 @@ class Finest_Flip_Box extends Widget_Base {
 				'name'                  => 'overlay_back',
 				'types'                 => [ 'classic', 'gradient' ],
 				'exclude'               => [ 'image' ],
-				'selector'              => '{{WRAPPER}} .finest-flipbox-back .finest-flipbox-overlay',
+				'selector'              => '{{WRAPPER}} .quiktheme-flipbox-back .quiktheme-flipbox-overlay',
 			]
 		);
 
 		$this->add_control(
 			'image_style_heading_back',
 			[
-				'label'                 => esc_html__( 'Image', 'finest-addons' ),
+				'label'                 => esc_html__( 'Image', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::HEADING,
 				'separator'             => 'before',
 				'condition'             => [
@@ -974,7 +974,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'image_spacing_back',
 			[
-				'label'                 => __( 'Spacing', 'finest-addons' ),
+				'label'                 => __( 'Spacing', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::SLIDER,
 				'range'                 => [
 					'px' => [
@@ -983,7 +983,7 @@ class Finest_Flip_Box extends Widget_Base {
 					],
 				],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-icon-image-back' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-flipbox-icon-image-back' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 				'condition'             => [
 					'icon_type_back'    => 'image',
@@ -994,13 +994,13 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'image_size_back',
 			[
-				'label'                 => esc_html__( 'Size (%)', 'finest-addons' ),
+				'label'                 => esc_html__( 'Size (%)', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::SLIDER,
 				'default'               => [
 					'size' => '',
 				],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-icon-image-back > img' => 'width: {{SIZE}}%;',
+					'{{WRAPPER}} .quiktheme-flipbox-icon-image-back > img' => 'width: {{SIZE}}%;',
 				],
 				'condition'             => [
 					'icon_type_back'    => 'image',
@@ -1011,7 +1011,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'icon_style_heading_back',
 			[
-				'label'                 => esc_html__( 'Icon', 'finest-addons' ),
+				'label'                 => esc_html__( 'Icon', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::HEADING,
 				'separator'             => 'before',
 				'condition'             => [
@@ -1023,12 +1023,12 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'icon_color_back',
 			[
-				'label'                 => esc_html__( 'Color', 'finest-addons' ),
+				'label'                 => esc_html__( 'Color', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::COLOR,
 				'default'               => '#ffffff',
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-icon-image-back, {{WRAPPER}} .finest-flipbox-icon-image-back i' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .finest-flipbox-icon-image-back svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-flipbox-icon-image-back, {{WRAPPER}} .quiktheme-flipbox-icon-image-back i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-flipbox-icon-image-back svg' => 'fill: {{VALUE}};',
 				],
 				'condition'             => [
 					'icon_type_back'    => [ 'icon', 'text' ],
@@ -1039,7 +1039,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_size_back',
 			[
-				'label'                 => __( 'Icon Size', 'finest-addons' ),
+				'label'                 => __( 'Icon Size', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::SLIDER,
 				'default'               => [
 					'size' => 40,
@@ -1052,7 +1052,7 @@ class Finest_Flip_Box extends Widget_Base {
 					],
 				],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-icon-image-back, {{WRAPPER}} .finest-flipbox-icon-image-back i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-flipbox-icon-image-back, {{WRAPPER}} .quiktheme-flipbox-icon-image-back i' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 				'condition'             => [
 					'icon_type_back'    => 'icon',
@@ -1063,7 +1063,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_spacing_back',
 			[
-				'label'                 => __( 'Spacing', 'finest-addons' ),
+				'label'                 => __( 'Spacing', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::SLIDER,
 				'range'                 => [
 					'px' => [
@@ -1072,7 +1072,7 @@ class Finest_Flip_Box extends Widget_Base {
 					],
 				],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-icon-image-back' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-flipbox-icon-image-back' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 				'condition'             => [
 					'icon_type_back'    => [ 'icon', 'text' ],
@@ -1083,7 +1083,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'title_heading_back',
 			[
-				'label'                 => esc_html__( 'Title', 'finest-addons' ),
+				'label'                 => esc_html__( 'Title', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::HEADING,
 				'separator'             => 'before',
 				'condition'             => [
@@ -1095,11 +1095,11 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'title_color_back',
 			[
-				'label'                 => esc_html__( 'Color', 'finest-addons' ),
+				'label'                 => esc_html__( 'Color', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::COLOR,
 				'default'               => '#fff',
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-back .finest-flipbox-heading' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-flipbox-back .quiktheme-flipbox-heading' => 'color: {{VALUE}};',
 				],
 				'condition'             => [
 					'title_back!' => '',
@@ -1111,7 +1111,7 @@ class Finest_Flip_Box extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'                  => 'title_typography_back',
-				'selector'              => '{{WRAPPER}} .finest-flipbox-back .finest-flipbox-heading',
+				'selector'              => '{{WRAPPER}} .quiktheme-flipbox-back .quiktheme-flipbox-heading',
 				'condition'             => [
 					'title_back!' => '',
 				],
@@ -1121,7 +1121,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'title_spacing_back',
 			[
-				'label'                 => __( 'Spacing', 'finest-addons' ),
+				'label'                 => __( 'Spacing', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::SLIDER,
 				'range'                 => [
 					'px' => [
@@ -1130,7 +1130,7 @@ class Finest_Flip_Box extends Widget_Base {
 					],
 				],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-back .finest-flipbox-heading' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-flipbox-back .quiktheme-flipbox-heading' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 				'condition'             => [
 					'title_back!' => '',
@@ -1141,7 +1141,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'description_heading_back',
 			[
-				'label'                 => esc_html__( 'Description', 'finest-addons' ),
+				'label'                 => esc_html__( 'Description', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::HEADING,
 				'separator'             => 'before',
 				'condition'             => [
@@ -1153,11 +1153,11 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'description_color_back',
 			[
-				'label'                 => esc_html__( 'Color', 'finest-addons' ),
+				'label'                 => esc_html__( 'Color', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::COLOR,
 				'default'               => '',
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-back .finest-flipbox-content' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-flipbox-back .quiktheme-flipbox-content' => 'color: {{VALUE}};',
 				],
 				'condition'             => [
 					'description_back!' => '',
@@ -1169,7 +1169,7 @@ class Finest_Flip_Box extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'                  => 'description_typography_back',
-				'selector'              => '{{WRAPPER}} .finest-flipbox-back .finest-flipbox-content',
+				'selector'              => '{{WRAPPER}} .quiktheme-flipbox-back .quiktheme-flipbox-content',
 				'condition'             => [
 					'description_back!' => '',
 				],
@@ -1178,7 +1178,7 @@ class Finest_Flip_Box extends Widget_Base {
 
 		$this->end_controls_section();
 	}
-	protected function finest_register_style_button_controls() {
+	protected function quik_theme_register_style_button_controls() {
 		/**
 		 * Style Tab: Button
 		 * ------------------
@@ -1186,7 +1186,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_info_box_button_style',
 			[
-				'label'                 => __( 'Button', 'finest-addons' ),
+				'label'                 => __( 'Button', 'quiktheme-addons' ),
 				'tab'                   => Controls_Manager::TAB_STYLE,
 				'condition'             => [
 					'link_type'    => 'button',
@@ -1197,15 +1197,15 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'button_size',
 			[
-				'label'                 => __( 'Size', 'finest-addons' ),
+				'label'                 => __( 'Size', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::SELECT,
 				'default'               => 'md',
 				'options'               => [
-					'xs' => __( 'Extra Small', 'finest-addons' ),
-					'sm' => __( 'Small', 'finest-addons' ),
-					'md' => __( 'Medium', 'finest-addons' ),
-					'lg' => __( 'Large', 'finest-addons' ),
-					'xl' => __( 'Extra Large', 'finest-addons' ),
+					'xs' => __( 'Extra Small', 'quiktheme-addons' ),
+					'sm' => __( 'Small', 'quiktheme-addons' ),
+					'md' => __( 'Medium', 'quiktheme-addons' ),
+					'lg' => __( 'Large', 'quiktheme-addons' ),
+					'xl' => __( 'Extra Large', 'quiktheme-addons' ),
 				],
 				'condition'             => [
 					'link_type'    => 'button',
@@ -1216,7 +1216,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'button_spacing',
 			[
-				'label'                 => __( 'Spacing', 'finest-addons' ),
+				'label'                 => __( 'Spacing', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::SLIDER,
 				'default'               => [
 					'size' => 15,
@@ -1228,7 +1228,7 @@ class Finest_Flip_Box extends Widget_Base {
 					],
 				],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-button' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-flipbox-button' => 'margin-top: {{SIZE}}{{UNIT}};',
 				],
 				'condition'             => [
 					'link_type'    => 'button',
@@ -1241,7 +1241,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_normal',
 			[
-				'label'                 => __( 'Normal', 'finest-addons' ),
+				'label'                 => __( 'Normal', 'quiktheme-addons' ),
 				'condition'             => [
 					'link_type'    => 'button',
 				],
@@ -1251,11 +1251,11 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'button_bg_color_normal',
 			[
-				'label'                 => __( 'Background Color', 'finest-addons' ),
+				'label'                 => __( 'Background Color', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::COLOR,
 				'default'               => '',
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-button' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-flipbox-button' => 'background-color: {{VALUE}}',
 				],
 				'condition'             => [
 					'link_type'    => 'button',
@@ -1266,12 +1266,12 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'button_text_color_normal',
 			[
-				'label'                 => __( 'Text Color', 'finest-addons' ),
+				'label'                 => __( 'Text Color', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::COLOR,
 				'default'               => '',
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-button' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .finest-flipbox-button .finest-button-icon svg' => 'fill: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-flipbox-button' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-flipbox-button .quiktheme-button-icon svg' => 'fill: {{VALUE}}',
 				],
 				'condition'             => [
 					'link_type'    => 'button',
@@ -1283,10 +1283,10 @@ class Finest_Flip_Box extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'                  => 'button_border_normal',
-				'label'                 => __( 'Border', 'finest-addons' ),
+				'label'                 => __( 'Border', 'quiktheme-addons' ),
 				'placeholder'           => '1px',
 				'default'               => '1px',
-				'selector'              => '{{WRAPPER}} .finest-flipbox-button',
+				'selector'              => '{{WRAPPER}} .quiktheme-flipbox-button',
 				'condition'             => [
 					'link_type'    => 'button',
 				],
@@ -1296,11 +1296,11 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'button_border_radius',
 			[
-				'label'                 => __( 'Border Radius', 'finest-addons' ),
+				'label'                 => __( 'Border Radius', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::DIMENSIONS,
 				'size_units'            => [ 'px', '%' ],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-flipbox-button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition'             => [
 					'link_type'    => 'button',
@@ -1311,11 +1311,11 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'button_padding',
 			[
-				'label'                 => __( 'Padding', 'finest-addons' ),
+				'label'                 => __( 'Padding', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::DIMENSIONS,
 				'size_units'            => [ 'px', 'em', '%' ],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-flipbox-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition'             => [
 					'link_type'    => 'button',
@@ -1327,7 +1327,7 @@ class Finest_Flip_Box extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'                  => 'button_box_shadow',
-				'selector'              => '{{WRAPPER}} .finest-flipbox-button',
+				'selector'              => '{{WRAPPER}} .quiktheme-flipbox-button',
 				'condition'             => [
 					'link_type'    => 'button',
 				],
@@ -1337,7 +1337,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'info_box_button_icon_heading',
 			[
-				'label'                 => __( 'Button Icon', 'finest-addons' ),
+				'label'                 => __( 'Button Icon', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::HEADING,
 				'separator'             => 'before',
 				'condition'             => [
@@ -1350,7 +1350,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'button_icon_margin',
 			[
-				'label'                 => __( 'Margin', 'finest-addons' ),
+				'label'                 => __( 'Margin', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::DIMENSIONS,
 				'size_units'            => [ 'px', '%' ],
 				'placeholder'       => [
@@ -1364,7 +1364,7 @@ class Finest_Flip_Box extends Widget_Base {
 					'select_button_icon[value]!' => '',
 				],
 				'selectors'             => [
-					'{{WRAPPER}} .finest-info-box .finest-button-icon' => 'margin-top: {{TOP}}{{UNIT}}; margin-left: {{LEFT}}{{UNIT}}; margin-right: {{RIGHT}}{{UNIT}}; margin-bottom: {{BOTTOM}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-info-box .quiktheme-button-icon' => 'margin-top: {{TOP}}{{UNIT}}; margin-left: {{LEFT}}{{UNIT}}; margin-right: {{RIGHT}}{{UNIT}}; margin-bottom: {{BOTTOM}}{{UNIT}};',
 				],
 			]
 		);
@@ -1374,7 +1374,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_hover',
 			[
-				'label'                 => __( 'Hover', 'finest-addons' ),
+				'label'                 => __( 'Hover', 'quiktheme-addons' ),
 				'condition'             => [
 					'link_type'    => 'button',
 				],
@@ -1384,11 +1384,11 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'button_bg_color_hover',
 			[
-				'label'                 => __( 'Background Color', 'finest-addons' ),
+				'label'                 => __( 'Background Color', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::COLOR,
 				'default'               => '',
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-button:hover' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-flipbox-button:hover' => 'background-color: {{VALUE}}',
 				],
 				'condition'             => [
 					'link_type'    => 'button',
@@ -1399,11 +1399,11 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'button_text_color_hover',
 			[
-				'label'                 => __( 'Text Color', 'finest-addons' ),
+				'label'                 => __( 'Text Color', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::COLOR,
 				'default'               => '',
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-button:hover' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-flipbox-button:hover' => 'color: {{VALUE}}',
 				],
 				'condition'             => [
 					'link_type'    => 'button',
@@ -1414,11 +1414,11 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'button_border_color_hover',
 			[
-				'label'                 => __( 'Border Color', 'finest-addons' ),
+				'label'                 => __( 'Border Color', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::COLOR,
 				'default'               => '',
 				'selectors'             => [
-					'{{WRAPPER}} .finest-flipbox-button:hover' => 'border-color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-flipbox-button:hover' => 'border-color: {{VALUE}}',
 				],
 				'condition'             => [
 					'link_type'    => 'button',
@@ -1429,7 +1429,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$this->add_control(
 			'button_animation',
 			[
-				'label'                 => __( 'Animation', 'finest-addons' ),
+				'label'                 => __( 'Animation', 'quiktheme-addons' ),
 				'type'                  => Controls_Manager::HOVER_ANIMATION,
 				'condition'             => [
 					'link_type'    => 'button',
@@ -1441,7 +1441,7 @@ class Finest_Flip_Box extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'                  => 'button_box_shadow_hover',
-				'selector'              => '{{WRAPPER}} .finest-flipbox-button:hover',
+				'selector'              => '{{WRAPPER}} .quiktheme-flipbox-button:hover',
 				'condition'             => [
 					'link_type'    => 'button',
 				],
@@ -1476,7 +1476,7 @@ class Finest_Flip_Box extends Widget_Base {
 		$is_new_button_icon = ! isset( $settings['button_icon'] ) && Icons_Manager::is_migration_allowed();
 
 		if ( $has_button_icon ) {
-			echo '<span class="finest-button-icon">';
+			echo '<span class="quiktheme-button-icon">';
 			if ( $is_new_button_icon || $migrated_button_icon ) {
 				Icons_Manager::render_icon( $settings['select_button_icon'], [ 'aria-hidden' => 'true' ] );
 			} elseif ( ! empty( $settings['button_icon'] ) ) {
@@ -1488,10 +1488,10 @@ class Finest_Flip_Box extends Widget_Base {
 	protected function render_front() {
 		$settings = $this->get_settings_for_display();
 
-		$this->add_render_attribute( 'icon-front', 'class', 'finest-flipbox-icon-image' );
+		$this->add_render_attribute( 'icon-front', 'class', 'quiktheme-flipbox-icon-image' );
 
 		if ( 'icon' === $settings['icon_type'] ) {
-			$this->add_render_attribute( 'icon-front', 'class', 'finest-icon' );
+			$this->add_render_attribute( 'icon-front', 'class', 'quiktheme-icon' );
 		}
 
 		if ( ! isset( $settings['icon'] ) && ! Icons_Manager::is_migration_allowed() ) {
@@ -1512,9 +1512,9 @@ class Finest_Flip_Box extends Widget_Base {
 		$migrated = isset( $settings['__fa4_migrated']['select_icon'] );
 		$is_new = ! isset( $settings['icon'] ) && Icons_Manager::is_migration_allowed();
 		?>
-		<div class="finest-flipbox-front">
-			<div class="finest-flipbox-overlay">
-				<div class="finest-flipbox-inner">
+		<div class="quiktheme-flipbox-front">
+			<div class="quiktheme-flipbox-overlay">
+				<div class="quiktheme-flipbox-inner">
 					<div <?php echo $this->get_render_attribute_string( 'icon-front' ); ?>>
 						<?php if ( 'icon' === $settings['icon_type'] && $has_icon ) { ?>
 							<?php
@@ -1534,18 +1534,18 @@ class Finest_Flip_Box extends Widget_Base {
 								<img src="<?php echo esc_url( $flipbox_image_url ); ?>" alt="">
 							<?php } ?>
 						<?php } elseif ( 'text' === $settings['icon_type'] ) { ?>
-							<span class="finest-icon-text">
+							<span class="quiktheme-icon-text">
 								<?php echo wp_kses_post( $settings['icon_text'] ); ?>
 							</span>
 						<?php } ?>
 					</div>
 
-					<<?php echo $settings['title_html_tag_front']; ?> class="finest-flipbox-heading">
-						<?php echo wp_kses_post( $settings['title_front'], 'finest-addons' ); ?>
+					<<?php echo $settings['title_html_tag_front']; ?> class="quiktheme-flipbox-heading">
+						<?php echo wp_kses_post( $settings['title_front'], 'quiktheme-addons' ); ?>
 					</<?php echo $settings['title_html_tag_front']; ?>>
 
-					<div class="finest-flipbox-content">
-						<?php echo wp_kses_post( $settings['description_front'], 'finest-addons' ); ?>
+					<div class="quiktheme-flipbox-content">
+						<?php echo wp_kses_post( $settings['description_front'], 'quiktheme-addons' ); ?>
 					</div>
 				</div>
 			</div>
@@ -1558,7 +1558,7 @@ class Finest_Flip_Box extends Widget_Base {
 
 		$pp_title_html_tag = $settings['title_html_tag_back'];
 
-		$this->add_render_attribute( 'title-container', 'class', 'finest-flipbox-heading' );
+		$this->add_render_attribute( 'title-container', 'class', 'quiktheme-flipbox-heading' );
 
 		$flipbox_image_back = $settings['icon_image_back'];
 		$flipbox_back_image_url = Group_Control_Image_Size::get_attachment_image_src( $flipbox_image_back['id'], 'thumbnail_back', $settings );
@@ -1566,7 +1566,7 @@ class Finest_Flip_Box extends Widget_Base {
 
 		if ( 'none' !== $settings['icon_type_back'] ) {
 
-			$this->add_render_attribute( 'icon-back', 'class', 'finest-flipbox-icon-image-back' );
+			$this->add_render_attribute( 'icon-back', 'class', 'quiktheme-flipbox-icon-image-back' );
 
 			if ( ! isset( $settings['icon_back'] ) && ! Icons_Manager::is_migration_allowed() ) {
 				// add old default
@@ -1595,7 +1595,7 @@ class Finest_Flip_Box extends Widget_Base {
 					]
 				);
 			} elseif ( 'icon' === $settings['icon_type_back'] ) {
-				$this->add_render_attribute( 'icon-back', 'class', 'finest-icon' );
+				$this->add_render_attribute( 'icon-back', 'class', 'quiktheme-icon' );
 			}
 		}
 
@@ -1605,13 +1605,13 @@ class Finest_Flip_Box extends Widget_Base {
 
 					$pp_title_html_tag = 'a';
 
-					$this->add_render_attribute( 'title-container', 'class', 'finest-flipbox-linked-title' );
+					$this->add_render_attribute( 'title-container', 'class', 'quiktheme-flipbox-linked-title' );
 
 					$this->add_link_attributes( 'title-container', $settings['link'] );
 
 				} elseif ( 'button' === $settings['link_type'] ) {
 
-					$this->add_render_attribute( 'button', 'class', [ 'elementor-button', 'finest-flipbox-button', 'elementor-size-' . $settings['button_size'] ] );
+					$this->add_render_attribute( 'button', 'class', [ 'elementor-button', 'quiktheme-flipbox-button', 'elementor-size-' . $settings['button_size'] ] );
 
 					$this->add_link_attributes( 'button', $settings['link'] );
 
@@ -1619,17 +1619,17 @@ class Finest_Flip_Box extends Widget_Base {
 			}
 		}
 		?>
-		<div class="finest-flipbox-back">
+		<div class="quiktheme-flipbox-back">
 			<?php
 			if ( 'box' === $settings['link_type'] && $settings['link']['url'] ) {
-				$this->add_render_attribute( 'box-link', 'class', 'finest-flipbox-box-link' );
+				$this->add_render_attribute( 'box-link', 'class', 'quiktheme-flipbox-box-link' );
 
 				$this->add_link_attributes( 'box-link', $settings['link'] );
 				?>
 				<a <?php echo $this->get_render_attribute_string( 'box-link' ); ?>></a>
 			<?php } ?>
-			<div class="finest-flipbox-overlay">
-				<div class="finest-flipbox-inner">
+			<div class="quiktheme-flipbox-overlay">
+				<div class="quiktheme-flipbox-inner">
 					<?php if ( 'none' !== $settings['icon_type_back'] ) { ?>
 						<div <?php echo $this->get_render_attribute_string( 'icon-back' ); ?>>
 							<?php if ( 'image' === $settings['icon_type_back'] ) { ?>
@@ -1643,7 +1643,7 @@ class Finest_Flip_Box extends Widget_Base {
 								}
 								?>
 							<?php } elseif ( 'text' === $settings['icon_type_back'] ) { ?>
-								<span class="finest-icon-text">
+								<span class="quiktheme-icon-text">
 									<?php echo wp_kses_post( $settings['icon_text_back'] ); ?>
 								</span>
 							<?php } ?>
@@ -1652,12 +1652,12 @@ class Finest_Flip_Box extends Widget_Base {
 
 					<?php if ( $settings['title_back'] ) { ?>
 						<<?php echo $pp_title_html_tag,' ', $this->get_render_attribute_string( 'title-container' ); ?>>
-							<?php echo wp_kses_post( $settings['title_back'], 'finest-addons' ); ?>
+							<?php echo wp_kses_post( $settings['title_back'], 'quiktheme-addons' ); ?>
 						</<?php echo $pp_title_html_tag; ?>>
 					<?php } ?>
 
-					<div class="finest-flipbox-content">
-						<?php echo wp_kses_post( $settings['description_back'], 'finest-addons' ); ?>
+					<div class="quiktheme-flipbox-content">
+						<?php echo wp_kses_post( $settings['description_back'], 'quiktheme-addons' ); ?>
 					</div>
 
 					<?php if ( 'button' === $settings['link_type'] && ! empty( $settings['flipbox_button_text'] ) ) : ?>
@@ -1682,23 +1682,23 @@ class Finest_Flip_Box extends Widget_Base {
 
 		$this->add_render_attribute(
 			[
-				'finest-flipbox-card' => [
+				'quiktheme-flipbox-card' => [
 					'class' => [
-						'finest-flipbox-flip-card',
+						'quiktheme-flipbox-flip-card',
 					],
 				],
 				'flipbox-container' => [
 					'class' => [
-						'finest-flipbox-container',
-						'finest-animate-' . esc_attr( $settings['flip_effect'] ),
-						'finest-direction-' . esc_attr( $settings['flip_direction'] ),
+						'quiktheme-flipbox-container',
+						'quiktheme-animate-' . esc_attr( $settings['flip_effect'] ),
+						'quiktheme-direction-' . esc_attr( $settings['flip_direction'] ),
 					],
 				],
 			]
 		);
 		?>
 		<div <?php echo $this->get_render_attribute_string( 'flipbox-container' ); ?>>
-			<div <?php echo $this->get_render_attribute_string( 'finest-flipbox-card' ); ?>>
+			<div <?php echo $this->get_render_attribute_string( 'quiktheme-flipbox-card' ); ?>>
 				<?php
 					// Front
 					$this->render_front();
@@ -1715,17 +1715,17 @@ class Finest_Flip_Box extends Widget_Base {
 	protected function content_template() { 
 		?>
 		<#
-			view.addRenderAttribute( 'finest-flipbox-card', {
+			view.addRenderAttribute( 'quiktheme-flipbox-card', {
 				'class': [
-					'finest-flipbox-flip-card'
+					'quiktheme-flipbox-flip-card'
 				],
 			} );
 
 			view.addRenderAttribute( 'flipbox-container', {
 				'class': [
-					'finest-flipbox-container',
-					'finest-animate-' + settings.flip_effect,
-					'finest-direction-' + settings.flip_direction
+					'quiktheme-flipbox-container',
+					'quiktheme-animate-' + settings.flip_effect,
+					'quiktheme-direction-' + settings.flip_direction
 				],
 			} );
 
@@ -1734,7 +1734,7 @@ class Finest_Flip_Box extends Widget_Base {
 					buttonMigrated = elementor.helpers.isIconMigrated( settings, 'select_button_icon' );
 
 				if ( settings.button_icon || settings.select_button_icon ) { #>
-					<span class="finest-button-icon">
+					<span class="quiktheme-button-icon">
 					<#
 					if ( buttonIconHTML && buttonIconHTML.rendered && ( ! settings.button_icon || buttonMigrated ) ) { #>
 						{{{ buttonIconHTML.value }}}
@@ -1747,18 +1747,18 @@ class Finest_Flip_Box extends Widget_Base {
 			}
 
 			function render_front() {
-				view.addRenderAttribute( 'icon-front', 'class', 'finest-flipbox-icon-image' );
+				view.addRenderAttribute( 'icon-front', 'class', 'quiktheme-flipbox-icon-image' );
 
 				var iconHTML = elementor.helpers.renderIcon( view, settings.select_icon, { 'aria-hidden': true }, 'i' , 'object' ),
 					migrated = elementor.helpers.isIconMigrated( settings, 'select_icon' );
 
 				if ( 'icon' === settings.icon_type ) {
-					view.addRenderAttribute( 'icon-front', 'class', 'finest-icon' );
+					view.addRenderAttribute( 'icon-front', 'class', 'quiktheme-icon' );
 				}
 				#>
-				<div class="finest-flipbox-front">
-					<div class="finest-flipbox-overlay">
-						<div class="finest-flipbox-inner">
+				<div class="quiktheme-flipbox-front">
+					<div class="quiktheme-flipbox-overlay">
+						<div class="quiktheme-flipbox-inner">
 							<div {{{ view.getRenderAttributeString( 'icon-front' ) }}}>
 								<#
 								if ( 'icon' === settings.icon_type ) {
@@ -1783,17 +1783,17 @@ class Finest_Flip_Box extends Widget_Base {
 										<img src="{{{ flipbox_image_url }}}" />
 									<# }
 								} else if ( 'text' === settings.icon_type ) { #>
-									<span class="finest-icon-text">
+									<span class="quiktheme-icon-text">
 										{{{ settings.icon_text }}}
 									</span>
 								<# } #>
 							</div>
 
-							<{{ settings.title_html_tag_front }} class="finest-flipbox-heading">
+							<{{ settings.title_html_tag_front }} class="quiktheme-flipbox-heading">
 								{{{ settings.title_front }}}
 							</{{ settings.title_html_tag_front }}>
 
-							<div class="finest-flipbox-content">
+							<div class="quiktheme-flipbox-content">
 								{{{ settings.description_front }}}
 							</div>
 						</div>
@@ -1805,15 +1805,15 @@ class Finest_Flip_Box extends Widget_Base {
 			function render_back() {
 				var pp_title_html_tag = settings.title_html_tag_back;
 
-				view.addRenderAttribute( 'title-container', 'class', 'finest-flipbox-heading' );
+				view.addRenderAttribute( 'title-container', 'class', 'quiktheme-flipbox-heading' );
 
-				view.addRenderAttribute( 'icon-back', 'class', 'finest-flipbox-icon-image' );
+				view.addRenderAttribute( 'icon-back', 'class', 'quiktheme-flipbox-icon-image' );
 
 				var iconHTML = elementor.helpers.renderIcon( view, settings.select_icon_back, { 'aria-hidden': true }, 'i' , 'object' ),
 					migrated = elementor.helpers.isIconMigrated( settings, 'select_icon_back' );
 
 				if ( 'icon' === settings.icon_type_back ) {
-					view.addRenderAttribute( 'icon-back', 'class', 'finest-icon' );
+					view.addRenderAttribute( 'icon-back', 'class', 'quiktheme-icon' );
 				}
 
 				if ( 'none' !== settings.link_type ) {
@@ -1822,7 +1822,7 @@ class Finest_Flip_Box extends Widget_Base {
 
 							var pp_title_html_tag = 'a';
 
-							view.addRenderAttribute( 'title-container', 'class', 'finest-flipbox-linked-title' );
+							view.addRenderAttribute( 'title-container', 'class', 'quiktheme-flipbox-linked-title' );
 							view.addRenderAttribute( 'title-container', 'href', settings.link.url );
 
 						} else if ( 'button' === settings.link_type ) {
@@ -1830,7 +1830,7 @@ class Finest_Flip_Box extends Widget_Base {
 							view.addRenderAttribute( 'button', {
 								'class': [
 									'elementor-button',
-									'finest-flipbox-button',
+									'quiktheme-flipbox-button',
 									'elementor-size-' + settings.button_size,
 								],
 								'href': [
@@ -1842,16 +1842,16 @@ class Finest_Flip_Box extends Widget_Base {
 					}
 				}
 				#>
-				<div class="finest-flipbox-back">
+				<div class="quiktheme-flipbox-back">
 					<#
 					if ( 'box' === settings.link_type && settings.link.url ) {
-						view.addRenderAttribute( 'box-link', 'class', 'finest-flipbox-box-link' );
+						view.addRenderAttribute( 'box-link', 'class', 'quiktheme-flipbox-box-link' );
 						view.addRenderAttribute( 'box-link', 'href', settings.link.url );
 						#>
 						<a <{{{ view.getRenderAttributeString( 'box-link' ) }}}></a>
 					<# } #>
-					<div class="finest-flipbox-overlay">
-						<div class="finest-flipbox-inner">
+					<div class="quiktheme-flipbox-overlay">
+						<div class="quiktheme-flipbox-inner">
 							<# if ( 'none' !== settings.icon_type_back ) { #>
 								<div {{{ view.getRenderAttributeString( 'icon-back' ) }}}>
 									<#
@@ -1877,7 +1877,7 @@ class Finest_Flip_Box extends Widget_Base {
 											<img src="{{{ flipbox_image_url }}}" />
 										<# }
 									} else if ( 'text' === settings.icon_type_back ) { #>
-										<span class="finest-icon-text">
+										<span class="quiktheme-icon-text">
 											{{{ settings.icon_text_back }}}
 										</span>
 									<# } #>
@@ -1888,7 +1888,7 @@ class Finest_Flip_Box extends Widget_Base {
 								{{{ settings.title_back }}}
 							</{{ pp_title_html_tag }}>
 
-							<div class="finest-flipbox-content">
+							<div class="quiktheme-flipbox-content">
 								{{{ settings.description_back }}}
 							</div>
 
@@ -1916,7 +1916,7 @@ class Finest_Flip_Box extends Widget_Base {
 			}
 		#>
 		<div {{{ view.getRenderAttributeString( 'flipbox-container' ) }}}>
-			<div {{{ view.getRenderAttributeString( 'finest-flipbox-card' ) }}}>
+			<div {{{ view.getRenderAttributeString( 'quiktheme-flipbox-card' ) }}}>
 				<#
 					render_front();
 
@@ -1928,4 +1928,4 @@ class Finest_Flip_Box extends Widget_Base {
 	}
 
 }
-$widgets_manager->register_widget_type( new \Finest_Addons\Widgets\Finest_Flip_Box() );  
+$widgets_manager->register_widget_type( new \Quik_Theme_Addons\Widgets\Quik_Theme_Flip_Box() );  

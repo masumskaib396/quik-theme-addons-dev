@@ -1,5 +1,5 @@
 <?php
-namespace Finest\Widgets\Elementor;
+namespace Quiktheme\Widgets\Elementor;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -14,10 +14,10 @@ use \Elementor\Widget_Base;
 
 
 
-class Finest_Business_Hour extends Widget_Base {
+class Quik_Theme_Business_Hour extends Widget_Base {
 
     public function get_name() {
-		return 'finest-business';
+		return 'quiktheme-business';
 	}
 
 	/**
@@ -29,7 +29,7 @@ class Finest_Business_Hour extends Widget_Base {
 	 *
 	 */
 	public function get_title() {
-		return __('Business Hour', 'finest-addons');
+		return __('Business Hour', 'quiktheme-addons');
 	}
 
 	/**
@@ -45,11 +45,11 @@ class Finest_Business_Hour extends Widget_Base {
 	}
 
     public function get_categories() {
-		return [ 'finest-addons' ];
+		return [ 'quiktheme-addons' ];
 	}
 
 	public function get_keywords() {
-		return ['list', 'watch', 'business', 'hour', 'time', 'business-hour', 'time-list', 'finest'];
+		return ['list', 'watch', 'business', 'hour', 'time', 'business-hour', 'time-list', 'quik-theme-addons'];
 	}
 
 
@@ -58,7 +58,7 @@ class Finest_Business_Hour extends Widget_Base {
 		$this->start_controls_section(
 			'_section_business_hour',
 			[
-				'label' => __('Business Hour', 'finest-addons'),
+				'label' => __('Business Hour', 'quiktheme-addons'),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -66,10 +66,10 @@ class Finest_Business_Hour extends Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label' => __('Title', 'finest-addons'),
+				'label' => __('Title', 'quiktheme-addons'),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => __('Working Hour', 'finest-addons'),
+				'default' => __('Working Hour', 'quiktheme-addons'),
 				'dynamic' => [
 					'active' => true,
 				]
@@ -81,11 +81,11 @@ class Finest_Business_Hour extends Widget_Base {
 		$repeater->add_control(
 			'day',
 			[
-				'label' => __('Day', 'finest-addons'),
+				'label' => __('Day', 'quiktheme-addons'),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => __('Monday', 'finest-addons'),
-				'placeholder' => __('Monday', 'finest-addons'),
+				'default' => __('Monday', 'quiktheme-addons'),
+				'placeholder' => __('Monday', 'quiktheme-addons'),
 				'dynamic' => [
 					'active' => true,
 				]
@@ -95,11 +95,11 @@ class Finest_Business_Hour extends Widget_Base {
 		$repeater->add_control(
 			'time',
 			[
-				'label' => __('Time', 'finest-addons'),
+				'label' => __('Time', 'quiktheme-addons'),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => __('10:00AM - 07:00PM', 'finest-addons'),
-				'placeholder' => __('10:00AM - 07:00PM', 'finest-addons'),
+				'default' => __('10:00AM - 07:00PM', 'quiktheme-addons'),
+				'placeholder' => __('10:00AM - 07:00PM', 'quiktheme-addons'),
 				'dynamic' => [
 					'active' => true,
 				]
@@ -109,10 +109,10 @@ class Finest_Business_Hour extends Widget_Base {
 		$repeater->add_control(
 			'individual_style',
 			[
-				'label' => __('Individual Style?', 'finest-addons'),
+				'label' => __('Individual Style?', 'quiktheme-addons'),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __('Yes', 'finest-addons'),
-				'label_off' => __('No', 'finest-addons'),
+				'label_on' => __('Yes', 'quiktheme-addons'),
+				'label_off' => __('No', 'quiktheme-addons'),
 				'return_value' => 'yes',
 				'default' => 'no',
                 'style_transfer' => true,
@@ -122,10 +122,10 @@ class Finest_Business_Hour extends Widget_Base {
 		$repeater->add_control(
 			'day_time_color',
 			[
-				'label' => __('Text Color', 'finest-addons'),
+				'label' => __('Text Color', 'quiktheme-addons'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}}.finest-business-hour-item' => 'color: {{VALUE}};',
+					'{{WRAPPER}} {{CURRENT_ITEM}}.quiktheme-business-hour-item' => 'color: {{VALUE}};',
 				],
 				'condition' => [
 					'individual_style' => 'yes'
@@ -139,8 +139,8 @@ class Finest_Business_Hour extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'day_time_border',
-				'label' => __('Border', 'finest-addons'),
-				'selector' => '{{WRAPPER}} {{CURRENT_ITEM}}.finest-business-hour-item',
+				'label' => __('Border', 'quiktheme-addons'),
+				'selector' => '{{WRAPPER}} {{CURRENT_ITEM}}.quiktheme-business-hour-item',
                 'style_transfer' => true,
 				'condition' => [
 					'individual_style' => 'yes'
@@ -152,9 +152,9 @@ class Finest_Business_Hour extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'day_time_background',
-				'label' => __('Background', 'finest-addons'),
+				'label' => __('Background', 'quiktheme-addons'),
 				'types' => ['classic', 'gradient'],
-				'selector' => '{{WRAPPER}} {{CURRENT_ITEM}}.finest-business-hour-item',
+				'selector' => '{{WRAPPER}} {{CURRENT_ITEM}}.quiktheme-business-hour-item',
 				'condition' => [
 					'individual_style' => 'yes'
 				],
@@ -166,11 +166,11 @@ class Finest_Business_Hour extends Widget_Base {
 		$repeater->add_control(
 			'day_time_border_radius',
 			[
-				'label' => __('Border Radius', 'finest-addons'),
+				'label' => __('Border Radius', 'quiktheme-addons'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', '%', 'em'],
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}}.finest-business-hour-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} {{CURRENT_ITEM}}.quiktheme-business-hour-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition' => [
 					'individual_style' => 'yes'
@@ -182,11 +182,11 @@ class Finest_Business_Hour extends Widget_Base {
 		$repeater->add_control(
 			'day_time_margin',
 			[
-				'label' => __('Margin', 'finest-addons'),
+				'label' => __('Margin', 'quiktheme-addons'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', '%', 'em'],
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}}.finest-business-hour-item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} {{CURRENT_ITEM}}.quiktheme-business-hour-item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition' => [
 					'individual_style' => 'yes'
@@ -204,32 +204,32 @@ class Finest_Business_Hour extends Widget_Base {
 				'title_field' => '{{{ day }}}',
 				'default' => [
 					[
-						'day' => __('Monday', 'finest-addons'),
-						'time' => __('10:00AM - 07:00PM', 'finest-addons'),
+						'day' => __('Monday', 'quiktheme-addons'),
+						'time' => __('10:00AM - 07:00PM', 'quiktheme-addons'),
 					],
 					[
-						'day' => __('Tuesday', 'finest-addons'),
-						'time' => __('10:00AM - 07:00PM', 'finest-addons'),
+						'day' => __('Tuesday', 'quiktheme-addons'),
+						'time' => __('10:00AM - 07:00PM', 'quiktheme-addons'),
 					],
 					[
-						'day' => __('Wednesday', 'finest-addons'),
-						'time' => __('10:00AM - 07:00PM', 'finest-addons'),
+						'day' => __('Wednesday', 'quiktheme-addons'),
+						'time' => __('10:00AM - 07:00PM', 'quiktheme-addons'),
 					],
 					[
-						'day' => __('Thursday', 'finest-addons'),
-						'time' => __('10:00AM - 07:00PM', 'finest-addons'),
+						'day' => __('Thursday', 'quiktheme-addons'),
+						'time' => __('10:00AM - 07:00PM', 'quiktheme-addons'),
 					],
 					[
-						'day' => __('Friday', 'finest-addons'),
-						'time' => __('10:00AM - 07:00PM', 'finest-addons'),
+						'day' => __('Friday', 'quiktheme-addons'),
+						'time' => __('10:00AM - 07:00PM', 'quiktheme-addons'),
 					],
 					[
-						'day' => __('Saturday', 'finest-addons'),
-						'time' => __('10:00AM - 07:00PM', 'finest-addons'),
+						'day' => __('Saturday', 'quiktheme-addons'),
+						'time' => __('10:00AM - 07:00PM', 'quiktheme-addons'),
 					],
 					[
-						'day' => __('Sunday', 'finest-addons'),
-						'time' => __('Closed', 'finest-addons'),
+						'day' => __('Sunday', 'quiktheme-addons'),
+						'time' => __('Closed', 'quiktheme-addons'),
 					],
 				],
 			]
@@ -242,7 +242,7 @@ class Finest_Business_Hour extends Widget_Base {
 		$this->start_controls_section(
 			'_section_business_settings',
 			[
-				'label' => __('Settings', 'finest-addons'),
+				'label' => __('Settings', 'quiktheme-addons'),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -250,26 +250,26 @@ class Finest_Business_Hour extends Widget_Base {
 		$this->add_control(
 			'title_alignment',
 			[
-				'label' => __( 'Title Alignment', 'finest-addons' ),
+				'label' => __( 'Title Alignment', 'quiktheme-addons' ),
 				'type' => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'finest-addons' ),
+						'title' => __( 'Left', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'finest-addons' ),
+						'title' => __( 'Center', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'finest-addons' ),
+						'title' => __( 'Right', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-right',
 					]
 				],
 				'toggle' => false,
 				'selectors' => [
-					'{{WRAPPER}} .finest-business-hour-title' => 'text-align: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-business-hour-title' => 'text-align: {{VALUE}}',
 				],
 			]
 		);
@@ -277,26 +277,26 @@ class Finest_Business_Hour extends Widget_Base {
 		$this->add_control(
 			'day_alignment',
 			[
-				'label' => __( 'Day Alignment', 'finest-addons' ),
+				'label' => __( 'Day Alignment', 'quiktheme-addons' ),
 				'type' => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'finest-addons' ),
+						'title' => __( 'Left', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'finest-addons' ),
+						'title' => __( 'Center', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'finest-addons' ),
+						'title' => __( 'Right', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-right',
 					]
 				],
 				'toggle' => false,
 				'selectors' => [
-					'{{WRAPPER}} .finest-business-hour-item .finest-business-hour-day' => 'text-align: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-business-hour-item .quiktheme-business-hour-day' => 'text-align: {{VALUE}}',
 				],
 			]
 		);
@@ -304,26 +304,26 @@ class Finest_Business_Hour extends Widget_Base {
 		$this->add_control(
 			'time_alignment',
 			[
-				'label' => __( 'Time Alignment', 'finest-addons' ),
+				'label' => __( 'Time Alignment', 'quiktheme-addons' ),
 				'type' => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'finest-addons' ),
+						'title' => __( 'Left', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'finest-addons' ),
+						'title' => __( 'Center', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'finest-addons' ),
+						'title' => __( 'Right', 'quiktheme-addons' ),
 						'icon' => 'eicon-text-align-right',
 					]
 				],
 				'toggle' => false,
 				'selectors' => [
-					'{{WRAPPER}} .finest-business-hour-item .finest-business-hour-time' => 'text-align: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-business-hour-item .quiktheme-business-hour-time' => 'text-align: {{VALUE}}',
 				],
 			]
 		);
@@ -334,7 +334,7 @@ class Finest_Business_Hour extends Widget_Base {
 		$this->start_controls_section(
 			'_section_business_hour_title_style',
 			[
-				'label' => __('Title', 'finest-addons'),
+				'label' => __('Title', 'quiktheme-addons'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -342,10 +342,10 @@ class Finest_Business_Hour extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __('Text Color', 'finest-addons'),
+				'label' => __('Text Color', 'quiktheme-addons'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-business-hour-title h3' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-business-hour-title h3' => 'color: {{VALUE}};',
 				]
 			]
 		);
@@ -354,7 +354,7 @@ class Finest_Business_Hour extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'title_typography',
-				'selector' => '{{WRAPPER}} .finest-business-hour-title h3',
+				'selector' => '{{WRAPPER}} .quiktheme-business-hour-title h3',
 				'scheme' => Typography::TYPOGRAPHY_2,
 			]
 		);
@@ -363,8 +363,8 @@ class Finest_Business_Hour extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'title_border',
-				'label' => __('Border', 'finest-addons'),
-				'selector' => '{{WRAPPER}} .finest-business-hour-title',
+				'label' => __('Border', 'quiktheme-addons'),
+				'selector' => '{{WRAPPER}} .quiktheme-business-hour-title',
 			]
 		);
 
@@ -372,9 +372,9 @@ class Finest_Business_Hour extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'title_background',
-				'label' => __('Background', 'finest-addons'),
+				'label' => __('Background', 'quiktheme-addons'),
 				'types' => ['classic', 'gradient'],
-				'selector' => '{{WRAPPER}} .finest-business-hour-title',
+				'selector' => '{{WRAPPER}} .quiktheme-business-hour-title',
 				'separator' => 'before'
 			]
 		);
@@ -382,11 +382,11 @@ class Finest_Business_Hour extends Widget_Base {
 		$this->add_control(
 			'title_border_radius',
 			[
-				'label' => __('Border Radius', 'finest-addons'),
+				'label' => __('Border Radius', 'quiktheme-addons'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', '%', 'em'],
 				'selectors' => [
-					'{{WRAPPER}} .finest-business-hour-title' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-business-hour-title' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -394,11 +394,11 @@ class Finest_Business_Hour extends Widget_Base {
 		$this->add_control(
 			'title_padding',
 			[
-				'label' => __('Padding', 'finest-addons'),
+				'label' => __('Padding', 'quiktheme-addons'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', '%', 'em'],
 				'selectors' => [
-					'{{WRAPPER}} .finest-business-hour-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-business-hour-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -406,11 +406,11 @@ class Finest_Business_Hour extends Widget_Base {
 		$this->add_control(
 			'title_margin',
 			[
-				'label' => __('Margin', 'finest-addons'),
+				'label' => __('Margin', 'quiktheme-addons'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', '%', 'em'],
 				'selectors' => [
-					'{{WRAPPER}} .finest-business-hour-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-business-hour-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -422,7 +422,7 @@ class Finest_Business_Hour extends Widget_Base {
 		$this->start_controls_section(
 			'_section_business_hour_list_style',
 			[
-				'label' => __('Hour List', 'finest-addons'),
+				'label' => __('Hour List', 'quiktheme-addons'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -430,10 +430,10 @@ class Finest_Business_Hour extends Widget_Base {
 		$this->add_control(
 			'list_color',
 			[
-				'label' => __('Text Color', 'finest-addons'),
+				'label' => __('Text Color', 'quiktheme-addons'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .finest-business-hour-item' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .quiktheme-business-hour-item' => 'color: {{VALUE}};',
 				]
 			]
 		);
@@ -442,7 +442,7 @@ class Finest_Business_Hour extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'list_typography',
-				'selector' => '{{WRAPPER}} .finest-business-hour-item',
+				'selector' => '{{WRAPPER}} .quiktheme-business-hour-item',
 				'scheme' => Typography::TYPOGRAPHY_3,
 			]
 		);
@@ -451,8 +451,8 @@ class Finest_Business_Hour extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'list_border',
-				'label' => __('Border', 'finest-addons'),
-				'selector' => '{{WRAPPER}} .finest-business-hour-item',
+				'label' => __('Border', 'quiktheme-addons'),
+				'selector' => '{{WRAPPER}} .quiktheme-business-hour-item',
 			]
 		);
 
@@ -460,9 +460,9 @@ class Finest_Business_Hour extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'list_background',
-				'label' => __('Background', 'finest-addons'),
+				'label' => __('Background', 'quiktheme-addons'),
 				'types' => ['classic', 'gradient'],
-				'selector' => '{{WRAPPER}} .finest-business-hour-item',
+				'selector' => '{{WRAPPER}} .quiktheme-business-hour-item',
 				'separator' => 'before'
 			]
 		);
@@ -471,19 +471,19 @@ class Finest_Business_Hour extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'list_shadow',
-				'label' => __( 'Box Shadow', 'finest-addons' ),
-				'selector' => '{{WRAPPER}} .finest-business-hour-item',
+				'label' => __( 'Box Shadow', 'quiktheme-addons' ),
+				'selector' => '{{WRAPPER}} .quiktheme-business-hour-item',
 			]
 		);
 
 		$this->add_control(
 			'list_border_radius',
 			[
-				'label' => __('Border Radius', 'finest-addons'),
+				'label' => __('Border Radius', 'quiktheme-addons'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', '%', 'em'],
 				'selectors' => [
-					'{{WRAPPER}} .finest-business-hour-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-business-hour-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				]
 			]
 		);
@@ -491,11 +491,11 @@ class Finest_Business_Hour extends Widget_Base {
 		$this->add_control(
 			'list_padding',
 			[
-				'label' => __('Padding', 'finest-addons'),
+				'label' => __('Padding', 'quiktheme-addons'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', '%', 'em'],
 				'selectors' => [
-					'{{WRAPPER}} .finest-business-hour-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-business-hour-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				]
 			]
 		);
@@ -503,11 +503,11 @@ class Finest_Business_Hour extends Widget_Base {
 		$this->add_control(
 			'list_margin',
 			[
-				'label' => __('Margin', 'finest-addons'),
+				'label' => __('Margin', 'quiktheme-addons'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', '%', 'em'],
 				'selectors' => [
-					'{{WRAPPER}} .finest-business-hour-item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-business-hour-item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				]
 			]
 		);
@@ -519,7 +519,7 @@ class Finest_Business_Hour extends Widget_Base {
 		$this->start_controls_section(
 			'_section_business_hour_container_style',
 			[
-				'label' => __('Container', 'finest-addons'),
+				'label' => __('Container', 'quiktheme-addons'),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -528,8 +528,8 @@ class Finest_Business_Hour extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'container_border',
-				'label' => __('Border', 'finest-addons'),
-				'selector' => '{{WRAPPER}} .finest-business-hour-wrapper ul',
+				'label' => __('Border', 'quiktheme-addons'),
+				'selector' => '{{WRAPPER}} .quiktheme-business-hour-wrapper ul',
 			]
 		);
 
@@ -537,9 +537,9 @@ class Finest_Business_Hour extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'container_background',
-				'label' => __('Background', 'finest-addons'),
+				'label' => __('Background', 'quiktheme-addons'),
 				'types' => ['classic', 'gradient'],
-				'selector' => '{{WRAPPER}} .finest-business-hour-wrapper ul',
+				'selector' => '{{WRAPPER}} .quiktheme-business-hour-wrapper ul',
 				'separator' => 'before'
 			]
 		);
@@ -548,19 +548,19 @@ class Finest_Business_Hour extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'container_shadow',
-				'label' => __( 'Box Shadow', 'finest-addons' ),
-				'selector' => '{{WRAPPER}} .finest-business-hour-wrapper ul',
+				'label' => __( 'Box Shadow', 'quiktheme-addons' ),
+				'selector' => '{{WRAPPER}} .quiktheme-business-hour-wrapper ul',
 			]
 		);
 
 		$this->add_control(
 			'container_border_radius',
 			[
-				'label' => __('Border Radius', 'finest-addons'),
+				'label' => __('Border Radius', 'quiktheme-addons'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', '%', 'em'],
 				'selectors' => [
-					'{{WRAPPER}} .finest-business-hour-wrapper ul' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-business-hour-wrapper ul' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				]
 			]
 		);
@@ -568,11 +568,11 @@ class Finest_Business_Hour extends Widget_Base {
 		$this->add_control(
 			'container_padding',
 			[
-				'label' => __('Padding', 'finest-addons'),
+				'label' => __('Padding', 'quiktheme-addons'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', '%', 'em'],
 				'selectors' => [
-					'{{WRAPPER}} .finest-business-hour-wrapper ul' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-business-hour-wrapper ul' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				]
 			]
 		);
@@ -584,10 +584,10 @@ class Finest_Business_Hour extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		?>
-		<div class="finest-business-hour-wrapper">
+		<div class="quiktheme-business-hour-wrapper">
 			<ul>
 				<?php if ($settings['title']) : ?>
-					<li class="finest-business-hour-title">
+					<li class="quiktheme-business-hour-title">
 						<?php printf('<h3>%s</h3>', esc_html($settings['title'])) ?>
 					</li>
 				<?php endif; ?>
@@ -596,13 +596,13 @@ class Finest_Business_Hour extends Widget_Base {
 						// Day
 						$day_key = $this->get_repeater_setting_key('day', 'business_hour_list', $key);
 						$this->add_inline_editing_attributes($day_key, 'basic');
-						$this->add_render_attribute($day_key, 'class', 'finest-business-hour-day');
+						$this->add_render_attribute($day_key, 'class', 'quiktheme-business-hour-day');
 						// Time
 						$time_key = $this->get_repeater_setting_key('time', 'business_hour_list', $key);
 						$this->add_inline_editing_attributes($time_key, 'basic');
-						$this->add_render_attribute($time_key, 'class', 'finest-business-hour-time');
+						$this->add_render_attribute($time_key, 'class', 'quiktheme-business-hour-time');
 						?>
-						<li class="finest-business-hour-item elementor-repeater-item-<?php echo $item['_id']; ?>">
+						<li class="quiktheme-business-hour-item elementor-repeater-item-<?php echo $item['_id']; ?>">
 							<?php if ($item['day']) : ?>
 								<span <?php echo $this->get_render_attribute_string($day_key); ?>><?php echo esc_html($item['day']) ?></span>
 							<?php endif; ?>
@@ -620,4 +620,4 @@ class Finest_Business_Hour extends Widget_Base {
 	}
 
 }
-$widgets_manager->register_widget_type( new \Finest\Widgets\Elementor\Finest_Business_Hour());
+$widgets_manager->register_widget_type( new \Quiktheme\Widgets\Elementor\Quik_Theme_Business_Hour());

@@ -1,5 +1,5 @@
 
-.finest-addons-wraper .row {
+.quiktheme-addons-wraper .row {
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -9,14 +9,14 @@
     margin-left: -15px
 }
 
-.finest-addons-wraper .col, .finest-addons-wraper .col-1, .finest-addons-wraper .col-10, .finest-addons-wraper .col-11, .finest-addons-wraper .col-12, .finest-addons-wraper .col-2, .finest-addons-wraper .col-3, .finest-addons-wraper .col-4, .finest-addons-wraper .col-5, .finest-addons-wraper .col-6, .finest-addons-wraper .col-7, .finest-addons-wraper .col-8, .finest-addons-wraper .col-9, .finest-addons-wraper .col-auto, .finest-addons-wraper .col-lg, .finest-addons-wraper .col-lg-1, .finest-addons-wraper .col-lg-10, .finest-addons-wraper .col-lg-11, .finest-addons-wraper .col-lg-12, .finest-addons-wraper .col-lg-2, .finest-addons-wraper .col-lg-3, .finest-addons-wraper .col-lg-4, .finest-addons-wraper .col-lg-5, .finest-addons-wraper .col-lg-6, .finest-addons-wraper .col-lg-7, .finest-addons-wraper .col-lg-8, .finest-addons-wraper .col-lg-9, .finest-addons-wraper .col-lg-auto, .finest-addons-wraper .col-md, .finest-addons-wraper .col-md-1, .finest-addons-wraper .col-md-10, .finest-addons-wraper .col-md-11, .finest-addons-wraper .col-md-12, .finest-addons-wraper .col-md-2, .finest-addons-wraper .col-md-3, .finest-addons-wraper .col-md-4, .finest-addons-wraper .col-md-5, .finest-addons-wraper .col-md-6, .finest-addons-wraper .col-md-7, .finest-addons-wraper .col-md-8, .finest-addons-wraper .col-md-9, .finest-addons-wraper .col-md-auto, .finest-addons-wraper .col-sm, .finest-addons-wraper .col-sm-1, .finest-addons-wraper .col-sm-10, .finest-addons-wraper .col-sm-11, .finest-addons-wraper .col-sm-12, .finest-addons-wraper .col-sm-2, .finest-addons-wraper .col-sm-3, .finest-addons-wraper .col-sm-4, .finest-addons-wraper .col-sm-5, .finest-addons-wraper .col-sm-6, .finest-addons-wraper .col-sm-7, .finest-addons-wraper .col-sm-8, .finest-addons-wraper .col-sm-9, .finest-addons-wraper .col-sm-auto, .finest-addons-wraper .col-xl, .finest-addons-wraper .col-xl-1, .finest-addons-wraper .col-xl-10, .finest-addons-wraper .col-xl-11, .finest-addons-wraper .col-xl-12, .finest-addons-wraper .col-xl-2, .finest-addons-wraper .col-xl-3, .finest-addons-wraper .col-xl-4, .finest-addons-wraper .col-xl-5, .finest-addons-wraper .col-xl-6, .finest-addons-wraper .col-xl-7, .finest-addons-wraper .col-xl-8, .finest-addons-wraper .col-xl-9, .finest-addons-wraper .col-xl-auto {
+.quiktheme-addons-wraper .col, .quiktheme-addons-wraper .col-1, .quiktheme-addons-wraper .col-10, .quiktheme-addons-wraper .col-11, .quiktheme-addons-wraper .col-12, .quiktheme-addons-wraper .col-2, .quiktheme-addons-wraper .col-3, .quiktheme-addons-wraper .col-4, .quiktheme-addons-wraper .col-5, .quiktheme-addons-wraper .col-6, .quiktheme-addons-wraper .col-7, .quiktheme-addons-wraper .col-8, .quiktheme-addons-wraper .col-9, .quiktheme-addons-wraper .col-auto, .quiktheme-addons-wraper .col-lg, .quiktheme-addons-wraper .col-lg-1, .quiktheme-addons-wraper .col-lg-10, .quiktheme-addons-wraper .col-lg-11, .quiktheme-addons-wraper .col-lg-12, .quiktheme-addons-wraper .col-lg-2, .quiktheme-addons-wraper .col-lg-3, .quiktheme-addons-wraper .col-lg-4, .quiktheme-addons-wraper .col-lg-5, .quiktheme-addons-wraper .col-lg-6, .quiktheme-addons-wraper .col-lg-7, .quiktheme-addons-wraper .col-lg-8, .quiktheme-addons-wraper .col-lg-9, .quiktheme-addons-wraper .col-lg-auto, .quiktheme-addons-wraper .col-md, .quiktheme-addons-wraper .col-md-1, .quiktheme-addons-wraper .col-md-10, .quiktheme-addons-wraper .col-md-11, .quiktheme-addons-wraper .col-md-12, .quiktheme-addons-wraper .col-md-2, .quiktheme-addons-wraper .col-md-3, .quiktheme-addons-wraper .col-md-4, .quiktheme-addons-wraper .col-md-5, .quiktheme-addons-wraper .col-md-6, .quiktheme-addons-wraper .col-md-7, .quiktheme-addons-wraper .col-md-8, .quiktheme-addons-wraper .col-md-9, .quiktheme-addons-wraper .col-md-auto, .quiktheme-addons-wraper .col-sm, .quiktheme-addons-wraper .col-sm-1, .quiktheme-addons-wraper .col-sm-10, .quiktheme-addons-wraper .col-sm-11, .quiktheme-addons-wraper .col-sm-12, .quiktheme-addons-wraper .col-sm-2, .quiktheme-addons-wraper .col-sm-3, .quiktheme-addons-wraper .col-sm-4, .quiktheme-addons-wraper .col-sm-5, .quiktheme-addons-wraper .col-sm-6, .quiktheme-addons-wraper .col-sm-7, .quiktheme-addons-wraper .col-sm-8, .quiktheme-addons-wraper .col-sm-9, .quiktheme-addons-wraper .col-sm-auto, .quiktheme-addons-wraper .col-xl, .quiktheme-addons-wraper .col-xl-1, .quiktheme-addons-wraper .col-xl-10, .quiktheme-addons-wraper .col-xl-11, .quiktheme-addons-wraper .col-xl-12, .quiktheme-addons-wraper .col-xl-2, .quiktheme-addons-wraper .col-xl-3, .quiktheme-addons-wraper .col-xl-4, .quiktheme-addons-wraper .col-xl-5, .quiktheme-addons-wraper .col-xl-6, .quiktheme-addons-wraper .col-xl-7, .quiktheme-addons-wraper .col-xl-8, .quiktheme-addons-wraper .col-xl-9, .quiktheme-addons-wraper .col-xl-auto {
     position: relative;
     width: 100%;
     padding-right: 15px;
     padding-left: 15px
 }
 
-.finest-addons-wraper .col {
+.quiktheme-addons-wraper .col {
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
     -ms-flex-positive: 1;
@@ -25,49 +25,49 @@
     max-width: 100%
 }
 
-.finest-addons-wraper .row-cols-1>* {
+.quiktheme-addons-wraper .row-cols-1>* {
     -ms-flex: 0 0 100%;
     -webkit-box-flex: 0;
     flex: 0 0 100%;
     max-width: 100%
 }
 
-.finest-addons-wraper .row-cols-2>* {
+.quiktheme-addons-wraper .row-cols-2>* {
     -ms-flex: 0 0 50%;
     -webkit-box-flex: 0;
     flex: 0 0 50%;
     max-width: 50%
 }
 
-.finest-addons-wraper .row-cols-3>* {
+.quiktheme-addons-wraper .row-cols-3>* {
     -ms-flex: 0 0 33.333333%;
     -webkit-box-flex: 0;
     flex: 0 0 33.333333%;
     max-width: 33.333333%
 }
 
-.finest-addons-wraper .row-cols-4>* {
+.quiktheme-addons-wraper .row-cols-4>* {
     -ms-flex: 0 0 25%;
     -webkit-box-flex: 0;
     flex: 0 0 25%;
     max-width: 25%
 }
 
-.finest-addons-wraper .row-cols-5>* {
+.quiktheme-addons-wraper .row-cols-5>* {
     -ms-flex: 0 0 20%;
     -webkit-box-flex: 0;
     flex: 0 0 20%;
     max-width: 20%
 }
 
-.finest-addons-wraper .row-cols-6>* {
+.quiktheme-addons-wraper .row-cols-6>* {
     -ms-flex: 0 0 16.666667%;
     -webkit-box-flex: 0;
     flex: 0 0 16.666667%;
     max-width: 16.666667%
 }
 
-.finest-addons-wraper .col-auto {
+.quiktheme-addons-wraper .col-auto {
     -ms-flex: 0 0 auto;
     -webkit-box-flex: 0;
     flex: 0 0 auto;
@@ -75,226 +75,226 @@
     max-width: 100%
 }
 
-.finest-addons-wraper .col-1 {
+.quiktheme-addons-wraper .col-1 {
     -ms-flex: 0 0 8.333333%;
     -webkit-box-flex: 0;
     flex: 0 0 8.333333%;
     max-width: 8.333333%
 }
 
-.finest-addons-wraper .col-2 {
+.quiktheme-addons-wraper .col-2 {
     -ms-flex: 0 0 16.666667%;
     -webkit-box-flex: 0;
     flex: 0 0 16.666667%;
     max-width: 16.666667%
 }
 
-.finest-addons-wraper .col-3 {
+.quiktheme-addons-wraper .col-3 {
     -ms-flex: 0 0 25%;
     -webkit-box-flex: 0;
     flex: 0 0 25%;
     max-width: 25%
 }
 
-.finest-addons-wraper .col-4 {
+.quiktheme-addons-wraper .col-4 {
     -ms-flex: 0 0 33.333333%;
     -webkit-box-flex: 0;
     flex: 0 0 33.333333%;
     max-width: 33.333333%
 }
 
-.finest-addons-wraper .col-5 {
+.quiktheme-addons-wraper .col-5 {
     -ms-flex: 0 0 41.666667%;
     -webkit-box-flex: 0;
     flex: 0 0 41.666667%;
     max-width: 41.666667%
 }
 
-.finest-addons-wraper .col-6 {
+.quiktheme-addons-wraper .col-6 {
     -ms-flex: 0 0 50%;
     -webkit-box-flex: 0;
     flex: 0 0 50%;
     max-width: 50%
 }
 
-.finest-addons-wraper .col-7 {
+.quiktheme-addons-wraper .col-7 {
     -ms-flex: 0 0 58.333333%;
     -webkit-box-flex: 0;
     flex: 0 0 58.333333%;
     max-width: 58.333333%
 }
 
-.finest-addons-wraper .col-8 {
+.quiktheme-addons-wraper .col-8 {
     -ms-flex: 0 0 66.666667%;
     -webkit-box-flex: 0;
     flex: 0 0 66.666667%;
     max-width: 66.666667%
 }
 
-.finest-addons-wraper .col-9 {
+.quiktheme-addons-wraper .col-9 {
     -ms-flex: 0 0 75%;
     -webkit-box-flex: 0;
     flex: 0 0 75%;
     max-width: 75%
 }
 
-.finest-addons-wraper .col-10 {
+.quiktheme-addons-wraper .col-10 {
     -ms-flex: 0 0 83.333333%;
     -webkit-box-flex: 0;
     flex: 0 0 83.333333%;
     max-width: 83.333333%
 }
 
-.finest-addons-wraper .col-11 {
+.quiktheme-addons-wraper .col-11 {
     -ms-flex: 0 0 91.666667%;
     -webkit-box-flex: 0;
     flex: 0 0 91.666667%;
     max-width: 91.666667%
 }
 
-.finest-addons-wraper .col-12 {
+.quiktheme-addons-wraper .col-12 {
     -ms-flex: 0 0 100%;
     -webkit-box-flex: 0;
     flex: 0 0 100%;
     max-width: 100%
 }
 
-.finest-addons-wraper .order-first {
+.quiktheme-addons-wraper .order-first {
     -ms-flex-order: -1;
     -webkit-box-ordinal-group: 0;
     order: -1
 }
 
-.finest-addons-wraper .order-last {
+.quiktheme-addons-wraper .order-last {
     -ms-flex-order: 13;
     -webkit-box-ordinal-group: 14;
     order: 13
 }
 
-.finest-addons-wraper .order-0 {
+.quiktheme-addons-wraper .order-0 {
     -ms-flex-order: 0;
     -webkit-box-ordinal-group: 1;
     order: 0
 }
 
-.finest-addons-wraper .order-1 {
+.quiktheme-addons-wraper .order-1 {
     -ms-flex-order: 1;
     -webkit-box-ordinal-group: 2;
     order: 1
 }
 
-.finest-addons-wraper .order-2 {
+.quiktheme-addons-wraper .order-2 {
     -ms-flex-order: 2;
     -webkit-box-ordinal-group: 3;
     order: 2
 }
 
-.finest-addons-wraper .order-3 {
+.quiktheme-addons-wraper .order-3 {
     -ms-flex-order: 3;
     -webkit-box-ordinal-group: 4;
     order: 3
 }
 
-.finest-addons-wraper .order-4 {
+.quiktheme-addons-wraper .order-4 {
     -ms-flex-order: 4;
     -webkit-box-ordinal-group: 5;
     order: 4
 }
 
-.finest-addons-wraper .order-5 {
+.quiktheme-addons-wraper .order-5 {
     -ms-flex-order: 5;
     -webkit-box-ordinal-group: 6;
     order: 5
 }
 
-.finest-addons-wraper .order-6 {
+.quiktheme-addons-wraper .order-6 {
     -ms-flex-order: 6;
     -webkit-box-ordinal-group: 7;
     order: 6
 }
 
-.finest-addons-wraper .order-7 {
+.quiktheme-addons-wraper .order-7 {
     -ms-flex-order: 7;
     -webkit-box-ordinal-group: 8;
     order: 7
 }
 
-.finest-addons-wraper .order-8 {
+.quiktheme-addons-wraper .order-8 {
     -ms-flex-order: 8;
     -webkit-box-ordinal-group: 9;
     order: 8
 }
 
-.finest-addons-wraper .order-9 {
+.quiktheme-addons-wraper .order-9 {
     -ms-flex-order: 9;
     -webkit-box-ordinal-group: 10;
     order: 9
 }
 
-.finest-addons-wraper .order-10 {
+.quiktheme-addons-wraper .order-10 {
     -ms-flex-order: 10;
     -webkit-box-ordinal-group: 11;
     order: 10
 }
 
-.finest-addons-wraper .order-11 {
+.quiktheme-addons-wraper .order-11 {
     -ms-flex-order: 11;
     -webkit-box-ordinal-group: 12;
     order: 11
 }
 
-.finest-addons-wraper .order-12 {
+.quiktheme-addons-wraper .order-12 {
     -ms-flex-order: 12;
     -webkit-box-ordinal-group: 13;
     order: 12
 }
 
-.finest-addons-wraper .offset-1 {
+.quiktheme-addons-wraper .offset-1 {
     margin-left: 8.333333%
 }
 
-.finest-addons-wraper .offset-2 {
+.quiktheme-addons-wraper .offset-2 {
     margin-left: 16.666667%
 }
 
-.finest-addons-wraper .offset-3 {
+.quiktheme-addons-wraper .offset-3 {
     margin-left: 25%
 }
 
-.finest-addons-wraper .offset-4 {
+.quiktheme-addons-wraper .offset-4 {
     margin-left: 33.333333%
 }
 
-.finest-addons-wraper .offset-5 {
+.quiktheme-addons-wraper .offset-5 {
     margin-left: 41.666667%
 }
 
-.finest-addons-wraper .offset-6 {
+.quiktheme-addons-wraper .offset-6 {
     margin-left: 50%
 }
 
-.finest-addons-wraper .offset-7 {
+.quiktheme-addons-wraper .offset-7 {
     margin-left: 58.333333%
 }
 
-.finest-addons-wraper .offset-8 {
+.quiktheme-addons-wraper .offset-8 {
     margin-left: 66.666667%
 }
 
-.finest-addons-wraper .offset-9 {
+.quiktheme-addons-wraper .offset-9 {
     margin-left: 75%
 }
 
-.finest-addons-wraper .offset-10 {
+.quiktheme-addons-wraper .offset-10 {
     margin-left: 83.333333%
 }
 
-.finest-addons-wraper .offset-11 {
+.quiktheme-addons-wraper .offset-11 {
     margin-left: 91.666667%
 }
 
 @media (min-width:576px) {
-    .finest-addons-wraper .col-sm {
+    .quiktheme-addons-wraper .col-sm {
         -ms-flex-preferred-size: 0;
         flex-basis: 0;
         -ms-flex-positive: 1;
@@ -303,49 +303,49 @@
         max-width: 100%
     }
 
-    .finest-addons-wraper .row-cols-sm-1>* {
+    .quiktheme-addons-wraper .row-cols-sm-1>* {
         -ms-flex: 0 0 100%;
         -webkit-box-flex: 0;
         flex: 0 0 100%;
         max-width: 100%
     }
 
-    .finest-addons-wraper .row-cols-sm-2>* {
+    .quiktheme-addons-wraper .row-cols-sm-2>* {
         -ms-flex: 0 0 50%;
         -webkit-box-flex: 0;
         flex: 0 0 50%;
         max-width: 50%
     }
 
-    .finest-addons-wraper .row-cols-sm-3>* {
+    .quiktheme-addons-wraper .row-cols-sm-3>* {
         -ms-flex: 0 0 33.333333%;
         -webkit-box-flex: 0;
         flex: 0 0 33.333333%;
         max-width: 33.333333%
     }
 
-    .finest-addons-wraper .row-cols-sm-4>* {
+    .quiktheme-addons-wraper .row-cols-sm-4>* {
         -ms-flex: 0 0 25%;
         -webkit-box-flex: 0;
         flex: 0 0 25%;
         max-width: 25%
     }
 
-    .finest-addons-wraper .row-cols-sm-5>* {
+    .quiktheme-addons-wraper .row-cols-sm-5>* {
         -ms-flex: 0 0 20%;
         -webkit-box-flex: 0;
         flex: 0 0 20%;
         max-width: 20%
     }
 
-    .finest-addons-wraper .row-cols-sm-6>* {
+    .quiktheme-addons-wraper .row-cols-sm-6>* {
         -ms-flex: 0 0 16.666667%;
         -webkit-box-flex: 0;
         flex: 0 0 16.666667%;
         max-width: 16.666667%
     }
 
-    .finest-addons-wraper .col-sm-auto {
+    .quiktheme-addons-wraper .col-sm-auto {
         -ms-flex: 0 0 auto;
         -webkit-box-flex: 0;
         flex: 0 0 auto;
@@ -353,231 +353,231 @@
         max-width: 100%
     }
 
-    .finest-addons-wraper .col-sm-1 {
+    .quiktheme-addons-wraper .col-sm-1 {
         -ms-flex: 0 0 8.333333%;
         -webkit-box-flex: 0;
         flex: 0 0 8.333333%;
         max-width: 8.333333%
     }
 
-    .finest-addons-wraper .col-sm-2 {
+    .quiktheme-addons-wraper .col-sm-2 {
         -ms-flex: 0 0 16.666667%;
         -webkit-box-flex: 0;
         flex: 0 0 16.666667%;
         max-width: 16.666667%
     }
 
-    .finest-addons-wraper .col-sm-3 {
+    .quiktheme-addons-wraper .col-sm-3 {
         -ms-flex: 0 0 25%;
         -webkit-box-flex: 0;
         flex: 0 0 25%;
         max-width: 25%
     }
 
-    .finest-addons-wraper .col-sm-4 {
+    .quiktheme-addons-wraper .col-sm-4 {
         -ms-flex: 0 0 33.333333%;
         -webkit-box-flex: 0;
         flex: 0 0 33.333333%;
         max-width: 33.333333%
     }
 
-    .finest-addons-wraper .col-sm-5 {
+    .quiktheme-addons-wraper .col-sm-5 {
         -ms-flex: 0 0 41.666667%;
         -webkit-box-flex: 0;
         flex: 0 0 41.666667%;
         max-width: 41.666667%
     }
 
-    .finest-addons-wraper .col-sm-6 {
+    .quiktheme-addons-wraper .col-sm-6 {
         -ms-flex: 0 0 50%;
         -webkit-box-flex: 0;
         flex: 0 0 50%;
         max-width: 50%
     }
 
-    .finest-addons-wraper .col-sm-7 {
+    .quiktheme-addons-wraper .col-sm-7 {
         -ms-flex: 0 0 58.333333%;
         -webkit-box-flex: 0;
         flex: 0 0 58.333333%;
         max-width: 58.333333%
     }
 
-    .finest-addons-wraper .col-sm-8 {
+    .quiktheme-addons-wraper .col-sm-8 {
         -ms-flex: 0 0 66.666667%;
         -webkit-box-flex: 0;
         flex: 0 0 66.666667%;
         max-width: 66.666667%
     }
 
-    .finest-addons-wraper .col-sm-9 {
+    .quiktheme-addons-wraper .col-sm-9 {
         -ms-flex: 0 0 75%;
         -webkit-box-flex: 0;
         flex: 0 0 75%;
         max-width: 75%
     }
 
-    .finest-addons-wraper .col-sm-10 {
+    .quiktheme-addons-wraper .col-sm-10 {
         -ms-flex: 0 0 83.333333%;
         -webkit-box-flex: 0;
         flex: 0 0 83.333333%;
         max-width: 83.333333%
     }
 
-    .finest-addons-wraper .col-sm-11 {
+    .quiktheme-addons-wraper .col-sm-11 {
         -ms-flex: 0 0 91.666667%;
         -webkit-box-flex: 0;
         flex: 0 0 91.666667%;
         max-width: 91.666667%
     }
 
-    .finest-addons-wraper .col-sm-12 {
+    .quiktheme-addons-wraper .col-sm-12 {
         -ms-flex: 0 0 100%;
         -webkit-box-flex: 0;
         flex: 0 0 100%;
         max-width: 100%
     }
 
-    .finest-addons-wraper .order-sm-first {
+    .quiktheme-addons-wraper .order-sm-first {
         -ms-flex-order: -1;
         -webkit-box-ordinal-group: 0;
         order: -1
     }
 
-    .finest-addons-wraper .order-sm-last {
+    .quiktheme-addons-wraper .order-sm-last {
         -ms-flex-order: 13;
         -webkit-box-ordinal-group: 14;
         order: 13
     }
 
-    .finest-addons-wraper .order-sm-0 {
+    .quiktheme-addons-wraper .order-sm-0 {
         -ms-flex-order: 0;
         -webkit-box-ordinal-group: 1;
         order: 0
     }
 
-    .finest-addons-wraper .order-sm-1 {
+    .quiktheme-addons-wraper .order-sm-1 {
         -ms-flex-order: 1;
         -webkit-box-ordinal-group: 2;
         order: 1
     }
 
-    .finest-addons-wraper .order-sm-2 {
+    .quiktheme-addons-wraper .order-sm-2 {
         -ms-flex-order: 2;
         -webkit-box-ordinal-group: 3;
         order: 2
     }
 
-    .finest-addons-wraper .order-sm-3 {
+    .quiktheme-addons-wraper .order-sm-3 {
         -ms-flex-order: 3;
         -webkit-box-ordinal-group: 4;
         order: 3
     }
 
-    .finest-addons-wraper .order-sm-4 {
+    .quiktheme-addons-wraper .order-sm-4 {
         -ms-flex-order: 4;
         -webkit-box-ordinal-group: 5;
         order: 4
     }
 
-    .finest-addons-wraper .order-sm-5 {
+    .quiktheme-addons-wraper .order-sm-5 {
         -ms-flex-order: 5;
         -webkit-box-ordinal-group: 6;
         order: 5
     }
 
-    .finest-addons-wraper .order-sm-6 {
+    .quiktheme-addons-wraper .order-sm-6 {
         -ms-flex-order: 6;
         -webkit-box-ordinal-group: 7;
         order: 6
     }
 
-    .finest-addons-wraper .order-sm-7 {
+    .quiktheme-addons-wraper .order-sm-7 {
         -ms-flex-order: 7;
         -webkit-box-ordinal-group: 8;
         order: 7
     }
 
-    .finest-addons-wraper .order-sm-8 {
+    .quiktheme-addons-wraper .order-sm-8 {
         -ms-flex-order: 8;
         -webkit-box-ordinal-group: 9;
         order: 8
     }
 
-    .finest-addons-wraper .order-sm-9 {
+    .quiktheme-addons-wraper .order-sm-9 {
         -ms-flex-order: 9;
         -webkit-box-ordinal-group: 10;
         order: 9
     }
 
-    .finest-addons-wraper .order-sm-10 {
+    .quiktheme-addons-wraper .order-sm-10 {
         -ms-flex-order: 10;
         -webkit-box-ordinal-group: 11;
         order: 10
     }
 
-    .finest-addons-wraper .order-sm-11 {
+    .quiktheme-addons-wraper .order-sm-11 {
         -ms-flex-order: 11;
         -webkit-box-ordinal-group: 12;
         order: 11
     }
 
-    .finest-addons-wraper .order-sm-12 {
+    .quiktheme-addons-wraper .order-sm-12 {
         -ms-flex-order: 12;
         -webkit-box-ordinal-group: 13;
         order: 12
     }
 
-    .finest-addons-wraper .offset-sm-0 {
+    .quiktheme-addons-wraper .offset-sm-0 {
         margin-left: 0
     }
 
-    .finest-addons-wraper .offset-sm-1 {
+    .quiktheme-addons-wraper .offset-sm-1 {
         margin-left: 8.333333%
     }
 
-    .finest-addons-wraper .offset-sm-2 {
+    .quiktheme-addons-wraper .offset-sm-2 {
         margin-left: 16.666667%
     }
 
-    .finest-addons-wraper .offset-sm-3 {
+    .quiktheme-addons-wraper .offset-sm-3 {
         margin-left: 25%
     }
 
-    .finest-addons-wraper .offset-sm-4 {
+    .quiktheme-addons-wraper .offset-sm-4 {
         margin-left: 33.333333%
     }
 
-    .finest-addons-wraper .offset-sm-5 {
+    .quiktheme-addons-wraper .offset-sm-5 {
         margin-left: 41.666667%
     }
 
-    .finest-addons-wraper .offset-sm-6 {
+    .quiktheme-addons-wraper .offset-sm-6 {
         margin-left: 50%
     }
 
-    .finest-addons-wraper .offset-sm-7 {
+    .quiktheme-addons-wraper .offset-sm-7 {
         margin-left: 58.333333%
     }
 
-    .finest-addons-wraper .offset-sm-8 {
+    .quiktheme-addons-wraper .offset-sm-8 {
         margin-left: 66.666667%
     }
 
-    .finest-addons-wraper .offset-sm-9 {
+    .quiktheme-addons-wraper .offset-sm-9 {
         margin-left: 75%
     }
 
-    .finest-addons-wraper .offset-sm-10 {
+    .quiktheme-addons-wraper .offset-sm-10 {
         margin-left: 83.333333%
     }
 
-    .finest-addons-wraper .offset-sm-11 {
+    .quiktheme-addons-wraper .offset-sm-11 {
         margin-left: 91.666667%
     }
 }
 
 @media (min-width:768px) {
-    .finest-addons-wraper .col-md {
+    .quiktheme-addons-wraper .col-md {
         -ms-flex-preferred-size: 0;
         flex-basis: 0;
         -ms-flex-positive: 1;
@@ -586,49 +586,49 @@
         max-width: 100%
     }
 
-    .finest-addons-wraper .row-cols-md-1>* {
+    .quiktheme-addons-wraper .row-cols-md-1>* {
         -ms-flex: 0 0 100%;
         -webkit-box-flex: 0;
         flex: 0 0 100%;
         max-width: 100%
     }
 
-    .finest-addons-wraper .row-cols-md-2>* {
+    .quiktheme-addons-wraper .row-cols-md-2>* {
         -ms-flex: 0 0 50%;
         -webkit-box-flex: 0;
         flex: 0 0 50%;
         max-width: 50%
     }
 
-    .finest-addons-wraper .row-cols-md-3>* {
+    .quiktheme-addons-wraper .row-cols-md-3>* {
         -ms-flex: 0 0 33.333333%;
         -webkit-box-flex: 0;
         flex: 0 0 33.333333%;
         max-width: 33.333333%
     }
 
-    .finest-addons-wraper .row-cols-md-4>* {
+    .quiktheme-addons-wraper .row-cols-md-4>* {
         -ms-flex: 0 0 25%;
         -webkit-box-flex: 0;
         flex: 0 0 25%;
         max-width: 25%
     }
 
-    .finest-addons-wraper .row-cols-md-5>* {
+    .quiktheme-addons-wraper .row-cols-md-5>* {
         -ms-flex: 0 0 20%;
         -webkit-box-flex: 0;
         flex: 0 0 20%;
         max-width: 20%
     }
 
-    .finest-addons-wraper .row-cols-md-6>* {
+    .quiktheme-addons-wraper .row-cols-md-6>* {
         -ms-flex: 0 0 16.666667%;
         -webkit-box-flex: 0;
         flex: 0 0 16.666667%;
         max-width: 16.666667%
     }
 
-    .finest-addons-wraper .col-md-auto {
+    .quiktheme-addons-wraper .col-md-auto {
         -ms-flex: 0 0 auto;
         -webkit-box-flex: 0;
         flex: 0 0 auto;
@@ -636,231 +636,231 @@
         max-width: 100%
     }
 
-    .finest-addons-wraper .col-md-1 {
+    .quiktheme-addons-wraper .col-md-1 {
         -ms-flex: 0 0 8.333333%;
         -webkit-box-flex: 0;
         flex: 0 0 8.333333%;
         max-width: 8.333333%
     }
 
-    .finest-addons-wraper .col-md-2 {
+    .quiktheme-addons-wraper .col-md-2 {
         -ms-flex: 0 0 16.666667%;
         -webkit-box-flex: 0;
         flex: 0 0 16.666667%;
         max-width: 16.666667%
     }
 
-    .finest-addons-wraper .col-md-3 {
+    .quiktheme-addons-wraper .col-md-3 {
         -ms-flex: 0 0 25%;
         -webkit-box-flex: 0;
         flex: 0 0 25%;
         max-width: 25%
     }
 
-    .finest-addons-wraper .col-md-4 {
+    .quiktheme-addons-wraper .col-md-4 {
         -ms-flex: 0 0 33.333333%;
         -webkit-box-flex: 0;
         flex: 0 0 33.333333%;
         max-width: 33.333333%
     }
 
-    .finest-addons-wraper .col-md-5 {
+    .quiktheme-addons-wraper .col-md-5 {
         -ms-flex: 0 0 41.666667%;
         -webkit-box-flex: 0;
         flex: 0 0 41.666667%;
         max-width: 41.666667%
     }
 
-    .finest-addons-wraper .col-md-6 {
+    .quiktheme-addons-wraper .col-md-6 {
         -ms-flex: 0 0 50%;
         -webkit-box-flex: 0;
         flex: 0 0 50%;
         max-width: 50%
     }
 
-    .finest-addons-wraper .col-md-7 {
+    .quiktheme-addons-wraper .col-md-7 {
         -ms-flex: 0 0 58.333333%;
         -webkit-box-flex: 0;
         flex: 0 0 58.333333%;
         max-width: 58.333333%
     }
 
-    .finest-addons-wraper .col-md-8 {
+    .quiktheme-addons-wraper .col-md-8 {
         -ms-flex: 0 0 66.666667%;
         -webkit-box-flex: 0;
         flex: 0 0 66.666667%;
         max-width: 66.666667%
     }
 
-    .finest-addons-wraper .col-md-9 {
+    .quiktheme-addons-wraper .col-md-9 {
         -ms-flex: 0 0 75%;
         -webkit-box-flex: 0;
         flex: 0 0 75%;
         max-width: 75%
     }
 
-    .finest-addons-wraper .col-md-10 {
+    .quiktheme-addons-wraper .col-md-10 {
         -ms-flex: 0 0 83.333333%;
         -webkit-box-flex: 0;
         flex: 0 0 83.333333%;
         max-width: 83.333333%
     }
 
-    .finest-addons-wraper .col-md-11 {
+    .quiktheme-addons-wraper .col-md-11 {
         -ms-flex: 0 0 91.666667%;
         -webkit-box-flex: 0;
         flex: 0 0 91.666667%;
         max-width: 91.666667%
     }
 
-    .finest-addons-wraper .col-md-12 {
+    .quiktheme-addons-wraper .col-md-12 {
         -ms-flex: 0 0 100%;
         -webkit-box-flex: 0;
         flex: 0 0 100%;
         max-width: 100%
     }
 
-    .finest-addons-wraper .order-md-first {
+    .quiktheme-addons-wraper .order-md-first {
         -ms-flex-order: -1;
         -webkit-box-ordinal-group: 0;
         order: -1
     }
 
-    .finest-addons-wraper .order-md-last {
+    .quiktheme-addons-wraper .order-md-last {
         -ms-flex-order: 13;
         -webkit-box-ordinal-group: 14;
         order: 13
     }
 
-    .finest-addons-wraper .order-md-0 {
+    .quiktheme-addons-wraper .order-md-0 {
         -ms-flex-order: 0;
         -webkit-box-ordinal-group: 1;
         order: 0
     }
 
-    .finest-addons-wraper .order-md-1 {
+    .quiktheme-addons-wraper .order-md-1 {
         -ms-flex-order: 1;
         -webkit-box-ordinal-group: 2;
         order: 1
     }
 
-    .finest-addons-wraper .order-md-2 {
+    .quiktheme-addons-wraper .order-md-2 {
         -ms-flex-order: 2;
         -webkit-box-ordinal-group: 3;
         order: 2
     }
 
-    .finest-addons-wraper .order-md-3 {
+    .quiktheme-addons-wraper .order-md-3 {
         -ms-flex-order: 3;
         -webkit-box-ordinal-group: 4;
         order: 3
     }
 
-    .finest-addons-wraper .order-md-4 {
+    .quiktheme-addons-wraper .order-md-4 {
         -ms-flex-order: 4;
         -webkit-box-ordinal-group: 5;
         order: 4
     }
 
-    .finest-addons-wraper .order-md-5 {
+    .quiktheme-addons-wraper .order-md-5 {
         -ms-flex-order: 5;
         -webkit-box-ordinal-group: 6;
         order: 5
     }
 
-    .finest-addons-wraper .order-md-6 {
+    .quiktheme-addons-wraper .order-md-6 {
         -ms-flex-order: 6;
         -webkit-box-ordinal-group: 7;
         order: 6
     }
 
-    .finest-addons-wraper .order-md-7 {
+    .quiktheme-addons-wraper .order-md-7 {
         -ms-flex-order: 7;
         -webkit-box-ordinal-group: 8;
         order: 7
     }
 
-    .finest-addons-wraper .order-md-8 {
+    .quiktheme-addons-wraper .order-md-8 {
         -ms-flex-order: 8;
         -webkit-box-ordinal-group: 9;
         order: 8
     }
 
-    .finest-addons-wraper .order-md-9 {
+    .quiktheme-addons-wraper .order-md-9 {
         -ms-flex-order: 9;
         -webkit-box-ordinal-group: 10;
         order: 9
     }
 
-    .finest-addons-wraper .order-md-10 {
+    .quiktheme-addons-wraper .order-md-10 {
         -ms-flex-order: 10;
         -webkit-box-ordinal-group: 11;
         order: 10
     }
 
-    .finest-addons-wraper .order-md-11 {
+    .quiktheme-addons-wraper .order-md-11 {
         -ms-flex-order: 11;
         -webkit-box-ordinal-group: 12;
         order: 11
     }
 
-    .finest-addons-wraper .order-md-12 {
+    .quiktheme-addons-wraper .order-md-12 {
         -ms-flex-order: 12;
         -webkit-box-ordinal-group: 13;
         order: 12
     }
 
-    .finest-addons-wraper .offset-md-0 {
+    .quiktheme-addons-wraper .offset-md-0 {
         margin-left: 0
     }
 
-    .finest-addons-wraper .offset-md-1 {
+    .quiktheme-addons-wraper .offset-md-1 {
         margin-left: 8.333333%
     }
 
-    .finest-addons-wraper .offset-md-2 {
+    .quiktheme-addons-wraper .offset-md-2 {
         margin-left: 16.666667%
     }
 
-    .finest-addons-wraper .offset-md-3 {
+    .quiktheme-addons-wraper .offset-md-3 {
         margin-left: 25%
     }
 
-    .finest-addons-wraper .offset-md-4 {
+    .quiktheme-addons-wraper .offset-md-4 {
         margin-left: 33.333333%
     }
 
-    .finest-addons-wraper .offset-md-5 {
+    .quiktheme-addons-wraper .offset-md-5 {
         margin-left: 41.666667%
     }
 
-    .finest-addons-wraper .offset-md-6 {
+    .quiktheme-addons-wraper .offset-md-6 {
         margin-left: 50%
     }
 
-    .finest-addons-wraper .offset-md-7 {
+    .quiktheme-addons-wraper .offset-md-7 {
         margin-left: 58.333333%
     }
 
-    .finest-addons-wraper .offset-md-8 {
+    .quiktheme-addons-wraper .offset-md-8 {
         margin-left: 66.666667%
     }
 
-    .finest-addons-wraper .offset-md-9 {
+    .quiktheme-addons-wraper .offset-md-9 {
         margin-left: 75%
     }
 
-    .finest-addons-wraper .offset-md-10 {
+    .quiktheme-addons-wraper .offset-md-10 {
         margin-left: 83.333333%
     }
 
-    .finest-addons-wraper .offset-md-11 {
+    .quiktheme-addons-wraper .offset-md-11 {
         margin-left: 91.666667%
     }
 }
 
 @media (min-width:992px) {
-    .finest-addons-wraper .col-lg {
+    .quiktheme-addons-wraper .col-lg {
         -ms-flex-preferred-size: 0;
         flex-basis: 0;
         -ms-flex-positive: 1;
@@ -869,49 +869,49 @@
         max-width: 100%
     }
 
-    .finest-addons-wraper .row-cols-lg-1>* {
+    .quiktheme-addons-wraper .row-cols-lg-1>* {
         -ms-flex: 0 0 100%;
         -webkit-box-flex: 0;
         flex: 0 0 100%;
         max-width: 100%
     }
 
-    .finest-addons-wraper .row-cols-lg-2>* {
+    .quiktheme-addons-wraper .row-cols-lg-2>* {
         -ms-flex: 0 0 50%;
         -webkit-box-flex: 0;
         flex: 0 0 50%;
         max-width: 50%
     }
 
-    .finest-addons-wraper .row-cols-lg-3>* {
+    .quiktheme-addons-wraper .row-cols-lg-3>* {
         -ms-flex: 0 0 33.333333%;
         -webkit-box-flex: 0;
         flex: 0 0 33.333333%;
         max-width: 33.333333%
     }
 
-    .finest-addons-wraper .row-cols-lg-4>* {
+    .quiktheme-addons-wraper .row-cols-lg-4>* {
         -ms-flex: 0 0 25%;
         -webkit-box-flex: 0;
         flex: 0 0 25%;
         max-width: 25%
     }
 
-    .finest-addons-wraper .row-cols-lg-5>* {
+    .quiktheme-addons-wraper .row-cols-lg-5>* {
         -ms-flex: 0 0 20%;
         -webkit-box-flex: 0;
         flex: 0 0 20%;
         max-width: 20%
     }
 
-    .finest-addons-wraper .row-cols-lg-6>* {
+    .quiktheme-addons-wraper .row-cols-lg-6>* {
         -ms-flex: 0 0 16.666667%;
         -webkit-box-flex: 0;
         flex: 0 0 16.666667%;
         max-width: 16.666667%
     }
 
-    .finest-addons-wraper .col-lg-auto {
+    .quiktheme-addons-wraper .col-lg-auto {
         -ms-flex: 0 0 auto;
         -webkit-box-flex: 0;
         flex: 0 0 auto;
@@ -919,231 +919,231 @@
         max-width: 100%
     }
 
-    .finest-addons-wraper .col-lg-1 {
+    .quiktheme-addons-wraper .col-lg-1 {
         -ms-flex: 0 0 8.333333%;
         -webkit-box-flex: 0;
         flex: 0 0 8.333333%;
         max-width: 8.333333%
     }
 
-    .finest-addons-wraper .col-lg-2 {
+    .quiktheme-addons-wraper .col-lg-2 {
         -ms-flex: 0 0 16.666667%;
         -webkit-box-flex: 0;
         flex: 0 0 16.666667%;
         max-width: 16.666667%
     }
 
-    .finest-addons-wraper .col-lg-3 {
+    .quiktheme-addons-wraper .col-lg-3 {
         -ms-flex: 0 0 25%;
         -webkit-box-flex: 0;
         flex: 0 0 25%;
         max-width: 25%
     }
 
-    .finest-addons-wraper .col-lg-4 {
+    .quiktheme-addons-wraper .col-lg-4 {
         -ms-flex: 0 0 33.333333%;
         -webkit-box-flex: 0;
         flex: 0 0 33.333333%;
         max-width: 33.333333%
     }
 
-    .finest-addons-wraper .col-lg-5 {
+    .quiktheme-addons-wraper .col-lg-5 {
         -ms-flex: 0 0 41.666667%;
         -webkit-box-flex: 0;
         flex: 0 0 41.666667%;
         max-width: 41.666667%
     }
 
-    .finest-addons-wraper .col-lg-6 {
+    .quiktheme-addons-wraper .col-lg-6 {
         -ms-flex: 0 0 50%;
         -webkit-box-flex: 0;
         flex: 0 0 50%;
         max-width: 50%
     }
 
-    .finest-addons-wraper .col-lg-7 {
+    .quiktheme-addons-wraper .col-lg-7 {
         -ms-flex: 0 0 58.333333%;
         -webkit-box-flex: 0;
         flex: 0 0 58.333333%;
         max-width: 58.333333%
     }
 
-    .finest-addons-wraper .col-lg-8 {
+    .quiktheme-addons-wraper .col-lg-8 {
         -ms-flex: 0 0 66.666667%;
         -webkit-box-flex: 0;
         flex: 0 0 66.666667%;
         max-width: 66.666667%
     }
 
-    .finest-addons-wraper .col-lg-9 {
+    .quiktheme-addons-wraper .col-lg-9 {
         -ms-flex: 0 0 75%;
         -webkit-box-flex: 0;
         flex: 0 0 75%;
         max-width: 75%
     }
 
-    .finest-addons-wraper .col-lg-10 {
+    .quiktheme-addons-wraper .col-lg-10 {
         -ms-flex: 0 0 83.333333%;
         -webkit-box-flex: 0;
         flex: 0 0 83.333333%;
         max-width: 83.333333%
     }
 
-    .finest-addons-wraper .col-lg-11 {
+    .quiktheme-addons-wraper .col-lg-11 {
         -ms-flex: 0 0 91.666667%;
         -webkit-box-flex: 0;
         flex: 0 0 91.666667%;
         max-width: 91.666667%
     }
 
-    .finest-addons-wraper .col-lg-12 {
+    .quiktheme-addons-wraper .col-lg-12 {
         -ms-flex: 0 0 100%;
         -webkit-box-flex: 0;
         flex: 0 0 100%;
         max-width: 100%
     }
 
-    .finest-addons-wraper .order-lg-first {
+    .quiktheme-addons-wraper .order-lg-first {
         -ms-flex-order: -1;
         -webkit-box-ordinal-group: 0;
         order: -1
     }
 
-    .finest-addons-wraper .order-lg-last {
+    .quiktheme-addons-wraper .order-lg-last {
         -ms-flex-order: 13;
         -webkit-box-ordinal-group: 14;
         order: 13
     }
 
-    .finest-addons-wraper .order-lg-0 {
+    .quiktheme-addons-wraper .order-lg-0 {
         -ms-flex-order: 0;
         -webkit-box-ordinal-group: 1;
         order: 0
     }
 
-    .finest-addons-wraper .order-lg-1 {
+    .quiktheme-addons-wraper .order-lg-1 {
         -ms-flex-order: 1;
         -webkit-box-ordinal-group: 2;
         order: 1
     }
 
-    .finest-addons-wraper .order-lg-2 {
+    .quiktheme-addons-wraper .order-lg-2 {
         -ms-flex-order: 2;
         -webkit-box-ordinal-group: 3;
         order: 2
     }
 
-    .finest-addons-wraper .order-lg-3 {
+    .quiktheme-addons-wraper .order-lg-3 {
         -ms-flex-order: 3;
         -webkit-box-ordinal-group: 4;
         order: 3
     }
 
-    .finest-addons-wraper .order-lg-4 {
+    .quiktheme-addons-wraper .order-lg-4 {
         -ms-flex-order: 4;
         -webkit-box-ordinal-group: 5;
         order: 4
     }
 
-    .finest-addons-wraper .order-lg-5 {
+    .quiktheme-addons-wraper .order-lg-5 {
         -ms-flex-order: 5;
         -webkit-box-ordinal-group: 6;
         order: 5
     }
 
-    .finest-addons-wraper .order-lg-6 {
+    .quiktheme-addons-wraper .order-lg-6 {
         -ms-flex-order: 6;
         -webkit-box-ordinal-group: 7;
         order: 6
     }
 
-    .finest-addons-wraper .order-lg-7 {
+    .quiktheme-addons-wraper .order-lg-7 {
         -ms-flex-order: 7;
         -webkit-box-ordinal-group: 8;
         order: 7
     }
 
-    .finest-addons-wraper .order-lg-8 {
+    .quiktheme-addons-wraper .order-lg-8 {
         -ms-flex-order: 8;
         -webkit-box-ordinal-group: 9;
         order: 8
     }
 
-    .finest-addons-wraper .order-lg-9 {
+    .quiktheme-addons-wraper .order-lg-9 {
         -ms-flex-order: 9;
         -webkit-box-ordinal-group: 10;
         order: 9
     }
 
-    .finest-addons-wraper .order-lg-10 {
+    .quiktheme-addons-wraper .order-lg-10 {
         -ms-flex-order: 10;
         -webkit-box-ordinal-group: 11;
         order: 10
     }
 
-    .finest-addons-wraper .order-lg-11 {
+    .quiktheme-addons-wraper .order-lg-11 {
         -ms-flex-order: 11;
         -webkit-box-ordinal-group: 12;
         order: 11
     }
 
-    .finest-addons-wraper .order-lg-12 {
+    .quiktheme-addons-wraper .order-lg-12 {
         -ms-flex-order: 12;
         -webkit-box-ordinal-group: 13;
         order: 12
     }
 
-    .finest-addons-wraper .offset-lg-0 {
+    .quiktheme-addons-wraper .offset-lg-0 {
         margin-left: 0
     }
 
-    .finest-addons-wraper .offset-lg-1 {
+    .quiktheme-addons-wraper .offset-lg-1 {
         margin-left: 8.333333%
     }
 
-    .finest-addons-wraper .offset-lg-2 {
+    .quiktheme-addons-wraper .offset-lg-2 {
         margin-left: 16.666667%
     }
 
-    .finest-addons-wraper .offset-lg-3 {
+    .quiktheme-addons-wraper .offset-lg-3 {
         margin-left: 25%
     }
 
-    .finest-addons-wraper .offset-lg-4 {
+    .quiktheme-addons-wraper .offset-lg-4 {
         margin-left: 33.333333%
     }
 
-    .finest-addons-wraper .offset-lg-5 {
+    .quiktheme-addons-wraper .offset-lg-5 {
         margin-left: 41.666667%
     }
 
-    .finest-addons-wraper .offset-lg-6 {
+    .quiktheme-addons-wraper .offset-lg-6 {
         margin-left: 50%
     }
 
-    .finest-addons-wraper .offset-lg-7 {
+    .quiktheme-addons-wraper .offset-lg-7 {
         margin-left: 58.333333%
     }
 
-    .finest-addons-wraper .offset-lg-8 {
+    .quiktheme-addons-wraper .offset-lg-8 {
         margin-left: 66.666667%
     }
 
-    .finest-addons-wraper .offset-lg-9 {
+    .quiktheme-addons-wraper .offset-lg-9 {
         margin-left: 75%
     }
 
-    .finest-addons-wraper .offset-lg-10 {
+    .quiktheme-addons-wraper .offset-lg-10 {
         margin-left: 83.333333%
     }
 
-    .finest-addons-wraper .offset-lg-11 {
+    .quiktheme-addons-wraper .offset-lg-11 {
         margin-left: 91.666667%
     }
 }
 
 @media (min-width:1200px) {
-    .finest-addons-wraper .col-xl {
+    .quiktheme-addons-wraper .col-xl {
         -ms-flex-preferred-size: 0;
         flex-basis: 0;
         -ms-flex-positive: 1;
@@ -1152,49 +1152,49 @@
         max-width: 100%
     }
 
-    .finest-addons-wraper .row-cols-xl-1>* {
+    .quiktheme-addons-wraper .row-cols-xl-1>* {
         -ms-flex: 0 0 100%;
         -webkit-box-flex: 0;
         flex: 0 0 100%;
         max-width: 100%
     }
 
-    .finest-addons-wraper .row-cols-xl-2>* {
+    .quiktheme-addons-wraper .row-cols-xl-2>* {
         -ms-flex: 0 0 50%;
         -webkit-box-flex: 0;
         flex: 0 0 50%;
         max-width: 50%
     }
 
-    .finest-addons-wraper .row-cols-xl-3>* {
+    .quiktheme-addons-wraper .row-cols-xl-3>* {
         -ms-flex: 0 0 33.333333%;
         -webkit-box-flex: 0;
         flex: 0 0 33.333333%;
         max-width: 33.333333%
     }
 
-    .finest-addons-wraper .row-cols-xl-4>* {
+    .quiktheme-addons-wraper .row-cols-xl-4>* {
         -ms-flex: 0 0 25%;
         -webkit-box-flex: 0;
         flex: 0 0 25%;
         max-width: 25%
     }
 
-    .finest-addons-wraper .row-cols-xl-5>* {
+    .quiktheme-addons-wraper .row-cols-xl-5>* {
         -ms-flex: 0 0 20%;
         -webkit-box-flex: 0;
         flex: 0 0 20%;
         max-width: 20%
     }
 
-    .finest-addons-wraper .row-cols-xl-6>* {
+    .quiktheme-addons-wraper .row-cols-xl-6>* {
         -ms-flex: 0 0 16.666667%;
         -webkit-box-flex: 0;
         flex: 0 0 16.666667%;
         max-width: 16.666667%
     }
 
-    .finest-addons-wraper .col-xl-auto {
+    .quiktheme-addons-wraper .col-xl-auto {
         -ms-flex: 0 0 auto;
         -webkit-box-flex: 0;
         flex: 0 0 auto;
@@ -1202,225 +1202,225 @@
         max-width: 100%
     }
 
-    .finest-addons-wraper .col-xl-1 {
+    .quiktheme-addons-wraper .col-xl-1 {
         -ms-flex: 0 0 8.333333%;
         -webkit-box-flex: 0;
         flex: 0 0 8.333333%;
         max-width: 8.333333%
     }
 
-    .finest-addons-wraper .col-xl-2 {
+    .quiktheme-addons-wraper .col-xl-2 {
         -ms-flex: 0 0 16.666667%;
         -webkit-box-flex: 0;
         flex: 0 0 16.666667%;
         max-width: 16.666667%
     }
 
-    .finest-addons-wraper .col-xl-3 {
+    .quiktheme-addons-wraper .col-xl-3 {
         -ms-flex: 0 0 25%;
         -webkit-box-flex: 0;
         flex: 0 0 25%;
         max-width: 25%
     }
 
-    .finest-addons-wraper .col-xl-4 {
+    .quiktheme-addons-wraper .col-xl-4 {
         -ms-flex: 0 0 33.333333%;
         -webkit-box-flex: 0;
         flex: 0 0 33.333333%;
         max-width: 33.333333%
     }
 
-    .finest-addons-wraper .col-xl-5 {
+    .quiktheme-addons-wraper .col-xl-5 {
         -ms-flex: 0 0 41.666667%;
         -webkit-box-flex: 0;
         flex: 0 0 41.666667%;
         max-width: 41.666667%
     }
 
-    .finest-addons-wraper .col-xl-6 {
+    .quiktheme-addons-wraper .col-xl-6 {
         -ms-flex: 0 0 50%;
         -webkit-box-flex: 0;
         flex: 0 0 50%;
         max-width: 50%
     }
 
-    .finest-addons-wraper .col-xl-7 {
+    .quiktheme-addons-wraper .col-xl-7 {
         -ms-flex: 0 0 58.333333%;
         -webkit-box-flex: 0;
         flex: 0 0 58.333333%;
         max-width: 58.333333%
     }
 
-    .finest-addons-wraper .col-xl-8 {
+    .quiktheme-addons-wraper .col-xl-8 {
         -ms-flex: 0 0 66.666667%;
         -webkit-box-flex: 0;
         flex: 0 0 66.666667%;
         max-width: 66.666667%
     }
 
-    .finest-addons-wraper .col-xl-9 {
+    .quiktheme-addons-wraper .col-xl-9 {
         -ms-flex: 0 0 75%;
         -webkit-box-flex: 0;
         flex: 0 0 75%;
         max-width: 75%
     }
 
-    .finest-addons-wraper .col-xl-10 {
+    .quiktheme-addons-wraper .col-xl-10 {
         -ms-flex: 0 0 83.333333%;
         -webkit-box-flex: 0;
         flex: 0 0 83.333333%;
         max-width: 83.333333%
     }
 
-    .finest-addons-wraper .col-xl-11 {
+    .quiktheme-addons-wraper .col-xl-11 {
         -ms-flex: 0 0 91.666667%;
         -webkit-box-flex: 0;
         flex: 0 0 91.666667%;
         max-width: 91.666667%
     }
 
-    .finest-addons-wraper .col-xl-12 {
+    .quiktheme-addons-wraper .col-xl-12 {
         -ms-flex: 0 0 100%;
         -webkit-box-flex: 0;
         flex: 0 0 100%;
         max-width: 100%
     }
 
-    .finest-addons-wraper .order-xl-first {
+    .quiktheme-addons-wraper .order-xl-first {
         -ms-flex-order: -1;
         -webkit-box-ordinal-group: 0;
         order: -1
     }
 
-    .finest-addons-wraper .order-xl-last {
+    .quiktheme-addons-wraper .order-xl-last {
         -ms-flex-order: 13;
         -webkit-box-ordinal-group: 14;
         order: 13
     }
 
-    .finest-addons-wraper .order-xl-0 {
+    .quiktheme-addons-wraper .order-xl-0 {
         -ms-flex-order: 0;
         -webkit-box-ordinal-group: 1;
         order: 0
     }
 
-    .finest-addons-wraper .order-xl-1 {
+    .quiktheme-addons-wraper .order-xl-1 {
         -ms-flex-order: 1;
         -webkit-box-ordinal-group: 2;
         order: 1
     }
 
-    .finest-addons-wraper .order-xl-2 {
+    .quiktheme-addons-wraper .order-xl-2 {
         -ms-flex-order: 2;
         -webkit-box-ordinal-group: 3;
         order: 2
     }
 
-    .finest-addons-wraper .order-xl-3 {
+    .quiktheme-addons-wraper .order-xl-3 {
         -ms-flex-order: 3;
         -webkit-box-ordinal-group: 4;
         order: 3
     }
 
-    .finest-addons-wraper .order-xl-4 {
+    .quiktheme-addons-wraper .order-xl-4 {
         -ms-flex-order: 4;
         -webkit-box-ordinal-group: 5;
         order: 4
     }
 
-    .finest-addons-wraper .order-xl-5 {
+    .quiktheme-addons-wraper .order-xl-5 {
         -ms-flex-order: 5;
         -webkit-box-ordinal-group: 6;
         order: 5
     }
 
-    .finest-addons-wraper .order-xl-6 {
+    .quiktheme-addons-wraper .order-xl-6 {
         -ms-flex-order: 6;
         -webkit-box-ordinal-group: 7;
         order: 6
     }
 
-    .finest-addons-wraper .order-xl-7 {
+    .quiktheme-addons-wraper .order-xl-7 {
         -ms-flex-order: 7;
         -webkit-box-ordinal-group: 8;
         order: 7
     }
 
-    .finest-addons-wraper .order-xl-8 {
+    .quiktheme-addons-wraper .order-xl-8 {
         -ms-flex-order: 8;
         -webkit-box-ordinal-group: 9;
         order: 8
     }
 
-    .finest-addons-wraper .order-xl-9 {
+    .quiktheme-addons-wraper .order-xl-9 {
         -ms-flex-order: 9;
         -webkit-box-ordinal-group: 10;
         order: 9
     }
 
-    .finest-addons-wraper .order-xl-10 {
+    .quiktheme-addons-wraper .order-xl-10 {
         -ms-flex-order: 10;
         -webkit-box-ordinal-group: 11;
         order: 10
     }
 
-    .finest-addons-wraper .order-xl-11 {
+    .quiktheme-addons-wraper .order-xl-11 {
         -ms-flex-order: 11;
         -webkit-box-ordinal-group: 12;
         order: 11
     }
 
-    .finest-addons-wraper .order-xl-12 {
+    .quiktheme-addons-wraper .order-xl-12 {
         -ms-flex-order: 12;
         -webkit-box-ordinal-group: 13;
         order: 12
     }
 
-    .finest-addons-wraper .offset-xl-0 {
+    .quiktheme-addons-wraper .offset-xl-0 {
         margin-left: 0
     }
 
-    .finest-addons-wraper .offset-xl-1 {
+    .quiktheme-addons-wraper .offset-xl-1 {
         margin-left: 8.333333%
     }
 
-    .finest-addons-wraper .offset-xl-2 {
+    .quiktheme-addons-wraper .offset-xl-2 {
         margin-left: 16.666667%
     }
 
-    .finest-addons-wraper .offset-xl-3 {
+    .quiktheme-addons-wraper .offset-xl-3 {
         margin-left: 25%
     }
 
-    .finest-addons-wraper .offset-xl-4 {
+    .quiktheme-addons-wraper .offset-xl-4 {
         margin-left: 33.333333%
     }
 
-    .finest-addons-wraper .offset-xl-5 {
+    .quiktheme-addons-wraper .offset-xl-5 {
         margin-left: 41.666667%
     }
 
-    .finest-addons-wraper .offset-xl-6 {
+    .quiktheme-addons-wraper .offset-xl-6 {
         margin-left: 50%
     }
 
-    .finest-addons-wraper .offset-xl-7 {
+    .quiktheme-addons-wraper .offset-xl-7 {
         margin-left: 58.333333%
     }
 
-    .finest-addons-wraper .offset-xl-8 {
+    .quiktheme-addons-wraper .offset-xl-8 {
         margin-left: 66.666667%
     }
 
-    .finest-addons-wraper .offset-xl-9 {
+    .quiktheme-addons-wraper .offset-xl-9 {
         margin-left: 75%
     }
 
-    .finest-addons-wraper .offset-xl-10 {
+    .quiktheme-addons-wraper .offset-xl-10 {
         margin-left: 83.333333%
     }
 
-    .finest-addons-wraper .offset-xl-11 {
+    .quiktheme-addons-wraper .offset-xl-11 {
         margin-left: 91.666667%
     }
 }

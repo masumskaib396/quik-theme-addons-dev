@@ -1,5 +1,5 @@
 <?php
-namespace Finest_Addons\Widgets;
+namespace Quik_Theme_Addons\Widgets;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -11,13 +11,13 @@ use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
 
 /**
- * Finest title widget.
+ * Quiktheme title widget.
  *
- * Finest widget that displays an eye-catching headlines.
+ * Quiktheme widget that displays an eye-catching headlines.
  *
  * @since 1.0.0
  */
-class Finest_Heading extends Widget_Base {
+class Quik_Theme_Heading extends Widget_Base {
     /**
      * Get widget name.
      *
@@ -29,7 +29,7 @@ class Finest_Heading extends Widget_Base {
      * @return string Widget name.
      */
     public function get_name() {
-        return 'finest-title';
+        return 'quiktheme-title';
     }
     /**
      * Get widget title.
@@ -42,7 +42,7 @@ class Finest_Heading extends Widget_Base {
      * @return string Widget title.
      */
     public function get_title() {
-        return __( 'Heading', 'finest-addons' );
+        return __( 'Heading', 'quiktheme-addons' );
     }
     /**
      * Get widget icon.
@@ -70,7 +70,7 @@ class Finest_Heading extends Widget_Base {
      * @return array Widget categories.
      */
     public function get_categories() {
-        return ['finest-addons'];
+        return ['quiktheme-addons'];
     }
     /**
      * Get widget keywords.
@@ -97,17 +97,17 @@ class Finest_Heading extends Widget_Base {
         $this->start_controls_section(
             'section_title',
             [
-                'label' => __( 'Title', 'finest-addons' ),
+                'label' => __( 'Title', 'quiktheme-addons' ),
             ]
         );
 
         $this->add_control(
             'show_page_title',
             [
-                'label'        => __( 'Show Page Title', 'finest-addons' ),
+                'label'        => __( 'Show Page Title', 'quiktheme-addons' ),
                 'type'         => \Elementor\Controls_Manager::SWITCHER,
-                'label_on'     => __( 'Show', 'finest-addons' ),
-                'label_off'    => __( 'Hide', 'finest-addons' ),
+                'label_on'     => __( 'Show', 'quiktheme-addons' ),
+                'label_off'    => __( 'Hide', 'quiktheme-addons' ),
                 'return_value' => 'yes',
                 'default'      => 'no',
             ]
@@ -116,13 +116,13 @@ class Finest_Heading extends Widget_Base {
         $this->add_control(
             'title',
             [
-                'label'       => __( 'Title', 'finest-addons' ),
+                'label'       => __( 'Title', 'quiktheme-addons' ),
                 'type'        => Controls_Manager::TEXTAREA,
                 'dynamic'     => [
                     'active' => true,
                 ],
-                'placeholder' => __( 'Enter your title', 'finest-addons' ),
-                'default'     => __( 'Add Your Title Text Here', 'finest-addons' ),
+                'placeholder' => __( 'Enter your title', 'quiktheme-addons' ),
+                'default'     => __( 'Add Your Title Text Here', 'quiktheme-addons' ),
                 'condition'   => [
                     'show_page_title!' => 'yes',
                 ],
@@ -131,7 +131,7 @@ class Finest_Heading extends Widget_Base {
         $this->add_control(
             'link',
             [
-                'label'     => __( 'Link', 'finest-addons' ),
+                'label'     => __( 'Link', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::URL,
                 'dynamic'   => [
                     'active' => true,
@@ -145,7 +145,7 @@ class Finest_Heading extends Widget_Base {
         $this->add_control(
             'header_size',
             [
-                'label'   => __( 'HTML Tag', 'finest-addons' ),
+                'label'   => __( 'HTML Tag', 'quiktheme-addons' ),
                 'type'    => Controls_Manager::SELECT,
                 'options' => [
                     'h1'   => 'H1',
@@ -164,23 +164,23 @@ class Finest_Heading extends Widget_Base {
         $this->add_responsive_control(
             'align',
             [
-                'label'     => __( 'Alignment', 'finest-addons' ),
+                'label'     => __( 'Alignment', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::CHOOSE,
                 'options'   => [
                     'left'    => [
-                        'title' => __( 'Left', 'finest-addons' ),
+                        'title' => __( 'Left', 'quiktheme-addons' ),
                         'icon'  => 'eicon-text-align-left',
                     ],
                     'center'  => [
-                        'title' => __( 'Center', 'finest-addons' ),
+                        'title' => __( 'Center', 'quiktheme-addons' ),
                         'icon'  => 'eicon-text-align-center',
                     ],
                     'right'   => [
-                        'title' => __( 'Right', 'finest-addons' ),
+                        'title' => __( 'Right', 'quiktheme-addons' ),
                         'icon'  => 'eicon-text-align-right',
                     ],
                     'justify' => [
-                        'title' => __( 'Justified', 'finest-addons' ),
+                        'title' => __( 'Justified', 'quiktheme-addons' ),
                         'icon'  => 'eicon-text-align-justify',
                     ],
                 ],
@@ -193,7 +193,7 @@ class Finest_Heading extends Widget_Base {
         $this->add_control(
             'view',
             [
-                'label'   => __( 'View', 'finest-addons' ),
+                'label'   => __( 'View', 'quiktheme-addons' ),
                 'type'    => Controls_Manager::HIDDEN,
                 'default' => 'traditional',
             ]
@@ -202,23 +202,46 @@ class Finest_Heading extends Widget_Base {
         $this->start_controls_section(
             'section_title_style',
             [
-                'label' => __( 'Title', 'finest-addons' ),
+                'label' => __( 'Title', 'quiktheme-addons' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_control(
             'title_color',
             [
-                'label'     => __( 'Text Color', 'finest-addons' ),
+                'label'     => __( 'Text Color', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::COLOR,
                 'global'    => [
                     'default' => Global_Colors::COLOR_PRIMARY,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-title' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .quiktheme-addons-title' => 'color: {{VALUE}};',
                 ],
             ]
         );
+        
+
+        $this->add_responsive_control(
+            'title_margin',
+            [
+                'label' => __('Margin', 'quiktheme-addons'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'default'      => [
+                    'top'      => 0,
+                    'right'    => 0,
+                    'bottom'   => 0,
+                    'left'     => 0,
+                    'unit'     => 'px',
+                    'isLinked' => false
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .quiktheme-addons-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
@@ -226,23 +249,23 @@ class Finest_Heading extends Widget_Base {
                 'global'   => [
                     'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
                 ],
-                'selector' => '{{WRAPPER}} .finest-addons-title',
+                'selector' => '{{WRAPPER}} .quiktheme-addons-title',
             ]
         );
         $this->add_group_control(
             Group_Control_Text_Shadow::get_type(),
             [
                 'name'     => 'text_shadow',
-                'selector' => '{{WRAPPER}} .finest-addons-title',
+                'selector' => '{{WRAPPER}} .quiktheme-addons-title',
             ]
         );
         $this->add_control(
             'blend_mode',
             [
-                'label'     => __( 'Blend Mode', 'finest-addons' ),
+                'label'     => __( 'Blend Mode', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::SELECT,
                 'options'   => [
-                    ''            => __( 'Normal', 'finest-addons' ),
+                    ''            => __( 'Normal', 'quiktheme-addons' ),
                     'multiply'    => 'Multiply',
                     'screen'      => 'Screen',
                     'overlay'     => 'Overlay',
@@ -257,7 +280,7 @@ class Finest_Heading extends Widget_Base {
                     'luminosity'  => 'Luminosity',
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-title' => 'mix-blend-mode: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-title' => 'mix-blend-mode: {{VALUE}}',
                 ],
                 'separator' => 'none',
             ]
@@ -267,7 +290,7 @@ class Finest_Heading extends Widget_Base {
         $this->start_controls_section(
             'title_stock_color',
             [
-                'label' => __( 'Strok Style', 'finest-addons' ),
+                'label' => __( 'Strok Style', 'quiktheme-addons' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -275,11 +298,11 @@ class Finest_Heading extends Widget_Base {
         $this->add_responsive_control(
             'stroke_width',
             [
-                'label'      => __( 'Strok Width', 'finest-addons' ),
+                'label'      => __( 'Strok Width', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', 'em' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-addons-title' => '-webkit-text-stroke-width: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .quiktheme-addons-title' => '-webkit-text-stroke-width: {{SIZE}}{{UNIT}}',
                 ],
             ]
         );
@@ -287,10 +310,10 @@ class Finest_Heading extends Widget_Base {
         $this->add_control(
             'stroke_color',
             [
-                'label'     => __( 'Strok Color', 'finest-addons' ),
+                'label'     => __( 'Strok Color', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-title' => '-webkit-text-stroke-color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-title' => '-webkit-text-stroke-color: {{VALUE}}',
                 ],
             ]
         );
@@ -298,10 +321,10 @@ class Finest_Heading extends Widget_Base {
         $this->add_control(
             'stroke_fill_color',
             [
-                'label'     => __( 'Strok Fill Color', 'finest-addons' ),
+                'label'     => __( 'Strok Fill Color', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-title' => '-webkit-text-fill-color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-title' => '-webkit-text-fill-color: {{VALUE}}',
                 ],
             ]
         );
@@ -312,7 +335,7 @@ class Finest_Heading extends Widget_Base {
         $this->start_controls_section(
             'section_line_style',
             [
-                'label' => __( 'Line Style', 'finest-addons' ),
+                'label' => __( 'Line Style', 'quiktheme-addons' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -320,10 +343,10 @@ class Finest_Heading extends Widget_Base {
         $this->add_control(
             'enable_line',
             [
-                'label'        => __( 'Enable Line?', 'finest-addons' ),
+                'label'        => __( 'Enable Line?', 'quiktheme-addons' ),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => __( 'Yes', 'finest-addons' ),
-                'label_off'    => __( 'No', 'finest-addons' ),
+                'label_on'     => __( 'Yes', 'quiktheme-addons' ),
+                'label_off'    => __( 'No', 'quiktheme-addons' ),
                 'return_value' => 'yes',
                 'default'      => 'no',
             ]
@@ -332,10 +355,10 @@ class Finest_Heading extends Widget_Base {
         $this->add_control(
             'line_color',
             [
-                'label'     => __( 'Line Color', 'finest-addons' ),
+                'label'     => __( 'Line Color', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-addons-title:after' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .quiktheme-addons-title:after' => 'background-color: {{VALUE}}',
                 ],
                 'condition' => [
                     'enable_line' => 'yes',
@@ -345,7 +368,7 @@ class Finest_Heading extends Widget_Base {
         $this->add_responsive_control(
             'line_width',
             [
-                'label'      => __( 'Line Width', 'finest-addons' ),
+                'label'      => __( 'Line Width', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range'      => [
@@ -359,7 +382,7 @@ class Finest_Heading extends Widget_Base {
                     ],
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-addons-title:after' => 'width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-addons-title:after' => 'width: {{SIZE}}{{UNIT}};',
                 ],
                 'condition'  => [
                     'enable_line' => 'yes',
@@ -369,7 +392,7 @@ class Finest_Heading extends Widget_Base {
         $this->add_responsive_control(
             'line_height',
             [
-                'label'      => __( 'Line height', 'finest-addons' ),
+                'label'      => __( 'Line height', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range'      => [
@@ -383,7 +406,7 @@ class Finest_Heading extends Widget_Base {
                     ],
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-addons-title:after' => 'height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-addons-title:after' => 'height: {{SIZE}}{{UNIT}};',
                 ],
                 'condition'  => [
                     'enable_line' => 'yes',
@@ -393,7 +416,7 @@ class Finest_Heading extends Widget_Base {
         $this->add_responsive_control(
             'line_x_position',
             [
-                'label'      => __( 'Shape Y Position', 'finest-addons' ),
+                'label'      => __( 'Shape Y Position', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range'      => [
@@ -407,7 +430,7 @@ class Finest_Heading extends Widget_Base {
                     ],
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-addons-title:after' => 'top: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-addons-title:after' => 'top: {{SIZE}}{{UNIT}};',
                 ],
                 'condition'  => [
                     'enable_line' => 'yes',
@@ -417,7 +440,7 @@ class Finest_Heading extends Widget_Base {
         $this->add_responsive_control(
             'line_y_position',
             [
-                'label'      => __( 'Shape X Position', 'finest-addons' ),
+                'label'      => __( 'Shape X Position', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', '%'],
                 'range'      => [
@@ -431,8 +454,8 @@ class Finest_Heading extends Widget_Base {
                     ],
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-addons-title:after'          => 'left: {{SIZE}}{{UNIT}};',
-                    'body.rtl {{WRAPPER}} .finest-addons-title:after' => 'right: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-addons-title:after'          => 'left: {{SIZE}}{{UNIT}};',
+                    'body.rtl {{WRAPPER}} .quiktheme-addons-title:after' => 'right: {{SIZE}}{{UNIT}};',
                 ],
                 'condition'  => [
                     'enable_line' => 'yes',
@@ -459,7 +482,7 @@ class Finest_Heading extends Widget_Base {
         } else {
             $title = $settings['title'];
         }
-        $this->add_render_attribute( 'title', 'class', 'finest-addons-title' );
+        $this->add_render_attribute( 'title', 'class', 'quiktheme-addons-title' );
         $this->add_render_attribute( 'title', 'class', 'show-line-' . $settings['enable_line'] );
         if ( !empty( $settings['link']['url'] ) ) {
             $this->add_link_attributes( 'url', $settings['link'] );
@@ -470,4 +493,4 @@ class Finest_Heading extends Widget_Base {
     }
 }
 
-$widgets_manager->register_widget_type( new \Finest_Addons\Widgets\Finest_Heading() );
+$widgets_manager->register_widget_type( new \Quik_Theme_Addons\Widgets\Quik_Theme_Heading() );

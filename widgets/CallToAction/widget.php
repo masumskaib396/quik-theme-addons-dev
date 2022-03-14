@@ -1,5 +1,5 @@
 <?php
-namespace Finest\Widgets\Elementor;
+namespace Quiktheme\Widgets\Elementor;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -11,14 +11,14 @@ use \Elementor\Group_Control_Typography;
 use \Elementor\Icons_Manager;
 use \Elementor\Widget_Base;
 
-class Finest_Call_To_Action extends Widget_Base {
+class Quik_Theme_Call_To_Action extends Widget_Base {
 
 	public function get_name() {
-		return 'finest-call-to-action';
+		return 'quiktheme-call-to-action';
 	}
 
 	public function get_title() {
-		return esc_html__( 'Call To Action', 'finest-addons' );
+		return esc_html__( 'Call To Action', 'quiktheme-addons' );
 	}
 
 	public function get_icon() {
@@ -26,43 +26,43 @@ class Finest_Call_To_Action extends Widget_Base {
 	}
 
    	public function get_categories() {
-		return [ 'finest-addons' ];
+		return [ 'quiktheme-addons' ];
     }
 
     public function get_keywords() {
-        return [ 'finest', 'cta', 'button' ];
+        return [ 'quik-theme-addons', 'cta', 'button' ];
     }
 
 	protected function register_controls() {
 
   		$this->start_controls_section(
-			'finest_section_side_a_content',
+			'quik_theme_section_side_a_content',
 			[
-				'label' => __( 'Content', 'finest-addons' )
+				'label' => __( 'Content', 'quiktheme-addons' )
 			]
 		);
 
         $this->add_control(
-            'finest_cta_skin_type',
+            'quik_theme_cta_skin_type',
             [
-                'label'     => esc_html__( 'Skin Type', 'finest-addons' ),
+                'label'     => esc_html__( 'Skin Type', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'vertical',
                 'options'   => [
-                    'horizontal'  => esc_html__( 'Horizontal',   'finest-addons' ),
-                    'vertical'    => esc_html__( 'Vertical', 'finest-addons' )
+                    'horizontal'  => esc_html__( 'Horizontal',   'quiktheme-addons' ),
+                    'vertical'    => esc_html__( 'Vertical', 'quiktheme-addons' )
                 ]
             ]
         );
 
 		$this->add_control(
-			'finest_cta_heading',
+			'quik_theme_cta_heading',
 			[
-				'label'       => __( 'Heading', 'finest-addons' ),
+				'label'       => __( 'Heading', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => __( 'Designers & Developer with Great UX', 'finest-addons' ),
+				'default'     => __( 'Designers & Developer with Great UX', 'quiktheme-addons' ),
                 'label_block' => true,
-				'placeholder' => __( 'Your Heading', 'finest-addons' ),
+				'placeholder' => __( 'Your Heading', 'quiktheme-addons' ),
                 'dynamic' => [
 					'active' => true,
 				]
@@ -70,19 +70,19 @@ class Finest_Call_To_Action extends Widget_Base {
 		);
 
 		$this->add_control(
-			'finest_cta_description',
+			'quik_theme_cta_description',
 			[
-				'label'       => __( 'Description', 'finest-addons' ),
+				'label'       => __( 'Description', 'quiktheme-addons' ),
 				'type'        => Controls_Manager::WYSIWYG,
-				'default'     => __( 'Exclusive addons is collaborative project of some professional developer, designer & tested user experience of using it on some of user’s websites.', 'finest-addons' ),
-				'placeholder' => __( 'Your Description', 'finest-addons' )
+				'default'     => __( 'Exclusive addons is collaborative project of some professional developer, designer & tested user experience of using it on some of user’s websites.', 'quiktheme-addons' ),
+				'placeholder' => __( 'Your Description', 'quiktheme-addons' )
 			]
 		);
 
         $this->add_control(
-            'finest_cta_icon',
+            'quik_theme_cta_icon',
             [
-                'label'   => esc_html__( 'Icon', 'finest-addons' ),
+                'label'   => esc_html__( 'Icon', 'quiktheme-addons' ),
                 'type'    => Controls_Manager::ICONS
             ]
         );
@@ -90,19 +90,19 @@ class Finest_Call_To_Action extends Widget_Base {
 		$this->end_controls_section();
 
         $this->start_controls_section(
-            'finest_cta_primary_button_section',
+            'quik_theme_cta_primary_button_section',
             [
-                'label' => esc_html__( 'Primary Button', 'finest-addons' )
+                'label' => esc_html__( 'Primary Button', 'quiktheme-addons' )
             ]
         );
 
         $this->add_control(
-            'finest_cta_primary_btn',
+            'quik_theme_cta_primary_btn',
             [
-                'label'       => esc_html__( 'Button Text', 'finest-addons' ),
+                'label'       => esc_html__( 'Button Text', 'quiktheme-addons' ),
                 'type'        => Controls_Manager::TEXT,
                 'label_block' => true,
-                'default'     => esc_html__( 'Get Now', 'finest-addons' ),
+                'default'     => esc_html__( 'Get Now', 'quiktheme-addons' ),
                 'dynamic' => [
 					'active' => true,
 				]
@@ -110,9 +110,9 @@ class Finest_Call_To_Action extends Widget_Base {
         );
 
         $this->add_control(
-            'finest_cta_primary_btn_link',
+            'quik_theme_cta_primary_btn_link',
             [
-                'label'       => esc_html__( 'Button Link', 'finest-addons' ),
+                'label'       => esc_html__( 'Button Link', 'quiktheme-addons' ),
                 'type'        => Controls_Manager::URL,
                 'label_block' => true,
                 'default'     => [
@@ -126,22 +126,22 @@ class Finest_Call_To_Action extends Widget_Base {
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'finest_cta_secondary_button_section',
+            'quik_theme_cta_secondary_button_section',
             [
-                'label'     => esc_html__( 'Secondary Button', 'finest-addons' ),
+                'label'     => esc_html__( 'Secondary Button', 'quiktheme-addons' ),
                 'condition' => [
-                    'finest_cta_skin_type' => 'vertical'
+                    'quik_theme_cta_skin_type' => 'vertical'
                 ]
             ]
         );
 
         $this->add_control(
-            'finest_cta_secondary_btn',
+            'quik_theme_cta_secondary_btn',
             [
-                'label'       => esc_html__( 'Button Text', 'finest-addons' ),
+                'label'       => esc_html__( 'Button Text', 'quiktheme-addons' ),
                 'type'        => Controls_Manager::TEXT,
                 'label_block' => true,
-                'default'     => esc_html__( 'Try It Now', 'finest-addons' ),
+                'default'     => esc_html__( 'Try It Now', 'quiktheme-addons' ),
                 'dynamic' => [
 					'active' => true,
 				]
@@ -149,9 +149,9 @@ class Finest_Call_To_Action extends Widget_Base {
         );
 
         $this->add_control(
-            'finest_cta_secondary_btn_link',
+            'quik_theme_cta_secondary_btn_link',
             [
-                'label'       => esc_html__( 'Button Link', 'finest-addons' ),
+                'label'       => esc_html__( 'Button Link', 'quiktheme-addons' ),
                 'type'        => Controls_Manager::URL,
                 'label_block' => true,
                 'default'     => [
@@ -165,30 +165,30 @@ class Finest_Call_To_Action extends Widget_Base {
         $this->end_controls_section();
 
 		$this->start_controls_section(
-			'finest_cta_container_style_settings',
+			'quik_theme_cta_container_style_settings',
 			[
-                'label' => __( 'Container', 'finest-addons' ),
+                'label' => __( 'Container', 'quiktheme-addons' ),
                 'tab'   => Controls_Manager::TAB_STYLE
 			]
         );
 
         $this->add_responsive_control(
-            'finest_cta_vertical_alignment',
+            'quik_theme_cta_vertical_alignment',
             [
-                'label'          => esc_html__( 'Alignment', 'finest-addons' ),
+                'label'          => esc_html__( 'Alignment', 'quiktheme-addons' ),
                 'type'           => Controls_Manager::CHOOSE,
                 'toggle'         => false,
                 'options'        => [
                     'left'       => [
-                        'title'  => __( 'Left', 'finest-addons' ),
+                        'title'  => __( 'Left', 'quiktheme-addons' ),
                         'icon'   => 'eicon-h-align-left'
                     ],
                     'center'     => [
-                        'title'  => __( 'Center', 'finest-addons' ),
+                        'title'  => __( 'Center', 'quiktheme-addons' ),
                         'icon'   => 'eicon-h-align-center'
                     ],
                     'right'      => [
-                        'title'  => __( 'Right', 'finest-addons' ),
+                        'title'  => __( 'Right', 'quiktheme-addons' ),
                         'icon'   => 'eicon-h-align-right'
                     ]
                 ],
@@ -198,22 +198,22 @@ class Finest_Call_To_Action extends Widget_Base {
 					'right' => 'text-align: right; justify-content: flex-end;',
 				],
                 'selectors'      => [
-                    '{{WRAPPER}} .finest-call-to-action.skin-vertical' => '{{VALUE}};',
-                    '{{WRAPPER}} .finest-call-to-action-buttons li' => '{{VALUE}};'
+                    '{{WRAPPER}} .quiktheme-call-to-action.skin-vertical' => '{{VALUE}};',
+                    '{{WRAPPER}} .quiktheme-call-to-action-buttons li' => '{{VALUE}};'
                 ],
                 'desktop_default' => 'center',
 				'tablet_default' => 'center',
 				'mobile_default' => 'center',
                 'condition'      => [
-                    'finest_cta_skin_type' => 'vertical'
+                    'quik_theme_cta_skin_type' => 'vertical'
                 ]
             ]
         );
 
         $this->add_responsive_control(
-            'finest_cta_container_padding',
+            'quik_theme_cta_container_padding',
             [
-                'label'        => esc_html__( 'Padding', 'finest-addons' ),
+                'label'        => esc_html__( 'Padding', 'quiktheme-addons' ),
                 'type'         => Controls_Manager::DIMENSIONS,
                 'size_units'   => [ 'px', 'em', '%' ],
                 'default'      => [
@@ -225,7 +225,7 @@ class Finest_Call_To_Action extends Widget_Base {
                     'isLinked' => false
                 ],
                 'selectors'    => [
-                    '{{WRAPPER}} .finest-call-to-action' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                    '{{WRAPPER}} .quiktheme-call-to-action' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
                 ]
             ]
         );
@@ -233,9 +233,9 @@ class Finest_Call_To_Action extends Widget_Base {
         $this->add_group_control(
             Group_Control_Background::get_type(),
             [
-                'name'            => 'finest_cta_container_bg_color',
+                'name'            => 'quik_theme_cta_container_bg_color',
                 'types'           => [ 'classic', 'gradient' ],
-                'selector'        => '{{WRAPPER}} .finest-call-to-action',
+                'selector'        => '{{WRAPPER}} .quiktheme-call-to-action',
                 'fields_options'  => [
                     'background'  => [
                         'default' => 'classic'
@@ -250,19 +250,19 @@ class Finest_Call_To_Action extends Widget_Base {
         $this->add_group_control(
             Group_Control_Border::get_type(),
             [
-                'name'     => 'finest_cta_container_border',
-                'selector' => '{{WRAPPER}} .finest-call-to-action'
+                'name'     => 'quik_theme_cta_container_border',
+                'selector' => '{{WRAPPER}} .quiktheme-call-to-action'
             ]
         );
 
         $this->add_responsive_control(
-            'finest_cta_container_border_radius',
+            'quik_theme_cta_container_border_radius',
             [
-                'label'      => esc_html__( 'Border Radius', 'finest-addons' ),
+                'label'      => esc_html__( 'Border Radius', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-call-to-action' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                    '{{WRAPPER}} .quiktheme-call-to-action' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
                 ]
             ]
         );
@@ -270,37 +270,37 @@ class Finest_Call_To_Action extends Widget_Base {
         $this->add_group_control(
             Group_Control_Box_Shadow::get_type(),
             [
-                'name'     => 'finest_cta_container_box_shadow',
-                'selector' => '{{WRAPPER}} .finest-call-to-action'
+                'name'     => 'quik_theme_cta_container_box_shadow',
+                'selector' => '{{WRAPPER}} .quiktheme-call-to-action'
             ]
         );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'finest_cta_content_style_settings',
+            'quik_theme_cta_content_style_settings',
             [
-                'label' => __( 'Content', 'finest-addons' ),
+                'label' => __( 'Content', 'quiktheme-addons' ),
                 'tab'   => Controls_Manager::TAB_STYLE
             ]
         );
 
         $this->add_control(
-            'finest_cta_style_heading',
+            'quik_theme_cta_style_heading',
             [
-                'label' => esc_html__( 'Heading', 'finest-addons' ),
+                'label' => esc_html__( 'Heading', 'quiktheme-addons' ),
                 'type'  => Controls_Manager::HEADING
             ]
         );
 
         $this->add_control(
-            'finest_cta_heading_color',
+            'quik_theme_cta_heading_color',
             [
                 'type'      => Controls_Manager::COLOR,
-                'label'     => esc_html__( 'Color', 'finest-addons' ),
+                'label'     => esc_html__( 'Color', 'quiktheme-addons' ),
                 'default'   => '#132c47',
                 'selectors' => [
-                    '{{WRAPPER}} h1.finest-call-to-action-title' => 'color: {{VALUE}};'
+                    '{{WRAPPER}} h1.quiktheme-call-to-action-title' => 'color: {{VALUE}};'
                 ]
             ]
         );
@@ -308,8 +308,8 @@ class Finest_Call_To_Action extends Widget_Base {
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'name'           => 'finest_cta_heading_typography',
-                'selector'       => '{{WRAPPER}} h1.finest-call-to-action-title',
+                'name'           => 'quik_theme_cta_heading_typography',
+                'selector'       => '{{WRAPPER}} h1.quiktheme-call-to-action-title',
                 'fields_options' => [
                     'font_size'   => [
                         'default' => [
@@ -325,34 +325,34 @@ class Finest_Call_To_Action extends Widget_Base {
         );
 
         $this->add_responsive_control(
-            'finest_cta_heading_margin',
+            'quik_theme_cta_heading_margin',
             [
-                'label'      => esc_html__( 'Margin', 'finest-addons' ),
+                'label'      => esc_html__( 'Margin', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} h1.finest-call-to-action-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                    '{{WRAPPER}} h1.quiktheme-call-to-action-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
                 ]
             ]
         );
 
         $this->add_control(
-            'finest_cta_style_description',
+            'quik_theme_cta_style_description',
             [
-                'label'     => esc_html__( 'Description', 'finest-addons' ),
+                'label'     => esc_html__( 'Description', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'before'
             ]
         );
 
         $this->add_control(
-            'finest_cta_description_color',
+            'quik_theme_cta_description_color',
             [
                 'type'      => Controls_Manager::COLOR,
-                'label'     => esc_html__( 'Color', 'finest-addons' ),
+                'label'     => esc_html__( 'Color', 'quiktheme-addons' ),
                 'default'   => '#8a8d91',
                 'selectors' => [
-                    '{{WRAPPER}} .finest-call-to-action-header .finest-call-to-action-subtitle' => 'color: {{VALUE}};'
+                    '{{WRAPPER}} .quiktheme-call-to-action-header .quiktheme-call-to-action-subtitle' => 'color: {{VALUE}};'
                 ]
             ]
         );
@@ -360,15 +360,15 @@ class Finest_Call_To_Action extends Widget_Base {
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'name'     => 'finest_cta_description_typography',
-                'selector' => '{{WRAPPER}} .finest-call-to-action-header .finest-call-to-action-subtitle'
+                'name'     => 'quik_theme_cta_description_typography',
+                'selector' => '{{WRAPPER}} .quiktheme-call-to-action-header .quiktheme-call-to-action-subtitle'
             ]
         );
 
         $this->add_responsive_control(
-            'finest_cta_description_margin',
+            'quik_theme_cta_description_margin',
             [
-                'label'      => esc_html__( 'Margin', 'finest-addons' ),
+                'label'      => esc_html__( 'Margin', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'default'      => [
@@ -379,41 +379,41 @@ class Finest_Call_To_Action extends Widget_Base {
                     'isLinked' => false
                 ],
                 'selectors'  => [
-                        '{{WRAPPER}} .finest-call-to-action-header .finest-call-to-action-subtitle' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                        '{{WRAPPER}} .quiktheme-call-to-action-header .quiktheme-call-to-action-subtitle' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
                 ]
             ]
         );
 
         $this->add_control(
-            'finest_cta_style_icon',
+            'quik_theme_cta_style_icon',
             [
-                'label'     => esc_html__( 'Icon', 'finest-addons' ),
+                'label'     => esc_html__( 'Icon', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::HEADING,
                 'separator' => 'after',
                 'condition' => [
-                    'finest_cta_icon[value]!' => ''
+                    'quik_theme_cta_icon[value]!' => ''
                 ]
             ]
         );
 
         $this->add_control(
-            'finest_call_to_action_icon_color',
+            'quik_theme_call_to_action_icon_color',
             [
-                'label'     => esc_html__( 'Color', 'finest-addons' ),
+                'label'     => esc_html__( 'Color', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .finest-call-to-action-icon i' => 'color: {{VALUE}};'
+                    '{{WRAPPER}} .quiktheme-call-to-action-icon i' => 'color: {{VALUE}};'
                 ],
                 'condition' => [
-                    'finest_cta_icon[value]!' => ''
+                    'quik_theme_cta_icon[value]!' => ''
                 ]
             ]
         );
 
         $this->add_responsive_control(
-            'finest_call_to_action_icon_size',
+            'quik_theme_call_to_action_icon_size',
             [
-                'label'        => esc_html__( 'Size', 'finest-addons' ),
+                'label'        => esc_html__( 'Size', 'quiktheme-addons' ),
                 'type'         => Controls_Manager::SLIDER,
                 'range'        => [
                     'px'       => [
@@ -427,18 +427,18 @@ class Finest_Call_To_Action extends Widget_Base {
                     'size'     => 40
                 ],
                 'selectors'    => [
-                    '{{WRAPPER}} .finest-call-to-action-icon i' => 'font-size: {{SIZE}}px;'
+                    '{{WRAPPER}} .quiktheme-call-to-action-icon i' => 'font-size: {{SIZE}}px;'
                 ],
                 'condition' => [
-                    'finest_cta_icon[value]!' => ''
+                    'quik_theme_cta_icon[value]!' => ''
                 ]
             ]
         );
 
         $this->add_control(
-            'finest_call_to_action_icon_padding',
+            'quik_theme_call_to_action_icon_padding',
             [
-                'label'      => esc_html__( 'Padding', 'finest-addons' ),
+                'label'      => esc_html__( 'Padding', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'default'    => [
@@ -449,10 +449,10 @@ class Finest_Call_To_Action extends Widget_Base {
                     'unit'   => 'px'
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-call-to-action-icon i' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                    '{{WRAPPER}} .quiktheme-call-to-action-icon i' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
                 ],
                 'condition'  => [
-                    'finest_cta_icon[value]!' => ''
+                    'quik_theme_cta_icon[value]!' => ''
                 ]
             ]
         );
@@ -461,9 +461,9 @@ class Finest_Call_To_Action extends Widget_Base {
 
         // primary button
         $this->start_controls_section(
-            'finest_section_cta_primary_btn_style_settings',
+            'quik_theme_section_cta_primary_btn_style_settings',
             [
-                'label' => esc_html__( 'Primary Button', 'finest-addons' ),
+                'label' => esc_html__( 'Primary Button', 'quiktheme-addons' ),
                 'tab'   => Controls_Manager::TAB_STYLE
             ]
         );
@@ -471,15 +471,15 @@ class Finest_Call_To_Action extends Widget_Base {
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'name'     => 'finest_cta_primary_btn_typography',
-                'selector' => '{{WRAPPER}} a.finest-call-to-action-primary-btn'
+                'name'     => 'quik_theme_cta_primary_btn_typography',
+                'selector' => '{{WRAPPER}} a.quiktheme-call-to-action-primary-btn'
             ]
         );
 
         $this->add_responsive_control(
-            'finest_cta_primary_btn_padding',
+            'quik_theme_cta_primary_btn_padding',
             [
-                'label'      => esc_html__( 'Padding', 'finest-addons' ),
+                'label'      => esc_html__( 'Padding', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'default'      => [
@@ -490,15 +490,15 @@ class Finest_Call_To_Action extends Widget_Base {
                     'isLinked' => false
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} a.finest-call-to-action-primary-btn span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                    '{{WRAPPER}} a.quiktheme-call-to-action-primary-btn span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
                 ]
             ]
         );
 
         $this->add_responsive_control(
-            'finest_cta_primary_btn_margin',
+            'quik_theme_cta_primary_btn_margin',
             [
-                'label'      => esc_html__( 'Margin', 'finest-addons' ),
+                'label'      => esc_html__( 'Margin', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'default'      => [
@@ -510,47 +510,47 @@ class Finest_Call_To_Action extends Widget_Base {
                     'isLinked' => false
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} a.finest-call-to-action-primary-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                    '{{WRAPPER}} a.quiktheme-call-to-action-primary-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
                 ]
             ]
         );
 
         $this->add_responsive_control(
-            'finest_cta_primary_btn_border_radius',
+            'quik_theme_cta_primary_btn_border_radius',
             [
-                'label'      => esc_html__( 'Border Radius', 'finest-addons' ),
+                'label'      => esc_html__( 'Border Radius', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-call-to-action-primary-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .quiktheme-call-to-action-primary-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ]
             ]
         );
 
-        $this->start_controls_tabs( 'finest_cta_primary_btn_tabs' );
+        $this->start_controls_tabs( 'quik_theme_cta_primary_btn_tabs' );
 
             // Normal State Tab
-            $this->start_controls_tab( 'finest_cta_primary_btn_normal', [ 'label' => esc_html__( 'Normal', 'finest-addons' ) ] );
+            $this->start_controls_tab( 'quik_theme_cta_primary_btn_normal', [ 'label' => esc_html__( 'Normal', 'quiktheme-addons' ) ] );
 
             $this->add_control(
-                'finest_cta_primary_btn_normal_text_color',
+                'quik_theme_cta_primary_btn_normal_text_color',
                 [
-                    'label'     => esc_html__( 'Text Color', 'finest-addons' ),
+                    'label'     => esc_html__( 'Text Color', 'quiktheme-addons' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   => '#ffffff',
                     'selectors' => [
-                        '{{WRAPPER}} a.finest-call-to-action-primary-btn' => 'color: {{VALUE}};'
+                        '{{WRAPPER}} a.quiktheme-call-to-action-primary-btn' => 'color: {{VALUE}};'
                     ]
                 ]
             );
 
             $this->add_control(
-                'finest_cta_primary_btn_normal_bg_color',
+                'quik_theme_cta_primary_btn_normal_bg_color',
                 [
-                    'label'     => esc_html__( 'Background Color', 'finest-addons' ),
+                    'label'     => esc_html__( 'Background Color', 'quiktheme-addons' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
-                        '{{WRAPPER}} a.finest-call-to-action-primary-btn' => 'background-color: {{VALUE}};'
+                        '{{WRAPPER}} a.quiktheme-call-to-action-primary-btn' => 'background-color: {{VALUE}};'
                     ]
                 ]
             );
@@ -558,43 +558,43 @@ class Finest_Call_To_Action extends Widget_Base {
             $this->add_group_control(
                 Group_Control_Border::get_type(),
                 [
-                    'name'     => 'finest_cta_primary_btn_normal_border',
-                    'selector' => '{{WRAPPER}} a.finest-call-to-action-primary-btn'
+                    'name'     => 'quik_theme_cta_primary_btn_normal_border',
+                    'selector' => '{{WRAPPER}} a.quiktheme-call-to-action-primary-btn'
                 ]
             );
 
             $this->add_group_control(
                 Group_Control_Box_Shadow::get_type(),
                 [
-                    'name'           => 'finest_cta_primary_btn_normal_box_shadow',
-                    'selector'       => '{{WRAPPER}} a.finest-call-to-action-primary-btn'
+                    'name'           => 'quik_theme_cta_primary_btn_normal_box_shadow',
+                    'selector'       => '{{WRAPPER}} a.quiktheme-call-to-action-primary-btn'
                 ]
             );
 
             $this->end_controls_tab();
 
             // Hover State Tab
-            $this->start_controls_tab( 'finest_cta_primary_btn_hover', [ 'label' => esc_html__( 'Hover', 'finest-addons' ) ] );
+            $this->start_controls_tab( 'quik_theme_cta_primary_btn_hover', [ 'label' => esc_html__( 'Hover', 'quiktheme-addons' ) ] );
 
             $this->add_control(
-                'finest_cta_primary_btn_hover_text_color',
+                'quik_theme_cta_primary_btn_hover_text_color',
                 [
-                    'label'     => esc_html__( 'Text Color', 'finest-addons' ),
+                    'label'     => esc_html__( 'Text Color', 'quiktheme-addons' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
-                        '{{WRAPPER}} a.finest-call-to-action-primary-btn:hover' => 'color: {{VALUE}};'
+                        '{{WRAPPER}} a.quiktheme-call-to-action-primary-btn:hover' => 'color: {{VALUE}};'
                     ]
                 ]
             );
 
             $this->add_control(
-                'finest_cta_primary_btn_hover_bg_color',
+                'quik_theme_cta_primary_btn_hover_bg_color',
                 [
-                    'label'     => esc_html__( 'Background Color', 'finest-addons' ),
+                    'label'     => esc_html__( 'Background Color', 'quiktheme-addons' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   => '#04c1c1',
                     'selectors' => [
-                        '{{WRAPPER}} .finest-call-to-action-buttons li .finest-call-to-action-primary-btn:hover' => 'background: {{VALUE}};'
+                        '{{WRAPPER}} .quiktheme-call-to-action-buttons li .quiktheme-call-to-action-primary-btn:hover' => 'background: {{VALUE}};'
                     ]
                 ]
             );
@@ -602,16 +602,16 @@ class Finest_Call_To_Action extends Widget_Base {
             $this->add_group_control(
                 Group_Control_Border::get_type(),
                 [
-                    'name'     => 'finest_cta_primary_btn_hover_border',
-                    'selector' => '{{WRAPPER}} a.finest-call-to-action-primary-btn:hover'
+                    'name'     => 'quik_theme_cta_primary_btn_hover_border',
+                    'selector' => '{{WRAPPER}} a.quiktheme-call-to-action-primary-btn:hover'
                 ]
             );
 
             $this->add_group_control(
                 Group_Control_Box_Shadow::get_type(),
                 [
-                    'name'           => 'finest_cta_primary_btn_hover_box_shadow',
-                    'selector'       => '{{WRAPPER}} a.finest-call-to-action-primary-btn:hover',
+                    'name'           => 'quik_theme_cta_primary_btn_hover_box_shadow',
+                    'selector'       => '{{WRAPPER}} a.quiktheme-call-to-action-primary-btn:hover',
                 ]
             );
 
@@ -623,12 +623,12 @@ class Finest_Call_To_Action extends Widget_Base {
 
         // secondary button
         $this->start_controls_section(
-            'finest_section_cta_secondary_btn_style_settings',
+            'quik_theme_section_cta_secondary_btn_style_settings',
             [
-                'label'     => esc_html__( 'Secondary Button', 'finest-addons' ),
+                'label'     => esc_html__( 'Secondary Button', 'quiktheme-addons' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    '.finest_cta_skin_type' => 'vertical'
+                    '.quik_theme_cta_skin_type' => 'vertical'
                 ]
             ]
         );
@@ -636,15 +636,15 @@ class Finest_Call_To_Action extends Widget_Base {
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'name'     => 'finest_cta_secondary_btn_typography',
-                'selector' => '{{WRAPPER}} a.finest-call-to-action-secondary-btn'
+                'name'     => 'quik_theme_cta_secondary_btn_typography',
+                'selector' => '{{WRAPPER}} a.quiktheme-call-to-action-secondary-btn'
             ]
         );
 
         $this->add_responsive_control(
-            'finest_cta_secondary_btn_padding',
+            'quik_theme_cta_secondary_btn_padding',
             [
-                'label'      => esc_html__( 'Padding', 'finest-addons' ),
+                'label'      => esc_html__( 'Padding', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'default'      => [
@@ -655,59 +655,59 @@ class Finest_Call_To_Action extends Widget_Base {
                     'isLinked' => false
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} a.finest-call-to-action-secondary-btn span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                    '{{WRAPPER}} a.quiktheme-call-to-action-secondary-btn span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
                 ]
             ]
         );
 
         $this->add_responsive_control(
-            'finest_cta_secondary_btn_margin',
+            'quik_theme_cta_secondary_btn_margin',
             [
-                'label'      => esc_html__( 'Margin', 'finest-addons' ),
+                'label'      => esc_html__( 'Margin', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} a.finest-call-to-action-secondary-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                    '{{WRAPPER}} a.quiktheme-call-to-action-secondary-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
                 ]
             ]
         );
 
         $this->add_responsive_control(
-            'finest_cta_secondary_btn_border_radius',
+            'quik_theme_cta_secondary_btn_border_radius',
             [
-                'label'      => esc_html__( 'Border Radius', 'finest-addons' ),
+                'label'      => esc_html__( 'Border Radius', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .finest-call-to-action-secondary-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                    '{{WRAPPER}} .quiktheme-call-to-action-secondary-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
                 ]
             ]
         );
 
-        $this->start_controls_tabs( 'finest_cta_secondary_btn_tabs' );
+        $this->start_controls_tabs( 'quik_theme_cta_secondary_btn_tabs' );
 
             // Normal State Tab
-            $this->start_controls_tab( 'finest_cta_secondary_btn_normal', [ 'label' => esc_html__( 'Normal', 'finest-addons' ) ] );
+            $this->start_controls_tab( 'quik_theme_cta_secondary_btn_normal', [ 'label' => esc_html__( 'Normal', 'quiktheme-addons' ) ] );
 
             $this->add_control(
-                'finest_cta_secondary_btn_normal_text_color',
+                'quik_theme_cta_secondary_btn_normal_text_color',
                 [
-                    'label'     => esc_html__( 'Text Color', 'finest-addons' ),
+                    'label'     => esc_html__( 'Text Color', 'quiktheme-addons' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
-                        '{{WRAPPER}} a.finest-call-to-action-secondary-btn' => 'color: {{VALUE}};'
+                        '{{WRAPPER}} a.quiktheme-call-to-action-secondary-btn' => 'color: {{VALUE}};'
                     ]
                 ]
             );
 
             $this->add_control(
-                'finest_cta_secondary_btn_normal_bg_color',
+                'quik_theme_cta_secondary_btn_normal_bg_color',
                 [
-                    'label'     => esc_html__( 'Background Color', 'finest-addons' ),
+                    'label'     => esc_html__( 'Background Color', 'quiktheme-addons' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   => 'rgba(0,0,0,0)',
                     'selectors' => [
-                        '{{WRAPPER}} a.finest-call-to-action-secondary-btn' => 'background-color: {{VALUE}};'
+                        '{{WRAPPER}} a.quiktheme-call-to-action-secondary-btn' => 'background-color: {{VALUE}};'
                     ]
                 ]
             );
@@ -715,7 +715,7 @@ class Finest_Call_To_Action extends Widget_Base {
             $this->add_group_control(
                 Group_Control_Border::get_type(),
                 [
-                    'name'               => 'finest_cta_secondary_btn_normal_border',
+                    'name'               => 'quik_theme_cta_secondary_btn_normal_border',
                     'fields_options'     => [
                         'border'         => [
                             'default'    => 'solid'
@@ -729,42 +729,42 @@ class Finest_Call_To_Action extends Widget_Base {
                             ]
                         ],
                     ],
-                    'selector'           => '{{WRAPPER}} a.finest-call-to-action-secondary-btn'
+                    'selector'           => '{{WRAPPER}} a.quiktheme-call-to-action-secondary-btn'
                 ]
             );
 
             $this->add_group_control(
                 Group_Control_Box_Shadow::get_type(),
                 [
-                    'name'           => 'finest_cta_secondary_btn_normal_box_shadow',
-                    'selector'       => '{{WRAPPER}} a.finest-call-to-action-secondary-btn'
+                    'name'           => 'quik_theme_cta_secondary_btn_normal_box_shadow',
+                    'selector'       => '{{WRAPPER}} a.quiktheme-call-to-action-secondary-btn'
                 ]
             );
 
             $this->end_controls_tab();
 
             // Hover State Tab
-            $this->start_controls_tab( 'finest_cta_secondary_btn_hover', [ 'label' => esc_html__( 'Hover', 'finest-addons' ) ] );
+            $this->start_controls_tab( 'quik_theme_cta_secondary_btn_hover', [ 'label' => esc_html__( 'Hover', 'quiktheme-addons' ) ] );
 
             $this->add_control(
-                'finest_cta_secondary_btn_hover_text_color',
+                'quik_theme_cta_secondary_btn_hover_text_color',
                 [
-                    'label'     => esc_html__( 'Text Color', 'finest-addons' ),
+                    'label'     => esc_html__( 'Text Color', 'quiktheme-addons' ),
                     'type'      => Controls_Manager::COLOR,
                     'default'   => '#ffffff',
                     'selectors' => [
-                        '{{WRAPPER}} a.finest-call-to-action-secondary-btn:hover' => 'color: {{VALUE}};'
+                        '{{WRAPPER}} a.quiktheme-call-to-action-secondary-btn:hover' => 'color: {{VALUE}};'
                     ]
                 ]
             );
 
             $this->add_control(
-                'finest_cta_secondary_btn_hover_bg_color',
+                'quik_theme_cta_secondary_btn_hover_bg_color',
                 [
-                    'label'     => esc_html__( 'Background Color', 'finest-addons' ),
+                    'label'     => esc_html__( 'Background Color', 'quiktheme-addons' ),
                     'type'      => Controls_Manager::COLOR,
                     'selectors' => [
-                        '{{WRAPPER}} .finest-call-to-action-buttons li .finest-call-to-action-secondary-btn:hover' => 'background: {{VALUE}};'
+                        '{{WRAPPER}} .quiktheme-call-to-action-buttons li .quiktheme-call-to-action-secondary-btn:hover' => 'background: {{VALUE}};'
                     ]
                 ]
             );
@@ -772,16 +772,16 @@ class Finest_Call_To_Action extends Widget_Base {
             $this->add_group_control(
                 Group_Control_Border::get_type(),
                 [
-                    'name'     => 'finest_cta_secondary_btn_hover_border',
-                    'selector' => '{{WRAPPER}} a.finest-call-to-action-secondary-btn:hover'
+                    'name'     => 'quik_theme_cta_secondary_btn_hover_border',
+                    'selector' => '{{WRAPPER}} a.quiktheme-call-to-action-secondary-btn:hover'
                 ]
             );
 
             $this->add_group_control(
                 Group_Control_Box_Shadow::get_type(),
                 [
-                    'name'           => 'finest_cta_secondary_btn_hover_box_shadow',
-                    'selector'       => '{{WRAPPER}} a.finest-call-to-action-secondary-btn:hover',
+                    'name'           => 'quik_theme_cta_secondary_btn_hover_box_shadow',
+                    'selector'       => '{{WRAPPER}} a.quiktheme-call-to-action-secondary-btn:hover',
                     'fields_options' => [
                         'box_shadow_type' => [
                             'default'     =>'yes'
@@ -809,11 +809,11 @@ class Finest_Call_To_Action extends Widget_Base {
     private function primary_btn() {
         $settings = $this->get_settings_for_display();
 
-        $this->add_render_attribute( 'finest_cta_primary_btn', 'class', 'finest-cta-primary-btn-class' );
-        $this->add_inline_editing_attributes( 'finest_cta_primary_btn', 'none' );
+        $this->add_render_attribute( 'quik_theme_cta_primary_btn', 'class', 'quiktheme-cta-primary-btn-class' );
+        $this->add_inline_editing_attributes( 'quik_theme_cta_primary_btn', 'none' );
         ?>
-        <span <?php echo $this->get_render_attribute_string( 'finest_cta_primary_btn' ); ?>>
-            <?php echo esc_html( $settings['finest_cta_primary_btn'] ); ?>
+        <span <?php echo $this->get_render_attribute_string( 'quik_theme_cta_primary_btn' ); ?>>
+            <?php echo esc_html( $settings['quik_theme_cta_primary_btn'] ); ?>
         </span>
     <?php
     }
@@ -821,11 +821,11 @@ class Finest_Call_To_Action extends Widget_Base {
     private function seconday_btn() {
         $settings = $this->get_settings_for_display();
 
-        $this->add_render_attribute( 'finest_cta_secondary_btn', 'class', 'finest-cta-secondary-btn-class' );
-        $this->add_inline_editing_attributes( 'finest_cta_secondary_btn', 'none' );
+        $this->add_render_attribute( 'quik_theme_cta_secondary_btn', 'class', 'quiktheme-cta-secondary-btn-class' );
+        $this->add_inline_editing_attributes( 'quik_theme_cta_secondary_btn', 'none' );
         ?>
-        <span <?php echo $this->get_render_attribute_string( 'finest_cta_secondary_btn' ); ?>>
-            <?php echo esc_html( $settings['finest_cta_secondary_btn'] ); ?>
+        <span <?php echo $this->get_render_attribute_string( 'quik_theme_cta_secondary_btn' ); ?>>
+            <?php echo esc_html( $settings['quik_theme_cta_secondary_btn'] ); ?>
         </span>
     <?php
     }
@@ -833,78 +833,78 @@ class Finest_Call_To_Action extends Widget_Base {
 	protected function render() {
 
         $settings = $this->get_settings_for_display();
-        $icon     = $settings['finest_cta_icon'];
-        $heading  = $settings['finest_cta_heading'];
-        $details  = $settings['finest_cta_description'];
+        $icon     = $settings['quik_theme_cta_icon'];
+        $heading  = $settings['quik_theme_cta_heading'];
+        $details  = $settings['quik_theme_cta_description'];
 
-        $this->add_render_attribute( 'finest_cta_heading', 'class', 'finest-call-to-action-title' );
-        $this->add_inline_editing_attributes( 'finest_cta_heading', 'basic' );
+        $this->add_render_attribute( 'quik_theme_cta_heading', 'class', 'quiktheme-call-to-action-title' );
+        $this->add_inline_editing_attributes( 'quik_theme_cta_heading', 'basic' );
 
-        $this->add_render_attribute( 'finest_cta_description', 'class', 'finest-call-to-action-subtitle' );
-        $this->add_inline_editing_attributes( 'finest_cta_description', 'basic' );
+        $this->add_render_attribute( 'quik_theme_cta_description', 'class', 'quiktheme-call-to-action-subtitle' );
+        $this->add_inline_editing_attributes( 'quik_theme_cta_description', 'basic' );
 
-        $this->add_render_attribute( 'finest_call_to_action_wrapper', 'class', 'finest-call-to-action skin-'.$settings['finest_cta_skin_type'] );
+        $this->add_render_attribute( 'quik_theme_call_to_action_wrapper', 'class', 'quiktheme-call-to-action skin-'.$settings['quik_theme_cta_skin_type'] );
 
-        $this->add_render_attribute( 'finest_cta_primary_btn_link', 'class', 'finest-call-to-action-primary-btn' );
+        $this->add_render_attribute( 'quik_theme_cta_primary_btn_link', 'class', 'quiktheme-call-to-action-primary-btn' );
 
-        if( $settings['finest_cta_primary_btn_link']['url'] ) {
-            $this->add_render_attribute( 'finest_cta_primary_btn_link', 'href', esc_url( $settings['finest_cta_primary_btn_link']['url'] ) );
-            if( $settings['finest_cta_primary_btn_link']['is_external'] ) {
-                $this->add_render_attribute( 'finest_cta_primary_btn_link', 'target', '_blank' );
+        if( $settings['quik_theme_cta_primary_btn_link']['url'] ) {
+            $this->add_render_attribute( 'quik_theme_cta_primary_btn_link', 'href', esc_url( $settings['quik_theme_cta_primary_btn_link']['url'] ) );
+            if( $settings['quik_theme_cta_primary_btn_link']['is_external'] ) {
+                $this->add_render_attribute( 'quik_theme_cta_primary_btn_link', 'target', '_blank' );
             }
-            if( $settings['finest_cta_primary_btn_link']['nofollow'] ) {
-                $this->add_render_attribute( 'finest_cta_primary_btn_link', 'rel', 'nofollow' );
+            if( $settings['quik_theme_cta_primary_btn_link']['nofollow'] ) {
+                $this->add_render_attribute( 'quik_theme_cta_primary_btn_link', 'rel', 'nofollow' );
             }
         }
 
-        $this->add_render_attribute( 'finest_cta_secondary_btn_link', 'class', 'finest-call-to-action-secondary-btn' );
-        if( $settings['finest_cta_secondary_btn_link']['url'] ) {
-            $this->add_render_attribute( 'finest_cta_secondary_btn_link', 'href', esc_url( $settings['finest_cta_secondary_btn_link']['url'] ) );
-            if( $settings['finest_cta_secondary_btn_link']['is_external'] ) {
-                $this->add_render_attribute( 'finest_cta_secondary_btn_link', 'target', '_blank' );
+        $this->add_render_attribute( 'quik_theme_cta_secondary_btn_link', 'class', 'quiktheme-call-to-action-secondary-btn' );
+        if( $settings['quik_theme_cta_secondary_btn_link']['url'] ) {
+            $this->add_render_attribute( 'quik_theme_cta_secondary_btn_link', 'href', esc_url( $settings['quik_theme_cta_secondary_btn_link']['url'] ) );
+            if( $settings['quik_theme_cta_secondary_btn_link']['is_external'] ) {
+                $this->add_render_attribute( 'quik_theme_cta_secondary_btn_link', 'target', '_blank' );
             }
-            if( $settings['finest_cta_secondary_btn_link']['nofollow'] ) {
-                $this->add_render_attribute( 'finest_cta_secondary_btn_link', 'rel', 'nofollow' );
+            if( $settings['quik_theme_cta_secondary_btn_link']['nofollow'] ) {
+                $this->add_render_attribute( 'quik_theme_cta_secondary_btn_link', 'rel', 'nofollow' );
             }
         }
         ?>
 
-        <div <?php echo $this->get_render_attribute_string( 'finest_call_to_action_wrapper' ); ?>>
-            <?php do_action('finest_cta_wrapper_before'); ?>
-		    <div class="finest-call-to-action-content">
-                <div class="finest-call-to-action-header">
+        <div <?php echo $this->get_render_attribute_string( 'quik_theme_call_to_action_wrapper' ); ?>>
+            <?php do_action('quik_theme_cta_wrapper_before'); ?>
+		    <div class="quiktheme-call-to-action-content">
+                <div class="quiktheme-call-to-action-header">
                 <?php
-                    if( !empty( $settings['finest_cta_icon']['value'] ) ) { ?>
-                        <div class="finest-call-to-action-icon">
-                            <?php Icons_Manager::render_icon( $settings['finest_cta_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                    if( !empty( $settings['quik_theme_cta_icon']['value'] ) ) { ?>
+                        <div class="quiktheme-call-to-action-icon">
+                            <?php Icons_Manager::render_icon( $settings['quik_theme_cta_icon'], [ 'aria-hidden' => 'true' ] ); ?>
                         </div>
                     <?php
                     }
 
-                    $heading ? printf( '<h1 '.$this->get_render_attribute_string( 'finest_cta_heading' ).'>%s</h1>', wp_kses_post( $heading ) ) : '';
+                    $heading ? printf( '<h1 '.$this->get_render_attribute_string( 'quik_theme_cta_heading' ).'>%s</h1>', wp_kses_post( $heading ) ) : '';
 
                     if ( $details ) : ?>
-                        <div <?php echo $this->get_render_attribute_string( 'finest_cta_description' ); ?>>
-                            <?php echo wp_kses_post( $settings['finest_cta_description'] ); ?>
+                        <div <?php echo $this->get_render_attribute_string( 'quik_theme_cta_description' ); ?>>
+                            <?php echo wp_kses_post( $settings['quik_theme_cta_description'] ); ?>
                         </div>
                     <?php endif; ?>
 			    </div>
 
-			    <div class="finest-call-to-action-footer">
-                    <ul class="finest-call-to-action-buttons">
+			    <div class="quiktheme-call-to-action-footer">
+                    <ul class="quiktheme-call-to-action-buttons">
                     <?php
-                        if ( ! empty( $settings['finest_cta_primary_btn'] ) ) : ?>
+                        if ( ! empty( $settings['quik_theme_cta_primary_btn'] ) ) : ?>
                             <li>
-                                <a <?php echo $this->get_render_attribute_string( 'finest_cta_primary_btn_link' ); ?>>
+                                <a <?php echo $this->get_render_attribute_string( 'quik_theme_cta_primary_btn_link' ); ?>>
                                     <?php $this->primary_btn(); ?>
                                 </a>
                             </li>
                         <?php
                         endif;
 
-                        if( 'vertical' === $settings['finest_cta_skin_type'] && !empty( $settings['finest_cta_secondary_btn'] ) ) : ?>
+                        if( 'vertical' === $settings['quik_theme_cta_skin_type'] && !empty( $settings['quik_theme_cta_secondary_btn'] ) ) : ?>
                             <li>
-                                <a <?php echo $this->get_render_attribute_string( 'finest_cta_secondary_btn_link' ); ?>>
+                                <a <?php echo $this->get_render_attribute_string( 'quik_theme_cta_secondary_btn_link' ); ?>>
                                     <?php $this->seconday_btn(); ?>
                                 </a>
                             </li>
@@ -912,10 +912,10 @@ class Finest_Call_To_Action extends Widget_Base {
                     </ul>
 			    </div>
 		    </div>
-            <?php do_action('finest_cta_wrapper_after'); ?>
+            <?php do_action('quik_theme_cta_wrapper_after'); ?>
 		</div>
     <?php
 	}
 
 }
-$widgets_manager->register_widget_type(new \Finest\Widgets\Elementor\Finest_Call_To_Action());
+$widgets_manager->register_widget_type(new \Quiktheme\Widgets\Elementor\Quik_Theme_Call_To_Action());

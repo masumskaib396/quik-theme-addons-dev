@@ -1,5 +1,5 @@
 <?php
-namespace Finest_Addons\Widgets;
+namespace Quik_Theme_Addons\Widgets;
 
 if ( !defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
@@ -20,7 +20,7 @@ use Elementor\Widget_Base;
  *
  * @since 1.0.0
  */
-class Finest_Featured_Image extends Widget_Base {
+class Quik_Theme_Featured_Image extends Widget_Base {
     /**
      * Get widget name.
      *
@@ -32,7 +32,7 @@ class Finest_Featured_Image extends Widget_Base {
      * @return string Widget name.
      */
     public function get_name() {
-        return 'finest-feature-image';
+        return 'quiktheme-feature-image';
     }
     /**
      * Get widget title.
@@ -45,7 +45,7 @@ class Finest_Featured_Image extends Widget_Base {
      * @return string Widget title.
      */
     public function get_title() {
-        return __( 'Featured Image', 'finest-addons' );
+        return __( 'Featured Image', 'quiktheme-addons' );
     }
     /**
      * Get widget icon.
@@ -74,7 +74,7 @@ class Finest_Featured_Image extends Widget_Base {
      */
     public function get_categories() {
 
-        return ['finest-addons'];
+        return ['quiktheme-addons'];
     }
     /**
      * Get widget keywords.
@@ -102,26 +102,26 @@ class Finest_Featured_Image extends Widget_Base {
         $this->start_controls_section(
             'section_image',
             [
-                'label' => __( 'Image', 'finest-addons' ),
+                'label' => __( 'Image', 'quiktheme-addons' ),
             ]
         );
 
         $this->add_responsive_control(
             'align',
             [
-                'label'     => __( 'Alignment', 'finest-addons' ),
+                'label'     => __( 'Alignment', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::CHOOSE,
                 'options'   => [
                     'left'   => [
-                        'title' => __( 'Left', 'finest-addons' ),
+                        'title' => __( 'Left', 'quiktheme-addons' ),
                         'icon'  => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __( 'Center', 'finest-addons' ),
+                        'title' => __( 'Center', 'quiktheme-addons' ),
                         'icon'  => 'eicon-text-align-center',
                     ],
                     'right'  => [
-                        'title' => __( 'Right', 'finest-addons' ),
+                        'title' => __( 'Right', 'quiktheme-addons' ),
                         'icon'  => 'eicon-text-align-right',
                     ],
                 ],
@@ -137,14 +137,14 @@ class Finest_Featured_Image extends Widget_Base {
         $this->start_controls_section(
             'section_style_image',
             [
-                'label' => __( 'Image', 'finest-addons' ),
+                'label' => __( 'Image', 'quiktheme-addons' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_responsive_control(
             'width',
             [
-                'label'          => __( 'Width', 'finest-addons' ),
+                'label'          => __( 'Width', 'quiktheme-addons' ),
                 'type'           => Controls_Manager::SLIDER,
                 'default'        => [
                     'unit' => '%',
@@ -178,7 +178,7 @@ class Finest_Featured_Image extends Widget_Base {
         $this->add_responsive_control(
             'space',
             [
-                'label'          => __( 'Max Width', 'finest-addons' ),
+                'label'          => __( 'Max Width', 'quiktheme-addons' ),
                 'type'           => Controls_Manager::SLIDER,
                 'default'        => [
                     'unit' => '%',
@@ -212,7 +212,7 @@ class Finest_Featured_Image extends Widget_Base {
         $this->add_responsive_control(
             'height',
             [
-                'label'          => __( 'Height', 'finest-addons' ),
+                'label'          => __( 'Height', 'quiktheme-addons' ),
                 'type'           => Controls_Manager::SLIDER,
                 'default'        => [
                     'unit' => 'px',
@@ -242,16 +242,16 @@ class Finest_Featured_Image extends Widget_Base {
         $this->add_responsive_control(
             'object-fit',
             [
-                'label'     => __( 'Object Fit', 'finest-addons' ),
+                'label'     => __( 'Object Fit', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::SELECT,
                 'condition' => [
                     'height[size]!' => '',
                 ],
                 'options'   => [
-                    ''        => __( 'Default', 'finest-addons' ),
-                    'fill'    => __( 'Fill', 'finest-addons' ),
-                    'cover'   => __( 'Cover', 'finest-addons' ),
-                    'contain' => __( 'Contain', 'finest-addons' ),
+                    ''        => __( 'Default', 'quiktheme-addons' ),
+                    'fill'    => __( 'Fill', 'quiktheme-addons' ),
+                    'cover'   => __( 'Cover', 'quiktheme-addons' ),
+                    'contain' => __( 'Contain', 'quiktheme-addons' ),
                 ],
                 'default'   => '',
                 'selectors' => [
@@ -269,13 +269,13 @@ class Finest_Featured_Image extends Widget_Base {
         $this->start_controls_tabs( 'image_effects' );
         $this->start_controls_tab( 'normal',
             [
-                'label' => __( 'Normal', 'finest-addons' ),
+                'label' => __( 'Normal', 'quiktheme-addons' ),
             ]
         );
         $this->add_control(
             'opacity',
             [
-                'label'     => __( 'Opacity', 'finest-addons' ),
+                'label'     => __( 'Opacity', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::SLIDER,
                 'range'     => [
                     'px' => [
@@ -299,13 +299,13 @@ class Finest_Featured_Image extends Widget_Base {
         $this->end_controls_tab();
         $this->start_controls_tab( 'hover',
             [
-                'label' => __( 'Hover', 'finest-addons' ),
+                'label' => __( 'Hover', 'quiktheme-addons' ),
             ]
         );
         $this->add_control(
             'opacity_hover',
             [
-                'label'     => __( 'Opacity', 'finest-addons' ),
+                'label'     => __( 'Opacity', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::SLIDER,
                 'range'     => [
                     'px' => [
@@ -329,7 +329,7 @@ class Finest_Featured_Image extends Widget_Base {
         $this->add_control(
             'background_hover_transition',
             [
-                'label'     => __( 'Transition Duration', 'finest-addons' ),
+                'label'     => __( 'Transition Duration', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::SLIDER,
                 'range'     => [
                     'px' => [
@@ -345,7 +345,7 @@ class Finest_Featured_Image extends Widget_Base {
         $this->add_control(
             'hover_animation',
             [
-                'label' => __( 'Hover Animation', 'finest-addons' ),
+                'label' => __( 'Hover Animation', 'quiktheme-addons' ),
                 'type'  => Controls_Manager::HOVER_ANIMATION,
             ]
         );
@@ -363,7 +363,7 @@ class Finest_Featured_Image extends Widget_Base {
         $this->add_responsive_control(
             'image_border_radius',
             [
-                'label'      => __( 'Border Radius', 'finest-addons' ),
+                'label'      => __( 'Border Radius', 'quiktheme-addons' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -385,7 +385,7 @@ class Finest_Featured_Image extends Widget_Base {
         $this->start_controls_section(
             'section_style_caption',
             [
-                'label'     => __( 'Caption', 'finest-addons' ),
+                'label'     => __( 'Caption', 'quiktheme-addons' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'caption_source!' => 'none',
@@ -395,23 +395,23 @@ class Finest_Featured_Image extends Widget_Base {
         $this->add_control(
             'caption_align',
             [
-                'label'     => __( 'Alignment', 'finest-addons' ),
+                'label'     => __( 'Alignment', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::CHOOSE,
                 'options'   => [
                     'left'    => [
-                        'title' => __( 'Left', 'finest-addons' ),
+                        'title' => __( 'Left', 'quiktheme-addons' ),
                         'icon'  => 'eicon-text-align-left',
                     ],
                     'center'  => [
-                        'title' => __( 'Center', 'finest-addons' ),
+                        'title' => __( 'Center', 'quiktheme-addons' ),
                         'icon'  => 'eicon-text-align-center',
                     ],
                     'right'   => [
-                        'title' => __( 'Right', 'finest-addons' ),
+                        'title' => __( 'Right', 'quiktheme-addons' ),
                         'icon'  => 'eicon-text-align-right',
                     ],
                     'justify' => [
-                        'title' => __( 'Justified', 'finest-addons' ),
+                        'title' => __( 'Justified', 'quiktheme-addons' ),
                         'icon'  => 'eicon-text-align-justify',
                     ],
                 ],
@@ -424,7 +424,7 @@ class Finest_Featured_Image extends Widget_Base {
         $this->add_control(
             'text_color',
             [
-                'label'     => __( 'Text Color', 'finest-addons' ),
+                'label'     => __( 'Text Color', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '',
                 'selectors' => [
@@ -436,7 +436,7 @@ class Finest_Featured_Image extends Widget_Base {
         $this->add_control(
             'caption_background_color',
             [
-                'label'     => __( 'Background Color', 'finest-addons' ),
+                'label'     => __( 'Background Color', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .widget-image-caption' => 'background-color: {{VALUE}};',
@@ -461,7 +461,7 @@ class Finest_Featured_Image extends Widget_Base {
         $this->add_responsive_control(
             'caption_space',
             [
-                'label'     => __( 'Spacing', 'finest-addons' ),
+                'label'     => __( 'Spacing', 'quiktheme-addons' ),
                 'type'      => Controls_Manager::SLIDER,
                 'range'     => [
                     'px' => [
@@ -499,4 +499,4 @@ class Finest_Featured_Image extends Widget_Base {
 		<?php
     }
 }
-$widgets_manager->register_widget_type( new \Finest_Addons\Widgets\Finest_Featured_Image() );
+$widgets_manager->register_widget_type( new \Quik_Theme_Addons\Widgets\Quik_Theme_Featured_Image() );
