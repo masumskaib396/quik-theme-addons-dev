@@ -16,7 +16,7 @@ class Quik_Theme_Fluent_Form extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Quiktheme Fluent Form', 'quiktheme-addons' );
+		return esc_html__( 'Fluent Form', 'quiktheme-addons' );
 	}
 
 	public function get_icon() {

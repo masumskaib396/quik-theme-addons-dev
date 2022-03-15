@@ -16,7 +16,7 @@ class Quik_Theme_WP_Forms extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Quiktheme WP Forms', 'quiktheme-addons' );
+		return esc_html__( 'WP Forms', 'quiktheme-addons' );
 	}
 
 	public function get_icon() {

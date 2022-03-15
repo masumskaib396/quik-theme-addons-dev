@@ -3003,3 +3003,30 @@ div.wpcf7 .ajax-loader:before {
 .techex-addons-btn {
     transition: 0.4s;
 }
+form.wpcf7-form .nice-select {
+    display: flex;
+    align-items: center;
+}
+form.wpcf7-form .nice-select .current {
+    color: var(--white-color);
+    overflow: hidden;
+    width: 100%;
+    font-size: 16px;
+}
+form.wpcf7-form input.wpcf7-form-control {
+    outline: 0px;
+}
+form.wpcf7-form .nice-select:after {
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    height: 7px;
+    right: 15px;
+    width: 7px;
+}
+form.wpcf7-form .nice-select:after {
+    border-color: #fff;
+    right: 15px;
+}
+form.wpcf7-form .nice-select li.option {
+    color: #3F527A;
+}

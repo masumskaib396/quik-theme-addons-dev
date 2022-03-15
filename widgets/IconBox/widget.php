@@ -17,7 +17,7 @@ class Quik_Theme_Icon_Box extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Quiktheme Icon Box', 'quiktheme-addons' );
+		return esc_html__( 'Icon Box', 'quiktheme-addons' );
 	}
 
 	public function get_icon() {
@@ -851,7 +851,7 @@ $this->add_responsive_control(
 					'unit' => 'px',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .quiktheme-addons-feature-content' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .quiktheme-addons-feature-content p' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => ['enable_button' => 'yes']
 
@@ -865,7 +865,7 @@ $this->add_responsive_control(
 				'type' => Controls_Manager::COLOR,
 				'default' => '#7A7A7A',
 				'selectors' => [
-					'{{WRAPPER}} .quiktheme-addons-feature-content' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quiktheme-addons-feature-content p' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -875,7 +875,7 @@ $this->add_responsive_control(
 			[
 				'name' => 'description_typography',
 				'label' => __('Description Typography', 'quiktheme-addons'),
-				'selector' => '{{WRAPPER}} .quiktheme-addons-feature-content',
+				'selector' => '{{WRAPPER}} .quiktheme-addons-feature-content p',
 			]
 		);
 
@@ -913,7 +913,7 @@ $this->add_responsive_control(
                 ],
                 'default'   => '',
                 'selectors' => [
-                    '{{WRAPPER}} .quiktheme-addons-feature-box-item'  => 'align-items: {{VALUE}};',
+                    '{{WRAPPER}} .quiktheme-addons-feature-box-item p'  => 'align-items: {{VALUE}};',
                 ],
             ]
         );

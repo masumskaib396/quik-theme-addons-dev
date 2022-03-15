@@ -251,7 +251,7 @@ class Quik_Theme_Dual_Button extends Widget_Base {
             ]
         );
 
-        $this->add_control(
+        $this->add_responsive_control(
 			'quik_theme_dual_button_container_alignment',
 			[
                 'label'   => __( 'Alignment', 'quiktheme-addons' ),

@@ -39,7 +39,7 @@ class Quik_Theme_Back_To_Top extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Quiktheme Back To Top', 'quiktheme-addons' );
+		return __( 'Back To Top', 'quiktheme-addons' );
 	}
 	/**
 	 * Get widget icon.

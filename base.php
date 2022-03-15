@@ -141,42 +141,6 @@ final class Quik_Theme_Extension {
 			['jquery'], QUIK_THEME_VERSION, true
 		);
 
-		wp_enqueue_script(
-			'quiktheme-xdlocalstorage-js-fo',
-			QUIK_THEME_ASSETS_PUBLIC . '/js/xdlocalstorage.js',
-			null,
-			QUIK_THEME_VERSION,
-			true
-		);
-
-		wp_enqueue_script(
-			'quiktheme-cross-cp-fo',
-			QUIK_THEME_ASSETS_PUBLIC . '/js/quiktheme-cross-cp.js',
-			array( 'jquery', 'elementor-editor', 'quiktheme-xdlocalstorage-js-fo' ),
-			QUIK_THEME_VERSION,
-			true
-		);
-        wp_enqueue_script(
-			'quiktheme-copy-front-end',
-			QUIK_THEME_ASSETS_PUBLIC . '/js/front-end-.js',
-			array( 'jquery'),
-			QUIK_THEME_VERSION,
-			true
-		);
-
-		global $post;
-
-		wp_localize_script(
-			'quiktheme-copy-front-end',
-			'quiktheme-copy',
-			[
-				'storagekey' => md5( 'LICENSE KEY' ),
-				'ajax_url' => admin_url( 'admin-ajax.php' ),
-				'nonce' => wp_create_nonce( 'get_section_data' ),
-				'post_id' => $post->ID,
-			]
-		);
-
 	}
 
 	public function quik_theme_editor_scripts_js(){
@@ -189,32 +153,6 @@ final class Quik_Theme_Extension {
 			'quiktheme-addons-editor',
 			QUIK_THEME_ASSETS_PUBLIC .'/js/editor.js',
 			['jquery'], QUIK_THEME_VERSION, true
-		);
-
-
-		wp_enqueue_script(
-			'quiktheme-xdlocalstorage-js',
-			QUIK_THEME_ASSETS_PUBLIC . '/js/xdlocalstorage.js',
-			null,
-			QUIK_THEME_VERSION,
-			true
-		);
-
-		wp_enqueue_script(
-			'quiktheme-cross-cp',
-			QUIK_THEME_ASSETS_PUBLIC . '/js/quiktheme-cross-cp.js',
-			array( 'jquery', 'elementor-editor', 'quiktheme-xdlocalstorage-js' ),
-			QUIK_THEME_VERSION,
-			true
-		);
-
-		wp_localize_script(
-			'jquery',
-			'quik_theme_cross_cp',
-			array(
-				'ajax_url' => admin_url( 'admin-ajax.php' ),
-				'nonce'    => wp_create_nonce( 'quik_theme_cross_cp_import' ),
-			)
 		);
 
 	}
@@ -300,12 +238,7 @@ final class Quik_Theme_Extension {
 		require_once( QUIK_THEME_WIDGET_DIR . 'ModalPopup/widget.php' );
 		require_once( QUIK_THEME_WIDGET_DIR . 'InlineButton/widget.php' );
 		require_once( QUIK_THEME_WIDGET_DIR . 'PricingBox/widget.php' );
-		require_once( QUIK_THEME_WIDGET_DIR . 'CallToAction/widget.php' );
-		require_once( QUIK_THEME_WIDGET_DIR . 'TestimonialNormal/widget.php' );
-		require_once( QUIK_THEME_WIDGET_DIR . 'Card/widget.php' );
-		require_once( QUIK_THEME_WIDGET_DIR . 'Promo-Box/widget.php' );
 		require_once( QUIK_THEME_WIDGET_DIR . 'IconBox/widget.php' );
-		require_once( QUIK_THEME_WIDGET_DIR . 'Flipbox/widget.php' );
 		require_once( QUIK_THEME_WIDGET_DIR . 'Contact Form 7/widget.php' );
 		require_once( QUIK_THEME_WIDGET_DIR . 'TeamMember/widget.php' );
 		require_once( QUIK_THEME_WIDGET_DIR . 'ListGroup/widget.php' );
@@ -322,7 +255,6 @@ final class Quik_Theme_Extension {
 		require_once( QUIK_THEME_WIDGET_DIR . 'FeatureImage/widget.php' );
 		require_once( QUIK_THEME_WIDGET_DIR . 'PostNavigation/widget.php' );
 		require_once( QUIK_THEME_WIDGET_DIR . 'ContentSwitcher/widget.php' );
-
 	}
 }
 Quik_Theme_Extension::instance();

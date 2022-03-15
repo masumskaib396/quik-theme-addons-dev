@@ -42,7 +42,7 @@ class Quik_Theme_Blog_Category extends Widget_Base {
      * @return string Widget title.
      */
     public function get_title() {
-        return __('Quiktheme Blog Category', 'quiktheme-addons');
+        return __('Blog Category', 'quiktheme-addons');
     }
 
     /**

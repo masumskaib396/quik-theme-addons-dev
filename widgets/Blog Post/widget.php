@@ -39,7 +39,7 @@ class Quik_Theme_Blog extends \Elementor\Widget_Base
      */
     public function get_title()
     {
-        return __('Quiktheme Blog', 'quiktheme-addons');
+        return __('Blog Post', 'quiktheme-addons');
     }
     /**
      * Retrieve the widget icon.

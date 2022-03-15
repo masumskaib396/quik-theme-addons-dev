@@ -2,7 +2,7 @@
 
     "use strict";
     // animated text script starts
-    var quiktheme-AnimatedText = function( $scope, $ ) {
+    var Quiktheme_AnimatedText = function( $scope, $ ) {
 
         console.log($scope);
 
@@ -52,7 +52,7 @@
     /*---------------------------------------------------
     MODAL POPUP
     ----------------------------------------------------*/
-    var quiktheme-ModalPopup = function ($scope, $) {
+    var Quiktheme_ModalPopup = function ($scope, $) {
 
         var modalWrapper    = $scope.find( '.quiktheme-modal' ).eq(0),
         modalOverlayWrapper = $scope.find( '.quiktheme-modal-overlay' ),
@@ -121,7 +121,7 @@
 
 
     //Creative Button
-		var Quik_Theme_Creative_Button = function($scope) {
+		var Quiktheme_Creative_Button = function($scope) {
 
 			var btn_wrap = $scope.find('.quiktheme-creative-btn-wrap');
 			var magnetic = btn_wrap.data('magnetic');
@@ -197,7 +197,7 @@
 
         }
 
-        var quik_theme_Addons_CountDown = function() {
+        var Quiktheme_CountDown = function() {
             setInterval(function() {
                 makeTimer();
             }, 1000);
@@ -205,7 +205,7 @@
 
 
         // Source Code
-		var quiktheme-SourceCode = function ($scope) {
+		var Quiktheme_SourceCode = function ($scope) {
 			var $item = $scope.find('.quiktheme-source-code');
 			var $lng_type = $item.data('lng-type');
 			var $after_copy_text = $item.data('after-copy');
@@ -231,7 +231,7 @@
 
 		};
 
-        var FD_Addons_Back_To_Top = function($scope, $) {
+        var Quiktheme_Back_To_Top = function($scope, $) {
             var btn = $('.quiktheme-addons-icon');
             $(window).scroll(function() {
                 if ($(window).scrollTop() > 300) {
@@ -252,7 +252,7 @@
 
 
         // Content Switcher Handler
-        var quiktheme-ContentSwitcher = function ( $scope, $ ) {
+        var Quiktheme_ContentSwitcher = function ( $scope, $ ) {
 
             var main_switch = $scope.find( '.quiktheme-content-switcher-toggle-switch' );
             var main_switch_span = main_switch.find( '.quiktheme-content-switcher-toggle-switch-slider' );
@@ -275,16 +275,16 @@
         };
 
 
+
      // Make sure you run this code under Elementor..
         $(window).on('elementor/frontend/init', function () {
-            elementorFrontend.hooks.addAction('frontend/element_ready/quiktheme-animated.default', quiktheme-AnimatedText);
-            elementorFrontend.hooks.addAction('frontend/element_ready/quiktheme-modal-popup.default', quiktheme-ModalPopup);
-            elementorFrontend.hooks.addAction('frontend/element_ready/quiktheme-creative-button.default', Quik_Theme_Creative_Button);
-            elementorFrontend.hooks.addAction('frontend/element_ready/quiktheme-addons-countdown.default', quik_theme_Addons_CountDown);
-            elementorFrontend.hooks.addAction('frontend/element_ready/quiktheme-source-code.default', quiktheme-SourceCode);
-            elementorFrontend.hooks.addAction('frontend/element_ready/quiktheme-source-code.default', quiktheme-SourceCode);
-            elementorFrontend.hooks.addAction('frontend/element_ready/quiktheme-back-to-top.default', FD_Addons_Back_To_Top);
-            elementorFrontend.hooks.addAction('frontend/element_ready/quiktheme-content-switcher.default', quiktheme-ContentSwitcher);
+            elementorFrontend.hooks.addAction('frontend/element_ready/quiktheme-animated.default', Quiktheme_AnimatedText);
+            elementorFrontend.hooks.addAction('frontend/element_ready/quiktheme-modal-popup.default', Quiktheme_ModalPopup);
+            elementorFrontend.hooks.addAction('frontend/element_ready/quiktheme-creative-button.default', Quiktheme_Creative_Button);
+            elementorFrontend.hooks.addAction('frontend/element_ready/quiktheme-addons-countdown.default', Quiktheme_CountDown);
+            elementorFrontend.hooks.addAction('frontend/element_ready/quiktheme-source-code.default', Quiktheme_SourceCode);
+            elementorFrontend.hooks.addAction('frontend/element_ready/quiktheme-back-to-top.default', Quiktheme_Back_To_Top);
+            elementorFrontend.hooks.addAction('frontend/element_ready/quiktheme-content-switcher.default', Quiktheme_ContentSwitcher);
         });
 
     })(jQuery);
